@@ -5,22 +5,20 @@ from IPython.display import HTML
 from PIL import Image
 
 def minmod(a, b):
-    if a * b <= 0:
-        return 0
+    if a > 0:
+        return max(0, min(a, b))
     else:
-        return min(abs(a), abs(b), 1) * np.sign(a)
+        return min(0, max(a, b))
 
 def superbee(a, b):
-    if a * b <= 0:
-        return 0
+    beta = 2
+    if a > 0:
+        return max(0, min(beta*a, b), min(a, beta*b))
     else:
-        return max(0, min(2 * abs(a), abs(b)), min(abs(a), 2 * abs(b)))
+        return min(0, max(beta*a,b), max(a, beta*b))
 
 def van_leer(a, b):
-    if a * b <= 0:
-        return 0
-    else:
-        return (a * abs(b) + b * abs(a)) / (abs(a) + abs(b))
+    return (a * abs(b) + b * abs(a)) / (abs(a) + abs(b))
     
 def no_limiter(a, b):
     return 0
@@ -139,24 +137,28 @@ def subplot_solution(x, h, hu, h_hist, save=False, filename='VSC/tex/plots/solut
     plt.title('Initial water height')
     plt.xlabel('Distance (x)')
     plt.ylabel('Water height (h)')
+    plt.grid()
 
     plt.subplot(1,4,2)  
     plt.plot(x,h)
     plt.title('Water height (h)')
     plt.xlabel('Distance (x)')
     #plt.ylabel('Water height (h)')
+    plt.grid()
 
     plt.subplot(1,4,3)
     plt.plot(x,hu/h)
     plt.title('Velocity (u)')
     plt.xlabel('Distance (x)')
     #plt.ylabel('Velocity (u)')
+    plt.grid()
 
     plt.subplot(1,4,4)
     plt.plot(x,hu)
     plt.title('Momentum (hu)')
     plt.xlabel('Distance (x)')
     #plt.ylabel('Momentum (hu)')
+    plt.grid()
 
     if save:
         plt.savefig(filename)
