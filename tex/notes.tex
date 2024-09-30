@@ -1,0 +1,31 @@
+\section*{Notes}
+
+40 years ago Lax and Wendroff [116] proved mathematically that conservative numerical methods, if convergent, do converge to correct solutions of the equations.
+More recently, Hou and LeFloch [91] proved a complementary theorem which says that if a non-conservative method is used, then the wrong solution will be comptedm if this contains a shock wave.
+
+Spurious oscillations are unavoidable if one uses linear methods of accuracy greater than one.
+
+Gudonovs theorem: all (linear) schemes of accuracy greater than one will provide spurious oscillations. One must use non-linear methods, even when applied to linear problems.
+
+A succesful new class of shock-capturing numerical methods are the so-called high-resolution methods.
+High-resolution methods = Oscillation-free near shock waves, and retain second-order accuracy in smooth parts of the flow.
+
+Gudonov methods are shock-capturing upwind methods. He later proposed a very fast exact Riemann solver and also approximate Riemann solvers.
+
+a: the generalisation of Gudonov's first-order method to second-order accuracy by van Leer.
+b: the development of new approximate Riemann solvers by Roe and others.
+
+ 
+TVD = Total Variation Diminishing.
+
+
+More advanced, not presented in this book are UNO, ENO and WENO methods. Also the discountinuous Galerkin finite element method, combining FEM and Gudonov theory.
+
+Trento course:
+- Day 2: SWE is a non-linear scalar equation/ conservation law 
+
+
+
+
+
+

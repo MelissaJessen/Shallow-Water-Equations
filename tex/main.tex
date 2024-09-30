@@ -1,0 +1,141 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage{bm}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{psfrag}
+\usepackage{epsfig}
+\usepackage{pstricks,pst-grad,calc}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{enumerate}
+\usepackage{listings}
+%\usepackage{minted}
+\usepackage{tikz,pgfplots,xcolor,booktabs}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.17}
+\usepackage{float}
+\usepackage{comment}    % for commenting out big code blocks
+\usepackage{bm}         % for making bolds math symbols
+\usepackage{wrapfig}    % for making images wrapped in text
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{pdfpages}
+\usepackage{titleref}          % To get subsection name in header
+\usepackage{afterpage}         % Color only current page
+\usepackage{algorithm}         % include pseudocode
+\usepackage{algorithmic}       % include pseudcode
+\usepackage{fancyhdr}
+\usepackage{courier}
+\usepackage{enumitem}
+\usepackage{cite}
+
+\numberwithin{equation}{section} % Number equations by section
+
+\usepackage[left=2cm, right=2cm, top=2.5cm, bottom=3cm]{geometry} % Set margins individually
+
+
+% Define code style
+\lstset{
+    language=Python,
+    basicstyle=\small\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{orange},
+    showstringspaces=false,
+    breaklines=true,
+    postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+    tabsize=4,
+    backgroundcolor=\color{white}, % Set background to white
+    frame=none, % Remove frame 
+    numbers=none, % Remove line numbers
+}
+
+
+\setlength{\parskip}{1em}
+
+\makeatletter
+\newcommand*{\currentname}{\TR@currentTitle}
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\leftmark}
+\rhead{\thesubsection\text{ } \currentname}
+\cfoot{Page \thepage}
+
+
+\title{Fourier Neural Operator-Based Models for Solving the Shallow Water Equations in Spherical Coordinates}
+\author{Melissa Ulsøe Jessen (s194322)}
+
+
+\begin{document}
+\input{frontmatter/Frontpage.tex}
+
+\maketitle
+
+\newpage
+\clearpage
+\thispagestyle{empty}
+\input{frontmatter/abstract.tex}
+
+\newpage
+\clearpage
+\thispagestyle{empty}
+\input{notes.tex}
+
+\newpage
+\clearpage
+\thispagestyle{empty}
+\tableofcontents
+
+\newpage
+\input{chapters/00_introduction.tex}
+
+
+\newpage
+
+\input{chapters/02_theory.tex}
+\input{chapters/03_spherical_coordinates.tex}
+
+\newpage
+\input{chapters/method.tex}
+
+\newpage
+\input{chapters/05_Results.tex}
+
+\newpage
+\input{chapters/06_discussion.tex}
+
+\newpage
+\input{chapters/07_FurtherWork.tex}
+
+\newpage
+\lhead{\rightmark}
+\rhead{ }
+\bibliography{bibl}{}
+\bibliographystyle{plain}
+
+%\newpage
+%\input{Appendix.tex}
+%\includepdf[pages=-]{SW-notebook.pdf}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+

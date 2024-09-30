@@ -1,0 +1,177 @@
+\section{Riemann problem}
+The Riemann problem is a generalisation of the so-called dam-break problem.
+The difference is that in the Riemann problem the particle velocity components, $u_L, u_R, v_L$ and $v_R$, are allowed to be distinct from zero, whereas in the dam-break problem, they must be zero.
+
+We consider the case where the water depth is positive everywhere, i.e., what we call a wet bed.
+A dry bed is then the case if the water depth is zero in some cells.
+The special Riemann problem where parts of the bed are dry is dealing with the so-called dry fronts or wet/dry fronts, which are challenging to handle numerically.
+We will leave these cases for now, and only consider the wet bed problems.
+
+Later we will consider approximate solutions to the Riemann problem, which are intended for local use in Godunov-type methods.
+But for now, we consider the exact Riemann solvers for wet bed problems.
+
+The Riemann problem is defined as the initial-value problem (IVP)
+\begin{align}\label{eq:Riemann_problem}
+    \mathbf{U}_t + {\mathbf{F(U)}}_x &= 0, \\
+\mathbf{U}(x, 0) &= \begin{cases}
+    \mathbf{U_L}, & x < 0, \\
+    \mathbf{U_R}, & x > 0.
+\end{cases}
+\end{align}
+We consider the x-split, two-dimensional shallow water equations with the initial states:
+\begin{align*}
+    \mathbf{U_L} = \begin{bmatrix}
+        h_L \\ h_L u_L \\ h_L v_L
+    \end{bmatrix}, \quad 
+    \mathbf{U_R} = \begin{bmatrix}
+        h_R \\ h_R u_R \\ h_R v_R
+    \end{bmatrix},
+\end{align*}
+which represents the conditions at time $t = 0$ in the left and right states of $x=0$, respectively.
+The vectors are
+\begin{align*}
+    \mathbf{U} = \begin{bmatrix}
+        h \\ hu \\ hv
+    \end{bmatrix}, \quad 
+    \mathbf{F(U)} = \begin{bmatrix}
+        hu \\ hu^2 + \frac{1}{2}gh^2 \\ huv
+    \end{bmatrix}.
+\end{align*}
+
+In the Riemann problem the particle velocity components $u_L, u_R, v_L$ and $v_R$ are allowed to be distinct from zero, whereas in the dam-break problem, they must be zero.
+
+
+\subsection{Wave solution of the Riemann problem/something about waves..}
+Some background about waves.
+
+In the solution of the Riemann problem~\eqref{eq:Riemann_problem} there are four possible wave patterns outcomes, which are combinations of shock waves and rarefaction waves.
+In each case there are three waves, the left and right waves correspond to the one-dimensional SWE, and the middle wave aries from the $y-$momentum equation in~\eqref{eq:Riemann_problem} and is always a shear wave.
+The left and right waves are either shock waves or rarefaction waves.
+The four possible wave patterns are illustrated in Figure~XX and are as follows:
+\begin{enumerate}
+    \item Left rarefaction, right shock
+    \item Left shock, right rarefaction
+    \item Both left and right rarefaction
+    \item Both left and right shock
+\end{enumerate}
+Hence the structure of the solution in general is shown in the figure below.
+From the figure we see that the solution consists of three waves, a left wave, a middle wave and a right wave, which together seperate four regions, described by the vector
+\begin{align*}
+\mathbf{W} = \begin{bmatrix}
+    h \\ hu \\ hv
+    \end{bmatrix}.
+\end{align*}
+The four regions are describes by $\mathbf{W}_L$ (left data), $\mathbf{W}_R$ (right data), $\mathbf{W}_{*L}$ and $\mathbf{W}_{*R}$, which both denote star region data.
+We are interested in the star region data, since these are the unknowns.
+We know that the left and right waves are always either a shock wave or a rarefaction wave, and the middle wave is always a shear wave.
+Based on the given initial conditions, we must determine the types of waves.
+Second, it is known that across the left and right waves, both $h$ and $u$ change but $v$ remains constant.
+Whereas across the middle wave, $v$ changes but $h$ and $u$ remain constant.
+%That is, $h$ and $u$ remain constant in the star region.
+Thus the water depth and particle velocity are constant in the star region and are denoted by $h_*$ and $u_*$, respectively.
+
+
+\subsection{Exact Riemann solver}
+
+The exact Riemann solver presented in this section is very efficient and leads to Gudonov methods, that are only slightly more expensive than those based on approximate Riemann solvers~\cite{Toro2001-Shock}.
+Important to find the exact solution to the Riemann problem in the early stage of development, before moving on to more complex applications.
+
+
+In the solution of the Riemann problem~\eqref{eq:Riemann_problem}, there are four possible wave patterns outcomes, which are combinations of shock waves and rarefaction waves.
+In each case there are three waves, the left and right waves correspond to the one-dimensional SWE, and the middle wave aries from the $y-$momentum equation in~\eqref{eq:Riemann_problem}.
+The left and right waves are either shock waves or rarefaction waves, and the middle wave is always a shear wave.
+
+But for now, we will consider the case where the solution consists of a single non-trivial wave and all other waves are assumed to have zero strenght.
+This is enough to solve the Riemann problem as it is always possible to solve the Riemann problem by considering one wave at a time.
+
+We denote the constant values of the water depth and particle velocity in the star region by $h_*$ and $u_*$, respectively.
+
+\subsection{Approximate Riemann solvers}
+We will study two approximate Riemann solvers, that is, the HLL and Roe. 
+
+\subsubsection{HLL solver}
+The HLL (Harten, Lax and van Leer) approach assumes a two-wave structure of the Riemann problem, see Figure.
+The solver is based on the data $\mathbf{U}_L \equiv \mathbf{U}_i^n, \mathbf{U}_R \equiv \mathbf{U}_{i+1}^n$ and fluxes $\mathbf{F}_L \equiv \mathbf{F}(\mathbf{U}_L), \mathbf{F}_R \equiv \mathbf{F}(\mathbf{U}_R)$.
+
+The HLL flux is given by
+\begin{align*}
+    \mathbf{F}_{1 + \frac{1}{2}} = \begin{cases}
+        \mathbf{F}_L & \text{if } S_L \geq 0, \\
+        \mathbf{F}^{hll} \equiv \frac{S_R \mathbf{F}_L - S_L \mathbf{F}_R + S_L S_R (\mathbf{U}_R - \mathbf{U}_L)}{S_R - S_L} & \text{if } S_L \leq 0 \leq S_R, \\
+        \mathbf{F}_R & \text{if } S_R \leq 0.
+    \end{cases}
+\end{align*}
+The wave speeds $S_L$ and $S_R$ must be estimated in some way, and one possibility is to use 
+\begin{align*}
+    S_L = u_L - a_L q_L, \quad S_R = u_R + a_R q_R.
+\end{align*}
+
+\subsubsection{Roe solver}
+Consider the non-linear Riemann problem in~\eqref{eq:Riemann_problem}:
+\begin{align*}
+    \mathbf{U}_t + \mathbf{F(U)}_x \equiv \mathbf{U}_t + \mathbf{A} \mathbf{U}_x = 0,
+\end{align*}
+where $\mathbf{A}$ is the Jacobian matrix of $\mathbf{F}$. 
+The Roe solver is based on an approximation of the Jacobian matrix $\mathbf{A}$ by a Roe matrix $\tilde{\mathbf{A}}$, which is a constant coefficient matrix, to obtain the linear system
+\begin{align*}
+    \mathbf{U}_t + \mathbf{\tilde{A}} \mathbf{U}_x = 0.
+\end{align*}
+
+This means that the Roe solver solves the approximated Riemann problem
+\begin{align*}
+    \mathbf{U}_t + \mathbf{\tilde{A}} \mathbf{U}_x &= 0. \\
+    \mathbb{U}(x,0) = \begin{cases}
+        \mathbf{U}_L, & x < 0, \\
+        \mathbf{U}_R, & x > 0.
+    \end{cases}
+\end{align*}
+exact.
+That is, the original non-linear conservation laws are replaced by a linearised system with constant coefficients.
+
+The main idea in the Roe solver is to find average values $\tilde{h}, \tilde{a}, \tilde{u}$ and $\tilde{\psi}$ for the depth $h$, the celerity $a$ (??), the velocity component $u$ and the scalar $\psi$.
+The method thus use the following Roe averages:
+\begin{align}\label{eq:Roe_averages}
+    \left\{
+\begin{aligned}
+    \tilde{h} &= \sqrt{h_L h_R}, \\
+    \tilde{u} &= \frac{u_L \sqrt{h_L} + u_R \sqrt{h_R}}{\sqrt{h_L} + \sqrt{h_R}}, \\
+    \tilde{a} &= \sqrt{\frac{1}{2}(a_L^2 + a_R^2)}, \\
+    \tilde{\psi} &= \frac{\psi_L \sqrt{h_L}  + \psi_R \sqrt{h_R}}{\sqrt{h_L} + \sqrt{h_R}}.
+\end{aligned}
+\right.
+\end{align}
+The average eigenvalues (of what?) are
+\begin{align*}
+    \tilde{\lambda}_1 = \tilde{u} - \tilde{a}, \quad \tilde{\lambda}_2 = \tilde{u}, \quad \tilde{\lambda}_3 = \tilde{u} + \tilde{a}, \\
+\end{align*} 
+with the correspinding right eigenvectors
+\begin{align*}
+    \tilde{\mathbf{R}}^{(1)} = \begin{bmatrix}
+        1 \\ \tilde{u} - \tilde{a} \\ \tilde{\psi}
+    \end{bmatrix}, \quad
+    \tilde{\mathbf{R}}^{(2)} = \begin{bmatrix}
+        0 \\ 0 \\  1
+    \end{bmatrix}, \quad
+    \tilde{\mathbf{R}}^{(3)} = \begin{bmatrix}
+        1 \\ \tilde{u} + \tilde{a} \\ \tilde{\psi}
+    \end{bmatrix}.
+\end{align*}
+The wave strenghts $\tilde{\alpha}_j$ described by Roe averages are given by
+\begin{align}
+    \left\{
+    \begin{aligned}
+        \tilde{\alpha}_1 &= \frac{1}{2} \left[ \Delta h - \frac{\tilde{h}}{\tilde{a}} \Delta u  \right], \\
+        \tilde{\alpha}_2 &= \frac{1}{2} \left[ \tilde{h} \Delta \psi  \right], \\
+        \tilde{\alpha}_3 &= \frac{1}{2} \left[ \Delta h + \frac{\tilde{h}}{\tilde{a}} \Delta u  \right].
+    \end{aligned}    
+    \right.
+\end{align}
+Applying theory of linear systems with constant coefficients.
+The numerical flux is
+\begin{align}\label{eq:Roe_flux}
+    \mathbf{F}_{i+\frac{1}{2}} = \frac{1}{2} \left( \mathbf{F}_L + \mathbf{F}_R \right) - \frac{1}{2} \sum_{j=1}^3 \tilde{\alpha}_j \left| \tilde{\lambda}_j \right| \tilde{\mathbf{R}}^{(j)}.
+\end{align}
+The Roe flux~\eqref{eq:Roe_flux} is used in the explicit conservative scheme to solve the SWE in 1D.
+
+Entropy fix?
+
