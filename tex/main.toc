@@ -29,5 +29,6 @@
 \contentsline {chapter}{\numberline {4}Numerical results}{17}{chapter.4}%
 \contentsline {section}{\numberline {4.1}The 1D Dam Break Problem}{17}{section.4.1}%
 \contentsline {section}{\numberline {4.2}2D idealised Circular Dam Break Problem}{18}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Discussion}{19}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Further work}{20}{chapter.6}%
+\contentsline {section}{\numberline {4.3}Test cases}{18}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Discussion}{20}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Further work}{21}{chapter.6}%

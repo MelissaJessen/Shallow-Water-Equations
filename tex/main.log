@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.13)  30 SEP 2024 15:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.13)  2 OCT 2024 09:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/Matteo/Documents/latex-devcontainer/tex/main.tex
-(c:/Users/Matteo/Documents/latex-devcontainer/tex/main.tex
+**c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex
+(c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-16>
 (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
@@ -909,7 +909,14 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count407
 \l__pdf_internal_box=\box125
-) (main.aux)
+) (main.aux
+
+LaTeX Warning: Label `fig:toro_test3_initial' multiply defined.
+
+
+LaTeX Warning: Label `fig:toro_test3_final' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
@@ -1005,7 +1012,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 (frontmatter/Frontpage.tex
-<figs/DTU.png, id=126, 469.9959pt x 685.6014pt>
+<figs/DTU.png, id=130, 469.9959pt x 685.6014pt>
 File: figs/DTU.png Graphic file (type png)
 <use figs/DTU.png>
 Package pdftex.def Info: figs/DTU.png  used on input line 31.
@@ -1089,7 +1096,7 @@ Chapter 2.
 [5
 
 ]
-<figs/water-column-bc.png, id=209, 319.69438pt x 122.4575pt>
+<figs/water-column-bc.png, id=214, 319.69438pt x 122.4575pt>
 File: figs/water-column-bc.png Graphic file (type png)
 <use figs/water-column-bc.png>
 Package pdftex.def Info: figs/water-column-bc.png  used on input line 68.
@@ -1126,53 +1133,91 @@ LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 3.
 (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-<plots/sol_1D_val.png, id=354, 1445.4pt x 361.35pt>
+<plots/sol_1D_val.png, id=359, 1445.4pt x 361.35pt>
 File: plots/sol_1D_val.png Graphic file (type png)
 <use plots/sol_1D_val.png>
-Package pdftex.def Info: plots/sol_1D_val.png  used on input line 33.
+Package pdftex.def Info: plots/sol_1D_val.png  used on input line 32.
 (pdftex.def)             Requested size: 300.29344pt x 75.0697pt.
 
 
 [17
 
-{C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}])
+{C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.png, id=369, 722.7pt x 216.81pt>
+File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.png Graphic file (type png)
+<use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.png>
+Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.png  used on input line 63.
+(pdftex.def)             Requested size: 250.24199pt x 75.0708pt.
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.png, id=370, 722.7pt x 216.81pt>
+File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.png Graphic file (type png)
+<use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.png>
+Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.png  used on input line 69.
+(pdftex.def)             Requested size: 250.24199pt x 75.0708pt.
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.png, id=371, 722.7pt x 216.81pt>
+File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.png Graphic file (type png)
+<use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.png>
+Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.png  used on input line 78.
+(pdftex.def)             Requested size: 250.24199pt x 75.0708pt.
 
-[18 <./plots/sol_1D_val.png>] (chapters/06_discussion.tex
+
+[18 <./plots/sol_1D_val.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.png>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.png, id=381, 722.7pt x 216.81pt>
+File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.png Graphic file (type png)
+<use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.png>
+Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.png  used on input line 84.
+(pdftex.def)             Requested size: 250.24199pt x 75.0708pt.
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.png, id=382, 722.7pt x 216.81pt>
+File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.png Graphic file (type png)
+<use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.png>
+Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.png  used on input line 93.
+(pdftex.def)             Requested size: 250.24199pt x 75.0708pt.
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.png, id=383, 722.7pt x 216.81pt>
+File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.png Graphic file (type png)
+<use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.png>
+Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.png  used on input line 99.
+(pdftex.def)             Requested size: 250.24199pt x 75.0708pt.
+)
+
+[19 <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.png>] (chapters/06_discussion.tex
 Chapter 5.
 )
 
-[19
+[20
 
 ] (chapters/07_FurtherWork.tex
 Chapter 6.
 )
 
-[20
+[21
 
 ] (main.bbl)
 
-[21
+[22
 
 ] (main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-16>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7AA91EF6219B1246B96232045C173D9F;5534.
+(rerunfilecheck)             Checksum: CCC3557AF1AA9D75E225F1228A8FC408;5642.
  ) 
 Here is how much of TeX's memory you used:
- 40059 strings out of 473899
- 890620 string characters out of 5726028
+ 40114 strings out of 473899
+ 893815 string characters out of 5726028
  1951960 words of memory out of 5000000
- 62089 multiletter control sequences out of 15000+600000
+ 62136 multiletter control sequences out of 15000+600000
  573431 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,18n,131p,780b,638s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 83i,18n,131p,775b,638s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on main.pdf (24 pages, 468033 bytes).
+Output written on main.pdf (25 pages, 584900 bytes).
 PDF statistics:
- 488 PDF objects out of 1000 (max. 8388607)
- 108 named destinations out of 1000 (max. 500000)
- 268 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 519 PDF objects out of 1000 (max. 8388607)
+ 116 named destinations out of 1000 (max. 500000)
+ 306 words of extra memory for PDF output out of 10000 (max. 10000000)
 
