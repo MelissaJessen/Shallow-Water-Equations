@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1727854276.29321 "main.aux" "main.bbl" "main" 1727854280.35614 0
+["bibtex main"] 1727859283.21273 "main.aux" "main.bbl" "main" 1727861060.57913 0
   "./bibl.bib" 1727699587 3683 b626fee1690af9048d39a9eff6452785 ""
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291864736 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1727854279 10570 e7b8c9f729224f1fb84a17e436b2fb91 "pdflatex"
+  "main.aux" 1727861059 10538 7ad66363e5142e0a5df4658d0c99d07f "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1727854276.62908 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1727854280.35685 0
+["pdflatex"] 1727861055.61929 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1727861060.5805 0
   "C:/Users/Matteo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1726259592 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Matteo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1726253485 24265805 34fa3860fca3f94c581d5d8735e54ea8 ""
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -300,23 +300,23 @@
   "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" 1727696101 3038 1668c1a46c2eeabbd3ad6f6b734a790c ""
   "chapters/00_introduction.tex" 1727103162 1474 9b7f9bc8ea30649c956767664778a272 ""
   "chapters/01_notation.tex" 1727700916 2311 6c408701c5e24e7f8bf8ce268a792e67 ""
-  "chapters/02_theory.tex" 1727337723 14823 272db05119bae8504193459fdf69f917 ""
+  "chapters/02_theory.tex" 1727858772 14967 ad74e61779c1f488f551afb92aea1a27 ""
   "chapters/03_spherical_coordinates.tex" 1726205008 53 5a9b3ed41af92ecc0d8fad2fbf4eb1fe ""
-  "chapters/04_Numerics.tex" 1727703149 4298 4c8620c450337be298ac5c27807e2654 ""
-  "chapters/05_Results.tex" 1727854268 3853 620e901d6867da85b0c6d8bcedea54f7 ""
+  "chapters/04_Numerics.tex" 1727858995 4287 f19379935167ede46df43c682f5c46fa ""
+  "chapters/05_Results.tex" 1727854643 3853 620e901d6867da85b0c6d8bcedea54f7 ""
   "chapters/06_discussion.tex" 1727103270 177 65ae4b92aed9712a5b7348c5551868b1 ""
   "chapters/07_FurtherWork.tex" 1727103265 655 1447fc099e6eebe59c06dbdb58db26af ""
-  "chapters/method.tex" 1727696077 716 df3d7931cc167832ccd1ece530e803dc ""
-  "chapters/riemann.tex" 1727696140 9520 9f01896cef8b83bbbdabd5ecbfb9fecf ""
+  "chapters/method.tex" 1727860800 797 c20ba328bd81bcfea4df2512e3d9e97b ""
+  "chapters/riemann.tex" 1727861054 9642 333c935b4e6765b48cab1ba26f87f961 ""
   "figs/DTU.png" 1726205009 71324 08d7a624ec2f9f1df696ed86b2d8893d ""
   "figs/water-column-bc.png" 1726205009 16217 eeb48ba7f34b5234290d5aacfecdeb71 ""
   "frontmatter/Frontpage.tex" 1726205008 1220 2a115251e5f965011ec1df6d3e0121e6 ""
   "frontmatter/abstract.tex" 1726205008 674 613c432d293466596a12112435d21705 ""
-  "main.aux" 1727854279 10570 e7b8c9f729224f1fb84a17e436b2fb91 "pdflatex"
-  "main.bbl" 1727854276 950 dac6ca5a0d84f751a6f9dd7eb52f7a1a "bibtex main"
-  "main.out" 1727854279 5642 ccc3557af1aa9d75e225f1228a8fc408 "pdflatex"
+  "main.aux" 1727861059 10538 7ad66363e5142e0a5df4658d0c99d07f "pdflatex"
+  "main.bbl" 1727859283 950 dac6ca5a0d84f751a6f9dd7eb52f7a1a "bibtex main"
+  "main.out" 1727861059 5473 7ed4bc86ea2e34dd92d7ae162bd39a6b "pdflatex"
   "main.tex" 1727696101 3038 1668c1a46c2eeabbd3ad6f6b734a790c ""
-  "main.toc" 1727854279 2885 cb6b39071b2aaa5f5dd36e24dad124c5 "pdflatex"
+  "main.toc" 1727861059 2853 11cf1c09885f52fed24c240feae555dd "pdflatex"
   "notes.tex" 1727427286 1498 af84f83183b04d922ab895db46777f21 ""
   "plots/sol_1D_val.png" 1726205009 39142 d53c9dcc5e346d31201c5f6dbf0cc2d9 ""
   (generated)

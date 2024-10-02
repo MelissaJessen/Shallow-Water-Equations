@@ -1,14 +1,8 @@
 \section{Riemann problem}
-The Riemann problem is a generalisation of the so-called dam-break problem.
-The difference is that in the Riemann problem the particle velocity components, $u_L, u_R, v_L$ and $v_R$, are allowed to be distinct from zero, whereas in the dam-break problem, they must be zero.
-
-We consider the case where the water depth is positive everywhere, i.e., what we call a wet bed.
-A dry bed is then the case if the water depth is zero in some cells.
+In the Riemann problem we distinguish between what we call a wet bed and a dry bed. 
+A wet bed is the case where the water depth is positive everywhere, whereas a dry bed is the case where the water depth is zero in some cells.
 The special Riemann problem where parts of the bed are dry is dealing with the so-called dry fronts or wet/dry fronts, which are challenging to handle numerically.
 We will leave these cases for now, and only consider the wet bed problems.
-
-Later we will consider approximate solutions to the Riemann problem, which are intended for local use in Godunov-type methods.
-But for now, we consider the exact Riemann solvers for wet bed problems.
 
 The Riemann problem is defined as the initial-value problem (IVP)
 \begin{align}\label{eq:Riemann_problem}
@@ -38,11 +32,16 @@ The vectors are
     \end{bmatrix}.
 \end{align*}
 
-In the Riemann problem the particle velocity components $u_L, u_R, v_L$ and $v_R$ are allowed to be distinct from zero, whereas in the dam-break problem, they must be zero.
+The Riemann problem is a generalisation of the so-called dam-break problem.
+The difference is that in the Riemann problem the particle velocity components, $u_L, u_R, v_L$ and $v_R$, are allowed to be distinct from zero, whereas in the dam-break problem, they must be zero.
 
+The Riemann problem can be solved both exactly and approximately.
+There are several approximate Riemann solvers, such as the HLL and Roe solvers, which are based on the approximate solution of the Riemann problem.
+We will consider some of these solvers later in the thesis.
 
-\subsection{Wave solution of the Riemann problem/something about waves..}
-Some background about waves.
+\subsection{Waves in the Riemann problem}
+To get a better understanding of the flow in shallow water, we provide some very short background information about waves.
+In particular the wave structure in the solution of the Riemann problem~\eqref{eq:Riemann_problem}.
 
 In the solution of the Riemann problem~\eqref{eq:Riemann_problem} there are four possible wave patterns outcomes, which are combinations of shock waves and rarefaction waves.
 In each case there are three waves, the left and right waves correspond to the one-dimensional SWE, and the middle wave aries from the $y-$momentum equation in~\eqref{eq:Riemann_problem} and is always a shear wave.
