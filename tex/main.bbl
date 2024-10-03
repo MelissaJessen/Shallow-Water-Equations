@@ -1,5 +1,11 @@
 \begin{thebibliography}{1}
 
+\bibitem{LeVeque2002}
+Randall~J. LeVeque.
+\newblock {\em Finite Volume Methods for Hyperbolic Problems}.
+\newblock Cambridge Texts in Applied Mathematics. Cambridge University Press,
+  2002.
+
 \bibitem{trento_course}
 Ilya Peshkov.
 \newblock Advanced numerical methods for environmental modeling.

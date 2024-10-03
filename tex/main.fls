@@ -596,8 +596,8 @@ INPUT chapters\07_FurtherWork.tex
 INPUT .\main.bbl
 INPUT .\main.bbl
 INPUT main.bbl
-INPUT C:\Users\Matteo\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrr7t.tfm
 INPUT C:\Users\Matteo\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
+INPUT C:\Users\Matteo\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrr7t.tfm
 INPUT C:\Users\Matteo\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\courier\pcrr7t.vf
 INPUT C:\Users\Matteo\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrr8r.tfm
 INPUT main.aux

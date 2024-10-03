@@ -1,11 +1,19 @@
 \chapter{Methodology}
-In this chapter we will describe the finite volume method for solving the shallow water equations (SWE) and the numerical implementation of the method in Python.
+In this chapter we will describe the Finite Volume Method (FVM) for solving the shallow water equations (SWE) and the numerical implementation of the method in Python.
+That is, we consider the FVM for nonlinear hyperbolic conservation laws, such as the SWE.
+The nonlinear case is obviously more challenging than the linear case, as stability and convergence theory are more difficult.
+We are interested in discountinuous solutions, which can capture shock waves and other discontinuities in the solution.
+
+Finite volume methods are closely related to finite difference methods, but they differs as they are based on the integral form of the conservation laws.
+
 In the Finite Volume Method, we discretize the domain into cells or control volumes.
 Then we solve the local Riemann problem at the cell interface to obtain the fluxes.
 Using the computed fluxes, we update the solution in each cell.
 This way, the FVM allows for discountinuous solutions, as we solve the Riemann problem at the cell interfaces.
 Therefore it is well suited for hyperbolic conservation laws, such as the shallow water equations.
-We will first define the Riemann problem, since it plays a crucial role in the FVM.
+We will first define the Riemann problem, since it plays a crucial role in the method.
+The methods described in this chapter are based on the book by LeVeque~\cite{LeVeque2002}.
+
 
 \input{chapters/riemann.tex}
 
