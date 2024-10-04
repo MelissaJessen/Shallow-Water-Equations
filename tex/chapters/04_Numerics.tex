@@ -7,12 +7,22 @@ This way, the FVM allows for discountinuous solutions, as we solve the Riemann p
 Therefore it is well suited for hyperbolic conservation laws, such as the shallow water equations.
 
 
-\subsection{Finite Volume Method for the 1D SWE}
+\subsection{Finite Volume Methods for the 1D SWE}
+We begin by considering finite volume methods for the SWE in one space dimension.
 Recall that the homogeneous 1D SWE are given by
 \begin{align*}
     h_t + {(hu)}_x &= 0, \\
     {(hu)}_t + {\left(hu^2 + \frac{1}{2}gh^2\right)}_x &= 0.
 \end{align*}
+
+A finite volume method for the 1D SWW is based on dividing the spatial domain into a set of intervals, also called grid cells.
+The value $\mathbf{U}_i^n$ approximates the cell average over the $i$-th cell at time $t_n$:
+\begin{align}
+    \mathbf{U}_i^n \approx \frac{1}{\Delta x} \int_{x_{i-1/2}}^{x_{i+1/2}} \mathbf{U}(x,t_n) dx,
+\end{align}
+where $\Delta x = x_{i+1/2} - x_{i-1/2}$ is the length of the cell.
+
+
 
 Explicit conservative formula 1D SWE
 \begin{align}\label{eq:explicit_conservative_1D_SWE}

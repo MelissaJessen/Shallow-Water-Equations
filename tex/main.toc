@@ -11,7 +11,8 @@
 \contentsline {subsection}{\numberline {2.2.3}Assumptions}{8}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}Integration over depth}{8}{subsection.2.2.4}%
 \contentsline {subsection}{\numberline {2.2.5}The SWE in vector form for 1D and 2D}{10}{subsection.2.2.5}%
-\contentsline {subsection}{\numberline {2.2.6}SWE in Spherical Coordinates}{10}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.6}The SWE in integral form}{10}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}SWE in Spherical Coordinates}{10}{subsection.2.2.7}%
 \contentsline {chapter}{\numberline {3}Methodology}{11}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Riemann problem}{11}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Waves in the Riemann problem}{12}{subsection.3.1.1}%
@@ -20,7 +21,7 @@
 \contentsline {subsubsection}{HLL solver}{13}{section*.4}%
 \contentsline {subsubsection}{Roe solver}{13}{section*.5}%
 \contentsline {section}{\numberline {3.2}Finite volume method for Shallow Water Equations}{14}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Finite Volume Method for the 1D SWE}{15}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.1}Finite Volume Methods for the 1D SWE}{15}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Finite Volume Method for the 1D SWE with source term}{15}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}Finite Volume Method for the 2D SWE}{15}{subsection.3.2.3}%
 \contentsline {subsection}{\numberline {3.2.4}Implementation of the FVM in 1D}{16}{subsection.3.2.4}%

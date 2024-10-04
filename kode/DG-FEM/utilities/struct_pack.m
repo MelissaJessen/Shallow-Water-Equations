@@ -1,0 +1,26 @@
+param.Np = Np;
+param.K  = K;
+param.rx = rx;
+param.Dr = Dr;
+param.nx = nx;
+% param.alpha = alpha;
+param.Fscale = Fscale;
+param.surfint = surfint;
+param.Mk = Mk;
+param.M = M;
+param.V = V;
+param.invV = invV;
+param.J    = J;
+% param.nx = nx;
+
+maps.vmapM = vmapM;
+maps.vmapP = vmapP;
+maps.vmapB = vmapB;
+maps.vmapI = vmapI;
+maps.vmapO = vmapO;
+maps.mapB = mapB;
+maps.mapI = mapI;
+maps.mapO = mapO;
+maps.EToE = EToE;
+maps.EToF = EToF;
+maps.EToV = EToV;

@@ -279,6 +279,12 @@ where
 \end{align*}
 %These equations are also known as the Saint Venant equations.
 
-
+\subsection{The SWE in integral form}
+Often it is more convenient to work with the integral form of the SWE, as conservation laws are based on the integral form.
+The integral form of the SWE in 1D is given by
+\begin{align}\label{eq:integral_form_1D}
+    \frac{\text{d}}{\text{d}x} \int_{x_1}^{x_2} \mathbf{U}(x,t) \text{ d}x = \mathbf{F}(\mathbf{U}(x_1, t)) - \mathbf{F}(\mathbf{U}(x_2, t)),
+\end{align}
+meaning that the rate of change of the integral over a domain is equal to the flux through the boundaries of the domain.
 
 
