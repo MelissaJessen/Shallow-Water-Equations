@@ -15,7 +15,7 @@ For example, the $3 \times 3$ identity matrix is given by:
 \end{align*}
 We use the following notation for partial derivatives:
 \begin{align*}
-   f_x =  \frac{\partial f}{\partial x} = \partial x f, \quad f_y = \frac{\partial f}{\partial y} = \partial y f, \quad f_z = \frac{\partial f}{\partial z} = \partial z f.
+   f_x =  \frac{\partial f}{\partial x}, \quad f_y = \frac{\partial f}{\partial y}, \quad f_z = \frac{\partial f}{\partial z}.
 \end{align*}
 The gradient operator, denoted by $\nabla$, gives the gradient of a scalar function $f$ as a vector:
 \begin{align*}
@@ -25,15 +25,23 @@ The gradient operator, denoted by $\nabla$, gives the gradient of a scalar funct
         \frac{\partial f}{\partial z}
     \end{bmatrix}.
 \end{align*}
-The divergence operator, represented as $\nabla \cdot $, gives the divergence of a vector $\mathbf{a}$ as:
-\begin{align*}
-    \nabla \cdot \mathbf{a} = \frac{\partial a_1}{\partial x} + \frac{\partial a_2}{\partial y} + \frac{\partial a_3}{\partial z}.
-\end{align*}
 Given two vectors $\mathbf{a} = \begin{bmatrix}
     a_1 & a_2 & a_3
-\end{bmatrix}$ and $\mathbf{b} = \begin{bmatrix}
+\end{bmatrix}^\top $ and $\mathbf{b} = \begin{bmatrix}
     b_1 & b_2 & b_3
-\end{bmatrix}$, their tensor product, denoted as $\mathbf{a} \otimes \mathbf{b}$, is a matrix where each element is the product of the elements of $\mathbf{a}$ and $\mathbf{b}$, i.e.,
+\end{bmatrix}^\top$, the dot product of $\mathbf{a}$ and $\mathbf{b}$ is given by:
+\begin{align*}
+    \mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2 + a_3 b_3.
+\end{align*}
+The dot product can also be written as a matrix product:
+\begin{align*}
+    \mathbf{a} \cdot \mathbf{b} = \mathbf{a}^\top \mathbf{b}.
+\end{align*}
+The divergence operator, represented as $\nabla \cdot $, gives the divergence of a vector $\mathbf{a}$ as:
+\begin{align*}
+    \nabla \cdot \mathbf{a} = \frac{\partial a_1}{\partial x} + \frac{\partial a_2}{\partial y} + \frac{\partial a_3}{\partial z} = {a_1}_x + {a_2}_y + {a_3}_z.
+\end{align*}
+The tensor product of two vectors $\mathbf{a}$ and $\mathbf{b}$, denoted as $\mathbf{a} \otimes \mathbf{b}$, is a matrix where each element is the product of the elements of $\mathbf{a}$ and $\mathbf{b}$, i.e.,
 \begin{align*}
     \mathbf{a} \otimes \mathbf{b} = \begin{bmatrix}
         a_1 b_1 & a_1 b_2 & a_1 b_3 \\

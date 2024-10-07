@@ -5,7 +5,8 @@ In this chapter we will derive the shallow water equations (SWE) in conservative
 
 \section{The SWE with conservative variables}
 In this section we will derive the shallow water equations (SWE) in conservative form.
-The derivation follows four steps: First we consider the conservation laws for mass and momentum, then we consider the boundary conditions for a free surface problem, and make some neccessary assumptions and finally we use the boundary conditions to integrate the conservation laws over depth.
+The derivation follows four steps: First we consider the conservation laws for mass and momentum, and then we consider the boundary conditions for a free surface problem.
+Afterwards we make some neccessary assumptions and finally we use the boundary conditions to integrate the conservation laws over depth.
 The derivation follows the methods outlined in~\cite{Toro2001-Shock} and~\cite{Vreugdenhil1994}.
 
 \subsection{Conservation laws}
@@ -14,10 +15,11 @@ The conservation laws for mass and momentum can be expressed generally as follow
     \rho_t + \nabla \cdot (\rho \mathbf{v}) = 0, \label{eq:mass_conservation} \\
     {(\rho \mathbf{v})}_t + \nabla \cdot (\rho \mathbf{v} \otimes \mathbf{v} + p \mathbf{I} - \mathbf{T}) = \rho \mathbf{g}, \label{eq:momentum_conservation}
 \end{align}
-where $\rho$ is the fluid density, $\mathbf{v} = \begin{bmatrix} u & v & w \end{bmatrix} $ is the fluid velocity in the $x, y$ and $z-$direction respectively;
+where $\rho$ is the fluid density, $\mathbf{v} = \begin{bmatrix} u & v & w \end{bmatrix}^\top$ is the fluid velocity in the $x, y$ and $z-$direction respectively;
 $p$ is the pressure, $\mathbf{I}$ is the identity matrix, and vector $\mathbf{g} = \begin{bmatrix}
     g_1 & g_2 & g_3
-\end{bmatrix}$ represents body forces including gravity.
+\end{bmatrix}^\top$ represents body forces including gravity.
+In these equations, the density $\rho$ and the pressure $p$ are dependent of $x, y, z$ and $t$, but later we will introduce some assumptions that simplify the equations.
 The matrix $\mathbf{T}$ is the viscous stress tensor, given by
 \begin{align*}
     \mathbf{T} = \begin{bmatrix}
@@ -26,7 +28,7 @@ The matrix $\mathbf{T}$ is the viscous stress tensor, given by
         \tau_{zx} & \tau_{zy} & \tau_{zz}
     \end{bmatrix}.
 \end{align*}
-However, in this project the viscous stress tensor $\mathbf{T}$ is neglected.
+However, in this project the viscous stress tensor $\mathbf{T}$ is neglected, since we assume the function $\tau(x,y,z)$ is constant.
 The matrix $\mathbf{v} \otimes \mathbf{v}$ represents the tensor product of the velocity vector $\mathbf{v}$ with itself, i.e.,
 \begin{align*}
     \mathbf{v} \otimes \mathbf{v} = \begin{bmatrix}
@@ -35,15 +37,50 @@ The matrix $\mathbf{v} \otimes \mathbf{v}$ represents the tensor product of the 
         wu & wv & w^2
     \end{bmatrix}.
 \end{align*}
-Note that $\mathbf{v} \otimes \mathbf{v} = \mathbf{v}^\top \mathbf{v}$, allowing us to rewrite~\eqref{eq:momentum_conservation} as 
+Note that $\mathbf{v} \otimes \mathbf{v} = \mathbf{v} \mathbf{v}^\top$.
+Putting this together, we can rewrite~\eqref{eq:momentum_conservation} as
 \begin{align}\label{eq:momentum_conservation_simplified}
-    {(\rho \mathbf{v})}_t + \nabla \cdot (\rho \mathbf{v}^\top \mathbf{v} + p \mathbf{I}) - \rho \mathbf{g} = 0.
+    {(\rho \mathbf{v})}_t + \nabla \cdot (\rho \mathbf{v} \mathbf{v}^\top  + p \mathbf{I}) - \rho \mathbf{g} = 0.
 \end{align}
-For incompressible fluids, the fluid density $\rho$ is independent of the pressure $p$.
-Although the density is not constant, it is assumed to depend only on temperature and salinity.
-Therefore, the equations~\eqref{eq:mass_conservation} and~\eqref{eq:momentum_conservation_simplified}, splitted in $x, y$ and $z-$directions, simplify to 
+In this project we consider incompressible fluids, meaning that the fluid density $\rho$ is independent of the pressure $p$.
+We also assume that the fluid density only depends on temperature and salinity, and thus is independent of $t, x, y$ and $z$.
+Additionally, we assume $\rho \neq 0$.
+Using these assumptions and the product rule for differentiation, we can simplify the mass conservation equation~\eqref{eq:mass_conservation} to
+\begin{align*}
+    \rho_t + \rho(u_x + v_y + w_z) + u \rho_x + v \rho_y + w \rho_z = 0,
+\end{align*}
+implying that
 \begin{align}
-    u_x + v_y + w_z &= 0 , \label{eq:mass_conservation_incompressible} \\
+    u_x + v_y + w_z = 0. \label{eq:mass_conservation_incompressible}
+\end{align}
+Applying the divergence operator $\nabla \cdot$, the momentum conservation equation~\eqref{eq:momentum_conservation_simplified} can be written out as:
+\begin{align}\label{eq:momentum_conservation_expanded}
+    \rho_t \mathbf{v} + \rho \mathbf{v}_t + \rho \begin{bmatrix}
+        {(u^2 + p)}_x + {(uv)}_y + {(uw)}_z \\
+        {(vu)}_x + {(v^2 + p)}_y + {(vw)}_z \\
+        {(wu)}_x + {(wv)}_y + {(w^2 + p)}_z 
+    \end{bmatrix}
+    - \rho \mathbf{g} = 0.
+\end{align}
+We neglect all body forces in $\mathbf{g}$, expect the gravitational force in the $z-$direction, i.e., $\mathbf{g} = \begin{bmatrix} 0 & 0 & -g \end{bmatrix}$, where $g$ is the gravity acceleration, and use the product rule in~\eqref{eq:momentum_conservation_expanded}.
+Hence we obtain
+\begin{align}\label{eq:momentum_conservation_expanded_final}
+    \rho \begin{bmatrix}
+        u_t \\ v_t \\ w_t
+    \end{bmatrix}
+    + \rho \begin{bmatrix}
+        p_x + u u_x + v u_y + w u_z + u(u_x + v_y + w_z) \\
+        p_y + u v_x + v v_y + w v_z + v(u_x + v_y + w_z) \\
+        p_z + u w_x + v w_y + w w_z + w(u_x + v_y + w_z) 
+    \end{bmatrix}
+    - \rho \begin{bmatrix}
+        0 \\ 0 \\ -g
+    \end{bmatrix} = 0.
+\end{align}
+We apply~\eqref{eq:mass_conservation_incompressible} to~\eqref{eq:momentum_conservation_expanded_final} to remove some terms, we move the pressure terms to the right hand side, and we divide by $\rho$.
+Putting it all together, the mass equation~\eqref{eq:mass_conservation} and the momentum equation~\eqref{eq:momentum_conservation_simplified}, split in $x, y$ and $z-$directions, simplify to 
+\begin{align}
+    u_x + v_y + w_z &= 0 ,  \\
     u_t + u u_x + v u_y + w u_z &= - \frac{1}{\rho} p_x , \label{eq:momentum_conservation_x} \\
     v_t + u v_x + v v_y + w v_z &= - \frac{1}{\rho} p_y , \label{eq:momentum_conservation_y} \\
     w_t + u w_x + v w_y + w w_z &= - \frac{1}{\rho} p_z - g. \label{eq:momentum_conservation_z}
@@ -69,7 +106,7 @@ The following illustration helps to visualize the setup:
     \includegraphics[width=0.5\textwidth]{figs/water-column-bc.png}
     \caption{Illustration of a water column with a free surface.}\label{fig:water_column_bc}
 \end{figure}
-We impose boundary conditions at the bottom and the free surface, adressing both kinematic and dynamical conditions.
+We impose boundary conditions at the bottom and at the free surface, adressing both kinematic and dynamical conditions.
 Assume that a boundary is described by the function 
 \begin{align*}
     \psi(x,y,z,t) = 0.
@@ -100,7 +137,7 @@ We assume that the pressure at the free surface is equal to the pressure in the 
 Since absolute pressure levels are irrelevant (we are primarily concerned with pressure differences), we set the pressure at the free surface to zero.
 This leads to the following expression for the pressure at the free surface:
 \begin{align}\label{eq:pressure_free_surface}
-    p(x,y,z,t)|_{z = s(x,y)} = p_{atm} = 0.
+    p(x,y,z,t)|_{z = s(x,y)} = 0.
 \end{align}
 This condition, known as the dynamical condition, relates to the forces acting on the boundaries of the fluid.
 
@@ -118,7 +155,7 @@ Recall, that mathematically, the total derivative of $w$ wrt. $t$ is given by
     \frac{\text{d} w}{\text{d} t} &= \frac{\partial w}{\partial t} + \frac{\text{d} x}{\text{d} t} \frac{\partial w}{\partial x} + \frac{\text{d} y}{\text{d} t}  \frac{\partial w}{\partial y} + \frac{\text{d} z}{\text{d} t}  \frac{\partial w}{\partial z} \\
     &= w_t + u w_x + u w_y + w w_z .
 \end{align*}
-Applying $\text{d }w/\text{d }t = 0$ in the $z-$momentum conservation equation~\eqref{eq:momentum_conservation_z} simplifies it to
+Applying $\frac{\text{d}w}{\text{d}t} = 0$ in the $z-$momentum conservation equation~\eqref{eq:momentum_conservation_z} simplifies it to
 \begin{align*}
     p_z = -\rho g.
 \end{align*}
