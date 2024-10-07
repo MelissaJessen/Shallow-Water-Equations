@@ -79,12 +79,16 @@ Hence we obtain
 \end{align}
 We apply~\eqref{eq:mass_conservation_incompressible} to~\eqref{eq:momentum_conservation_expanded_final} to remove some terms, we move the pressure terms to the right hand side, and we divide by $\rho$.
 Putting it all together, the mass equation~\eqref{eq:mass_conservation} and the momentum equation~\eqref{eq:momentum_conservation_simplified}, split in $x, y$ and $z-$directions, simplify to 
-\begin{align}
-    u_x + v_y + w_z &= 0 ,  \\
-    u_t + u u_x + v u_y + w u_z &= - \frac{1}{\rho} p_x , \label{eq:momentum_conservation_x} \\
-    v_t + u v_x + v v_y + w v_z &= - \frac{1}{\rho} p_y , \label{eq:momentum_conservation_y} \\
-    w_t + u w_x + v w_y + w w_z &= - \frac{1}{\rho} p_z - g. \label{eq:momentum_conservation_z}
-\end{align}
+\begin{equation}\label{eq:momentum_conservation_all}
+    \left.
+    \begin{aligned}
+        u_x + v_y + w_z &= 0, \\
+        u_t + u u_x + v u_y + w u_z &= - \frac{1}{\rho} p_x, \\
+        v_t + u v_x + v v_y + w v_z &= - \frac{1}{\rho} p_y, \\
+        w_t + u w_x + v w_y + w w_z &= - \frac{1}{\rho} p_z - g.
+    \end{aligned}
+    \right\}
+\end{equation}
 
 
 \subsection{Boundary conditions}
@@ -107,7 +111,7 @@ The following illustration helps to visualize the setup:
     \caption{Illustration of a water column with a free surface.}\label{fig:water_column_bc}
 \end{figure}
 We impose boundary conditions at the bottom and at the free surface, adressing both kinematic and dynamical conditions.
-Assume that a boundary is described by the function 
+To describe the boundaries mathematically, we introduce a boundary function $\psi(x,y,z,t)$ that is zero on a boundary:
 \begin{align*}
     \psi(x,y,z,t) = 0.
 \end{align*}
@@ -120,7 +124,17 @@ and for the bottom, it is described by
     \psi(x,y,z,t) \equiv z - b(x,y) = 0.
 \end{align}
 In the kinematic condition, we assume that fluid particles on the boundary remain on the boundary over time.
-It is given by
+Mathematically this is expressed as
+\begin{align*}
+    \frac{\text{d} }{\text{d} t} \psi(x,y,z,t) = 0.
+\end{align*}
+Recall, that $\frac{\partial \psi}{\partial t}$ is the partial derivative of $\psi$ with respect to $t$, while the total derivate $\frac{\text{d} \psi}{\text{d} t}$ accounts for both the direct change of $\psi$ with respect to $t$ and the changes due to the movement of the fluid in the $x, y$ and $z$ directions.
+Hence, the total derivative of $\psi$ wrt. $t$ is given by
+\begin{align*}
+    \frac{\text{d} \psi}{\text{d} t} &= \frac{\partial \psi}{\partial t} + \frac{\text{d} x}{\text{d} t} \frac{\partial \psi}{\partial x} + \frac{\text{d} y}{\text{d} t}  \frac{\partial \psi}{\partial y} + \frac{\text{d} z}{\text{d} t}  \frac{\partial \psi}{\partial z}.
+\end{align*}
+We see that $\frac{\text{d}x}{\text{d}t}$ denotes the velocity in the $x-$direction, i.e., $u$, and correspondingly for $y$ and $z$.
+Thus, the kinematic condition is given by
 \begin{align}\label{eq:kinematic_condition}
     \frac{\text{d} }{\text{d} t} \psi(x,y,z,t) = \psi_t + u \psi_x + v \psi_y + w \psi_z = 0.
 \end{align}
@@ -130,14 +144,14 @@ Applying this to the free surface by substituting~\eqref{eq:psi_free_surface} in
 \end{align}
 Similarly, for the bottom, substitung~\eqref{eq:psi_bottom} into the kinematic condition~\eqref{eq:kinematic_condition} gives
 \begin{align}\label{eq:kinematic_condition_bottom}
-    (b_t + u b_x + v b_y - w)|_{z=b} = 0.
+    (u b_x + v b_y - w)|_{z=b} = 0.
 \end{align}
 The dynamical condition is related to the pressure distribution at the free surface.
 We assume that the pressure at the free surface is equal to the pressure in the air above the surface, that is, the atmospheric pressure.
 Since absolute pressure levels are irrelevant (we are primarily concerned with pressure differences), we set the pressure at the free surface to zero.
 This leads to the following expression for the pressure at the free surface:
 \begin{align}\label{eq:pressure_free_surface}
-    p(x,y,z,t)|_{z = s(x,y)} = 0.
+    p(x,y,z,t)|_{z = s(x,y,t)} = 0.
 \end{align}
 This condition, known as the dynamical condition, relates to the forces acting on the boundaries of the fluid.
 
@@ -146,29 +160,28 @@ To derive the SWE it is neccessary to make some assumptions.
 The shallow water equations are an approximation to the full free-surface problem and result from the assumption that the vertical compononent of the acceleration is negligible.
 We begin by assuming that the vertical acceleration, represented by the total derivate of the vertical velocity component $w$ with respect to time, is negligible.
 This assumption leads to the condition
-\begin{align*}%\label{eq:assumption_dwdt}
+\begin{align*}
     \frac{\text{d} w}{\text{d} t} = w_t + uw_x + vw_y + ww_z = 0.
 \end{align*}
-Here, $\frac{\partial w}{\partial t}$ is the partial derivative of $w$ with respect to $t$, while the total derivate $\frac{\text{d} w}{\text{d} t}$ accounts for both the direct change of $w$ with $t$ and the changes due to the movement of the fluid in the $x, y$ and $z$ directions.
-Recall, that mathematically, the total derivative of $w$ wrt. $t$ is given by
-\begin{align*}
-    \frac{\text{d} w}{\text{d} t} &= \frac{\partial w}{\partial t} + \frac{\text{d} x}{\text{d} t} \frac{\partial w}{\partial x} + \frac{\text{d} y}{\text{d} t}  \frac{\partial w}{\partial y} + \frac{\text{d} z}{\text{d} t}  \frac{\partial w}{\partial z} \\
-    &= w_t + u w_x + u w_y + w w_z .
-\end{align*}
-Applying $\frac{\text{d}w}{\text{d}t} = 0$ in the $z-$momentum conservation equation~\eqref{eq:momentum_conservation_z} simplifies it to
+Applying $\frac{\text{d}w}{\text{d}t} = 0$ in the $z-$momentum conservation equation~\eqref{eq:momentum_conservation_all} simplifies it to
 \begin{align*}
     p_z = -\rho g.
 \end{align*}
+By using properties of an integral, together with~\eqref{eq:pressure_free_surface} we get
+\begin{align*}
+    \int_{b(x,y)}^z - \rho g \text{ d}t + \int_z^{s(x,y,t)} - \rho g \text{ d}t = \int_{b(x,y)}^{s(x,y,t)} - \rho g \text{ d}t
+    = p|_{z = s(x,y,t)} = 0.
+\end{align*}
 This implies the pressure distribution follows
 \begin{align}\label{eq:pressure_distribution}
-    p = \int_z^s - \rho g \text{ d} z = \rho g (s - z),
+    p = \int_{b(x,y)}^z - \rho g \text{ d} = \int_z^{s(x,y,t)} \rho g \text{ d} z = \rho g (s - z),
 \end{align}
 where $s$ is the surface height.
 Differentiating~\eqref{eq:pressure_distribution} with respect to $x$ and $y$ yields
 \begin{align*}%\label{eq:pressure_distribution_x_y}
     p_x = \rho g s_x, \quad p_y = \rho g s_y.
 \end{align*}
-Substituting these expressions into the $x-$ and $y-$momentum conservation equations~\eqref{eq:momentum_conservation_x} and~\eqref{eq:momentum_conservation_y} leads to 
+Substituting these expressions into the $x-$ and $y-$momentum conservation equations~\eqref{eq:momentum_conservation_all} leads to 
 \begin{align}\label{eq:momentum_conservation_x_simplified}
     u_t + u u_x + v u_y + w u_z = -g s_x, 
 \end{align}
@@ -177,7 +190,7 @@ and
     v_t + u v_x + v v_y + w v_z = -g s_y.
 \end{align}
 These are the simplified momentum equations for the shallow water equations.
-We realize that $p_x$ and $p_y$ are both independent of $z$, implying that $\text{d }u/ \text{d }t$ and $\text{d }v/ \text{d }t$ are also independent of $z$.
+We realize that $p_x$ and $p_y$ are both independent of $z$, implying that $\frac{\text{d }u}{\text{d }t} $ and $\frac{\text{d }v}{\text{d }t} $are also independent of $z$.
 Hence $u_z = v_z = 0$, implying that~\eqref{eq:momentum_conservation_x_simplified} and~\eqref{eq:momentum_conservation_y_simplified} can be simplified to
 \begin{align}\label{eq:momentum_conservation_x_final}
     u_t + u u_x + v u_y = -g s_x, 
@@ -190,7 +203,7 @@ and
 
 \subsection{Integration over depth}
 The next step in deriving the SWE is to integrate the equations over the vertical direction.
-We integrate the mass conservation equation~\eqref{eq:mass_conservation_incompressible} and the momentum conservation equations~\eqref{eq:momentum_conservation_x},~\eqref{eq:momentum_conservation_y} from the bottom, $z = b(x,y)$ to the free surface, $z = s(x,y,t)$.
+We integrate the mass conservation equation~\eqref{eq:mass_conservation_incompressible} and the $x$ and $y-$momentum conservation equations in~\eqref{eq:momentum_conservation_all}, from the bottom, $z = b(x,y)$ to the free surface, $z = s(x,y,t)$.
 Starting with the mass conservation equation~\eqref{eq:mass_conservation_incompressible}, we have
 \begin{align*}
     \int_{b}^{s} u_x + v_y + w_z \text{ d} z = 0,
@@ -204,30 +217,37 @@ We will use Leibniz's integral rule~\cite{Leibniz}, which is stated as follows:
     \frac{\text{d}}{\text{d} x} \int_{a(x)}^{b(x)} f(x,t) \text{ d} t
     = \int_{a(x)}^{b(x)} \frac{\partial }{\partial x} f(x, t) \text{ d} t + f(x, b(x)) \frac{\text{d}}{\text{d} x} b(x) - f(x, a(x)) \frac{\text{d}}{\text{d} x} a(x),
 \end{align}
-to integrate the first two terms on the right hand side in~\eqref{eq:mass_conservation_integrated}, which yields
-\begin{align*}
-    \int_{b}^{s} u_x \text{d} z =  \frac{\text{d}}{\text{d} x}  \int_{b}^{s} u \text{ d} z  - u|_{z = s} \frac{\text{d} s}{\text{d} x} + u|_{z = b} \frac{\text{d} b}{\text{d} x}
-\end{align*}
-and 
-\begin{align*}
-    \int_{b}^{s} v_y \text{ d} z =  \frac{\text{d}}{\text{d} y}  \int_{b}^{s} v \text{ d} z  - v|_{z = s} \frac{\text{d} s}{\text{d} y} + u|_{z = b} \frac{\text{d} b}{\text{d} y}.
-\end{align*}
-Note that since a change in $x$ does not affect the $y$-component of the bottom or surface, we have that $\text{d} s/\text{d} x = s_x$ and $\text{d} b / \text{d} x = b_x$, and correspondingly for $s_y$ and $b_y$.
-Likewise we can substitute $\frac{\text{d}}{\text{dx}}$ with $\frac{\partial}{\partial x}$ in the integrals, since the integrals are with respect to $z$.
-Inserting these results in the above equations gives
-\begin{align}
-    \int_{b}^{s} u_x \text{ d} z =  \frac{\partial}{\partial x}  \int_{b}^{s} u \text{ d} z  - u|_{z = s} s_x + u|_{z = b} b_x
+to integrate the first two terms in~\eqref{eq:mass_conservation_integrated}, which yields
+\begin{align}\label{eq:leibniz_rule_applied}
+    \begin{gathered}
+        \left.
+        \begin{aligned}
+        \int_{b}^{s} u_x \, \text{d} z &=  \frac{\text{d}}{\text{d} x}  \int_{b}^{s} u \, \text{d} z  - u|_{z = s} \frac{\text{d} s}{\text{d} x} + u|_{z = b} \frac{\text{d} b}{\text{d} x}, \\
+        \int_{b}^{s} v_y \, \text{d} z &=  \frac{\text{d}}{\text{d} y}  \int_{b}^{s} v \, \text{d} z  - v|_{z = s} \frac{\text{d} s}{\text{d} y} + v|_{z = b} \frac{\text{d} b}{\text{d} y}.
+        \end{aligned}
+        \right\}
+    \end{gathered}
 \end{align}
-and 
-\begin{align}
-    \int_{b}^{s} v_y \text{ d} z = \frac{\partial}{\partial y}  \int_{b}^{s} v \text{ d} z  - v|_{z = s} s_y + u|_{z = b} b_y.
+Note that since a change in $x$ does not affect the $y$-component of the bottom or surface, we have that $\frac{\text{d} s}{\text{d} x} = s_x$ and $ \frac{\text{d} b}{\text{d} x} = b_x$, and correspondingly for $s_y$ and $b_y$.
+Likewise we can substitute $\frac{\text{d}}{\text{dx}}$ with $\frac{\partial}{\partial x}$ in the integrals, since the integrals are with respect to $z$, and $u$ and $v$ are independent of $z$.
+Inserting these results in~\eqref{eq:leibniz_rule_applied} gives
+\begin{align}\label{eq:leibniz_rule_applied_final}
+    \begin{gathered}
+        \left.
+            \begin{aligned}
+                \int_{b}^{s} u_x \text{ d} z &=  \frac{\partial}{\partial x}  \int_{b}^{s} u \text{ d} z  - u|_{z = s} s_x + u|_{z = b} b_x, \\
+                \int_{b}^{s} v_y \text{ d} z &= \frac{\partial}{\partial y}  \int_{b}^{s} v \text{ d} z  - v|_{z = s} s_y + v|_{z = b} b_y.
+            \end{aligned}
+        \right\}
+    \end{gathered}
 \end{align}
-Inserting these results in~\eqref{eq:mass_conservation_integrated} gives
+We can now insert the integrals~\eqref{eq:leibniz_rule_applied_final} into the integrated mass conservation equation~\eqref{eq:mass_conservation_integrated} to get
 \begin{align}\label{eq:mass_conservation_integrated_final}
     \frac{\partial}{\partial x}  \int_{b}^{s} u \text{ d} z  - u|_{z = s} s_x + u|_{z = b} b_x
-    + \frac{\partial}{\partial y}  \int_{b}^{s} v \text{ d} z  - v|_{z = s} s_y + u|_{z = b} b_y
+    + \frac{\partial}{\partial y}  \int_{b}^{s} v \text{ d} z  - v|_{z = s} s_y + v|_{z = b} b_y
     + w|_{z = s} - w|_{z = b} = 0.
 \end{align}
+To simplify this equation further, we consider the boundary conditions.
 From~\eqref{eq:kinematic_condition_bottom} we have
 \begin{align}
     w|_{z = b} = (u b_x + v b_y)|_{z = b},
@@ -254,18 +274,18 @@ When integrating the momentum equations~\eqref{eq:momentum_conservation_x_final}
 We multiply~\eqref{eq:SWE_1} with $u$ and $v$ respectively, and add the two equations to~\eqref{eq:x_momentum} and~\eqref{eq:y_momentum} correspondingly.
 Recall that $s = h + b$. 
 By using the product rule for differentiation and collecting terms, we obtain the momentum equations in conservative form:
-\begin{align*}
+\begin{align}\label{eq:SWE_2}
     {(hu)}_t + {(hu^2 + \frac{1}{2}gh^2)}_x + {(huv)}_y = -gh b_x,
-\end{align*}
+\end{align}
 and 
-\begin{align*}
+\begin{align}\label{eq:SWE_3}
     {(hv)}_t + {(huv)}_x + {(hv^2 + \frac{1}{2}gh^2)}_y = -gh b_y.
-\end{align*}
-
+\end{align}
+The three partial differential equations in~\eqref{eq:SWE_1},~\eqref{eq:SWE_2} and~\eqref{eq:SWE_3} are the shallow water equations in conservative form.
 
 
 \subsection{The SWE in vector form for 1D and 2D}
-The SWE, which consist of three partial differential equations, can be written in differential conservation law form as a vector equation
+The SWE can also be written in differential conservation law form as a vector equation
 \begin{align}
     \mathbf{U}_t + \mathbf{F(U)}_x + \mathbf{G(U)}_y = \mathbf{S(U)},
 \end{align}
@@ -293,11 +313,17 @@ where
         s_1 \\
         s_2 \\
         s_3
-    \end{bmatrix}.
+    \end{bmatrix} = 
+    \begin{bmatrix}
+        0 \\
+        -gh b_x \\
+        -gh b_y
+    \end{bmatrix}
+    .
 \end{align*}
 We call $\mathbf{U}$ the vector of conserved variables, $\mathbf{F(U)}$ and $\mathbf{G(U)}$ the flux vectors in the $x$ and $y$ direction, and $\mathbf{S(U)}$ the source term vector.
-
-In this project, we will begin by considering the homogenneous one-dimensional case, where the flow is only in the $x$-direction:
+In this project, we will begin by considering the homogenneous one-dimensional case of the shallow water equations.
+The vector form of the SWE in 1D is then given by
 \begin{align*}
     \mathbf{U}_t + {\mathbf{F(U)}}_x = 0,
 \end{align*}
@@ -314,7 +340,7 @@ where
         hu^2 + \frac{1}{2}gh^2
     \end{bmatrix}.
 \end{align*}
-%These equations are also known as the Saint Venant equations.
+In the 1D case, we only consider flow in the $x$-direction.
 
 \subsection{The SWE in integral form}
 Often it is more convenient to work with the integral form of the SWE, as conservation laws are based on the integral form.
