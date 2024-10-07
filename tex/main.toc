@@ -22,8 +22,8 @@
 \contentsline {subsubsection}{Roe solver}{14}{section*.5}%
 \contentsline {section}{\numberline {3.2}Finite volume method for Shallow Water Equations}{15}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Finite Volume Methods for the 1D SWE}{16}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Finite Volume Method for the 1D SWE with source term}{16}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Finite Volume Method for the 2D SWE}{16}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.2}Finite Volume Method for the 1D SWE with source term}{17}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Finite Volume Method for the 2D SWE}{17}{subsection.3.2.3}%
 \contentsline {subsection}{\numberline {3.2.4}Implementation of the FVM in 1D}{17}{subsection.3.2.4}%
 \contentsline {subsection}{\numberline {3.2.5}Godunov's Method}{17}{subsection.3.2.5}%
 \contentsline {subsection}{\numberline {3.2.6}Implementation of the FVM in 2D}{17}{subsection.3.2.6}%

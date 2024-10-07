@@ -528,6 +528,13 @@ INPUT chapters\riemann.tex
 INPUT .\chapters\04_Numerics.tex
 INPUT .\chapters\04_Numerics.tex
 INPUT chapters\04_Numerics.tex
+INPUT C:\Users\Matteo\Shallow-Water-Equations\figs\FVM_1D_grid.png
+INPUT C:\Users\Matteo\Shallow-Water-Equations\figs\FVM_1D_grid.png
+INPUT C:\Users\Matteo\Shallow-Water-Equations\figs\FVM_1D_grid.png
+INPUT C:\Users\Matteo\Shallow-Water-Equations\figs\FVM_1D_grid.png
+INPUT C:\Users\Matteo\Shallow-Water-Equations\figs\FVM_1D_grid.png
+INPUT C:\Users\Matteo\Shallow-Water-Equations\figs\FVM_1D_grid.png
+INPUT C:\Users\Matteo\Shallow-Water-Equations\figs\FVM_1D_grid.png
 INPUT .\chapters\05_Results.tex
 INPUT .\chapters\05_Results.tex
 INPUT chapters\05_Results.tex

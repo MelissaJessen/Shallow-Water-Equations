@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1728308749.10869 "main.aux" "main.bbl" "main" 1728308754.48257 0
+["bibtex main"] 1728309630.26434 "main.aux" "main.bbl" "main" 1728309658.46333 0
   "./bibl.bib" 1728308748 4003 c326046705fdfea14b9b357b93d443bc ""
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291864736 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "main.aux" 1728308753 11165 05464cde0f31e38bb550853cb8d523c5 "pdflatex"
+  "main.aux" 1728309656 11491 898c4918f36e92ae30a4f6b3a0d3d6c6 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1728308749.72509 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1728308754.48391 0
+["pdflatex"] 1728309653.60162 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1728309658.46405 0
   "C:/Users/Matteo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1726259592 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Matteo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1726253485 24265805 34fa3860fca3f94c581d5d8735e54ea8 ""
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -292,6 +292,7 @@
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/tex/latex/wrapfig/wrapfig.sty" 1044403200 26220 3701aebf80ccdef248c0c20dd062fea9 ""
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
+  "C:/Users/Matteo/Shallow-Water-Equations/figs/FVM_1D_grid.png" 1728035440 15094 515a155e3696dd74cd6f7b988e99cd79 ""
   "C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.png" 1728038353 40014 3f26cea63305c6e428d5016548d99d70 ""
   "C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.png" 1728038352 17525 b8ec785d026ba646b2aa6d9bab756a43 ""
   "C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.png" 1728038356 36713 0ad71d51b4f6a21e35f10cd0fa3469e1 ""
@@ -303,7 +304,7 @@
   "chapters/01_notation.tex" 1728285960 2658 7ae146e5a142641ffe9db9c577f9c38c ""
   "chapters/02_theory.tex" 1728308501 19021 4a4da1e6de5d8236780229bb92bbb1da ""
   "chapters/03_spherical_coordinates.tex" 1726205008 53 5a9b3ed41af92ecc0d8fad2fbf4eb1fe ""
-  "chapters/04_Numerics.tex" 1728031919 4785 0f1adba2c0ada41c192af1e1c392a383 ""
+  "chapters/04_Numerics.tex" 1728309652 5078 665ff6438cf46eab91a1b8216f87a7ca ""
   "chapters/05_Results.tex" 1727961632 3853 e561adbabd62e4050c4e0b6c48c89abf ""
   "chapters/06_discussion.tex" 1727103270 177 65ae4b92aed9712a5b7348c5551868b1 ""
   "chapters/07_FurtherWork.tex" 1727103265 655 1447fc099e6eebe59c06dbdb58db26af ""
@@ -313,11 +314,11 @@
   "figs/water-column-bc.png" 1726205009 16217 eeb48ba7f34b5234290d5aacfecdeb71 ""
   "frontmatter/Frontpage.tex" 1726205008 1220 2a115251e5f965011ec1df6d3e0121e6 ""
   "frontmatter/abstract.tex" 1726205008 674 613c432d293466596a12112435d21705 ""
-  "main.aux" 1728308753 11165 05464cde0f31e38bb550853cb8d523c5 "pdflatex"
-  "main.bbl" 1728308749 1229 ef28406688b4e1c57fda7378a7a9c523 "bibtex main"
-  "main.out" 1728308753 5621 a765d275ce4287c04ff4ab2b14f7b052 "pdflatex"
+  "main.aux" 1728309656 11491 898c4918f36e92ae30a4f6b3a0d3d6c6 "pdflatex"
+  "main.bbl" 1728309630 1229 ef28406688b4e1c57fda7378a7a9c523 "bibtex main"
+  "main.out" 1728309657 5621 a765d275ce4287c04ff4ab2b14f7b052 "pdflatex"
   "main.tex" 1728282268 3038 d5784fda472442c5fc812f9cb9fad5da ""
-  "main.toc" 1728308753 2940 813ee4f3be74baef1bb022d19fb22b58 "pdflatex"
+  "main.toc" 1728309657 2940 693fa648e48200d528ee01f1cec085e6 "pdflatex"
   "notes.tex" 1727427286 1498 af84f83183b04d922ab895db46777f21 ""
   "plots/sol_1D_val.png" 1726205009 39142 d53c9dcc5e346d31201c5f6dbf0cc2d9 ""
   (generated)

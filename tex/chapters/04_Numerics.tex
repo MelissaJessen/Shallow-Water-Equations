@@ -16,6 +16,13 @@ Recall that the homogeneous 1D SWE are given by
 \end{align*}
 
 A finite volume method for the 1D SWW is based on dividing the spatial domain into a set of intervals, also called grid cells.
+The grid is illustrated in Figure~\ref{fig:FVM_1D_grid}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/FVM_1D_grid.png}
+    \caption{Illustration of the grid for the 1D SWE.}\label{fig:FVM_1D_grid}
+\end{figure}
+
 The value $\mathbf{U}_i^n$ approximates the cell average over the $i$-th cell at time $t_n$:
 \begin{align}
     \mathbf{U}_i^n \approx \frac{1}{\Delta x} \int_{x_{i-1/2}}^{x_{i+1/2}} \mathbf{U}(x,t_n) dx,
