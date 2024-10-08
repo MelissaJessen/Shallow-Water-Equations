@@ -22,16 +22,7 @@ We consider the x-split, two-dimensional shallow water equations with the initia
     \end{bmatrix},
 \end{align*}
 which represents the conditions at time $t = 0$ in the left and right states of $x=0$, respectively.
-The vectors are
-\begin{align*}
-    \mathbf{U} = \begin{bmatrix}
-        h \\ hu \\ hv
-    \end{bmatrix}, \quad 
-    \mathbf{F(U)} = \begin{bmatrix}
-        hu \\ hu^2 + \frac{1}{2}gh^2 \\ huv
-    \end{bmatrix}.
-\end{align*}
-
+The function $\mathbf{U}$ is piecewise constant, with a discontinuity at $x=0$.
 The Riemann problem is a generalisation of the so-called dam-break problem.
 The difference is that in the Riemann problem the particle velocity components, $u_L, u_R, v_L$ and $v_R$, are allowed to be distinct from zero, whereas in the dam-break problem, they must be zero.
 

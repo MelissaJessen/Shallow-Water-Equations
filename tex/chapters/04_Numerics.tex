@@ -4,6 +4,8 @@ The exact solution of the Riemann problem is found by using the Riemann invarian
 
 \subsection{Godunov's Method}
 We consider the Godunov Upwind method, which is a first-order accurate metod to solve non-linear systems of hyperbolic conservation laws~\cite{Toro2024}.
+Godunov's method is a fundamental starting point.
+In the method we solve the non-linear Riemann problem at each cell interface. 
 
 Consider the initial-boundary value problem (IBVP) for a system of $N$ nonlinear hyperbolic conservation (balance?) laws     
 \begin{equation}\label{eq:IBVP_system}
