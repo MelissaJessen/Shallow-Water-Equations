@@ -322,7 +322,10 @@ where
     .
 \end{align*}
 We call $\mathbf{U}$ the vector of conserved variables, $\mathbf{F(U)}$ and $\mathbf{G(U)}$ the flux vectors in the $x$ and $y$ direction, and $\mathbf{S(U)}$ the source term vector.
+
+\noindent \textbf{Homogeneous 1D case:}\\
 In this project, we will begin by considering the homogenneous one-dimensional case of the shallow water equations.
+In the homogeneous case we assume that $\mathbf{S(U)} = 0$.
 The vector form of the SWE in 1D is then given by
 \begin{align*}
     \mathbf{U}_t + {\mathbf{F(U)}}_x = 0,
@@ -342,12 +345,76 @@ where
 \end{align*}
 In the 1D case, we only consider flow in the $x$-direction.
 
+\noindent \textbf{Inhomogeneous 1D case:}\\
+The inhomoegeneous one-dimensional case of the shallow water equations in vector form is given by
+\begin{align}\label{eq:vector_form_1D}
+    \mathbf{U}_t + \mathbf{F(U)}_x = \mathbf{S(U)},
+\end{align}
+where
+\begin{align}\label{eq:vector_form_1D_variables}
+    \mathbf{U} = \begin{bmatrix}
+        h \\
+        hu
+    \end{bmatrix},
+    \quad
+    \mathbf{F(U)} = \begin{bmatrix}
+        hu \\
+        hu^2 + \frac{1}{2}gh^2
+    \end{bmatrix}
+    \quad
+    \text{and} \quad
+    \mathbf{S(U)} = \begin{bmatrix}
+        0 \\
+        -gh b_x
+    \end{bmatrix}.
+\end{align}
+If $\mathbf{S(U)} = 0$, the equation~\eqref{eq:vector_form_1D} is called a conservation law, and otherwise it is called a balance law.
+
+
+
 \subsection{The SWE in integral form}
-Often it is more convenient to work with the integral form of the SWE, as conservation laws are based on the integral form.
+Often it is more convenient to work with the integral form of the SWE, since the integral form of equations of the form~\eqref{eq:vector_form_1D} and~\eqref{eq:vector_form_1D_variables} allows discountinuous solutions.
+An integral form of~\eqref{eq:vector_form_1D} is stated in~\cite{Toro2024}:
+\begin{align}
+    \frac{\text{d}}{\text{d}t} \int_{x_L}^{x_R} \mathbf{U}(x,t) \text{ d}x = \mathbf{F}(\mathbf{U}(x_L, t)) - \mathbf{F}(\mathbf{U}(x_R, t)) + \int_{x_L}^{x^R} \mathbf{S}(\mathbf{U})(x,t) \text{ d}x,
+\end{align}
+when integrated over the control volume $V$ in the $x-t$ plane
+\begin{align*}
+    V = [x_L, x_R] \times [t_1, t_2].
+\end{align*}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/Control_volume_1D.png}
+    \caption{Illustration of a control volume $V$ in the $x-t$ plane. Illustration modified from~\cite{Toro2024}.} 
+\end{figure}
+
 The integral form of the SWE in 1D is given by
-\begin{align}\label{eq:integral_form_1D}
-    \frac{\text{d}}{\text{d}x} \int_{x_1}^{x_2} \mathbf{U}(x,t) \text{ d}x = \mathbf{F}(\mathbf{U}(x_1, t)) - \mathbf{F}(\mathbf{U}(x_2, t)),
+\begin{align}\label{eq:integral_form_1D_homogeneous}
+    \frac{\text{d}}{\text{d}t} \int_{x_1}^{x_2} \mathbf{U}(x,t) \text{ d}x = \mathbf{F}(\mathbf{U}(x_1, t)) - \mathbf{F}(\mathbf{U}(x_2, t)),
 \end{align}
 meaning that the rate of change of the integral over a domain is equal to the flux through the boundaries of the domain.
 
+The integral form is obtained by integrating the vector form~\eqref{eq:vector_form_1D} over a control volume $V$ in the $x-t$ plane.
+First we integrate over $x$ from $x_L$ to $x_R$ to obtain
+\begin{align}\label{eq:derive_integral_form_1D}
+    \int_{x_1}^{x_2} \mathbf{U}_t \text{ d}x + \int_{x_1}^{x_2} \mathbf{F(U)}_x \text{ d}x = \int_{x_1}^{x_2} \mathbf{S(U)} \text{ d}x.
+\end{align}
+Using the fundamental theorem of calculus, we get that 
+\begin{align*}
+    \int_{x_L}^{x_R} \mathbf{F}(\mathbf{U}) \text{ d}x = \mathbf{F}(\mathbf{U}(x_R, t)) - \mathbf{F}(\mathbf{U}(x_L, t)),
+\end{align*}
+which we insert in~\eqref{eq:derive_integral_form_1D}:
+\begin{align}
+    \int_{x_1}^{x_2} \mathbf{U}_t \text{ d}x = \mathbf{F}(\mathbf{U}(x_L, t)) - \mathbf{F}(\mathbf{U}(x_R, t)) + \int_{x_1}^{x_2} \mathbf{S(U)} \text{ d}x.
+\end{align}
+Then we integrate over time from $t_1$ to $t_2$ to get
+\begin{align*}
+    \int_{t_1}^{t_2} \int_{x_1}^{x_2} \mathbf{U}_t \text{ d}x \text{d}t = \int_{t_1}^{t_2} \mathbf{F}(\mathbf{U}(x_L, t)) \text{ d}t - \int_{t_1}^{t_2} \mathbf{F}(\mathbf{U}(x_R, t)) \text{ d}t + \int_{t_1}^{t_2} \int_{x_1}^{x_2} \mathbf{S(U)} \text{ d}x \text{d}t.
+\end{align*}
+Rewriting the left hand side using the fundamental theorem of calculus, we get
+\begin{align}\label{eq:integral_form_1D_final}
+    \int_{x_L}^{x_R} \mathbf{U}(x, t_2) \text{ d}x =
+    \int_{x_L}^{x_R}  \mathbf{U}(x, t_1) \text{ d}x + \int_{t_1}^{t_2} \mathbf{F}(\mathbf{U}(x_L, t)) \text{ d}t - \int_{t_1}^{t_2} \mathbf{F}(\mathbf{U}(x_R, t)) \text{ d}t + \int_{t_1}^{t_2} \int_{x_1}^{x_2} \mathbf{S(U)} \text{ d}x \text{d}t.
+\end{align}
 
