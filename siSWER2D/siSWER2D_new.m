@@ -28,7 +28,7 @@ dx   = (xR-xL)/Nx; % x mesh spacing
 dz   = (zR-zL)/Nz; % y mesh spacing 
 x    = linspace(xL+dx/2,xR-dx/2,Nx); 
 z    = linspace(zL+dz/2,zR-dz/2,Nz); 
-tend = 5000;   % set the final simulation time 
+tend = 2000;   % set the final simulation time 
 t    = 0;     % initial time 
 
 % set the initial conditions
@@ -104,6 +104,9 @@ for nt = 1:10000000
     xlabel('$x$','Interpreter','latex')
     ylabel('\eta')
     title(strcat('$t = $',num2str(t)),"Interpreter","latex") 
+    
+    %subplot(3,1,2)
+    %plot(x,H, 'o-')
 
     subplot(3,1,2) 
     surf(x,z,psi(1:Nz,:),'EdgeColor','none','FaceColor','interp')   
@@ -125,9 +128,7 @@ for nt = 1:10000000
     
     pause(0.0001) 
 
-
 end
-
 
 
 

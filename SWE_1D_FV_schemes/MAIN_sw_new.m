@@ -11,7 +11,7 @@ clc
 
 SMALL = 1.E-12;
 a=0;                      %left boundary
-b=30;                     %right boundary
+b=50;                     %right boundary
 gate=(a+b)/2;                  %gate position for the dambreak
 %gate = 20;
 % Condition: the gate must be within the domain [a,b]
@@ -33,14 +33,13 @@ mcells=200;    %number of cells for numerical simulations
 %4--> FORCE
 %5--> HLLC
 %6--> Flux-splitting (2020) UPWIND: this is our method!!!
-iflux=2;
+iflux=5;
 
 
 gravit=9.8;       %gravity
 ntmaxi=100000;     %maximum number of time cycles
 %timeout=6;       %final time for computation
 cfl=0.9;           %Courant number (choose cfl <1 for stable solutions)
-
 % Initial data for simulations
 
 %Initial conditions for the Riemann problem
@@ -51,7 +50,7 @@ cfl=0.9;           %Courant number (choose cfl <1 for stable solutions)
 % TEST 4:  Two rarefactions
 % TEST 5:  Two rarefactions (Red sea)
 
-itest = 6;
+itest = 8;
 
 if itest==1
     %TEST 1
@@ -90,12 +89,45 @@ elseif itest==5
     UR = 2.;
     timeout=2;
 elseif itest ==6
-    % TORO TEST 3
+    % TORO TEST 1  
+    gate = 10.0;
     h_init_L=1.0;
-    h_init_R=0.0;
+    h_init_R=0.1;
+    UL =2.5;
+    UR =0.0;
+    timeout=7.0;
+elseif itest ==7
+    % TORO TEST 2  - Løses med flux 2, 4, 5
+    gate = 25.0;
+    h_init_L=1.0;
+    h_init_R=1.0;
+    UL =-5.0;
+    UR =5.0;
+    timeout=2.5;
+ elseif itest ==8
+    % TORO TEST 3 
+    gate = 20.0;
+    h_init_L=1.0;
+    h_init_R=0.0005;  % add a little bit
     UL =0.0;
     UR =0.0;
     timeout=4.0;
+ elseif itest ==9
+    % TORO TEST 4 
+    gate = 30.0;
+    h_init_L=0.005;  % add a little bit
+    h_init_R=1.0;
+    UL =0.0;
+    UR =0.0;
+    timeout=4.0;
+ elseif itest ==10
+    % TORO TEST 5  - Løses med flux 2, 4, 5
+    gate = 25.0;
+    h_init_L=0.1; 
+    h_init_R=0.1;
+    UL =-3.0;
+    UR =3.0;
+    timeout=5.0;
 end
 
 
@@ -322,7 +354,7 @@ for t=1:ntmaxi %time marching precedure
         plot(xc,h,'o')
         hold on;
         plot(xexact+gate-dx/2,hexact,'k-','LineWidth',2)
-        %axis([a b hmin hmax]);
+        %axis([a b]);
         title (['time = ', num2str(timeout),' s'])
         xlabel('x');
         ylabel('h');
@@ -332,7 +364,7 @@ for t=1:ntmaxi %time marching precedure
         plot(xc,Q./h,'o')
         hold on;
         plot(xexact+gate-dx/2,uexact,'k-','LineWidth',2)
-        %axis([a b umin umax]);
+        %axis([a b]);
         title (['time = ', num2str(timeout),' s'])
         xlabel('x');
         ylabel('u');
@@ -342,7 +374,7 @@ for t=1:ntmaxi %time marching precedure
         plot(xc,Q,'o')
         hold on;
         plot(xexact+gate-dx/2,qexact,'k-','LineWidth',2)
-        %axis([a b qmin qmax]);
+        %axis([a b]);
         title (['time = ', num2str(timeout),' s'])
         xlabel('x');
         ylabel('q');
