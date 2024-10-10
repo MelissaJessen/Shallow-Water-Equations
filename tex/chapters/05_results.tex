@@ -35,29 +35,9 @@ The numerical solution to the 1D Dam Break Problem using the FVM, together with 
 \end{figure}
 
 
-\section{2D idealised Circular Dam Break Problem}
-Consider the idealised circular dam break problem with a horizontal bottom.
-We assume there is an infinitely thin circular wall at radius $R = 2.5 m$ is a square domain of size $40 m \times 40 m$ with centre at $(x_c,y_c) = (20 m, 20 m)$.
-The initial conditions are
-\begin{align*}
-    h(x,y,0) &= \begin{cases}
-        2.5 \text{ }m, & \text{if } \sqrt{ {(x-x_c)}^2 + {(y-y_c)}^2 } \leq R, \\
-        0.5 \text{ }m, & \text{otherwise},
-    \end{cases} \\
-    u(x,y,0) &= 0, \\
-    v(x,y,0) &= 0.
-\end{align*}
-Use the WAF method (chapter 11) along with a second-order dimensional splitting scheme (chapter 12).
-CFL-condition: $C_{cfl} = 0.9$.
-van Leer limiter. Mesh: $200 \times 200$.
-
-Solve the 1D inhomoegeneous system and compare.
-
-
-\section{Test cases}
+\subsection{Toro test cases}
 
 Test case 1:
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_initial.png}
@@ -73,8 +53,6 @@ Test case 1:
 
 
 Test case 2: 
-
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.png}
@@ -89,7 +67,6 @@ Test case 2:
 
 
 Test case 3:
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.png}
@@ -103,10 +80,7 @@ Test case 3:
 \end{figure}
 
 
-
-
 Test case 4:
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.png}
@@ -122,7 +96,6 @@ Test case 4:
 
 
 Test case 5:
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_initial.png}
@@ -134,5 +107,31 @@ Test case 5:
     \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final.png}
     \caption{Final solution for the test case.}\label{fig:toro_test5_final}
 \end{figure}
+
+
+
+\section{2D idealised Circular Dam Break Problem}
+Consider the idealised circular dam break problem with a horizontal bottom.
+We assume there is an infinitely thin circular wall at radius $R = 2.5 m$ is a square domain of size $40 m \times 40 m$ with centre at $(x_c,y_c) = (20 m, 20 m)$.
+The initial conditions are (ch. 15 Toro)
+\begin{align*}
+    h(x,y,0) &= \begin{cases}
+        2.5 \text{ }m, & \text{if } \sqrt{ {(x-x_c)}^2 + {(y-y_c)}^2 } \leq R, \\
+        0.5 \text{ }m, & \text{otherwise},
+    \end{cases} \\
+    u(x,y,0) &= 0, \\
+    v(x,y,0) &= 0.
+\end{align*}
+Use the WAF method (chapter 11) along with a second-order dimensional splitting scheme (chapter 12).
+CFL-condition: $C_{cfl} = 0.9$.
+van Leer limiter. Mesh: $200 \times 200$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.4.png}
+    \caption{2D dam break problem after $t=0.4$.}\label{fig:2D_dam_break}
+\end{figure}
+
+
 
 
