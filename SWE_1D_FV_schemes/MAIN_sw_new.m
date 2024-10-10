@@ -32,8 +32,8 @@ mcells=200;    %number of cells for numerical simulations
 %3--> Lax-Wendroff
 %4--> FORCE
 %5--> HLLC
-%6--> Flux-splitting (2020) UPWIND: this is our method!!!
-iflux=5;
+%6--> Flux-splitting (2020) UPWIND: this is our 4method!!!
+iflux=1;
 
 
 gravit=9.8;       %gravity
@@ -50,45 +50,9 @@ cfl=0.9;           %Courant number (choose cfl <1 for stable solutions)
 % TEST 4:  Two rarefactions
 % TEST 5:  Two rarefactions (Red sea)
 
-itest = 10;
+itest = 7;
 
 if itest==1
-    %TEST 1
-    gate=(a+b)/2;
-    h_init_L=1.0;
-    h_init_R=0.1;
-    UL=0.0;
-    UR=0.0;
-    timeout=3;
-elseif itest ==2
-    h_init_L=2.0;
-    h_init_R=0.01;
-    UL=0.5;
-    UR=4.0;
-    timeout=1.5;
-elseif itest ==3
-    % TWO-SHOCKS
-    h_init_L=.51;
-    h_init_R=0.4;
-    UL=2.8;
-    %UR=-2.3;
-    UR=-5.3; %slowly-moving shock
-    timeout=2.5;
-elseif itest ==4
-    %TWO-RAREFACTIONS
-    h_init_L=.5;
-    h_init_R=0.51;
-    UL=-0.3;
-    UR=2.5;
-    timeout=2.5;
-elseif itest==5
-    %TEST % TWO-RAREFACTIONS
-    h_init_L=1.0;
-    h_init_R=1.0;
-    UL =-2.;
-    UR = 2.;
-    timeout=2;
-elseif itest ==6
     % TORO TEST 1  
     gate = 10.0;
     h_init_L=1.0;
@@ -96,7 +60,7 @@ elseif itest ==6
     UL =2.5;
     UR =0.0;
     timeout=7.0;
-elseif itest ==7
+elseif itest == 2
     % TORO TEST 2  - Løses med flux 2, 4, 5
     gate = 25.0;
     h_init_L=1.0;
@@ -104,23 +68,23 @@ elseif itest ==7
     UL =-5.0;
     UR =5.0;
     timeout=2.5;
- elseif itest ==8
+ elseif itest == 3
     % TORO TEST 3 
     gate = 20.0;
     h_init_L=1.0;
-    h_init_R=0.0005;  % add a little bit
+    h_init_R=0.00005;  % add a little bit
     UL =0.0;
     UR =0.0;
     timeout=4.0;
- elseif itest ==9
+ elseif itest == 4
     % TORO TEST 4 
     gate = 30.0;
-    h_init_L=0.005;  % add a little bit
+    h_init_L=0.00005;  % add a little bit
     h_init_R=1.0;
     UL =0.0;
     UR =0.0;
     timeout=4.0;
- elseif itest ==10
+ elseif itest == 5
     % TORO TEST 5  - Løses med flux 2, 4, 5
     gate = 25.0;
     h_init_L=0.1; 
@@ -128,6 +92,22 @@ elseif itest ==7
     UL =-3.0;
     UR =3.0;
     timeout=5.0;
+  elseif itest == 6
+    % TORO TEST TRUE 
+    gate = 20.0;
+    h_init_L=1.0;
+    h_init_R=0.0;  
+    UL =0.0;
+    UR =0.0;
+    timeout=4.0;
+  elseif itest == 7
+    % TORO TEST TRUE 
+    gate = 30.0;
+    h_init_L=0.0;
+    h_init_R=1.0;  
+    UL =0.0;
+    UR =0.0;
+    timeout=4.0;
 end
 
 
@@ -348,9 +328,9 @@ for t=1:ntmaxi %time marching precedure
         Frexact = uexact./sqrt(gravit.*hexact);
         Frmax=max(Frexact)*1.2;
         Frmin=min(Frexact);
-        
-        figure('Position', [100, 100, 1200, 500]);  % [left, bottom, width, height]
-        subplot(1,2,1)
+       
+
+        subplot(2,1,1)
         plot(xc,h,'o')
         hold on;
         plot(xexact+gate-dx/2,hexact,'k-','LineWidth',2)
@@ -360,7 +340,7 @@ for t=1:ntmaxi %time marching precedure
         ylabel('h');
         legend('Numerical solution', 'Exact solution');
 
-        subplot(1,2,2)
+        subplot(2,1,2)
         plot(xc,Q./h,'o')
         hold on;
         plot(xexact+gate-dx/2,uexact,'k-','LineWidth',2)
@@ -371,15 +351,28 @@ for t=1:ntmaxi %time marching precedure
         legend('Numerical solution', 'Exact solution');
 
         % Save the plot in a specific folder
-        folder = 'C:\Users\Matteo\Shallow-Water-Equations\plots';
-        filename = 'toro_test5_final.png';
-        fullpath = fullfile(folder, filename);
+        %folder = 'C:\Users\Matteo\Shallow-Water-Equations\plots';
+        %filename = 'toro_test5_final.png';
+        %filename = ['toro_test', num2str(itest), '_final.png'];
+        %fullpath = fullfile(folder, filename);
 
         % Save the figure
-        saveas(gcf, fullpath);
+        %saveas(gcf, fullpath);
 
 
         break
     end
 
 end
+
+% SAVE
+
+% Save water height and velocity
+u = Q./h;
+xexact = xexact+gate-dx/2;
+
+folder = 'C:\Users\Matteo\Shallow-Water-Equations\data';
+filename = ['torotest', num2str(itest),'flux', num2str(iflux)];
+fullpath = fullfile(folder, filename);
+
+save(fullpath,'xc','h','u','xexact','hexact','uexact');
