@@ -33,7 +33,7 @@ mcells=200;    %number of cells for numerical simulations
 %4--> FORCE
 %5--> HLLC
 %6--> Flux-splitting (2020) UPWIND: this is our method!!!
-iflux=5;
+iflux=1;
 
 
 gravit=9.8;       %gravity
@@ -50,7 +50,7 @@ cfl=0.9;           %Courant number (choose cfl <1 for stable solutions)
 % TEST 4:  Two rarefactions
 % TEST 5:  Two rarefactions (Red sea)
 
-itest = 10;
+itest = 6;
 
 if itest==1
     %TEST 1
@@ -349,8 +349,9 @@ for t=1:ntmaxi %time marching precedure
         Frmax=max(Frexact)*1.2;
         Frmin=min(Frexact);
         
-        figure('Position', [100, 100, 1200, 500]);  % [left, bottom, width, height]
+
         subplot(1,2,1)
+        figure('Position', [100, 100, 1200, 600]);  % [left, bottom, width, height]
         plot(xc,h,'o')
         hold on;
         plot(xexact+gate-dx/2,hexact,'k-','LineWidth',2)
@@ -372,7 +373,7 @@ for t=1:ntmaxi %time marching precedure
 
         % Save the plot in a specific folder
         folder = 'C:\Users\Matteo\Shallow-Water-Equations\plots';
-        filename = 'toro_test5_final.png';
+        filename = 'toro_test1_final.png';
         fullpath = fullfile(folder, filename);
 
         % Save the figure
