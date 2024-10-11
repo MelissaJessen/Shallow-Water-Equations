@@ -102,6 +102,11 @@ Q(igate+1:mcells)=h_init_R*UR;
 ntmaxi=100000;     %maximum number of time cycles
 cfl=0.9;           %Courant number (choose cfl <1 for stable solutions)
 
+% Initialize storage for hexact and uexact at each timestep
+hexact_all = [];
+uexact_all = [];
+time_all = [];
+
 %Starting of the time marching procedure
 time=0;
 for t=1:ntmaxi %time marching precedure
@@ -120,34 +125,29 @@ for t=1:ntmaxi %time marching precedure
     end
     %-------------Courant condition----------------
     time=time+dt;
-    if time>=timeout
 
-        %Solution of the exact Riemann problem to compare with the numerical
-        [hexact,uexact,~,xexact]=exact_sol(mexact,h_init_L,h_init_R,UL,UR,0,0,gravit,timeout,a-gate,b-gate);
+    %Solution of the exact Riemann problem to compare with the numerical
+    [hexact,uexact,~,xexact]=exact_sol(mexact,h_init_L,h_init_R,UL,UR,0,0,gravit,timeout,a-gate,b-gate);
 
-        umax=max(uexact)*1.2;
-        umin=min(uexact);
+    % Append current timestep's hexact and uexact to storage
+    hexact_all = [hexact_all; hexact];
+    uexact_all = [uexact_all; uexact];
+    time_all = [time_all; time + dt];
 
-        qexact = uexact.*hexact;
-        qmax=max(Q)*1.2;
-        qmin=min(Q);
-        Frexact = uexact./sqrt(gravit.*hexact);
-        Frmax=max(Frexact)*1.2;
-        Frmin=min(Frexact);
-       
-        break
+    % Break if the timeout is reached
+    if time >= timeout
+        break;
+        
     end
 
 end
 
-% Save water height and velocity
-u = Q./h;
+% Save data for all timesteps
 xexact = xexact+gate-dx/2;
 
 folder = 'C:\Users\Matteo\Shallow-Water-Equations\dataFNO';
-filename = ['test',num2str(itest),'_t=',num2str(timeout)];
+filename = ['test',num2str(itest),'_all_timesteps_to_t=',num2str(timeout)];
 fullpath = fullfile(folder, filename);
 
-save(fullpath,'xexact','hexact','uexact');
-
+save(fullpath,'time_all', 'xexact','hexact_all','uexact_all');
 
