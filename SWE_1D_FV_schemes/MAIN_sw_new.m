@@ -33,7 +33,7 @@ mcells=200;    %number of cells for numerical simulations
 %4--> FORCE
 %5--> HLLC
 %6--> Flux-splitting (2020) UPWIND: this is our 4method!!!
-iflux=1;
+iflux=5;
 
 
 gravit=9.8;       %gravity
@@ -50,7 +50,7 @@ cfl=0.9;           %Courant number (choose cfl <1 for stable solutions)
 % TEST 4:  Two rarefactions
 % TEST 5:  Two rarefactions (Red sea)
 
-itest = 7;
+itest = 1;
 
 if itest==1
     % TORO TEST 1  
@@ -104,6 +104,14 @@ elseif itest == 2
     % TORO TEST TRUE 
     gate = 30.0;
     h_init_L=0.0;
+    h_init_R=1.0;  
+    UL =0.0;
+    UR =0.0;
+    timeout=4.0;
+elseif itest == 8
+    % DATA GENERATION
+    gate = 50.0;
+    h_init_L=1.0;
     h_init_R=1.0;  
     UL =0.0;
     UR =0.0;
@@ -350,16 +358,6 @@ for t=1:ntmaxi %time marching precedure
         ylabel('u');
         legend('Numerical solution', 'Exact solution');
 
-        % Save the plot in a specific folder
-        %folder = 'C:\Users\Matteo\Shallow-Water-Equations\plots';
-        %filename = 'toro_test5_final.png';
-        %filename = ['toro_test', num2str(itest), '_final.png'];
-        %fullpath = fullfile(folder, filename);
-
-        % Save the figure
-        %saveas(gcf, fullpath);
-
-
         break
     end
 
@@ -371,8 +369,10 @@ end
 u = Q./h;
 xexact = xexact+gate-dx/2;
 
-folder = 'C:\Users\Matteo\Shallow-Water-Equations\data';
-filename = ['torotest', num2str(itest),'flux', num2str(iflux)];
-fullpath = fullfile(folder, filename);
+%folder = 'C:\Users\Matteo\Shallow-Water-Equations\data';
+%filename = ['torotest', num2str(itest),'flux', num2str(iflux)];
+%fullpath = fullfile(folder, filename);
 
-save(fullpath,'xc','h','u','xexact','hexact','uexact');
+%save(fullpath,'xc','h','u','xexact','hexact','uexact');
+
+

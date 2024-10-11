@@ -2,6 +2,9 @@
 The code to solve the SWE in 1D using FVM is based on the Godunov scheme with the exact Riemann solver.
 The exact solution of the Riemann problem is found by using the Riemann invariants and the Rankine-Hugoniot conditions~\cite{trento_course}.
 
+The true solution is found by solving the Riemann problem exact, with 5000 cells, and distinguishing between the wetbed or drybed case, and also identifying the shock and rarefaction waves.
+
+
 \subsection{Godunov's Method}
 We consider the Godunov Upwind method, which is a first-order accurate metod to solve non-linear systems of hyperbolic conservation laws~\cite{Toro2024}.
 Godunov's method is a fundamental starting point.
@@ -21,6 +24,8 @@ The Godunov Upwind method in conservative form~\eqref{eq:explicit_conservative_1
 
 \subsection{Implementation of the FVM in 2D}
 
+
+\subsection{Data generation}
 
 
 
