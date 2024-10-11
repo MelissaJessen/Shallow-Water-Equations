@@ -149,5 +149,7 @@ folder = 'C:\Users\Matteo\Shallow-Water-Equations\dataFNO';
 filename = ['test',num2str(itest),'_all_timesteps_to_t=',num2str(timeout)];
 fullpath = fullfile(folder, filename);
 
-save(fullpath,'time_all', 'xexact','hexact_all','uexact_all');
+%save(fullpath,'time_all', 'xexact','hexact_all','uexact_all');
+
+%% 
 

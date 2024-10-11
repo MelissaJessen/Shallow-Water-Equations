@@ -17,7 +17,7 @@ cL=sqrt(gravit*hL);
 cR=sqrt(gravit*hR);
 
 Hcrit=(uR-uL)-2*(cL+cR); %depth positivity condition
-scrsz=get(0,'ScreenSize');
+%scrsz=get(0,'ScreenSize');
 %f1=figure('Position',[scrsz(3)/4 10 3*scrsz(4)/4 scrsz(3)]);
 if (hL<=0 || hR<=0 || Hcrit>=0 )
     %dry bed case
