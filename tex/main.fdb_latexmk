@@ -1,18 +1,20 @@
 # Fdb version 4
-["bibtex main"] 1728634189.74949 "main.aux" "main.bbl" "main" 1728634195.83059 0
+["bibtex main"] 1728634189.74949 "main.aux" "main.bbl" "main" 1728897242.56012 0
   "./bibl.bib" 1728308748 4003 c326046705fdfea14b9b357b93d443bc ""
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291864736 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "main.aux" 1728634194 15389 b4a878e527c267d33124da13c8e39458 "pdflatex"
+  "main.aux" 1728897239 15389 b4a878e527c267d33124da13c8e39458 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1728634190.24453 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1728634195.83166 0
+["pdflatex"] 1728897232.86031 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1728897242.56128 0
   "C:/Users/Matteo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1726259592 82507 a9eef8696c92627b87e9975edea03b2a ""
+  "C:/Users/Matteo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1728897231 11548 420b7f80b41b233cad6f319547e72170 ""
   "C:/Users/Matteo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1726253485 24265805 34fa3860fca3f94c581d5d8735e54ea8 ""
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136765053 960 379cc0019370a9e0208a0a3f949f847a ""
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/courier/pcrr8r.tfm" 1136765053 1292 bd42be2f344128bff6d35d98474adfe3 ""
+  "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1000.tfm" 993062508 1436 c7f957a372ef2fbe93c0982f96625e12 ""
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1233951848 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1233951848 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1233951848 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -313,7 +315,7 @@
   "chapters/01_notation.tex" 1728285960 2658 7ae146e5a142641ffe9db9c577f9c38c ""
   "chapters/02_theory.tex" 1728381296 22369 680d280cef845bf1afc4b001f693cafd ""
   "chapters/03_spherical_coordinates.tex" 1726205008 53 5a9b3ed41af92ecc0d8fad2fbf4eb1fe ""
-  "chapters/04_Numerics.tex" 1728634182 1692 628349fcd3b4d711f57a454277d87fb8 ""
+  "chapters/04_Numerics.tex" 1728897231 2366 05814597fd194381a3a00b8d52bd768b ""
   "chapters/05_Results.tex" 1728633010 7260 2862129a2de8f16c20f01771d843ad75 ""
   "chapters/06_discussion.tex" 1727103270 177 65ae4b92aed9712a5b7348c5551868b1 ""
   "chapters/07_FurtherWork.tex" 1727103265 655 1447fc099e6eebe59c06dbdb58db26af ""
@@ -324,11 +326,11 @@
   "figs/water-column-bc.png" 1726205009 16217 eeb48ba7f34b5234290d5aacfecdeb71 ""
   "frontmatter/Frontpage.tex" 1726205008 1220 2a115251e5f965011ec1df6d3e0121e6 ""
   "frontmatter/abstract.tex" 1726205008 674 613c432d293466596a12112435d21705 ""
-  "main.aux" 1728634194 15389 b4a878e527c267d33124da13c8e39458 "pdflatex"
+  "main.aux" 1728897239 15389 b4a878e527c267d33124da13c8e39458 "pdflatex"
   "main.bbl" 1728634190 1229 10fde2465c2d0f42fdcceb18e34fed16 "bibtex main"
-  "main.out" 1728634194 6038 4a9f271dcecd0f88089e63688ae802ff "pdflatex"
+  "main.out" 1728897239 6038 4a9f271dcecd0f88089e63688ae802ff "pdflatex"
   "main.tex" 1728380513 3060 26322c8b6c6185263ac939ecaf7de5d6 ""
-  "main.toc" 1728634194 3137 a55b4c99a1e7c9b87d53444709c643a5 "pdflatex"
+  "main.toc" 1728897239 3137 a55b4c99a1e7c9b87d53444709c643a5 "pdflatex"
   "notes.tex" 1727427286 1498 af84f83183b04d922ab895db46777f21 ""
   "plots/sol_1D_val.png" 1726205009 39142 d53c9dcc5e346d31201c5f6dbf0cc2d9 ""
   (generated)

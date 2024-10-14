@@ -23,6 +23,16 @@ hL = 1;
 hR = 0.1;
 q(1,1:Nx/2)    = hL;
 q(1,Nx/2+1:Nx) = hR;
+
+% Define parameters for the Gaussian
+h0 = 1;          % Amplitude of the Gaussian
+x0 = (xL + xR)/2; % Mean (center) of the Gaussian, centered in the domain
+sigma = 0.1;
+
+% Create the Gaussian blob for h(x)
+h = h0 * exp(-(x - x0).^2 / (2 * sigma^2));
+q(1,:) = h;
+
 qnew = q;
 
 % plot the initial data
@@ -40,6 +50,8 @@ xlabel('x')
 % between xL and xR):
 H0 = sum(dx*q(1,:));
 
+
+%%
 % time loop
 for n = 1:1000000
     amax = max(max(abs(Lambda(q))));
