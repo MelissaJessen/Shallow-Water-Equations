@@ -15,7 +15,7 @@ tend = 1;
 g = 9.81;   % acceleration due to gravity
 
 % numerical parameters
-Nx = 100;           % the number of the cell-centers
+Nx = 200;           % the number of the cell-centers
 dx = (xR - xL)/Nx;  % distance between the mesh points
 CFL= 0.9;           % CFL number <= 1
 x  = linspace(xL+dx/2,xR-dx/2,Nx);
@@ -28,7 +28,7 @@ u = q(2,:);
 %sigma_vals = linspace(0.1, 1, 10);
 sigma_vals = 0.1;
 
-mu_vals = linspace(0.3,0.7,5); % Mean of the Gaussian
+mu_vals = linspace(0.3,0.8,6); % Mean of the Gaussian
 
 % Define folder
 folder = 'C:\Users\Matteo\Shallow-Water-Equations\dataFNO';

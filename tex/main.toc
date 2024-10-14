@@ -28,10 +28,10 @@
 \contentsline {subsection}{\numberline {3.1.5}Godunov's Method}{19}{subsection.3.1.5}%
 \contentsline {subsection}{\numberline {3.1.6}Implementation of the FVM in 2D}{19}{subsection.3.1.6}%
 \contentsline {subsection}{\numberline {3.1.7}Data generation}{19}{subsection.3.1.7}%
-\contentsline {chapter}{\numberline {4}Numerical results}{20}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Metod of manufactured solutions}{20}{section.4.1}%
-\contentsline {section}{\numberline {4.2}The 1D Dam Break Problem}{20}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Toro test cases}{21}{subsection.4.2.1}%
-\contentsline {section}{\numberline {4.3}2D idealised Circular Dam Break Problem}{24}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Discussion}{26}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Further work}{27}{chapter.6}%
+\contentsline {chapter}{\numberline {4}Numerical results}{21}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Metod of manufactured solutions}{21}{section.4.1}%
+\contentsline {section}{\numberline {4.2}The 1D Dam Break Problem}{21}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Toro test cases}{22}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.3}2D idealised Circular Dam Break Problem}{25}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Discussion}{27}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Further work}{28}{chapter.6}%
