@@ -6,34 +6,39 @@ In the FVM, we discretize the domain into finite control volumes or cells:
     V_i = [x_{i-1/2}, x_{i+1/2}] \times [t_n, t_{n+1}],
 \end{align*}
 where $\Delta x = x_{i+1/2} - x_{i-1/2}$ is the length of the cell and $\Delta t = t_{n+1} - t_n$ is the time step.
-
-
-The value $\mathbf{U}_i^n$ approximates the average value over the $i$-th cell at time $t_n$:
-\begin{align}
-    \mathbf{U}_i^n \approx \frac{1}{\Delta x} \int_{x_{i-1/2}}^{x_{i+1/2}} \mathbf{U}(x,t_n) \text{ d}x,
-\end{align}
-where $\Delta x = x_{i+1/2} - x_{i-1/2}$ is the length of the cell.
-The value $\mathbf{U}_i^n$ is also referred to as the cell average.
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/tex/figs/fvm_grid_new.png}
-    \caption{Illustration of the grid for the 1D SWE.}
-\end{figure}
-
-For a finite volume $V_i^n$, we average the integral form~\eqref{eq:integral_form_1D_final} over the volume to get the explicit conservative formula:
-\begin{align}\label{eq:explicit_conservative_1D_SWE}
-    \mathbf{U}_i^{n+1} = \mathbf{U}_i^n - \frac{\Delta t}{\Delta x} \left( \mathbf{F}_{i+1/2}^n - \mathbf{F}_{i-1/2}^n \right) + \Delta t \mathbf{S}_i,
-\end{align}
-The value $\mathbf{F}_{i-1/2}^n$ approximates the average flux along the line $x = x_{i-1/2}$ at time $t_n$:
+The Finite Volume Formula is based on the integral form~\eqref{eq:integral_form_1D_final}, which we divide by the length of the cell $\Delta x$ to get
 \begin{align*}
-    \mathbf{F}_{i-1/2}^n \approx \frac{1}{\Delta t} \int_{t_n}^{t_{n+1}} \mathbf{F}(\mathbf{U}(x_{i-1/2},t)) \text{ d}t,
+    \frac{1}{\Delta x} \int_{x_{i-1/2}}^{x_{i+1/2}} \mathbf{U}(x,t_{n+1}) \text{ d}x &= \frac{1}{\Delta x} \int_{x_{i-1/2}}^{x_{i+1/2}} \mathbf{U}(x,t_n) \text{ d}x\\
+    & - \frac{\Delta t}{\Delta x} \left[ \frac{1}{\Delta t} \int_{t_n}^{t_{n+1}} \mathbf{F}(\mathbf{U}(x_{i+1/2}, t)) \text{ d}t
+    - \frac{1}{\Delta t} \int_{t_n}^{t_{n+1}} \mathbf{F}(\mathbf{U}(x_{i-1/2}, t)) \text{ d}t \right] \\
+    &+ \frac{\Delta t}{\Delta x \Delta t} \int_{x_{i-1/2}}^{x_{i+1/2}} \int_{t_n}^{t_{n+1}} \mathbf{S(U)}(x,t) \text{d}x \text{d}t.
 \end{align*}
-and the source term $\mathbf{S}_i$ approximates the average source term over the $i$-th cell at time $t_n$:
+For a finite volume $V_i^n$ we average the terms over the volume to get the explicit conservative formula:
+\begin{align}\label{eq:explicit_conservative_1D_SWE}
+    \mathbf{U}_i^{n+1} = \mathbf{U}_i^n - \frac{\Delta t}{\Delta x} \left( \mathbf{F}_{i+1/2}^n - \mathbf{F}_{i-1/2}^n \right) + \Delta t \mathbf{S}_i.
+\end{align}
+The value $\mathbf{U}_i^n$ is defined as the average value over the $i$-th cell at time $t_n$:
+\begin{align}
+    \mathbf{U}_i^n = \frac{1}{\Delta x} \int_{x_{i-1/2}}^{x_{i+1/2}} \mathbf{U}(x,t_n) \text{ d}x,
+\end{align}
+and is also referred to as the cell average.
+The value $\mathbf{F}_{i-1/2}^n$ is the average flux along the line $x = x_{i-1/2}$ at time $t_n$:
+\begin{align*}
+    \mathbf{F}_{i-1/2}^n = \frac{1}{\Delta t} \int_{t_n}^{t_{n+1}} \mathbf{F}(\mathbf{U}(x_{i-1/2},t)) \text{ d}t,
+\end{align*}
+and the source term $\mathbf{S}_i$ is the average source term over the $i$-th cell at time $t_n$:
 \begin{align*}
     \mathbf{S}_i &= \frac{1}{\Delta t \Delta x} \int_{t_n}^{t_{n+1}} \int_{x_{i-1/2}}^{x_{i+1/2}} \mathbf{S}(x,t) \text{ d}x\text{d}t.
 \end{align*}
+The values are illustrated in Figure~\ref{fig:10_3}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/tex/figs/fvm_grid_new.png}
+    \caption{Illustration of the grid for the 1D SWE.}\label{fig:10_3}
+\end{figure}
+
+
+
 
 
 In the FVM, we discretize the domain into cells or control volumes.
