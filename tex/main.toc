@@ -14,24 +14,24 @@
 \contentsline {subsection}{\numberline {2.2.6}The SWE in integral form}{11}{subsection.2.2.6}%
 \contentsline {subsection}{\numberline {2.2.7}SWE in Spherical Coordinates}{13}{subsection.2.2.7}%
 \contentsline {section}{\numberline {2.3}Finite Volume Method for the Shallow Water Equations}{13}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Finite Volume Methods for the 1D SWE}{13}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.1}Finite Volume Methods for the 1D SWE}{14}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}Finite Volume Method for the 1D SWE with source term}{14}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Finite Volume Method for the 2D SWE}{14}{subsection.2.3.3}%
-\contentsline {chapter}{\numberline {3}Methodology}{15}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Riemann problem}{15}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Waves in the Riemann problem}{16}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Exact Riemann solver}{17}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Approximate Riemann solvers}{17}{subsection.3.1.3}%
-\contentsline {subsubsection}{HLL solver}{17}{section*.6}%
-\contentsline {subsubsection}{Roe solver}{17}{section*.7}%
-\contentsline {subsection}{\numberline {3.1.4}Implementation of the FVM in 1D}{18}{subsection.3.1.4}%
-\contentsline {subsection}{\numberline {3.1.5}Godunov's Method}{19}{subsection.3.1.5}%
-\contentsline {subsection}{\numberline {3.1.6}Implementation of the FVM in 2D}{19}{subsection.3.1.6}%
-\contentsline {subsection}{\numberline {3.1.7}Data generation}{19}{subsection.3.1.7}%
-\contentsline {chapter}{\numberline {4}Numerical results}{21}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Metod of manufactured solutions}{21}{section.4.1}%
-\contentsline {section}{\numberline {4.2}The 1D Dam Break Problem}{21}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Toro test cases}{22}{subsection.4.2.1}%
-\contentsline {section}{\numberline {4.3}2D idealised Circular Dam Break Problem}{25}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Discussion}{27}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Further work}{28}{chapter.6}%
+\contentsline {subsection}{\numberline {2.3.3}Finite Volume Method for the 2D SWE}{15}{subsection.2.3.3}%
+\contentsline {chapter}{\numberline {3}Methodology}{16}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Riemann problem}{16}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Waves in the Riemann problem}{17}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Exact Riemann solver}{18}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Approximate Riemann solvers}{18}{subsection.3.1.3}%
+\contentsline {subsubsection}{HLL solver}{18}{section*.7}%
+\contentsline {subsubsection}{Roe solver}{18}{section*.8}%
+\contentsline {subsection}{\numberline {3.1.4}Implementation of the FVM in 1D}{19}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}Godunov's Method}{20}{subsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.1.6}Implementation of the FVM in 2D}{20}{subsection.3.1.6}%
+\contentsline {subsection}{\numberline {3.1.7}Data generation}{20}{subsection.3.1.7}%
+\contentsline {chapter}{\numberline {4}Numerical results}{22}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Metod of manufactured solutions}{22}{section.4.1}%
+\contentsline {section}{\numberline {4.2}The 1D Dam Break Problem}{22}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Toro test cases}{23}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.3}2D idealised Circular Dam Break Problem}{26}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Discussion}{28}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Further work}{29}{chapter.6}%

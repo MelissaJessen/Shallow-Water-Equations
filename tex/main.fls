@@ -529,6 +529,13 @@ INPUT chapters\03_spherical_coordinates.tex
 INPUT .\chapters\fvm.tex
 INPUT .\chapters\fvm.tex
 INPUT chapters\fvm.tex
+INPUT C:\Users\Matteo\Shallow-Water-Equations\tex\figs\fvm_grid_new.png
+INPUT C:\Users\Matteo\Shallow-Water-Equations\tex\figs\fvm_grid_new.png
+INPUT C:\Users\Matteo\Shallow-Water-Equations\tex\figs\fvm_grid_new.png
+INPUT C:\Users\Matteo\Shallow-Water-Equations\tex\figs\fvm_grid_new.png
+INPUT C:\Users\Matteo\Shallow-Water-Equations\tex\figs\fvm_grid_new.png
+INPUT C:\Users\Matteo\Shallow-Water-Equations\tex\figs\fvm_grid_new.png
+INPUT C:\Users\Matteo\Shallow-Water-Equations\tex\figs\fvm_grid_new.png
 INPUT C:\Users\Matteo\Shallow-Water-Equations\figs\FVM_1D_grid.png
 INPUT C:\Users\Matteo\Shallow-Water-Equations\figs\FVM_1D_grid.png
 INPUT C:\Users\Matteo\Shallow-Water-Equations\figs\FVM_1D_grid.png

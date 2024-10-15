@@ -20,16 +20,16 @@ E.F. Toro.
 \newblock {\em Computational Algorithms for Shallow Warer Equations}.
 \newblock Springer, 2024.
 
-\bibitem{Toro2009-Riemann}
-E.F. Toro.
-\newblock {\em Riemann Solvers and Numerical Methods for Fluid Dynamics}.
-\newblock Springer, 2009.
-
 \bibitem{LeVeque2002}
 Randall~J. LeVeque.
 \newblock {\em Finite Volume Methods for Hyperbolic Problems}.
 \newblock Cambridge Texts in Applied Mathematics. Cambridge University Press,
   2002.
+
+\bibitem{Toro2009-Riemann}
+E.F. Toro.
+\newblock {\em Riemann Solvers and Numerical Methods for Fluid Dynamics}.
+\newblock Springer, 2009.
 
 \bibitem{trento_course}
 Ilya Peshkov.
