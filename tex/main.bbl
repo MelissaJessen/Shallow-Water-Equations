@@ -44,4 +44,11 @@ Wikipedia.
 \newblock Gaussian function.
 \newblock \url{https://en.wikipedia.org/wiki/Gaussian_function}, 14/10-2024.
 
+\bibitem{phd_corse_2009}
+A.~P Engsig-Karup and J.~S. Hesthaven.
+\newblock An introduction to discontinuous galerkin methods for solving partial
+  differential equations.
+\newblock \url{https://www2.compute.dtu.dk/~apek/DGFEMCourse2009/}, 2009.
+\newblock Lecture notes.
+
 \end{thebibliography}

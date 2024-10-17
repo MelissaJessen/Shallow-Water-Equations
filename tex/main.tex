@@ -85,12 +85,10 @@
 
 \newpage
 \clearpage
-\thispagestyle{empty}
 \input{frontmatter/abstract.tex}
 
 \newpage
 \clearpage
-\thispagestyle{empty}
 \input{notes.tex}
 
 \newpage
@@ -130,6 +128,9 @@
 \rhead{ }
 \bibliography{bibl}{}
 \bibliographystyle{unsrt}
+
+% Add bibliography to the Table of Contents
+\addcontentsline{toc}{chapter}{Bibliography}
 
 %\newpage
 %\input{Appendix.tex}
