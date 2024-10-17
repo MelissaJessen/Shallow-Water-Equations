@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.13)  15 OCT 2024 15:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.13)  17 OCT 2024 12:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -912,24 +912,24 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
  (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count408
@@ -956,7 +956,7 @@ Package pgfplots notification 'compat/show suggested version=true': you might be
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 80.
+Package hyperref Info: Link coloring OFF on input line 81.
 (main.out) (main.out)
 \@outlinefile=\write6
 \openout6 = `main.out'.
@@ -1005,7 +1005,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 (frontmatter/Frontpage.tex
-<figs/DTU.png, id=142, 469.9959pt x 685.6014pt>
+<figs/DTU.png, id=146, 469.9959pt x 685.6014pt>
 File: figs/DTU.png Graphic file (type png)
 <use figs/DTU.png>
 Package pdftex.def Info: figs/DTU.png  used on input line 31.
@@ -1033,24 +1033,24 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
 {C:/Users/Matteo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./figs/DTU.png>])
-LaTeX Font Info:    Trying to load font information for U+msa on input line 84.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 85.
  (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 84.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 85.
  (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.84 
+l.85 
       [1] (frontmatter/abstract.tex
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.3 \end{abstract}
@@ -1059,10 +1059,10 @@ l.3 \end{abstract}
 ]) (notes.tex)
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.95 \newpage
+l.96 \newpage
               [1
 
 ] (main.toc
@@ -1080,195 +1080,201 @@ l.95 \newpage
 Chapter 1.
 )
 
-[4
+[1
+
 
 ] (chapters/02_theory.tex
 Chapter 2.
 (chapters/01_notation.tex
 
-[5
+[2
 
 ])
 
-[6]
-<figs/water-column-bc.png, id=246, 319.69438pt x 122.4575pt>
+[3]
+<figs/water-column-bc.png, id=251, 319.69438pt x 122.4575pt>
 File: figs/water-column-bc.png Graphic file (type png)
 <use figs/water-column-bc.png>
 Package pdftex.def Info: figs/water-column-bc.png  used on input line 112.
 (pdftex.def)             Requested size: 250.24199pt x 95.85466pt.
 
 
-[7 <./figs/water-column-bc.png>]
+[4 <./figs/water-column-bc.png>]
 
-[8]
+[5]
 
-[9]
+[6]
 
-[10]
-<C:/Users/Matteo/Shallow-Water-Equations/figs/Control_volume_1D.png, id=328, 769.37437pt x 453.19313pt>
+[7]
+<C:/Users/Matteo/Shallow-Water-Equations/figs/Control_volume_1D.png, id=333, 769.37437pt x 453.19313pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/figs/Control_volume_1D.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/figs/Control_volume_1D.png>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/figs/Control_volume_1D.png  used on input line 386.
 (pdftex.def)             Requested size: 250.24199pt x 147.40358pt.
 
 
-[11]) (chapters/03_spherical_coordinates.tex) (chapters/fvm.tex
+[8]) (chapters/03_spherical_coordinates.tex) (chapters/fvm.tex
 
-[12 <C:/Users/Matteo/Shallow-Water-Equations/figs/Control_volume_1D.png>]
-<C:/Users/Matteo/Shallow-Water-Equations/tex/figs/fvm_grid_new.png, id=361, 409.53pt x 245.41687pt>
+[9 <C:/Users/Matteo/Shallow-Water-Equations/figs/Control_volume_1D.png>]
+<C:/Users/Matteo/Shallow-Water-Equations/tex/figs/control_volume_V_i_n.png, id=365, 472.01344pt x 352.31625pt>
+File: C:/Users/Matteo/Shallow-Water-Equations/tex/figs/control_volume_V_i_n.png Graphic file (type png)
+<use C:/Users/Matteo/Shallow-Water-Equations/tex/figs/control_volume_V_i_n.png>
+Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/tex/figs/control_volume_V_i_n.png  used on input line 27.
+(pdftex.def)             Requested size: 200.19054pt x 149.42331pt.
+
+
+[10 <C:/Users/Matteo/Shallow-Water-Equations/tex/figs/control_volume_V_i_n.png>]
+<C:/Users/Matteo/Shallow-Water-Equations/tex/figs/fvm_grid_new.png, id=375, 409.53pt x 245.41687pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/tex/figs/fvm_grid_new.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/tex/figs/fvm_grid_new.png>
-Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/tex/figs/fvm_grid_new.png  used on input line 36.
+Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/tex/figs/fvm_grid_new.png  used on input line 59.
 (pdftex.def)             Requested size: 250.24199pt x 149.96245pt.
-
-
-[13]
-<C:/Users/Matteo/Shallow-Water-Equations/figs/FVM_1D_grid.png, id=372, 383.18156pt x 169.38281pt>
+<C:/Users/Matteo/Shallow-Water-Equations/figs/FVM_1D_grid.png, id=377, 383.18156pt x 169.38281pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/figs/FVM_1D_grid.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/figs/FVM_1D_grid.png>
-Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/figs/FVM_1D_grid.png  used on input line 63.
+Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/figs/FVM_1D_grid.png  used on input line 71.
 (pdftex.def)             Requested size: 250.24199pt x 110.6196pt.
 
 
-[14 <C:/Users/Matteo/Shallow-Water-Equations/tex/figs/fvm_grid_new.png> <C:/Users/Matteo/Shallow-Water-Equations/figs/FVM_1D_grid.png>])
+[11 <C:/Users/Matteo/Shallow-Water-Equations/tex/figs/fvm_grid_new.png>]) (chapters/riemann.tex
 
-[15] (chapters/method.tex
+[12 <C:/Users/Matteo/Shallow-Water-Equations/figs/FVM_1D_grid.png>]
+
+[13]) (chapters/FNO+NN.tex)
+
+[14] (chapters/method.tex
 Chapter 3.
-(chapters/riemann.tex
 
-[16
 
-]
+[15
 
-[17]
+] (chapters/04_Numerics.tex
 
-[18]) (chapters/04_Numerics.tex
-
-[19]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/data_generation_initial.png, id=435, 578.16pt x 289.08pt>
+[16]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/data_generation_initial.png, id=444, 578.16pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/data_generation_initial.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/data_generation_initial.png>
-Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/data_generation_initial.png  used on input line 48.
+Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/data_generation_initial.png  used on input line 45.
 (pdftex.def)             Requested size: 400.38872pt x 200.19322pt.
 
 
-[20]))
+[17]))
 
-[21 <C:/Users/Matteo/Shallow-Water-Equations/plots/data_generation_initial.png>] (chapters/05_Results.tex
+[18 <C:/Users/Matteo/Shallow-Water-Equations/plots/data_generation_initial.png>] (chapters/05_Results.tex
 Chapter 4.
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 3.
 (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-<plots/sol_1D_val.png, id=452, 1445.4pt x 361.35pt>
+<plots/sol_1D_val.png, id=461, 1445.4pt x 361.35pt>
 File: plots/sol_1D_val.png Graphic file (type png)
 <use plots/sol_1D_val.png>
 Package pdftex.def Info: plots/sol_1D_val.png  used on input line 33.
 (pdftex.def)             Requested size: 400.38872pt x 100.0966pt.
 
 
-[22
+[19
 
 {C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_initial.png, id=465, 722.7pt x 216.81pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_initial.png, id=474, 722.7pt x 216.81pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_initial.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_initial.png>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_initial.png  used on input line 64.
 (pdftex.def)             Requested size: 350.33727pt x 105.09978pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final.png, id=466, 722.7pt x 216.81pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final.png, id=475, 722.7pt x 216.81pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final.png>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final.png  used on input line 71.
 (pdftex.def)             Requested size: 350.33727pt x 105.09978pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.png, id=467, 722.7pt x 216.81pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.png, id=476, 722.7pt x 216.81pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.png>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.png  used on input line 79.
 (pdftex.def)             Requested size: 350.33727pt x 105.09978pt.
 
 
-[23 <./plots/sol_1D_val.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_initial.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final.png>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.png, id=478, 722.7pt x 216.81pt>
+[20 <./plots/sol_1D_val.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_initial.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final.png>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.png, id=487, 722.7pt x 216.81pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.png>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.png  used on input line 85.
 (pdftex.def)             Requested size: 350.33727pt x 105.09978pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.png, id=479, 722.7pt x 216.81pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.png, id=488, 722.7pt x 216.81pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.png>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.png  used on input line 93.
 (pdftex.def)             Requested size: 350.33727pt x 105.09978pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.png, id=480, 722.7pt x 216.81pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.png, id=489, 722.7pt x 216.81pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.png>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.png  used on input line 99.
 (pdftex.def)             Requested size: 350.33727pt x 105.09978pt.
 
 
-[24 <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.png>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.png, id=493, 722.7pt x 216.81pt>
+[21 <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.png>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.png, id=502, 722.7pt x 216.81pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.png>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.png  used on input line 111.
 (pdftex.def)             Requested size: 350.33727pt x 105.09978pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.png, id=494, 722.7pt x 216.81pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.png, id=503, 722.7pt x 216.81pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.png>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.png  used on input line 117.
 (pdftex.def)             Requested size: 350.33727pt x 105.09978pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_initial.png, id=495, 722.7pt x 216.81pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_initial.png, id=504, 722.7pt x 216.81pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_initial.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_initial.png>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_initial.png  used on input line 128.
 (pdftex.def)             Requested size: 350.33727pt x 105.09978pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final.png, id=496, 722.7pt x 216.81pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final.png, id=505, 722.7pt x 216.81pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final.png>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final.png  used on input line 134.
 (pdftex.def)             Requested size: 350.33727pt x 105.09978pt.
 
 
-[25 <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_initial.png>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.png, id=508, 722.7pt x 361.35pt>
+[22 <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_initial.png>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.png, id=517, 722.7pt x 361.35pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.png>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.png  used on input line 158.
 (pdftex.def)             Requested size: 300.29344pt x 150.14491pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.4.png, id=509, 722.7pt x 361.35pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.4.png, id=518, 722.7pt x 361.35pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.4.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.4.png>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.4.png  used on input line 164.
 (pdftex.def)             Requested size: 300.29344pt x 150.14491pt.
 
 
-[26 <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.png>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.7.png, id=518, 722.7pt x 361.35pt>
+[23 <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.png>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.7.png, id=527, 722.7pt x 361.35pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.7.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.7.png>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.7.png  used on input line 170.
 (pdftex.def)             Requested size: 300.29344pt x 150.14491pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=1.4.png, id=519, 722.7pt x 361.35pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=1.4.png, id=528, 722.7pt x 361.35pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=1.4.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=1.4.png>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=1.4.png  used on input line 176.
 (pdftex.def)             Requested size: 300.29344pt x 150.14491pt.
 )
 
-[27 <C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.4.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.7.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=1.4.png>] (chapters/06_discussion.tex
+[24 <C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.4.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.7.png> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=1.4.png>] (chapters/06_discussion.tex
 Chapter 5.
 )
 
-[28
+[25
 
 ] (chapters/07_FurtherWork.tex
 Chapter 6.
 )
 
-[29
+[26
 
 ] (main.bbl)
 
-[30
+[27
 
 ] (main.aux)
  ***********
@@ -1276,20 +1282,20 @@ LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-16>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4A9F271DCECD0F88089E63688AE802FF;6038.
+(rerunfilecheck)             Checksum: 6AC6E86D73B890F4120A4E9BCB8940D7;5967.
  ) 
 Here is how much of TeX's memory you used:
- 40286 strings out of 473899
- 901515 string characters out of 5726028
+ 40301 strings out of 473899
+ 902249 string characters out of 5726028
  1954960 words of memory out of 5000000
- 62267 multiletter control sequences out of 15000+600000
+ 62279 multiletter control sequences out of 15000+600000
  573766 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,23n,131p,775b,638s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 83i,23n,131p,775b,663s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Matteo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on main.pdf (33 pages, 1353912 bytes).
+Output written on main.pdf (33 pages, 1400240 bytes).
 PDF statistics:
- 670 PDF objects out of 1000 (max. 8388607)
+ 679 PDF objects out of 1000 (max. 8388607)
  153 named destinations out of 1000 (max. 500000)
- 390 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 403 words of extra memory for PDF output out of 10000 (max. 10000000)
 

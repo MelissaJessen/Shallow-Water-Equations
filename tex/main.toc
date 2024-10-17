@@ -1,37 +1,36 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {1}Introduction}{4}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Motivation}{4}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Literature}{4}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Thesis overview}{4}{section.1.3}%
-\contentsline {chapter}{\numberline {2}Theory}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Notation}{5}{section.2.1}%
-\contentsline {section}{\numberline {2.2}The SWE with conservative variables}{6}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Conservation laws}{6}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Boundary conditions}{7}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Assumptions}{8}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Integration over depth}{9}{subsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.2.5}The SWE in vector form for 1D and 2D}{11}{subsection.2.2.5}%
-\contentsline {subsection}{\numberline {2.2.6}The SWE in integral form}{11}{subsection.2.2.6}%
-\contentsline {subsection}{\numberline {2.2.7}SWE in Spherical Coordinates}{13}{subsection.2.2.7}%
-\contentsline {section}{\numberline {2.3}Finite Volume Method for the Shallow Water Equations}{13}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Finite Volume Methods for the 1D SWE}{14}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Finite Volume Method for the 1D SWE with source term}{15}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Finite Volume Method for the 2D SWE}{15}{subsection.2.3.3}%
-\contentsline {chapter}{\numberline {3}Methodology}{16}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Riemann problem}{16}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Waves in the Riemann problem}{17}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Exact Riemann solver}{18}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Approximate Riemann solvers}{18}{subsection.3.1.3}%
-\contentsline {subsubsection}{HLL solver}{18}{section*.7}%
-\contentsline {subsubsection}{Roe solver}{18}{section*.8}%
-\contentsline {subsection}{\numberline {3.1.4}Implementation of the FVM in 1D}{19}{subsection.3.1.4}%
-\contentsline {subsection}{\numberline {3.1.5}Godunov's Method}{20}{subsection.3.1.5}%
-\contentsline {subsection}{\numberline {3.1.6}Implementation of the FVM in 2D}{20}{subsection.3.1.6}%
-\contentsline {subsection}{\numberline {3.1.7}Data generation}{20}{subsection.3.1.7}%
-\contentsline {chapter}{\numberline {4}Numerical results}{22}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Metod of manufactured solutions}{22}{section.4.1}%
-\contentsline {section}{\numberline {4.2}The 1D Dam Break Problem}{22}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Toro test cases}{23}{subsection.4.2.1}%
-\contentsline {section}{\numberline {4.3}2D idealised Circular Dam Break Problem}{26}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Discussion}{28}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Further work}{29}{chapter.6}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Literature}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Thesis overview}{1}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Theory}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Notation}{2}{section.2.1}%
+\contentsline {section}{\numberline {2.2}The SWE with conservative variables}{3}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Conservation laws}{3}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Boundary conditions}{4}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Assumptions}{5}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Integration over depth}{6}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}The SWE in vector form for 1D and 2D}{8}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}The SWE in integral form}{8}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}SWE in Spherical Coordinates}{10}{subsection.2.2.7}%
+\contentsline {section}{\numberline {2.3}Finite Volume Method for the Shallow Water Equations}{10}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Finite Volume Methods for the 1D SWE}{10}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Finite Volume Method for the 2D SWE}{12}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}The Riemann problem}{12}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Waves in the Riemann problem}{13}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Exact Riemann solver}{14}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Fourier Neural Operator and Neural Networks}{14}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Methodology}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Approximate Riemann solvers}{15}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}HLL solver}{15}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Roe solver}{15}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Implementation of the FVM in 1D}{16}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Godunov's Method}{17}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Data generation}{17}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Numerical results}{19}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Metod of manufactured solutions}{19}{section.4.1}%
+\contentsline {section}{\numberline {4.2}The 1D Dam Break Problem}{19}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Toro test cases}{20}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.3}2D idealised Circular Dam Break Problem}{23}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Discussion}{25}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Further work}{26}{chapter.6}%

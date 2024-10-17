@@ -76,6 +76,7 @@
 \title{Fourier Neural Operator-Based Models for Solving the Shallow Water Equations in Spherical Coordinates}
 \author{Melissa Ulsøe Jessen (s194322)}
 
+\pagenumbering{roman}
 
 \begin{document}
 \input{frontmatter/Frontpage.tex}
@@ -97,6 +98,11 @@
 \thispagestyle{empty}
 \tableofcontents
 
+% Start page numbering after the Table of Contents
+\clearpage
+\pagenumbering{arabic}  % Start numbering in Arabic numerals
+\setcounter{page}{1}     % Optional: Set page number to 1
+
 \newpage
 \input{chapters/00_introduction.tex}
 
@@ -104,6 +110,8 @@
 \input{chapters/02_theory.tex}
 \input{chapters/03_spherical_coordinates.tex}
 \input{chapters/fvm.tex}
+\input{chapters/riemann.tex}
+\input{chapters/FNO+NN.tex}
 
 \newpage
 \input{chapters/method.tex}

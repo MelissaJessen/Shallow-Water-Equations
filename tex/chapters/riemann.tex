@@ -1,18 +1,30 @@
-\section{Riemann problem}
+\section{The Riemann problem}
+We will now define the Riemann problem, since it plays a crucial role in the finite volume method.
 In the Riemann problem we distinguish between what we call a wet bed and a dry bed. 
 A wet bed is the case where the water depth is positive everywhere, whereas a dry bed is the case where the water depth is zero in some cells.
 The special Riemann problem where parts of the bed are dry is dealing with the so-called dry fronts or wet/dry fronts, which are challenging to handle numerically.
 We will leave these cases for now, and only consider the wet bed problems.
 
-The Riemann problem is defined as the initial-value problem (IVP)
-\begin{align}\label{eq:Riemann_problem}
-    \mathbf{U}_t + {\mathbf{F(U)}}_x &= 0, \\
-\mathbf{U}(x, 0) &= \begin{cases}
-    \mathbf{U_L}, & x < 0, \\
-    \mathbf{U_R}, & x > 0.
-\end{cases}
+The Riemann problem for the shallow water equations is defined as the initial-value problem (IVP)~\cite{Toro2024}:
+\begin{equation}\label{eq:Riemann_problem}
+    \begin{aligned}
+        \text{PDEs: } &\mathbf{U}_t + {\mathbf{F(U)}}_x = 0, \\
+        \text{ICs: } &\mathbf{U}(x, 0) = \begin{cases}
+            \mathbf{U_L}, & \text{if  } x < 0, \\
+            \mathbf{U_R}, & \text{if  } x > 0.
+        \end{cases}
+    \end{aligned}
+    \end{equation}
+Here, the vectors $\mathbf{U}$ and $\mathbf{F(U)}$ in~\eqref{eq:Riemann_problem} are given By
+\begin{align}
+    \mathbf{U} = \begin{bmatrix}
+        h \\ hu \\ hv
+    \end{bmatrix}, \quad
+    \mathbf{F(U)} = \begin{bmatrix}
+        hu \\ hu^2 + \frac{1}{2}gh^2 \\ hvu
+    \end{bmatrix},
 \end{align}
-We consider the x-split, two-dimensional shallow water equations with the initial states:
+and the initial conditions $\mathbf{U_L}$ and $\mathbf{U_R}$ are
 \begin{align*}
     \mathbf{U_L} = \begin{bmatrix}
         h_L \\ h_L u_L \\ h_L v_L
@@ -75,93 +87,4 @@ But for now, we will consider the case where the solution consists of a single n
 This is enough to solve the Riemann problem as it is always possible to solve the Riemann problem by considering one wave at a time.
 
 We denote the constant values of the water depth and particle velocity in the star region by $h_*$ and $u_*$, respectively.
-
-\subsection{Approximate Riemann solvers}
-We will study two approximate Riemann solvers, that is, the HLL and Roe. 
-
-\subsubsection{HLL solver}
-The HLL (Harten, Lax and van Leer) approach assumes a two-wave structure of the Riemann problem, see Figure.
-The solver is based on the data $\mathbf{U}_L \equiv \mathbf{U}_i^n, \mathbf{U}_R \equiv \mathbf{U}_{i+1}^n$ and fluxes $\mathbf{F}_L \equiv \mathbf{F}(\mathbf{U}_L), \mathbf{F}_R \equiv \mathbf{F}(\mathbf{U}_R)$.
-
-The HLL flux is given by
-\begin{align*}
-    \mathbf{F}_{1 + \frac{1}{2}} = \begin{cases}
-        \mathbf{F}_L & \text{if } S_L \geq 0, \\
-        \mathbf{F}^{hll} \equiv \frac{S_R \mathbf{F}_L - S_L \mathbf{F}_R + S_L S_R (\mathbf{U}_R - \mathbf{U}_L)}{S_R - S_L} & \text{if } S_L \leq 0 \leq S_R, \\
-        \mathbf{F}_R & \text{if } S_R \leq 0.
-    \end{cases}
-\end{align*}
-The wave speeds $S_L$ and $S_R$ must be estimated in some way, and one possibility is to use 
-\begin{align*}
-    S_L = u_L - a_L q_L, \quad S_R = u_R + a_R q_R.
-\end{align*}
-
-\subsubsection{Roe solver}
-Consider the non-linear Riemann problem in~\eqref{eq:Riemann_problem}:
-\begin{align*}
-    \mathbf{U}_t + \mathbf{F(U)}_x \equiv \mathbf{U}_t + \mathbf{A} \mathbf{U}_x = 0,
-\end{align*}
-where $\mathbf{A}$ is the Jacobian matrix of $\mathbf{F}$. 
-The Roe solver is based on an approximation of the Jacobian matrix $\mathbf{A}$ by a Roe matrix $\tilde{\mathbf{A}}$, which is a constant coefficient matrix, to obtain the linear system
-\begin{align*}
-    \mathbf{U}_t + \mathbf{\tilde{A}} \mathbf{U}_x = 0.
-\end{align*}
-
-This means that the Roe solver solves the approximated Riemann problem
-\begin{align*}
-    \mathbf{U}_t + \mathbf{\tilde{A}} \mathbf{U}_x &= 0. \\
-    \mathbb{U}(x,0) = \begin{cases}
-        \mathbf{U}_L, & x < 0, \\
-        \mathbf{U}_R, & x > 0.
-    \end{cases}
-\end{align*}
-exact.
-That is, the original non-linear conservation laws are replaced by a linearised system with constant coefficients.
-
-The main idea in the Roe solver is to find average values $\tilde{h}, \tilde{a}, \tilde{u}$ and $\tilde{\psi}$ for the depth $h$, the celerity $a$ (??), the velocity component $u$ and the scalar $\psi$.
-The method thus use the following Roe averages:
-\begin{align}\label{eq:Roe_averages}
-    \left\{
-\begin{aligned}
-    \tilde{h} &= \sqrt{h_L h_R}, \\
-    \tilde{u} &= \frac{u_L \sqrt{h_L} + u_R \sqrt{h_R}}{\sqrt{h_L} + \sqrt{h_R}}, \\
-    \tilde{a} &= \sqrt{\frac{1}{2}(a_L^2 + a_R^2)}, \\
-    \tilde{\psi} &= \frac{\psi_L \sqrt{h_L}  + \psi_R \sqrt{h_R}}{\sqrt{h_L} + \sqrt{h_R}}.
-\end{aligned}
-\right.
-\end{align}
-The average eigenvalues (of what?) are
-\begin{align*}
-    \tilde{\lambda}_1 = \tilde{u} - \tilde{a}, \quad \tilde{\lambda}_2 = \tilde{u}, \quad \tilde{\lambda}_3 = \tilde{u} + \tilde{a}, \\
-\end{align*} 
-with the correspinding right eigenvectors
-\begin{align*}
-    \tilde{\mathbf{R}}^{(1)} = \begin{bmatrix}
-        1 \\ \tilde{u} - \tilde{a} \\ \tilde{\psi}
-    \end{bmatrix}, \quad
-    \tilde{\mathbf{R}}^{(2)} = \begin{bmatrix}
-        0 \\ 0 \\  1
-    \end{bmatrix}, \quad
-    \tilde{\mathbf{R}}^{(3)} = \begin{bmatrix}
-        1 \\ \tilde{u} + \tilde{a} \\ \tilde{\psi}
-    \end{bmatrix}.
-\end{align*}
-The wave strenghts $\tilde{\alpha}_j$ described by Roe averages are given by
-\begin{align}
-    \left\{
-    \begin{aligned}
-        \tilde{\alpha}_1 &= \frac{1}{2} \left[ \Delta h - \frac{\tilde{h}}{\tilde{a}} \Delta u  \right], \\
-        \tilde{\alpha}_2 &= \frac{1}{2} \left[ \tilde{h} \Delta \psi  \right], \\
-        \tilde{\alpha}_3 &= \frac{1}{2} \left[ \Delta h + \frac{\tilde{h}}{\tilde{a}} \Delta u  \right].
-    \end{aligned}    
-    \right.
-\end{align}
-Applying theory of linear systems with constant coefficients.
-The numerical flux is
-\begin{align}\label{eq:Roe_flux}
-    \mathbf{F}_{i+\frac{1}{2}} = \frac{1}{2} \left( \mathbf{F}_L + \mathbf{F}_R \right) - \frac{1}{2} \sum_{j=1}^3 \tilde{\alpha}_j \left| \tilde{\lambda}_j \right| \tilde{\mathbf{R}}^{(j)}.
-\end{align}
-The Roe flux~\eqref{eq:Roe_flux} is used in the explicit conservative scheme to solve the SWE in 1D.
-
-Entropy fix?
 
