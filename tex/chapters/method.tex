@@ -1,17 +1,57 @@
 \chapter{Methodology}
 In this chapter..
 
-\section{Approximate Riemann solvers}
-We will study two approximate Riemann solvers to solve the Riemann problem~\eqref{eq:Riemann_problem}, that is, the HLL and Roe. 
+\section{Numerical fluxes}
+In this section we will study the numerical fluxes used to solve the SWE in 1D.
+At each cell interface, we need to solve the Riemann problem~\eqref{eq:Riemann_problem} to find the numerical flux.
+There are several numerical fluxes that can be used to solve the local Riemann problem, and we will consider some of them in this section.
+
 
 \subsection{Godunov method with exact Riemann solver}
+We consider the Godunov Upwind method, which is a first-order accurate metod to solve non-linear systems of hyperbolic conservation laws~\cite{Toro2024}.
+Godunov's method is a fundamental starting point.
+In the method we solve the non-linear Riemann problem at each cell interface. 
+
+Consider the initial-boundary value problem (IBVP) for a system of $N$ nonlinear hyperbolic conservation (balance?) laws     
+\begin{equation}\label{eq:IBVP_system}
+    \begin{cases}
+    \text{PDEs: }    &\mathbf{U}_t + \mathbf{F(U)}_x = \mathbf{S(U)}, \quad x \in [a, b], \quad t > 0, \\
+    \text{ICs: }    &\mathbf{U}(x,0) = \mathbf{U}^{(0)}(x), \quad x \in [a,b], \\
+    \text{BCs: }    &\mathbf{U}(a,t) = \mathbf{B}_{L}(t), \quad \mathbf{U}(b,t) = \mathbf{B}_{R}(t), \quad t \geq 0.
+    \end{cases}
+\end{equation}
+The vectors $\mathbf{B}_L (t)$ and $\mathbf{B}_R (t)$ denote the boundary conditions at the left and right boundaries, respectively.
+The Godunov Upwind method in conservative form~\eqref{eq:explicit_conservative_1D_SWE} solves the IBVP~\eqref{eq:IBVP_system}.
 
 
 \subsection{Lax-Friedrichs}
+The Lax-Friedrichs method is a centred method, which is first-order accurate.
+To solve $\mathbf{U}_t + \mathbf{F(U)}_x = 0$ it uses the numerical flux
+\begin{align*}
+    \mathbf{F}_{i+\frac{1}{2}}^{LF} = \frac{1}{2} \left( {\mathbf{F}(\mathbf{U})}_{i}^n + {\mathbf{F}(\mathbf{U})}_{i+1}^n \right) - \frac{1}{2} \frac{\Delta x}{\Delta t} \left( \mathbf{U}_{i+1}^n - \mathbf{U}_i^n \right).
+\end{align*}
 
 \subsection{Lax-Wendroff}
+The Lax-Wendroff method is a centred method, which is second-order accurate in space and time.
+There are several versions of the Lax-Wendroff flux, but in this thesis we will use the following flux:
+
+\begin{equation}
+    \begin{aligned}
+        \mathbf{U}_{i+ \frac{1}{2}}^{LW} &= \frac{1}{2} \left( \mathbf{U}_{i}^n + \mathbf{U}_{i+1}^n  \right) - \frac{1}{2} \frac{\Delta t}{\Delta x} \left( {\mathbf{F}(\mathbf{U})}_{i+1}^n - {\mathbf{F}(\mathbf{U})}_{i}^n \right), \\
+        \mathbf{F}_{i+\frac{1}{2}}^{LW} &= {{\mathbf{F}(\mathbf{U})}_{i+ \frac{1}{2}}^{LW}}.
+    \end{aligned}
+\end{equation}
+
+
+
 
 \subsection{FORCE}
+The FORCE scheme (First-Order Centred) is a combination of Lax-Friedrichs and Lax-Wendroffs fluxes.
+The numerical flux is given by
+\begin{align*}
+    \mathbf{F}_{i+ \frac{1}{2}}^{FO} = \frac{1}{2} \left( \mathbf{F}_{i+ \frac{1}{2}}^{LF} + \mathbf{F}_{i + \frac{1}{2}}^{LW}  \right).
+\end{align*}
+It is possible to extend the FORCE scheme to multiple dimensions on structured meshes by using dimensional splitting.
 
 \subsection{HLLC}
 

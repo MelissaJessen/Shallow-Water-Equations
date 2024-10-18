@@ -211,8 +211,6 @@ for t=1:ntmaxi %time marching precedure
             flux(1,i) =0.5*(FLF(1)+FLW(1));
             flux(2,i) =0.5*(FLF(2)+FLW(2));
 
-
-
         elseif iflux==5   %HLL FLUX
             [SL,SR]=hll(hL,hR,uL,uR,aL,aR,gravit);
             ustar = 0.5*(uL+uR)+aL-aR; %two-rarefactions approx.
