@@ -11,7 +11,7 @@
 \contentsline {subsection}{\numberline {2.2.3}Assumptions}{5}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}Integration over depth}{6}{subsection.2.2.4}%
 \contentsline {subsection}{\numberline {2.2.5}The SWE in vector form for 1D and 2D}{8}{subsection.2.2.5}%
-\contentsline {subsection}{\numberline {2.2.6}The SWE in integral form}{8}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.6}The 1D SWE in integral form}{8}{subsection.2.2.6}%
 \contentsline {subsection}{\numberline {2.2.7}SWE in Spherical Coordinates}{10}{subsection.2.2.7}%
 \contentsline {section}{\numberline {2.3}Finite Volume Method for the Shallow Water Equations}{10}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Finite Volume Methods for the 1D SWE}{10}{subsection.2.3.1}%

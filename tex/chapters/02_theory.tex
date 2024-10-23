@@ -1,5 +1,7 @@
 \chapter{Theory}
 In this chapter we will derive the shallow water equations (SWE) in conservative form, and present the equations in vector form and in integral form for 1D and 2D.
+We will also present the Finite Volume Method (FVM) including the Riemann problem.
+Lastly, we will dive into the theory behind the data-driven methods.
 
 \input{chapters/01_notation.tex}
 
@@ -47,11 +49,12 @@ Putting this together, we can rewrite the momentum equation~\eqref{eq:momentum_c
 In this project we consider incompressible fluids, meaning that the fluid density $\rho$ is independent of the pressure $p$.
 We also assume that the fluid density only depends on temperature and salinity, and thus is independent of $t, x, y$ and $z$.
 Additionally, we assume $\rho$ is nonzero.
-Using these assumptions and the product rule for differentiation, we can simplify the mass conservation equation~\eqref{eq:mass_conservation} to
+Rewriting the mass conservation equation~\eqref{eq:mass_conservation} gives
 \begin{align*}
     \rho_t + \rho(u_x + v_y + w_z) + u \rho_x + v \rho_y + w \rho_z = 0,
 \end{align*}
-implying that
+using the given assumptions and the product rule for differentiation.
+Hence we obtain
 \begin{align}
     u_x + v_y + w_z = 0. \label{eq:mass_conservation_incompressible}
 \end{align}
@@ -64,8 +67,8 @@ Applying the divergence operator $\nabla \cdot$, the momentum conservation equat
     \end{bmatrix}
     - \rho \mathbf{g} = 0.
 \end{align}
-We neglect all body forces in $\mathbf{g}$, expect the gravitational force in the $z-$direction, i.e., $\mathbf{g} = \begin{bmatrix} 0 & 0 & -g \end{bmatrix}$, where $g$ is the gravity acceleration.
-Hence, by using the product rule in~\eqref{eq:momentum_conservation_expanded} we obtain
+We neglect all body forces in $\mathbf{g}$, expect the gravitational force in the $z-$direction, i.e., $\mathbf{g} = \begin{bmatrix} 0 & 0 & -g \end{bmatrix}$, where $g$ is the gravity acceleration, which we assume to be constant.
+Hence, by using the product rule in~\eqref{eq:momentum_conservation_expanded} and that $\rho_t = 0$ we obtain
 \begin{align}\label{eq:momentum_conservation_expanded_final}
     \rho \begin{bmatrix}
         u_t \\ v_t \\ w_t
@@ -95,12 +98,13 @@ Putting it all together, the mass equation~\eqref{eq:mass_conservation} and the 
 
 \subsection{Boundary conditions}
 In this project, we consider the flow of water with a free surface, meaning that the surface is not fixed and can move or change over time.
-To solve the SWE, it is essential to impose boundary conditions at both the bottom of the water column and the free surface.
-We assumme the bottom boundary is defined by a function
+To solve the SWE, it is essential to impose boundary conditions at both the bottom of the water column and at the free surface.
+We assumme the bottom $b$ is defined by a function
 \begin{align*}
     z = b(x,y),
 \end{align*}
 meaning that the bottom is dependent on $x$ and $y$, but not on the time $t$.
+Since the bottom is not moving over time, we refer to it as fixed.
 The free surface is defined by 
 \begin{align*}
     z = s(x,y,t) \equiv b(x,y) + h(x,y,t),
@@ -113,17 +117,17 @@ The following illustration helps to visualize the setup:
     \caption{Illustration of a water column with a free surface.}\label{fig:water_column_bc}
 \end{figure}
 We impose boundary conditions at the bottom and at the free surface, adressing both kinematic and dynamical conditions.
-To describe the boundaries mathematically, we introduce a boundary function $\psi(x,y,z,t)$ that is zero on a boundary:
+To describe the boundaries mathematically, we introduce a boundary function $\psi(x,y,z,t)$ that is zero on the boundaries:
 \begin{align*}
     \psi(x,y,z,t) = 0.
 \end{align*}
 For the free surface, this boundary is given by
 \begin{align}\label{eq:psi_free_surface}
-    \psi(x,y,z,t) \equiv z - s(x,y,t) = 0,
+    \psi|_{z = s} = z - s(x,y,t) = 0,
 \end{align}
 and for the bottom, it is described by
 \begin{align}\label{eq:psi_bottom}
-    \psi(x,y,z,t) \equiv z - b(x,y) = 0.
+    \psi|_{z = b} = z - b(x,y) = 0.
 \end{align}
 In the kinematic condition, we assume that fluid particles on the boundary remain on the boundary over time.
 Mathematically this is expressed as
@@ -138,7 +142,7 @@ Hence, the total derivative of $\psi$ wrt. $t$ is given by
 We see that $\frac{\text{d}x}{\text{d}t}$ denotes the velocity in the $x-$direction, i.e., $u$, and correspondingly $\frac{\text{d}y}{\text{d}t}$ and $\frac{\text{d}x}{\text{d}t}$ denotes $v$ and $w$ respectively.
 Thus, the kinematic condition is given by
 \begin{align}\label{eq:kinematic_condition}
-    \frac{\text{d} }{\text{d} t} \psi(x,y,z,t) = \psi_t + u \psi_x + v \psi_y + w \psi_z = 0.
+    \frac{\text{d} }{\text{d} t} \psi = \psi_t + u \psi_x + v \psi_y + w \psi_z = 0.
 \end{align}
 Applying this to the free surface by substituting~\eqref{eq:psi_free_surface} into the kinematic condition~\eqref{eq:kinematic_condition} yields
 \begin{align}\label{eq:kinematic_condition_free_surface}
@@ -153,7 +157,7 @@ We assume that the pressure at the free surface is equal to the pressure in the 
 Since absolute pressure levels are irrelevant (we are primarily concerned with pressure differences), we set the pressure at the free surface to zero.
 This leads to the following expression for the pressure at the free surface:
 \begin{align}\label{eq:pressure_free_surface}
-    p(x,y,z,t)|_{z = s(x,y,t)} = 0.
+    p(x,y,z,t)|_{z = s} = 0.
 \end{align}
 This condition, known as the dynamical condition, relates to the forces acting on the boundaries of the fluid.
 
@@ -184,24 +188,27 @@ Differentiating~\eqref{eq:pressure_distribution} with respect to $x$ and $y$ yie
     p_x = \rho g s_x, \quad p_y = \rho g s_y.
 \end{align*}
 Substituting these expressions into the $x-$ and $y-$momentum conservation equations~\eqref{eq:momentum_conservation_all} leads to 
-\begin{align}\label{eq:momentum_conservation_x_simplified}
-    u_t + u u_x + v u_y + w u_z = -g s_x, 
-\end{align}
-and
-\begin{align}\label{eq:momentum_conservation_y_simplified}
-    v_t + u v_x + v v_y + w v_z = -g s_y.
-\end{align}
+\begin{equation}\label{eq:momentum_conservation_xy_simplified}
+    \left.
+    \begin{aligned}
+        u_t + u u_x + v u_y + w u_z &= -g s_x,  \\
+        v_t + u v_x + v v_y + w v_z &= -g s_y.
+    \end{aligned}
+    \right\}
+\end{equation}
+
 These are the simplified momentum equations for the shallow water equations.
 We realize that both $p_x$ and $p_y$ are independent of $z$, implying that $\frac{\text{d}u}{\text{d}t} $ and $\frac{\text{d}v}{\text{d}t} $are also independent of $z$.
-Hence $u_z = v_z = 0$, implying that~\eqref{eq:momentum_conservation_x_simplified} and~\eqref{eq:momentum_conservation_y_simplified} can be simplified to
-\begin{align}\label{eq:momentum_conservation_x_final}
-    u_t + u u_x + v u_y = -g s_x, 
-\end{align}
-and
-\begin{align}\label{eq:momentum_conservation_y_final}
-    v_t + u v_x + v v_y = -g s_y.
-\end{align}
-
+Hence $u_z = v_z = 0$, implying that~\eqref{eq:momentum_conservation_xy_simplified} can be simplified to
+\begin{equation}\label{eq:momentum_conservation_xy_final}
+    \left.
+    \begin{aligned}
+        u_t + u u_x + v u_y &= -g s_x,  \\
+        v_t + u v_x + v v_y &= -g s_y.
+    \end{aligned}
+    \right\}
+\end{equation}
+These are the momentum equations for the shallow water equations in two dimensions.
 
 \subsection{Integration over depth}
 The next step in deriving the SWE is to integrate the conservation equations over the vertical direction $z$.
@@ -268,22 +275,25 @@ Putting it all together the equation~\eqref{eq:mass_conservation_integrated_fina
     h_t + {(hu)}_x + {(hv)}_y = 0,
 \end{align}
 which is also the first equation in the SWE in conservative form.
-When integrating the momentum equations~\eqref{eq:momentum_conservation_x_final} and~\eqref{eq:momentum_conservation_y_final} over the vertical direction, we see that since the equations are independent of $z$, the resulting equations are simply
-\begin{align}
-    h(u_t + uu_x + vu_y + g s_x) &= 0, \label{eq:x_momentum} \\
-    h(v_t + uv_x + vv_y + g s_y) &= 0. \label{eq:y_momentum}
-\end{align}
-We multiply~\eqref{eq:SWE_1} with $u$ and $v$ respectively, and add the resulting two equations to~\eqref{eq:x_momentum} and~\eqref{eq:y_momentum} correspondingly.
+When integrating the momentum equations~\eqref{eq:momentum_conservation_xy_final} over the vertical direction, we see that since the equations are independent of $z$, the resulting equations are simply
+\begin{equation}\label{eq:xy_momentum}
+    \begin{aligned}
+        h(u_t + uu_x + vu_y + g s_x) &= 0,\\
+        h(v_t + uv_x + vv_y + g s_y) &= 0.
+    \end{aligned}
+\end{equation}
+We multiply~\eqref{eq:SWE_1} with $u$ and $v$ respectively, and add the resulting two equations to~\eqref{eq:xy_momentum}.
 Recall that $s = h + b$. 
 By using the product rule for differentiation and collecting terms, we obtain the momentum equations in conservative form:
-\begin{align}\label{eq:SWE_2}
-    {(hu)}_t + {(hu^2 + \frac{1}{2}gh^2)}_x + {(huv)}_y = -gh b_x,
-\end{align}
-and 
-\begin{align}\label{eq:SWE_3}
-    {(hv)}_t + {(huv)}_x + {(hv^2 + \frac{1}{2}gh^2)}_y = -gh b_y.
-\end{align}
-The three partial differential equations in~\eqref{eq:SWE_1},~\eqref{eq:SWE_2} and~\eqref{eq:SWE_3} are the shallow water equations in conservative form.
+\begin{equation}\label{eq:SWE_2}
+    \left.
+    \begin{aligned}
+        {(hu)}_t + {(hu^2 + \frac{1}{2}gh^2)}_x + {(huv)}_y &= -gh b_x,\\
+        {(hv)}_t + {(huv)}_x + {(hv^2 + \frac{1}{2}gh^2)}_y &= -gh b_y.
+    \end{aligned}
+    \right\}
+\end{equation}
+The three partial differential equations in~\eqref{eq:SWE_1} and~\eqref{eq:SWE_2} are the shallow water equations in conservative form.
 
 
 \subsection{The SWE in vector form for 1D and 2D}
@@ -374,9 +384,9 @@ If $\mathbf{S(U)} = 0$, the equation~\eqref{eq:vector_form_1D} is called a conse
 
 
 
-\subsection{The SWE in integral form}
+\subsection{The 1D SWE in integral form}
 It is often more convenient to work with the integral form of the SWE, since the integral form of equations of the form~\eqref{eq:vector_form_1D} and~\eqref{eq:vector_form_1D_variables} allows discountinuous solutions.
-The integral form is obtained by integrating the vector form~\eqref{eq:vector_form_1D} over a control volume $V$ in the $x-t$ plane
+The integral form is obtained by integrating the vector form~\eqref{eq:vector_form_1D} over a control volume $V$ in the $x,t$ plane
 \begin{align*}
     V = [x_L, x_R] \times [t_1, t_2].
 \end{align*}
@@ -410,7 +420,7 @@ Rewriting the left hand side using the fundamental theorem of calculus, we get
 which is the integral form of the conservation laws for the SWE in 1D.
 An alternative integral form of~\eqref{eq:vector_form_1D} is stated in~\cite{Toro2024}:
 \begin{align}\label{eq:integral_form_1D_alternative}
-    \frac{\text{d}}{\text{d}t} \int_{x_L}^{x_R} \mathbf{U}(x,t) \text{ d}x = \mathbf{F}(\mathbf{U}(x_L, t)) - \mathbf{F}(\mathbf{U}(x_R, t)) + \int_{x_L}^{x^R} \mathbf{S}(\mathbf{U})(x,t) \text{ d}x.
+    \frac{\text{d}}{\text{d}t} \int_{x_L}^{x_R} \mathbf{U}(x,t) \text{ d}x = \mathbf{F}(\mathbf{U}(x_L, t)) - \mathbf{F}(\mathbf{U}(x_R, t)) + \int_{x_L}^{x_R} \mathbf{S}(\mathbf{U}) \text{ d}x.
 \end{align}
 From~\eqref{eq:integral_form_1D_alternative} we get that the integral form of the homogeneous SWE in 1D is given by
 \begin{align}\label{eq:integral_form_1D_homogeneous}
