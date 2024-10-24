@@ -51,7 +51,7 @@ cfl=0.9;           %Courant number (choose cfl <1 for stable solutions)
 % TEST 4:  Two rarefactions
 % TEST 5:  Two rarefactions (Red sea)
 
-itest = 6;
+itest = 2;
 
 if itest==1
     %TEST 1

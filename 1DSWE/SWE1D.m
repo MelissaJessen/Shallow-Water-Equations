@@ -50,8 +50,6 @@ xlabel('x')
 % between xL and xR):
 H0 = sum(dx*q(1,:));
 
-
-%%
 % time loop
 for n = 1:1000000
     amax = max(max(abs(Lambda(q))));

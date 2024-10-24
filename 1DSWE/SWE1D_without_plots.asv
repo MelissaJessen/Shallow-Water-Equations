@@ -6,9 +6,9 @@ global Nx g;
 
 % Physical parameters
 xL = 0;
-xR = 50;
+xR = 1;
 t = 0;
-tend = 2.5;
+tend = 1;
 g = 9.81;   % acceleration due to gravity
 
 % numerical parameters
@@ -21,9 +21,7 @@ x  = linspace(xL+dx/2,xR-dx/2,Nx);
 q = zeros(2,Nx);
 hL = 3.5;   
 hR = 1.25;
-x0 = 25;
-uL = -5.0;
-uR = 5.0;
+x0 = 20;
 
 % Assuming x is defined and represents your x values
 %q(1, x < x0) = hL;    % Assign hL where x is less than x0
@@ -32,12 +30,8 @@ uR = 5.0;
 h0 = 1;
 mu = 0.5;
 sigma = 0.1;
-%h = h0 * exp(-(x - mu).^2 / (2 * sigma^2));
-
-q(1,:) = h0;
-q(2,x < x0) = uL;
-q(2,x > x0) = uR;
-
+h = h0 * exp(-(x - mu).^2 / (2 * sigma^2));
+q(1,:) = h;
 
 qnew = q;
 

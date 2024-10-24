@@ -33,7 +33,7 @@ mcells=100;    %number of cells for numerical simulations
 %4--> FORCE
 %5--> HLLC
 %6--> Flux-splitting (2020) UPWIND: this is our method!!!
-iflux=1;
+iflux=5;
 
 
 gravit=9.8;       %gravity
@@ -50,7 +50,7 @@ cfl=0.9;           %Courant number (choose cfl <1 for stable solutions)
 % TEST 4:  Two rarefactions
 % TEST 5:  Two rarefactions (Red sea)
 
-itest = 3;
+itest = 2;
 
 if itest==1
     % TORO TEST 1  
