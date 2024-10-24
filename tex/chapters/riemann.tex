@@ -3,9 +3,8 @@ We will now define the Riemann problem, since it plays a crucial role in the fin
 In the Riemann problem we distinguish between what we call a wet bed and a dry bed. 
 A wet bed is the case where the water depth is positive everywhere, whereas a dry bed is the case where the water depth is zero in some cells.
 The special Riemann problem where parts of the bed are dry is dealing with the so-called dry fronts or wet/dry fronts, which are challenging to handle numerically.
-We will leave these cases for now, and only consider the wet bed problems.
-
-The Riemann problem for the shallow water equations is defined as the initial-value problem (IVP)~\cite{Toro2024}:
+We will leave these cases for now, and only consider wet bed problems.
+The Riemann problem for the shallow water equations in 1D with a zero source term is defined as the initial-value problem (IVP)~\cite{Toro2024}:
 \begin{equation}\label{eq:Riemann_problem}
     \begin{aligned}
         \text{PDEs: } &\mathbf{U}_t + {\mathbf{F(U)}}_x = 0, \\
@@ -15,7 +14,7 @@ The Riemann problem for the shallow water equations is defined as the initial-va
         \end{cases}
     \end{aligned}
     \end{equation}
-Here, the vectors $\mathbf{U}$ and $\mathbf{F(U)}$ in~\eqref{eq:Riemann_problem} are given By
+Here, the vectors $\mathbf{U}$ and $\mathbf{F(U)}$ in~\eqref{eq:Riemann_problem} are given by
 \begin{align}
     \mathbf{U} = \begin{bmatrix}
         h \\ hu \\ hv
@@ -35,24 +34,23 @@ and the initial conditions $\mathbf{U_L}$ and $\mathbf{U_R}$ are
 \end{align*}
 which represents the conditions at time $t = 0$ in the left and right states of $x=0$, respectively.
 The function $\mathbf{U}$ is piecewise constant, with a discontinuity at $x=0$.
-
 The Riemann problem can be solved both exactly and approximately.
 There are several approximate Riemann solvers, such as the HLL and Roe solvers, which are based on the approximate solution of the Riemann problem.
 We will consider some of these solvers later in the thesis.
 
-
 \subsection{The Dam-Break problem}
+We now introduce the dam-break problem, a scenario of significant physical interest.
+This problem models the sudden release of water following the collapse of a dam, making it highly relevant for studying natural disasters such as floods and tsunamis.
+As a classic test case for numerical methods, the dam-break problem is commonly used to test the ability of a method to capture discontinuities in the solution.
 The dam-break problem is a special case of the Riemann problem~\eqref{eq:Riemann_problem}.
 The difference is that in the dam-break problem, the initial velocity components, $u_L, u_R, v_L$ and $v_R$, are zero, whereas in the Riemann problem they are allowed to be distinct from zero.
-The problem simulates a dam that separates two regions of water at rest, and the dam is suddenly removed, causing the water to flow.
-The initial setup can be seen in Figure~\ref{fig:dam-break-problem}.
+The initial setup is visualized in Figure~\ref{fig:dam-break-problem}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/dam-break-problem.png}
     \caption{Initial conditions for the dam-break problem. An infinitely thin wall at $x=x_0$ divides two sections of water with different water levels.}\label{fig:dam-break-problem}
 \end{figure}
 We can use the shallow water equations to model the flow of water in the dam-break problem, approximately, if we assume that the wall collapses instantaneously at $t=0$.
-The dam-break problem is a classic test case for numerical methods, and it is used to test the ability of the method to capture discontinuities in the solution.
 
 \subsection{Waves in the Riemann problem}
 To get a better understanding of the flow in shallow water, we provide some very short background information about waves.
@@ -60,43 +58,9 @@ In particular the wave structure in the solution of the Riemann problem~\eqref{e
 In the solution of the Riemann problem~\eqref{eq:Riemann_problem} there are four possible wave patterns outcomes, which are combinations of shock waves and rarefaction waves.
 In each case there are three waves, the left and right waves correspond to the one-dimensional SWE, and the middle wave aries from the $y-$momentum equation in~\eqref{eq:Riemann_problem} and is always a shear wave.
 The left and right waves are either shock waves or rarefaction waves.
-The four possible wave patterns are illustrated in Figure~\ref{fig:wave-patterns} and are as follows:
+The four possible wave patterns are as follows:
 (a) Left rarefaction, right shock, (b) Left shock, right rarefaction, (c) Both left and right rarefaction, and (d) Both left and right shock.
-
-\begin{figure}[htbp]
-    \centering
-    % First row
-    \begin{subfigure}[b]{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/waves-LRRS.png}
-        \caption{Left rarefaction wave, right shock wave.}\label{fig:waves-LRRS}
-    \end{subfigure}
-    \hspace{0.02\textwidth} % Small horizontal space between figures
-    \begin{subfigure}[b]{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/waves-LSRR.png}
-        \caption{Left shock wave, right rarefaction wave.}\label{fig:waves-LSRR}
-    \end{subfigure}
-    
-    % Second row
-    \begin{subfigure}[b]{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/waves-LRRR.png}
-        \caption{Left and right rarefaction waves.}\label{fig:waves-LRRR}
-    \end{subfigure}
-    \hspace{0.02\textwidth} % Small horizontal space between figures
-    \begin{subfigure}[b]{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/waves-LSRS.png}
-        \caption{Left and right shock waves.}\label{fig:waves-LSRS}
-    \end{subfigure}
-    \caption{Four possible wave patterns in the solution of the Riemann problem.}\label{fig:wave-patterns}
-\end{figure}
-In the solution of the Riemann problem~\eqref{eq:Riemann_problem}, there are four possible wave patterns outcomes, which are combinations of shock waves and rarefaction waves.
-In each case there are three waves, the left and right waves correspond to the one-dimensional SWE, and the middle wave aries from the $y-$momentum equation in~\eqref{eq:Riemann_problem}.
-The left and right waves are either shock waves or rarefaction waves, and the middle wave is always a shear wave.
-Note that the middle shear wave is not shown in the figure, as it is always present in the solution of the Riemann problem.
-In the example of the dam-break problem, with inital conditions as in Figure~\ref{fig:dam-break-problem}, the solution consists of a left rarefaction wave and a right shock wave, as shown in Figure~\ref{fig:waves-LRRS}.
+In the example of the dam-break problem, with inital conditions as in Figure~\ref{fig:dam-break-problem}, the solution consists of a left rarefaction wave and a right shock wave.
 
 %Hence the structure of the solution in general is shown in the figure below.
 %From the figure we see that the solution consists of three waves, a left wave, a middle wave and a right wave, which together seperate four regions, described by the vector
@@ -115,9 +79,10 @@ In the example of the dam-break problem, with inital conditions as in Figure~\re
 
 \subsection{Exact Riemann solver}
 The exact Riemann solver is a method that solves the Riemann problem exactly, and it is based on the solution of the Riemann problem~\eqref{eq:Riemann_problem}.
-The exact Riemann solver presented in this section is very efficient and leads to Gudonov methods, that are only slightly more expensive than those based on approximate Riemann solvers~\cite{Toro2001-Shock}.
-Important to find the exact solution to the Riemann problem in the early stage of development, before moving on to more complex applications.
+There exist exact Riemann solvers which are very efficient and leads to Gudonov methods, that are only slightly more expensive than those based on approximate Riemann solvers~\cite{Toro2001-Shock}.
+However, in this project we will focus on approximate Riemann solvers, which are able to solve the Riemann problem with high accuracy and efficiency.
 
 %But for now, we will consider the case where the solution consists of a single non-trivial wave and all other waves are assumed to have zero strenght.
 %This is enough to solve the Riemann problem as it is always possible to solve the Riemann problem by considering one wave at a time.
 %We denote the constant values of the water depth and particle velocity in the star region by $h_*$ and $u_*$, respectively.
+

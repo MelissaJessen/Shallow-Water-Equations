@@ -1,24 +1,23 @@
 \chapter{Numerical results}
-In this chapter we present the results of the numerical experiments, where we have implemented the Finite Volume Method for solving the shallow water equations in 1D and tested it on several problems.
+In this chapter we present the results of the numerical experiments, where we have implemented the finite volume method for solving the shallow water equations in 1D and tested it on several problems.
 \footnote{Code and small animations can be found at github, visit \url{https://github.com/MelissaJessen/Shallow-Water-Equations}.}
 A key focus is to verify the implementation, as it will be used to generate data for the data-driven methods, including neural networks and Fourier neural operators.
 
 \section{The 1D Dam Break Problem}
-First we solve the 1D dam break problem, which is a model of a dam suddenly breaking and the water flowing out.
-We consider a problem with the following initial conditions:
+First we solve the 1D dam break problem, with the following initial conditions:
 \begin{align*}
     h(x,0) &= \begin{cases}
         h_L, & \text{if } x < x_0, \\
         h_R, & \text{if } x > x_0,
     \end{cases} 
 \end{align*}
-where $x \in [0,50], h_L = 3.5 m, h_R = 1.0 m$ and $x_0 = 20 m$.
+where $x \in [0, 50], h_L = 3.5$ m, $h_R = 1.25$ m and $x_0 = 20$ m.
 Since it is a dam break problem the initial fluid velocity is zero, i.e., $u(x,0) = 0$.
 We solve the problem starting at $t=0$ and ending at $t=2.5$ seconds.
 The numerical solution to the 1D Dam Break Problem using the FVM, together with the true solution, provided from the course~\cite{phd_corse_2009}, can be seen in \autoref{fig:1D_dam_break}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{plots/sol_1D_val.png}
+    \includegraphics[width=0.95\textwidth]{plots/sol_1D_val.png}
     \caption{The initial water height $h$ at $t=0$, together with the water height, the fluid velocity $u$ and the momentum $hu$ after $t=2.5$ seconds.}\label{fig:1D_dam_break}
 \end{figure}
 From Figure~\ref{fig:1D_dam_break} we see that the numerical solution aligns well with the true solution, and successfully captures the discontinuity.
@@ -27,7 +26,6 @@ From Figure~\ref{fig:1D_dam_break} we see that the numerical solution aligns wel
 \section{Toro test cases}
 We have tested the method on the five test cases from Toros book~\cite{Toro2001-Shock}.
 The initial conditions for the five test cases are given in \autoref{tab:toro_test_cases}.
-
 \begin{table}[H]
     \centering
     \begin{tabular}{c|c|c|c|c|c|c}
@@ -44,25 +42,34 @@ The initial conditions for the five test cases are given in \autoref{tab:toro_te
     \caption{Initial conditions for the five test cases.}
     \label{tab:toro_test_cases}
 \end{table}
-The domain is $x \in [0,50]$ for all test cases.
+The domain is $x \in [0, 50]$ for all test cases.
 The test cases are chosen to test the method on different types of waves, such as shock waves and rarefaction waves.
+To solve the test cases there are used different fluxes, namely:
+\begin{enumerate}
+    \item Godunov method with exact Riemann solver,
+    \item Lax-Friedrich flux,
+    \item Lax-Wendroff flux,
+    \item FORCE flux,
+    \item HLLC flux,
+    \item Flux-splitting/Upwind.
+\end{enumerate}
 
 \subsection*{Test case 1}
 \addcontentsline{toc}{subsection}{Test case 1}
 The initial conditions for test case 1 are given in \autoref{fig:toro_test1_initial}, and the final solution after $t=7.0$ seconds is given in \autoref{fig:toro_test1_final}.
-In test case 1, we observe a right shock wave and a left critical rarefaction wave.
+In test case 1, we observe a right shock wave and a left rarefaction wave.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_initial.png}
     \caption{Initial conditions for the test case.}\label{fig:toro_test1_initial}
 \end{figure}
 
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final.png}
     \caption{Final solution for the test case.}\label{fig:toro_test1_final}
 \end{figure}
+For this test case all the fluxes work well, but there are minor differences in the solution, which can be seen in \autoref{fig:toro_test1_final}.
 
 \subsection*{Test case 2}
 \addcontentsline{toc}{subsection}{Test case 2}
@@ -83,20 +90,16 @@ The final solution after $t=2.5$ seconds is given in \autoref{fig:toro_test2_fin
     \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.png}
     \caption{Final solution for the test case.}\label{fig:toro_test2_final}
 \end{figure}
-
-
 For some of the other fluxes, Godunov method with exact Riemann solver, Lax-Wendroff or flux-splitting/upwind, it was not possible to get an acceptable solution.
 
 \subsection*{Test case 3}
 \addcontentsline{toc}{subsection}{Test case 3}
-
+The initial conditions for test case 3 are given in \autoref{fig:toro_test3_initial}, and the final solution after $t=4.0$ seconds is given in \autoref{fig:toro_test3_final}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.png}
     \caption{Initial conditions for the test case.}\label{fig:toro_test3_initial}
 \end{figure}
-The problem is a left dry-bed problem.
-
 
 \begin{figure}[H]
     \centering
@@ -104,21 +107,18 @@ The problem is a left dry-bed problem.
     \caption{Final solution for the test case.}\label{fig:toro_test3_final}
 \end{figure}
 To solve case 3, with the FVM we must add a small amount to $h_R$, since the code does not handle $h_R = 0$ well.
-We set $h_R = 0.00005$.
-The true solution is for $h_R = 0$.
+We set $h_R = 0.00005$ to solve it numerically, but the true solution is for $h_R = 0$.
 By running experiments with different values of $h_R$, we see that the solution converges to the true solution as $h_R$ approaches 0.
 The solution consists of a left rarefaction wave.
 
 \subsection*{Test case 4}
 \addcontentsline{toc}{subsection}{Test case 4}
-
-Test case 4:
+The initial conditions for test case 4 are given in \autoref{fig:toro_test4_initial}, and the final solution after $t=4.0$ seconds is given in \autoref{fig:toro_test4_final}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.png}
     \caption{Initial conditions for the test case.}\label{fig:toro_test4_initial}
 \end{figure}
-The problem is a right dry-bed problem.
 
 \begin{figure}[H]
     \centering
@@ -132,7 +132,7 @@ The case is included to test if the results are as expected.
 
 \subsection*{Test case 5}
 \addcontentsline{toc}{subsection}{Test case 5}
-
+The initial conditions for test case 5 are given in \autoref{fig:toro_test5_initial}, and the final solution after $t=5.0$ seconds is given in \autoref{fig:toro_test5_final}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_initial.png}
@@ -151,7 +151,7 @@ The solution consists of two rarefaction waves, one on the left side and one on 
 
 \section{2D idealised Circular Dam Break Problem}
 Consider the idealised circular dam break problem with a horizontal bottom.
-We assume there is an infinitely thin circular wall at radius $R = 2.5 m$ is a square domain of size $40 m \times 40 m$ with centre at $(x_c,y_c) = (20 m, 20 m)$.
+We assume there is an infinitely thin circular wall at radius $R = 2.5$ m is a square domain of size $40 \times 40 $ with centre at $(x_c,y_c) = (20, 20)$.
 The initial conditions are (ch. 15 Toro)
 \begin{align*}
     h(x,y,0) &= \begin{cases}
@@ -161,9 +161,11 @@ The initial conditions are (ch. 15 Toro)
     u(x,y,0) &= 0, \\
     v(x,y,0) &= 0.
 \end{align*}
-Use the WAF method (chapter 11) along with a second-order dimensional splitting scheme (chapter 12).
-CFL-condition: $C_{cfl} = 0.9$.
-van Leer limiter. Mesh: $200 \times 200$.
+%Use the WAF method (chapter 11) along with a second-order dimensional splitting scheme (chapter 12).
+%CFL-condition: $C_{cfl} = 0.9$.
+%van Leer limiter. Mesh: $200 \times 200$.
+We use a mesh of size $200 \times 200$.
+The results after $t=0.0, 0.4, 0.7$ and $1.4$ seconds are given in \autoref{fig:2D_dam_break_t0}, \autoref{fig:2D_dam_break_t0.4}, \autoref{fig:2D_dam_break_t0.7} and \autoref{fig:2D_dam_break_t1.4}.
 
 \begin{figure}[H]
     \centering

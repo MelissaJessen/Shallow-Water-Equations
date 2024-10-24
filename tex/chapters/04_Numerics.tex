@@ -6,6 +6,7 @@ The true solution is found by solving the Riemann problem exact, with 5000 cells
 
 
 \section{Data generation}
+We use the Matlab script: SWE1D-data-generation to generate the data for the training and testing of the neural network, and the Python script: data-generation to load and visualize the data.
 The data generation is done by solving the SWE in 1D using the FVM with the Godunov scheme and the exact Riemann solver.
 We use Gaussian functions with parametric extension~\cite{Gaussian} to generate the initial conditions, that is, functions on the form
 \begin{align*}

@@ -28,7 +28,7 @@ u = q(2,:);
 %sigma_vals = linspace(0.1, 1, 10);
 sigma_vals = 0.1;
 
-mu_vals = linspace(0.3,0.8,6); % Mean of the Gaussian
+mu_vals = linspace(0.3,0.8,20); % Mean of the Gaussian
 
 % Define folder
 folder = 'C:\Users\Matteo\Shallow-Water-Equations\dataFNO';
