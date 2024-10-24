@@ -1,9 +1,12 @@
-\chapter{Numerical results}
+\chapter{Results}
+
+
+\section{Numerical results}
 In this chapter we present the results of the numerical experiments, where we have implemented the finite volume method for solving the shallow water equations in 1D and tested it on several problems.
 \footnote{Code and small animations can be found at github, visit \url{https://github.com/MelissaJessen/Shallow-Water-Equations}.}
 A key focus is to verify the implementation, as it will be used to generate data for the data-driven methods, including neural networks and Fourier neural operators.
 
-\section{The 1D Dam Break Problem}
+\subsection{The 1D Dam Break Problem}
 First we solve the 1D dam break problem, with the following initial conditions:
 \begin{align*}
     h(x,0) &= \begin{cases}
@@ -23,7 +26,7 @@ The numerical solution to the 1D Dam Break Problem using the FVM, together with 
 From Figure~\ref{fig:1D_dam_break} we see that the numerical solution aligns well with the true solution, and successfully captures the discontinuity.
 
 
-\section{Toro test cases}
+\subsection{Toro test cases}
 We have tested the method on the five test cases from Toros book~\cite{Toro2001-Shock}.
 The initial conditions for the five test cases are given in \autoref{tab:toro_test_cases}.
 \begin{table}[H]
@@ -54,9 +57,9 @@ To solve the test cases there are used different fluxes, namely:
     \item Flux-splitting/Upwind.
 \end{enumerate}
 
-\subsection*{Test case 1}
+\subsubsection{Test case 1}
 \addcontentsline{toc}{subsection}{Test case 1}
-The initial conditions for test case 1 are given in \autoref{fig:toro_test1_initial}, and the final solution after $t=7.0$ seconds is given in \autoref{fig:toro_test1_final}.
+The initial conditions for test case 1 are given in \autoref{fig:toro_test1_initial} and the final solution after $t=7.0$ seconds is given in \autoref{fig:toro_test1_final}.
 In test case 1, we observe a right shock wave and a left rarefaction wave.
 \begin{figure}[H]
     \centering
@@ -71,7 +74,7 @@ In test case 1, we observe a right shock wave and a left rarefaction wave.
 \end{figure}
 For this test case all the fluxes work well, but there are minor differences in the solution, which can be seen in \autoref{fig:toro_test1_final}.
 
-\subsection*{Test case 2}
+\subsubsection*{Test case 2}
 \addcontentsline{toc}{subsection}{Test case 2}
 The initial conditions for test case 2 are illustrated in \autoref{fig:toro_test2_initial}.
 \begin{figure}[H]
@@ -92,7 +95,7 @@ The final solution after $t=2.5$ seconds is given in \autoref{fig:toro_test2_fin
 \end{figure}
 For some of the other fluxes, Godunov method with exact Riemann solver, Lax-Wendroff or flux-splitting/upwind, it was not possible to get an acceptable solution.
 
-\subsection*{Test case 3}
+\subsubsection*{Test case 3}
 \addcontentsline{toc}{subsection}{Test case 3}
 The initial conditions for test case 3 are given in \autoref{fig:toro_test3_initial}, and the final solution after $t=4.0$ seconds is given in \autoref{fig:toro_test3_final}.
 \begin{figure}[H]
@@ -111,7 +114,7 @@ We set $h_R = 0.00005$ to solve it numerically, but the true solution is for $h_
 By running experiments with different values of $h_R$, we see that the solution converges to the true solution as $h_R$ approaches 0.
 The solution consists of a left rarefaction wave.
 
-\subsection*{Test case 4}
+\subsubsection*{Test case 4}
 \addcontentsline{toc}{subsection}{Test case 4}
 The initial conditions for test case 4 are given in \autoref{fig:toro_test4_initial}, and the final solution after $t=4.0$ seconds is given in \autoref{fig:toro_test4_final}.
 \begin{figure}[H]
@@ -130,7 +133,7 @@ We set $h_L = 0.00005$, and the solution converges to the true solution as $h_L$
 This test case is symmetric to test case 3, and the solution consists of a right rarefaction wave.
 The case is included to test if the results are as expected.
 
-\subsection*{Test case 5}
+\subsubsection*{Test case 5}
 \addcontentsline{toc}{subsection}{Test case 5}
 The initial conditions for test case 5 are given in \autoref{fig:toro_test5_initial}, and the final solution after $t=5.0$ seconds is given in \autoref{fig:toro_test5_final}.
 \begin{figure}[H]
@@ -149,7 +152,7 @@ In this test case there are also challenges with some of the fluxes due to the g
 The fluxes that dont work are: Godunov method with exact RP, Lax-Wendroff and flux-splitting/upwind.
 The solution consists of two rarefaction waves, one on the left side and one on the right side, and a dry-bed region in the middle.
 
-\section{2D idealised Circular Dam Break Problem}
+\subsection{2D idealised Circular Dam Break Problem}
 Consider the idealised circular dam break problem with a horizontal bottom.
 We assume there is an infinitely thin circular wall at radius $R = 2.5$ m is a square domain of size $40 \times 40 $ with centre at $(x_c,y_c) = (20, 20)$.
 The initial conditions are (ch. 15 Toro)
