@@ -2,8 +2,31 @@
 The code to solve the SWE in 1D using FVM is based on the Godunov scheme with the exact Riemann solver.
 The exact solution of the Riemann problem is found by using the Riemann invariants and the Rankine-Hugoniot conditions~\cite{trento_course}.
 
-The true solution is found by solving the Riemann problem exact, with 5000 cells, and distinguishing between the wetbed or drybed case, and also identifying the shock and rarefaction waves.
 
+\section{True solution}
+In this section, we present how the so-called true solution is found in the code by solving the Riemann problem exactly.
+The true solution is found by solving the Riemann problem exact, with 5000 cells, and distinguishing between the wetbed or drybed case, and also identifying the shock and rarefaction waves.
+First we caculate the wave speeds for the left and right states, respectively, as
+\begin{align*}
+    c_L = \sqrt{g h_L}, \quad c_R = \sqrt{g h_R},
+\end{align*}
+which are used to determine the critical water height $h_{\text{crit}}$ as
+\begin{align*}
+    h_{\text{crit}} = (u_R - u_L) - 2(c_L + c_R).
+\end{align*}
+If either $h_L \leq 0$ or $h_R \leq 0$, we are in a drybed case.
+If $h_{\text{crit}} \geq 0$ it means the water depth is somehow critical, and we are in a drybed case,
+If none of the above conditions are met, we are in a wetbed case.
+Summarized:
+\begin{align*}
+    \begin{cases}
+        \text{Dry-bed case} & \text{if }  h_L \leq 0, \quad  h_R \leq 0 \text{ or } h_{\text{crit}} \geq 0, \\
+        \text{Wet-bed case} & \text{otherwise}.
+    \end{cases}
+\end{align*}
+For a dry bed case, we then identify where the dry is located, i.e., if the left side is dry, the right side is dry, or the middle is dry, and calculate the wave speeds accordingly.
+For a wet bed case, we compute the characteristics $h_*$ and $u_*$ for the star region.
+We then identify the shock and rarefaction waves, and calculate the wave speeds for the left and right states, respectively.
 
 \section{Data generation}
 We use the Matlab script: SWE1D-data-generation to generate the data for the training and testing of the neural network, and the Python script: data-generation to load and visualize the data.

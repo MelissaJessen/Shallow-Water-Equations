@@ -155,19 +155,21 @@ To get an overview of which fluxes that were able to solve the problems, conside
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{c|c|c|c|c|c|c|c}
+    \begin{tabular}{c|c|c|c|c|c|c}
         \hline
-        \textbf{Test case} & \textbf{Godunov} & \textbf{LF} & \textbf{LW} & \textbf{FORCE} & \textbf{HLL} & \textbf{Flux-splitting} & \textbf{Upwind} \\
+        \textbf{Test case} & \textbf{Godunov} & \textbf{LF} & \textbf{LW} & \textbf{FORCE} & \textbf{HLL} & \textbf{Flux-splitting}  \\
         \hline\hline
-        1 & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
-        2 & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & & \checkmark \\
-        3 & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
-        4 & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
-        5 &  & \checkmark & & \checkmark & \checkmark & & \\
+        1 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$  \\
+        2 & $\times$ & $\checkmark$ & $\times$ & $\checkmark$ & $\checkmark$ & $\times$ \\
+        3 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$  \\
+        4 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$  \\
+        5 & $\times$ & $\checkmark$ & $\times$ & $\checkmark$ & $\checkmark$ & $\times$ \\
         \hline
     \end{tabular}
-    \caption{Overview of which fluxes that were able to solve the test cases.}\label{tab:toro_fluxes}
+    \caption{Overview of which fluxes that were able to solve the test cases.}
+    \label{tab:toro_fluxes}
 \end{table}
+
 
 
 \subsection{2D idealised Circular Dam Break Problem}
@@ -186,31 +188,40 @@ The initial conditions are (ch. 15 Toro)
 %CFL-condition: $C_{cfl} = 0.9$.
 %van Leer limiter. Mesh: $200 \times 200$.
 We use a mesh of size $200 \times 200$.
-The results after $t=0.0, 0.4, 0.7$ and $1.4$ seconds are given in \autoref{fig:2D_dam_break_t0}, \autoref{fig:2D_dam_break_t0.4}, \autoref{fig:2D_dam_break_t0.7} and \autoref{fig:2D_dam_break_t1.4}.
-
+The results after $t=0.0, 0.4, 0.7$ and $1.4$ seconds are given in \autoref{fig:2D_dam_break_grid}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.png}
-    \caption{2D dam break problem after $t=0$.}\label{fig:2D_dam_break_t0}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.png}
+        \caption{2D dam break problem after $t=0$.}\label{fig:2D_dam_break_t0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.4.png}
+        \caption{2D dam break problem after $t=0.4$.}\label{fig:2D_dam_break_t0.4}
+    \end{subfigure}
+
+    \vspace{0.5cm} % Adjusts vertical space between rows
+
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.7.png}
+        \caption{2D dam break problem after $t=0.7$.}\label{fig:2D_dam_break_t0.7}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=1.4.png}
+        \caption{2D dam break problem after $t=1.4$.}\label{fig:2D_dam_break_t1.4}
+    \end{subfigure}
+
+    \caption{Snapshots of the 2D dam break problem at different times.}\label{fig:2D_dam_break_grid}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.4.png}
-    \caption{2D dam break problem after $t=0.4$.}\label{fig:2D_dam_break_t0.4}
-\end{figure}
+By comparing \autoref{fig:2D_dam_break_grid} with the results from the book by Toro~\cite{Toro2024}, and see that the numerical solution aligns well with the true solution from the book.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.7.png}
-    \caption{2D dam break problem after $t=0.7$.}\label{fig:2D_dam_break_t0.7}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=1.4.png}
-    \caption{2D dam break problem after $t=1.4$.}\label{fig:2D_dam_break_t1.4}
-\end{figure}
 
 
 
