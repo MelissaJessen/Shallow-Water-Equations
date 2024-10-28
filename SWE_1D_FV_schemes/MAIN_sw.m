@@ -31,7 +31,7 @@ mcells=200;    %number of cells for numerical simulations
 %2--> Lax-Friedrichs
 %3--> Lax-Wendroff
 %4--> FORCE
-%5--> HLLC
+%5--> HLL
 %6--> Flux-splitting (2020) UPWIND: this is our method!!!
 iflux=2;
 

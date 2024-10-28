@@ -3,7 +3,7 @@ function [hS,qS]=two_rar_approx_PREX(hL,hR,qL,qR,gravit)
 tol = 1.0E-12;
 cL = sqrt(gravit*hL);
 cR = sqrt(gravit*hR);
-%use two rarefaction solution as starting value
+%use two rarefaction solution as starandting value
 % cond_h_pos_1 = 0.75/sqrt(gravit)*(qL-qR);
 % cond_h_pos_2 = 0.5*(hL^1.5+hR^1.5);
 % diff = cond_h_pos_1 +cond_h_pos_2;

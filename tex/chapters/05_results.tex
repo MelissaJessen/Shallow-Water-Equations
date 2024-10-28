@@ -42,8 +42,7 @@ The initial conditions for the five test cases are given in \autoref{tab:toro_te
         5 & 0.1 & -3.0 & 0.1 & 3.0 & 25.0 & 5.0 \\
         \hline
     \end{tabular}
-    \caption{Initial conditions for the five test cases.}
-    \label{tab:toro_test_cases}
+    \caption{Initial conditions for the five test cases.}\label{tab:toro_test_cases}
 \end{table}
 The domain is $x \in [0, 50]$ for all test cases.
 The test cases are chosen to test the method on different types of waves, such as shock waves and rarefaction waves.
@@ -53,7 +52,7 @@ To solve the test cases there are used different fluxes, namely:
     \item Lax-Friedrich flux,
     \item Lax-Wendroff flux,
     \item FORCE flux,
-    \item HLLC flux,
+    \item HLL flux,
     \item Flux-splitting/Upwind.
 \end{enumerate}
 
@@ -151,6 +150,25 @@ From~\autoref{fig:toro_test5_final} we see that the numerical solutions for the 
 In this test case there are also challenges with some of the fluxes due to the generation of a dry-bed region.
 The fluxes that dont work are: Godunov method with exact RP, Lax-Wendroff and flux-splitting/upwind.
 The solution consists of two rarefaction waves, one on the left side and one on the right side, and a dry-bed region in the middle.
+
+To get an overview of which fluxes that were able to solve the problems, consider the table below.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|c|c|c|c|c|c|c}
+        \hline
+        \textbf{Test case} & \textbf{Godunov} & \textbf{LF} & \textbf{LW} & \textbf{FORCE} & \textbf{HLL} & \textbf{Flux-splitting} & \textbf{Upwind} \\
+        \hline\hline
+        1 & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+        2 & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & & \checkmark \\
+        3 & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+        4 & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+        5 &  & \checkmark & & \checkmark & \checkmark & & \\
+        \hline
+    \end{tabular}
+    \caption{Overview of which fluxes that were able to solve the test cases.}\label{tab:toro_fluxes}
+\end{table}
+
 
 \subsection{2D idealised Circular Dam Break Problem}
 Consider the idealised circular dam break problem with a horizontal bottom.
