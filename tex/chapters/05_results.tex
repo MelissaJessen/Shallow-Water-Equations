@@ -20,7 +20,7 @@ We solve the problem starting at $t=0$ and ending at $t=2.5$ seconds.
 The numerical solution to the 1D Dam Break Problem using the FVM, together with the true solution, provided from the course~\cite{phd_corse_2009}, can be seen in \autoref{fig:1D_dam_break}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{plots/sol_1D_val.png}
+    \includegraphics[width=0.95\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/sol_1D_val.pdf}
     \caption{The initial water height $h$ at $t=0$, together with the water height, the fluid velocity $u$ and the momentum $hu$ after $t=2.5$ seconds.}\label{fig:1D_dam_break}
 \end{figure}
 From Figure~\ref{fig:1D_dam_break} we see that the numerical solution aligns well with the true solution, and successfully captures the discontinuity.
@@ -62,13 +62,13 @@ The initial conditions for test case 1 are given in \autoref{fig:toro_test1_init
 In test case 1, we observe a right shock wave and a left rarefaction wave.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_initial.png}
+    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_initial.pdf}
     \caption{Initial conditions for the test case.}\label{fig:toro_test1_initial}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final.png}
+    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final.pdf}
     \caption{Final solution for the test case.}\label{fig:toro_test1_final}
 \end{figure}
 For this test case all the fluxes work well, but there are minor differences in the solution, which can be seen in \autoref{fig:toro_test1_final}.
@@ -78,7 +78,7 @@ For this test case all the fluxes work well, but there are minor differences in 
 The initial conditions for test case 2 are illustrated in \autoref{fig:toro_test2_initial}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.png}
+    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.pdf}
     \caption{Initial conditions for the test case.}\label{fig:toro_test2_initial}
 \end{figure}
 In test case 2 we have two rarefaction waves, one on the left side and one on the right side.
@@ -89,7 +89,7 @@ The final solution after $t=2.5$ seconds is given in \autoref{fig:toro_test2_fin
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.png}
+    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.pdf}
     \caption{Final solution for the test case.}\label{fig:toro_test2_final}
 \end{figure}
 For some of the other fluxes, Godunov method with exact Riemann solver, Lax-Wendroff or flux-splitting/upwind, it was not possible to get an acceptable solution.
@@ -99,13 +99,13 @@ For some of the other fluxes, Godunov method with exact Riemann solver, Lax-Wend
 The initial conditions for test case 3 are given in \autoref{fig:toro_test3_initial}, and the final solution after $t=4.0$ seconds is given in \autoref{fig:toro_test3_final}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.png}
+    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.pdf}
     \caption{Initial conditions for the test case.}\label{fig:toro_test3_initial}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.png}
+    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.pdf}
     \caption{Final solution for the test case.}\label{fig:toro_test3_final}
 \end{figure}
 To solve case 3, with the FVM we must add a small amount to $h_R$, since the code does not handle $h_R = 0$ well.
@@ -118,13 +118,13 @@ The solution consists of a left rarefaction wave.
 The initial conditions for test case 4 are given in \autoref{fig:toro_test4_initial}, and the final solution after $t=4.0$ seconds is given in \autoref{fig:toro_test4_final}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.png}
+    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.pdf}
     \caption{Initial conditions for the test case.}\label{fig:toro_test4_initial}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.png}
+    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.pdf}
     \caption{Final solution for the test case.}\label{fig:toro_test4_final}
 \end{figure}
 In case 4 we face the same challenges as in case 3.
@@ -137,13 +137,13 @@ The case is included to test if the results are as expected.
 The initial conditions for test case 5 are given in \autoref{fig:toro_test5_initial}, and the final solution after $t=5.0$ seconds is given in \autoref{fig:toro_test5_final}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_initial.png}
+    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_initial.pdf}
     \caption{Initial conditions for the test case.}\label{fig:toro_test5_initial}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final.png}
+    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final.pdf}
     \caption{Final solution for the test case.}\label{fig:toro_test5_final}
 \end{figure}
 From~\autoref{fig:toro_test5_final} we see that the numerical solutions for the velocity $v$ at $t=5.0$ are smooth, where the true solution is discontinuous. 
@@ -193,13 +193,13 @@ The results after $t=0.0, 0.4, 0.7$ and $1.4$ seconds are given in \autoref{fig:
     \centering
     \begin{subfigure}{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.png}
+        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.pdf}
         \caption{2D dam break problem after $t=0$.}\label{fig:2D_dam_break_t0}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.4.png}
+        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.4.pdf}
         \caption{2D dam break problem after $t=0.4$.}\label{fig:2D_dam_break_t0.4}
     \end{subfigure}
 
@@ -207,13 +207,13 @@ The results after $t=0.0, 0.4, 0.7$ and $1.4$ seconds are given in \autoref{fig:
 
     \begin{subfigure}{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.7.png}
+        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.7.pdf}
         \caption{2D dam break problem after $t=0.7$.}\label{fig:2D_dam_break_t0.7}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=1.4.png}
+        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=1.4.pdf}
         \caption{2D dam break problem after $t=1.4$.}\label{fig:2D_dam_break_t1.4}
     \end{subfigure}
 
