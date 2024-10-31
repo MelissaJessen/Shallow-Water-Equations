@@ -34,6 +34,7 @@ The predictions of the model are shown in \autoref{fig:NN_predictions}.
     \caption{Predictions.}\label{fig:NN_predictions}
 \end{figure}
 From \autoref{fig:NN_predictions} we see that the neural network, to some extent, is able to learnt the dynamics of the solution, but it is not accurate enough to be used as a solver.
+We also see that the further we get in time, the worse the predictions become. This is also somehow expected.
 To understand the performance of the model, we consider the predictions for some given time steps, shown in \autoref{fig:NN_predictions_time_steps}.
 \begin{figure}[H]
     \centering
@@ -65,6 +66,7 @@ The results of the model are shown in \autoref{fig:FNO_predictions}.
     \caption{FNO predictions.}\label{fig:FNO_predictions}
 \end{figure}
 From \autoref{fig:FNO_predictions} we see that the FNO model is able to learn the dynamics of the solution, and it is able to predict the solution with high accuracy.
+From the figure we also see that distribution of the error is more or less uniform in the domain. If the solution has a higher value, we see correspondingly, the error is a bit higher, i.e, the error follows the solution.
 The loss for each epoch is shown in \autoref{fig:FNO_loss}.
 \begin{figure}[H]
     \centering

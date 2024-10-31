@@ -5,7 +5,7 @@ Complex PDEs often require a fine grid to capture the solution accurately, which
 The hope for data-driven methods is that, by learning the dynamics of the solution, we can reduce the computational cost of solving PDEs and still maintain a high level of accuracy.
 A classical neural network (NN), is able to learn a map from input to output, i.e., a map between finite-dimensional spaces.
 Fourier Neural Operators stands out at they are able to learn mappings between function spaces, meaning they are also grid-independent.
-
+We utilize the fact that differentation is equivalent to multiplication in the Fourier domain.
 
 
 \subsection{Fourier Neural Operators}
@@ -15,6 +15,21 @@ The theory and method described here is based on the paper~\cite{FNO_2021}.
 We consider the operator $G: A \to U$, that maps from a infinite-dimensional function space $A$ to another infinite-dimensional function space $U$.
 We aim to approximate the exact operator $G$ by constructing the map
 \begin{align*}
-    G_{\theta}: A \mapsto, \quad \theta 
+    G_{\theta}: A \mapsto U, \quad \theta \in \Theta,
 \end{align*} 
+where $\Theta$ is a finite-dimensional parameter space.
+Consider the functions $a \in A$ and $u \in U$.
+We can access the data by point wise evaluations of the functions, i.e., we have access to the observations ${\{a_j, u_j \}}_{j=1}^N$, in a domain $D \subset \mathbb{R}^d$, which is bounded open set.
+The neural operator is iterative, where the update $v_t \mapsto v_{t+1}$ is defined as
+\begin{align}
+    v_{t+1}(x) := \sigma \left( W v_t(x) + \left( \mathcal{K}(a;\phi)v_t \right) (x) \right), \quad \forall x \in D
+\end{align}
+where $W: \mathbb{R}^{d_v} \to \mathbb{R}^{d_v}$ is a linear transformation, and $\sigma: \mathbb{R} \to \mathbb{R}$ is a non-linear activation function.
+We define the Fourier integral operator $\mathcal{K}$ as 
+\begin{align}
+    \left( \mathcal{K}(\phi)v_t \right) (x) = \mathcal{F}^{-1} \left( R_{\phi} \cdot (\mathcal{F}v_t ) \right)(x), \quad \forall x \in D
+\end{align}
+where $R_{\phi}$ is the Fourier transform of a periodic function. 
+We aim for a multi-step prediction model, which can predict a given number of time steps.
+
 

@@ -1,15 +1,41 @@
 \begin{thebibliography}{10}
 
-\bibitem{FNO_2021}
-Zongyi Li, Nikola Kovachki, Kamyar Azizzadenesheli, Burigede Liu, Kaushik
-  Bhattacharya, Andrew Stuart, and Anima Anandkumar.
-\newblock Fourier neural operator for parametric partial differential
-  equations, 2021.
-
 \bibitem{Toro2001-Shock}
 E.F. Toro.
 \newblock {\em Shock-Capturing Methods for Free-Surface Shallow Flows}.
 \newblock Oxford University Press, 2001.
+
+\bibitem{Toro2009-Riemann}
+E.F. Toro.
+\newblock {\em Riemann Solvers and Numerical Methods for Fluid Dynamics}.
+\newblock Springer, 2009.
+
+\bibitem{Toro2024}
+E.F. Toro.
+\newblock {\em Computational Algorithms for Shallow Warer Equations}.
+\newblock Springer, 2024.
+
+\bibitem{trento_course}
+Ilya Peshkov.
+\newblock Advanced numerical methods for environmental modeling.
+\newblock
+  \url{https://www.unitn.it/dricam/1116/advanced-numerical-methods-environmental-modeling},
+  2023.
+\newblock Lecture notes.
+
+\bibitem{FNO_2021}
+Zongyi Li, Nikola Kovachki, Kamyar Azizzadenesheli, Burigede Liu, Kaushik
+  Bhattacharya, Andrew Stuart, and Anima Anandkumar.
+\newblock Fourier neural operator for parametric partial differential
+  equations.
+\newblock \url{https://arxiv.org/pdf/2010.08895}, 2021.
+
+\bibitem{Nvidia2023}
+Boris Bonev, Christian Hundt, Thorsten Kurth~Jaideep Pathak, et~al.
+\newblock Modeling earth's atmosphere with spherical fourier neural operators.
+\newblock
+  \url{https://developer.nvidia.com/blog/modeling-earths-atmosphere-with-spherical-fourier-neural-operators/},
+  2023.
 
 \bibitem{Vreugdenhil1994}
 C.B. Vreugdenhil.
@@ -21,29 +47,11 @@ Wikipedia.
 \newblock Leibniz integral rule.
 \newblock \url{https://en.wikipedia.org/wiki/Leibniz_integral_rule}, 7/10-2024.
 
-\bibitem{Toro2024}
-E.F. Toro.
-\newblock {\em Computational Algorithms for Shallow Warer Equations}.
-\newblock Springer, 2024.
-
 \bibitem{LeVeque2002}
 Randall~J. LeVeque.
 \newblock {\em Finite Volume Methods for Hyperbolic Problems}.
 \newblock Cambridge Texts in Applied Mathematics. Cambridge University Press,
   2002.
-
-\bibitem{Toro2009-Riemann}
-E.F. Toro.
-\newblock {\em Riemann Solvers and Numerical Methods for Fluid Dynamics}.
-\newblock Springer, 2009.
-
-\bibitem{trento_course}
-Ilya Peshkov.
-\newblock Advanced numerical methods for environmental modeling.
-\newblock
-  \url{https://www.unitn.it/dricam/1116/advanced-numerical-methods-environmental-modeling},
-  2023.
-\newblock Lecture notes.
 
 \bibitem{Gaussian}
 Wikipedia.
