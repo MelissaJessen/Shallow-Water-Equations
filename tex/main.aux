@@ -96,103 +96,107 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Waves in the Riemann problem}{14}{subsection.2.4.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4.3}Exact Riemann solver}{14}{subsection.2.4.3}\protected@file@percent }
 \citation{FNO_2021}
+\citation{FNO_2021}
+\citation{FNO_2021}
 \@writefile{toc}{\contentsline {section}{\numberline {2.5}Fourier Neural Operators and Neural Networks}{15}{section.2.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.5.1}Fourier Neural Operators}{15}{subsection.2.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces An overview of the network architecture with several Fourier layers. Illustration from~\cite  {FNO_2021}.}}{16}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:fourier_neural_network}{{\TR@TitleReference {2.6}{An overview of the network architecture with several Fourier layers. Illustration from~\cite  {FNO_2021}.}}{16}{An overview of the network architecture with several Fourier layers. Illustration from~\cite {FNO_2021}}{figure.caption.8}{}}
 \citation{Toro2024}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Methodology}{16}{chapter.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Methodology}{17}{chapter.3}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Numerical fluxes}{16}{section.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Godunov method with exact Riemann solver}{16}{subsection.3.1.1}\protected@file@percent }
-\newlabel{eq:IBVP_system}{{3.1.1}{16}{Godunov method with exact Riemann solver}{equation.3.1.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Lax-Friedrichs}{17}{subsection.3.1.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Lax-Wendroff}{17}{subsection.3.1.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.4}FORCE}{17}{subsection.3.1.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.5}HLL solver}{17}{subsection.3.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Numerical fluxes}{17}{section.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Godunov method with exact Riemann solver}{17}{subsection.3.1.1}\protected@file@percent }
+\newlabel{eq:IBVP_system}{{3.1.1}{17}{Godunov method with exact Riemann solver}{equation.3.1.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}HLL solver}{18}{subsection.3.1.2}\protected@file@percent }
+\newlabel{eq:HLL_flux}{{3.1.2}{18}{HLL solver}{equation.3.1.2}{}}
 \newlabel{eq:two_rarefaction_hstar}{{3.1.3}{18}{HLL solver}{equation.3.1.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.6}HLLC}{18}{subsection.3.1.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.7}Flux-splitting/Upwind}{18}{subsection.3.1.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}HLLC}{18}{subsection.3.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.4}Rusanov}{19}{subsection.3.1.4}\protected@file@percent }
+\newlabel{eq:Rusanov_flux_part1}{{3.1.4}{19}{Rusanov}{equation.3.1.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.5}Lax-Friedrichs}{19}{subsection.3.1.5}\protected@file@percent }
+\newlabel{eq:Lax-Friedrichs_wave_speed}{{3.1.6}{19}{Lax-Friedrichs}{equation.3.1.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.6}Lax-Wendroff}{19}{subsection.3.1.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.7}FORCE}{19}{subsection.3.1.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.8}Flux-splitting/Upwind}{20}{subsection.3.1.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.9}Roe solver}{20}{subsection.3.1.9}\protected@file@percent }
+\newlabel{eq:Roe_averages}{{3.1.8}{20}{Roe solver}{equation.3.1.8}{}}
 \citation{trento_course}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.8}Roe solver}{19}{subsection.3.1.8}\protected@file@percent }
-\newlabel{eq:Roe_averages}{{3.1.4}{19}{Roe solver}{equation.3.1.4}{}}
-\newlabel{eq:Roe_flux}{{3.1.6}{19}{Roe solver}{equation.3.1.6}{}}
+\newlabel{eq:Roe_flux}{{3.1.10}{21}{Roe solver}{equation.3.1.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Implementation of the FVM in 1D}{21}{section.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}True solution}{21}{section.3.3}\protected@file@percent }
 \citation{Gaussian}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Implementation of the FVM in 1D}{20}{section.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}True solution}{20}{section.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Data generation}{20}{section.3.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Initial conditions for the data generation.}}{21}{figure.caption.8}\protected@file@percent }
-\newlabel{fig:data_generation_initial}{{\TR@TitleReference {3.1}{Initial conditions for the data generation.}}{21}{Initial conditions for the data generation}{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}FVM in 2D}{22}{section.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}the MUSCL scheme}{22}{subsection.3.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Data generation}{22}{section.3.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Initial conditions for the data generation.}}{23}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:data_generation_initial}{{\TR@TitleReference {3.1}{Initial conditions for the data generation.}}{23}{Initial conditions for the data generation}{figure.caption.9}{}}
 \citation{phd_corse_2009}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Results}{22}{chapter.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Results}{24}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Numerical results}{22}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}The 1D Dam Break Problem}{22}{subsection.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Numerical results}{24}{section.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}The 1D Dam Break Problem}{24}{subsection.4.1.1}\protected@file@percent }
 \citation{Toro2001-Shock}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces The initial water height $h$ at $t=0$, together with the water height, the fluid velocity $u$ and the momentum $hu$ after $t=2.5$ seconds.}}{23}{figure.caption.9}\protected@file@percent }
-\newlabel{fig:1D_dam_break}{{\TR@TitleReference {4.1}{The initial water height $h$ at $t=0$, together with the water height, the fluid velocity $u$ and the momentum $hu$ after $t=2.5$ seconds.}}{23}{The initial water height $h$ at $t=0$, together with the water height, the fluid velocity $u$ and the momentum $hu$ after $t=2.5$ seconds}{figure.caption.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Toro test cases}{23}{subsection.4.1.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Initial conditions for the five test cases.}}{23}{table.caption.10}\protected@file@percent }
-\newlabel{tab:toro_test_cases}{{\TR@TitleReference {4.1}{Initial conditions for the five test cases.}}{23}{Initial conditions for the five test cases}{table.caption.10}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Test case 1}{24}{section*.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{Test case 1}{24}{section*.11}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Initial conditions for the test case.}}{24}{figure.caption.12}\protected@file@percent }
-\newlabel{fig:toro_test1_initial}{{\TR@TitleReference {4.2}{Initial conditions for the test case.}}{24}{Initial conditions for the test case}{figure.caption.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Final solution for the test case.}}{24}{figure.caption.13}\protected@file@percent }
-\newlabel{fig:toro_test1_final}{{\TR@TitleReference {4.3}{Final solution for the test case.}}{24}{Final solution for the test case}{figure.caption.13}{}}
-\@writefile{toc}{\contentsline {subsection}{Test case 2}{24}{section*.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Initial conditions for the test case.}}{24}{figure.caption.15}\protected@file@percent }
-\newlabel{fig:toro_test2_initial}{{\TR@TitleReference {4.4}{Initial conditions for the test case.}}{24}{Initial conditions for the test case}{figure.caption.15}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Final solution for the test case.}}{25}{figure.caption.16}\protected@file@percent }
-\newlabel{fig:toro_test2_final}{{\TR@TitleReference {4.5}{Final solution for the test case.}}{25}{Final solution for the test case}{figure.caption.16}{}}
-\@writefile{toc}{\contentsline {subsection}{Test case 3}{25}{section*.17}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Initial conditions for the test case.}}{25}{figure.caption.18}\protected@file@percent }
-\newlabel{fig:toro_test3_initial}{{\TR@TitleReference {4.6}{Initial conditions for the test case.}}{25}{Initial conditions for the test case}{figure.caption.18}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Final solution for the test case.}}{25}{figure.caption.19}\protected@file@percent }
-\newlabel{fig:toro_test3_final}{{\TR@TitleReference {4.7}{Final solution for the test case.}}{25}{Final solution for the test case}{figure.caption.19}{}}
-\@writefile{toc}{\contentsline {subsection}{Test case 4}{26}{section*.20}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Initial conditions for the test case.}}{26}{figure.caption.21}\protected@file@percent }
-\newlabel{fig:toro_test4_initial}{{\TR@TitleReference {4.8}{Initial conditions for the test case.}}{26}{Initial conditions for the test case}{figure.caption.21}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces Final solution for the test case.}}{26}{figure.caption.22}\protected@file@percent }
-\newlabel{fig:toro_test4_final}{{\TR@TitleReference {4.9}{Final solution for the test case.}}{26}{Final solution for the test case}{figure.caption.22}{}}
-\@writefile{toc}{\contentsline {subsection}{Test case 5}{26}{section*.23}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces Initial conditions for the test case.}}{27}{figure.caption.24}\protected@file@percent }
-\newlabel{fig:toro_test5_initial}{{\TR@TitleReference {4.10}{Initial conditions for the test case.}}{27}{Initial conditions for the test case}{figure.caption.24}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces Final solution for the test case.}}{27}{figure.caption.25}\protected@file@percent }
-\newlabel{fig:toro_test5_final}{{\TR@TitleReference {4.11}{Final solution for the test case.}}{27}{Final solution for the test case}{figure.caption.25}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Overview of which fluxes that were able to solve the test cases.}}{27}{table.caption.26}\protected@file@percent }
-\newlabel{tab:toro_fluxes}{{\TR@TitleReference {4.2}{Overview of which fluxes that were able to solve the test cases.}}{27}{Overview of which fluxes that were able to solve the test cases}{table.caption.26}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}2D idealised Circular Dam Break Problem}{27}{subsection.4.1.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces The initial water height $h$ at $t=0$, together with the water height, the fluid velocity $u$ and the momentum $hu$ after $t=2.5$ seconds.}}{25}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:1D_dam_break}{{\TR@TitleReference {4.1}{The initial water height $h$ at $t=0$, together with the water height, the fluid velocity $u$ and the momentum $hu$ after $t=2.5$ seconds.}}{25}{The initial water height $h$ at $t=0$, together with the water height, the fluid velocity $u$ and the momentum $hu$ after $t=2.5$ seconds}{figure.caption.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Toro test cases}{25}{subsection.4.1.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Initial conditions for the five test cases.}}{25}{table.caption.11}\protected@file@percent }
+\newlabel{tab:toro_test_cases}{{\TR@TitleReference {4.1}{Initial conditions for the five test cases.}}{25}{Initial conditions for the five test cases}{table.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Initial conditions for the test case.}}{26}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:toro_test1_initial}{{\TR@TitleReference {4.2}{Initial conditions for the test case.}}{26}{Initial conditions for the test case}{figure.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Final solution for the test case.}}{26}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:toro_test1_final}{{\TR@TitleReference {4.3}{Final solution for the test case.}}{26}{Final solution for the test case}{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Initial conditions for the test case.}}{26}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:toro_test2_initial}{{\TR@TitleReference {4.4}{Initial conditions for the test case.}}{26}{Initial conditions for the test case}{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Final solution for the test case.}}{27}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:toro_test2_final}{{\TR@TitleReference {4.5}{Final solution for the test case.}}{27}{Final solution for the test case}{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Initial conditions for the test case.}}{27}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:toro_test3_initial}{{\TR@TitleReference {4.6}{Initial conditions for the test case.}}{27}{Initial conditions for the test case}{figure.caption.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Final solution for the test case.}}{27}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:toro_test3_final}{{\TR@TitleReference {4.7}{Final solution for the test case.}}{27}{Final solution for the test case}{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Initial conditions for the test case.}}{28}{figure.caption.22}\protected@file@percent }
+\newlabel{fig:toro_test4_initial}{{\TR@TitleReference {4.8}{Initial conditions for the test case.}}{28}{Initial conditions for the test case}{figure.caption.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces Final solution for the test case.}}{28}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:toro_test4_final}{{\TR@TitleReference {4.9}{Final solution for the test case.}}{28}{Final solution for the test case}{figure.caption.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces Initial conditions for the test case.}}{28}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:toro_test5_initial}{{\TR@TitleReference {4.10}{Initial conditions for the test case.}}{28}{Initial conditions for the test case}{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces Final solution for the test case.}}{29}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:toro_test5_final}{{\TR@TitleReference {4.11}{Final solution for the test case.}}{29}{Final solution for the test case}{figure.caption.26}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Overview of which fluxes that were able to solve the test cases.}}{29}{table.caption.27}\protected@file@percent }
+\newlabel{tab:toro_fluxes}{{\TR@TitleReference {4.2}{Overview of which fluxes that were able to solve the test cases.}}{29}{Overview of which fluxes that were able to solve the test cases}{table.caption.27}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}2D idealised Circular Dam Break Problem}{29}{subsection.4.1.3}\protected@file@percent }
 \citation{Toro2024}
-\newlabel{fig:2D_dam_break_t0}{{\TR@TitleReference {4.12a}{2D idealised Circular Dam Break Problem}}{28}{2D dam break problem after $t=0$}{figure.caption.27}{}}
-\newlabel{sub@fig:2D_dam_break_t0}{{\TR@TitleReference {a}{2D idealised Circular Dam Break Problem}}{28}{2D dam break problem after $t=0$}{figure.caption.27}{}}
-\newlabel{fig:2D_dam_break_t0.4}{{\TR@TitleReference {4.12b}{2D idealised Circular Dam Break Problem}}{28}{2D dam break problem after $t=0.4$}{figure.caption.27}{}}
-\newlabel{sub@fig:2D_dam_break_t0.4}{{\TR@TitleReference {b}{2D idealised Circular Dam Break Problem}}{28}{2D dam break problem after $t=0.4$}{figure.caption.27}{}}
-\newlabel{fig:2D_dam_break_t0.7}{{\TR@TitleReference {4.12c}{2D idealised Circular Dam Break Problem}}{28}{2D dam break problem after $t=0.7$}{figure.caption.27}{}}
-\newlabel{sub@fig:2D_dam_break_t0.7}{{\TR@TitleReference {c}{2D idealised Circular Dam Break Problem}}{28}{2D dam break problem after $t=0.7$}{figure.caption.27}{}}
-\newlabel{fig:2D_dam_break_t1.4}{{\TR@TitleReference {4.12d}{2D idealised Circular Dam Break Problem}}{28}{2D dam break problem after $t=1.4$}{figure.caption.27}{}}
-\newlabel{sub@fig:2D_dam_break_t1.4}{{\TR@TitleReference {d}{2D idealised Circular Dam Break Problem}}{28}{2D dam break problem after $t=1.4$}{figure.caption.27}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.12}{\ignorespaces Snapshots of the 2D dam break problem at different times.}}{28}{figure.caption.27}\protected@file@percent }
-\newlabel{fig:2D_dam_break_grid}{{\TR@TitleReference {4.12}{Snapshots of the 2D dam break problem at different times.}}{28}{Snapshots of the 2D dam break problem at different times}{figure.caption.27}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Data-driven results}{28}{section.4.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces Numerical solution of the shallow water equations.}}{29}{figure.caption.28}\protected@file@percent }
-\newlabel{fig:NN_initial}{{\TR@TitleReference {4.13}{Numerical solution of the shallow water equations.}}{29}{Numerical solution of the shallow water equations}{figure.caption.28}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}FNN}{29}{subsection.4.2.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.14}{\ignorespaces Predictions.}}{29}{figure.caption.29}\protected@file@percent }
-\newlabel{fig:NN_predictions}{{\TR@TitleReference {4.14}{Predictions.}}{29}{Predictions}{figure.caption.29}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.15}{\ignorespaces Predictions for some given time steps.}}{30}{figure.caption.30}\protected@file@percent }
-\newlabel{fig:NN_predictions_time_steps}{{\TR@TitleReference {4.15}{Predictions for some given time steps.}}{30}{Predictions for some given time steps}{figure.caption.30}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.16}{\ignorespaces Training and validation loss.}}{30}{figure.caption.31}\protected@file@percent }
-\newlabel{fig:NN_loss_train_val}{{\TR@TitleReference {4.16}{Training and validation loss.}}{30}{Training and validation loss}{figure.caption.31}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}FNO}{31}{subsection.4.2.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.17}{\ignorespaces FNO predictions.}}{31}{figure.caption.32}\protected@file@percent }
-\newlabel{fig:FNO_predictions}{{\TR@TitleReference {4.17}{FNO predictions.}}{31}{FNO predictions}{figure.caption.32}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.18}{\ignorespaces FNO loss.}}{31}{figure.caption.33}\protected@file@percent }
-\newlabel{fig:FNO_loss}{{\TR@TitleReference {4.18}{FNO loss.}}{31}{FNO loss}{figure.caption.33}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Discussion}{32}{chapter.5}\protected@file@percent }
+\newlabel{fig:2D_dam_break_t0}{{\TR@TitleReference {4.12a}{2D idealised Circular Dam Break Problem}}{30}{2D dam break problem after $t=0$}{figure.caption.28}{}}
+\newlabel{sub@fig:2D_dam_break_t0}{{\TR@TitleReference {a}{2D idealised Circular Dam Break Problem}}{30}{2D dam break problem after $t=0$}{figure.caption.28}{}}
+\newlabel{fig:2D_dam_break_t0.4}{{\TR@TitleReference {4.12b}{2D idealised Circular Dam Break Problem}}{30}{2D dam break problem after $t=0.4$}{figure.caption.28}{}}
+\newlabel{sub@fig:2D_dam_break_t0.4}{{\TR@TitleReference {b}{2D idealised Circular Dam Break Problem}}{30}{2D dam break problem after $t=0.4$}{figure.caption.28}{}}
+\newlabel{fig:2D_dam_break_t0.7}{{\TR@TitleReference {4.12c}{2D idealised Circular Dam Break Problem}}{30}{2D dam break problem after $t=0.7$}{figure.caption.28}{}}
+\newlabel{sub@fig:2D_dam_break_t0.7}{{\TR@TitleReference {c}{2D idealised Circular Dam Break Problem}}{30}{2D dam break problem after $t=0.7$}{figure.caption.28}{}}
+\newlabel{fig:2D_dam_break_t1.4}{{\TR@TitleReference {4.12d}{2D idealised Circular Dam Break Problem}}{30}{2D dam break problem after $t=1.4$}{figure.caption.28}{}}
+\newlabel{sub@fig:2D_dam_break_t1.4}{{\TR@TitleReference {d}{2D idealised Circular Dam Break Problem}}{30}{2D dam break problem after $t=1.4$}{figure.caption.28}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.12}{\ignorespaces Snapshots of the 2D dam break problem at different times.}}{30}{figure.caption.28}\protected@file@percent }
+\newlabel{fig:2D_dam_break_grid}{{\TR@TitleReference {4.12}{Snapshots of the 2D dam break problem at different times.}}{30}{Snapshots of the 2D dam break problem at different times}{figure.caption.28}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Data-driven results}{30}{section.4.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces Numerical solution of the shallow water equations.}}{31}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:NN_initial}{{\TR@TitleReference {4.13}{Numerical solution of the shallow water equations.}}{31}{Numerical solution of the shallow water equations}{figure.caption.29}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}FNN}{31}{subsection.4.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.14}{\ignorespaces Predictions.}}{31}{figure.caption.30}\protected@file@percent }
+\newlabel{fig:NN_predictions}{{\TR@TitleReference {4.14}{Predictions.}}{31}{Predictions}{figure.caption.30}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.15}{\ignorespaces Predictions for some given time steps.}}{32}{figure.caption.31}\protected@file@percent }
+\newlabel{fig:NN_predictions_time_steps}{{\TR@TitleReference {4.15}{Predictions for some given time steps.}}{32}{Predictions for some given time steps}{figure.caption.31}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.16}{\ignorespaces Training and validation loss.}}{32}{figure.caption.32}\protected@file@percent }
+\newlabel{fig:NN_loss_train_val}{{\TR@TitleReference {4.16}{Training and validation loss.}}{32}{Training and validation loss}{figure.caption.32}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}FNO}{33}{subsection.4.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.17}{\ignorespaces FNO predictions.}}{33}{figure.caption.33}\protected@file@percent }
+\newlabel{fig:FNO_predictions}{{\TR@TitleReference {4.17}{FNO predictions.}}{33}{FNO predictions}{figure.caption.33}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.18}{\ignorespaces FNO loss.}}{33}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:FNO_loss}{{\TR@TitleReference {4.18}{FNO loss.}}{33}{FNO loss}{figure.caption.34}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Discussion}{34}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Further work}{33}{chapter.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Further work}{35}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \bibdata{bibl}
@@ -208,5 +212,5 @@
 \bibcite{Gaussian}{10}
 \bibcite{phd_corse_2009}{11}
 \bibstyle{unsrt}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{34}{chapter*.34}\protected@file@percent }
-\gdef \@abspage@last{41}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{36}{chapter*.35}\protected@file@percent }
+\gdef \@abspage@last{43}

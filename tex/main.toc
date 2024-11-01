@@ -22,33 +22,30 @@
 \contentsline {subsection}{\numberline {2.4.3}Exact Riemann solver}{14}{subsection.2.4.3}%
 \contentsline {section}{\numberline {2.5}Fourier Neural Operators and Neural Networks}{15}{section.2.5}%
 \contentsline {subsection}{\numberline {2.5.1}Fourier Neural Operators}{15}{subsection.2.5.1}%
-\contentsline {chapter}{\numberline {3}Methodology}{16}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Numerical fluxes}{16}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Godunov method with exact Riemann solver}{16}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Lax-Friedrichs}{17}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Lax-Wendroff}{17}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}FORCE}{17}{subsection.3.1.4}%
-\contentsline {subsection}{\numberline {3.1.5}HLL solver}{17}{subsection.3.1.5}%
-\contentsline {subsection}{\numberline {3.1.6}HLLC}{18}{subsection.3.1.6}%
-\contentsline {subsection}{\numberline {3.1.7}Flux-splitting/Upwind}{18}{subsection.3.1.7}%
-\contentsline {subsection}{\numberline {3.1.8}Roe solver}{19}{subsection.3.1.8}%
-\contentsline {section}{\numberline {3.2}Implementation of the FVM in 1D}{20}{section.3.2}%
-\contentsline {section}{\numberline {3.3}True solution}{20}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Data generation}{20}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Results}{22}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Numerical results}{22}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}The 1D Dam Break Problem}{22}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Toro test cases}{23}{subsection.4.1.2}%
-\contentsline {subsubsection}{Test case 1}{24}{section*.11}%
-\contentsline {subsection}{Test case 1}{24}{section*.11}%
-\contentsline {subsection}{Test case 2}{24}{section*.14}%
-\contentsline {subsection}{Test case 3}{25}{section*.17}%
-\contentsline {subsection}{Test case 4}{26}{section*.20}%
-\contentsline {subsection}{Test case 5}{26}{section*.23}%
-\contentsline {subsection}{\numberline {4.1.3}2D idealised Circular Dam Break Problem}{27}{subsection.4.1.3}%
-\contentsline {section}{\numberline {4.2}Data-driven results}{28}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}FNN}{29}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}FNO}{31}{subsection.4.2.2}%
-\contentsline {chapter}{\numberline {5}Discussion}{32}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Further work}{33}{chapter.6}%
-\contentsline {chapter}{Bibliography}{34}{chapter*.34}%
+\contentsline {chapter}{\numberline {3}Methodology}{17}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Numerical fluxes}{17}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Godunov method with exact Riemann solver}{17}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}HLL solver}{18}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}HLLC}{18}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Rusanov}{19}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}Lax-Friedrichs}{19}{subsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.1.6}Lax-Wendroff}{19}{subsection.3.1.6}%
+\contentsline {subsection}{\numberline {3.1.7}FORCE}{19}{subsection.3.1.7}%
+\contentsline {subsection}{\numberline {3.1.8}Flux-splitting/Upwind}{20}{subsection.3.1.8}%
+\contentsline {subsection}{\numberline {3.1.9}Roe solver}{20}{subsection.3.1.9}%
+\contentsline {section}{\numberline {3.2}Implementation of the FVM in 1D}{21}{section.3.2}%
+\contentsline {section}{\numberline {3.3}True solution}{21}{section.3.3}%
+\contentsline {section}{\numberline {3.4}FVM in 2D}{22}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}the MUSCL scheme}{22}{subsection.3.4.1}%
+\contentsline {section}{\numberline {3.5}Data generation}{22}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Results}{24}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Numerical results}{24}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}The 1D Dam Break Problem}{24}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Toro test cases}{25}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}2D idealised Circular Dam Break Problem}{29}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}Data-driven results}{30}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}FNN}{31}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}FNO}{33}{subsection.4.2.2}%
+\contentsline {chapter}{\numberline {5}Discussion}{34}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Further work}{35}{chapter.6}%
+\contentsline {chapter}{Bibliography}{36}{chapter*.35}%

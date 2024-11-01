@@ -28,6 +28,24 @@ For a dry bed case, we then identify where the dry is located, i.e., if the left
 For a wet bed case, we compute the characteristics $h_*$ and $u_*$ for the star region.
 We then identify the shock and rarefaction waves, and calculate the wave speeds for the left and right states, respectively.
 
+
+\section{FVM in 2D}
+
+\subsection{the MUSCL scheme}
+The MUSCL (Monotone Upwind Scheme for Conservation Laws), second order accurate in space and time.
+High-order total variation diminishing (TVD) scheme.
+We use the finite volume update:
+\begin{align}
+    \mathbf{U}_{i,j}^{n+1} = \mathbf{U}_{i,j}^n - \frac{\Delta t}{\Delta x}(\mathbf{F}_{i+1,j} - \mathbf{F}_{i,j}) - \frac{\Delta t}{\Delta y}(\mathbf{G}_{i,j-1} - \mathbf{G}_{i,j}).
+\end{align}
+
+
+
+
+
+
+
+
 \section{Data generation}
 We use the Matlab script: SWE1D-data-generation to generate the data for the training and testing of the neural network, and the Python script: data-generation to load and visualize the data.
 The data generation is done by solving the SWE in 1D using the FVM with the Godunov scheme and the exact Riemann solver.

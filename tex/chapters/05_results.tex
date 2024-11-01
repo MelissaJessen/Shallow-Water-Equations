@@ -53,11 +53,10 @@ To solve the test cases there are used different fluxes, namely:
     \item Lax-Wendroff flux,
     \item FORCE flux,
     \item HLL flux,
-    \item Flux-splitting/Upwind.
 \end{enumerate}
 
-\subsubsection{Test case 1}
-\addcontentsline{toc}{subsection}{Test case 1}
+\subsubsection*{Test case 1}
+%\addcontentsline{toc}{subsection}{Test case 1}
 The initial conditions for test case 1 are given in \autoref{fig:toro_test1_initial} and the final solution after $t=7.0$ seconds is given in \autoref{fig:toro_test1_final}.
 In test case 1, we observe a right shock wave and a left rarefaction wave.
 \begin{figure}[H]
@@ -74,7 +73,7 @@ In test case 1, we observe a right shock wave and a left rarefaction wave.
 For this test case all the fluxes work well, but there are minor differences in the solution, which can be seen in \autoref{fig:toro_test1_final}.
 
 \subsubsection*{Test case 2}
-\addcontentsline{toc}{subsection}{Test case 2}
+%\addcontentsline{toc}{subsection}{Test case 2}
 The initial conditions for test case 2 are illustrated in \autoref{fig:toro_test2_initial}.
 \begin{figure}[H]
     \centering
@@ -95,7 +94,7 @@ The final solution after $t=2.5$ seconds is given in \autoref{fig:toro_test2_fin
 For some of the other fluxes, Godunov method with exact Riemann solver, Lax-Wendroff or flux-splitting/upwind, it was not possible to get an acceptable solution.
 
 \subsubsection*{Test case 3}
-\addcontentsline{toc}{subsection}{Test case 3}
+%\addcontentsline{toc}{subsection}{Test case 3}
 The initial conditions for test case 3 are given in \autoref{fig:toro_test3_initial}, and the final solution after $t=4.0$ seconds is given in \autoref{fig:toro_test3_final}.
 \begin{figure}[H]
     \centering
@@ -114,7 +113,7 @@ By running experiments with different values of $h_R$, we see that the solution 
 The solution consists of a left rarefaction wave.
 
 \subsubsection*{Test case 4}
-\addcontentsline{toc}{subsection}{Test case 4}
+%\addcontentsline{toc}{subsection}{Test case 4}
 The initial conditions for test case 4 are given in \autoref{fig:toro_test4_initial}, and the final solution after $t=4.0$ seconds is given in \autoref{fig:toro_test4_final}.
 \begin{figure}[H]
     \centering
@@ -133,7 +132,7 @@ This test case is symmetric to test case 3, and the solution consists of a right
 The case is included to test if the results are as expected.
 
 \subsubsection*{Test case 5}
-\addcontentsline{toc}{subsection}{Test case 5}
+%\addcontentsline{toc}{subsection}{Test case 5}
 The initial conditions for test case 5 are given in \autoref{fig:toro_test5_initial}, and the final solution after $t=5.0$ seconds is given in \autoref{fig:toro_test5_final}.
 \begin{figure}[H]
     \centering
@@ -155,15 +154,15 @@ To get an overview of which fluxes that were able to solve the problems, conside
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{c|c|c|c|c|c|c}
+    \begin{tabular}{c|c|c|c|c|c}
         \hline
-        \textbf{Test case} & \textbf{Godunov} & \textbf{LF} & \textbf{LW} & \textbf{FORCE} & \textbf{HLL} & \textbf{Flux-splitting}  \\
+        \textbf{Test case} & \textbf{Godunov} & \textbf{LF} & \textbf{LW} & \textbf{FORCE} & \textbf{HLL}   \\
         \hline\hline
-        1 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$  \\
-        2 & $\times$ & $\checkmark$ & $\times$ & $\checkmark$ & $\checkmark$ & $\times$ \\
-        3 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$  \\
-        4 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$  \\
-        5 & $\times$ & $\checkmark$ & $\times$ & $\checkmark$ & $\checkmark$ & $\times$ \\
+        1 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$   \\
+        2 & $\times$ & $\checkmark$ & $\times$ & $\checkmark$ & $\checkmark$ \\
+        3 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$  \\
+        4 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$  \\
+        5 & $\times$ & $\checkmark$ & $\times$ & $\checkmark$ & $\checkmark$  \\
         \hline
     \end{tabular}
     \caption{Overview of which fluxes that were able to solve the test cases.}

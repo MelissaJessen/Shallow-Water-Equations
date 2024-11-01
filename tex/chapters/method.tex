@@ -27,48 +27,17 @@ The Godunov Upwind method in conservative form~\eqref{eq:explicit_conservative_1
 We compute $h_*$ and $u_*$ by starting with a two-rarefaction wave structure, and solve the wetbed problem iteratively.
 
 
-
-\subsection{Lax-Friedrichs}
-The Lax-Friedrichs method is a centred method, which is first-order accurate.
-The numerical flux is given by
-\begin{align*}
-    \mathbf{F}_{i+\frac{1}{2}}^{LF} = \frac{1}{2} \left( {\mathbf{F}}_{L} + {\mathbf{F}}_{R} \right) - \frac{1}{2} \frac{\Delta x}{\Delta t} \left( \mathbf{U}_R - \mathbf{U}_L \right),
-\end{align*}
-where $\mathbf{F}_L = \mathbf{F}(\mathbf{U}_L)$ and $\mathbf{F}_R = \mathbf{F}(\mathbf{U}_R)$.
-
-\subsection{Lax-Wendroff}
-The Lax-Wendroff method is a centred method, which is second-order accurate in space and time.
-There are several versions of the Lax-Wendroff flux, but in this thesis we will use the following flux:
-
-\begin{equation}
-    \begin{aligned}
-        \mathbf{U}_{i+ \frac{1}{2}}^{LW} &= \frac{1}{2} \left( \mathbf{U}_{L} + \mathbf{U}_{R}  \right) - \frac{1}{2} \frac{\Delta t}{\Delta x} \left( {\mathbf{F}}_{R} - {\mathbf{F}}_{L} \right), \\
-        \mathbf{F}_{i+\frac{1}{2}}^{LW} &= {{}\mathbf{F}{(\mathbf{U})}_{i+ \frac{1}{2}}^{LW}}.
-    \end{aligned}
-\end{equation}
-
-
-
-\subsection{FORCE}
-The FORCE scheme (First-Order Centred) is a combination of Lax-Friedrichs and Lax-Wendroffs fluxes.
-The numerical flux is given by
-\begin{align*}
-    \mathbf{F}_{i+ \frac{1}{2}}^{FO} = \frac{1}{2} \left( \mathbf{F}_{i+ \frac{1}{2}}^{LF} + \mathbf{F}_{i + \frac{1}{2}}^{LW}  \right).
-\end{align*}
-It is possible to extend the FORCE scheme to multiple dimensions on structured meshes by using dimensional splitting.
-The FORCE scheme is first-order accurate.
-
 \subsection{HLL solver}
 The HLL (Harten, Lax and van Leer) approach assumes a two-wave structure of the Riemann problem.
 The solver is based on the data $\mathbf{U}_L \equiv \mathbf{U}_i^n, \mathbf{U}_R \equiv \mathbf{U}_{i+1}^n$ and fluxes $\mathbf{F}_L \equiv \mathbf{F}(\mathbf{U}_L), \mathbf{F}_R \equiv \mathbf{F}(\mathbf{U}_R)$.
 The HLL flux is given by
-\begin{align*}
+\begin{align}\label{eq:HLL_flux}
     \mathbf{F}_{1 + \frac{1}{2}} = \begin{cases}
         \mathbf{F}_L & \text{if } S_L \geq 0, \\
         \mathbf{F}^{HLL} \equiv \frac{S_R \mathbf{F}_L - S_L \mathbf{F}_R + S_L S_R (\mathbf{U}_R - \mathbf{U}_L)}{S_R - S_L} & \text{if } S_L \leq 0 \leq S_R, \\
         \mathbf{F}_R & \text{if } S_R \leq 0.
     \end{cases}
-\end{align*}
+\end{align}
 The wave speeds $S_L$ and $S_R$ must be estimated in some way, and one possibility is to use 
 \begin{align*}
     S_L = u_L - a_L q_L, \quad S_R = u_R + a_R q_R,
@@ -120,6 +89,60 @@ An estimate for the middle wave speed $S^*$ can be calculated as
 \begin{align*}
     S^* = \frac{S_L h_R(u_R - S_R) - S_R h_L (u_L - S_L)}{h_R (u_R - S_R) - h_L (u_L - S_L)}.
 \end{align*}
+
+
+\subsection{Rusanov}
+To obtain the next flux, we assume an estimate $S^+$ for the positive wave speed is available.
+Then we set 
+\begin{align}\label{eq:Rusanov_flux_part1}
+    S_L = -S^+, \quad S_R = S^+.
+\end{align}
+By substituting~\eqref{eq:Rusanov_flux_part1} into the $\mathbf{F}^{HLL}$ in~\eqref{eq:HLL_flux}, we obtain the Rusanov flux as
+\begin{align}
+    \mathbf{F}_{i+\frac{1}{2}}^{Rus} = \frac{1}{2} \left( \mathbf{F}_{L} + \mathbf{F}_{R}  \right)
+    - \frac{1}{2} S^+ \left( \mathbf{U}_R - \mathbf{U}_L \right),
+\end{align}
+where a simple estimate for the wave speed $S^+$ is given by
+\begin{align*}
+    S^+ = \max ( |S_L|, |S_R|).
+\end{align*}
+This sheme is upwind and based on a one-wave model.
+Therefore it is an incomplete Riemann solver.
+
+\subsection{Lax-Friedrichs}
+The Lax-Friedrichs method is a centred method, which is first-order accurate.
+We set the wave speed $S^+$ as the largest possible speed, while still ensuring stability, i.e.,
+\begin{align}\label{eq:Lax-Friedrichs_wave_speed}
+    S^+ = \frac{\Delta x}{\Delta t}.
+\end{align}
+By inserting the wave speed~\eqref{eq:Lax-Friedrichs_wave_speed} into the Rusanov flux, we obtain the Lax-Friedrichs flux as
+\begin{align*}
+    \mathbf{F}_{i+\frac{1}{2}}^{LF} = \frac{1}{2} \left( {\mathbf{F}}_{L} + {\mathbf{F}}_{R} \right) - \frac{1}{2} \frac{\Delta x}{\Delta t} \left( \mathbf{U}_R - \mathbf{U}_L \right),
+\end{align*}
+where $\mathbf{F}_L = \mathbf{F}(\mathbf{U}_L)$ and $\mathbf{F}_R = \mathbf{F}(\mathbf{U}_R)$.
+
+\subsection{Lax-Wendroff}
+The Lax-Wendroff method is a centred method, which is second-order accurate in space and time.
+There are several versions of the Lax-Wendroff flux, but in this thesis we will use the following flux:
+
+\begin{equation}
+    \begin{aligned}
+        \mathbf{U}_{i+ \frac{1}{2}}^{LW} &= \frac{1}{2} \left( \mathbf{U}_{L} + \mathbf{U}_{R}  \right) - \frac{1}{2} \frac{\Delta t}{\Delta x} \left( {\mathbf{F}}_{R} - {\mathbf{F}}_{L} \right), \\
+        \mathbf{F}_{i+\frac{1}{2}}^{LW} &= {{}\mathbf{F}{(\mathbf{U})}_{i+ \frac{1}{2}}^{LW}}.
+    \end{aligned}
+\end{equation}
+
+
+
+\subsection{FORCE}
+The FORCE scheme (First-Order Centred) is a combination of Lax-Friedrichs and Lax-Wendroffs fluxes.
+The numerical flux is given by
+\begin{align*}
+    \mathbf{F}_{i+ \frac{1}{2}}^{FO} = \frac{1}{2} \left( \mathbf{F}_{i+ \frac{1}{2}}^{LF} + \mathbf{F}_{i + \frac{1}{2}}^{LW}  \right).
+\end{align*}
+It is possible to extend the FORCE scheme to multiple dimensions on structured meshes by using dimensional splitting.
+The FORCE scheme is first-order accurate.
+
 
 
 
