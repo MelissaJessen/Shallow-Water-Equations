@@ -46,7 +46,6 @@
 \contentsline {section}{\numberline {4.2}Data-driven results}{30}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}FNN}{31}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}FNO}{33}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Neural Operator}{34}{subsection.4.2.3}%
-\contentsline {chapter}{\numberline {5}Discussion}{36}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Further work}{37}{chapter.6}%
-\contentsline {chapter}{Bibliography}{38}{chapter*.39}%
+\contentsline {chapter}{\numberline {5}Discussion}{35}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Further work}{36}{chapter.6}%
+\contentsline {chapter}{Bibliography}{37}{chapter*.37}%

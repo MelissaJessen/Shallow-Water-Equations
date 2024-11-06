@@ -40,7 +40,7 @@ elseif itest == 2
     h_init_R=1.0;
     UL =-5.0;
     UR =5.0;
-    timeout=2.5;
+    timeout=2.5; % 2.5
  elseif itest == 3
     % TORO TEST 3 
     gate = 20.0;
@@ -90,7 +90,7 @@ igate=round((gate-a)/dx,0);        %index (integer) at which the gate is positio
 x=a:dx:b; %interface coordinate
 xc=x(1:mcells)+dx/2; %cell centre coordinate
 
-mexact = 5000;
+mexact = 200;
 %set the initial condition
 h=zeros(1,mcells);
 Q=zeros(1,mcells);
@@ -127,7 +127,7 @@ for t=1:ntmaxi %time marching precedure
     time=time+dt;
 
     %Solution of the exact Riemann problem to compare with the numerical
-    [hexact,uexact,~,xexact]=exact_sol(mexact,h_init_L,h_init_R,UL,UR,0,0,gravit,timeout,a-gate,b-gate);
+    [hexact,uexact,~,xexact]=exact_sol(mexact,h_init_L,h_init_R,UL,UR,0,0,gravit,time,a-gate,b-gate);
 
     % Append current timestep's hexact and uexact to storage
     hexact_all = [hexact_all; hexact];
@@ -149,7 +149,10 @@ folder = 'C:\Users\Matteo\Shallow-Water-Equations\dataFNO';
 filename = ['test',num2str(itest),'_all_timesteps_to_t=',num2str(timeout)];
 fullpath = fullfile(folder, filename);
 
-%save(fullpath,'time_all', 'xexact','hexact_all','uexact_all');
+save(fullpath,'time_all', 'xexact','hexact_all','uexact_all');
 
-%% 
+%%
+
+
+
 

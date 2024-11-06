@@ -57,66 +57,36 @@ We have also trained a LSTM model, but the results are not shown here, as the mo
 
 \subsection{FNO}
 One of the main goals in this thesis is to use Fourier Neural Operators to solve the shallow water equations.
-We define a FNO model, which consists of 2 input channels, 1 output channel, 100 Fourier modes in the first dimension and 1 Fourier mode in the second dimension.
-The model is trained using the Adam optimizer with a learning rate of $0.001$, a total of $3000$ epochs and the critera is to minimize the mean squared error (MSE).
+We define a FNO model, which consists of an input channel, 64 hidden channels and an output channel. We use a Fourier basis with 16 modes and a batch size of 32.
+The model is trained using the Adam optimizer with a learning rate of $0.001$, a total of $100$ epochs and the critera is to minimize the mean squared error (MSE).
 The results of the model are shown in \autoref{fig:FNO_predictions}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/FNOpredictions.pdf}
+    \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/pred_swe_epochs100_channels64_lr_0.001.pdf}
     \caption{FNO predictions.}\label{fig:FNO_predictions}
 \end{figure}
 From \autoref{fig:FNO_predictions} we see that the FNO model is able to learn the dynamics of the solution, and it is able to predict the solution with high accuracy.
-From the figure we also see that distribution of the error is more or less uniform in the domain. If the solution has a higher value, we see correspondingly, the error is a bit higher, i.e, the error follows the solution.
-The loss for each epoch is shown in \autoref{fig:FNO_loss}.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/FNOloss.pdf}
-    \caption{FNO loss.}\label{fig:FNO_loss}
-\end{figure}
-From \autoref{fig:FNO_loss} we see that the loss is decreasing for each epoch, and the model is able to learn the dynamics of the solution.
-
-
-\subsection{Neural Operator}
-
-\begin{align*}
-    \begin{bmatrix}
-        a_0 \\
-        a_1 \\
-        \vdots \\
-        a_{N-1}
-    \end{bmatrix}
-    \to
-    \begin{bmatrix}
-        u_0 \\
-        u_1 \\
-        \vdots \\
-        u_{N-1}
-    \end{bmatrix}
-\end{align*}
-
+From the figure we also see that the error follows the edges of the solution, which is expected, as the solution tends to be discontinuous.
+The loss for each iteration, which is epochs $\times$ batches, is shown in \autoref{fig:FNO_loss}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/loss_swe_epochs100_channels64_lr_0.001.pdf}
-    \caption{FNO loss.}
+    \caption{FNO loss.}\label{fig:FNO_loss}
 \end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/pred_swe_epochs100_channels64_lr_0.001.pdf}
-    \caption{FNO predictions.}
-\end{figure}
-
+From \autoref{fig:FNO_loss} we see that the loss is decreasing for each iteration, and the model is able to learn the dynamics of the solution.
+To get a deeper understanding of the performance of the model, we consider the predictions for some given time steps, shown in \autoref{fig:FNO_predictions_time_steps}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/pred_swe_epochs100_channels64_lr_0.001_timesteps.pdf}
-    \caption{FNO predictions timesteps.}
+    \caption{FNO predictions timesteps.}\label{fig:FNO_predictions_time_steps}
 \end{figure}
-
+\autoref{fig:FNO_predictions_time_steps} demonstrates that the predictions effectively capture the solution's dynamics, but the model has challenges when capturing discontinuities.
+The RMSE for the predictions is shown in \autoref{fig:FNO_rmse}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/rmse_swe_epochs100_channels64_lr_0.001.pdf}
-    \caption{FNO predictions RMSE.}
+    \caption{FNO predictions RMSE.}\label{fig:FNO_rmse}
 \end{figure}
-
+From \autoref{fig:FNO_rmse} we see that the RMSE is not increasing for the predictions, which is a good sign.
 
 
