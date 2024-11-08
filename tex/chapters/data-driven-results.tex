@@ -33,7 +33,7 @@ The predictions of the model are shown in \autoref{fig:NN_predictions}.
     \includegraphics[width=0.99\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/NN_predictions.pdf}
     \caption{Predictions.}\label{fig:NN_predictions}
 \end{figure}
-From \autoref{fig:NN_predictions} we see that the neural network, to some extent, is able to learnt the dynamics of the solution, but it is not accurate enough to be used as a solver.
+From \autoref{fig:NN_predictions} we see that the neural network, to some extent, is able to learn the dynamics of the solution, but it is not accurate enough to be used as a solver.
 We also see that the further we get in time, the worse the predictions become. This is also somehow expected.
 To understand the performance of the model, we consider the predictions for some given time steps, shown in \autoref{fig:NN_predictions_time_steps}.
 \begin{figure}[H]
@@ -42,7 +42,6 @@ To understand the performance of the model, we consider the predictions for some
     \caption{Predictions for some given time steps.}\label{fig:NN_predictions_time_steps}
 \end{figure}
 Again, we see that the model finds some of the dynamics, but in practise, it can not be used as a solver.
-
 The training and validation loss are shown in \autoref{fig:NN_loss_train_val}.
 \begin{figure}[H]
     \centering
@@ -52,7 +51,6 @@ The training and validation loss are shown in \autoref{fig:NN_loss_train_val}.
 From \autoref{fig:NN_loss_train_val}, we see that a higher number of epochs, would probably not be beneficial, as the validation loss is increasing after a certain number of epochs.
 
 We have also trained a LSTM model, but the results are not shown here, as the model was not able to learn the dynamics of the solution.
-
 
 
 \subsection{FNO}
@@ -88,5 +86,42 @@ The RMSE for the predictions is shown in \autoref{fig:FNO_rmse}.
     \caption{FNO predictions RMSE.}\label{fig:FNO_rmse}
 \end{figure}
 From \autoref{fig:FNO_rmse} we see that the RMSE is not increasing for the predictions, which is a good sign.
+
+
+\subsubsection{FNO Toro test 1}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001_3D.pdf}
+    \caption{FNO Toro test 1 predictions in 3d.}\label{fig:FNO_Toro_test1_predictions_3D}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001.pdf}
+    \caption{FNO Toro test 1 predictions.}\label{fig:FNO_Toro_test1_predictions}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_loss_swe_epochs100_channels64_lr_0.001.pdf}
+    \caption{FNO Toro test 1 loss.}\label{fig:FNO_Toro_test1_loss}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001_timesteps.pdf}
+    \caption{FNO Toro test 1 predictions timesteps.}\label{fig:FNO_Toro_test1_predictions_time_steps}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_rmse_swe_epochs100_channels64_lr_0.001.pdf}
+    \caption{FNO Toro test 1 predictions RMSE.}\label{fig:FNO_Toro_test1_rmse}
+\end{figure}
+
 
 
