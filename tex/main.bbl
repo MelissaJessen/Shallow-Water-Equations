@@ -47,6 +47,12 @@ Wikipedia.
 \newblock Leibniz integral rule.
 \newblock \url{https://en.wikipedia.org/wiki/Leibniz_integral_rule}, 7/10-2024.
 
+\bibitem{lat-long-earth}
+Longitude and latitude map with degrees.
+\newblock
+  \url{https://animalia-life.club/qa/pictures/longitude-and-latitude-map-with-degrees},
+  Accessed: 2024.
+
 \bibitem{LeVeque2002}
 Randall~J. LeVeque.
 \newblock {\em Finite Volume Methods for Hyperbolic Problems}.
