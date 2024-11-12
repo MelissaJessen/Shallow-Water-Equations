@@ -50,16 +50,23 @@ That is, we consider the partial derivative with respect to time of the volume $
 \end{align*}
 where we have utilized that $r$ is constant, and that $\cos(\phi), \Delta \phi$ and $\Delta \theta$ are independent of the time $t$.
 
+
+
+
+
 The shallow water equations in spherical coordinates are given by:
 \begin{equation}
     \left.
     \begin{aligned}
         h_t + \frac{1}{r \cos (\phi)} \left( {(h u_\theta)}_{\theta} {(h u_{\phi} \cos(\phi))}_{\phi}  \right) &= 0, \\
-        \partial t u_{\theta}  + \frac{u_\theta}{r \cos (\phi)} {(u_\theta)}_\theta  &= 0, \\
+        {(u_{\theta})}_t  + \frac{u_\theta}{r \cos (\phi)} {(u_\theta)}_\theta + \frac{u_\phi}{r} {(u_\theta)}_{phi}
+        - \frac{u_\theta u_\phi }{r} \tan(\phi) + \frac{g}{r \cos (\phi)} h_\theta &= \frac{g}{r \cos(\phi)} b_\theta, \\
+        {(u_{\phi})}_t  + \frac{u_\theta}{r \cos (\phi)} {(u_\phi)}_\theta + \frac{u_\phi}{r} {(u_\phi)}_{\phi}
+        + \frac{u_\theta^2}{r} \tan(\phi) + \frac{g}{r} h_\phi &= \frac{g}{r} b_\phi,
     \end{aligned}
     \right\}
 \end{equation}
-
+where $r$ is the radius, $(\theta, \phi)$ are the longitude and latitude, $h$ is the height of the water, $u_\theta$ and $u_\phi$ are the velocities in the $\theta$ and $\phi$ directions, $g$ is the gravitational constant, and $b$ is the bottom depth.
 
 
 
