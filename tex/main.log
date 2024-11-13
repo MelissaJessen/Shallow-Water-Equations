@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.13)  12 NOV 2024 13:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.13)  13 NOV 2024 15:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1129,270 +1129,279 @@ Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/figs/lat-long-e
 <C:/Users/Matteo/Shallow-Water-Equations/figs/Sphere-small-domain.png, id=454, 515.67656pt x 338.76563pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/figs/Sphere-small-domain.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/figs/Sphere-small-domain.png>
-Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/figs/Sphere-small-domain.png  used on input line 20.
+Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/figs/Sphere-small-domain.png  used on input line 21.
 (pdftex.def)             Requested size: 250.24199pt x 164.38899pt.
 
 
-[11 <C:/Users/Matteo/Shallow-Water-Equations/figs/lat-long-earth.jpg> <C:/Users/Matteo/Shallow-Water-Equations/figs/Sphere-small-domain.png>]) (chapters/fvm.tex
+[11 <C:/Users/Matteo/Shallow-Water-Equations/figs/lat-long-earth.jpg> <C:/Users/Matteo/Shallow-Water-Equations/figs/Sphere-small-domain.png>]
 
 [12]
-<C:/Users/Matteo/Shallow-Water-Equations/tex/figs/control_volume_V_i_n.png, id=473, 472.01344pt x 352.31625pt>
+Underfull \hbox (badness 10000) in paragraph at lines 110--122
+
+ []
+
+
+
+[13]) (chapters/fvm.tex
+<C:/Users/Matteo/Shallow-Water-Equations/tex/figs/control_volume_V_i_n.png, id=491, 472.01344pt x 352.31625pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/tex/figs/control_volume_V_i_n.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/tex/figs/control_volume_V_i_n.png>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/tex/figs/control_volume_V_i_n.png  used on input line 22.
 (pdftex.def)             Requested size: 200.19054pt x 149.42331pt.
 
 
-[13 <C:/Users/Matteo/Shallow-Water-Equations/tex/figs/control_volume_V_i_n.png>]
-<C:/Users/Matteo/Shallow-Water-Equations/tex/figs/fvm_grid_new.png, id=486, 409.53pt x 245.41687pt>
+[14]
+<C:/Users/Matteo/Shallow-Water-Equations/tex/figs/fvm_grid_new.png, id=503, 409.53pt x 245.41687pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/tex/figs/fvm_grid_new.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/tex/figs/fvm_grid_new.png>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/tex/figs/fvm_grid_new.png  used on input line 59.
 (pdftex.def)             Requested size: 250.24199pt x 149.96245pt.
-) (chapters/riemann.tex
 
-[14 <C:/Users/Matteo/Shallow-Water-Equations/tex/figs/fvm_grid_new.png>]
-<C:/Users/Matteo/Shallow-Water-Equations/figs/dam-break-problem.png, id=502, 369.63094pt x 153.57375pt>
+
+[15 <C:/Users/Matteo/Shallow-Water-Equations/tex/figs/control_volume_V_i_n.png>]) (chapters/riemann.tex
+
+[16 <C:/Users/Matteo/Shallow-Water-Equations/tex/figs/fvm_grid_new.png>]
+<C:/Users/Matteo/Shallow-Water-Equations/figs/dam-break-problem.png, id=527, 369.63094pt x 153.57375pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/figs/dam-break-problem.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/figs/dam-break-problem.png>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/figs/dam-break-problem.png  used on input line 50.
 (pdftex.def)             Requested size: 250.24199pt x 103.96947pt.
 
 
-[15 <C:/Users/Matteo/Shallow-Water-Equations/figs/dam-break-problem.png>]) (chapters/FNO+NN.tex
+[17 <C:/Users/Matteo/Shallow-Water-Equations/figs/dam-break-problem.png>]) (chapters/FNO+NN.tex
 
-[16]
-<C:/Users/Matteo/Shallow-Water-Equations/figs/fourier_neural_network.png, id=524, 861.2175pt x 271.76532pt>
+[18]
+<C:/Users/Matteo/Shallow-Water-Equations/figs/fourier_neural_network.png, id=550, 861.2175pt x 271.76532pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/figs/fourier_neural_network.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/figs/fourier_neural_network.png>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/figs/fourier_neural_network.png  used on input line 47.
 (pdftex.def)             Requested size: 350.33727pt x 110.55367pt.
 )
 
-[17 <C:/Users/Matteo/Shallow-Water-Equations/figs/fourier_neural_network.png>] (chapters/method.tex
+[19 <C:/Users/Matteo/Shallow-Water-Equations/figs/fourier_neural_network.png>] (chapters/method.tex
 Chapter 3.
 
 
-[18
+[20
 
 ]
 
-[19]
-
-[20]
-
-[21] (chapters/04_Numerics.tex
+[21]
 
 [22]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/data_generation_initial.png, id=578, 578.16pt x 289.08pt>
+
+[23] (chapters/04_Numerics.tex
+
+[24]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/data_generation_initial.png, id=604, 578.16pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/data_generation_initial.png Graphic file (type png)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/data_generation_initial.png>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/data_generation_initial.png  used on input line 70.
 (pdftex.def)             Requested size: 400.38872pt x 200.19322pt.
 
 
-[23]))
+[25]))
 
-[24 <C:/Users/Matteo/Shallow-Water-Equations/plots/data_generation_initial.png>] (chapters/05_Results.tex
+[26 <C:/Users/Matteo/Shallow-Water-Equations/plots/data_generation_initial.png>] (chapters/05_Results.tex
 Chapter 4.
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 7.
 (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-<C:/Users/Matteo/Shallow-Water-Equations/plots/sol_1D_val.pdf, id=598, 1156.32pt x 361.35pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/sol_1D_val.pdf, id=623, 1156.32pt x 361.35pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/sol_1D_val.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/sol_1D_val.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/sol_1D_val.pdf  used on input line 27.
 (pdftex.def)             Requested size: 495.48189pt x 154.83713pt.
 
 
-[25
+[27
 
 {C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_initial.pdf, id=614, 722.7pt x 289.08pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_initial.pdf, id=639, 722.7pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_initial.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_initial.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_initial.pdf  used on input line 68.
 (pdftex.def)             Requested size: 450.43253pt x 180.17169pt.
 
 
-[26 <C:/Users/Matteo/Shallow-Water-Equations/plots/sol_1D_val.pdf>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final.pdf, id=665, 722.7pt x 289.08pt>
+[28 <C:/Users/Matteo/Shallow-Water-Equations/plots/sol_1D_val.pdf>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final.pdf, id=690, 722.7pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final.pdf  used on input line 74.
 (pdftex.def)             Requested size: 450.43253pt x 180.17169pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.pdf, id=668, 722.7pt x 289.08pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.pdf, id=693, 722.7pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.pdf  used on input line 85.
 (pdftex.def)             Requested size: 450.43253pt x 180.17169pt.
 
 
-[27 <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_initial.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final.pdf>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.pdf, id=779, 722.7pt x 289.08pt>
+[29 <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_initial.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final.pdf>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.pdf, id=804, 722.7pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.pdf  used on input line 95.
 (pdftex.def)             Requested size: 450.43253pt x 180.17169pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.pdf, id=782, 722.7pt x 289.08pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.pdf, id=807, 722.7pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.pdf  used on input line 105.
 (pdftex.def)             Requested size: 450.43253pt x 180.17169pt.
 
 
-[28 <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.pdf>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.pdf, id=886, 722.7pt x 289.08pt>
+[30 <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.pdf>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.pdf, id=912, 722.7pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.pdf  used on input line 111.
 (pdftex.def)             Requested size: 450.43253pt x 180.17169pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.pdf, id=890, 722.7pt x 289.08pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.pdf, id=916, 722.7pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.pdf  used on input line 125.
 (pdftex.def)             Requested size: 450.43253pt x 180.17169pt.
 
 
-[29 <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.pdf>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.pdf, id=998, 722.7pt x 289.08pt>
+[31 <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.pdf>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.pdf, id=1024, 722.7pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.pdf  used on input line 131.
 (pdftex.def)             Requested size: 450.43253pt x 180.17169pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_initial.pdf, id=1001, 722.7pt x 289.08pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_initial.pdf, id=1027, 722.7pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_initial.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_initial.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_initial.pdf  used on input line 145.
 (pdftex.def)             Requested size: 450.43253pt x 180.17169pt.
 
 
-[30 <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.pdf>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final.pdf, id=1111, 722.7pt x 289.08pt>
+[32 <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.pdf>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final.pdf, id=1136, 722.7pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final.pdf  used on input line 151.
 (pdftex.def)             Requested size: 450.43253pt x 180.17169pt.
 
 
-[31 <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_initial.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final.pdf>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.pdf, id=1216, 722.7pt x 361.35pt>
+[33 <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_initial.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final.pdf>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.pdf, id=1241, 722.7pt x 361.35pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.pdf  used on input line 196.
 (pdftex.def)             Requested size: 245.2399pt x 122.62029pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.4.pdf, id=1217, 722.7pt x 361.35pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.4.pdf, id=1242, 722.7pt x 361.35pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.4.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.4.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.4.pdf  used on input line 202.
 (pdftex.def)             Requested size: 245.2399pt x 122.62029pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.7.pdf, id=1218, 722.7pt x 361.35pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.7.pdf, id=1243, 722.7pt x 361.35pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.7.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.7.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.7.pdf  used on input line 210.
 (pdftex.def)             Requested size: 245.2399pt x 122.62029pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=1.4.pdf, id=1219, 722.7pt x 361.35pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=1.4.pdf, id=1244, 722.7pt x 361.35pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=1.4.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=1.4.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=1.4.pdf  used on input line 216.
 (pdftex.def)             Requested size: 245.2399pt x 122.62029pt.
 ) (chapters/data-driven-results.tex
 
-[32 <C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.4.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.7.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=1.4.pdf>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/NN_initial.pdf, id=1352, 1084.05pt x 433.62pt>
+[34 <C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.4.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.7.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=1.4.pdf>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/NN_initial.pdf, id=1377, 1084.05pt x 433.62pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/NN_initial.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/NN_initial.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/NN_initial.pdf  used on input line 18.
 (pdftex.def)             Requested size: 350.33727pt x 140.13084pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/NN_predictions.pdf, id=1354, 1084.05pt x 433.62pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/NN_predictions.pdf, id=1379, 1084.05pt x 433.62pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/NN_predictions.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/NN_predictions.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/NN_predictions.pdf  used on input line 33.
 (pdftex.def)             Requested size: 495.48189pt x 198.19063pt.
 
 
-[33 <C:/Users/Matteo/Shallow-Water-Equations/plots/NN_initial.pdf>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/NN_predictions_time_steps.pdf, id=1397, 1156.32pt x 361.35pt>
+[35 <C:/Users/Matteo/Shallow-Water-Equations/plots/NN_initial.pdf>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/NN_predictions_time_steps.pdf, id=1422, 1156.32pt x 361.35pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/NN_predictions_time_steps.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/NN_predictions_time_steps.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/NN_predictions_time_steps.pdf  used on input line 41.
 (pdftex.def)             Requested size: 475.45825pt x 148.57901pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/NN_loss_train_val.pdf, id=1399, 462.52798pt x 346.89601pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/NN_loss_train_val.pdf, id=1424, 462.52798pt x 346.89601pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/NN_loss_train_val.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/NN_loss_train_val.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/NN_loss_train_val.pdf  used on input line 48.
 (pdftex.def)             Requested size: 300.29344pt x 225.23094pt.
 
 
-[34 <C:/Users/Matteo/Shallow-Water-Equations/plots/NN_predictions.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/NN_predictions_time_steps.pdf>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/pred_swe_epochs100_channels64_lr_0.001.pdf, id=1476, 867.24pt x 289.08pt>
+[36 <C:/Users/Matteo/Shallow-Water-Equations/plots/NN_predictions.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/NN_predictions_time_steps.pdf>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/pred_swe_epochs100_channels64_lr_0.001.pdf, id=1502, 867.24pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/pred_swe_epochs100_channels64_lr_0.001.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/pred_swe_epochs100_channels64_lr_0.001.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/pred_swe_epochs100_channels64_lr_0.001.pdf  used on input line 63.
 (pdftex.def)             Requested size: 450.43253pt x 150.14601pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/loss_swe_epochs100_channels64_lr_0.001.pdf, id=1479, 505.89pt x 144.54pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/loss_swe_epochs100_channels64_lr_0.001.pdf, id=1505, 505.89pt x 144.54pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/loss_swe_epochs100_channels64_lr_0.001.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/loss_swe_epochs100_channels64_lr_0.001.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/loss_swe_epochs100_channels64_lr_0.001.pdf  used on input line 71.
 (pdftex.def)             Requested size: 350.33727pt x 100.0988pt.
 
 
-[35 <C:/Users/Matteo/Shallow-Water-Equations/plots/NN_loss_train_val.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/pred_swe_epochs100_channels64_lr_0.001.pdf>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/pred_swe_epochs100_channels64_lr_0.001_timesteps.pdf, id=1563, 867.24pt x 289.08pt>
+[37 <C:/Users/Matteo/Shallow-Water-Equations/plots/NN_loss_train_val.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/pred_swe_epochs100_channels64_lr_0.001.pdf>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/pred_swe_epochs100_channels64_lr_0.001_timesteps.pdf, id=1589, 867.24pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/pred_swe_epochs100_channels64_lr_0.001_timesteps.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/pred_swe_epochs100_channels64_lr_0.001_timesteps.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/pred_swe_epochs100_channels64_lr_0.001_timesteps.pdf  used on input line 78.
 (pdftex.def)             Requested size: 450.43253pt x 150.14601pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/rmse_swe_epochs100_channels64_lr_0.001.pdf, id=1566, 722.7pt x 289.08pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/rmse_swe_epochs100_channels64_lr_0.001.pdf, id=1592, 722.7pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/rmse_swe_epochs100_channels64_lr_0.001.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/rmse_swe_epochs100_channels64_lr_0.001.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/rmse_swe_epochs100_channels64_lr_0.001.pdf  used on input line 85.
 (pdftex.def)             Requested size: 350.33727pt x 140.13304pt.
 
 
-[36 <C:/Users/Matteo/Shallow-Water-Equations/plots/loss_swe_epochs100_channels64_lr_0.001.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/pred_swe_epochs100_channels64_lr_0.001_timesteps.pdf>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001_3D.pdf, id=1639, 1300.86pt x 433.62pt>
+[38 <C:/Users/Matteo/Shallow-Water-Equations/plots/loss_swe_epochs100_channels64_lr_0.001.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/pred_swe_epochs100_channels64_lr_0.001_timesteps.pdf>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001_3D.pdf, id=1664, 1300.86pt x 433.62pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001_3D.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001_3D.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001_3D.pdf  used on input line 96.
 (pdftex.def)             Requested size: 450.43253pt x 150.14162pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001.pdf, id=1640, 867.24pt x 289.08pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001.pdf, id=1665, 867.24pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001.pdf  used on input line 103.
 (pdftex.def)             Requested size: 450.43253pt x 150.14601pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_loss_swe_epochs100_channels64_lr_0.001.pdf, id=1641, 505.89pt x 144.54pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_loss_swe_epochs100_channels64_lr_0.001.pdf, id=1666, 505.89pt x 144.54pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_loss_swe_epochs100_channels64_lr_0.001.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_loss_swe_epochs100_channels64_lr_0.001.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_loss_swe_epochs100_channels64_lr_0.001.pdf  used on input line 109.
 (pdftex.def)             Requested size: 350.33727pt x 100.0988pt.
 
 
-[37 <C:/Users/Matteo/Shallow-Water-Equations/plots/rmse_swe_epochs100_channels64_lr_0.001.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001_3D.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001.pdf>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001_timesteps.pdf, id=1785, 867.24pt x 289.08pt>
+[39 <C:/Users/Matteo/Shallow-Water-Equations/plots/rmse_swe_epochs100_channels64_lr_0.001.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001_3D.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001.pdf>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001_timesteps.pdf, id=1810, 867.24pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001_timesteps.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001_timesteps.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001_timesteps.pdf  used on input line 115.
 (pdftex.def)             Requested size: 450.43253pt x 150.14601pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_rmse_swe_epochs100_channels64_lr_0.001.pdf, id=1786, 722.7pt x 289.08pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_rmse_swe_epochs100_channels64_lr_0.001.pdf, id=1811, 722.7pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_rmse_swe_epochs100_channels64_lr_0.001.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_rmse_swe_epochs100_channels64_lr_0.001.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_rmse_swe_epochs100_channels64_lr_0.001.pdf  used on input line 122.
 (pdftex.def)             Requested size: 350.33727pt x 140.13304pt.
 )
 
-[38 <C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_loss_swe_epochs100_channels64_lr_0.001.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001_timesteps.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_rmse_swe_epochs100_channels64_lr_0.001.pdf>] (chapters/06_discussion.tex
+[40 <C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_loss_swe_epochs100_channels64_lr_0.001.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_pred_swe_epochs100_channels64_lr_0.001_timesteps.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_rmse_swe_epochs100_channels64_lr_0.001.pdf>] (chapters/06_discussion.tex
 Chapter 5.
 )
 
-[39
+[41
 
 ] (chapters/07_FurtherWork.tex
 Chapter 6.
 )
 
-[40
+[42
 
 ] (main.bbl
 Underfull \hbox (badness 3471) in paragraph at lines 34--39
@@ -1411,7 +1420,7 @@ Underfull \hbox (badness 8038) in paragraph at lines 51--55
 
 )
 
-[41
+[43
 
 ] (main.aux)
  ***********
@@ -1422,17 +1431,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 30B98A9C715C06F10FBFB163E8A3D93E;7794.
  ) 
 Here is how much of TeX's memory you used:
- 40547 strings out of 473899
- 915641 string characters out of 5726028
+ 40564 strings out of 473899
+ 915987 string characters out of 5726028
  1954960 words of memory out of 5000000
- 62454 multiletter control sequences out of 15000+600000
+ 62461 multiletter control sequences out of 15000+600000
  576232 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,23n,131p,775b,680s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Matteo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on main.pdf (48 pages, 4520557 bytes).
+Output written on main.pdf (50 pages, 4532269 bytes).
 PDF statistics:
- 2063 PDF objects out of 2073 (max. 8388607)
- 214 named destinations out of 1000 (max. 500000)
+ 2094 PDF objects out of 2487 (max. 8388607)
+ 224 named destinations out of 1000 (max. 500000)
  603 words of extra memory for PDF output out of 10000 (max. 10000000)
 
