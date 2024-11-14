@@ -47,11 +47,37 @@ Wikipedia.
 \newblock Leibniz integral rule.
 \newblock \url{https://en.wikipedia.org/wiki/Leibniz_integral_rule}, 7/10-2024.
 
+\bibitem{Raymond}
+David~J. Raymond.
+\newblock Shallow water on a sphere.
+\newblock
+  \url{http://kestrel.nmt.edu/~raymond/classes/ph332/notes/sphere/sphere.pdf},
+  New Mexico Tech. Accessed 2024.
+
+\bibitem{Castro2017}
+Manuel~J. Castro, Sergio Ortega, and Carlos Parés.
+\newblock Well-balanced methods for the shallow water equations in spherical
+  coordinates.
+\newblock
+  \url{https://www.sciencedirect.com/science/article/pii/S0045793017303237},
+  2017.
+
+\bibitem{Bihlo2022}
+Alex Bihlo and Roman~O. Popovych.
+\newblock Physics-informed neural networks for the shallow-water equations on
+  the sphere.
+\newblock {\em Journal of Computational Physics}, 456:111024, 2022.
+
 \bibitem{lat-long-earth}
 Longitude and latitude map with degrees.
 \newblock
   \url{https://animalia-life.club/qa/pictures/longitude-and-latitude-map-with-degrees},
   Accessed: 2024.
+
+\bibitem{Coriolis}
+Wikipedia.
+\newblock Coriolis force.
+\newblock \url{https://en.wikipedia.org/wiki/Coriolis_force}, 14/11-2024.
 
 \bibitem{LeVeque2002}
 Randall~J. LeVeque.

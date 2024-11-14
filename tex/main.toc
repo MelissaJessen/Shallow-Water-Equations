@@ -14,14 +14,14 @@
 \contentsline {subsection}{\numberline {2.2.6}The 1D SWE in integral form}{9}{subsection.2.2.6}%
 \contentsline {subsection}{\numberline {2.2.7}SWE in Spherical Coordinates}{11}{subsection.2.2.7}%
 \contentsline {section}{\numberline {2.3}Finite Volume Method for the Shallow Water Equations}{14}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Finite Volume Methods for the 1D SWE}{14}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.1}Finite Volume Methods for the 1D SWE}{15}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}Finite Volume Method for the 2D SWE}{16}{subsection.2.3.2}%
-\contentsline {section}{\numberline {2.4}The Riemann problem}{16}{section.2.4}%
+\contentsline {section}{\numberline {2.4}The Riemann problem}{17}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}The Dam-Break problem}{17}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}Waves in the Riemann problem}{18}{subsection.2.4.2}%
 \contentsline {subsection}{\numberline {2.4.3}Exact Riemann solver}{18}{subsection.2.4.3}%
 \contentsline {section}{\numberline {2.5}Fourier Neural Operators and Neural Networks}{18}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Fourier Neural Operators}{18}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.1}Fourier Neural Operators}{19}{subsection.2.5.1}%
 \contentsline {chapter}{\numberline {3}Methodology}{20}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Numerical fluxes}{20}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Godunov method with exact Riemann solver}{20}{subsection.3.1.1}%
@@ -46,7 +46,7 @@
 \contentsline {section}{\numberline {4.2}Data-driven results}{34}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}FNN}{35}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}FNO}{37}{subsection.4.2.2}%
-\contentsline {subsubsection}{FNO Toro test 1}{39}{section*.39}%
+\contentsline {subsubsection}{FNO Toro test 1}{39}{section*.38}%
 \contentsline {chapter}{\numberline {5}Discussion}{41}{chapter.5}%
 \contentsline {chapter}{\numberline {6}Further work}{42}{chapter.6}%
-\contentsline {chapter}{Bibliography}{43}{chapter*.45}%
+\contentsline {chapter}{Bibliography}{43}{chapter*.44}%

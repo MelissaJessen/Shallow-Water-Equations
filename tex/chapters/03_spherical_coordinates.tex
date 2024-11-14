@@ -1,7 +1,7 @@
 \subsection{SWE in Spherical Coordinates}
 Until now we have derived the shallow water equations in cartesian coordinates.
 In this section, we will derive the shallow water equations in spherical coordinates.
-We will follow the methods used in.
+We will follow the methods used in~\cite{Raymond},~\cite{Castro2017} and~\cite{Bihlo2022}.
 To illustrate the spherical coordinates, we will use the latitude and longitude system, visualized in~\autoref{fig:lat-long-earth}.
 
 \begin{figure}[H]
@@ -143,38 +143,56 @@ By using the arc length formula, we get that
     \quad \frac{\text{d}\phi}{\text{d}t} = \frac{u_\phi}{r}.
 \end{align}
 We can now insert~\eqref{eq:sphere-arc-length} into~\eqref{eq:sphere-total-derivative} to find the total derivative of the horizontal velocity splitted into the $\theta$ and $\phi$ directions:
-\begin{equation}
+\begin{equation}\label{eq:sphere-total-derivative-split}
     \begin{aligned}
         \frac{\text{d}u_\theta}{\text{d}t} = \frac{\partial u_\theta}{\partial t} + \frac{u_\theta}{r \cos(\phi)} \frac{\partial u_\theta}{\partial \theta} + \frac{u_\phi}{r} \frac{\partial u_\theta}{\partial \phi}, \\
         \frac{\text{d}u_\phi}{\text{d}t} = \frac{\partial u_\phi}{\partial t} + \frac{u_\theta}{r \cos(\phi)} \frac{\partial u_\phi}{\partial \theta} + \frac{u_\phi}{r} \frac{\partial u_\phi}{\partial \phi}.
     \end{aligned}
 \end{equation}
-We still need to find the acceleration terms in the $\theta$ and $\phi$ directions.
+Comparing~\eqref{eq:sphere-total-derivative-split} with the momentum equations in cartesian coordinates~\eqref{eq:momentum_conservation_xy_final}, we see that the terms in the momentum equations in spherical coordinates are similar to the terms in the momentum equations in cartesian coordinates.
+Besides, we must consider more physical forces than just gravity.
+Hence, we obtain the two momentum equations in spherical coordinates as
+\begin{equation}
+    \begin{aligned}
+         {(u_\theta)}_t + \frac{u_\theta}{r \cos(\phi)} {(u_\theta)}_\theta + \frac{u_\phi}{r} {(u_\theta)}_\phi = -g s_x + \text{other forces}, \\
+        {( u_\phi)}_t + \frac{u_\theta}{r \cos(\phi)} {(u_\phi)}_\theta   + \frac{u_\phi}{r} {(u_\phi)}_\phi = - g s_y + \text{other forces}.
+    \end{aligned}
+\end{equation}
+The first extra force we consider is the Coriolis force, which is a force that acts on moving objects on the surface of the earth~\cite{Coriolis}.
+The Coriolis force is given by $f = 2 \Omega \sin(\phi)$, where $\Omega$ is the angular velocity of the earth.
+The Coriolis force in the $\theta$ and $\phi$ directions are then given by:
 \begin{align*}
-    \frac{\partial u_\theta}{\partial t}, \\
-    \frac{\partial u_\phi}{\partial t}, \\
+    &\theta-\text{direction:} \quad f u_\phi,\\
+    &\phi-\text{direction:} \quad -f u_\theta.
 \end{align*}
+Beta-plane approximation?
+Thus we can rewrite the momentum equations as
+\begin{equation}
+    \begin{aligned}
+         {(u_\theta)}_t + \frac{u_\theta}{r \cos(\phi)} {(u_\theta)}_\theta + \frac{u_\phi}{r} {(u_\theta)}_\phi + \frac{g}{r \cos(\phi)} h_\theta - f u_\phi = .. \\
+        {( u_\phi)}_t + \frac{u_\theta}{r \cos(\phi)} {(u_\phi)}_\theta   + \frac{u_\phi}{r} {(u_\phi)}_\phi + \frac{g}{r} h_\phi + f u_\theta = ..
+    \end{aligned}
+\end{equation}
 
-Newtons second law:
-Acceleration = pressure gradient force + coriolis force + other forces (gravity?).
+Another thing we need to consider is the centripetal acceleration and the curvature of the earth.
+
+
+
 
 
 The shallow water equations in spherical coordinates are given by:
 \begin{equation}
     \left.
     \begin{aligned}
-        h_t + \frac{1}{r \cos (\phi)} \left( {(h u_\theta)}_{\theta} {(h u_{\phi} \cos(\phi))}_{\phi}  \right) &= 0, \\
+        h_t + \frac{1}{r \cos (\phi)} \left( {(h u_\theta)}_{\theta} + {(h u_{\phi} \cos(\phi))}_{\phi}  \right) &= 0, \\
         {(u_{\theta})}_t  + \frac{u_\theta}{r \cos (\phi)} {(u_\theta)}_\theta + \frac{u_\phi}{r} {(u_\theta)}_{\phi}
-        - \frac{u_\theta u_\phi }{r} \tan(\phi) + \frac{g}{r \cos (\phi)} h_\theta &= \frac{g}{r \cos(\phi)} b_\theta, \\
+        - \frac{u_\theta u_\phi }{r} \tan(\phi) + \frac{g}{r \cos (\phi)} h_\theta - f u_\phi &= 0, \\
         {(u_{\phi})}_t  + \frac{u_\theta}{r \cos (\phi)} {(u_\phi)}_\theta + \frac{u_\phi}{r} {(u_\phi)}_{\phi}
-        + \frac{u_\theta^2}{r} \tan(\phi) + \frac{g}{r} h_\phi &= \frac{g}{r} b_\phi,
+        + \frac{u_\theta^2}{r} \tan(\phi) + \frac{g}{r} h_\phi + f u_\theta &= 0,
     \end{aligned}
     \right\}
 \end{equation}
-where $r$ is the radius, $(\theta, \phi)$ are the longitude and latitude, $h$ is the height of the water, $u_\theta$ and $u_\phi$ are the velocities in the $\theta$ and $\phi$ directions, $g$ is the gravitational constant, and $b$ is the bottom depth.
-
-
-
+where $r$ is the radius, $(\theta, \phi)$ are the longitude and latitude, $h$ is the height of the water, $u_\theta$ and $u_\phi$ are the velocities in the $\theta$ and $\phi$ directions, $g$ is the gravitational constant.
 
 
 

@@ -473,11 +473,6 @@ INPUT C:\Users\Matteo\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cm
 INPUT .\frontmatter\abstract.tex
 INPUT .\frontmatter\abstract.tex
 INPUT frontmatter\abstract.tex
-INPUT .\notes.tex
-INPUT .\notes.tex
-INPUT notes.tex
-INPUT C:\Users\Matteo\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
-INPUT C:\Users\Matteo\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\Matteo\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
 INPUT C:\Users\Matteo\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT .\main.toc
@@ -503,6 +498,8 @@ OUTPUT main.toc
 INPUT .\chapters\00_introduction.tex
 INPUT .\chapters\00_introduction.tex
 INPUT chapters\00_introduction.tex
+INPUT C:\Users\Matteo\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
+INPUT C:\Users\Matteo\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\Matteo\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
 INPUT .\chapters\02_theory.tex
 INPUT .\chapters\02_theory.tex
