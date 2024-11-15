@@ -27,7 +27,7 @@ end
 mcells=200;    %number of cells for numerical simulations
 
 % FLUX CHOICE
-%1--> Godunov method with exact Rieamnn problem
+%1--> Godunov method with exact Riemann problem
 %2--> Lax-Friedrichs
 %3--> Lax-Wendroff
 %4--> FORCE

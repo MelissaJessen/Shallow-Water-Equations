@@ -8,26 +8,24 @@ In this section we will study the numerical fluxes used to solve the SWE in 1D.
 At each cell interface, we need to solve the Riemann problem~\eqref{eq:Riemann_problem} to find the numerical flux.
 There are several numerical fluxes that can be used to solve the local Riemann problem, and we will consider some of them in this section.
 
-
-\subsection{Godunov method with exact Riemann solver}
+\subsection*{Godunov method with exact Riemann solver}
+\addcontentsline{toc}{subsection}{Godunov method with exact Riemann solver}
 We consider the Godunov Upwind method, which is a first-order accurate metod to solve non-linear systems of hyperbolic conservation laws~\cite{Toro2024}.
 Godunov's method is a fundamental starting point.
-In the method we solve the non-linear Riemann problem at each cell interface. 
+In the method we solve the non-linear Riemann problem at each cell interface.
+The Godunov flux is given by
+\begin{align*}
+    \mathbf{F}_{i + \frac{1}{2}} = \mathbf{F}(\mathbf{U}_{i + \frac{1}{2}}),
+\end{align*}
+meaning that we solve the Riemann problem exactly to find $h^*$ and $u^*$, and then use these values to compute the flux as 
+\begin{align*}
+    \mathbf{F}_{i + \frac{1}{2}} = \begin{bmatrix}
+        h^* u^* \\ h^* {(u^{*})}^2 + \frac{1}{2} g {(h^{*})}^2
+    \end{bmatrix}.
+\end{align*}
 
-Consider the initial-boundary value problem (IBVP) for a system of $N$ nonlinear hyperbolic conservation (balance?) laws     
-\begin{equation}\label{eq:IBVP_system}
-    \begin{cases}
-    \text{PDEs: }    &\mathbf{U}_t + \mathbf{F(U)}_x = \mathbf{S(U)}, \quad x \in [a, b], \quad t > 0, \\
-    \text{ICs: }    &\mathbf{U}(x,0) = \mathbf{U}^{(0)}(x), \quad x \in [a,b], \\
-    \text{BCs: }    &\mathbf{U}(a,t) = \mathbf{B}_{L}(t), \quad \mathbf{U}(b,t) = \mathbf{B}_{R}(t), \quad t \geq 0.
-    \end{cases}
-\end{equation}
-The vectors $\mathbf{B}_L (t)$ and $\mathbf{B}_R (t)$ denote the boundary conditions at the left and right boundaries, respectively.
-The Godunov Upwind method in conservative form~\eqref{eq:explicit_conservative_1D_SWE} solves the IBVP~\eqref{eq:IBVP_system}.
-We compute $h_*$ and $u_*$ by starting with a two-rarefaction wave structure, and solve the wetbed problem iteratively.
-
-
-\subsection{HLL solver}
+\subsection*{HLL}
+\addcontentsline{toc}{subsection}{HLL}
 The HLL (Harten, Lax and van Leer) approach assumes a two-wave structure of the Riemann problem.
 The solver is based on the data $\mathbf{U}_L \equiv \mathbf{U}_i^n, \mathbf{U}_R \equiv \mathbf{U}_{i+1}^n$ and fluxes $\mathbf{F}_L \equiv \mathbf{F}(\mathbf{U}_L), \mathbf{F}_R \equiv \mathbf{F}(\mathbf{U}_R)$.
 The HLL flux is given by
@@ -59,7 +57,8 @@ which is what we use in this project for $\hat{h}$ in the HLL solver.
 Since this is a two-wave model, it is complete for one dimensional problems, but for the augmented system of equations in two dimensions, the HLL solver is not complete, as it ignores the middle wave, the shear wave.
 This motivates the use of the HLLC solver, which is a modification of the HLL solver.
 
-\subsection{HLLC}
+\subsection*{HLLC}
+\addcontentsline{toc}{subsection}{HLLC}
 The HLLC (Harten, Lax, van Leer, Contact) solver is an extension of the HLL solver, which includes the middle wave, i.e., it is a three-wave model.
 In addition to the wave speeds $S_L$ and $S_R$, the HLLC solver also requires the speed of the middle wave $S^*$.
 We can write the HLLC numerical flux as
@@ -83,7 +82,7 @@ and the middle states $\mathbf{U}_{*L}$ and $\mathbf{U}_{*R}$ are given by
         1 \\ S_* \\ \psi_K
     \end{bmatrix}.
 \end{align*}
-The function $\psi_K$ can represent either a passive scalar $\psi(x,t)$ or the velocity component $v(x,t)$ if we consider the two-dimensional SWE.
+The function $\psi_K$ can represent either a passive scalar $\psi(x,t)$ or the velocity component $v(x,t)$ if we consider the two-dimensional shallow water equations.
 Mathematically $\psi(x,t)$ and $v(x,t)$ behave identically.
 An estimate for the middle wave speed $S^*$ can be calculated as
 \begin{align*}
@@ -91,14 +90,16 @@ An estimate for the middle wave speed $S^*$ can be calculated as
 \end{align*}
 where $S_L$ and $S_R$ are the wave speeds of the left and right waves, respectively.
 
-\subsection{Rusanov}
-To obtain the next flux, we assume an estimate $S^+$ for the positive wave speed is available.
+\subsection*{Rusanov}
+\addcontentsline{toc}{subsection}{Rusanov}
+The Rusanov flux uses the HLL framework, but with a different choice of wave speeds.
+To obtain the flux, we assume an estimate $S^+$ for the positive wave speed is available.
 Then we set 
 \begin{align}\label{eq:Rusanov_flux_part1}
     S_L = -S^+, \quad S_R = S^+.
 \end{align}
 By substituting~\eqref{eq:Rusanov_flux_part1} into the $\mathbf{F}^{HLL}$ in~\eqref{eq:HLL_flux}, we obtain the Rusanov flux as
-\begin{align}
+\begin{align}\label{eq:Rusanov_flux}
     \mathbf{F}_{i+\frac{1}{2}}^{Rus} = \frac{1}{2} \left( \mathbf{F}_{L} + \mathbf{F}_{R}  \right)
     - \frac{1}{2} S^+ \left( \mathbf{U}_R - \mathbf{U}_L \right),
 \end{align}
@@ -106,133 +107,50 @@ where a simple estimate for the wave speed $S^+$ is given by
 \begin{align*}
     S^+ = \max ( |S_L|, |S_R|).
 \end{align*}
-This sheme is upwind and based on a one-wave model.
+There are some requirement for $S^+$ in~\eqref{eq:Rusanov_flux} to ensure stability.
+It must hold that 
+\begin{align*}
+    S^+ \leq \frac{\Delta x}{\Delta t},
+\end{align*}
+where $\frac{\Delta x}{\Delta t}$ is called the mesh speed.
+This Rusanov sheme is upwind and based on a one-wave model.
 Therefore it is an incomplete Riemann solver.
 
-\subsection{Lax-Friedrichs}
-The Lax-Friedrichs method is a centred method, which is first-order accurate.
-We set the wave speed $S^+$ as the largest possible speed, while still ensuring stability, i.e.,
+\subsection*{Lax-Friedrichs}
+\addcontentsline{toc}{subsection}{Lax-Friedrichs}
+In the Lax-Friedrichs method, we use the Rusanov flux, but with a different choice of wave speed.
+That is, we set the wave speed $S^+$ as the largest possible speed, while still ensuring stability, i.e.,
 \begin{align}\label{eq:Lax-Friedrichs_wave_speed}
     S^+ = \frac{\Delta x}{\Delta t}.
 \end{align}
-By inserting the wave speed~\eqref{eq:Lax-Friedrichs_wave_speed} into the Rusanov flux, we obtain the Lax-Friedrichs flux as
+By inserting the wave speed~\eqref{eq:Lax-Friedrichs_wave_speed} into the Rusanov flux~\eqref{eq:Rusanov_flux}, we obtain the Lax-Friedrichs flux as
 \begin{align*}
     \mathbf{F}_{i+\frac{1}{2}}^{LF} = \frac{1}{2} \left( {\mathbf{F}}_{L} + {\mathbf{F}}_{R} \right) - \frac{1}{2} \frac{\Delta x}{\Delta t} \left( \mathbf{U}_R - \mathbf{U}_L \right),
 \end{align*}
 where $\mathbf{F}_L = \mathbf{F}(\mathbf{U}_L)$ and $\mathbf{F}_R = \mathbf{F}(\mathbf{U}_R)$.
+The Lax-Friedrichs method is a centred method, which is first-order accurate.
 
-\subsection{Lax-Wendroff}
-The Lax-Wendroff method is a centred method, which is second-order accurate in space and time.
+\subsection*{Lax-Wendroff}
+\addcontentsline{toc}{subsection}{Lax-Wendroff}
 There are several versions of the Lax-Wendroff flux, but in this thesis we will use the following flux:
-
 \begin{equation}
     \begin{aligned}
         \mathbf{U}_{i+ \frac{1}{2}}^{LW} &= \frac{1}{2} \left( \mathbf{U}_{L} + \mathbf{U}_{R}  \right) - \frac{1}{2} \frac{\Delta t}{\Delta x} \left( {\mathbf{F}}_{R} - {\mathbf{F}}_{L} \right), \\
         \mathbf{F}_{i+\frac{1}{2}}^{LW} &= {{}\mathbf{F}{(\mathbf{U})}_{i+ \frac{1}{2}}^{LW}}.
     \end{aligned}
 \end{equation}
+The Lax-Wendroff method is a centred method, which is second-order accurate in space and time.
 
-
-
-\subsection{FORCE}
+\subsection*{FORCE}
+\addcontentsline{toc}{subsection}{FORCE}
 The FORCE scheme (First-Order Centred) is a combination of Lax-Friedrichs and Lax-Wendroffs fluxes.
 The numerical flux is given by
 \begin{align*}
-    \mathbf{F}_{i+ \frac{1}{2}}^{FO} = \frac{1}{2} \left( \mathbf{F}_{i+ \frac{1}{2}}^{LF} + \mathbf{F}_{i + \frac{1}{2}}^{LW}  \right).
+    \mathbf{F}_{i+ \frac{1}{2}}^{FO} = \frac{1}{2} \left( \mathbf{F}_{i+ \frac{1}{2}}^{LF} + \mathbf{F}_{i + \frac{1}{2}}^{LW}  \right),
 \end{align*}
-It is possible to extend the FORCE scheme to multiple dimensions on structured meshes by using dimensional splitting.
+where $\mathbf{F}_{i+ \frac{1}{2}}^{LF}$ is the Lax-Friedrichs flux and $\mathbf{F}_{i+ \frac{1}{2}}^{LW}$ is the Lax-Wendroff flux.
 The FORCE scheme is first-order accurate.
-
-
-
-
-\subsection{Flux-splitting/Upwind}
-In the flux splitting we compute $h_*$ and $u_*$ by assuming a two-rarefaction wave structure.
-We define 
-\begin{align*}
-    c_L = \sqrt{g h_L}, \quad c_R = \sqrt{g h_R},
-\end{align*}
-to obtain
-\begin{align*}
-    h_{S2} = {\left( \frac{0.75}{\sqrt{g}} \cdot (q_L - q_R) + 0.5 \cdot \left(h_L^{1.5} + h_R^{1.5}\right) \right)}^2, \\
-    h_{S} = h_{S2}^{\frac{1}{3}}
-\end{align*}
-and
-\begin{align*}
-    u_* = \frac{1}{2} (u_L + u_R) + \frac{1}{3} \sqrt{g} (h_L^{1.5} - h_R^{1.5}).
-\end{align*}
-
-
-
-
-\subsection{Roe solver}
-Consider the non-linear Riemann problem in~\eqref{eq:Riemann_problem}:
-\begin{align*}
-    \mathbf{U}_t + \mathbf{F(U)}_x \equiv \mathbf{U}_t + \mathbf{A} \mathbf{U}_x = 0,
-\end{align*}
-where $\mathbf{A}$ is the Jacobian matrix of $\mathbf{F}$. 
-The Roe solver is based on an approximation of the Jacobian matrix $\mathbf{A}$ by a Roe matrix $\tilde{\mathbf{A}}$, which is a constant coefficient matrix, to obtain the linear system
-\begin{align*}
-    \mathbf{U}_t + \mathbf{\tilde{A}} \mathbf{U}_x = 0.
-\end{align*}
-
-This means that the Roe solver solves the approximated Riemann problem
-\begin{align*}
-    \mathbf{U}_t + \mathbf{\tilde{A}} \mathbf{U}_x &= 0. \\
-    \mathbb{U}(x,0) = \begin{cases}
-        \mathbf{U}_L, & x < 0, \\
-        \mathbf{U}_R, & x > 0.
-    \end{cases}
-\end{align*}
-exact.
-That is, the original non-linear conservation laws are replaced by a linearised system with constant coefficients.
-
-The main idea in the Roe solver is to find average values $\tilde{h}, \tilde{a}, \tilde{u}$ and $\tilde{\psi}$ for the depth $h$, the celerity $a$ (??), the velocity component $u$ and the scalar $\psi$.
-The method thus use the following Roe averages:
-\begin{align}\label{eq:Roe_averages}
-    \left\{
-\begin{aligned}
-    \tilde{h} &= \sqrt{h_L h_R}, \\
-    \tilde{u} &= \frac{u_L \sqrt{h_L} + u_R \sqrt{h_R}}{\sqrt{h_L} + \sqrt{h_R}}, \\
-    \tilde{a} &= \sqrt{\frac{1}{2}(a_L^2 + a_R^2)}, \\
-    \tilde{\psi} &= \frac{\psi_L \sqrt{h_L}  + \psi_R \sqrt{h_R}}{\sqrt{h_L} + \sqrt{h_R}}.
-\end{aligned}
-\right.
-\end{align}
-The average eigenvalues (of what?) are
-\begin{align*}
-    \tilde{\lambda}_1 = \tilde{u} - \tilde{a}, \quad \tilde{\lambda}_2 = \tilde{u}, \quad \tilde{\lambda}_3 = \tilde{u} + \tilde{a}, \\
-\end{align*} 
-with the correspinding right eigenvectors
-\begin{align*}
-    \tilde{\mathbf{R}}^{(1)} = \begin{bmatrix}
-        1 \\ \tilde{u} - \tilde{a} \\ \tilde{\psi}
-    \end{bmatrix}, \quad
-    \tilde{\mathbf{R}}^{(2)} = \begin{bmatrix}
-        0 \\ 0 \\  1
-    \end{bmatrix}, \quad
-    \tilde{\mathbf{R}}^{(3)} = \begin{bmatrix}
-        1 \\ \tilde{u} + \tilde{a} \\ \tilde{\psi}
-    \end{bmatrix}.
-\end{align*}
-The wave strenghts $\tilde{\alpha}_j$ described by Roe averages are given by
-\begin{align}
-    \left\{
-    \begin{aligned}
-        \tilde{\alpha}_1 &= \frac{1}{2} \left[ \Delta h - \frac{\tilde{h}}{\tilde{a}} \Delta u  \right], \\
-        \tilde{\alpha}_2 &= \frac{1}{2} \left[ \tilde{h} \Delta \psi  \right], \\
-        \tilde{\alpha}_3 &= \frac{1}{2} \left[ \Delta h + \frac{\tilde{h}}{\tilde{a}} \Delta u  \right].
-    \end{aligned}    
-    \right.
-\end{align}
-Applying theory of linear systems with constant coefficients.
-The numerical flux is
-\begin{align}\label{eq:Roe_flux}
-    \mathbf{F}_{i+\frac{1}{2}} = \frac{1}{2} \left( \mathbf{F}_L + \mathbf{F}_R \right) - \frac{1}{2} \sum_{j=1}^3 \tilde{\alpha}_j \left| \tilde{\lambda}_j \right| \tilde{\mathbf{R}}^{(j)}.
-\end{align}
-The Roe flux~\eqref{eq:Roe_flux} is used in the explicit conservative scheme to solve the SWE in 1D.
-
-
+It is possible to extend the FORCE scheme to multiple dimensions on structured meshes by using dimensional splitting.
 
 \input{chapters/04_Numerics.tex}
 
