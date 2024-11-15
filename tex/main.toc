@@ -8,7 +8,7 @@
 \contentsline {section}{\numberline {2.2}The SWE with conservative variables}{4}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Conservation laws}{4}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Boundary conditions}{5}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Assumptions}{6}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.3}Assumptions}{7}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}Integration over depth}{7}{subsection.2.2.4}%
 \contentsline {subsection}{\numberline {2.2.5}The SWE in vector form for 1D and 2D}{9}{subsection.2.2.5}%
 \contentsline {subsection}{\numberline {2.2.6}The 1D SWE in integral form}{9}{subsection.2.2.6}%
@@ -30,7 +30,7 @@
 \contentsline {subsection}{\numberline {3.1.4}Rusanov}{22}{subsection.3.1.4}%
 \contentsline {subsection}{\numberline {3.1.5}Lax-Friedrichs}{22}{subsection.3.1.5}%
 \contentsline {subsection}{\numberline {3.1.6}Lax-Wendroff}{22}{subsection.3.1.6}%
-\contentsline {subsection}{\numberline {3.1.7}FORCE}{22}{subsection.3.1.7}%
+\contentsline {subsection}{\numberline {3.1.7}FORCE}{23}{subsection.3.1.7}%
 \contentsline {subsection}{\numberline {3.1.8}Flux-splitting/Upwind}{23}{subsection.3.1.8}%
 \contentsline {subsection}{\numberline {3.1.9}Roe solver}{23}{subsection.3.1.9}%
 \contentsline {section}{\numberline {3.2}Implementation of the FVM in 1D}{24}{section.3.2}%

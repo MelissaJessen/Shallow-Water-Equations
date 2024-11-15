@@ -10,7 +10,8 @@ This is obiviously a great advantage, if we are aiming to describe systems where
 The neural operator is also able to transfer solutions between meshes, meaning that we can train the model on a coarse grid and transfer the solution to a fine grid, depending on the desired accuracy.
 This is also referred to as the zero-shot super-resolution property.
 We make the neural operator to a fourier neural operator, by using a fourier integral operator in the neural network.
-We utilize the fact that differentation is equivalent to multiplication in the Fourier domain.
+We utilize the fact that differentation with respect to time is equivalent to multiplication in the Fourier domain.
+(Not to be confused with the convolution theorem).
 
 Another issue we are facing in this project is non-linearities.
 Standard neural networks uses combinations of linear multiplications and non-linear activation functions to approximate non-linear functions.
@@ -48,7 +49,7 @@ The network for the FNO model is illustrated in \autoref{fig:fourier_neural_netw
     \caption{An overview of the network architecture with several Fourier layers. Illustration from~\cite{FNO_2021}.}\label{fig:fourier_neural_network}
 \end{figure}
 From the figure we see that the network consists of a input layer $P$, several Fourier layers and a output layer $Q$.
-A Fourier layer consists of two parallel paths. The top path consists of a Fourier transformation $mathcal{F}$, a linear transformation $R$ to filter out the higher Fourier modes, and a inverse Fourier transformation $\mathcal{F}^{-1}$.
+A Fourier layer consists of two parallel paths. The top path consists of a Fourier transformation $\mathcal{F}$, a linear transformation $R$ to filter out the higher Fourier modes, and a inverse Fourier transformation $\mathcal{F}^{-1}$.
 The bottom path consists of a linear transformation $W$. 
 The paths meet and there are applied an activation function $\sigma$.
 

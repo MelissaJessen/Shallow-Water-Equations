@@ -42,7 +42,7 @@ The wave speeds $S_L$ and $S_R$ must be estimated in some way, and one possibili
 \begin{align*}
     S_L = u_L - a_L q_L, \quad S_R = u_R + a_R q_R,
 \end{align*}
-where $q_K (K=L, R)$ is given by 
+where$a_L = \sqrt{g h_L}, a_R = \sqrt{g h_R}$ and  $q_K (K=L, R)$ is given by 
 \begin{align*}
     q_K = 
     \begin{cases}
@@ -59,12 +59,10 @@ which is what we use in this project for $\hat{h}$ in the HLL solver.
 Since this is a two-wave model, it is complete for one dimensional problems, but for the augmented system of equations in two dimensions, the HLL solver is not complete, as it ignores the middle wave, the shear wave.
 This motivates the use of the HLLC solver, which is a modification of the HLL solver.
 
-
 \subsection{HLLC}
 The HLLC (Harten, Lax, van Leer, Contact) solver is an extension of the HLL solver, which includes the middle wave, i.e., it is a three-wave model.
 In addition to the wave speeds $S_L$ and $S_R$, the HLLC solver also requires the speed of the middle wave $S^*$.
 We can write the HLLC numerical flux as
-
 \begin{align*}
     \mathbf{F}_{i+\frac{1}{2}}^{HLLC} = \begin{cases}
         \mathbf{F}_L & \text{if } 0 \leq S_L, \\
@@ -85,11 +83,13 @@ and the middle states $\mathbf{U}_{*L}$ and $\mathbf{U}_{*R}$ are given by
         1 \\ S_* \\ \psi_K
     \end{bmatrix}.
 \end{align*}
+The function $\psi_K$ can represent either a passive scalar $\psi(x,t)$ or the velocity component $v(x,t)$ if we consider the two-dimensional SWE.
+Mathematically $\psi(x,t)$ and $v(x,t)$ behave identically.
 An estimate for the middle wave speed $S^*$ can be calculated as
 \begin{align*}
-    S^* = \frac{S_L h_R(u_R - S_R) - S_R h_L (u_L - S_L)}{h_R (u_R - S_R) - h_L (u_L - S_L)}.
+    S^* = \frac{S_L h_R(u_R - S_R) - S_R h_L (u_L - S_L)}{h_R (u_R - S_R) - h_L (u_L - S_L)},
 \end{align*}
-
+where $S_L$ and $S_R$ are the wave speeds of the left and right waves, respectively.
 
 \subsection{Rusanov}
 To obtain the next flux, we assume an estimate $S^+$ for the positive wave speed is available.

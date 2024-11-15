@@ -14,7 +14,7 @@ The Riemann problem for the shallow water equations in 1D with a zero source ter
         \end{cases}
     \end{aligned}
     \end{equation}
-Here, the vectors $\mathbf{U}$ and $\mathbf{F(U)}$ in~\eqref{eq:Riemann_problem} are given by
+The vectors $\mathbf{U}$ and $\mathbf{F(U)}$ in~\eqref{eq:Riemann_problem} are given by
 \begin{align}
     \mathbf{U} = \begin{bmatrix}
         h \\ hu \\ hv
@@ -34,9 +34,9 @@ and the initial conditions $\mathbf{U_L}$ and $\mathbf{U_R}$ are
 \end{align*}
 which represents the conditions at time $t = 0$ in the left and right states of $x=0$, respectively.
 The function $\mathbf{U}$ is piecewise constant, with a discontinuity at $x=0$.
-The Riemann problem can be solved both exactly and approximately.
-There are several approximate Riemann solvers, such as the HLL and Roe solvers, which are based on the approximate solution of the Riemann problem.
-We will consider some of these solvers later in the thesis.
+The Riemann problem can be solved either exactly or approximately.
+Various approximate Riemann solvers exist, based on finding an approximate solution to the Riemann problem.
+Some of these solvers will be considered later in the thesis.
 
 \subsection{The Dam-Break problem}
 We now introduce the dam-break problem, a scenario of significant physical interest.

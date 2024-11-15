@@ -1,5 +1,5 @@
 \section{Finite Volume Method for the Shallow Water Equations}
-In this section, we present the Finite Volume Method (FVM) for solving nonlinear systems of balance laws, specifically focusing on the shallow water equations (SWE).
+In this section, we present the finite volume method (FVM) for solving nonlinear systems of balance laws, specifically focusing on the shallow water equations (SWE).
 Nonlinear problems are more challenging than linear problems, as stability and convergence theory are more difficult.
 Our focus is on discountinuous solutions, that can accurately capture shock waves and other discontinuities.
 The approach described here is based on the work of LeVeque~\cite{LeVeque2002}.
@@ -16,15 +16,15 @@ In the FVM, we discretize the domain into finite control volumes or cells:
     V_i = [x_{i-1/2}, x_{i+1/2}] \times [t_n, t_{n+1}],
 \end{align*}
 where $\Delta x = x_{i+1/2} - x_{i-1/2}$ is the length of the cell and $\Delta t = t_{n+1} - t_n$ is the time step.
-The cell $V_i$ is illustrated in Figure~\ref{fig:control_volume_V_i_n}.
+The cell $V_i^n$ is illustrated in Figure~\ref{fig:control_volume_V_i_n}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/tex/figs/control_volume_V_i_n.png}
     \caption{Illustration of the control volume $V_i^n$ in the $x,t$ plane.}\label{fig:control_volume_V_i_n}
 \end{figure}
 For now, we will assume a uniform grid for simplicity.
-The Finite Volume Formula is derived from the integral form~\eqref{eq:integral_form_1D_final}.
-By dividing this by the cell length $\Delta x$, we espress it in terms of the newly defined cells:
+The finite volume formula is derived from the integral form~\eqref{eq:integral_form_1D_final}.
+By dividing the integral form of the 1D inhomoegeneous SWE by the cell length $\Delta x$, we espress it in terms of the newly defined cells:
 \begin{align*}
     \frac{1}{\Delta x} \int_{x_{i-1/2}}^{x_{i+1/2}} \mathbf{U}(x,t_{n+1}) \text{ d}x &= \frac{1}{\Delta x} \int_{x_{i-1/2}}^{x_{i+1/2}} \mathbf{U}(x,t_n) \text{ d}x\\
     & - \frac{\Delta t}{\Delta x} \left[ \frac{1}{\Delta t} \int_{t_n}^{t_{n+1}} \mathbf{F}(\mathbf{U}(x_{i+1/2}, t)) \text{ d}t
@@ -41,11 +41,11 @@ The value $\mathbf{U}_i^n$ is the average value over the $i$-th cell at time $t_
     \mathbf{U}_i^n = \frac{1}{\Delta x} \int_{x_{i-1/2}}^{x_{i+1/2}} \mathbf{U}(x,t_n) \text{ d}x,
 \end{align}
 also known as the cell average.
-The flux $\mathbf{F}_{i-1/2}^n$ is the average flux across the line $x = x_{i-1/2}$ at time $t_n$:
+The flux $\mathbf{F}_{i-1/2}^n$ is the average flux across the line $x = x_{i-1/2}$ from time $t_n$ to $t_{n+1}$:
 \begin{align*}
     \mathbf{F}_{i-1/2}^n = \frac{1}{\Delta t} \int_{t_n}^{t_{n+1}} \mathbf{F}(\mathbf{U}(x_{i-1/2},t)) \text{ d}t,
 \end{align*}
-and correspondingly for $\mathbf{F}_{i+1/2}^n$:
+and correspondingly the flux $\mathbf{F}_{i+1/2}^n$ is the average flux across the line $x = x_{i+1/2}$ from time $t_n$ to $t_{n+1}$:
 \begin{align*}
     \mathbf{F}_{i+1/2}^n = \frac{1}{\Delta t} \int_{t_n}^{t_{n+1}} \mathbf{F}(\mathbf{U}(x_{i+1/2},t)) \text{ d}t.
 \end{align*}
@@ -64,9 +64,9 @@ Consequently, the FVM does not provide pointwise values of the solution, i.e., $
 One of the main challenges in the FVM is to determine appropiate numerical flux functions that, based on the available cell averages, can reasonably approximate the fluxes at the cell interfaces. 
 Later in the thesis, we will consider several numerical flux functions that can be used to solve the local Riemann problem at the cell interfaces.
 
-Finite volume methods are closely related to finite difference methods, but they differs as they are based on the integral form of the conservation laws.
+Finite volume methods are closely related to Finite Difference Methods (FDM), but they differs as they are based on the integral form of the conservation laws.
 Where finite difference methods tend to break down near discontinuities in the solution, finite volume methods are more suited, since they are based on the integral form of the conservation laws.
-The key distinction between the FVM and the Finite Difference Method (FDM) lies in their formulation: while the FVM is based on the integral conservation over finite volumes, the FDM is based on the differential conservation over finite differences.
+The key distinction between the FVM and the FDM lies in their formulation: while the FVM is based on the integral conservation over finite volumes, the FDM is based on the differential conservation over finite differences.
 
 \subsection{Finite Volume Method for the 2D SWE}
 We now extend the FVM to two space dimensions.

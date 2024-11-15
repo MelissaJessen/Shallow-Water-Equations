@@ -1,7 +1,8 @@
 \chapter{Theory}
-In this chapter we will derive the shallow water equations (SWE) in conservative form, and present the equations in vector form and in integral form for 1D and 2D.
-We will also present the Finite Volume Method (FVM) including the Riemann problem.
-Lastly, we will dive into the theory behind the data-driven methods.
+In this chapter we will derive the shallow water equations (SWE) in conservative form, and present the equations in vector form and in integral form for 1D and 2D in cartesian coordinates.
+We will also derive the SWE in spherical coordinates, which is relevant for geophysical applications, such as simulating water flow on the surface of the Earth.
+To solve the SWE, we will present the numerical method, called the Finite Volume Method (FVM) including the Riemann problem.
+Lastly, we will dive into the theory behind the data-driven methods, i.e., the neural networks and fourier neural operators.
 
 \input{chapters/01_notation.tex}
 
@@ -13,7 +14,7 @@ The derivation follows the methods outlined in~\cite{Toro2001-Shock} and~\cite{V
 
 \subsection{Conservation laws}
 The SWE are derived from the conservation laws for mass and momentum, which are fundamental in fluid dynamics.
-The conservation laws for mass and momentum can be expressed generally as follows (see eq. (2.1) and (2.2) in~\cite{Toro2001-Shock}):
+The conservation laws for mass and momentum can be expressed generally as follows (source: eq. (2.1) and (2.2) in~\cite{Toro2001-Shock}):
 \begin{align}
     \rho_t + \nabla \cdot (\rho \mathbf{v}) = 0, \label{eq:mass_conservation} \\
     {(\rho \mathbf{v})}_t + \nabla \cdot (\rho \mathbf{v} \otimes \mathbf{v} + p \mathbf{I} - \mathbf{T}) = \rho \mathbf{g}, \label{eq:momentum_conservation}
@@ -56,8 +57,9 @@ Rewriting the mass conservation equation~\eqref{eq:mass_conservation} gives
 using the given assumptions and the product rule for differentiation.
 Hence we obtain
 \begin{align}
-    u_x + v_y + w_z = 0. \label{eq:mass_conservation_incompressible}
+    u_x + v_y + w_z = 0, \label{eq:mass_conservation_incompressible}
 \end{align}
+also referred to as the mass conservation equation.
 Applying the divergence operator $\nabla \cdot$, the momentum conservation equation~\eqref{eq:momentum_conservation_simplified} can be written out as:
 \begin{align}\label{eq:momentum_conservation_expanded}
     \rho_t \mathbf{v} + \rho \mathbf{v}_t + \rho \begin{bmatrix}
@@ -113,7 +115,7 @@ where $h(x,y,t)$ is the water depth at time $t$.
 The following illustration helps to visualize the setup:
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{figs/water-column-bc.png}
+    \includegraphics[width=0.6\textwidth]{figs/water-column-bc.png}
     \caption{Illustration of a water column with a free surface.}\label{fig:water_column_bc}
 \end{figure}
 We impose boundary conditions at the bottom and at the free surface, adressing both kinematic and dynamical conditions.
@@ -154,7 +156,7 @@ Similarly, for the bottom, substitung~\eqref{eq:psi_bottom} into the kinematic c
 \end{align}
 The dynamical condition is related to the pressure distribution at the free surface.
 We assume that the pressure at the free surface is equal to the pressure in the air above the surface, that is, the atmospheric pressure.
-Since absolute pressure levels are irrelevant (we are primarily concerned with pressure differences), we set the pressure at the free surface to zero.
+Since absolute pressure levels are irrelevant, as we are primarily concerned with pressure differences, we set the pressure at the free surface to zero.
 This leads to the following expression for the pressure at the free surface:
 \begin{align}\label{eq:pressure_free_surface}
     p(x,y,z,t)|_{z = s} = 0.
@@ -192,12 +194,11 @@ Substituting these expressions into the $x-$ and $y-$momentum conservation equat
     \left.
     \begin{aligned}
         u_t + u u_x + v u_y + w u_z &= -g s_x,  \\
-        v_t + u v_x + v v_y + w v_z &= -g s_y.
+        v_t + u v_x + v v_y + w v_z &= -g s_y,
     \end{aligned}
     \right\}
 \end{equation}
-
-These are the simplified momentum equations for the shallow water equations.
+which can be further simplified.
 We realize that both $p_x$ and $p_y$ are independent of $z$, implying that $\frac{\text{d}u}{\text{d}t} $ and $\frac{\text{d}v}{\text{d}t} $are also independent of $z$.
 Hence $u_z = v_z = 0$, implying that~\eqref{eq:momentum_conservation_xy_simplified} can be simplified to
 \begin{equation}\label{eq:momentum_conservation_xy_final}
@@ -212,7 +213,7 @@ These are the momentum equations for the shallow water equations in two dimensio
 
 \subsection{Integration over depth}
 The next step in deriving the SWE is to integrate the conservation equations over the vertical direction $z$.
-We integrate the mass conservation equation~\eqref{eq:mass_conservation_incompressible} and the $x-$ and $y-$momentum conservation equations in~\eqref{eq:momentum_conservation_all}, from the bottom, $z = b(x,y)$ to the free surface, $z = s(x,y,t)$.
+We integrate the mass conservation equation~\eqref{eq:mass_conservation_incompressible} and the momentum conservation equations in~\eqref{eq:momentum_conservation_xy_final}, from the bottom, $z = b(x,y)$ to the free surface, $z = s(x,y,t)$.
 Starting with the mass conservation equation~\eqref{eq:mass_conservation_incompressible}, we have
 \begin{align*}
     \int_{b}^{s} u_x + v_y + w_z \text{ d} z = 0,
@@ -277,10 +278,12 @@ Putting it all together the equation~\eqref{eq:mass_conservation_integrated_fina
 which is also the first equation in the SWE in conservative form.
 When integrating the momentum equations~\eqref{eq:momentum_conservation_xy_final} over the vertical direction, we see that since the equations are independent of $z$, the resulting equations are simply
 \begin{equation}\label{eq:xy_momentum}
+    \left.
     \begin{aligned}
         h(u_t + uu_x + vu_y + g s_x) &= 0,\\
         h(v_t + uv_x + vv_y + g s_y) &= 0.
     \end{aligned}
+    \right\}
 \end{equation}
 We multiply~\eqref{eq:SWE_1} with $u$ and $v$ respectively, and add the resulting two equations to~\eqref{eq:xy_momentum}.
 Recall that $s = h + b$. 
@@ -295,9 +298,8 @@ By using the product rule for differentiation and collecting terms, we obtain th
 \end{equation}
 The three partial differential equations in~\eqref{eq:SWE_1} and~\eqref{eq:SWE_2} are the shallow water equations in conservative form.
 
-
 \subsection{The SWE in vector form for 1D and 2D}
-The SWE can also be written in differential conservation law form as a vector equation
+The SWE can also be written in differential conservation law form as the vector equation
 \begin{align}\label{eq:vector_form_2D}
     \mathbf{U}_t + \mathbf{F(U)}_x + \mathbf{G(U)}_y = \mathbf{S(U)},
 \end{align}
@@ -336,9 +338,8 @@ where
 We call $\mathbf{U}$ the vector of conserved variables, $\mathbf{F(U)}$ and $\mathbf{G(U)}$ the flux vectors in the $x$ and $y$ direction, and $\mathbf{S(U)}$ the source term vector.
 
 \noindent \textbf{Homogeneous 1D case:}\\
-In this project, we will begin by considering the homogeneous one-dimensional case of the shallow water equations.
-In the homogeneous case we assume that $\mathbf{S(U)} = 0$.
-The vector form of the SWE in 1D is then given by
+The most simple case is the homogeneous one-dimensional case, where the source term vector $\mathbf{S(U)} = 0$.
+The vector form of the homogeneous SWE in 1D is then given by
 \begin{align*}
     \mathbf{U}_t + {\mathbf{F(U)}}_x = 0,
 \end{align*}
@@ -355,7 +356,7 @@ where
         hu^2 + \frac{1}{2}gh^2
     \end{bmatrix}.
 \end{align*}
-In the 1D case, we only consider flow in the $x$-direction.
+As it is the 1D case, we only consider flow in the $x$-direction.
 
 \noindent \textbf{Inhomogeneous 1D case:}\\
 The inhomoegeneous one-dimensional case of the shallow water equations in vector form is given by
@@ -383,9 +384,9 @@ where
 If $\mathbf{S(U)} = 0$, the equation~\eqref{eq:vector_form_1D} is called a conservation law, and otherwise it is called a balance law.
 
 
-
 \subsection{The 1D SWE in integral form}
 It is often more convenient to work with the integral form of the SWE, since the integral form of equations of the form~\eqref{eq:vector_form_1D} and~\eqref{eq:vector_form_1D_variables} allows discountinuous solutions.
+We derive the integral form of the inhomoegeneous one-dimensional case of the SWE in vector form~\eqref{eq:vector_form_1D}.
 The integral form is obtained by integrating the vector form~\eqref{eq:vector_form_1D} over a control volume $V$ in the $x,t$ plane
 \begin{align*}
     V = [x_L, x_R] \times [t_1, t_2].
@@ -394,7 +395,7 @@ The control volume is illustrated in Figure~\ref{fig:control_volume_1D}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/Control_volume_1D.png}
-    \caption{Illustration of a control volume $V$ in the $x-t$ plane. Illustration modified from~\cite{Toro2024}.}\label{fig:control_volume_1D}
+    \caption{Illustration of a control volume $V$ in the $x,t$ plane. Illustration modified from~\cite{Toro2024}.}\label{fig:control_volume_1D}
 \end{figure}
 First we integrate the vector form of the SWE~\eqref{eq:vector_form_1D} over $x$ from $x_L$ to $x_R$ to obtain
 \begin{align}\label{eq:derive_integral_form_1D}
