@@ -1,20 +1,18 @@
 \subsection{SWE in Spherical Coordinates}
 Until now we have derived the shallow water equations in cartesian coordinates.
 In this section, we will derive the shallow water equations in spherical coordinates.
-We will follow the methods used in~\cite{Raymond},~\cite{Castro2017} and~\cite{Bihlo2022}.
+We will follow the methods used in~\cite{Castro2017}~\cite{Bihlo2022} and~\cite{Raymond}.
 To illustrate the spherical coordinates, we will use the latitude and longitude system, visualized in~\autoref{fig:lat-long-earth}.
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/lat-long-earth.jpg}
     \caption{Illustration of latitude and longitude on the planet earth.
     Illustration from~\cite{lat-long-earth}.}\label{fig:lat-long-earth}
 \end{figure}
-The spherical coordinates we use are ($r$, $\theta$, $\phi$), where $r$ is the radius from the center of the sphere, $\theta$ is the longitude, and $\phi$ is the latitude.
-We also refer to $\theta$ as the elevation angle and $\phi$ as the azimuth angle, where $\phi$ goes from $-\frac{\pi}{2}$ at the south pole to $\frac{\pi}{2}$ at the north pole, calculated in radians.
-The angle $\theta$ goes from $0$ at the priime meridian, increasing to the east, to $2\pi$ also calculated in radians.
-In spherical coordinates any point on the surface of the sphere can be represented by the coordinates ($r$, $\theta$, $\phi$).
-We see that the longitude direction ($\theta$) is the east-west component, whereas the latitude direction ($\phi$) is the north-south component.
+We see that the latitude direction is the north-south component, whereas the longitude direction is the east-west component.
+The latitude angle, denoted by $\phi$, goes from $-\frac{\pi}{2}$ at the south pole to $\frac{\pi}{2}$ at the north pole, and the longitude angle, denoted by $\theta$, goes from $0$ at the prime meridian, increasing to the east, to $2\pi$.
+The spherical coordinates we use are ($r$, $\theta$, $\phi$), where $r$ is the radius from the center of the sphere, $\theta$ is the longitude angle, and $\phi$ is the latitude angle.
+Any point on the surface of the sphere can be represented by the coordinates ($r$, $\theta$, $\phi$).
 We consider a small domain of the sphere, as illustrated in \autoref{fig:sphere-small-domain}.
 \begin{figure}[H]
     \centering
@@ -32,12 +30,14 @@ Assuming that the planet earth on the latitude side is a circle, we can find the
 where $\Delta \phi$ is the change in the latitude angle and $r$ is the radius of the sphere.
 We assume that the planet earth is a perfect sphere, meaning that the radius is constant.
 Considering the longitude dimension $\Delta x_{\theta}$, we need to make some adjustments, as we can see that the circumreference at equator is larger than at the poles.
-Meaning that if we conisder the horizontal circle at some given latitude $\phi$, the radius of the circle is $r \cos(\phi)$ (why?).
+That is, we need to consider the radius of the circle at the given latitude $\phi$.
+We consider a right triangle with the hypotenuse as the radius of the sphere, and the adjacent side as the radius of the circle at the given latitude $\phi$.
+Thus, the radius of the circle at the given latitude $\phi$ is $r \cos(\phi)$.
 Using that, together with the formula for the arc length, we can find the distance $\Delta x_{\theta}$ as:
 \begin{align*}
     \Delta x_{\theta} = r \cos(\phi) \Delta \theta.
 \end{align*}
-The volume of a small domain of the sphere is given by 
+The volume of a small domain of the sphere, as shown in \autoref{fig:sphere-small-domain}, is given by 
 \begin{align*}
     V &= \Delta x_{\phi} \Delta x_{\theta} h \\
     &= r^2 h \cos(\phi) \Delta \phi \Delta \theta,
@@ -115,10 +115,13 @@ We neglect the vertical velocity, as one key assumption in the shallow water equ
 Besides, if we consider the planet earth, the water layer is thin compared to the radius of the earth, referred to as a thin-layer approximation.
 We need to express the horizontal velocity $u_h$, which is dependent on the variables $\theta, \phi$ and $t$.
 Since $\theta$ and $\phi$ are angles, we introduce the unit vectors $\mathbf{e}_\theta$ and $\mathbf{e}_\phi$ on the surface in the $\theta$ and $\phi$ directions, respectively.
-\\
-INSERT FIGURE.\\
-\\
-Thus, we obtain the horizontal flow velocuty as
+The unit vectors are illustrated in~\autoref{fig:sphere-unit-vectors}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/sphere-unit-vectors.png}
+    \caption{Illustration of the unit vectors $\mathbf{e}_\theta$ and $\mathbf{e}_\phi$.}\label{fig:sphere-unit-vectors}
+\end{figure}
+We can express the horizontal velocity $u_h$ in terms of the unit vectors as
 \begin{align}\label{eq:sphere-horizontal-velocity}
     u_h(\theta, \phi, t) = u_\theta \mathbf{e}_\theta + u_\phi \mathbf{e}_\phi.
 \end{align}
@@ -165,7 +168,7 @@ The Coriolis force in the $\theta$ and $\phi$ directions are then given by:
     &\theta-\text{direction:} \quad f u_\phi,\\
     &\phi-\text{direction:} \quad -f u_\theta.
 \end{align*}
-Beta-plane approximation?
+%Beta-plane approximation?
 Thus we can rewrite the momentum equations as
 \begin{equation}
     \begin{aligned}
@@ -173,10 +176,7 @@ Thus we can rewrite the momentum equations as
         {( u_\phi)}_t + \frac{u_\theta}{r \cos(\phi)} {(u_\phi)}_\theta   + \frac{u_\phi}{r} {(u_\phi)}_\phi + \frac{g}{r} h_\phi + f u_\theta = ..
     \end{aligned}
 \end{equation}
-
 Another thing we need to consider is the centripetal acceleration and the curvature of the earth.
-
-
 
 
 
@@ -192,7 +192,7 @@ The shallow water equations in spherical coordinates are given by:
     \end{aligned}
     \right\}
 \end{equation}
-where $r$ is the radius, $(\theta, \phi)$ are the longitude and latitude, $h$ is the height of the water, $u_\theta$ and $u_\phi$ are the velocities in the $\theta$ and $\phi$ directions, $g$ is the gravitational constant.
+where $r$ is the radius, $(\theta, \phi)$ are the longitude and latitude angles, $h$ is the height of the water, $u_\theta$ and $u_\phi$ are the velocities in the $\theta$ and $\phi$ directions, $g$ is the gravitational constant.
 
 
 
