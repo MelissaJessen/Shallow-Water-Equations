@@ -125,6 +125,7 @@ errMassCons = sum(dx*q(1,:)) - H0;  % compare integral of h with the one at t=0
 title(strcat('mass cons error = ',num2str(errMassCons)))
 
 
+%%
 % Save data
 % Define folder
 folder = 'C:\Users\Matteo\Shallow-Water-Equations\data';

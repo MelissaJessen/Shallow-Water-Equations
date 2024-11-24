@@ -23,7 +23,7 @@ end
 % TEST 4:  Two rarefactions
 % TEST 5:  Two rarefactions (Red sea)
 
-itest = 1;
+itest = 8;
 
 if itest==1
     % TORO TEST 1  
@@ -40,7 +40,7 @@ elseif itest == 2
     h_init_R=1.0;
     UL =-5.0;
     UR =5.0;
-    timeout=2.5; % 2.5
+    timeout=3; % 2.5 - ændret til 3, da datagenerering skal bruge heltal
  elseif itest == 3
     % TORO TEST 3 
     gate = 20.0;
@@ -48,7 +48,7 @@ elseif itest == 2
     h_init_R=0.00005;  % add a little bit
     UL =0.0;
     UR =0.0;
-    timeout=4.0;
+    timeout=30; % 4
  elseif itest == 4
     % TORO TEST 4 
     gate = 30.0;
@@ -81,6 +81,14 @@ elseif itest == 2
     UL =0.0;
     UR =0.0;
     timeout=4.0;
+  elseif itest == 8
+    % 1D DAM BREAK PROBLEM
+    gate = 20.0;
+    h_init_L = 3.5;
+    h_init_R = 1.25;
+    UL = 0.0;
+    UR = 0.0;
+    timeout=10.0;
 end
 
 gravit=9.8;              %gravity
@@ -150,6 +158,8 @@ filename = ['test',num2str(itest),'_all_timesteps_to_t=',num2str(timeout)];
 fullpath = fullfile(folder, filename);
 
 save(fullpath,'time_all', 'xexact','hexact_all','uexact_all');
+
+disp('Done')
 
 %%
 

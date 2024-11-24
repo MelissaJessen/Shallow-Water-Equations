@@ -51,7 +51,7 @@ cfl=0.9;           %Courant number (choose cfl <1 for stable solutions)
 % TEST 4:  Two rarefactions
 % TEST 5:  Two rarefactions (Red sea)
 
-itest = 2;
+itest = 6;
 
 if itest==1
     %TEST 1
@@ -89,7 +89,7 @@ elseif itest==5
     UL =-2.;
     UR = 2.;
     timeout=2;
-elseif itest ==6
+elseif itest == 6
     % TORO TEST 3
     h_init_L=1.0;
     h_init_R=0.0;
