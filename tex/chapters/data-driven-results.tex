@@ -10,6 +10,12 @@ We solve the SWE with the following initial conditions:
     \end{aligned}
 \end{equation}
 where $h_0 = 1, \mu = 0.5, \sigma = 0.1$. 
+The function $h(x, 0)$ is a Gaussian function, illustrated in Figure~\ref{fig:NN_initial_1D}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/NN_initial_1D.pdf}
+    \caption{Initial conditions~\eqref{eq:data-driven-initial-conditions-gauss}.} \label{fig:NN_initial_1D}
+\end{figure}
 The domain is $ x \in [0, 1]$ with $N = 200$ points and the final time is $t = 1.0$.
 We use a CFL number of $0.9$ and variable time steps.
 The numerical solution is shown in Figure~\ref{fig:NN_initial}, in both a contour plot and a 3D plot.
@@ -126,6 +132,7 @@ The results of the model are shown in \autoref{fig:FNO_Toro_test1_predictions_3D
     \caption{FNO Toro test 1 predictions RMSE.}\label{fig:FNO_Toro_test1_rmse}
 \end{figure}
 
+\newpage
 \subsection{Comparison}
 To get an overview of the performance of the different models, we consider the RMSE for the predictions for the smooth case.
 We consider the MSE for the whole data set, and the time for training the model.

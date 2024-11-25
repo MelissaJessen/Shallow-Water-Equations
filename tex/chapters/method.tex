@@ -11,7 +11,6 @@ There are several numerical fluxes that can be used to solve the local Riemann p
 \subsection*{Godunov method with exact Riemann solver}
 \addcontentsline{toc}{subsection}{Godunov method with exact Riemann solver}
 We consider the Godunov Upwind method, which is a first-order accurate metod to solve non-linear systems of hyperbolic conservation laws~\cite{Toro2024}.
-Godunov's method is a fundamental starting point.
 In the method we solve the non-linear Riemann problem at each cell interface.
 The Godunov flux is given by
 \begin{align*}
@@ -27,7 +26,7 @@ meaning that we solve the Riemann problem exactly to find $h^*$ and $u^*$, and t
 \subsection*{HLL}
 \addcontentsline{toc}{subsection}{HLL}
 The HLL (Harten, Lax and van Leer) approach assumes a two-wave structure of the Riemann problem.
-The solver is based on the data $\mathbf{U}_L \equiv \mathbf{U}_i^n, \mathbf{U}_R \equiv \mathbf{U}_{i+1}^n$ and fluxes $\mathbf{F}_L \equiv \mathbf{F}(\mathbf{U}_L), \mathbf{F}_R \equiv \mathbf{F}(\mathbf{U}_R)$.
+The solver is based on the data $\mathbf{U}_L := \mathbf{U}_i^n, \mathbf{U}_R := \mathbf{U}_{i+1}^n$ and fluxes $\mathbf{F}_L := \mathbf{F}(\mathbf{U}_L), \mathbf{F}_R := \mathbf{F}(\mathbf{U}_R)$.
 The HLL flux is given by
 \begin{align}\label{eq:HLL_flux}
     \mathbf{F}_{1 + \frac{1}{2}} = \begin{cases}
@@ -40,7 +39,7 @@ The wave speeds $S_L$ and $S_R$ must be estimated in some way, and one possibili
 \begin{align*}
     S_L = u_L - a_L q_L, \quad S_R = u_R + a_R q_R,
 \end{align*}
-where$a_L = \sqrt{g h_L}, a_R = \sqrt{g h_R}$ and  $q_K (K=L, R)$ is given by 
+where $a_L = \sqrt{g h_L}, a_R = \sqrt{g h_R}$ and  $q_K (K=L, R)$ is given by 
 \begin{align*}
     q_K = 
     \begin{cases}
@@ -152,6 +151,7 @@ where $\mathbf{F}_{i+ \frac{1}{2}}^{LF}$ is the Lax-Friedrichs flux and $\mathbf
 The FORCE scheme is first-order accurate.
 It is possible to extend the FORCE scheme to multiple dimensions on structured meshes by using dimensional splitting.
 
+\newpage
 \input{chapters/04_Numerics.tex}
 
 

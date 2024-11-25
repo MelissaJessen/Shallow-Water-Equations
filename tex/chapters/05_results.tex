@@ -5,7 +5,7 @@ In this section we present the results of the numerical experiments, together wi
 \section{Numerical results}
 In this chapter we present the results of the numerical experiments, where we have implemented the finite volume method for solving the shallow water equations in 1D and tested it on several problems.
 \footnote{Code and small animations can be found at github, visit \url{https://github.com/MelissaJessen/Shallow-Water-Equations}.}
-A key focus is to validate the implementation, as it will gemerate data for the data-driven methods, including neural networks and Fourier neural operators.
+A key focus is to validate the implementation, as it will generate data for the data-driven methods, including neural networks and Fourier neural operators.
 To test the implementation, we have solved the 1D dam break problem, and the five test cases from Toro's book~\cite{Toro2001-Shock}.
 These problems are all discontinuous in either the water height $h$ or the fluid velocity $u$.
 The idea is, that if the numerical solution can capture the discontinuities, it should be well-suited to handle smoother solutions as well.
@@ -50,7 +50,7 @@ The initial conditions for the five test cases are given in \autoref{tab:toro_te
 \end{table}
 The domain is $x \in [0, 50]$ for all test cases.
 The Riemann problems are chosen to test the method on different types of waves, such as shock waves and rarefaction waves.
-To solve the test cases there are used different fluxes, namely:
+To solve the test cases we have used the following fluxes:
 \begin{enumerate}
     \item Godunov method with exact Riemann solver,
     \item Lax-Friedrich flux,
@@ -61,7 +61,7 @@ To solve the test cases there are used different fluxes, namely:
 
 \subsubsection*{Test case 1}
 %\addcontentsline{toc}{subsection}{Test case 1}
-The initial conditions for test case 1 are given in \autoref{fig:toro_test1_initial} and the final solution after $t=7.0$ seconds is given in \autoref{fig:toro_test1_final}.
+The initial conditions for test case 1 are given in \autoref{fig:toro_test1_initial} and the final solutions after $t=7.0$ seconds are given in \autoref{fig:toro_test1_final}.
 In test case 1, we observe a right shock wave and a left rarefaction wave.
 \begin{figure}[H]
     \centering
@@ -89,7 +89,7 @@ In test case 2 we have two rarefaction waves, one on the left side and one on th
 As they are travelling in opposite directions (away from each other), there will be created a nearly dry bed in the middle of the domain.
 Many methods have difficulties with this test case as they may compute a negative water height.
 For these experiments we were able to get close to the true solution, using Lax-Friedrich flux, FORCE flux and HLL flux.
-The final solution after $t=2.5$ seconds is illustrated in \autoref{fig:toro_test2_final}.
+The final solutions after $t=2.5$ seconds are illustrated in \autoref{fig:toro_test2_final}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.pdf}
@@ -99,7 +99,7 @@ For the fluxes, Godunov method with exact Riemann solver, and Lax-Wendroff, it w
 
 \subsubsection*{Test case 3}
 %\addcontentsline{toc}{subsection}{Test case 3}
-The initial conditions for test case 3 are given in \autoref{fig:toro_test3_initial}, and the final solution after $t=4.0$ seconds is given in \autoref{fig:toro_test3_final}.
+The initial conditions for test case 3 are given in \autoref{fig:toro_test3_initial}, and the final solutions after $t=4.0$ seconds are given in \autoref{fig:toro_test3_final}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.pdf}
@@ -119,7 +119,7 @@ From \autoref{fig:toro_test3_final} we see that when it comes to predicting the 
 
 \subsubsection*{Test case 4}
 %\addcontentsline{toc}{subsection}{Test case 4}
-The initial conditions for test case 4 are given in \autoref{fig:toro_test4_initial}, and the final solution after $t=4.0$ seconds is given in \autoref{fig:toro_test4_final}.
+The initial conditions for test case 4 are given in \autoref{fig:toro_test4_initial}, and the final solutions after $t=4.0$ seconds are given in \autoref{fig:toro_test4_final}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.pdf}
@@ -139,7 +139,7 @@ As in test case 4, we observe differences in the fluxes performance.
 
 \subsubsection*{Test case 5}
 %\addcontentsline{toc}{subsection}{Test case 5}
-The initial conditions for test case 5 are given in \autoref{fig:toro_test5_initial}, and the final solution after $t=5.0$ seconds is given in \autoref{fig:toro_test5_final}.
+The initial conditions for test case 5 are given in \autoref{fig:toro_test5_initial}, and the final solutions after $t=5.0$ seconds are given in \autoref{fig:toro_test5_final}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_initial.pdf}
@@ -156,7 +156,8 @@ In this test case there are also challenges with some of the fluxes due to the g
 The fluxes that are not able to solve this case are Godunov method with exact Riemann solver and Lax-Wendroff flux, the same as in test case 2.
 The solution consists of two rarefaction waves, one on the left side and one on the right side, and a dry-bed region in the middle.
 
-To get an overview of which fluxes that were able to solve the problems, consider the table below.
+To get an overview of which fluxes that were able to produce solutions for the test cases, consider~\autoref{tab:toro_fluxes}.
+The table shows which fluxes that were able to produce a solution for the test cases.
 \begin{table}[H]
     \centering
     \begin{tabular}{c|c|c|c|c|c}
@@ -170,8 +171,9 @@ To get an overview of which fluxes that were able to solve the problems, conside
         5 & $\times$ & $\checkmark$ & $\times$ & $\checkmark$ & $\checkmark$  \\
         \hline
     \end{tabular}
-    \caption{Overview of which fluxes that were able to solve the test cases.}\label{tab:toro_fluxes}
+    \caption{Overview of which fluxes that were able to produce solutions for the test cases.}\label{tab:toro_fluxes}
 \end{table}
+Note, that as we see in the results, there are still differences in the solutions accuracy between the fluxes that were able to solve the test cases.
 
 
 \subsection{2D idealised Circular Dam Break Problem}

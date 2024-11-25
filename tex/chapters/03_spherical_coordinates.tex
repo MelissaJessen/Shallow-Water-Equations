@@ -1,7 +1,7 @@
 \subsection{SWE in Spherical Coordinates}
 Until now we have derived the shallow water equations in cartesian coordinates.
 In this section, we will derive the shallow water equations in spherical coordinates.
-We will follow the methods used in~\cite{Castro2017}~\cite{Bihlo2022} and~\cite{Raymond}.
+We will follow the methods used in~\cite{Castro2017}~\cite{Bihlo2022},~\cite{Raymond} and~\cite{Gill_1982}.
 To illustrate the spherical coordinates, we will use the latitude and longitude system, visualized in~\autoref{fig:lat-long-earth}.
 \begin{figure}[H]
     \centering
@@ -12,7 +12,7 @@ To illustrate the spherical coordinates, we will use the latitude and longitude 
 We see that the latitude direction is the north-south component, whereas the longitude direction is the east-west component.
 The latitude angle, denoted by $\phi$, goes from $-\frac{\pi}{2}$ at the south pole to $\frac{\pi}{2}$ at the north pole, and the longitude angle, denoted by $\theta$, goes from $0$ at the prime meridian, increasing to the east, to $2\pi$.
 The spherical coordinates we use are ($r$, $\theta$, $\phi$), where $r$ is the radius from the center of the sphere, $\theta$ is the longitude angle, and $\phi$ is the latitude angle.
-Any point on the surface of the sphere can be represented by the coordinates ($r$, $\theta$, $\phi$).
+This also means, that any point on the surface of the sphere can be represented by the coordinates ($\theta$, $\phi$).
 We consider a small domain of the sphere, as illustrated in \autoref{fig:sphere-small-domain}.
 \begin{figure}[H]
     \centering
@@ -23,16 +23,25 @@ We want to find expressions for $\Delta x_{\phi}$ and $\Delta x_{\theta}$, the d
 We can find these distances by using the arc length formula.
 Recall that the circumreference of a full circle is $2\pi r$, where $r$ is the radius of the circle.
 The arc length is a fraction of the full circumreference, and it is given by the formula $l = r v$, where $l$ is the arc length, $r$ is the radius, and $v$ is the angle in radians.
-Assuming that the planet earth on the latitude side is a circle, we can find the distance $\Delta x_{\phi}$ by using the arc length formula, as:
+Assuming Earth's latitude side is a circle, we can find the distance $\Delta x_{\phi}$ by using the arc length formula, as:
 \begin{align*}
     \Delta x_{\phi} = r \Delta \phi,
 \end{align*}
 where $\Delta \phi$ is the change in the latitude angle and $r$ is the radius of the sphere.
-We assume that the planet earth is a perfect sphere, meaning that the radius is constant.
+We assume that Earth is a perfect sphere, meaning that the radius is constant.
 Considering the longitude dimension $\Delta x_{\theta}$, we need to make some adjustments, as we can see that the circumreference at equator is larger than at the poles.
 That is, we need to consider the radius of the circle at the given latitude $\phi$.
-We consider a right triangle with the hypotenuse as the radius of the sphere, and the adjacent side as the radius of the circle at the given latitude $\phi$.
-Thus, the radius of the circle at the given latitude $\phi$ is $r \cos(\phi)$.
+To illustrate this, we consider \autoref{fig:sphere_r_lat}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/sphere_r_lat.png}
+    \caption{Illustration of the radius of the circle at the given latitude $\phi$.}\label{fig:sphere_r_lat}
+\end{figure}
+In \autoref{fig:sphere_r_lat}, we consider a right triangle with the hypotenuse as the radius of the sphere, and the adjacent side as the radius of the circle at the given latitude $\phi$.
+Thus, we can express the radius of the circle at the given latitude $\phi$ as
+\begin{align*}
+    r_{lat} = r \cos(\phi).  
+\end{align*}
 Using that, together with the formula for the arc length, we can find the distance $\Delta x_{\theta}$ as:
 \begin{align*}
     \Delta x_{\theta} = r \cos(\phi) \Delta \theta.
@@ -44,6 +53,7 @@ The volume of a small domain of the sphere, as shown in \autoref{fig:sphere-smal
 \end{align*}
 assuming that the height of the domain is $h$, and that the domain is rectangular.
 This is a fair assumption for small values of $\Delta x_{\phi}$ and $\Delta x_{\theta}$.
+We also assume that $\phi$ is not too close to the poles, as $\cos(\phi)$ will go to zero at the poles.
 We are interested in rate of change of the volume with respect to time, and we can find this by taking the time derivative of the volume.
 That is, we consider the partial derivative with respect to time of the volume $V$:
 \begin{align}\label{eq:sphere-volume-time-derivative}
@@ -83,12 +93,13 @@ Since we are interested in the rate of change in the water height $h$ with respe
 Hence we get
 \begin{align}\label{eq:sphere-derivative-h}
     \frac{\partial h}{\partial t} = \frac{u_\theta(\theta) h(\theta) - u_\theta(\theta ')h(\theta ') }{r \cos(\phi) \Delta \theta} 
-    + \frac{u_\phi(\phi) h(\phi)\cos (\phi) - u_\phi (\phi ')h(\phi ') \cos(\phi')}{r \cos (\phi) \Delta \phi}.
+    + \frac{u_\phi(\phi) h(\phi)\cos (\phi) - u_\phi (\phi ')h(\phi ') \cos(\phi')}{r \cos (\phi) \Delta \phi},
 \end{align}
-By collecting terms to the left hand sid, we can rewrite~\eqref{eq:sphere-derivative-h} as 
+where $\phi \neq \pm \frac{\phi}{2}$.
+By collecting terms to the left hand side and changing the order of the numerators, we can rewrite~\eqref{eq:sphere-derivative-h} as 
 \begin{align}\label{eq:sphere-derivative-h-collected}
-    \frac{\partial h}{\partial t} - \frac{u_\theta(\theta') h(\theta') - u_\theta(\theta)h(\theta) }{r \cos(\phi) \Delta \theta} 
-    - \frac{u_\phi(\phi ')h(\phi ') \cos(\phi') - u_\phi(\phi) h(\phi) \cos(\phi) }{r \cos (\phi) \Delta \phi} = 0.
+    \frac{\partial h}{\partial t} + \frac{u_\theta(\theta') h(\theta') - u_\theta(\theta)h(\theta) }{r \cos(\phi) \Delta \theta} 
+    + \frac{u_\phi(\phi ')h(\phi ') \cos(\phi') - u_\phi(\phi) h(\phi) \cos(\phi) }{r \cos (\phi) \Delta \phi} = 0.
 \end{align}
 Next step is to investigate the limit values, as $\Delta \theta$ and $\Delta \phi$ goes to zero.
 We can find the limit values by using the definition of the derivative.
@@ -106,13 +117,13 @@ and
 \end{align*}
 Inserting these results in~\eqref{eq:sphere-derivative-h-collected} yields
 \begin{align*}
-    h_t + \frac{1}{r \cos (\phi)} \left( {(h u_\theta)}_{\theta} {(h u_{\phi} \cos(\phi))}_{\phi}  \right) = 0,
+    h_t + \frac{1}{r \cos (\phi)} \left( {(h u_\theta)}_{\theta} + {(h u_{\phi} \cos(\phi))}_{\phi}  \right) = 0,
 \end{align*}
 which is the mass conservation equation in spherical coordinates and is the first equation in the shallow water equations in spherical coordinates.
 The next step is to derive the momentum equations in spherical coordinates.
-In this case we consider only the horizontal velocity, meaning the velocity tangential to the surface of the sphere, i.e., the $\theta$ and $\phi$ velocities.
-We neglect the vertical velocity, as one key assumption in the shallow water equations is that the water height is much smaller than the water length.
-Besides, if we consider the planet earth, the water layer is thin compared to the radius of the earth, referred to as a thin-layer approximation.
+In this case, we focus on the horizontal velocity components, specifically the velocity tangential to the surface of the sphere, i.e., the $\theta$ and $\phi$ velocities.
+The vertical velocity is neglected, as the key assumption in the shallow water equations is that the vertical component of the acceleration is negligible.
+Additionally, when considering Earth, the water layer is thin compared to the radius of the Earth, referred to as a thin-layer approximation.
 We need to express the horizontal velocity $u_h$, which is dependent on the variables $\theta, \phi$ and $t$.
 Since $\theta$ and $\phi$ are angles, we introduce the unit vectors $\mathbf{e}_\theta$ and $\mathbf{e}_\phi$ on the surface in the $\theta$ and $\phi$ directions, respectively.
 The unit vectors are illustrated in~\autoref{fig:sphere-unit-vectors}.
@@ -145,42 +156,47 @@ By using the arc length formula, we get that
     \frac{\text{d}\theta}{\text{d}t} =  \frac{u_\theta}{r \cos(\phi)},
     \quad \frac{\text{d}\phi}{\text{d}t} = \frac{u_\phi}{r}.
 \end{align}
-We can now insert~\eqref{eq:sphere-arc-length} into~\eqref{eq:sphere-total-derivative} to find the total derivative of the horizontal velocity splitted into the $\theta$ and $\phi$ directions:
+We can now insert~\eqref{eq:sphere-arc-length} into~\eqref{eq:sphere-total-derivative} to find the total derivative of the horizontal velocity split into the $\theta$ and $\phi$ directions:
 \begin{equation}\label{eq:sphere-total-derivative-split}
     \begin{aligned}
         \frac{\text{d}u_\theta}{\text{d}t} = \frac{\partial u_\theta}{\partial t} + \frac{u_\theta}{r \cos(\phi)} \frac{\partial u_\theta}{\partial \theta} + \frac{u_\phi}{r} \frac{\partial u_\theta}{\partial \phi}, \\
         \frac{\text{d}u_\phi}{\text{d}t} = \frac{\partial u_\phi}{\partial t} + \frac{u_\theta}{r \cos(\phi)} \frac{\partial u_\phi}{\partial \theta} + \frac{u_\phi}{r} \frac{\partial u_\phi}{\partial \phi}.
     \end{aligned}
 \end{equation}
-Comparing~\eqref{eq:sphere-total-derivative-split} with the momentum equations in cartesian coordinates~\eqref{eq:momentum_conservation_xy_final}, we see that the terms in the momentum equations in spherical coordinates are similar to the terms in the momentum equations in cartesian coordinates.
-Besides, we must consider more physical forces than just gravity.
+We know that the right hand side of~\eqref{eq:sphere-total-derivative-split} are the given physical forces acting on the fluid.
+Earlier in this project, we focused on the shallow water equations in Cartesian coordinates, accounting solely for gravitational forces.
+However, in spherical coordinates, additional physical forces must be considered. These include the Coriolis force, centripetal acceleration, and the effects of Earth's curvature.
+First we consider the gravitational force acting on the fluid, descibed as $-g \Delta h$, where $g$ is the gravitational constant, and $\Delta h$ is the gradient of the height $h$.
+We consider the gradient of $h(\theta, \phi)$:
+\begin{align}
+    \Delta h  &= \frac{1}{r \cos(\phi)} h_{\theta} \mathbf{e}_{\theta} + \frac{1}{r } h_{\phi} \mathbf{e}_{\phi},
+\end{align}
+meaning that the gravity force acting on the fluid in the $\theta$ and $\phi$ directions are given by:
+\begin{align*}
+    &\theta-\text{direction:} \quad -\frac{g}{r \cos(\phi)} h_{\theta},\\
+    &\phi-\text{direction:} \quad -\frac{g}{r} h_{\phi}.
+\end{align*}
 Hence, we obtain the two momentum equations in spherical coordinates as
 \begin{equation}
     \begin{aligned}
-         {(u_\theta)}_t + \frac{u_\theta}{r \cos(\phi)} {(u_\theta)}_\theta + \frac{u_\phi}{r} {(u_\theta)}_\phi = -g s_x + \text{other forces}, \\
-        {( u_\phi)}_t + \frac{u_\theta}{r \cos(\phi)} {(u_\phi)}_\theta   + \frac{u_\phi}{r} {(u_\phi)}_\phi = - g s_y + \text{other forces}.
+         {(u_\theta)}_t + \frac{u_\theta}{r \cos(\phi)} {(u_\theta)}_\theta + \frac{u_\phi}{r} {(u_\theta)}_\phi = -\frac{g}{r \cos(\phi)} h_{\theta} + \text{other forces}, \\
+        {( u_\phi)}_t + \frac{u_\theta}{r \cos(\phi)} {(u_\phi)}_\theta   + \frac{u_\phi}{r} {(u_\phi)}_\phi = -\frac{g}{r} h_{\phi} + \text{other forces}.
     \end{aligned}
 \end{equation}
-The first extra force we consider is the Coriolis force, which is a force that acts on moving objects on the surface of the earth~\cite{Coriolis}.
+The next force we consider is the Coriolis force, which is a force that acts on moving objects on the surface of the earth~\cite{Coriolis}.
 The Coriolis force is given by $f = 2 \Omega \sin(\phi)$, where $\Omega$ is the angular velocity of the earth.
 The Coriolis force in the $\theta$ and $\phi$ directions are then given by:
 \begin{align*}
     &\theta-\text{direction:} \quad f u_\phi,\\
     &\phi-\text{direction:} \quad -f u_\theta.
 \end{align*}
-%Beta-plane approximation?
-Thus we can rewrite the momentum equations as
-\begin{equation}
-    \begin{aligned}
-         {(u_\theta)}_t + \frac{u_\theta}{r \cos(\phi)} {(u_\theta)}_\theta + \frac{u_\phi}{r} {(u_\theta)}_\phi + \frac{g}{r \cos(\phi)} h_\theta - f u_\phi = .. \\
-        {( u_\phi)}_t + \frac{u_\theta}{r \cos(\phi)} {(u_\phi)}_\theta   + \frac{u_\phi}{r} {(u_\phi)}_\phi + \frac{g}{r} h_\phi + f u_\theta = ..
-    \end{aligned}
-\end{equation}
-Another thing we need to consider is the centripetal acceleration and the curvature of the earth.
-
-
-
-The shallow water equations in spherical coordinates are given by:
+The last thing we need to take into account when working in the spherical domain is the curvature of the earth.
+This adds the following terms:
+\begin{align*}
+    &\theta-\text{direction:} \quad \frac{u_\theta u_\phi}{r} \tan(\phi),\\
+    &\phi-\text{direction:} \quad -\frac{u_\theta^2}{r} \tan(\phi).
+\end{align*}
+Inserting these forces into the momentum equations, we get the shallow water equations in spherical coordinates:
 \begin{equation}
     \left.
     \begin{aligned}
