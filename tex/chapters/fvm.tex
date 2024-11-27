@@ -81,3 +81,128 @@ Following the methods outlined in~\cite{Toro2009-Riemann}, an explicit finite vo
 This is the unsplit finite volume method, meaning that, in a single step, the cell average $\mathbf{U}_{i,j}^n$ is updated using the fluxes from all intercell boundaries.
 
 
+\subsection{Finite Volume Method for the 1D SWE in spherical coordinates}
+Simplified linearized shallow water equations on a circle. 
+We consider the linearized shallow water equations in cartesian coordinates with one spatial dimension ($x$) and time ($t$).
+\begin{equation}
+    \left.
+    \begin{aligned}
+        h_t + H u_x = 0, \\
+        u_t + g h_x = 0,
+    \end{aligned}
+    \right\}
+\end{equation}
+where $h$ is the height of the water, $u$ is the velocity of the water, $H$ is the average height of the water, and $g$ is the acceleration due to gravity.
+We now consider the linearized shallow water equations in spherical coordinates with one spatial dimension, the longitude ($\theta$), and time ($t$).
+That is, we assume constant latitude $\phi$. 
+As we consider the longitude $\theta$ as the spatial dimension, the domain is the circle $[0, 2\pi]$, which is divided into $N$ cells or control volumes, each of length $\Delta \theta = \frac{2\pi}{N}$.
+Each celle $i$ has a cell center at $\theta_i$ and cell boundaries/interfaces at $\theta_{i-1/2}$ and $\theta_{i+1/2}$.
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/sphere1d_small_cell.png}
+        \caption{Illustration of the grid for the 1D SWE with small cells.}\label{fig:sphere1d_small_cell}
+    \end{subfigure}%
+    \begin{subfigure}{0.35\textwidth}
+        \centering
+        \raisebox{10mm}{
+        \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/sphere-1d-small-domain.png}
+        }
+        \caption{Illustration of the grid for the 1D SWE with a small domain.}\label{fig:sphere1d_small_domain}
+    \end{subfigure}
+    \caption{Grid illustrations for the 1D SWE in spherical coordinates.}\label{fig:sphere1d_combined}
+\end{figure}
+
+The linearized shallow water equations in spherical coordinates with one spatial dimension ($\theta$) and time ($t$) are given by
+\begin{equation}\label{eq:linearized_swe_spherical}
+    \left.
+    \begin{aligned}
+        h_t + \frac{H}{r \cos(\phi)} u_\theta = 0, \\
+        u_t + g h_\theta + fu = 0,
+    \end{aligned}
+    \right\}
+\end{equation}
+where $r$ is the radius of the Earth, $\phi$ is the latitude, and $f$ is the Coriolis parameter.
+We still refer to the equations as the mass and momentum equations, respectively.
+We can also write the linearized shallow water equations in spherical coordinates in vector form, without the coriolis force, as
+\begin{align}\label{eq:linearized_swe_spherical_vector}
+    \mathbf{W}_t + \mathbf{A} \mathbf{W}_\theta = 0,
+\end{align}
+where $\mathbf{W} =
+\begin{bmatrix} h \\ u \end{bmatrix}$ and the coefficient matrix $\mathbf{A}$ is constant and given as:
+$\mathbf{A} = \begin{bmatrix} 0 & \frac{H}{r \cos(\phi)} \\ g & 0 \end{bmatrix}$.
+We integrate the height equation in~\eqref{eq:linearized_swe_spherical} over $\theta$ from $\theta_L := \theta_i - \frac{1}{2} \Delta \theta $ to $\theta_R := \theta_i + \frac{1}{2}\Delta \theta $ to obtain
+\begin{align*}
+    \int_{\theta_L}^{\theta_R} h_t \text{ d}\theta + \int_{\theta_L}^{\theta_R} \frac{H}{r \cos(\phi)} u_\theta \text{ d}\theta = 0.
+\end{align*}
+The first term is 
+\begin{align*}
+    \frac{\partial}{\partial t} \int_{\theta_L}^{\theta_R} h \text{ d}\theta =  \Delta \theta h_t,
+\end{align*}
+meaning that the first term is the rate of change of the water height $h$ in the control volume.
+The second term is
+\begin{align*}
+    \int_{\theta_L}^{\theta_R} \frac{H}{r \cos(\phi)} u_\theta \text{ d}\theta = \frac{H}{r \cos(\phi)} (u_R - u_L),
+\end{align*}
+where $u_R$ and $u_L$ are the velocities at the right and left boundaries of the control volume, respectively.
+Then we integrate the momentum equation in~\eqref{eq:linearized_swe_spherical} over $\theta$ from $\theta_L$ to $\theta_R$ to obtain
+\begin{align*}
+    \int_{\theta_L}^{\theta_R} u_t \text{ d}\theta + \int_{\theta_L}^{\theta_R} g h_\theta \text{ d}\theta + \int_{\theta_L}^{\theta_R} fu \text{ d} \theta = 0.
+\end{align*}
+The first term gives the time rate of change in the velocity $u$ in the control volume:
+\begin{align*}
+    \frac{\partial}{\partial t} \int_{\theta_L}^{\theta_R} u \text{ d}\theta = \Delta \theta u_t.
+\end{align*}
+The second term gives 
+\begin{align*}
+    \int_{\theta_L}^{\theta_R} g h_\theta \text{ d}\theta = g(h_R - h_L),
+\end{align*}
+where $h_R$ and $h_L$ are the heights at the right and left boundaries of the control volume, respectively.
+The third term with the Coriolis force gives
+\begin{align*}
+    \int_{\theta_L}^{\theta_R} fu \text{ d}\theta = f(u_R - u_L) \Delta \theta.
+\end{align*} 
+Putting it all together we thus have:
+\begin{equation}
+    \begin{aligned}
+        \Delta \theta h_t + \frac{H}{r \cos(\phi)} (u_R - u_L) &= 0, \\
+        \Delta \theta u_t + g(h_R - h_L) + f(u_R - u_L) \Delta \theta &= 0.
+    \end{aligned}
+\end{equation}
+Rewritten as the discretized equations:
+\begin{equation}
+    \left.
+    \begin{aligned}
+        h_t &= - \frac{H}{r \cos(\phi)} \frac{(u_R - u_L)}{\Delta \theta}, \\
+        u_t &= - \frac{g (h_R - h_L)}{\Delta \theta}  - f(u_R - u_L).
+    \end{aligned}
+    \right\}
+\end{equation}    
+Then we calculate the fluxes at the boundaries of the control volume.
+In this case we use the most simple fluxes, the average of the velocities at the boundaries, i.e., for cell $i$:
+\begin{equation}
+    \begin{aligned}
+        h_R &= \frac{1}{2} (h_{i+1} + h_i), \\
+        h_L &= \frac{1}{2} (h_i + h_{i-1}), \\
+        u_R &= \frac{1}{2} (u_{i+1} + u_i), \\
+        u_L &= \frac{1}{2} (u_i + u_{i-1}).
+    \end{aligned}
+\end{equation}
+Finally we integrate with respect to time to obtain the finite volume scheme for the linearized shallow water equations in spherical coordinates:
+When discretizing the equations, we define the cell averages $h_i^n$ and $u_i^n$ as the average values of the height and velocity in the $i$-th cell at time $t_n$:
+\begin{equation}
+    \begin{aligned}
+        h_i^n &= \frac{1}{\Delta \theta} \int_{\theta_{i-1/2}}^{\theta_{i+1/2}} h(\theta, t_n) \text{ d}\theta, \\
+        u_i^n &= \frac{1}{\Delta \theta} \int_{\theta_{i-1/2}}^{\theta_{i+1/2}} u(\theta, t_n) \text{ d}\theta.
+    \end{aligned}
+\end{equation}
+
+Numerical flux\ldots
+
+Time integration.
+
+Derive FVM scheme. 
+
+
+

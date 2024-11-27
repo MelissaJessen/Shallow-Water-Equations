@@ -202,4 +202,32 @@ publisher = {Academic Press},
 isbn = {978-0-12-283522-0}
 }
 
+@article{BONEV_2018,
+title = {Discontinuous Galerkin scheme for the spherical shallow water equations with applications to tsunami modeling and prediction},
+journal = {Journal of Computational Physics},
+volume = {362},
+pages = {425-448},
+year = {2018},
+issn = {0021-9991},
+doi = {https://doi.org/10.1016/j.jcp.2018.02.008},
+url = {https://www.sciencedirect.com/science/article/pii/S0021999118300846},
+author = {Boris Bonev and Jan S. Hesthaven and Francis X. Giraldo and Michal A. Kopera},
+keywords = {Shallow water equations, Well-balanced scheme, Wetting and drying, Discontinuous Galerkin method, Curved mesh, Non-conforming mesh},
+abstract = {We present a novel high-order discontinuous Galerkin discretization for the spherical shallow water equations, able to handle wetting/drying and non-conforming, curved meshes in a well-balanced manner. This requires a well-balanced discretization, that cannot rely on exact quadrature, due to the curved mesh. Using the strong form of the discontinuous Galerkin discretization, we achieve a splitting of the well-balanced condition into individual problems for the flux and volume terms, which has significant advantages: It allows for the construction of non-conforming, well-balanced flux discretizations, i.e. we can perform non-conforming mesh refinement while preserving the well-balanced property of the scheme. More importantly, this approach enables the development of a new method for handling wet/dry transitions. In contrast to other wetting/drying methods, it is well-balanced and able to handle wetting/drying robustly at any polynomial order, without the introduction of physical model assumptions such as viscosity, artificial porosity or cancellation of gravity. We perform a series of one-dimensional tests and analyze the properties of our scheme. In order to validate our method for the simulation of large-scale tsunami events on the rotating sphere, we perform numerical simulations of the 2011 Tohoku tsunami and compare our results to real-world buoy data. The method is able to predict arrival times and wave amplitudes accurately even over long distances. This indicates that our method accurately captures all physical phenomena relevant to the long-term evolution of tsunami waves.}
+}
+
+
+
+@article{Eskilsson_2005,
+  author = {Claes Eskilsson and Spencer J. Sherwin},
+  date = {},
+  volume = {22},
+  pages = {269-288},
+  journal = {Journal of Scientific Computing},
+  doi = {https://doi.org/10.1007/s10915-004-4140-x},
+  title = {Discontinuous Galerkin Spectral/hp Element Modelling of Dispersive Shallow Water Systems},
+  url = {https://link.springer.com/article/10.1007/s10915-004-4140-x},
+  year = {2005}
+}
+
 

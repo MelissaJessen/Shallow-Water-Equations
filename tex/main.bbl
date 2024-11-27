@@ -91,6 +91,18 @@ Wikipedia.
 \newblock Coriolis force.
 \newblock \url{https://en.wikipedia.org/wiki/Coriolis_force}, 14/11-2024.
 
+\bibitem{BONEV_2018}
+Boris Bonev, Jan~S. Hesthaven, Francis~X. Giraldo, and Michal~A. Kopera.
+\newblock Discontinuous galerkin scheme for the spherical shallow water
+  equations with applications to tsunami modeling and prediction.
+\newblock {\em Journal of Computational Physics}, 362:425--448, 2018.
+
+\bibitem{Eskilsson_2005}
+Claes Eskilsson and Spencer~J. Sherwin.
+\newblock Discontinuous galerkin spectral/hp element modelling of dispersive
+  shallow water systems.
+\newblock {\em Journal of Scientific Computing}, 22:269--288, 2005.
+
 \bibitem{LeVeque2002}
 Randall~J. LeVeque.
 \newblock {\em Finite Volume Methods for Hyperbolic Problems}.
