@@ -163,6 +163,68 @@ The third term with the Coriolis force gives
 \begin{align*}
     \int_{\theta_L}^{\theta_R} fu \text{ d}\theta = f(u_R - u_L) \Delta \theta.
 \end{align*} 
+Hence, the integral form of the linearized shallow water equations in spherical coordinates with one spatial dimension and time is
+\begin{equation}\label{eq:integral_form_spherical_1D}
+    \left.
+    \begin{aligned}
+        \frac{\partial}{\partial t} \int_{\theta_L}^{\theta_R} h \text{ d}\theta + \frac{H}{r \cos(\phi)} (u_R - u_L) &= 0, \\
+        \frac{\partial}{\partial t} \int_{\theta_L}^{\theta_R} u \text{ d}\theta + g(h_R - h_L) + fu_i &= 0.
+    \end{aligned}
+    \right\}
+\end{equation}
+Then we integrate~\eqref{eq:integral_form_spherical_1D} over time from $t_1:= t_n$ to $t_2:= t_{n+1}$:
+\begin{equation}
+    \begin{aligned}
+        \int_{t_1}^{t_2} \int_{\theta_L}^{\theta_R} h_t \text{ d}\theta \text{d}t + \int_{t_1}^{t_2} \frac{H}{r \cos(\phi)} (u_R - u_L) \text{ d}t &= 0, \\
+        \int_{t_1}^{t_2} \int_{\theta_L}^{\theta_R} u_t \text{ d}\theta \text{d}t + \int_{t_1}^{t_2} g(h_R - h_L) \text{ d}t + \int_{t_1}^{t_2} f(u_R - u_L) \Delta \theta &= 0.
+    \end{aligned}
+\end{equation}
+which equals
+\begin{equation}\label{eq:integral_form_spherical_1D_2}
+    \begin{aligned}
+        \int_{\theta_L}^{\theta_R} h(\theta, t_2) \text{ d}\theta &= \int_{\theta_L}^{\theta_R} h(\theta, t_1) \text{ d}\theta - \frac{H}{r \cos(\phi)} (u_R - u_L) \Delta t, \\
+        \int_{\theta_L}^{\theta_R} u(\theta, t_2) \text{ d}\theta &= \int_{\theta_L}^{\theta_R} u(\theta, t_1) \text{ d}\theta - g(h_R - h_L) \Delta t - f(u_R - u_L) \Delta \theta \Delta t.
+    \end{aligned}
+\end{equation}
+We divide~\eqref{eq:derive_integral_form_1D_2} with the cell length $\Delta \theta$ to obtain 
+\begin{equation}\label{eq:derive_integral_form_spherical}
+    \begin{aligned}
+        \frac{1}{\Delta \theta} \int_{\theta_L}^{\theta_R} h(\theta, t_2) \text{ d}\theta &= \frac{1}{\Delta \theta} \int_{\theta_L}^{\theta_R} h(\theta, t_1) \text{ d}\theta -  \frac{\Delta t}{\Delta \theta} \frac{H}{r \cos(\phi)} (u_R - u_L), \\
+        \frac{1}{\Delta \theta} \int_{\theta_L}^{\theta_R} u(\theta, t_2) \text{ d}\theta &= \frac{1}{\Delta \theta} \int_{\theta_L}^{\theta_R} u(\theta, t_1) \text{ d}\theta - \frac{\Delta t}{\Delta \theta} g(h_R - h_L)  - f(u_R - u_L) \Delta t.
+    \end{aligned}
+\end{equation}
+By inserting the cell averages in~\eqref{eq:derive_integral_form_spherical}, we obtain the finite volume scheme for the linearized shallow water equations in spherical coordinates with one spatial dimension and time:
+\begin{equation}
+    \left.
+    \begin{aligned}
+        h_i^{n+1} &= h_i^n - \frac{\Delta t}{\Delta \theta} (F_{h, i + \frac{1}{2}} - F_{h, i - \frac{1}{2}}),  \\
+        u_i^{n+1} &=  u_i^n - \frac{\Delta t}{\Delta \theta} (F_{u, i + \frac{1}{2}} - F_{u, i - \frac{1}{2}}) - \Delta t f(u_{i}^n).
+    \end{aligned}
+    \right\}
+\end{equation}
+Where:
+\begin{equation}
+    \begin{aligned}
+        h_i^n &= \frac{1}{\Delta \theta} \int_{\theta_{i-1/2}}^{\theta_{i+1/2}} h(\theta, t_n) \text{ d}\theta, \\
+        u_i^n &= \frac{1}{\Delta \theta} \int_{\theta_{i-1/2}}^{\theta_{i+1/2}} u(\theta, t_n) \text{ d}\theta, \\
+        F_{h, i + \frac{1}{2}} &= \frac{H}{r \cos(\phi)} (u_{i+1} - u_i), \\
+        F_{h, i - \frac{1}{2}} &= \frac{H}{r \cos(\phi)} (u_{i} - u_{i-1}), \\
+        F_{u, i + \frac{1}{2}} &= g(h_{i+1} - h_i).
+    \end{aligned}
+\end{equation}
+
+
+Now that we have the integral form, we will obtain the finite volume scheme for the linearized shallow water equations in spherical coordinates, by dividing the integral form~\eqref{eq:integral_form_spherical_1D} by the cell length $\Delta \theta$:
+\begin{equation}
+    \left.
+    \begin{aligned}
+        h_t + \frac{H}{r \cos(\phi)} \frac{(u_R - u_L)}{\Delta \theta} &= 0, \\
+        u_t +  \frac{g (h_R - h_L)}{\Delta \theta} + f(u_R - u_L) &= 0.
+    \end{aligned}
+    \right\}
+\end{equation}
+
+
 Putting it all together we thus have:
 \begin{equation}
     \begin{aligned}
@@ -191,18 +253,17 @@ In this case we use the most simple fluxes, the average of the velocities at the
 \end{equation}
 Finally we integrate with respect to time to obtain the finite volume scheme for the linearized shallow water equations in spherical coordinates:
 When discretizing the equations, we define the cell averages $h_i^n$ and $u_i^n$ as the average values of the height and velocity in the $i$-th cell at time $t_n$:
-\begin{equation}
-    \begin{aligned}
-        h_i^n &= \frac{1}{\Delta \theta} \int_{\theta_{i-1/2}}^{\theta_{i+1/2}} h(\theta, t_n) \text{ d}\theta, \\
-        u_i^n &= \frac{1}{\Delta \theta} \int_{\theta_{i-1/2}}^{\theta_{i+1/2}} u(\theta, t_n) \text{ d}\theta.
-    \end{aligned}
-\end{equation}
 
 Numerical flux\ldots
 
 Time integration.
 
 Derive FVM scheme. 
+The FVM scheme can be writtes as 
+\begin{align*}
+    \mathbf{W}_i^{n+1} = \mathbf{W}_i^n - \frac{\Delta t}{\Delta \theta} (\mathbf{A}_{i+1/2}^n - \mathbf{A}_{i-1/2}^n) + \Delta t \mathbf{S}_i,
+\end{align*}
+where $\mathbf{W} = \begin{bmatrix} h \\ u \end{bmatrix}$, $\mathbf{A}_{i+1/2}^n$ is the numerical flux at the cell interface $\theta_{i+1/2}$, and $\mathbf{S} = \begin{bmatrix} 0 \\ fu \end{bmatrix}.$ 
 
 
 
