@@ -24,6 +24,7 @@ v = zeros(size(theta_center)); % Initial velocity
 % Exact solution (for comparison, assumes no Coriolis force)
 c = sqrt(g * h0); % Wave speed
 uexact = @(t) exp(-((mod(theta_center - c*t, L) - theta0) / sigma).^2);
+h_exact = @(t) exp(-((mod(theta_center - c*t, L) - theta0) / sigma).^2); % Exact wave profile
 
 % Flux computation function
 compute_flux = @(q_left, q_right) 0.5 * (q_left + q_right); % Upwind or central flux
@@ -76,7 +77,11 @@ end
 figure;
 r0 = 1.5; % Base radius of the circle
 for k = 1:size(h_storage, 1)
+    h_exact_k = h_exact(t_storage(k)); % Compute exact solution at time t_storage(k)
+
     plot(r0*cos(theta_center), -r0*sin(theta_center), 'k'); % Base circle
+    hold on;
+    plot((r0 + h_exact_k).*cos(theta_center), -(r0 + h_exact_k).*sin(theta_center), 'b--', 'LineWidth', 1.5); % Exact solution
     hold on;
     plot((r0 + h_storage(k, :)).*cos(theta_center), -(r0 + h_storage(k, :)).*sin(theta_center), 'r', 'LineWidth', 2); % Numerical solution
     hold off;
@@ -85,3 +90,29 @@ for k = 1:size(h_storage, 1)
     axis([-2.5, 2.5, -2.5, 2.5]);
     drawnow;
 end
+
+%% Save data to mat.file
+% Define folder
+folder = 'C:\Users\Matteo\Shallow-Water-Equations\dataFNO';
+filename = 'linear-SWE-sphere-1d';
+fullpath = fullfile(folder, filename);
+save(fullpath,'h_storage', 't_storage', 'theta');
+
+
+%% Plot the initial condition
+
+k = 1;
+
+figure;
+plot(r0*cos(theta_center), -r0*sin(theta_center), 'k'); % Base circle
+hold on;
+plot((r0 + h_storage(k, :)).*cos(theta_center), -(r0 + h_storage(k, :)).*sin(theta_center), 'r', 'LineWidth', 2); % Numerical solution
+hold off;
+title(['Inital conditions at time: ', num2str(t_storage(k), '%.2f'), ' s']);
+axis equal;
+axis([-2.5, 2.5, -2.5, 2.5]);
+drawnow;
+
+% Save the figure as PDF
+exportgraphics(gcf, 'C:/Users/Matteo/Shallow-Water-Equations/plots/SWE-spherical-1d-initial_conditions.pdf', 'ContentType', 'vector');
+ 
