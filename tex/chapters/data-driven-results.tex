@@ -132,7 +132,53 @@ The results of the model are shown in \autoref{fig:FNO_Toro_test1_predictions_3D
     \caption{FNO Toro test 1 predictions RMSE.}\label{fig:FNO_Toro_test1_rmse}
 \end{figure}
 
-\newpage
+\subsection{Spherical SWE in 1D}
+We also consider the spherical shallow water equations in 1D.
+Meaning we consider the linearized SWE on a circle.
+The initial conditions can be seen in \autoref{fig:swe_spherical_1d_initial_conditions}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/SWE-spherical-1d-initial_conditions.pdf}
+    \caption{Initial conditions for the 1D linearized shallow water equations in spherical coordinates.}\label{fig:swe_spherical_1d_initial_conditions}
+\end{figure}
+
+
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO.pdf}
+    \caption{Numerical solution of the spherical shallow water equations in 1D.}\label{fig:Spherical_linear_1D}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_predictions.pdf}
+    \caption{Predictions for the spherical shallow water equations in 1D.}\label{fig:Spherical_linear_1D_FNO_predictions}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_predictions_3D.pdf}
+    \caption{Predictions for the spherical shallow water equations in 1D.}\label{fig:Spherical_linear_1D_FNO_predictions_3D}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_timesteps.pdf}
+    \caption{Predictions for the spherical shallow water equations in 1D.}\label{fig:Spherical_linear_1D_FNO_predictions_timesteps}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_RMSE.pdf}
+    \caption{RMSE for the predictions for the spherical shallow water equations in 1D.}\label{fig:Spherical_linear_1D_FNO_RMSE}
+\end{figure}
+
+
+
 \subsection{Comparison}
 To get an overview of the performance of the different models, we consider the RMSE for the predictions for the smooth case.
 We consider the MSE for the whole data set, and the time for training the model.

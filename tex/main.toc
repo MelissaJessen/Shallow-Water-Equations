@@ -13,48 +13,46 @@
 \contentsline {subsection}{\numberline {2.2.5}The SWE in vector form for 1D and 2D}{9}{subsection.2.2.5}%
 \contentsline {subsection}{\numberline {2.2.6}The 1D SWE in integral form}{9}{subsection.2.2.6}%
 \contentsline {subsection}{\numberline {2.2.7}SWE in Spherical Coordinates}{11}{subsection.2.2.7}%
-\contentsline {section}{\numberline {2.3}Finite Volume Method for the Shallow Water Equations}{15}{section.2.3}%
+\contentsline {subsection}{\numberline {2.2.8}Linearized SWE in Spherical Coordinates}{15}{subsection.2.2.8}%
+\contentsline {section}{\numberline {2.3}Finite Volume Method for the Shallow Water Equations}{16}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Finite Volume Methods for the 1D SWE}{16}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Finite Volume Method for the 2D SWE}{17}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.2}Finite Volume Method for the 2D SWE}{18}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}Finite Volume Method for the 1D SWE in spherical coordinates}{18}{subsection.2.3.3}%
-\contentsline {section}{\numberline {2.4}Numerical Scheme for 1D Linearized Shallow Water Equations}{21}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Finite Volume Fluxes}{21}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Runge-Kutta Stages}{21}{subsection.2.4.2}%
-\contentsline {paragraph}{Stage 1 (Initial Flux Evaluation):}{21}{section*.11}%
-\contentsline {paragraph}{Stages 2--4 (Predictor Steps):}{21}{section*.12}%
-\contentsline {subsection}{\numberline {2.4.3}Updating the State Variables}{22}{subsection.2.4.3}%
-\contentsline {subsection}{\numberline {2.4.4}Visualization}{22}{subsection.2.4.4}%
-\contentsline {section}{\numberline {2.5}The Riemann problem}{22}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}The Dam-Break problem}{23}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Waves in the Riemann problem}{23}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.5.3}Exact Riemann solver}{24}{subsection.2.5.3}%
-\contentsline {section}{\numberline {2.6}Fourier Neural Operators and Neural Networks}{24}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Fourier Neural Operators}{24}{subsection.2.6.1}%
-\contentsline {chapter}{\numberline {3}Methodology}{26}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Numerical fluxes}{26}{section.3.1}%
-\contentsline {subsection}{Godunov method with exact Riemann solver}{26}{section*.16}%
-\contentsline {subsection}{HLL}{26}{section*.17}%
-\contentsline {subsection}{HLLC}{27}{section*.18}%
-\contentsline {subsection}{Rusanov}{28}{section*.19}%
-\contentsline {subsection}{Lax-Friedrichs}{28}{section*.20}%
-\contentsline {subsection}{Lax-Wendroff}{28}{section*.21}%
-\contentsline {subsection}{FORCE}{29}{section*.22}%
-\contentsline {section}{\numberline {3.2}Implementation of the FVM in 1D}{30}{section.3.2}%
-\contentsline {section}{\numberline {3.3}True solution}{30}{section.3.3}%
-\contentsline {section}{\numberline {3.4}FVM in 2D}{30}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}the MUSCL scheme}{30}{subsection.3.4.1}%
-\contentsline {section}{\numberline {3.5}Data generation}{30}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Data Copernicus}{32}{section.3.6}%
-\contentsline {chapter}{\numberline {4}Results}{33}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Numerical results}{33}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}The 1D Dam Break Problem}{33}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Toro test cases}{34}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}2D idealised Circular Dam Break Problem}{40}{subsection.4.1.3}%
-\contentsline {section}{\numberline {4.2}Data-driven results}{41}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}RNN}{42}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}FNO}{43}{subsection.4.2.2}%
-\contentsline {subsubsection}{FNO Toro test 1}{45}{section*.53}%
-\contentsline {subsection}{\numberline {4.2.3}Comparison}{48}{subsection.4.2.3}%
+\contentsline {section}{\numberline {2.4}The Riemann problem}{20}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}The Dam-Break problem}{21}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Waves in the Riemann problem}{21}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Exact Riemann solver}{22}{subsection.2.4.3}%
+\contentsline {section}{\numberline {2.5}Fourier Neural Operators and Neural Networks}{22}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Fourier Neural Operators}{22}{subsection.2.5.1}%
+\contentsline {chapter}{\numberline {3}Methodology}{24}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Numerical fluxes}{24}{section.3.1}%
+\contentsline {subsection}{Godunov method with exact Riemann solver}{24}{section*.13}%
+\contentsline {subsection}{HLL}{24}{section*.14}%
+\contentsline {subsection}{HLLC}{25}{section*.15}%
+\contentsline {subsection}{Rusanov}{26}{section*.16}%
+\contentsline {subsection}{Lax-Friedrichs}{26}{section*.17}%
+\contentsline {subsection}{Lax-Wendroff}{26}{section*.18}%
+\contentsline {subsection}{FORCE}{27}{section*.19}%
+\contentsline {section}{\numberline {3.2}Implementation of the FVM in 1D}{28}{section.3.2}%
+\contentsline {section}{\numberline {3.3}True solution}{28}{section.3.3}%
+\contentsline {section}{\numberline {3.4}FVM in 2D}{28}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}the MUSCL scheme}{28}{subsection.3.4.1}%
+\contentsline {section}{\numberline {3.5}FVM 1D Linearized SWE spherical}{28}{section.3.5}%
+\contentsline {paragraph}{Stage 1 (Initial Flux Evaluation):}{29}{section*.20}%
+\contentsline {paragraph}{Stages 2--4 (Predictor Steps):}{29}{section*.21}%
+\contentsline {section}{\numberline {3.6}Data generation}{29}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Data Copernicus}{31}{section.3.7}%
+\contentsline {chapter}{\numberline {4}Results}{32}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Numerical results}{32}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}The 1D Dam Break Problem}{32}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Toro test cases}{33}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}2D idealised Circular Dam Break Problem}{39}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}Data-driven results}{40}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}RNN}{41}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}FNO}{42}{subsection.4.2.2}%
+\contentsline {subsubsection}{FNO Toro test 1}{44}{section*.52}%
+\contentsline {subsection}{\numberline {4.2.3}Spherical SWE in 1D}{46}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Comparison}{48}{subsection.4.2.4}%
 \contentsline {chapter}{\numberline {5}Discussion}{49}{chapter.5}%
 \contentsline {chapter}{\numberline {6}Further work}{50}{chapter.6}%
-\contentsline {chapter}{Bibliography}{52}{chapter*.60}%
+\contentsline {chapter}{Bibliography}{52}{chapter*.65}%

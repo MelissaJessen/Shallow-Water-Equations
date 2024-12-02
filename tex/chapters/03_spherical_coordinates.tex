@@ -211,6 +211,45 @@ Inserting these forces into the momentum equations, we get the shallow water equ
 where $r$ is the radius, $(\theta, \phi)$ are the longitude and latitude angles, $h$ is the height of the water, $u_\theta$ and $u_\phi$ are the velocities in the $\theta$ and $\phi$ directions, $g$ is the gravitational constant.
 
 
-TEST:~\cite{BONEV_2018},~\cite{Eskilsson_2005}.
+\subsection{Linearized SWE in Spherical Coordinates}
+We consider the linearized shallow water equations in cartesian coordinates with one spatial dimension ($x$) and time ($t$).
+\begin{equation}
+    \left.
+    \begin{aligned}
+        h_t + H u_x = 0, \\
+        u_t + g h_x = 0,
+    \end{aligned}
+    \right\}
+\end{equation}
+where $h$ is the height of the water, $u$ is the velocity of the water, $H$ is the average height of the water, and $g$ is the acceleration due to gravity.
+We now consider the linearized shallow water equations in spherical coordinates with one spatial dimension, the longitude ($\theta$), and time ($t$).
+That is, we assume constant latitude $\phi$. 
+
+In this section, we will derive the linearized shallow water equations in spherical coordinates.
+Later in the project, we will use the finite volume method to solve the linearized shallow water equations in spherical coordinates.
+We use the linearized SWE for simplicity.
+This section use the sources~\cite{BONEV_2018} and~\cite{Eskilsson_2005}.
+The linearized shallow water equations in spherical coordinates with one spatial dimension ($\theta$) and time ($t$) are given by
+\begin{equation}\label{eq:linearized_swe_spherical}
+    \left.
+    \begin{aligned}
+        h_t + \frac{H}{r \cos(\phi)} u_\theta = 0, \\
+        u_t + g h_\theta + fu = 0,
+    \end{aligned}
+    \right\}
+\end{equation}
+where $r$ is the radius of the Earth, $\phi$ is the latitude, and $f$ is the Coriolis parameter, given by $f = 2 \Omega \sin(\phi)$, where $\Omega$ is the angular velocity of the Earth.
+We still refer to the equations as the mass and momentum equations, respectively.
+
+
+
+We can also write the linearized shallow water equations in spherical coordinates in vector form, without the coriolis force, as
+\begin{align}\label{eq:linearized_swe_spherical_vector}
+    \mathbf{W}_t + \mathbf{A} \mathbf{W}_\theta = 0,
+\end{align}
+where $\mathbf{W} =
+\begin{bmatrix} h \\ u \end{bmatrix}$ and the coefficient matrix $\mathbf{A}$ is constant and given as:
+$\mathbf{A} = \begin{bmatrix} 0 & \frac{H}{r \cos(\phi)} \\ g & 0 \end{bmatrix}$.
+
 
 
