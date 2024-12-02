@@ -8,7 +8,7 @@ dtheta = L / N_theta; % Width of each control volume
 theta = linspace(0, L, N_theta+1); % Cell edges
 theta_center = theta(1:end-1) + dtheta/2; % Cell centers
 dt = 0.0025; % Time step
-T = 1; % Total simulation time
+T = 10; % Total simulation time
 a = 1;%6371e3; % Radius of Earth in meters
 phi = pi / 6; % Latitude (fixed)
 g = 9.81; % Gravitational acceleration
@@ -16,7 +16,11 @@ h0 = 10; % Mean layer depth in meters
 f = 2 * 7.2921e-5 * sin(phi); % Coriolis parameter
 
 % Initial conditions: Gaussian pulse for h' and zero velocity
-sigma = pi / 16; % Width of the Gaussian
+sigma_vals = [pi/8, pi/16, pi/32]; % Width of the Gaussian
+sigma_no = 3;
+sigma = sigma_vals(sigma_no);
+%sigma = pi / 16; 
+%sigma = pi/ 8;
 theta0 = pi / 4; % Center of the Gaussian
 h_prime = exp(-((theta_center - theta0) / sigma).^2); % Initial perturbation in wave elevation
 v = zeros(size(theta_center)); % Initial velocity
@@ -81,8 +85,8 @@ for k = 1:size(h_storage, 1)
 
     plot(r0*cos(theta_center), -r0*sin(theta_center), 'k'); % Base circle
     hold on;
-    plot((r0 + h_exact_k).*cos(theta_center), -(r0 + h_exact_k).*sin(theta_center), 'b--', 'LineWidth', 1.5); % Exact solution
-    hold on;
+    %plot((r0 + h_exact_k).*cos(theta_center), -(r0 + h_exact_k).*sin(theta_center), 'b--', 'LineWidth', 1.5); % Exact solution
+    %hold on;
     plot((r0 + h_storage(k, :)).*cos(theta_center), -(r0 + h_storage(k, :)).*sin(theta_center), 'r', 'LineWidth', 2); % Numerical solution
     hold off;
     title(['Time: ', num2str(t_storage(k), '%.2f'), ' s']);
@@ -93,8 +97,9 @@ end
 
 %% Save data to mat.file
 % Define folder
+
 folder = 'C:\Users\Matteo\Shallow-Water-Equations\dataFNO';
-filename = 'linear-SWE-sphere-1d';
+filename = ['linear-SWE-sphere-1d_sigma=',num2str(sigma_no),',T=',num2str(T)];
 fullpath = fullfile(folder, filename);
 save(fullpath,'h_storage', 't_storage', 'theta');
 
