@@ -29,7 +29,7 @@ c = sqrt(g * h0); % Wave speed
 uexact = @(t) exp(-((mod(theta_center - c*t, L) - theta0) / sigma).^2);
 h_exact = @(t) exp(-((mod(theta_center - c*t, L) - theta0) / sigma).^2); % Exact wave profile
 
-% Flux computation function
+% Flux computation function 
 compute_flux = @(q_left, q_right) 0.5 * (q_left + q_right); % Upwind or central flux
 
 % Time-stepping loop
