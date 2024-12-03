@@ -52,8 +52,11 @@
 \contentsline {subsection}{\numberline {4.2.2}FNO}{42}{subsection.4.2.2}%
 \contentsline {subsubsection}{FNO Toro test 1}{44}{section*.52}%
 \contentsline {subsection}{\numberline {4.2.3}Spherical SWE in 1D}{46}{subsection.4.2.3}%
-\contentsline {subsubsection}{CNN}{48}{section*.62}%
-\contentsline {subsection}{\numberline {4.2.4}Comparison}{50}{subsection.4.2.4}%
-\contentsline {chapter}{\numberline {5}Discussion}{51}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Further work}{52}{chapter.6}%
-\contentsline {chapter}{Bibliography}{54}{chapter*.70}%
+\contentsline {subsubsection}{FNO}{47}{section*.59}%
+\contentsline {subsubsection}{CNN}{49}{section*.64}%
+\contentsline {subsection}{\numberline {4.2.4}Comparison}{51}{subsection.4.2.4}%
+\contentsline {chapter}{\numberline {5}Discussion}{52}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Further work}{53}{chapter.6}%
+\contentsline {chapter}{Bibliography}{55}{chapter*.72}%
+\contentsline {chapter}{\numberline {7}Appendix}{56}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Additional figures from 1D SWE spherical CNN and FNO}{56}{section.7.1}%
