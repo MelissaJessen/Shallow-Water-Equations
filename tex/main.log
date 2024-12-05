@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.13)  3 DEC 2024 11:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.13)  5 DEC 2024 09:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1425,83 +1425,88 @@ Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1
 
 
 [45 <C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_loss.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_predictions_3D.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_predictions_time_steps.pdf>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/SWE-spherical-1d-initial_conditions.pdf, id=2074, 280.04625pt x 285.065pt>
+
+[46 <C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_RMSE.pdf>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/SWE-spherical-1d-initial_conditions.pdf, id=2117, 280.04625pt x 285.065pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/SWE-spherical-1d-initial_conditions.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/SWE-spherical-1d-initial_conditions.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/SWE-spherical-1d-initial_conditions.pdf  used on input line 147.
 (pdftex.def)             Requested size: 200.19054pt x 203.78513pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_true_solution.pdf, id=2076, 722.7pt x 433.62pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_true_solution.pdf, id=2119, 722.7pt x 433.62pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_true_solution.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_true_solution.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_true_solution.pdf  used on input line 153.
 (pdftex.def)             Requested size: 400.38872pt x 240.23187pt.
 
 
-[46 <C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_RMSE.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/SWE-spherical-1d-initial_conditions.pdf>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO.pdf, id=2126, 505.89pt x 289.08pt>
+[47 <C:/Users/Matteo/Shallow-Water-Equations/plots/SWE-spherical-1d-initial_conditions.pdf>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO.pdf, id=2130, 505.89pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO.pdf  used on input line 165.
 (pdftex.def)             Requested size: 350.33727pt x 200.19763pt.
 
 
-[47 <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_true_solution.pdf>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error.pdf, id=2179, 1445.4pt x 433.62pt>
-File: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error.pdf Graphic file (type pdf)
-<use C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error.pdf>
-Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error.pdf  used on input line 172.
-(pdftex.def)             Requested size: 495.48189pt x 148.64629pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_timesteps.pdf, id=2182, 867.24pt x 289.08pt>
+[48 <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_true_solution.pdf>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error_sigma=2.pdf, id=2183, 1084.05pt x 433.62pt>
+File: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error_sigma=2.pdf Graphic file (type pdf)
+<use C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error_sigma=2.pdf>
+Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error_sigma=2.pdf  used on input line 172.
+(pdftex.def)             Requested size: 500.484pt x 200.19543pt.
+<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_timesteps.pdf, id=2186, 867.24pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_timesteps.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_timesteps.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_timesteps.pdf  used on input line 180.
-(pdftex.def)             Requested size: 350.33727pt x 116.78122pt.
+(pdftex.def)             Requested size: 450.43253pt x 150.14601pt.
 
 
-[48 <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error.pdf>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_RMSE.pdf, id=2282, 722.7pt x 289.08pt>
+[49 <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error_sigma=2.pdf>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_RMSE.pdf, id=2279, 722.7pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_RMSE.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_RMSE.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_RMSE.pdf  used on input line 187.
 (pdftex.def)             Requested size: 350.33727pt x 140.13304pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN.pdf, id=2287, 505.89pt x 289.08pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN.pdf, id=2282, 505.89pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN.pdf>
-Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN.pdf  used on input line 199.
+Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN.pdf  used on input line 198.
 (pdftex.def)             Requested size: 350.33727pt x 200.19763pt.
 
 
-[49 <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_timesteps.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_RMSE.pdf>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error.pdf, id=2368, 1445.4pt x 433.62pt>
-File: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error.pdf Graphic file (type pdf)
-<use C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error.pdf>
-Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error.pdf  used on input line 205.
-(pdftex.def)             Requested size: 495.48189pt x 148.64629pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_time_steps.pdf, id=2369, 867.24pt x 289.08pt>
+[50 <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_timesteps.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_RMSE.pdf>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error_sigma=2.pdf, id=2362, 1445.4pt x 433.62pt>
+File: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error_sigma=2.pdf Graphic file (type pdf)
+<use C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error_sigma=2.pdf>
+Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error_sigma=2.pdf  used on input line 205.
+(pdftex.def)             Requested size: 500.484pt x 150.14162pt.
+<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_time_steps.pdf, id=2365, 867.24pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_time_steps.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_time_steps.pdf>
-Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_time_steps.pdf  used on input line 211.
+Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_time_steps.pdf  used on input line 212.
 (pdftex.def)             Requested size: 450.43253pt x 150.14601pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_RMSE.pdf, id=2370, 722.7pt x 289.08pt>
+
+
+[51 <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error_sigma=2.pdf>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_RMSE.pdf, id=2455, 722.7pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_RMSE.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_RMSE.pdf>
-Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_RMSE.pdf  used on input line 217.
+Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_RMSE.pdf  used on input line 219.
 (pdftex.def)             Requested size: 350.33727pt x 140.13304pt.
 
 
-[50 <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_time_steps.pdf>])
+[52 <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_time_steps.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_RMSE.pdf>])
 
-[51 <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_RMSE.pdf>] (chapters/06_discussion.tex
+[53] (chapters/06_discussion.tex
 Chapter 5.
 )
 
-[52
+[54
 
 ] (chapters/07_FurtherWork.tex
 Chapter 6.
 )
 
-[53
+[55
 
 ] (main.bbl
 Underfull \hbox (badness 1400) in paragraph at lines 27--33
@@ -1525,65 +1530,65 @@ Underfull \hbox (badness 8038) in paragraph at lines 84--88
 
 
 
-[54
+[56
 
 ])
 
-[55] (chapters/appendix.tex
+[57] (chapters/appendix.tex
 Chapter 7.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error_sigma=1.pdf, id=2581, 1445.4pt x 433.62pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error_sigma=1.pdf, id=2576, 1445.4pt x 433.62pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error_sigma=1.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error_sigma=1.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error_sigma=1.pdf  used on input line 10.
 (pdftex.def)             Requested size: 500.484pt x 150.14162pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_time_steps_sigma=1.pdf, id=2582, 867.24pt x 289.08pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_time_steps_sigma=1.pdf, id=2577, 867.24pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_time_steps_sigma=1.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_time_steps_sigma=1.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_time_steps_sigma=1.pdf  used on input line 16.
 (pdftex.def)             Requested size: 500.484pt x 166.82841pt.
 
 
-[56
+[58
 
  <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error_sigma=1.pdf>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error_sigma=3.pdf, id=2637, 1445.4pt x 433.62pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error_sigma=3.pdf, id=2632, 1445.4pt x 433.62pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error_sigma=3.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error_sigma=3.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error_sigma=3.pdf  used on input line 23.
 (pdftex.def)             Requested size: 500.484pt x 150.14162pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_time_steps_sigma=3.pdf, id=2638, 867.24pt x 289.08pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_time_steps_sigma=3.pdf, id=2633, 867.24pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_time_steps_sigma=3.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_time_steps_sigma=3.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_time_steps_sigma=3.pdf  used on input line 29.
 (pdftex.def)             Requested size: 500.484pt x 166.82841pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error_sigma=1.pdf, id=2639, 1445.4pt x 433.62pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error_sigma=1.pdf, id=2634, 1445.4pt x 433.62pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error_sigma=1.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error_sigma=1.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error_sigma=1.pdf  used on input line 36.
 (pdftex.def)             Requested size: 500.484pt x 150.14162pt.
 
 
-[57 <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_time_steps_sigma=1.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error_sigma=3.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_time_steps_sigma=3.pdf>]
-<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_timesteps_sigma=1.pdf, id=2767, 867.24pt x 289.08pt>
+[59 <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_time_steps_sigma=1.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_error_sigma=3.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_CNN_time_steps_sigma=3.pdf>]
+<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_timesteps_sigma=1.pdf, id=2762, 867.24pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_timesteps_sigma=1.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_timesteps_sigma=1.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_timesteps_sigma=1.pdf  used on input line 42.
 (pdftex.def)             Requested size: 500.484pt x 166.82841pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error_sigma=3.pdf, id=2768, 1445.4pt x 433.62pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error_sigma=3.pdf, id=2763, 1445.4pt x 433.62pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error_sigma=3.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error_sigma=3.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error_sigma=3.pdf  used on input line 49.
 (pdftex.def)             Requested size: 500.484pt x 150.14162pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_timesteps_sigma=3.pdf, id=2769, 867.24pt x 289.08pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_timesteps_sigma=3.pdf, id=2764, 867.24pt x 289.08pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_timesteps_sigma=3.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_timesteps_sigma=3.pdf>
 Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_timesteps_sigma=3.pdf  used on input line 55.
 (pdftex.def)             Requested size: 500.484pt x 166.82841pt.
 
 
-[58 <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error_sigma=1.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_timesteps_sigma=1.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error_sigma=3.pdf>])
+[60 <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error_sigma=1.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_timesteps_sigma=1.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_error_sigma=3.pdf>])
 
-[59 <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_timesteps_sigma=3.pdf>] (main.aux)
+[61 <C:/Users/Matteo/Shallow-Water-Equations/plots/Spherical_linear_1D_FNO_timesteps_sigma=3.pdf>] (main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-16>
@@ -1596,17 +1601,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 328B902B9084546F782BF2B6F0811811;9229.
  ) 
 Here is how much of TeX's memory you used:
- 40837 strings out of 473899
- 931369 string characters out of 5726028
+ 40839 strings out of 473899
+ 931495 string characters out of 5726028
  1954960 words of memory out of 5000000
  62666 multiletter control sequences out of 15000+600000
  576232 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,23n,131p,775b,680s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Matteo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on main.pdf (65 pages, 18330210 bytes).
+Output written on main.pdf (67 pages, 16970733 bytes).
 PDF statistics:
- 3114 PDF objects out of 3580 (max. 8388607)
- 293 named destinations out of 1000 (max. 500000)
+ 3111 PDF objects out of 3580 (max. 8388607)
+ 295 named destinations out of 1000 (max. 500000)
  766 words of extra memory for PDF output out of 10000 (max. 10000000)
 
