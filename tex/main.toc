@@ -42,21 +42,22 @@
 \contentsline {paragraph}{Stages 2--4 (Predictor Steps):}{29}{section*.21}%
 \contentsline {section}{\numberline {3.6}Data generation}{29}{section.3.6}%
 \contentsline {section}{\numberline {3.7}Data Copernicus}{31}{section.3.7}%
-\contentsline {chapter}{\numberline {4}Results}{32}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Numerical results}{32}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}The 1D Dam Break Problem}{32}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Toro test cases}{33}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}2D idealised Circular Dam Break Problem}{39}{subsection.4.1.3}%
-\contentsline {section}{\numberline {4.2}Data-driven results}{40}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}RNN}{41}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}FNO}{42}{subsection.4.2.2}%
-\contentsline {subsubsection}{FNO Toro test 1}{44}{section*.52}%
-\contentsline {subsection}{\numberline {4.2.3}Spherical SWE in 1D}{47}{subsection.4.2.3}%
-\contentsline {subsubsection}{FNO}{48}{section*.59}%
-\contentsline {subsubsection}{CNN}{50}{section*.64}%
-\contentsline {subsection}{\numberline {4.2.4}Comparison}{53}{subsection.4.2.4}%
-\contentsline {chapter}{\numberline {5}Discussion}{54}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Further work}{55}{chapter.6}%
-\contentsline {chapter}{Bibliography}{57}{chapter*.72}%
-\contentsline {chapter}{\numberline {7}Appendix}{58}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Additional figures from 1D SWE spherical CNN and FNO}{58}{section.7.1}%
+\contentsline {section}{\numberline {3.8}Mesh generation for the sphere}{31}{section.3.8}%
+\contentsline {chapter}{\numberline {4}Results}{33}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Numerical results}{33}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}The 1D Dam Break Problem}{33}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Toro test cases}{34}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}2D idealised Circular Dam Break Problem}{40}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}Data-driven results}{41}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}RNN}{42}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}FNO}{43}{subsection.4.2.2}%
+\contentsline {subsubsection}{FNO Toro test 1}{45}{section*.53}%
+\contentsline {subsection}{\numberline {4.2.3}Spherical SWE in 1D}{48}{subsection.4.2.3}%
+\contentsline {subsubsection}{FNO}{49}{section*.60}%
+\contentsline {subsubsection}{CNN}{51}{section*.65}%
+\contentsline {subsection}{\numberline {4.2.4}Comparison}{54}{subsection.4.2.4}%
+\contentsline {chapter}{\numberline {5}Discussion}{55}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Further work}{56}{chapter.6}%
+\contentsline {chapter}{Bibliography}{58}{chapter*.73}%
+\contentsline {chapter}{\numberline {7}Appendix}{59}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Additional figures from 1D SWE spherical CNN and FNO}{59}{section.7.1}%

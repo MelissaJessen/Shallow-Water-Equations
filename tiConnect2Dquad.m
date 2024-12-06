@@ -17,11 +17,11 @@ fnodes = reshape(EToV(:,[VNUM(:,1) VNUM(:,2)]),Nfaces*K,2);
 fnodes = sort(fnodes,2)-1;
 
 % set up default element to element and Element to faces connectivity
-EToE = (1:K)'*ones(1,Nfaces); EToF= ones(K,1)*(1:Nfaces);
+EToE = (1:K).T*ones(1,Nfaces); EToF= ones(K,1)*(1:Nfaces);
 
 % uniquely number each set of four faces by their node numbers 
 id = fnodes(:,1)*Nnodes + fnodes(:,2)+1;
-spNodeToNode=[id, (1:Nfaces*K)', EToE(:), EToF(:)];
+spNodeToNode=[id, (1:Nfaces*K),.T EToE(:), EToF(:)];
 
 % Now we sort by global face number.
 sorted=sortrows(spNodeToNode,1);
