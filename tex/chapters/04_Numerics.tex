@@ -166,5 +166,21 @@ $\mathbf{e}_\theta$ is the longitude direction, and $\mathbf{e}_\phi$ is the lat
 The unit vectors are tangensial to the sphere.
 We do not need to consider the radial direction, as the SWE is only in the tangential directions.
 
+Now we have the cartesian edge vectors in tangential directions, $\mathbf{e}_0, \mathbf{e}_1, \mathbf{e}_2$.
+
+The projection of an edge vector \( \mathbf{e}_i = (e_{ix}, e_{iy}, e_{iz}) \) onto \( \mathbf{e}_\theta \) is:
+
+\[
+\mathbf{e}_i \cdot \mathbf{e}_\theta = e_{ix} \left( -\sin \theta \cos \phi \right) + e_{iy} \left( -\sin \theta \sin \phi \right) + e_{iz} \cos \theta
+\]
+
+Similarly, the projection onto \( \mathbf{e}_\phi \) is:
+
+\[
+\mathbf{e}_i \cdot \mathbf{e}_\phi = e_{ix} \left( -\sin \phi \right) + e_{iy} \cos \phi
+\]
+
+Recall that the cross product between two vectors in 3D produces a third vector that is orthogonal to the two input vectors, i.e., the plane spanned by the two input vectors.
+
 For a given face $f$ of a triangle, we first calculate the Cartesian face normal $\mathbf{n}_f$ as the cross product of the two vectors that span the face.
 For a given face $f$ of a triangle, we define the normal vector $\mathbf{n}_f$ is decomposed into the spherical unit vectors as
