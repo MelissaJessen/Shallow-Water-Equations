@@ -210,6 +210,24 @@ Inserting these forces into the momentum equations, we get the shallow water equ
 \end{equation}
 where $r$ is the radius, $(\theta, \phi)$ are the longitude and latitude angles, $h$ is the height of the water, $u_\theta$ and $u_\phi$ are the velocities in the $\theta$ and $\phi$ directions, $g$ is the gravitational constant.
 
+Obtain in vector form:
+Multiply with $\cos \phi$ and something else. Consider the paper.
+
+Vector form:
+\begin{align}
+    \cos(\phi) \mathbf{U}_t + \mathbf{F(U)}_\theta + \cos(\phi) \mathbf{G(U)}_\phi = 0,
+\end{align}
+where 
+\begin{align*}
+    \mathbf{U} = \begin{bmatrix} h \\ h u_\theta \\h u_\phi \end{bmatrix},
+    \mathbf{F(U)} = \begin{bmatrix} h u_\theta \\ h u_\theta^2 + g h^2  \\ h u_\theta u_\phi \end{bmatrix},
+    \mathbf{G(U)} = \begin{bmatrix} h u_\phi \\ h u_\theta u_\phi \\ h u_\phi^2 + \ g h^2 \end{bmatrix}.
+\end{align*}
+
+
+
+
+
 
 \subsection{Linearized SWE in Spherical Coordinates}
 We consider the linearized shallow water equations in cartesian coordinates with one spatial dimension ($x$) and time ($t$).
