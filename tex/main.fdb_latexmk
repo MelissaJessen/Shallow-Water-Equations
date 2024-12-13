@@ -1,13 +1,24 @@
 # Fdb version 4
+<<<<<<< HEAD
 ["bibtex main"] 1734078457.53679 "main.aux" "main.bbl" "main" 1734078475.56698 0
   "./bibl.bib" 1732696561 8928 e58aa26259052e36c0ee60094ac16c67 ""
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291864736 18030 1376b4b231b50c66211e47e42eda2875 ""
   "main.aux" 1734078474 40247 85b26e579cc55b71b8eab4909fd09a19 "pdflatex"
+=======
+["bibtex main"] 1734016864.40777 "main.aux" "main.bbl" "main" 1734019266.62357 0
+  "./bibl.bib" 1732696561 8928 e58aa26259052e36c0ee60094ac16c67 ""
+  "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291864736 18030 1376b4b231b50c66211e47e42eda2875 ""
+  "main.aux" 1734019265 40247 39bbd09704099e6d2a01f11168b9463e "pdflatex"
+>>>>>>> 70ae35ffe1333e202364f60faf786d15b7843e59
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
+<<<<<<< HEAD
 ["pdflatex"] 1734078469.03728 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1734078475.56813 0
+=======
+["pdflatex"] 1734019259.33499 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1734019266.62435 0
+>>>>>>> 70ae35ffe1333e202364f60faf786d15b7843e59
   "C:/Users/Matteo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1733470246 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Matteo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1728897231 11548 420b7f80b41b233cad6f319547e72170 ""
   "C:/Users/Matteo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1726253485 24265805 34fa3860fca3f94c581d5d8735e54ea8 ""
@@ -383,11 +394,19 @@
   "figs/water-column-bc.png" 1726205009 16217 eeb48ba7f34b5234290d5aacfecdeb71 ""
   "frontmatter/Frontpage.tex" 1726205008 1220 2a115251e5f965011ec1df6d3e0121e6 ""
   "frontmatter/abstract.tex" 1726205008 674 613c432d293466596a12112435d21705 ""
+<<<<<<< HEAD
   "main.aux" 1734078474 40247 85b26e579cc55b71b8eab4909fd09a19 "pdflatex"
   "main.bbl" 1734078457 4234 2cc4f582b271a9f55bd16f17d563653c "bibtex main"
   "main.out" 1734078474 9446 f0faaf5e65bb7afed545f366c857d223 "pdflatex"
   "main.tex" 1733214913 3515 be5de876629ee36caca2bc8727c07a94 ""
   "main.toc" 1734078474 5078 252661180bfdfddd55285eda03f0a9fd "pdflatex"
+=======
+  "main.aux" 1734019265 40247 39bbd09704099e6d2a01f11168b9463e "pdflatex"
+  "main.bbl" 1734016864 4234 2cc4f582b271a9f55bd16f17d563653c "bibtex main"
+  "main.out" 1734019265 9446 f0faaf5e65bb7afed545f366c857d223 "pdflatex"
+  "main.tex" 1733214913 3515 be5de876629ee36caca2bc8727c07a94 ""
+  "main.toc" 1734019265 5078 910d1606bf1bd6c2dcdf0ad8f941465e "pdflatex"
+>>>>>>> 70ae35ffe1333e202364f60faf786d15b7843e59
   (generated)
   "main.aux"
   "main.log"
