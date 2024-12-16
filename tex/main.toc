@@ -58,8 +58,9 @@
 \contentsline {subsection}{\numberline {4.2.4}Comparison}{55}{subsection.4.2.4}%
 \contentsline {subsection}{\numberline {4.2.5}2D CNN model}{55}{subsection.4.2.5}%
 \contentsline {subsection}{\numberline {4.2.6}2D FNO Model}{56}{subsection.4.2.6}%
-\contentsline {chapter}{\numberline {5}Discussion}{57}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Further work}{58}{chapter.6}%
-\contentsline {chapter}{Bibliography}{60}{chapter*.76}%
-\contentsline {chapter}{\numberline {7}Appendix}{61}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Additional figures from 1D SWE spherical CNN and FNO}{61}{section.7.1}%
+\contentsline {subsection}{\numberline {4.2.7}Comparison between 2D CNN and 2D FNO}{57}{subsection.4.2.7}%
+\contentsline {chapter}{\numberline {5}Discussion}{59}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Further work}{60}{chapter.6}%
+\contentsline {chapter}{Bibliography}{62}{chapter*.79}%
+\contentsline {chapter}{\numberline {7}Appendix}{63}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Additional figures from 1D SWE spherical CNN and FNO}{63}{section.7.1}%

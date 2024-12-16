@@ -45,6 +45,39 @@ def prepare_data_2D(h_all, p_train, p_val):
 
     return n_train, n_val, n_test, a, u, n, train_x, train_y, val_x, val_y, test_x, test_y
 
+def prepare_data_2D_FNO(h_all, p_train, p_val):
+    h_all = np.real(h_all)
+
+    # Input a
+    a = h_all[:-1]
+    a = a[:, np.newaxis, :, :]  # Add channel dimension
+
+    # Target u (one time step after a)
+    u = h_all[1:]
+    u = u[:, np.newaxis, :, :]  # Add channel dimension
+
+    n = len(h_all)
+    
+    # Split data into training, validation and test sets
+    n_train = int(p_train * n)
+    n_val = int(p_val * n)
+    n_test = n - n_train - n_val
+
+    print(f"n_train = {n_train}, n_val = {n_val}, n_test = {n_test}")
+
+    train_x = torch.tensor(a[:n_train], dtype=torch.float32)  # Shape (n_train, 3, 256)
+    val_x = torch.tensor(a[n_train:n_train + n_val], dtype=torch.float32)  # Shape (n_val, 3, 256)
+    test_x = torch.tensor(a[n_train + n_val:], dtype=torch.float32)  # Shape (n_test, 3, 256)
+
+    train_y = torch.tensor(u[:n_train], dtype=torch.float32)  # Shape (n_train, ...)
+    val_y = torch.tensor(u[n_train:n_train + n_val], dtype=torch.float32)  # Shape (n_val, ...)
+    test_y = torch.tensor(u[n_train + n_val:], dtype=torch.float32)  # Shape (n_test, ...)
+
+    print(train_x.shape, train_y.shape, val_x.shape, val_y.shape, test_x.shape, test_y.shape)
+
+    return n_train, n_val, n_test, a, u, n, train_x, train_y, val_x, val_y, test_x, test_y
+
+
 # Prepare data in sequences
 def prepare_data_sequences_2D(train_x, train_y, seq_length):
     # Fetch the dimensions of the input data
@@ -106,5 +139,8 @@ def plot_error_2D(x, y, idx, t_all, pred_all, u, save, filename):
         plt.savefig(filename)
 
     plt.show()
+
+
+
 
 
