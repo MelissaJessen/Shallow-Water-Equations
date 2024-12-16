@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1734363977.17336 "main.aux" "main.bbl" "main" 1734364584.51612 0
+["bibtex main"] 1734363977.17336 "main.aux" "main.bbl" "main" 1734377931.86805 0
   "./bibl.bib" 1732696561 8928 e58aa26259052e36c0ee60094ac16c67 ""
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291864736 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "main.aux" 1734364582 42873 33ca020aec52c3d822afd3018ae04b08 "pdflatex"
+  "main.aux" 1734377930 42873 33ca020aec52c3d822afd3018ae04b08 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1734364577.14748 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1734364584.51715 0
+["pdflatex"] 1734377922.52281 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1734377931.86905 0
   "C:/Users/Matteo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1733470246 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Matteo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1728897231 11548 420b7f80b41b233cad6f319547e72170 ""
   "C:/Users/Matteo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1726253485 24265805 34fa3860fca3f94c581d5d8735e54ea8 ""
@@ -396,7 +396,7 @@
   "chapters/FNO+NN.tex" 1731666682 4933 b35df09c67d44a84dc1d5f54250f1e9d ""
   "chapters/appendix.tex" 1733223565 2235 e3a92cb8e8dcb888b5c33ec4298f912f ""
   "chapters/data-driven-results-2D.tex" 1734364460 4380 bcfb7e4436f4e79083051cbd0493c468 ""
-  "chapters/data-driven-results.tex" 1733387920 18401 7258c7819de00f2620756565a46931d7 ""
+  "chapters/data-driven-results.tex" 1734364616 18401 7258c7819de00f2620756565a46931d7 ""
   "chapters/fvm.tex" 1733132152 12609 e553c16c0f019eff037b88d55fac884a ""
   "chapters/method.tex" 1732545589 8573 13c66081b81f7ede1ba1757aed63cb8c ""
   "chapters/riemann.tex" 1731675075 6972 037b34af71028e9ad8e87dab8a0f5715 ""
@@ -404,11 +404,11 @@
   "figs/water-column-bc.png" 1726205009 16217 eeb48ba7f34b5234290d5aacfecdeb71 ""
   "frontmatter/Frontpage.tex" 1726205008 1220 2a115251e5f965011ec1df6d3e0121e6 ""
   "frontmatter/abstract.tex" 1726205008 674 613c432d293466596a12112435d21705 ""
-  "main.aux" 1734364582 42873 33ca020aec52c3d822afd3018ae04b08 "pdflatex"
+  "main.aux" 1734377930 42873 33ca020aec52c3d822afd3018ae04b08 "pdflatex"
   "main.bbl" 1734363977 4234 2cc4f582b271a9f55bd16f17d563653c "bibtex main"
-  "main.out" 1734364582 9962 552f22a234cb74e1800acde98aee337a "pdflatex"
+  "main.out" 1734377930 9962 552f22a234cb74e1800acde98aee337a "pdflatex"
   "main.tex" 1734339212 3560 7774dcb5117e70c0ce758ae33f24eac0 ""
-  "main.toc" 1734364582 5351 3071f1269d47c8cc5d85a2819318b5d4 "pdflatex"
+  "main.toc" 1734377930 5351 3071f1269d47c8cc5d85a2819318b5d4 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
