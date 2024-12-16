@@ -1,24 +1,13 @@
 # Fdb version 4
-<<<<<<< HEAD
-["bibtex main"] 1734078457.53679 "main.aux" "main.bbl" "main" 1734078475.56698 0
+["bibtex main"] 1734341880.74923 "main.aux" "main.bbl" "main" 1734341891.72847 0
   "./bibl.bib" 1732696561 8928 e58aa26259052e36c0ee60094ac16c67 ""
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291864736 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "main.aux" 1734078474 40247 85b26e579cc55b71b8eab4909fd09a19 "pdflatex"
-=======
-["bibtex main"] 1734016864.40777 "main.aux" "main.bbl" "main" 1734019266.62357 0
-  "./bibl.bib" 1732696561 8928 e58aa26259052e36c0ee60094ac16c67 ""
-  "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291864736 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "main.aux" 1734019265 40247 39bbd09704099e6d2a01f11168b9463e "pdflatex"
->>>>>>> 70ae35ffe1333e202364f60faf786d15b7843e59
+  "main.aux" 1734341889 41546 6a3999530e28f020c89eb65e47a3cd93 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-<<<<<<< HEAD
-["pdflatex"] 1734078469.03728 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1734078475.56813 0
-=======
-["pdflatex"] 1734019259.33499 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1734019266.62435 0
->>>>>>> 70ae35ffe1333e202364f60faf786d15b7843e59
+["pdflatex"] 1734341881.27896 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1734341891.72964 0
   "C:/Users/Matteo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1733470246 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Matteo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1728897231 11548 420b7f80b41b233cad6f319547e72170 ""
   "C:/Users/Matteo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1726253485 24265805 34fa3860fca3f94c581d5d8735e54ea8 ""
@@ -324,6 +313,9 @@
   "C:/Users/Matteo/Shallow-Water-Equations/figs/sphere-unit-vectors.png" 1731922655 275046 83663943b84483de09bb60a994cc8ce5 ""
   "C:/Users/Matteo/Shallow-Water-Equations/figs/sphere1d_small_cell.png" 1732718900 37099 b8257efa8710652133b8826c34914328 ""
   "C:/Users/Matteo/Shallow-Water-Equations/figs/sphere_r_lat.png" 1732520882 36934 764aef6b43ebea566c4360247ffe1552 ""
+  "C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_error.pdf" 1734340784 89469 beb12414f393da2d8f8543949ca0f800 ""
+  "C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_loss.pdf" 1734340783 23274 b4ae75e7a87c614a2b9b897929901829 ""
+  "C:/Users/Matteo/Shallow-Water-Equations/plots/2D_gauss_initial_condition.pdf" 1734341337 71698 fc032452747ecbeb85e2d70af53b175a ""
   "C:/Users/Matteo/Shallow-Water-Equations/plots/NN_initial.pdf" 1732194701 319529 1bf92da00d46d632546e3d4b8a9ec729 ""
   "C:/Users/Matteo/Shallow-Water-Equations/plots/NN_initial_1D.pdf" 1732544372 13270 02412eb200b5c67b9f2eafb45742dc1d ""
   "C:/Users/Matteo/Shallow-Water-Equations/plots/NN_loss_train_val.pdf" 1732453153 32462 c591f30a11cb69aad3cad6afd0431259 ""
@@ -375,7 +367,7 @@
   "C:/Users/Matteo/Shallow-Water-Equations/plots/torotest1_predictions_time_steps.pdf" 1732459564 19220 e12b739ef8cf0519cc808774894e8b0b ""
   "C:/Users/Matteo/Shallow-Water-Equations/tex/figs/control_volume_V_i_n.png" 1729155076 46860 72b2f0375aedf9ea558a9cbdd8ab186b ""
   "C:/Users/Matteo/Shallow-Water-Equations/tex/figs/fvm_grid_new.png" 1728986380 25570 90bdc099e68334d491fba6a00b4ac21c ""
-  "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" 1733214913 3515 be5de876629ee36caca2bc8727c07a94 ""
+  "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" 1734339212 3560 7774dcb5117e70c0ce758ae33f24eac0 ""
   "chapters/00_introduction.tex" 1731683096 3678 87bb93f37111b8d4d4193891f0b2d6df ""
   "chapters/01_notation.tex" 1731664256 2967 7306f5c7cb054693620e84d5ad82c234 ""
   "chapters/02_theory.tex" 1731681003 23853 9dc3d41fa8b53e501ea9f8139202953e ""
@@ -386,6 +378,7 @@
   "chapters/07_FurtherWork.tex" 1727103265 655 1447fc099e6eebe59c06dbdb58db26af ""
   "chapters/FNO+NN.tex" 1731666682 4933 b35df09c67d44a84dc1d5f54250f1e9d ""
   "chapters/appendix.tex" 1733223565 2235 e3a92cb8e8dcb888b5c33ec4298f912f ""
+  "chapters/data-driven-results-2D.tex" 1734341870 1217 e69e9f0f39484aabfb27b4f64414533f ""
   "chapters/data-driven-results.tex" 1733387920 18401 7258c7819de00f2620756565a46931d7 ""
   "chapters/fvm.tex" 1733132152 12609 e553c16c0f019eff037b88d55fac884a ""
   "chapters/method.tex" 1732545589 8573 13c66081b81f7ede1ba1757aed63cb8c ""
@@ -394,19 +387,11 @@
   "figs/water-column-bc.png" 1726205009 16217 eeb48ba7f34b5234290d5aacfecdeb71 ""
   "frontmatter/Frontpage.tex" 1726205008 1220 2a115251e5f965011ec1df6d3e0121e6 ""
   "frontmatter/abstract.tex" 1726205008 674 613c432d293466596a12112435d21705 ""
-<<<<<<< HEAD
-  "main.aux" 1734078474 40247 85b26e579cc55b71b8eab4909fd09a19 "pdflatex"
-  "main.bbl" 1734078457 4234 2cc4f582b271a9f55bd16f17d563653c "bibtex main"
-  "main.out" 1734078474 9446 f0faaf5e65bb7afed545f366c857d223 "pdflatex"
-  "main.tex" 1733214913 3515 be5de876629ee36caca2bc8727c07a94 ""
-  "main.toc" 1734078474 5078 252661180bfdfddd55285eda03f0a9fd "pdflatex"
-=======
-  "main.aux" 1734019265 40247 39bbd09704099e6d2a01f11168b9463e "pdflatex"
-  "main.bbl" 1734016864 4234 2cc4f582b271a9f55bd16f17d563653c "bibtex main"
-  "main.out" 1734019265 9446 f0faaf5e65bb7afed545f366c857d223 "pdflatex"
-  "main.tex" 1733214913 3515 be5de876629ee36caca2bc8727c07a94 ""
-  "main.toc" 1734019265 5078 910d1606bf1bd6c2dcdf0ad8f941465e "pdflatex"
->>>>>>> 70ae35ffe1333e202364f60faf786d15b7843e59
+  "main.aux" 1734341889 41546 6a3999530e28f020c89eb65e47a3cd93 "pdflatex"
+  "main.bbl" 1734341881 4234 2cc4f582b271a9f55bd16f17d563653c "bibtex main"
+  "main.out" 1734341889 9702 3b153f2035239da2aebad3227a2862e1 "pdflatex"
+  "main.tex" 1734339212 3560 7774dcb5117e70c0ce758ae33f24eac0 ""
+  "main.toc" 1734341889 5244 025fb506ed2b5b5b94d5e810854ea0f6 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
