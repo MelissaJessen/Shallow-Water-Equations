@@ -122,7 +122,7 @@ def plot_error_2D(x, y, idx, t_all, pred_all, u, save, filename):
     ax = fig.add_subplot(121, projection='3d')
     surf = ax.plot_surface(X, Y, np.abs(pred_all[idx]-u[idx]), cmap=cmap)
     ax.set_title(f'Absolute error (m) at t = {t_all[idx]:.2f}')
-    ax.set_xlabel('Disatnce x (m)')
+    ax.set_xlabel('Distance x (m)')
     ax.set_ylabel('Distance y (m)')
     ax.set_zlabel('Absolute error (m)')
     #fig.colorbar(surf, ax=ax, shrink=0.8, aspect=10, pad=0.15)  # Colorbar for 3D plot
