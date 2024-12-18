@@ -45,37 +45,77 @@ To get an overview of the performance of the different models, we consider the M
     \centering
     \small % Reduce font size
     \begin{tabular}{c|cccc|cccc}
-        Model & \multicolumn{4}{c|}{$N = 50$} & \multicolumn{4}{c}{$N = 100$} \\
+        Model & \multicolumn{4}{c|}{$N = 64$} & \multicolumn{4}{c}{$N = 128$} \\
         \cline{2-9}
         & Epochs & MSE & MAE & Time (s) & Epochs & MSE & MAE & Time (s) \\
         \hline
         CNN  &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=50_nepochs.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=50_MSE_test.txt} & 
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=50_MAE_test.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=50_time.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=100_nepochs.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=100_MSE_test.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=100_MAE_test.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=100_time.txt} 
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=64_nepochs.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=64_MSE_test.txt} & 
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=64_MAE_test.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=64_time.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=128_nepochs.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=128_MSE_test.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=128_MAE_test.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=128_time.txt} 
         \\
         \hline
         FNO  &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=50_nepochs.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=50_MSE_test.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=50_MAE_test.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=50_time.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=100_nepochs.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=100_MSE_test.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=100_MAE_test.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=100_time.txt}
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=64_nepochs.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=64_MSE_test.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=64_MAE_test.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=64_time.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=128_nepochs.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=128_MSE_test.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=128_MAE_test.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=128_time.txt}
         \\
         \hline
     \end{tabular}
     \caption{Test loss in terms of MSE and MAE, and time for training the models for the 2D SWE.}\label{tab:results_2D_comparison}
 \end{table}
-
 We see that the FNO model in general needs fewer epochs to converge compared to the CNN model, but it also takes longer time to train.
-Try with a new initial condition? 
+From the theory we know that FNO are supposed to work when we are training on a coarse grid and then make predictions on a fine grid.
+To test this, we will train the models on a coarse grid and then make predictions on a fine grid.
+The table below shows the results when the FNO-model is trained on a grid with $N = 64$ and then makes predictions on a grid with $N = 128$.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|ccc}
+        Model & \multicolumn{3}{c}{$N = 128$} \\
+        \cline{2-4}
+        & MSE & MAE & Prediction time (s) \\
+        \hline
+        FNO  &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=128_MSE_test.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=128_MAE_test.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=128_time.txt}
+    \end{tabular}
+    \caption{Test loss in terms of MSE and MAE, and time for training the FNO model on a grid with $N = 64$ and then making predictions on a grid with $N = 128$.}\label{tab:results_2D_FNO_train_64_test_128}
+\end{table}
+From the results in \autoref{tab:results_2D_FNO_train_64_test_128} we see that the FNO model is able to generalize to a finer grid.
+This way, it is possible to train the model on a coarse grid and then make predictions on a fine grid, which is a great advantage when solving the SWE numerically, as it is very computationally expensive to solve the SWE on a fine grid using the FVM.
 
+We will also time the predictions to compare the speed of the models.
+We can also compare to the run time of the numerical method FVM, see \autoref{tab:scalability}.
+Handle the scalability isssues.
+\begin{table}[H]
+    \centering
+    \small % Reduce font size
+    \begin{tabular}{c|ccccc}
+        Model & \multicolumn{5}{c}{$N = 256$} \\
+        \cline{2-6}
+        & Epochs & MSE & MAE & Training time (s) & Prediction time (s) \\
+        \hline
+        CNN & 
+        & & & & \\
+        \hline
+        FNO &
+        & & & & \\
+        \hline
+    \end{tabular}
+    \caption{Test loss in terms of MSE and MAE, and time for training the models for the 2D SWE.}\label{tab:results_2D_comparison_256}
+\end{table}
+
+We are also very interested in testing the ability of the FNO to generalize further in time.
+We will therefore train the models on a time interval $[t_0, t_1]$ and make predictions for $t = 10$.
 

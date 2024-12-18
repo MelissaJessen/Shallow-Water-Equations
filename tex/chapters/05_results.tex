@@ -175,7 +175,6 @@ The table shows which fluxes that were able to produce a solution for the test c
 \end{table}
 Note, that as we see in the results, there are still differences in the solutions accuracy between the fluxes that were able to solve the test cases.
 
-
 \subsection{2D idealised Circular Dam Break Problem}
 We now proceed to the 2D case, focusing on an idealised circular dam break problem over a horizontal bottom.
 This problem is also from Toro's book~\cite{Toro2024}.
@@ -223,6 +222,42 @@ The results after $t=0.0, 0.4, 0.7$ and $1.4$ seconds are given in \autoref{fig:
 \end{figure}
 
 By comparing \autoref{fig:2D_dam_break_grid} with the results from the book by Toro~\cite{Toro2024}, and see that the numerical solution aligns well with the true solution from the book.
+
+\subsection{Scalability}
+To test the scalability of the FVM to solve the 2D SWE, we have run the 2D problem with a Gaussian initial condition, for different values of $N$, i.e., the number of cells in each direction.
+Numerical methods are good as they can be more or less as accurate as we want them to be, but the computational cost increases with the number of cells.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|ccccc}
+        \hline
+        $N$ & 16 & 32 & 64 & 128 & 256 \\
+        \hline 
+        Time ($s$) & 
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FVM_N=16_time_5.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FVM_N=32_time_5.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FVM_N=64_time_5.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FVM_N=128_time_5.txt} &
+         0
+        \\
+        \hline
+    \end{tabular}
+    \caption{Running time for the FVM to solve 2D SWE for different values of $N$.}\label{tab:scalability}
+\end{table}
+
+The run time dependent of the number of cells $N$ is illustrated in \autoref{tab:scalability}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/scalability_FVM_2D.pdf}
+    \caption{Scalability of the FVM to solve the 2D SWE.}\label{fig:scalability_FVM_2D}
+\end{figure}
+
+
+From \autoref{tab:scalability} and \autoref{fig:scalability_FVM_2D} we see that the run time increases drastically with the number of cells $N$.
+This is expected, as the number of cells increases, the number of computations increases as well.
+This also means that the computational cost increases with the number of cells, and the method is not scalable for large values of $N$.
+Ultimately, if we want to model floods or tsunamis for the real world, we need a scalable method.
+This is also some of the motivation for using data-driven methods, as we will investigate if they can be more scalable.
 
 
 
