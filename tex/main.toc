@@ -2,7 +2,7 @@
 \contentsline {section}{\textbf {Preface}}{i}{chapter*.1}%
 \contentsline {section}{\textbf {Abstract}}{ii}{section*.2}%
 \contentsline {section}{\textbf {Acknowledgements}}{iii}{chapter*.3}%
-\contentsline {section}{\textbf {Contents}}{v}{chapter*.4}%
+\contentsline {section}{\textbf {Contents}}{vi}{chapter*.4}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Literature}{1}{section.1.2}%
@@ -53,12 +53,12 @@
 \contentsline {subsection}{\numberline {4.1.4}Scalability}{42}{subsection.4.1.4}%
 \contentsline {section}{\numberline {4.2}Data-driven results}{43}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}1D SWE with Gaussian initial conditions}{43}{subsection.4.2.1}%
-\contentsline {subsubsection}{FNO Toro test 1}{48}{section*.65}%
+\contentsline {subsubsection}{\numberline {4.2.1.1}FNO Toro test 1}{48}{subsubsection.4.2.1.1}%
 \contentsline {subsection}{\numberline {4.2.2}1D linearized SWE in Spherical Coordinates}{49}{subsection.4.2.2}%
 \contentsline {section}{\numberline {4.3}Data-driven results for the 2D SWE}{54}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}2D SWE with initial Gaussian function}{54}{subsection.4.3.1}%
-\contentsline {chapter}{\numberline {5}Discussion}{58}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Further work}{59}{chapter.6}%
-\contentsline {chapter}{Bibliography}{61}{chapter*.93}%
-\contentsline {chapter}{\numberline {7}Appendix}{62}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Additional figures from 1D SWE spherical CNN and FNO}{62}{section.7.1}%
+\contentsline {chapter}{\numberline {5}Discussion}{59}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Further work}{60}{chapter.6}%
+\contentsline {chapter}{Bibliography}{62}{chapter*.95}%
+\contentsline {chapter}{\numberline {7}Appendix}{63}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Additional figures from 1D SWE spherical CNN and FNO}{63}{section.7.1}%

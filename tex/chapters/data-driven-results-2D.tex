@@ -125,6 +125,32 @@ Handle the scalability isssues.
     \caption{Test loss in terms of MSE and MAE, and time for training the models for the 2D SWE.}\label{tab:results_2D_comparison_256}
 \end{table}
 
+
+\subsubsection*{Long-term predictions}
 We are also very interested in testing the ability of the FNO to generalize further in time.
-We will therefore train the models on a time interval $[t_0, t_1]$ and make predictions for $t = 10$.
+We will therefore train the model on a time interval $[0, 5]$ and make predictions for $t = X$.
+Our first approach was to make a prediction, and based on that prediction make a new prediction for the next time step.
+This way we can make predictions for a longer time interval.
+For the first time steps the results were fine, but as we made predictions further in time, the error increased, probably because the error from the previous time step was carried over to the next time step, i.e., the error was accumulated.
+So, the next approach was to make sequences of the data and then train the model to predict the next time step based on the sequence. 
+This way, the newest prediction becomes a part of a sequence and thus, do not have the same influence on the next prediction as in the previous approach.
+The hope is that this approach makes long-term predictions more stable.
+We make predictions for up to $n = 20$ time steps in the future.
+The results for the long-term predictions can be seen in \autoref{fig:2D_FNO_long_term_predictions}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions.pdf}
+    \caption{Long-term prediction for the 2D FNO model.}\label{fig:2D_FNO_long_term_predictions}
+\end{figure}
+
+The error plot for the long-term predictions can be seen in \autoref{fig:2D_FNO_long_term_error}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions_error.pdf}
+    \caption{Error plot for the long-term prediction for the 2D FNO model.}\label{fig:2D_FNO_long_term_error}
+\end{figure}
+From the error plot in \autoref{fig:2D_FNO_long_term_error}, we see that the error is only slightly bigger than for the short-term predictions in \autoref{fig:2D_FNO_error}.
+This indicates that the FNO model is able to generalize further in time and make long-term predictions.
+
+
 
