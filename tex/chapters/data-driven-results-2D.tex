@@ -1,4 +1,13 @@
-\subsection{2D CNN model}
+\section{Data-driven results for the 2D SWE}\label{sec:data-driven-results-2D}
+In this section we will present the results for the 2D SWE using the data-driven models.
+We consider the same initial condition (Gaussian function) as in the 1D case, but now in two dimensions.
+We solve the 2d SWE using both a CNN and a FNO model, and compare the results in terms of run time and accuracy.
+We also compare the run time to the numerical method FVM, to see if the data-driven models can be used as a faster alternative to the FVM.
+We also test the ability of the FNO model to generalize to a finer grid, by training the model on a coarse grid and then making predictions on a fine grid.
+Finally, we will test the FNO model's ability to generalize further in time and make long-term predictions.
+
+
+\subsection{2D SWE with initial Gaussian function}
 The initial condition for the 2D problem is a Gaussian function with a standard deviation of 0.1 and a mean of 0.5.
 The initial condition can be seen in \autoref{fig:2D_gauss_initial_condition}.
 \begin{figure}[H]
@@ -6,6 +15,8 @@ The initial condition can be seen in \autoref{fig:2D_gauss_initial_condition}.
     \includegraphics[width=0.8\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/2D_gauss_initial_condition.pdf}
     \caption{Initial condition for the 2D problem.}\label{fig:2D_gauss_initial_condition}
 \end{figure}
+\subsubsection*{CNN Model}
+
 
 The training and validation loss for the 2D CNN model can be seen in \autoref{fig:2D_CNN_loss}.
 \begin{figure}[H]
@@ -21,8 +32,7 @@ The error plot for the last prediction for the 2D CNN can be seen in \autoref{fi
     \caption{Error plot for the last prediction for the 2D CNN.}\label{fig:2D_CNN_error}
 \end{figure}
 
-\subsection{2D FNO Model}
-
+\subsubsection*{FNO Model}
 The training and validation loss for the 2D FNO model can be seen in \autoref{fig:2D_FNO_loss}.
 \begin{figure}[H]
     \centering
@@ -37,9 +47,8 @@ The error plot for the last prediction for the 2D FNO can be seen in \autoref{fi
     \caption{Error plot for the last prediction for the 2D FNO.}\label{fig:2D_FNO_error}
 \end{figure}
 
-\subsection{Comparison between 2D CNN and 2D FNO}
 
-
+\subsubsection*{Comparison}
 To get an overview of the performance of the different models, we consider the MSE and MAE for the predictions for the 2D SWE case.
 \begin{table}[H]
     \centering

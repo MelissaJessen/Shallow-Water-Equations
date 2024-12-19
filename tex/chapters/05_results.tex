@@ -1,14 +1,21 @@
 \chapter{Results}
 In this section we present the results of the numerical experiments, together with the results from the data-driven methods, including neural networks and Fourier neural operators.
+In \autoref{sec:numerical_results} we present the results from the finite volume method (FVM), where we have implemented the method for solving the shallow water equations in 1D  and 2D and tested it on several problems.
+We also address the scalability issues of the finite volume method.
+In \autoref{sec:data-driven-results} we present the results from the data-driven methods, where we have implemented neural networks and Fourier neural operators to solve the shallow water equations in 1D.
+We compare the results from the data-driven methods with the results from the FVM, and discuss the advantages and disadvantages of the different methods.
+We expand and in \autoref{sec:data-driven-results-2D} we present the results from the data-driven methods for solving the shallow water equations in 2D.
 
-
-\section{Numerical results}
+\section{Numerical results}\label{sec:numerical_results}
 In this chapter we present the results of the numerical experiments, where we have implemented the finite volume method for solving the shallow water equations in 1D and tested it on several problems.
 \footnote{Code and small animations can be found at github, visit \url{https://github.com/MelissaJessen/Shallow-Water-Equations}.}
 A key focus is to validate the implementation, as it will generate data for the data-driven methods, including neural networks and Fourier neural operators.
 To test the implementation, we have solved the 1D dam break problem, and the five test cases from Toro's book~\cite{Toro2001-Shock}.
 These problems are all discontinuous in either the water height $h$ or the fluid velocity $u$.
 The idea is, that if the numerical solution can capture the discontinuities, it should be well-suited to handle smoother solutions as well.
+Finally, we have tested the implementation on the 2D idealised circular dam break problem, which is also from Toro's book~\cite{Toro2024}.
+The results from the 2D problem are compared to the results from the book to validate the implementation.
+Lastly, we have tested the scalability of the FVM to solve the 2D SWE, by running the 2D problem with a Gaussian initial condition for different values of $N$, i.e., the number of cells in each direction.
 
 \subsection{The 1D Dam Break Problem}
 First we solve the 1D dam break problem, with the following initial conditions:
@@ -251,7 +258,6 @@ The run time dependent of the number of cells $N$ is illustrated in \autoref{tab
     \includegraphics[width=0.8\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/scalability_FVM_2D.pdf}
     \caption{Scalability of the FVM to solve the 2D SWE.}\label{fig:scalability_FVM_2D}
 \end{figure}
-<<<<<<< HEAD
 
 
 From \autoref{tab:scalability} and \autoref{fig:scalability_FVM_2D} we see that the run time increases drastically with the number of cells $N$.
@@ -260,8 +266,6 @@ This also means that the computational cost increases with the number of cells, 
 Ultimately, if we want to model floods or tsunamis for the real world, we need a scalable method.
 This is also some of the motivation for using data-driven methods, as we will investigate if they can be more scalable.
 
-=======
->>>>>>> 7bb85bbe6c93674261cd9132df8eac7af4051dd4
 
 
 

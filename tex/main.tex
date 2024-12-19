@@ -83,17 +83,33 @@
 
 \begin{document}
 \input{frontmatter/Frontpage.tex}
+\input{frontmatter/statics.tex}
+%\maketitle
 
-\maketitle
-
+%\newpage
+%\thispagestyle{empty}
+%\input{frontmatter/copyright.tex}
 \newpage
-\clearpage
-\input{frontmatter/abstract.tex}
-
+\input{frontmatter/approval.tex}
+\setcounter{page}{1}     % Optional: Set page number to 1
 \newpage
-\clearpage
 \thispagestyle{empty}
+\input{frontmatter/abstract.tex}
+\newpage
+\input{frontmatter/acknowledgements.tex}
+\newpage
+
+\clearpage
+%\thispagestyle{empty}
+% Table of contents (TOC) and numbering of headings
+\setcounter{tocdepth}{1}    % Depth of table of content: sub sections will not be included in table of contents
+\setcounter{secnumdepth}{2} % Depth of section numbering: sub sub sections are not numbered
+
+
+
 \tableofcontents
+\addcontentsline{toc}{section}{\textbf{Contents}}
+
 
 % Start page numbering after the Table of Contents
 \clearpage
