@@ -5,9 +5,9 @@ We solve the 2d SWE using both a CNN and a FNO model, and compare the results in
 We also compare the run time to the numerical method FVM, to see if the data-driven models can be used as a faster alternative to the FVM.
 We also test the ability of the FNO model to generalize to a finer grid, by training the model on a coarse grid and then making predictions on a fine grid.
 Finally, we will test the FNO model's ability to generalize further in time and make long-term predictions.
+It is also in this chapter, we will present our proof of concept for the 2D SWE. 
 
-
-\subsection{2D SWE with initial Gaussian function}
+\section{2D SWE with initial Gaussian function}
 The initial condition for the 2D problem is a Gaussian function with a standard deviation of 0.1 and a mean of 0.5.
 The initial condition can be seen in \autoref{fig:2D_gauss_initial_condition}.
 \begin{figure}[H]
@@ -89,41 +89,44 @@ To test this, we will train the models on a coarse grid and then make prediction
 The table below shows the results when the FNO-model is trained on a grid with $N = 64$ and then makes predictions on a grid with $N = 128$.
 \begin{table}[H]
     \centering
-    \begin{tabular}{c|ccc}
-        Model & \multicolumn{3}{c}{$N = 128$} \\
-        \cline{2-4}
-        & MSE & MAE & Prediction time (s) \\
+    \begin{tabular}{c|ccccc}
+        Model & \multicolumn{5}{c}{$N = 128$} \\
+        \cline{2-6}
+        & Epochs & MSE & MAE & Training time (s) & Prediction time (s) \\
         \hline
         FNO  &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=128_nepochs.txt} &
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=128_MSE_test.txt} &
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=128_MAE_test.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=128_train_time.txt} &
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=128_time.txt}
     \end{tabular}
     \caption{Test loss in terms of MSE and MAE, and time for training the FNO model on a grid with $N = 64$ and then making predictions on a grid with $N = 128$.}\label{tab:results_2D_FNO_train_64_test_128}
 \end{table}
 From the results in \autoref{tab:results_2D_FNO_train_64_test_128} we see that the FNO model is able to generalize to a finer grid.
 This way, it is possible to train the model on a coarse grid and then make predictions on a fine grid, which is a great advantage when solving the SWE numerically, as it is very computationally expensive to solve the SWE on a fine grid using the FVM.
-
-We will also time the predictions to compare the speed of the models.
-We can also compare to the run time of the numerical method FVM, see \autoref{tab:scalability}.
-Handle the scalability isssues.
 \begin{table}[H]
     \centering
-    \small % Reduce font size
     \begin{tabular}{c|ccccc}
         Model & \multicolumn{5}{c}{$N = 256$} \\
         \cline{2-6}
         & Epochs & MSE & MAE & Training time (s) & Prediction time (s) \\
         \hline
-        CNN & 
-        & & & & \\
-        \hline
-        FNO &
-        & & & & \\
-        \hline
+        FNO  &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=256_nepochs.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=256_MSE_test.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=256_MAE_test.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=256_train_time.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=256_time.txt}
     \end{tabular}
-    \caption{Test loss in terms of MSE and MAE, and time for training the models for the 2D SWE.}\label{tab:results_2D_comparison_256}
+    \caption{Test loss in terms of MSE and MAE, and time for training the FNO model on a grid with $N = 64$ and then making predictions on a grid with $N = 256$.}\label{tab:results_2D_FNO_train_64_test_256}
 \end{table}
+
+
+
+We will also time the predictions to compare the speed of the models.
+We can also compare to the run time of the numerical method FVM, see \autoref{tab:scalability}.
+Handle the scalability isssues.
 
 
 \subsubsection*{Long-term predictions}
@@ -151,6 +154,14 @@ The error plot for the long-term predictions can be seen in \autoref{fig:2D_FNO_
 \end{figure}
 From the error plot in \autoref{fig:2D_FNO_long_term_error}, we see that the error is only slightly bigger than for the short-term predictions in \autoref{fig:2D_FNO_error}.
 This indicates that the FNO model is able to generalize further in time and make long-term predictions.
+
+For this case we generate data with a constant time step size $\Delta t = 0.025$, where the other data was generated with a variable time step size, to ensure satisfaction of the CFL condition.
+To ensure stability, we have to choose the time step size small enough. 
+What we did was, we investigated the time step size for the generated data. To create $\Delta t$ we halfed the smallest time step size, and this is how we got $\Delta t = 0.025$.
+
+
+\section{2D spherical SWE}
+
 
 
 

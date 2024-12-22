@@ -22,6 +22,8 @@ The course \textit{Advanced Numerical Methods for Environmental Models} at the U
 
 Working with the shallow water equations in spherical coordinates, the papers \textit{Well-balanced methods for the shallow water equations in spherical coordinates} by Castro et al.~\cite{Castro2017} and \textit{Physics-informed neural networks for the shallow-water equations on the sphere} by Bihlo et al.~\cite{Bihlo2022} are important references.
 The lecture notes \textit{Shallow water on a sphere} by Raymond from New Mexico Tech~\cite{Raymond}, have also been useful in the derivation of the shallow water equations in spherical coordinates.
+For the spherical SWE the papers~\cite{Gavete_2009} and~\cite{Galewsky_2004} are also important references.
+
 
 In the field of Fourier Neural Operators, there is not a lot of literature on the topic, as the concept of Fourier Neural Operators is relatively new.
 However, the paper \textit{Fourier Neural Operator for Parametric Partial Differential Equations}~\cite{FNO_2021}, written by several authors, is a key reference.
@@ -29,8 +31,23 @@ In the last years the company Nvidia has done some very interesting work on the 
 One of the posts consider the use of Spherical Fourier Neural Operators (SFNO) to generate weather forecasts around the globe\cite{Nvidia2023}.
 Another paper is~\cite{bonev2023-SFNO}.
 
+
+
 \section{Thesis overview}
+The thesis is structured as follows.
+The shallow water equations are derived in 1D, 2D and in spherical coordinates in \autoref{ch:theory}.
+In~\autoref{ch:fvm} we present the Finite Volume Method (FVM), which is used to solve the shallow water equations. 
+We also present the Riemann problem and the numerical fluxes used in the FVM.
+These chapter also constitue the theory and methodology for the numerical methods used in this project, and we move on t the data-driven methods.
+In \autoref{ch:FNO+NN} we introduce the concept of Fourier Neural Operators (FNO) and Convolutional Neural Networks (CNN), and how these can be used to solve the shallow water equations.
+In \autoref{ch:method} we outline how the data needed for the data-driven methods is generateded, as it is a part of this project, as we are generating all the data used for the data-driven methods ourselves.
 
+Chapter~\ref{ch:numerical_results} is dedicated to the numerical results for the 1D and 2D shallow water equations using the FVM.
+To validate the numerical results, we compare the FVM results to test cases from the literature.
+It is important to validate the numerical results, as the data-driven methods will be trained on the FVM data.
+In~\autoref{ch:data-driven-results} we present the results for the SWE using the data-driven models, and compare the results in terms of run time and accuracy. 
+We analyse the results and discuss the performance of the data-driven models, and also compare them to the numerical results.
 
+Finally, in \autoref{ch:discussion} we discuss the results, and in \autoref{ch:conclusion} we conclude the thesis and suggest further work.
 
 

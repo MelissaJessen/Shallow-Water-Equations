@@ -44,6 +44,20 @@ David~J. Raymond.
   \url{http://kestrel.nmt.edu/~raymond/classes/ph332/notes/sphere/sphere.pdf},
   New Mexico Tech. Accessed 2024.
 
+\bibitem{Gavete_2009}
+L.~Gavete, B.~Alonso, M.L. Gavete, F.~Ureña, and J.J. Benito.
+\newblock An adaptive solver for the spherical shallow water equations.
+\newblock {\em Mathematics and Computers in Simulation}, 79(12):3466--3477,
+  2009.
+\newblock The International Conference on Approximation Methods and numerical
+  Modeling in Environment and Natural Resources.
+
+\bibitem{Galewsky_2004}
+Joseph Galewsky, Richard~K. Scott, and Lorenzo~M. Polvani.
+\newblock An initial-value problem for testing numerical models of the global
+  shallow-water equations.
+\newblock {\em Tellus A: Dynamic Meteorology and Oceanography}, Jan 2004.
+
 \bibitem{FNO_2021}
 Zongyi Li, Nikola Kovachki, Kamyar Azizzadenesheli, Burigede Liu, Kaushik
   Bhattacharya, Andrew Stuart, and Anima Anandkumar.

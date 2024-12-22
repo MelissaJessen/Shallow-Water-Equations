@@ -1,4 +1,4 @@
-\chapter{Theory}
+\chapter{The shallow water equations}\label{ch:theory}
 In this chapter we will derive the shallow water equations (SWE) in conservative form, and present the equations in vector form and in integral form for 1D and 2D in cartesian coordinates.
 We will also derive the SWE in spherical coordinates, which is relevant for geophysical applications, such as simulating water flow on the surface of the Earth.
 To solve the SWE, we will present the numerical method, called the Finite Volume Method (FVM) including the Riemann problem.
@@ -6,10 +6,9 @@ Lastly, we will dive into the theory behind the data-driven methods, i.e., the n
 
 \input{chapters/01_notation.tex}
 
-\section{The shallow water equations}
 In this section we will derive the shallow water equations (SWE) in conservative form.
 
-\subsection{Derivation of the SWE with conservative variables}
+\section{Derivation of the SWE with conservative variables}
 In this section we will derive the shallow water equations (SWE) in conservative form.
 The derivation follows four steps: First we consider the conservation laws for mass and momentum, and then we consider the boundary conditions for a free surface problem.
 Afterwards we make some neccessary assumptions and finally we use the boundary conditions to integrate the conservation laws over depth.
@@ -302,7 +301,7 @@ By using the product rule for differentiation and collecting terms, we obtain th
 \end{equation}
 The three partial differential equations in~\eqref{eq:SWE_1} and~\eqref{eq:SWE_2} are the shallow water equations in conservative form.
 
-\subsection{The SWE in vector form for 1D and 2D}
+\section{The SWE in vector form for 1D and 2D}
 The SWE can also be written in differential conservation law form as the vector equation
 \begin{align}\label{eq:vector_form_2D}
     \mathbf{U}_t + \mathbf{F(U)}_x + \mathbf{G(U)}_y = \mathbf{S(U)},
@@ -388,7 +387,7 @@ where
 If $\mathbf{S(U)} = 0$, the equation~\eqref{eq:vector_form_1D} is called a conservation law, and otherwise it is called a balance law.
 
 
-\subsection{The 1D SWE in integral form}
+\section{The 1D SWE in integral form}
 It is often more convenient to work with the integral form of the SWE, since the integral form of equations of the form~\eqref{eq:vector_form_1D} and~\eqref{eq:vector_form_1D_variables} allows discountinuous solutions.
 We derive the integral form of the inhomoegeneous one-dimensional case of the SWE in vector form~\eqref{eq:vector_form_1D}.
 The integral form is obtained by integrating the vector form~\eqref{eq:vector_form_1D} over a control volume $V$ in the $x,t$ plane

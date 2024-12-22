@@ -1,4 +1,4 @@
-\section{Finite Volume Method for the Shallow Water Equations}
+\chapter{The Finite Volume Method}\label{ch:fvm}
 In this section, we present the finite volume method (FVM) for solving nonlinear systems of balance laws, specifically focusing on the shallow water equations (SWE).
 Nonlinear problems are more challenging than linear problems, as stability and convergence theory are more difficult.
 Our focus is on discountinuous solutions, that can accurately capture shock waves and other discontinuities.
@@ -9,7 +9,7 @@ At the interfaces between these cells, we solve the local Riemann problem to com
 These fluxes are then used to update the solution in each cell.
 By solving the Riemann problem at cell interfaces, the FVM can handle discontinuous solutions, making it particularly well suited for hyperbolic balance laws, such as the shallow water equations.
 
-\subsection{Finite Volume Methods for the 1D SWE}
+\section{Finite Volume Methods for the 1D SWE}
 We begin by considering finite volume methods for the SWE in one space dimension.
 In the FVM, we discretize the domain into finite control volumes or cells:
 \begin{align*}
@@ -68,7 +68,7 @@ Finite volume methods are closely related to Finite Difference Methods (FDM), bu
 Where finite difference methods tend to break down near discontinuities in the solution, finite volume methods are more suited, since they are based on the integral form of the conservation laws.
 The key distinction between the FVM and the FDM lies in their formulation: while the FVM is based on the integral conservation over finite volumes, the FDM is based on the differential conservation over finite differences.
 
-\subsection{Finite Volume Method for the 2D SWE}
+\section{Finite Volume Method for the 2D SWE}
 We now extend the FVM to two space dimensions.
 Consider the 2D SWE in vector form~\eqref{eq:vector_form_2D} with $\mathbf{S(U)} = 0$:
 \begin{align}\label{eq:2D_SWE}
@@ -80,8 +80,16 @@ Following the methods outlined in~\cite{Toro2009-Riemann}, an explicit finite vo
 \end{align}
 This is the unsplit finite volume method, meaning that, in a single step, the cell average $\mathbf{U}_{i,j}^n$ is updated using the fluxes from all intercell boundaries.
 
+\subsection{the MUSCL scheme}
+The MUSCL (Monotone Upwind Scheme for Conservation Laws), second order accurate in space and time.
+High-order total variation diminishing (TVD) scheme.
+We use the finite volume update:
+\begin{align}
+    \mathbf{U}_{i,j}^{n+1} = \mathbf{U}_{i,j}^n - \frac{\Delta t}{\Delta x}(\mathbf{F}_{i+1,j} - \mathbf{F}_{i,j}) - \frac{\Delta t}{\Delta y}(\mathbf{G}_{i,j-1} - \mathbf{G}_{i,j}).
+\end{align}
 
-\subsection{Finite Volume Method for the 1D SWE in spherical coordinates}
+
+\section{Finite Volume Method for the 1D SWE in spherical coordinates}
 In this section, we derive the finite volume method for the 1D shallow water equations in spherical coordinates, where we consider the linearized shallow water equations on a circle.
 As we consider the longitude $\theta$ as the spatial dimension, the domain is the circle $[0, 2\pi]$, which is divided into $N$ cells or control volumes, each of length $\Delta \theta = \frac{2\pi}{N}$.
 Each cell $i$ has a cell center at $\theta_i$ and cell boundaries/interfaces at $\theta_{i-1/2}$ and $\theta_{i+1/2}$.
@@ -160,4 +168,40 @@ and correspondingly the flux $\mathbf{F}_{i+1/2}^n$ is the average flux across t
 \begin{align*}
     \mathbf{F}_{i+1/2}^n = \frac{1}{\Delta t} \mathbf{A} \int_{t_1}^{t_{2}} (\mathbf{W}(\theta_R, t)) \text{ d}t.
 \end{align*}
+
+
+\section{FVM 1D Linearized SWE spherical}
+
+The following scheme numerically solves the linearized 1D shallow water equations in spherical coordinates:
+\begin{align}
+    \frac{\partial h'}{\partial t} &= -\frac{h_0}{a \cos\phi} \frac{\partial v}{\partial \theta}, \\
+    \frac{\partial v}{\partial t} &= -g \frac{\partial h'}{\partial \theta} - f v,
+\end{align}
+where \(h'\) is the perturbation in water height, \(v\) is the velocity, \(h_0\) is the mean water depth, \(g\) is the gravitational acceleration, \(f\) is the Coriolis parameter, \(a\) is the Earth's radius, and \(\phi\) is the fixed latitude. 
+The method employs a finite volume approach with a four-stage Runge-Kutta (RK4) time-stepping scheme to update \(h'\) and \(v\).
+
+At each time step, the fluxes of \(h'\) and \(v\) between neighboring cells are computed using:
+\[
+\text{Flux} = \frac{1}{2}(q_\text{left} + q_\text{right}),
+\]
+where \(q_\text{left}\) and \(q_\text{right}\) represent the state variables at adjacent cell edges.
+
+For time integration, we use Runge-Kutta 4th order method, which is a numerical method to solve ordinary differential equations.
+The RK4 scheme approximates the time derivatives of \(h'\) and \(v\) using four intermediate stages:
+\paragraph{Stage 1 (Initial Flux Evaluation):}
+\begin{align}
+    k_{h1} &= -\frac{h_0}{a \cos\phi} \frac{v_\text{flux} - \text{circshift}(v_\text{flux}, 1)}{\Delta \theta}, \\
+    k_{v1} &= -g \frac{h'_\text{flux} - \text{circshift}(h'_\text{flux}, 1)}{\Delta \theta} - f v.
+\end{align}
+\paragraph{Stages 2--4 (Predictor Steps):}
+Each stage recalculates the fluxes and updates the intermediate derivatives:
+We then update the state variables.
+The final values of \(h'\) and \(v\) are computed by combining the contributions from all four stages:
+\begin{align}
+    h' &\gets h' + \Delta t \left( \frac{1}{6} k_{h1} + \frac{1}{3} k_{h2} + \frac{1}{3} k_{h3} + \frac{1}{6} k_{h4} \right), \\
+    v &\gets v + \Delta t \left( \frac{1}{6} k_{v1} + \frac{1}{3} k_{v2} + \frac{1}{3} k_{v3} + \frac{1}{6} k_{v4} \right).
+\end{align}
+The perturbation in water height (\(h'\)) is stored at each time step and visualized as a wave propagating around a great circle on a sphere.
+This scheme effectively combines finite volume flux computation with the high accuracy of the RK4 method to solve the 1D shallow water equations on a spherical domain.
+
 

@@ -1,12 +1,11 @@
-\chapter{Results}
+\chapter{Numerical results}\label{ch:numerical_results}
 In this section we present the results of the numerical experiments, together with the results from the data-driven methods, including neural networks and Fourier neural operators.
-In \autoref{sec:numerical_results} we present the results from the finite volume method (FVM), where we have implemented the method for solving the shallow water equations in 1D  and 2D and tested it on several problems.
+In \autoref{ch:numerical_results} we present the results from the finite volume method (FVM), where we have implemented the method for solving the shallow water equations in 1D  and 2D and tested it on several problems.
 We also address the scalability issues of the finite volume method.
-In \autoref{sec:data-driven-results} we present the results from the data-driven methods, where we have implemented neural networks and Fourier neural operators to solve the shallow water equations in 1D.
+In \autoref{ch:data-driven-results} we present the results from the data-driven methods, where we have implemented neural networks and Fourier neural operators to solve the shallow water equations in 1D.
 We compare the results from the data-driven methods with the results from the FVM, and discuss the advantages and disadvantages of the different methods.
 We expand and in \autoref{sec:data-driven-results-2D} we present the results from the data-driven methods for solving the shallow water equations in 2D.
 
-\section{Numerical results}\label{sec:numerical_results}
 In this chapter we present the results of the numerical experiments, where we have implemented the finite volume method for solving the shallow water equations in 1D and tested it on several problems.
 \footnote{Code and small animations can be found at github, visit \url{https://github.com/MelissaJessen/Shallow-Water-Equations}.}
 A key focus is to validate the implementation, as it will generate data for the data-driven methods, including neural networks and Fourier neural operators.
@@ -17,7 +16,7 @@ Finally, we have tested the implementation on the 2D idealised circular dam brea
 The results from the 2D problem are compared to the results from the book to validate the implementation.
 Lastly, we have tested the scalability of the FVM to solve the 2D SWE, by running the 2D problem with a Gaussian initial condition for different values of $N$, i.e., the number of cells in each direction.
 
-\subsection{The 1D Dam Break Problem}
+\section{The 1D Dam Break Problem}
 First we solve the 1D dam break problem, with the following initial conditions:
 \begin{align*}
     h(x,0) &= \begin{cases}
@@ -37,7 +36,7 @@ The numerical solution to the 1D Dam Break Problem using the FVM, together with 
 From Figure~\ref{fig:1D_dam_break} we see that the numerical solution aligns well with the true solution, and successfully captures the discontinuity.
 
 
-\subsection{Toro test cases}
+\section{Toro test cases}
 We have tested the method on the five test cases for Riemann problems from Toros book~\cite{Toro2001-Shock}.
 The initial conditions for the five test cases are given in \autoref{tab:toro_test_cases}.
 \begin{table}[H]
@@ -66,7 +65,7 @@ To solve the test cases we have used the following fluxes:
     \item HLL flux,
 \end{enumerate}
 
-\subsubsection*{Test case 1}
+\subsection*{Test case 1}
 %\addcontentsline{toc}{subsection}{Test case 1}
 The initial conditions for test case 1 are given in \autoref{fig:toro_test1_initial} and the final solutions after $t=7.0$ seconds are given in \autoref{fig:toro_test1_final}.
 In test case 1, we observe a right shock wave and a left rarefaction wave.
@@ -84,7 +83,7 @@ In test case 1, we observe a right shock wave and a left rarefaction wave.
 For this test case all the fluxes work well, but there are minor differences in the solution, which can be seen in \autoref{fig:toro_test1_final}.
 We also see that Lax-Wendroff flux has some oscillations in the solution, which is not present in the other fluxes.
 
-\subsubsection*{Test case 2}
+\subsection*{Test case 2}
 %\addcontentsline{toc}{subsection}{Test case 2}
 The initial conditions for test case 2 are illustrated in \autoref{fig:toro_test2_initial}.
 \begin{figure}[H]
@@ -104,7 +103,7 @@ The final solutions after $t=2.5$ seconds are illustrated in \autoref{fig:toro_t
 \end{figure}
 For the fluxes, Godunov method with exact Riemann solver, and Lax-Wendroff, it was not possible to get an acceptable solution.
 
-\subsubsection*{Test case 3}
+\subsection*{Test case 3}
 %\addcontentsline{toc}{subsection}{Test case 3}
 The initial conditions for test case 3 are given in \autoref{fig:toro_test3_initial}, and the final solutions after $t=4.0$ seconds are given in \autoref{fig:toro_test3_final}.
 \begin{figure}[H]
@@ -124,7 +123,7 @@ By running experiments with different values of $h_R$, we see that the solution 
 The solution consists of a left rarefaction wave.
 From \autoref{fig:toro_test3_final} we see that when it comes to predicting the velocity, there are some differences in how the different fluxes perform.
 
-\subsubsection*{Test case 4}
+\subsection*{Test case 4}
 %\addcontentsline{toc}{subsection}{Test case 4}
 The initial conditions for test case 4 are given in \autoref{fig:toro_test4_initial}, and the final solutions after $t=4.0$ seconds are given in \autoref{fig:toro_test4_final}.
 \begin{figure}[H]
@@ -144,7 +143,7 @@ This test case is symmetric to test case 3, and the solution consists of a right
 The case is included to test if the results are as expected.
 As in test case 4, we observe differences in the fluxes performance.
 
-\subsubsection*{Test case 5}
+\subsection*{Test case 5}
 %\addcontentsline{toc}{subsection}{Test case 5}
 The initial conditions for test case 5 are given in \autoref{fig:toro_test5_initial}, and the final solutions after $t=5.0$ seconds are given in \autoref{fig:toro_test5_final}.
 \begin{figure}[H]
@@ -182,7 +181,7 @@ The table shows which fluxes that were able to produce a solution for the test c
 \end{table}
 Note, that as we see in the results, there are still differences in the solutions accuracy between the fluxes that were able to solve the test cases.
 
-\subsection{2D idealised Circular Dam Break Problem}
+\section{2D idealised Circular Dam Break Problem}
 We now proceed to the 2D case, focusing on an idealised circular dam break problem over a horizontal bottom.
 This problem is also from Toro's book~\cite{Toro2024}.
 We assume there is an infinitely thin circular wall at radius $R = 2.5$ m is a square domain of size $40 \times 40 $ with centre at $(x_c,y_c) = (20, 20)$.
@@ -230,7 +229,7 @@ The results after $t=0.0, 0.4, 0.7$ and $1.4$ seconds are given in \autoref{fig:
 
 By comparing \autoref{fig:2D_dam_break_grid} with the results from the book by Toro~\cite{Toro2024}, and see that the numerical solution aligns well with the true solution from the book.
 
-\subsection{Scalability}
+\section{Scalability}
 To test the scalability of the FVM to solve the 2D SWE, we have run the 2D problem with a Gaussian initial condition, for different values of $N$, i.e., the number of cells in each direction.
 Numerical methods are good as they can be more or less as accurate as we want them to be, but the computational cost increases with the number of cells.
 
@@ -245,7 +244,7 @@ Numerical methods are good as they can be more or less as accurate as we want th
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FVM_N=32_time_5.txt} &
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FVM_N=64_time_5.txt} &
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FVM_N=128_time_5.txt} &
-         0
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FVM_N=256_time_5.txt}
         \\
         \hline
     \end{tabular}
