@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1734873085.18551 "main.aux" "main.bbl" "main" 1734880178.65979 0
+["bibtex main"] 1734873085.18551 "main.aux" "main.bbl" "main" 1734880311.34464 0
   "./bibl.bib" 1734860066 12186 cc4fbf9bf342c7e80f54608b64c45194 ""
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291864736 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "main.aux" 1734880175 43374 14a75f0b2cb59653db682e772861ff6d "pdflatex"
+  "main.aux" 1734880307 43374 14a75f0b2cb59653db682e772861ff6d "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1734880163.20715 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1734880178.6615 0
+["pdflatex"] 1734880289.59089 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1734880311.34714 0
   "C:/Users/Matteo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1733470246 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Matteo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1728897231 11548 420b7f80b41b233cad6f319547e72170 ""
   "C:/Users/Matteo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1726253485 24265805 34fa3860fca3f94c581d5d8735e54ea8 ""
@@ -324,7 +324,7 @@
   "C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_error.pdf" 1734873098 379861 740617b82bec08c9969d54c6f02df217 ""
   "C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions.pdf" 1734875155 151728 a824ad317ee30041200b272b47ed1134 ""
   "C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions_error.pdf" 1734880160 94335 ddc3c28e46d588beb32c2af122fc5338 ""
-  "C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_loss.pdf" 1734872774 31855 ad7396f7e606962c7e9b301d78dcf7e3 ""
+  "C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_loss.pdf" 1734880287 26125 05d028f4d9abbecd9cae4321d4ce93b7 ""
   "C:/Users/Matteo/Shallow-Water-Equations/plots/2D_gauss_initial_condition.pdf" 1734342414 71698 cee87d01de159cb7a62d4efd9b7b6c32 ""
   "C:/Users/Matteo/Shallow-Water-Equations/plots/NN_initial.pdf" 1734680166 316941 930f56f9234c1d418d57281a0f9bdcbb ""
   "C:/Users/Matteo/Shallow-Water-Equations/plots/NN_initial_1D.pdf" 1734680166 13004 3d1194f4f21d70a57ecce764265ce2e1 ""
@@ -400,7 +400,7 @@
   "C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=100_time.txt" 1734364565 6 fe78541341c698940f9dbe95f03ea66b ""
   "C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=128_MAE_test.txt" 1734518297 8 03221ed64220acbb3306014965fecd3b ""
   "C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=128_MSE_test.txt" 1734518297 8 1a7b2f5ce149c01ea148b69b4641a98c ""
-  "C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=128_time.txt" 1734513311 6 dd07e82d5498acade8041c07cb5e8cfd ""
+  "C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=128_time.txt" 1734880287 6 6102666b173317b845a83cfcd9a34261 ""
   "C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=64_MAE_test.txt" 1734872777 8 b9fd1de9aeaf06a57d9979d8bee0ee83 ""
   "C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=64_MSE_test.txt" 1734872777 8 66a137e34a546ba70bec67709d6504e0 ""
   "C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=64_nepochs.txt" 1734872773 3 cee631121c2ec9232f3a2f028ad5c89b ""
@@ -433,7 +433,7 @@
   "chapters/FNO+NN.tex" 1734862795 5013 944282ef907e8d8a354aec5a592132f0 ""
   "chapters/appendix.tex" 1733223565 2235 e3a92cb8e8dcb888b5c33ec4298f912f ""
   "chapters/conclusion.tex" 1734879984 299 29f7f0a15596f73faca0551d45cd30c9 ""
-  "chapters/data-driven-results-2D.tex" 1734876915 10941 9c69eaac49043ce6b96764e1e076b416 ""
+  "chapters/data-driven-results-2D.tex" 1734880252 10943 8fe1ffb1ea66be1d703fba0c8c51932a ""
   "chapters/data-driven-results.tex" 1734865546 17027 6b266c7389b64cd11f426f6d145049c6 ""
   "chapters/data-generation.tex" 1734864554 8584 59715924d5b4e6f9b25807d2d85522ab ""
   "chapters/fvm.tex" 1734862691 15423 5f3dd29ae8c810ec1d6aeb7b05bcd880 ""
@@ -446,11 +446,11 @@
   "frontmatter/acknowledgements.tex" 1734864352 88 e3f37702b2185da853b46e1a8a504b9c ""
   "frontmatter/approval.tex" 1734605986 548 5869a939951f84dd4f4abd31dd64f8dd ""
   "frontmatter/statics.tex" 1734602593 546 c986b37bd9ebb7cc9113a04de8cd1e25 ""
-  "main.aux" 1734880175 43374 14a75f0b2cb59653db682e772861ff6d "pdflatex"
+  "main.aux" 1734880307 43374 14a75f0b2cb59653db682e772861ff6d "pdflatex"
   "main.bbl" 1734873085 4880 0e4b3d07053117c33da873516f4340d6 "bibtex main"
-  "main.out" 1734880175 9068 a81ffd72a2d6c752dd74bf48ca6954a3 "pdflatex"
+  "main.out" 1734880307 9068 a81ffd72a2d6c752dd74bf48ca6954a3 "pdflatex"
   "main.tex" 1734864506 4229 4391bc54c6d2651e331ab567106e8a1e ""
-  "main.toc" 1734880175 4442 04a78abfbe59e6b55d92d55d2acb808c "pdflatex"
+  "main.toc" 1734880307 4442 04a78abfbe59e6b55d92d55d2acb808c "pdflatex"
   (generated)
   "main.aux"
   "main.log"
