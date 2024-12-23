@@ -42,13 +42,15 @@
 \contentsline {section}{\numberline {6.4}Scalability}{42}{section.6.4}%
 \contentsline {chapter}{\numberline {7}Data-driven results}{44}{chapter.7}%
 \contentsline {section}{\numberline {7.1}1D SWE with Gaussian initial conditions}{44}{section.7.1}%
-\contentsline {section}{\numberline {7.2}1D linearized SWE in Spherical Coordinates}{49}{section.7.2}%
+\contentsline {section}{\numberline {7.2}1D linearized SWE in Spherical Coordinates}{50}{section.7.2}%
 \contentsline {section}{\numberline {7.3}Data-driven results for the 2D SWE}{54}{section.7.3}%
-\contentsline {section}{\numberline {7.4}2D SWE with initial Gaussian function}{54}{section.7.4}%
-\contentsline {section}{\numberline {7.5}2D spherical SWE}{58}{section.7.5}%
-\contentsline {chapter}{\numberline {8}Discussion}{59}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Conclusion}{60}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Further work}{60}{section.9.1}%
-\contentsline {chapter}{Bibliography}{62}{chapter*.91}%
-\contentsline {chapter}{\numberline {10}Appendix}{63}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Additional figures from 1D SWE spherical CNN and FNO}{63}{section.10.1}%
+\contentsline {section}{\numberline {7.4}2D SWE with initial Gaussian function}{55}{section.7.4}%
+\contentsline {section}{\numberline {7.5}2D spherical SWE}{60}{section.7.5}%
+\contentsline {chapter}{\numberline {8}Discussion}{61}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusion}{62}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Further work}{62}{section.9.1}%
+\contentsline {chapter}{Bibliography}{64}{chapter*.93}%
+\contentsline {chapter}{\numberline {10}Appendix}{65}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Additional figures from 1D SWE spherical CNN and FNO}{65}{section.10.1}%
+\contentsline {section}{\numberline {10.2}FNO Toro test 1}{68}{section.10.2}%
+\contentsline {section}{\numberline {10.3}2D SWE long term prediction}{69}{section.10.3}%

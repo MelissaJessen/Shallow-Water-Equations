@@ -99,7 +99,13 @@ The table below shows the results when the FNO-model is trained on a grid with $
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=128_MSE_test.txt} &
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=128_MAE_test.txt} &
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=128_train_time.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=128_time.txt}
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=128_time.txt} \\
+        CNN &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_train_Nx=64_test_N=128_nepochs.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_train_Nx=64_test_N=128_MSE_test.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_train_Nx=64_test_N=128_MAE_test.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_train_Nx=64_test_N=128_train_time.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_train_Nx=64_test_N=128_time.txt}
     \end{tabular}
     \caption{Test loss in terms of MSE and MAE, and time for training the FNO model on a grid with $N = 64$ and then making predictions on a grid with $N = 128$.}\label{tab:results_2D_FNO_train_64_test_128}
 \end{table}
@@ -117,7 +123,13 @@ This way, it is possible to train the model on a coarse grid and then make predi
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=256_MSE_test.txt} &
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=256_MAE_test.txt} &
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=256_train_time.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=256_time.txt}
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=256_time.txt} \\ 
+        CNN &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_train_Nx=64_test_N=256_nepochs.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_train_Nx=64_test_N=256_MSE_test.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_train_Nx=64_test_N=256_MAE_test.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_train_Nx=64_test_N=256_train_time.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_train_Nx=64_test_N=256_time.txt}
     \end{tabular}
     \caption{Test loss in terms of MSE and MAE, and time for training the FNO model on a grid with $N = 64$ and then making predictions on a grid with $N = 256$.}\label{tab:results_2D_FNO_train_64_test_256}
 \end{table}
@@ -139,25 +151,38 @@ So, the next approach was to make sequences of the data and then train the model
 This way, the newest prediction becomes a part of a sequence and thus, do not have the same influence on the next prediction as in the previous approach.
 The hope is that this approach makes long-term predictions more stable.
 We make predictions for up to $n = 20$ time steps in the future.
-The results for the long-term predictions can be seen in \autoref{fig:2D_FNO_long_term_predictions}.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions.pdf}
-    \caption{Long-term prediction for the 2D FNO model.}\label{fig:2D_FNO_long_term_predictions}
-\end{figure}
-
-The error plot for the long-term predictions can be seen in \autoref{fig:2D_FNO_long_term_error}.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions_error.pdf}
-    \caption{Error plot for the long-term prediction for the 2D FNO model.}\label{fig:2D_FNO_long_term_error}
-\end{figure}
-From the error plot in \autoref{fig:2D_FNO_long_term_error}, we see that the error is only slightly bigger than for the short-term predictions in \autoref{fig:2D_FNO_error}.
-This indicates that the FNO model is able to generalize further in time and make long-term predictions.
 
 For this case we generate data with a constant time step size $\Delta t = 0.025$, where the other data was generated with a variable time step size, to ensure satisfaction of the CFL condition.
 To ensure stability, we have to choose the time step size small enough. 
 What we did was, we investigated the time step size for the generated data. To create $\Delta t$ we halfed the smallest time step size, and this is how we got $\Delta t = 0.025$.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_mse_mae_loss.pdf}
+    \caption{MSE and MAE for the long-term predictions for the 2D FNO model.}\label{fig:2D_FNO_mse_mae_loss}
+\end{figure}
+From \autoref{fig:2D_FNO_mse_mae_loss} we see that the MSE and MAE are increasing as we make predictions further in time.
+The error plot for the prediction for $n = 20$ time steps in term of maximum absolute error can be seen in \autoref{fig:2D_FNO_long_term_error}.
+The corresponding plot for $n = 40$ time steps can be seen in \autoref{fig:2D_FNO_long_term_error_40} in Appendix. 
+
+The error plot for the long-term predictions can be seen in \autoref{fig:2D_FNO_long_term_error}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions_error_Ntrain=64_Npred=64_idx=20.pdf}
+    \caption{Error plot for the long-term prediction for the 2D FNO model.}\label{fig:2D_FNO_long_term_error}
+\end{figure}
+From the error plot in \autoref{fig:2D_FNO_long_term_error}, we see that the error is only slightly bigger than for the short-term predictions in \autoref{fig:2D_FNO_error}.
+This indicates that the FNO model is able to generalize further in time and make long-term predictions.
+The higher maximum absolute error for $n = 40$ is probably due to accumulating errors. 
+The lower MSE and MAE do not neccessarily mean that the predictions are better, but can also be due to the fact that the water is in a stable state for $n = 40$ time steps in the future, and thus, the predictions are more stable.
+Therefore, when making predictions it is important to consider the physical properties of the system, and not only the loss functions.
+The different ways to calculate error, can also be considered depending on the goal of the predictions, i.e., if it is important to minimize the MSE or the maximum absolute error, depending on the physical properties of the system.
+Is it better to have one large errror or many small ones.
+
+
+
+
 
 
 

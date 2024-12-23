@@ -99,24 +99,22 @@ To get an overview of the performance of the model, we consider the predictions 
 
 
 \subsection*{Comparison}
-UDFYLDT MED 1D CNN Gauss + 1D FNO Gauss (ikke for Toro).
 \begin{table}[H]
     \centering
     \small % Reduce font size
-    \begin{tabular}{c|cccc|cccc}
-        Model & \multicolumn{4}{c|}{Gauss initial condition} & \multicolumn{4}{c}{Toro test case} \\
-        \cline{2-9}
-        & Epochs & MSE & MAE & Time (s) & Epochs & MSE & MAE & Time (s) \\
+    \begin{tabular}{c|cccc|ccc}
+        Model & \multicolumn{4}{c|}{Gauss initial condition} & \multicolumn{3}{c}{New initial condition} \\
+        \cline{2-8}
+        & Epochs & MSE & MAE & Training time (s)  & MSE & MAE & Prediction time (s) \\
         \hline
         CNN  &
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/1D_CNN_nepochs.txt} &
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/1D_CNN_MSE_test.txt} & 
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/1D_CNN_MAE_test.txt} &
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/1D_CNN_time.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=100_nepochs.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=100_MSE_test.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=100_MAE_test.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=100_time.txt} 
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/1D_CNN_MSE_test_new_ic.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/1D_CNN_MAE_test_new_ic.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/1D_CNN_time_new_ic.txt} 
         \\
         \hline
         FNO  &
@@ -124,16 +122,27 @@ UDFYLDT MED 1D CNN Gauss + 1D FNO Gauss (ikke for Toro).
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/1D_FNO_MSE_test.txt} &
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/1D_FNO_MAE_test.txt} &
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/1D_FNO_time.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_CNN_Nx=100_nepochs.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=100_MSE_test.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=100_MAE_test.txt} &
-        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_Nx=100_time.txt}
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/1D_FNO_MSE_test_new_ic.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/1D_FNO_MAE_test_new_ic.txt} &
+        \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/1D_FNO_time_newic.txt}
         \\
         \hline
     \end{tabular}
-    \caption{Test loss in terms of MSE and MAE, and time for training the models for the 2D SWE.}\label{tab:results_2D_comparison}
+    \caption{Test loss in terms of MSE and MAE, and time for training the models for the 2D SWE.}\label{tab:results_1D_comparison}
 \end{table}
 
+
+\subsubsection*{Truncation errors}
+To consider the truncation error, we generate a close to exact solution by using a very fine gri, $N = 1000$.
+We plot the very accurate solution at time $t = 1$ together with the prediction of the CNN and FNO.
+This is to give us an idea of how the truncation error affects the predictions.
+This is one thing we must consider, when generating our own data.
+The difference between the exact solution and the predictions is shown in \autoref{fig:1D_FNO_truncation_error}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/1D_FNO_pred_final_exact.pdf}
+    \caption{Truncation error for the FNO model.}\label{fig:1D_FNO_truncation_error}
+\end{figure}
 
 
 
@@ -251,12 +260,5 @@ Probably due to the fact that the smaller the $\sigma$, the more discontinuous t
 We see that the MAE in general is higher than the MSE, and is also increasing for smaller $\sigma$.
 Additionally, we observe that the MAE is higher, as it places more weight on small errors compared to the MSE.
 And in the CNN case we see a lot of small errors/noise, which is why the MAE is higher than the MSE.
-
-
-
-
-
-
-
 
 

@@ -15,7 +15,7 @@ tend = 1;
 g = 9.81;   % acceleration due to gravity
 
 % numerical parameters
-Nx = 200;           % the number of the cell-centers
+Nx = 1000;           % the number of the cell-centers
 dx = (xR - xL)/Nx;  % distance between the mesh points
 CFL= 0.9;           % CFL number <= 1
 x  = linspace(xL+dx/2,xR-dx/2,Nx);
@@ -28,7 +28,9 @@ u = q(2,:);
 %sigma_vals = linspace(0.1, 1, 10);
 sigma_vals = 0.1;
 
-mu_vals = linspace(0.3,0.8,20); % Mean of the Gaussian
+%mu_vals = linspace(0.3,0.8,20); % Mean of the Gaussian
+mu_vals = 0.5;
+
 
 % Define folder
 folder = 'C:\Users\Matteo\Shallow-Water-Equations\dataFNO';
@@ -122,11 +124,14 @@ for s = 1:length(sigma_vals)
         % update time and solution
         t = t + dt;
         q = qnew;
+        
+        disp(t)
+
 
         end
 
         % Save data for the current sigma and mu value
-        filename = ['data_sigma_no',num2str(s),'mu_no',num2str(m)];
+        filename = '1DGauss_mu_2_exact';
         fullpath = fullfile(folder, filename);
         save(fullpath,'time_all','h0','sigma','mu','x','h_all','u_all');
     end
@@ -139,4 +144,6 @@ elapsedTime = toc;
 fprintf('The program took %.2f seconds to run.\n', elapsedTime);
 
 
+
+%% Save final state
 
