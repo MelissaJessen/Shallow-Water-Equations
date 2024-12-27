@@ -2,7 +2,26 @@
 \addcontentsline{toc}{section}{\textbf{Abstract}}
 
 %\begin{abstract}
-    This master thesis focuses on the numerical and data-driven solutions for the Shallow Water Equations (SWE), which are fundamental in computational fluid dynamics. The project aims to solve the SWE using the Finite Volume Method (FVM) in 2D and spherical coordinates and subsequently exploit machine learning techniques, particularly the Fourier Neural Operator (FNO), to improve solution accuracy and efficiency. By the end of the project, the goal is to have a robust and efficient computational toolkit for solving the SWE, which will also be useful for simulating important geophysical processes like Kelvin and Rossby waves. 
+This Master's thesis explores the integration of numerical and data-driven methodologies to solve the Shallow Water Equations (SWE), a cornerstone in computational fluid dynamics.
+Accurate and efficient simulation of shallow water dynamics is essential for critical applications such as flood forecasting, tsunami modeling, and coastal management.
+Traditional numerical approaches, such as the Finite Volume Method (FVM), solve partial differential equations (PDEs) by discretizing the domain into grids.
+While finer grids enhance accuracy, they substantially increase computational cost, posing a trade-off between accuracy and efficiency.
+
+\noindent To address this challenge, this study focuses on solving the SWE in 1D, 2D, and 1D spherical coordinates while comparing Fourier Neural Operators (FNOs) and Convolutional Neural Networks (CNNs) as data-driven approaches.
+The generated data from the Finite Volume Method is used to train these models.
+FNOs learn mappings between function spaces, enabling grid-independent solution transfer and efficient handling of non-linearities.
+This allows FNOs to achieve zero-shot super-resolution by transferring solutions seamlessly between coarse and fine meshes.
+In contrast, CNNs operate on fixed grids, offering a complementary perspective on spatially localized features.
+
+\noindent The thesis evaluates the performance of FNOs and CNNs in predicting the evolution of water levels and assesses their computational efficiency and accuracy.
+By training on coarse grids and inferring solutions on finer grids, both approaches demonstrate potential scalability and adaptability for real-time applications.
+The results highlight the strengths and limitations of each method, with FNOs excelling in grid-independent operations and CNNs providing robust localized feature extraction.
+
+\noindent This work contributes a comprehensive computational toolkit for solving SWE, combining traditional numerical techniques with advanced neural network methodologies.
+The findings emphasize the potential of integrating Fourier Neural Operators and Convolutional Neural Networks into hydrodynamic modeling frameworks, paving the way for enhanced disaster preparedness and water resource management.
+
 %\end{abstract}
+
+
 
 
