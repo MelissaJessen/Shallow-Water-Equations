@@ -64,15 +64,21 @@
 \setlength{\parskip}{1em}
 
 % Initialize a command to store the current subsection title
+%\makeatletter
+%\newcommand*{\currentname}{\TR@currentTitle}
+%\makeatother
+
+% Initialize a command to store the current section title
 \makeatletter
-\newcommand*{\currentname}{\TR@currentTitle}
+\newcommand*{\currentname}{\@currentlabelname}
 \makeatother
+
 
 % Define the header style
 \pagestyle{fancy}
 \fancyhf{}
 \lhead{\leftmark}
-\rhead{\thesubsection\text{ } \currentname}
+\rhead{\thesection\text{ } \currentname}
 \cfoot{Page \thepage}
 
 

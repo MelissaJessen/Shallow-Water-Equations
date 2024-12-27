@@ -10,8 +10,8 @@ To illustrate the spherical coordinates, we will use the latitude and longitude 
     Illustration from~\cite{lat-long-earth}.}\label{fig:lat-long-earth}
 \end{figure}
 We see that the latitude direction is the north-south component, whereas the longitude direction is the east-west component.
-The latitude angle, denoted by $\phi$, goes from $-\frac{\pi}{2}$ at the south pole to $\frac{\pi}{2}$ at the north pole, and the longitude angle, denoted by $\theta$, goes from $0$ at the prime meridian, increasing to the east, to $2\pi$.
-The spherical coordinates we use are ($r$, $\theta$, $\phi$), where $r$ is the radius from the center of the sphere, $\theta$ is the longitude angle, and $\phi$ is the latitude angle.
+The latitude angle, denoted by $\phi$, goes from $-\frac{\pi}{2}$ radians at the south pole to $\frac{\pi}{2}$ radians at the north pole, and the longitude angle, denoted by $\theta$, goes from $0$ at the prime meridian, increasing to the east, to $2\pi$ radians.
+The spherical coordinates we use are ($r$, $\theta$, $\phi$), where $r$ is the radius from the center of the sphere, $\theta$ is the longitude angle, and $\phi$ is the latitude angle. Both angles are measured in radians.
 This also means, that any point on the surface of the sphere can be represented by the coordinates ($\theta$, $\phi$).
 We consider a small domain of the sphere, as illustrated in \autoref{fig:sphere-small-domain}.
 \begin{figure}[H]
@@ -29,7 +29,7 @@ Assuming Earth's latitude side is a circle, we can find the distance $\Delta x_{
 \end{align*}
 where $\Delta \phi$ is the change in the latitude angle and $r$ is the radius of the sphere.
 We assume that Earth is a perfect sphere, meaning that the radius is constant.
-Considering the longitude dimension $\Delta x_{\theta}$, we need to make some adjustments, as we can see that the circumreference at equator is larger than at the poles.
+Considering the distance in the longitude dimension $\Delta x_{\theta}$, we need to make some adjustments, as we can see that the circumreference at equator is larger than at the poles.
 That is, we need to consider the radius of the circle at the given latitude $\phi$.
 To illustrate this, we consider \autoref{fig:sphere_r_lat}.
 \begin{figure}[H]
@@ -37,7 +37,9 @@ To illustrate this, we consider \autoref{fig:sphere_r_lat}.
     \includegraphics[width=0.4\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/sphere_r_lat.png}
     \caption{Illustration of the radius of the circle at the given latitude $\phi$.}\label{fig:sphere_r_lat}
 \end{figure}
-In \autoref{fig:sphere_r_lat}, we consider a right triangle with the hypotenuse as the radius of the sphere, and the adjacent side as the radius of the circle at the given latitude $\phi$.
+In \autoref{fig:sphere_r_lat}, we consider a right triangle with the hypotenuse as the radius of the sphere.
+The length of the adjacent side $r_{lat}$ is the radius of the longitude circle at the given latitude $\phi$.
+and the adjacent side as the radius of the circle at the given latitude $\phi$.
 Thus, we can express the radius of the circle at the given latitude $\phi$ as
 \begin{align*}
     r_{lat} = r \cos(\phi).  
@@ -46,7 +48,8 @@ Using that, together with the formula for the arc length, we can find the distan
 \begin{align*}
     \Delta x_{\theta} = r \cos(\phi) \Delta \theta.
 \end{align*}
-The volume of a small domain of the sphere, as shown in \autoref{fig:sphere-small-domain}, is given by 
+We can then compute the volume of a small domain of the sphere, as shown in \autoref{fig:sphere-small-domain}.
+The volume $V$ is given by 
 \begin{align*}
     V &= \Delta x_{\phi} \Delta x_{\theta} h \\
     &= r^2 h \cos(\phi) \Delta \phi \Delta \theta,
@@ -54,7 +57,7 @@ The volume of a small domain of the sphere, as shown in \autoref{fig:sphere-smal
 assuming that the height of the domain is $h$, and that the domain is rectangular.
 This is a fair assumption for small values of $\Delta x_{\phi}$ and $\Delta x_{\theta}$.
 We also assume that $\phi$ is not too close to the poles, as $\cos(\phi)$ will go to zero at the poles.
-We are interested in rate of change of the volume with respect to time, and we can find this by taking the time derivative of the volume.
+We are interested in the rate of change of the volume with respect to time, and we can find this by taking the time derivative of the volume.
 That is, we consider the partial derivative with respect to time of the volume $V$:
 \begin{align}\label{eq:sphere-volume-time-derivative}
     \frac{\partial V}{\partial t} &= r^2 \cos(\phi) \Delta \phi \Delta \theta \frac{\partial h}{\partial t},
@@ -68,19 +71,21 @@ We calculate the influx at the $\theta$ line and the outflux at $\theta + \Delta
 The influx is the area of the $\theta$ line times the velocity in the $\theta$ direction at the $\theta$ line.
 The influx is 
 \begin{align*}
-     u_\theta(\theta) h(\theta)  r \Delta \phi,
+    F_{in} = u_\theta(\theta) h(\theta)  r \Delta \phi,
 \end{align*}
 where $h(\theta)$ is the height of the water at the $\theta$ line, assumed to be constant along the line.
 This way we can compute how much the volume changes due to the influx.
 For the outflux we do the same just for the $\theta + \Delta \theta$ line, introducing the notation $\theta ' = \theta + \Delta \theta $ meaning the outflux is
 \begin{align*}
-    u_\theta(\theta + \Delta \theta) h(\theta + \Delta \theta)  r \Delta \phi
+    F_{out}
+    = u_\theta(\theta + \Delta \theta) h(\theta + \Delta \theta)  r \Delta \phi
     = u_\theta(\theta') h(\theta')  r \Delta \phi
     .
 \end{align*}
 The net flux in the $\theta$ direction is the difference between the influx and the outflux, and is given by
 \begin{align*}
-   \left(  u_\theta(\theta) h(\theta) - u_\theta(\theta ') h(\theta ') \right)  r \Delta \phi.
+   F_{net} = F_{in} - F_{out} 
+    = \left(  u_\theta(\theta) h(\theta) - u_\theta(\theta ') h(\theta ') \right)  r \Delta \phi.
 \end{align*}
 We can do the same for the $\phi$ direction, also using the notation $\phi ' = \phi + \Delta \phi$.
 Using~\eqref{eq:sphere-volume-time-derivative} and the net fluxes for both directions we can write:
@@ -164,7 +169,7 @@ We can now insert~\eqref{eq:sphere-arc-length} into~\eqref{eq:sphere-total-deriv
     \end{aligned}
 \end{equation}
 We know that the right hand side of~\eqref{eq:sphere-total-derivative-split} are the given physical forces acting on the fluid.
-Earlier in this project, we focused on the shallow water equations in Cartesian coordinates, accounting solely for gravitational forces.
+Earlier in this project, we focused on the shallow water equations in cartesian coordinates, accounting solely for gravitational forces.
 However, in spherical coordinates, additional physical forces must be considered. These include the Coriolis force, centripetal acceleration, and the effects of Earth's curvature.
 First we consider the gravitational force acting on the fluid, descibed as $-g \Delta h$, where $g$ is the gravitational constant, and $\Delta h$ is the gradient of the height $h$.
 We consider the gradient of $h(\theta, \phi)$:
@@ -187,16 +192,19 @@ The next force we consider is the Coriolis force, which is a force that acts on 
 The Coriolis force is given by $f = 2 \Omega \sin(\phi)$, where $\Omega$ is the angular velocity of the earth.
 The Coriolis force in the $\theta$ and $\phi$ directions are then given by:
 \begin{align*}
-    &\theta-\text{direction:} \quad f u_\phi,\\
+   &\theta-\text{direction:} \quad f u_\phi,\\
     &\phi-\text{direction:} \quad -f u_\theta.
 \end{align*}
-The last thing we need to take into account when working in the spherical domain is the curvature of the earth.
-This adds the following terms:
-\begin{align*}
-    &\theta-\text{direction:} \quad \frac{u_\theta u_\phi}{r} \tan(\phi),\\
-    &\phi-\text{direction:} \quad -\frac{u_\theta^2}{r} \tan(\phi).
-\end{align*}
-Inserting these forces into the momentum equations, we get the shallow water equations in spherical coordinates:
+
+%The last thing we need to take into account when working in the spherical domain is the curvature of the earth.
+%This adds the following terms:
+%\begin{align*}
+%    &\theta-\text{direction:} \quad \frac{u_\theta u_\phi}{r} \tan(\phi),\\
+%    &\phi-\text{direction:} \quad -\frac{u_\theta^2}{r} \tan(\phi).
+%\end{align*}
+
+There are several formulations of the SWE in spherical coordinates.
+Inserting these forces into the momentum equations, we get the following formulation of the shallow water equations in spherical coordinates:
 \begin{equation}
     \left.
     \begin{aligned}

@@ -10,7 +10,7 @@
 \contentsline {chapter}{\numberline {2}The shallow water equations}{4}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Notation}{4}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Derivation of the SWE with conservative variables}{5}{section.2.2}%
-\contentsline {section}{\numberline {2.3}The SWE in vector form for 1D and 2D}{10}{section.2.3}%
+\contentsline {section}{\numberline {2.3}The SWE in vector form}{10}{section.2.3}%
 \contentsline {section}{\numberline {2.4}The 1D SWE in integral form}{10}{section.2.4}%
 \contentsline {section}{\numberline {2.5}SWE in Spherical Coordinates}{12}{section.2.5}%
 \contentsline {section}{\numberline {2.6}Linearized SWE in Spherical Coordinates}{16}{section.2.6}%
