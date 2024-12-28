@@ -235,35 +235,34 @@ where
 
 
 \section{Linearized SWE in Spherical Coordinates}
-We consider the linearized shallow water equations in cartesian coordinates with one spatial dimension ($x$) and time ($t$).
-\begin{equation}
-    \left.
-    \begin{aligned}
-        h_t + H u_x = 0, \\
-        u_t + g h_x = 0,
-    \end{aligned}
-    \right\}
-\end{equation}
-where $h$ is the height of the water, $u$ is the velocity of the water, $H$ is the average height of the water, and $g$ is the acceleration due to gravity.
-We now consider the linearized shallow water equations in spherical coordinates with one spatial dimension, the longitude ($\theta$), and time ($t$).
-That is, we assume constant latitude $\phi$. 
+In this section, we derive the linearized shallow water equations (SWE) in spherical coordinates, focusing on one spatial dimension, the longitude ($\theta$), and time ($t$).
+This approach assumes a constant latitude ($\phi$), simplifying the equations to a one-dimensional framework.
+The linearized SWE are employed for their simplicity, providing a foundation for understanding wave dynamics in a spherical geometry.
+Later in this project, we will apply the finite volume method to solve these equations numerically.
+The derivation and methodology presented here are based on the sources~\cite{BONEV_2018} and~\cite{Eskilsson_2005}.
+We neglect all body forces other than gravity.
+We linearize by assuming that the height of the water $h$ and the velocities $u$ are small perturbations from a state of rest.
+We set $h = h_0 + h'$, $u = u_0 + u'$, where $h_0$ and $u_0$ are the equilibrium height and velocity, respectively, and $h'$ and $u'$ are the perturbations.
+We also assume that the equilibrium height $h_0$ is constant, i.e., $h_0 = H$.
 
-In this section, we will derive the linearized shallow water equations in spherical coordinates.
-Later in the project, we will use the finite volume method to solve the linearized shallow water equations in spherical coordinates.
-We use the linearized SWE for simplicity.
-This section use the sources~\cite{BONEV_2018} and~\cite{Eskilsson_2005}.
-The linearized shallow water equations in spherical coordinates with one spatial dimension ($\theta$) and time ($t$) are given by
+To linearize the equations, we assume small perturbations around a mean state. Let the perturbations in water height and velocity be represented by:
+
+\[
+h = H + h', \quad u_\theta = u'_\theta, \quad u_\phi = u'_\phi,
+\]
+where \( H \) is the mean water height, and \( h' \), \( u'_\theta \), and \( u'_\phi \) represent the perturbations in the water height and velocity components, respectively.
+
+Substituting these perturbed variables into the original equations and neglecting second-order terms (i.e., terms that involve products of perturbations), we obtain the following linearized shallow water equations:
 \begin{equation}\label{eq:linearized_swe_spherical}
     \left.
     \begin{aligned}
-        h_t + \frac{H}{r \cos(\phi)} u_\theta = 0, \\
-        u_t + g h_\theta + fu = 0,
+        h'_t + \frac{H}{r \cos(\phi)} u'_\theta &= 0, \\
+        u'_t + \frac{g}{r \cos(\phi)} h'_\theta &= 0.
     \end{aligned}
     \right\}
 \end{equation}
-where $r$ is the radius of the Earth, $\phi$ is the latitude, and $f$ is the Coriolis parameter, given by $f = 2 \Omega \sin(\phi)$, where $\Omega$ is the angular velocity of the Earth.
-We still refer to the equations as the mass and momentum equations, respectively.
-
+These equations describe the evolution of small perturbations in water height and velocity on a spherical surface.
+%Hence, we obtain the linearized shallow water equations in spherical coordinates with one spatial dimension ($\theta$) and time ($t$) as
 
 
 We can also write the linearized shallow water equations in spherical coordinates in vector form, without the coriolis force, as
@@ -271,8 +270,62 @@ We can also write the linearized shallow water equations in spherical coordinate
     \mathbf{W}_t + \mathbf{A} \mathbf{W}_\theta = 0,
 \end{align}
 where $\mathbf{W} =
-\begin{bmatrix} h \\ u \end{bmatrix}$ and the coefficient matrix $\mathbf{A}$ is constant and given as:
-$\mathbf{A} = \begin{bmatrix} 0 & \frac{H}{r \cos(\phi)} \\ g & 0 \end{bmatrix}$.
+\begin{bmatrix} h' \\ u' \end{bmatrix}$ and the coefficient matrix $\mathbf{A}$ is constant and given as:
+$\mathbf{A} = \begin{bmatrix} 0 & \frac{H}{r \cos(\phi)} \\ \frac{g}{r \cos (\phi)} & 0 \end{bmatrix}$.
+
+
+\subsubsection*{Integral form of the 1D spherical LSWE}
+As we consider the longitude $\theta$ as the spatial dimension, the domain is the circle $[0, 2\pi]$, which is divided into $N$ cells or control volumes, each of length $\Delta \theta = \frac{2\pi}{N}$.
+Each cell $i$ has a cell center at $\theta_i$ and cell boundaries/interfaces at $\theta_{i-1/2}$ and $\theta_{i+1/2}$.
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/sphere1d_small_cell.png}
+        \caption{Illustration of the grid for the 1D SWE with small cells.}\label{fig:sphere1d_small_cell}
+    \end{subfigure}%
+    \begin{subfigure}{0.35\textwidth}
+        \centering
+        \raisebox{10mm}{
+        \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/sphere-1d-small-domain.png}
+        }
+        \caption{Illustration of the grid for the 1D SWE with a small domain.}\label{fig:sphere1d_small_domain}
+    \end{subfigure}
+    \caption{Grid illustrations for the 1D SWE in spherical coordinates.}\label{fig:sphere1d_combined}
+\end{figure}
+As when deriving the finite volume scheme for the 1D SWE in cartesian coordinates, we start by integrating the linearized shallow water equations over the control volume, and then divide by the cell length to obtain the finite volume scheme.
+We integrate the vector form of the 1D SWE in spherical coordinates without the coriolis force over $\theta$ from $\theta_L := \theta_i - \frac{1}{2} \Delta \theta $ to $\theta_R := \theta_i + \frac{1}{2}\Delta \theta $ to obtain
+\begin{align*}
+    \int_{\theta_L}^{\theta_R} \mathbf{W}_t \text{ d}\theta + \int_{\theta_L}^{\theta_R} \mathbf{A} \mathbf{W}_\theta \text{ d}\theta = 0.
+\end{align*}
+Since the matrix $\mathbf{A}$ is constant, we can take it out of the integral:
+\begin{align*}
+    \int_{\theta_L}^{\theta_R} \mathbf{W}_t \text{ d}\theta + \mathbf{A} \int_{\theta_L}^{\theta_R} \mathbf{W}_\theta \text{ d}\theta = 0.
+\end{align*}
+We also use the fundamental theorem of calculus to rewrite the integral of the derivative as the difference of the function at the boundaries:
+\begin{align}\label{eq:derive_integral_form_1D_spherical}
+    \int_{\theta_L}^{\theta_R} \mathbf{W}_t \text{ d}\theta =  \mathbf{A} \left( \mathbf{W}(\theta_L, t) - \mathbf{W}(\theta_R, t) \right).
+\end{align}
+We can also write the equations out to get a better understanding of the terms:
+\begin{equation}\label{eq:integral_form_spherical_1D}
+    \left.
+    \begin{aligned}
+        \frac{\partial}{\partial t} \int_{\theta_L}^{\theta_R} h \text{ d}\theta + \frac{H}{r \cos(\phi)} (u_R - u_L) &= 0, \\
+        \frac{\partial}{\partial t} \int_{\theta_L}^{\theta_R} u \text{ d}\theta + g(h_R - h_L) + fu_i &= 0.
+    \end{aligned}
+    \right\}
+\end{equation}
+Then we integrate~\eqref{eq:derive_integral_form_1D_spherical} over time from $t_1 := t_n$ to $t_2 := t_{n+1}$:
+\begin{align*}
+    \int_{t_1}^{t_2} \int_{\theta_L}^{\theta_R} \mathbf{W}_t \text{ d}\theta \text{ d}t = \mathbf{A} \left( \int_{t_1}^{t_2} \mathbf{W}(\theta_L, t) \text{ d}t - \int_{t_1}^{t_2} \mathbf{W}(\theta_R, t) \text{ d}t \right).
+\end{align*}
+Rewriting, using the fundamental theorem of calculus, gives
+\begin{align}\label{eq:integral_form_spherical_1D_final}
+    \int_{\theta_L}^{\theta_R} \mathbf{W}(\theta, t_2) \text{ d}\theta = \int_{\theta_L}^{\theta_R} \mathbf{W}(\theta, t_1) \text{ d}\theta
+    - \mathbf{A} \left( \int_{t_1}^{t_2} \mathbf{W}(\theta_R, t) \text{ d}t - \int_{t_1}^{t_2} \mathbf{W}(\theta_L, t) \text{ d}t \right),
+\end{align}
+which we refer to as the integral form of the linearized shallow water equations in spherical coordinates with one spatial dimension and time.
+The integral form~\eqref{eq:integral_form_spherical_1D_final} is the foundation for the finite volume method, which we will use to solve the linearized shallow water equations in spherical coordinates numerically.
 
 
 

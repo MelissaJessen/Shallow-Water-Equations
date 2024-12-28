@@ -91,56 +91,9 @@ We use the finite volume update:
 
 \section{Finite Volume Method for the 1D SWE in spherical coordinates}
 In this section, we derive the finite volume method for the 1D shallow water equations in spherical coordinates, where we consider the linearized shallow water equations on a circle.
-As we consider the longitude $\theta$ as the spatial dimension, the domain is the circle $[0, 2\pi]$, which is divided into $N$ cells or control volumes, each of length $\Delta \theta = \frac{2\pi}{N}$.
-Each cell $i$ has a cell center at $\theta_i$ and cell boundaries/interfaces at $\theta_{i-1/2}$ and $\theta_{i+1/2}$.
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/sphere1d_small_cell.png}
-        \caption{Illustration of the grid for the 1D SWE with small cells.}\label{fig:sphere1d_small_cell}
-    \end{subfigure}%
-    \begin{subfigure}{0.35\textwidth}
-        \centering
-        \raisebox{10mm}{
-        \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/sphere-1d-small-domain.png}
-        }
-        \caption{Illustration of the grid for the 1D SWE with a small domain.}\label{fig:sphere1d_small_domain}
-    \end{subfigure}
-    \caption{Grid illustrations for the 1D SWE in spherical coordinates.}\label{fig:sphere1d_combined}
-\end{figure}
-As when deriving the finite volume scheme for the 1D SWE in cartesian coordinates, we start by integrating the linearized shallow water equations over the control volume, and then divide by the cell length to obtain the finite volume scheme.
-We integrate the vector form of the 1D SWE in spherical coordinates without the coriolis force over $\theta$ from $\theta_L := \theta_i - \frac{1}{2} \Delta \theta $ to $\theta_R := \theta_i + \frac{1}{2}\Delta \theta $ to obtain
-\begin{align*}
-    \int_{\theta_L}^{\theta_R} \mathbf{W}_t \text{ d}\theta + \int_{\theta_L}^{\theta_R} \mathbf{A} \mathbf{W}_\theta \text{ d}\theta = 0.
-\end{align*}
-Since the matrix $\mathbf{A}$ is constant, we can take it out of the integral:
-\begin{align*}
-    \int_{\theta_L}^{\theta_R} \mathbf{W}_t \text{ d}\theta + \mathbf{A} \int_{\theta_L}^{\theta_R} \mathbf{W}_\theta \text{ d}\theta = 0.
-\end{align*}
-We also use the fundamental theorem of calculus to rewrite the integral of the derivative as the difference of the function at the boundaries:
-\begin{align}\label{eq:derive_integral_form_1D_spherical}
-    \int_{\theta_L}^{\theta_R} \mathbf{W}_t \text{ d}\theta =  \mathbf{A} \left( \mathbf{W}(\theta_L, t) - \mathbf{W}(\theta_R, t) \right).
-\end{align}
-We can also write the equations out to get a better understanding of the terms:
-\begin{equation}\label{eq:integral_form_spherical_1D}
-    \left.
-    \begin{aligned}
-        \frac{\partial}{\partial t} \int_{\theta_L}^{\theta_R} h \text{ d}\theta + \frac{H}{r \cos(\phi)} (u_R - u_L) &= 0, \\
-        \frac{\partial}{\partial t} \int_{\theta_L}^{\theta_R} u \text{ d}\theta + g(h_R - h_L) + fu_i &= 0.
-    \end{aligned}
-    \right\}
-\end{equation}
-Then we integrate~\eqref{eq:derive_integral_form_1D_spherical} over time from $t_1 := t_n$ to $t_2 := t_{n+1}$:
-\begin{align*}
-    \int_{t_1}^{t_2} \int_{\theta_L}^{\theta_R} \mathbf{W}_t \text{ d}\theta \text{ d}t = \mathbf{A} \left( \int_{t_1}^{t_2} \mathbf{W}(\theta_L, t) \text{ d}t - \int_{t_1}^{t_2} \mathbf{W}(\theta_R, t) \text{ d}t \right).
-\end{align*}
-Rewriting, using the fundamental theorem of calculus, gives
-\begin{align}\label{eq:integral_form_spherical_1D_final}
-    \int_{\theta_L}^{\theta_R} \mathbf{W}(\theta, t_2) \text{ d}\theta = \int_{\theta_L}^{\theta_R} \mathbf{W}(\theta, t_1) \text{ d}\theta
-    - \mathbf{A} \left( \int_{t_1}^{t_2} \mathbf{W}(\theta_R, t) \text{ d}t - \int_{t_1}^{t_2} \mathbf{W}(\theta_L, t) \text{ d}t \right),
-\end{align}
-which we refer to as the integral form of the linearized shallow water equations in spherical coordinates with one spatial dimension and time.
+
+
+
 We divide~\eqref{eq:integral_form_spherical_1D_final} with the cell length $\Delta \theta$ to obtain
 \begin{align}
     \frac{1}{\Delta \theta} \int_{\theta_L}^{\theta_R} \mathbf{W}(\theta, t_2) \text{ d}\theta =
