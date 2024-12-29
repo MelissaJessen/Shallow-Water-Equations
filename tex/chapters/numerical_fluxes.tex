@@ -3,6 +3,8 @@ In this section we will study the numerical fluxes used to solve the SWE in 1D.
 At each cell interface, we need to solve the Riemann problem~\eqref{eq:Riemann_problem} to find the numerical flux.
 There are several numerical fluxes that can be used to solve the local Riemann problem, and we will consider some of them in this section.
 The fluxes we will consider are the Godunov method with an exact Riemann solver, the HLL, HLLC, Rusanov, Lax-Friedrichs, Lax-Wendroff and FORCE fluxes.
+All of them are later implemented and tested in the numerical experiments in \autoref{ch:numerical_results}.
+
 
 \subsection*{Godunov method with exact Riemann solver}
 %\addcontentsline{toc}{subsection}{Godunov method with exact Riemann solver}
@@ -25,7 +27,7 @@ The HLL (Harten, Lax and van Leer) approach assumes a two-wave structure of the 
 The solver is based on the data $\mathbf{U}_L := \mathbf{U}_i^n, \mathbf{U}_R := \mathbf{U}_{i+1}^n$ and fluxes $\mathbf{F}_L := \mathbf{F}(\mathbf{U}_L), \mathbf{F}_R := \mathbf{F}(\mathbf{U}_R)$.
 The HLL flux is given by
 \begin{align}\label{eq:HLL_flux}
-    \mathbf{F}_{1 + \frac{1}{2}} = \begin{cases}
+    \mathbf{F}_{i + \frac{1}{2}} = \begin{cases}
         \mathbf{F}_L & \text{if } S_L \geq 0, \\
         \mathbf{F}^{HLL} \equiv \frac{S_R \mathbf{F}_L - S_L \mathbf{F}_R + S_L S_R (\mathbf{U}_R - \mathbf{U}_L)}{S_R - S_L} & \text{if } S_L \leq 0 \leq S_R, \\
         \mathbf{F}_R & \text{if } S_R \leq 0.
@@ -88,7 +90,7 @@ where $S_L$ and $S_R$ are the wave speeds of the left and right waves, respectiv
 \subsection*{Rusanov}
 %\addcontentsline{toc}{subsection}{Rusanov}
 The Rusanov flux uses the HLL framework, but with a different choice of wave speeds.
-To obtain the flux, we assume an estimate $S^+$ for the positive wave speed is available.
+To obtain the flux, we assume that an estimate $S^+$ for the positive wave speed is available.
 Then we set 
 \begin{align}\label{eq:Rusanov_flux_part1}
     S_L = -S^+, \quad S_R = S^+.
@@ -108,8 +110,8 @@ It must hold that
     S^+ \leq \frac{\Delta x}{\Delta t},
 \end{align*}
 where $\frac{\Delta x}{\Delta t}$ is called the mesh speed.
-This Rusanov sheme is upwind and based on a one-wave model.
-Therefore it is an incomplete Riemann solver.
+%This Rusanov sheme is upwind and based on a one-wave model.
+%Therefore it is an incomplete Riemann solver.
 
 \subsection*{Lax-Friedrichs}
 %\addcontentsline{toc}{subsection}{Lax-Friedrichs}

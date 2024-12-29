@@ -35,8 +35,10 @@ and the initial conditions $\mathbf{U_L}$ and $\mathbf{U_R}$ are
 which represents the conditions at time $t = 0$ in the left and right states of $x=0$, respectively.
 The function $\mathbf{U}$ is piecewise constant, with a discontinuity at $x=0$.
 The Riemann problem can be solved either exactly or approximately.
+However, in this project we will focus on approximate Riemann solvers, which are able to solve the Riemann problem with high accuracy and efficiency.
 Various approximate Riemann solvers exist, based on finding an approximate solution to the Riemann problem.
-Some of these solvers will be considered later in the thesis.
+Some of these solvers will be considered in the next section.
+An interesting example of a Riemann problem is the so-called dam break problem, which is presented next.
 
 \subsection{The Dam-Break problem}
 We now introduce the dam-break problem, a scenario of significant physical interest.
@@ -51,19 +53,59 @@ The initial setup is visualized in Figure~\ref{fig:dam-break-problem}.
     \caption{Initial conditions for the dam-break problem. An infinitely thin wall at $x=x_0$ divides two sections of water with different water levels.}\label{fig:dam-break-problem}
 \end{figure}
 We can use the shallow water equations to model the flow of water in the dam-break problem, approximately, if we assume that the wall collapses instantaneously at $t=0$.
+In this project we solve both the dam-break problem and cases of the Rieman problem, where the inital fluid velocity is nonzero.
+The results are presented in \autoref{ch:numerical_results}.
 
 \subsection{Waves in the Riemann problem}
-To get a better understanding of the flow in shallow water, we provide some very short background information about waves.
-In particular the wave structure in the solution of the Riemann problem~\eqref{eq:Riemann_problem}, which consists of a combination of waves, including shock waves and rarefaction waves.
+To get a better understanding of the flow in shallow water, we provide some very short background information about the wave structures in the solution of the Riemann problem.
+In general, the wave structure in the solution of the Riemann problem~\eqref{eq:Riemann_problem} consists of three wave families separating four regions.
+The wave families are denoted $W_1, W_2, W_3$ and the regions are the spaces between the wave families, denoted by $R_0, R_1, R_2$ and $R_3$.
+The wave structure is illustrated in \autoref{fig:riemann_sol_general}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/riemann_sol_general.png}
+    \caption{General wave structure in the solution of the Riemann problem.}\label{fig:riemann_sol_general}
+\end{figure}
+From \autoref{fig:riemann_sol_general} we see how the solution consists of three waves.
+The left and right waves are either shock waves or rarefaction waves, and correspond to the one-dimensional shallow water equations.
+The middle wave arises from the $y-$momentum equation in~\eqref{eq:Riemann_problem} and is always a shear wave.
+The region between the left and right wave is called the star region and is interesting, since we do not know the solution in this region.
+The star region is divided into two subregions $R_1$ and $R_2$.
+The states in the regions are (from left to right) $U_L, U_{*L}, U_{*R}$ and $U_R$, where $U_L$ and $U_R$ are known, as these are the initial conditions.
+The states $U_{*L}$ and $U_{*R}$ are in the regions $R_1$ and $R_2$, i.e., the star region and are unknown.
+In the star region, we use $h_*$ to denote the water depth and $u_*$ to denote the velocity.
+We can use $h_*$ to determine whether the left and right waves are shock waves or rarefaction waves.
+Since we are considering the wet bed case, we can use the following characteristic:
+\begin{equation*}
+    \begin{cases}
+        \text{The left wave is a shock wave} & \text{if } h_* > h_L, \\
+        \text{The left wave is a rarefaction wave} & \text{if } h_* \leq h_L, \\        
+    \end{cases} 
+\end{equation*}
+and similarly for the right wave:
+\begin{equation*}
+    \begin{cases}
+        \text{The right wave is a shock wave} & \text{if } h_* > h_R, \\
+        \text{The right wave is a rarefaction wave} & \text{if } h_* \leq h_R. \\        
+    \end{cases} 
+\end{equation*}
 In the solution of the Riemann problem~\eqref{eq:Riemann_problem} there are four possible wave patterns outcomes, which are combinations of shock waves and rarefaction waves.
-In each case there are three waves, the left and right waves correspond to the one-dimensional SWE, and the middle wave aries from the $y-$momentum equation in~\eqref{eq:Riemann_problem} and is always a shear wave.
 The left and right waves are either shock waves or rarefaction waves.
 The four possible wave patterns are as follows:
-(a) Left rarefaction, right shock, (b) Left shock, right rarefaction, (c) Both left and right rarefaction, and (d) Both left and right shock.
-The region between the left and right waves is called the star region.
+\begin{enumerate}[label=(\alph*)]
+    \item Left rarefaction, right shock,
+    \item Left shock, right rarefaction,
+    \item Both left and right rarefaction,
+    \item Both left and right shock.
+\end{enumerate}
 In the example of the dam-break problem, with inital conditions as in Figure~\ref{fig:dam-break-problem}, the solution consists of a left rarefaction wave and a right shock wave.
 This means that the shock wave moves to the right and is characterized by a discontinuity in the solution and a high speed.
 Whereas, the rarefaction wave moves to the left and is characterized by a more smooth transition in the solution and a lower speed.
+The Riemann solver computes the flux across the interface between two cells, considering the left and right states.
+The numerical fluxes calculated by the Riemann solver allow for the determination of the state in the star region, which represents the solution at the interface between the two regions.
+This is essential for determining whether the wave is a shock or a rarefaction wave, ensuring both the stability and accuracy of the numerical scheme.
+In summary, Riemann solvers and numerical fluxes are crucial for solving for the states in the star region, which are then used to update the solution at each timestep.
+
 %Hence the structure of the solution in general is shown in the figure below.
 %From the figure we see that the solution consists of three waves, a left wave, a middle wave and a right wave, which together seperate four regions, described by the vector
 %\begin{align*}
@@ -79,10 +121,8 @@ Whereas, the rarefaction wave moves to the left and is characterized by a more s
 %That is, $h$ and $u$ remain constant in the star region.
 %Thus the water depth and particle velocity are constant in the star region and are denoted by $h_*$ and $u_*$, respectively.
 
-\subsection{Exact Riemann solver}
-The exact Riemann solver is a method that solves the Riemann problem exactly, and it is based on the solution of the Riemann problem~\eqref{eq:Riemann_problem}.
-There exist exact Riemann solvers which are very efficient and leads to Gudonov methods, that are only slightly more expensive than those based on approximate Riemann solvers~\cite{Toro2001-Shock}.
-However, in this project we will focus on approximate Riemann solvers, which are able to solve the Riemann problem with high accuracy and efficiency.
+%The exact Riemann solver is a method that solves the Riemann problem exactly, and it is based on the solution of the Riemann problem~\eqref{eq:Riemann_problem}.
+%There exist exact Riemann solvers which are very efficient and leads to Gudonov methods, that are only slightly more expensive than those based on approximate Riemann solvers~\cite{Toro2001-Shock}.
 
 %But for now, we will consider the case where the solution consists of a single non-trivial wave and all other waves are assumed to have zero strenght.
 %This is enough to solve the Riemann problem as it is always possible to solve the Riemann problem by considering one wave at a time.
