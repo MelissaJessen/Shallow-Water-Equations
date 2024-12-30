@@ -27,8 +27,8 @@
 \contentsline {section}{\numberline {4.1}Convolutional Neural Networks}{31}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Fourier Neural Operators}{32}{section.4.2}%
 \contentsline {chapter}{\numberline {5}Data generation}{35}{chapter.5}%
-\contentsline {section}{\numberline {5.1}True solution of the SWE}{35}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Data generation}{35}{section.5.2}%
+\contentsline {section}{\numberline {5.1}1D SWE: True solution}{35}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Data generation}{36}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Data Copernicus}{37}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Mesh generation for the sphere}{37}{section.5.4}%
 \contentsline {chapter}{\numberline {6}Numerical results}{40}{chapter.6}%

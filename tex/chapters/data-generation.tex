@@ -1,13 +1,13 @@
 \chapter{Data generation}\label{ch:method}
-%In this chapter we introduce the numerical fluxes, used to solve the approximate Riemann problem.
-%We will also present the numerical methods used in this thesis to solve the SWE in 1D and 2D.
 In this chapter we will outline how the data needed for the data-driven methods is generated.
+This is a crucial step in the process, as the data is used to train the models. 
+
 We will also present the mesh generation for the sphere, which is used to solve the SWE in spherical coordinates.
 The data generation is done by solving the SWE in 1D using the FVM with the Godunov scheme and the exact Riemann solver.
 We use Gaussian functions with parametric extension~\cite{Gaussian} to generate the initial conditions.
 
 
-\section{True solution of the SWE}
+\section{1D SWE: True solution}
 In this section, we present how the so-called true solution is found in the code by solving the Riemann problem exactly.
 The true solution is found by solving the Riemann problem exact, with 5000 cells, and distinguishing between the wetbed or drybed case, and also identifying the shock and rarefaction waves.
 First we caculate the wave speeds for the left and right states, respectively, as
