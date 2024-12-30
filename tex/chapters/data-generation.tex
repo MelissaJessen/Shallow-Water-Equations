@@ -7,7 +7,7 @@ The data generation is done by solving the SWE in 1D using the FVM with the Godu
 We use Gaussian functions with parametric extension~\cite{Gaussian} to generate the initial conditions.
 
 
-\section{1D SWE: True solution}
+\section{1D SWE with exact Riemann solver}
 In this section, we present how the so-called true solution is found in the code by solving the Riemann problem exactly.
 The true solution is found by solving the Riemann problem exact, with 5000 cells, and distinguishing between the wetbed or drybed case, and also identifying the shock and rarefaction waves.
 First we caculate the wave speeds for the left and right states, respectively, as
@@ -31,9 +31,11 @@ Summarized:
 For a dry bed case, we then identify where the dry is located, i.e., if the left side is dry, the right side is dry, or the middle is dry, and calculate the wave speeds accordingly.
 For a wet bed case, we compute the characteristics $h_*$ and $u_*$ for the star region.
 We then identify the shock and rarefaction waves, and calculate the wave speeds for the left and right states, respectively.
-
-FLOW-DIAGRAM.
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/flowchart_true_solution.jpg}
+    \caption{Flowchart for generating the solution.}\label{fig:flowchart_true_solution}
+\end{figure}
 
 \section{Data generation}
 We use the Matlab script: SWE1D-data-generation to generate the data for the training and testing of the neural network, and the Python script: data-generation to load and visualize the data.
