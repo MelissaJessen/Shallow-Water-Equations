@@ -156,11 +156,7 @@ To ensure stability, we have to choose the time step size small enough.
 What we did was, we investigated the time step size for the generated data. To create $\Delta t$ we halfed the smallest time step size, and this is how we got $\Delta t = 0.025$.
 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_mse_mae_loss.pdf}
-    \caption{MSE and MAE for the long-term predictions for the 2D FNO model.}\label{fig:2D_FNO_mse_mae_loss}
-\end{figure}
+
 From \autoref{fig:2D_FNO_mse_mae_loss} we see that the MSE and MAE are increasing as we make predictions further in time.
 The error plot for the prediction for $n = 20$ time steps in term of maximum absolute error can be seen in \autoref{fig:2D_FNO_long_term_error}.
 The corresponding plot for $n = 40$ time steps can be seen in \autoref{fig:2D_FNO_long_term_error_40} in Appendix. 
@@ -181,11 +177,7 @@ Is it better to have one large errror or many small ones.
 
 
 CNN-long-term-predictions:
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_mse_mae_loss.pdf}
-    \caption{MSE and MAE for the long-term predictions for the 2D FNO model.}\label{fig:2D_CNN_mse_mae_loss}
-\end{figure}
+
 
 \begin{figure}[H]
     \centering
