@@ -7,7 +7,6 @@ We also test the ability of the FNO model to generalize to a finer grid, by trai
 Finally, we will test the FNO model's ability to generalize further in time and make long-term predictions.
 It is also in this chapter, we will present our proof of concept for the 2D SWE. 
 
-\section{2D SWE with initial Gaussian function}
 The initial condition for the 2D problem is a Gaussian function with a standard deviation of 0.1 and a mean of 0.5.
 The initial condition can be seen in \autoref{fig:2D_gauss_initial_condition}.
 \begin{figure}[H]
@@ -179,6 +178,20 @@ The lower MSE and MAE do not neccessarily mean that the predictions are better, 
 Therefore, when making predictions it is important to consider the physical properties of the system, and not only the loss functions.
 The different ways to calculate error, can also be considered depending on the goal of the predictions, i.e., if it is important to minimize the MSE or the maximum absolute error, depending on the physical properties of the system.
 Is it better to have one large errror or many small ones.
+
+
+CNN-long-term-predictions:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_mse_mae_loss.pdf}
+    \caption{MSE and MAE for the long-term predictions for the 2D FNO model.}\label{fig:2D_CNN_mse_mae_loss}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_long_term_predictions_error_Ntrain=64_Npred=64_idx=20.pdf}
+    \caption{Error plot for the long-term prediction for the 2D CNN model.}\label{fig:2D_CNN_long_term_error}
+\end{figure}
 
 
 
