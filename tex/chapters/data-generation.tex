@@ -1,15 +1,20 @@
 \chapter{Data generation}\label{ch:method}
-In this chapter we will outline how the data needed for the data-driven methods is generated.
-This is a crucial step in the process, as the data is used to train the models. 
+In this chapter, we outline the process of generating the data required for the data-driven methods.
+This step is critical, as the quality and relevance of the data directly impact the training and performance of the models.
+We begin by detailing the data generation process for the 1D SWE using the exact Riemann solver.
+Next, we describe the approach for generating data for the 1D SWE in spherical coordinates.
+Finally, we present the methodology for data generation in the context of the 2D SWE.
 
-We will also present the mesh generation for the sphere, which is used to solve the SWE in spherical coordinates.
-The data generation is done by solving the SWE in 1D using the FVM with the Godunov scheme and the exact Riemann solver.
-We use Gaussian functions with parametric extension~\cite{Gaussian} to generate the initial conditions.
+%We will also present the mesh generation for the sphere, which is used to solve the SWE in spherical coordinates.
 
+\section{Data generation using the FVM}\label{sec:data_generation_fvm}
+In this section we clarify the data generation using our numerical solver based on the Finite Volume Method (FVM).
+The FVM is used to solve the SWE in 1D, in 1D with spherical coordinates, and in 2D.
+We specify the initial conditions, the domain, and the parameters used in the data generation process.
 
-\section{1D SWE with exact Riemann solver}
+\subsection*{1D SWE with exact Riemann solver}
 In this section, we present how the so-called true solution is found in the code by solving the Riemann problem exactly.
-The true solution is found by solving the Riemann problem exact, with 5000 cells, and distinguishing between the wetbed or drybed case, and also identifying the shock and rarefaction waves.
+The true solution is found by solving the Riemann problem exact, with 200 cells, and distinguishing between the wetbed or drybed case, and also identifying the shock and rarefaction waves.
 First we caculate the wave speeds for the left and right states, respectively, as
 \begin{align*}
     c_L = \sqrt{g h_L}, \quad c_R = \sqrt{g h_R},
@@ -31,115 +36,111 @@ Summarized:
 For a dry bed case, we then identify where the dry is located, i.e., if the left side is dry, the right side is dry, or the middle is dry, and calculate the wave speeds accordingly.
 For a wet bed case, we compute the characteristics $h_*$ and $u_*$ for the star region.
 We then identify the shock and rarefaction waves, and calculate the wave speeds for the left and right states, respectively.
+The process is illustrated in \autoref{fig:flowchart_true_solution}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/flowchart_true_solution.jpg}
     \caption{Flowchart for generating the solution.}\label{fig:flowchart_true_solution}
 \end{figure}
-
-\section{Data generation}
-We use the Matlab script: SWE1D-data-generation to generate the data for the training and testing of the neural network, and the Python script: data-generation to load and visualize the data.
-The data generation is done by solving the SWE in 1D using the FVM with the Godunov scheme and the exact Riemann solver.
-We use Gaussian functions with parametric extension~\cite{Gaussian} to generate the initial conditions, that is, functions on the form
-\begin{align*}
-    h(x,0) &= a \exp{\left(\frac{-{(x-\mu)}^2}{2\sigma^2}\right)}, \\
-\end{align*}
+When generating the data, we need an initial condition for the water height $h$ and the velocity $u$.
+In this study, we use the Gaussian function as the initial condition for the water height $h$, that is, we use the function
+\begin{align}\label{eq:1D_swe_ic_gaussian}
+    h(x,0) &= a \exp{\left(\frac{-{(x-\mu)}^2}{2\sigma^2}\right)},
+\end{align}
 where $a$ is the amplitude of the Gaussian, $\mu$ is the mean value, and $\sigma$ is the standard deviation.
-We solve the 1D SWE with the following parameters:
-\begin{itemize}
-    \item $N = 200$ cells,
-    \item From $t = 0.0$ to $t_{\text{end}} = 1.0$,
-    \item $x \in [0, 1]$,
-    \item $u(x,0) = 0$,
-    \item $b(x) = 0.0$,
-    \item $g = 9.81$ and
-    \item $\sigma = 0.1$.
-\end{itemize}
-The value of $\mu$ is varied to generate different initial conditions, as seen in Figure~\ref{fig:data_generation_initial}.
+We are working on the domain $x \in [0,1]$ and the parameters are set to $g = 9.81$ and $\sigma = 0.1$.
+The value of $\mu$ is varied to generate different initial conditions, as seen in \autoref{fig:data_generation_initial}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/data_generation_initial.png}
     \caption{Initial conditions for the data generation.}\label{fig:data_generation_initial}
 \end{figure}
+For the initial velocity $u$, we set it to zero, i.e., $u(x,0) = 0$. This means that the water is initially at rest.
+The solver is validated by comparing the results with known test cases, such as the dam break problem.
+We use a CFL number of $0.9$ and variable time steps.
+We generate the data from $t = 0.0$ to $t_{\text{end}} = 1.0$.
 
+\subsection*{Truncation error}
+When generating data, it is essential to be aware of the truncation error.
+Truncation error arises from the approximation of the solution of the differential equation by the numerical method.
+Specifically, it is the difference between the exact solution and the numerical approximation.
+The critical question is: after a certain number of time steps, how significant is this error?
+If the error becomes too large, it raises concerms about the reliability of the generated data.
+Excessive truncation error could compromise the accuracy of the model trained on this data.
+Therefore, we must carefully evaluate and mitigate these risks to ensure the data's quality.
+To assess the truncation error, we generate a more accurate solution using a finer grid.
+This high-resolution solution serves as a reference for evaluating the numerical approximation.
+By comparing the high-resolution solution with the numerical solution, we gain insights into the error introduces by the approximation.
 
-\section{Data Copernicus}
-
+In this study, we generate a reference solution for $N = 1000$ and compare it with the solution for $N = 100$ at the final time step, $t = 1.0$.
+The results are shown in \autoref{fig:1D_SWE_truncation_error}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/ssh_field.pdf}
-    \caption{Sea surfae height as the diffference from reference sea surface height for the months jan-apr 2014.}\label{fig:copernices-ssh}
+    \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/truncation_error.pdf}
+    \caption{Truncation error for the 1D SWE.}\label{fig:1D_SWE_truncation_error}
 \end{figure}
+From \autoref{fig:1D_SWE_truncation_error}, we observe that there is a small difference between the high-resolution solution and the numerical solution, as the high-resolution solution has a more discontinuous behavior.
+However, overall the two solutions are almost identical, indicating that the truncation error is negligible.
+This suggests that the data generated using the numerical solver is of high quality and can be used for training the data-driven models.
 
-
-\section{Mesh generation for the sphere}
-To solve the SWE on the sphere, we must use another grid, than the regular grid used in the 2D case.
-Hence, we use the icosahedral grid, which is a grid that approximates the sphere with triangles.
-The grid can be generated in different generations, depending on the level of detail we need. 
-For each time we refine to a higher level, the number of triangles increases by a factor of four, i.e., we split each triangle into four smaller triangles.
-Meaning that the number of triangles is increasing drastically with each level of refinement.
-The grid is generated by the Github: https://github.com/siddharth-maddali/SphereMesh/tree/master and then rewritten to Python.
-The grid for the first 4 levels of refinement is shown in Figure~\ref{fig:icosahedral_grid}.
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/icosahedral_mesh_refinement.pdf}
-    \caption{Icosahedral grid for the first 4 levels of refinement.}\label{fig:icosahedral_grid}
-\end{figure}
-For simplicity, we will begin by considering the first level of refinement, which consists of 20 triangles.
-The matrix tri is a $20 \times 3$ matrix, where each row represents a triangle and the three columns represent the three vertices of the triangle.
-The vertices are stored in the matrix $P$, which is a $12 \times 3$ matrix, where each row represents a vertex and the three columns represent the x, y, and z coordinates of the vertex.
-The vertices are normalized to the unit sphere, i.e., the radius of the sphere is 1.
-The idea is now, that similar to the case in cartesian coordinates, we loop through each cell, in this case triangles, and calculate the fluxes between the cells.
-We must be aware of which cells/triangles are neighbors, and we must also be aware of the orientation of the triangles, i.e., the normal vector of the triangle.
-The normal vector is calculated by the cross product of the two vectors that span the triangle.
-The normal vector is then normalized to the unit sphere.
-The matrix tri is my Element to Vertex matrix. 
-I also need an Element-to-Face table and a Element-to-Element table.
-The Element-to-Face table is used to define which edges or faces belong to each triangle.
-Each face of a triangle is an edge shared between two triangles.
-The Element-to-Element table is used to define which triangles are neighbors. 
-That is, it indicates which triangles share an edge. This is important when calculating the fluxes between the triangles.
-To construct this table we loop through each triangle and check if the edge of the triangle is shared with another triangle.
-
-
-We make the FVM to solve SWE for a triangular grid on the sphere.
-For each triangle, we consider each face (edge).
-For each face we define the normal vector in terms of the spherical unit vectors $\mathbf{e}_\theta$ and $\mathbf{e}_\phi$.
-The spherical unit vectors at a point are:
+\subsection*{1D SWE in spherical coordinates}
+We also consider the spherical shallow water equations in a 1D setting, focusing on the linearized SWE on a circular domain.
+The length of the domain corresponds to the circumreference of the circle, $L = 2\pi$, and is discretized into $N = 500$ points.
+The initial condition for the water height $h$ is specified as a Gaussian function wrapped around the circle, expressed as:
 \begin{align*}
-    \mathbf{e}_\theta &= \begin{bmatrix}
-        - \sin(\theta) \\
-        \cos(\theta) \\
-        0
-    \end{bmatrix}, \\
-    \mathbf{e}_\phi &= \begin{bmatrix}
-        \cos(\phi) \cos(\theta) \\
-        \cos(\phi) \sin(\theta) \\
-        -\sin(\phi)
-    \end{bmatrix}.
+    h(\theta, 0) &= a \exp \left( \frac{-{(\theta-\mu)}^2}{2 \sigma^2} \right) ,\\
 \end{align*}
-Where $\mathbf{e}_r$ is the radial direction, going outward from the origin.
-$\mathbf{e}_\theta$ is the longitude direction, and $\mathbf{e}_\phi$ is the latitude direction.
-The unit vectors are tangensial to the sphere.
-We do not need to consider the radial direction, as the SWE is only in the tangential directions.
+where the parameters are $a = 1$ and $\mu = \frac{\pi}{4}$.
+We generate data for varying values of $\sigma$ to investigate the effect of the standard deviation on the model performance.
+The data is generated for $\sigma = \frac{\pi}{8}, \sigma = \frac{\pi}{16}$ and $\sigma = \frac{\pi}{32}$.
+The initial velocity $u$ is set to zero, i.e., $u(\theta,0) = 0$.
+The initial conditions can be seen in \autoref{fig:swe_spherical_1d_initial_conditions_sigmas}.
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/SWE-spherical-1d-initial_conditions_sigma1.pdf}
+        \caption{$\sigma = \frac{\pi}{8}$.}\label{fig:swe_spherical_1d_sigma1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/SWE-spherical-1d-initial_conditions_sigma2.pdf}
+        \caption{$\sigma = \frac{\pi}{16}$.}\label{fig:swe_spherical_1d_sigma2}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/SWE-spherical-1d-initial_conditions_sigma3.pdf}
+        \caption{$\sigma = \frac{\pi}{32}$.}\label{fig:swe_spherical_1d_sigma3}
+    \end{subfigure}
+    \caption{Initial conditions for the 1D linearized shallow water equations in spherical coordinates for different \(\sigma\) values.}\label{fig:swe_spherical_1d_initial_conditions_sigmas}
+\end{figure}
+From \autoref{fig:swe_spherical_1d_initial_conditions_sigmas}, we observe that the standard deviation \(\sigma\) affects the width of the Gaussian function.
+The smaller the $\sigma$, the narrower the Gaussian function, meaning the curves are steeper.
+This is to test the different models abilities to handle steep gradients.
+The data is generated from $t = 0.0$ to $t_{\text{end}} = 1.0$.
 
-Now we have the cartesian edge vectors in tangential directions, $\mathbf{e}_0, \mathbf{e}_1, \mathbf{e}_2$.
-
-The projection of an edge vector \( \mathbf{e}_i = (e_{ix}, e_{iy}, e_{iz}) \) onto \( \mathbf{e}_\theta \) is:
-
-\[
-\mathbf{e}_i \cdot \mathbf{e}_\theta = e_{ix} \left( -\sin \theta \cos \phi \right) + e_{iy} \left( -\sin \theta \sin \phi \right) + e_{iz} \cos \theta
-\]
-
-Similarly, the projection onto \( \mathbf{e}_\phi \) is:
-
-\[
-\mathbf{e}_i \cdot \mathbf{e}_\phi = e_{ix} \left( -\sin \phi \right) + e_{iy} \cos \phi
-\]
-
-Recall that the cross product between two vectors in 3D produces a third vector that is orthogonal to the two input vectors, i.e., the plane spanned by the two input vectors.
-
-For a given face $f$ of a triangle, we first calculate the Cartesian face normal $\mathbf{n}_f$ as the cross product of the two vectors that span the face.
-For a given face $f$ of a triangle, we define the normal vector $\mathbf{n}_f$ is decomposed into the spherical unit vectors as
-
+\subsection*{2D SWE}
+%For the 2D SWE, we also use Gaussian functions with parametric extension~\cite{Gaussian} to generate the initial conditions.
+For the 2D SWE, we also use the Gaussian function as initial condition for the water height $h$, but now in two dimensions:
+\begin{align*}
+    h(x,y,0) &= h_0 + a \cdot \exp \left( -\frac{{(x-x_c)}^2 + {(y-y_c)}^2}{2\sigma^2} \right), 
+\end{align*}
+where $h_0$ is the initial water height outside of the Gaussian, $a$ is the amplitude of the Gaussian, $(x_c, y_c)$ is the center of the Gaussian, and $\sigma$ is the standard deviation.
+The domain is $x,y \in [0,40]$ m and is discretized into $N$ points in each direction.
+We use the parameters $h_0 = 1$, $a = 2$, $(x_c, y_c) = (20, 20)$, and $\sigma = 2$.
+The initial velocity $u$ is set to zero, i.e., $u(x,y,0) = 0$.
+The data is generated for different values of $N$ to investigate the effect of the grid resolution on the model performance.
+To generate data like this also makes it possible to test the models abilities to transfer solutions to different grid resolutions.
+The values of $N$ are $N = 64, N = 128$, and $N = 256$.
+The initial conditions can be seen in \autoref{fig:2D_gauss_initial_condition}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/2D_gauss_initial_condition.pdf}
+    \caption{Initial condition for the 2D problem.}\label{fig:2D_gauss_initial_condition}
+\end{figure}
+To generate the data we use our FVM solver to solve the 2D SWE with the initial conditions given above, which is validated by comparing the results with known test cases.
+The data is generated from $t = 0.0$ to $t_{\text{end}} = 10.0$.
+In most of our test cases the models are using the data from $t = 0.0$ to $t_{\text{end}} = 5.0$, but we need the data to be generated for a longer time period to test the models ability to make long-term predictions.
 

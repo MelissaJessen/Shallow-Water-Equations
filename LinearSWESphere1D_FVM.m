@@ -112,11 +112,13 @@ plot(r0*cos(theta_center), -r0*sin(theta_center), 'k'); % Base circle
 hold on;
 plot((r0 + h_storage(k, :)).*cos(theta_center), -(r0 + h_storage(k, :)).*sin(theta_center), 'r', 'LineWidth', 2); % Numerical solution
 hold off;
-title(['Inital conditions at time: ', num2str(t_storage(k), '%.2f'), ' s']);
+%title(['Inital conditions for sigma at time: ', num2str(t_storage(k), '%.2f'), ' s']);
+title(['Initial conditions for \sigma = \pi/32']);
+%title(['Inital conditions for sigma : ', num2str(sigma, '%.2f'), ' s']);
 axis equal;
 axis([-2.5, 2.5, -2.5, 2.5]);
 drawnow;
 
 % Save the figure as PDF
-exportgraphics(gcf, 'C:/Users/Matteo/Shallow-Water-Equations/plots/SWE-spherical-1d-initial_conditions.pdf', 'ContentType', 'vector');
+%exportgraphics(gcf, 'C:/Users/Matteo/Shallow-Water-Equations/plots/SWE-spherical-1d-initial_conditions_sigma3.pdf', 'ContentType', 'vector');
  

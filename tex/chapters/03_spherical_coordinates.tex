@@ -217,19 +217,19 @@ Inserting these forces into the momentum equations, we get the following formula
 \end{equation}
 where $r$ is the radius, $(\theta, \phi)$ are the longitude and latitude angles, $h$ is the height of the water, $u_\theta$ and $u_\phi$ are the velocities in the $\theta$ and $\phi$ directions, $g$ is the gravitational constant.
 
-Obtain in vector form:
-Multiply with $\cos \phi$ and something else. Consider the paper.
+%Obtain in vector form:
+%Multiply with $\cos \phi$ and something else. Consider the paper.
 
-Vector form:
-\begin{align}
-    \cos(\phi) \mathbf{U}_t + \mathbf{F(U)}_\theta + \cos(\phi) \mathbf{G(U)}_\phi = 0,
-\end{align}
-where 
-\begin{align*}
-    \mathbf{U} = \begin{bmatrix} h \\ h u_\theta \\h u_\phi \end{bmatrix},
-    \mathbf{F(U)} = \begin{bmatrix} h u_\theta \\ h u_\theta^2 + g h^2  \\ h u_\theta u_\phi \end{bmatrix},
-    \mathbf{G(U)} = \begin{bmatrix} h u_\phi \\ h u_\theta u_\phi \\ h u_\phi^2 + \ g h^2 \end{bmatrix}.
-\end{align*}
+%Vector form:
+%\begin{align}
+%    \cos(\phi) \mathbf{U}_t + \mathbf{F(U)}_\theta + \cos(\phi) \mathbf{G(U)}_\phi = 0,
+%\end{align}
+%where 
+%\begin{align*}
+%    \mathbf{U} = \begin{bmatrix} h \\ h u_\theta \\h u_\phi \end{bmatrix},
+%    \mathbf{F(U)} = \begin{bmatrix} h u_\theta \\ h u_\theta^2 + g h^2  \\ h u_\theta u_\phi \end{bmatrix},
+%    \mathbf{G(U)} = \begin{bmatrix} h u_\phi \\ h u_\theta u_\phi \\ h u_\phi^2 + \ g h^2 \end{bmatrix}.
+%\end{align*}
 
 
 
@@ -243,14 +243,12 @@ We neglect all body forces other than gravity.
 We linearize by assuming that the height of the water $h$ and the velocities $u$ are small perturbations from a state of rest.
 We set $h = h_0 + h'$, $u = u_0 + u'$, where $h_0$ and $u_0$ are the equilibrium height and velocity, respectively, and $h'$ and $u'$ are the perturbations.
 We also assume that the equilibrium height $h_0$ is constant.
-
 To linearize the equations, we assume small perturbations around a mean state. Let the perturbations in water height and velocity be represented by:
 
 \[
 h = h_0 + h', \quad u_\theta = u'_\theta, \quad u_\phi = u'_\phi,
 \]
 where \( h_0 \) is the mean water height, and \( h' \), \( u'_\theta \), and \( u'_\phi \) represent the perturbations in the water height and velocity components, respectively.
-
 Substituting these perturbed variables into the original equations and neglecting second-order terms (i.e., terms that involve products of perturbations), we obtain the following linearized shallow water equations:
 \begin{equation}\label{eq:linearized_swe_spherical}
     \left.
@@ -262,9 +260,7 @@ Substituting these perturbed variables into the original equations and neglectin
 \end{equation}
 These equations describe the evolution of small perturbations in water height and velocity on a spherical surface.
 %Hence, we obtain the linearized shallow water equations in spherical coordinates with one spatial dimension ($\theta$) and time ($t$) as
-
-
-We can also write the linearized shallow water equations in spherical coordinates in vector form, without the coriolis force, as
+We can also write the linearized shallow water equations in spherical coordinates in vector form as
 \begin{align}\label{eq:linearized_swe_spherical_vector}
     \mathbf{W}_t + \mathbf{A} \mathbf{W}_\theta = 0,
 \end{align}
