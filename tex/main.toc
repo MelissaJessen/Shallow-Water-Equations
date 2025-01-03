@@ -38,11 +38,11 @@
 \contentsline {chapter}{\numberline {7}Data-driven results}{53}{chapter.7}%
 \contentsline {section}{\numberline {7.1}1D SWE with Gaussian initial conditions}{53}{section.7.1}%
 \contentsline {section}{\numberline {7.2}1D linearized SWE in Spherical Coordinates}{59}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Data-driven results for the 2D SWE}{64}{section.7.3}%
+\contentsline {section}{\numberline {7.3}Data-driven results for the 2D SWE}{65}{section.7.3}%
 \contentsline {chapter}{\numberline {8}Discussion}{71}{chapter.8}%
 \contentsline {chapter}{\numberline {9}Conclusion}{72}{chapter.9}%
 \contentsline {section}{\numberline {9.1}Further work}{72}{section.9.1}%
-\contentsline {chapter}{Bibliography}{74}{chapter*.106}%
+\contentsline {chapter}{Bibliography}{74}{chapter*.109}%
 \contentsline {chapter}{\numberline {A}Appendix}{75}{appendix.A}%
 \contentsline {section}{\numberline {A.1}Additional figures from 1D SWE spherical CNN and FNO}{75}{section.A.1}%
 \contentsline {section}{\numberline {A.2}FNO Toro test 1}{78}{section.A.2}%

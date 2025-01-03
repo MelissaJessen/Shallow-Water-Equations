@@ -168,36 +168,40 @@ While this approach produces acceptable results for the inital time steps, the e
 To address this issue, we implemented an alternative approach by creating sequences of data and training the model to predict the next time step based on the entire sequence.
 In this method, the most recent prediction becomes part of a sequence, distributing the influence across subsequent predictions, rather than heavily impacting the next prediction alone.
 This approach aims to stabilize long-term predictions.
+The error plot for the long-term predictions from the CNN model can be seen in \autoref{fig:2D_CNN_long_term_error}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_long_term_predictions_error_Ntrain=64_Npred=64_idx=20.pdf}
+    \caption{Error plot for the long-term prediction for the 2D CNN model.}\label{fig:2D_CNN_long_term_error}
+\end{figure}
+\autoref{fig:2D_CNN_long_term_error} shows that the error is larger for the short-term predictions in \autoref{fig:2D_CNN_error} compared to the long-term predictions.
+But it has not increased drastically.
+We run the same test for the FNO model.
 The error plots of the long-term predictions from the FNO model after 20 time steps, equivalent to $t = 0.5$ s, can be seen in \autoref{fig:2D_FNO_long_term_error}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions_error_Ntrain=64_Npred=64_idx=20.pdf}
     \caption{Error plot for the long-term prediction for the 2D FNO model.}\label{fig:2D_FNO_long_term_error}
 \end{figure}
-From the error plot in \autoref{fig:2D_FNO_long_term_error}, we see that the error is only slightly bigger than for the short-term predictions in \autoref{fig:2D_FNO_error}.
-This indicates that the FNO model is able to generalize further in time and make long-term predictions.
-The higher maximum absolute error for $n = 40$ is probably due to accumulating errors. 
-The lower MSE and MAE do not neccessarily mean that the predictions are better, but can also be due to the fact that the water is in a stable state for $n = 40$ time steps in the future, and thus, the predictions are more stable.
-Therefore, when making predictions it is important to consider the physical properties of the system, and not only the loss functions.
-The different ways to calculate error, can also be considered depending on the goal of the predictions, i.e., if it is important to minimize the MSE or the maximum absolute error, depending on the physical properties of the system.
-Is it better to have one large errror or many small ones.
+From the error plot in \autoref{fig:2D_FNO_long_term_error}, we see that the error is bigger than for the short-term predictions in \autoref{fig:2D_FNO_error}, but for many applications still acceptable.
+We also see that error for the FNO model is smaller than for the CNN model, indicating that the FNO model is able to generalize further in time and make long-term predictions.
+A plot of the predictions and the ground truth can be found in \autoref{fig:2D_FNO_long_term_predictions} in Appendix \autoref{app:2D_SWE_long_term_prediction}.
+The corresponding error plot for $n = 40$ time steps can be seen in \autoref{fig:2D_FNO_long_term_error_40} in Appendix \autoref{app:2D_SWE_long_term_prediction}, where we see that the error has increased.
 
-
-
-From \autoref{fig:2D_FNO_mse_mae_loss} we see that the MSE and MAE are increasing as we make predictions further in time.
-The error plot for the prediction for $n = 20$ time steps in term of maximum absolute error can be seen in \autoref{fig:2D_FNO_long_term_error}.
-The corresponding plot for $n = 40$ time steps can be seen in \autoref{fig:2D_FNO_long_term_error_40} in Appendix. 
-
-
-
-CNN-long-term-predictions:
-
-
+To get an overview of how the model performs over time, we plot the error in each time step for the long-term prediction for up to $n = 200$ time steps in the future.
+To compare the error we have plotted the MSE, MAE and the max error for the long-term predictions for the CNN and FNO models in \autoref{fig:2D_CNN_FNO_mse_mae_max_error}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_long_term_predictions_error_Ntrain=64_Npred=64_idx=20.pdf}
-    \caption{Error plot for the long-term prediction for the 2D CNN model.}\label{fig:2D_CNN_long_term_error}
+    \includegraphics[width=0.99\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_FNO_mse_mae_max_error.pdf}
+    \caption{MSE, MAE and max error for the long-term predictions for the 2D CNN and FNO models.}\label{fig:2D_CNN_FNO_mse_mae_max_error}
 \end{figure}
+When making predictions, it is essential to consider the physical properties of the system, rather than relying solely on the loss functions.
+The choice of error metric should align with the goals of the predictions.
+For instance, it may be more important to minimize the MSE or the maximum absolute error, depending on the physical properties of the system.
+This raises a key question: is it better to have one large error or many small errors?
+
+As shown in \autoref{fig:2D_CNN_FNO_mse_mae_max_error}, the error increases as we make predictions further in time.
+Overall, the FNO model demonstrates lower errors compared to the CNN model, indicating it may offer more accurate long-term predictions.
 
 
 

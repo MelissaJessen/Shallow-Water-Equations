@@ -196,6 +196,13 @@ The predictions for some given time steps are shown in \autoref{fig:1D_CNN_spher
     \caption{Predictions for the spherical shallow water equations in 1D using the CNN model for some given time steps.}\label{fig:1D_CNN_sphere_pred_timesteps_sigma=2}
 \end{figure}
 From \autoref{fig:1D_CNN_sphere_pred_timesteps_sigma=2}, we see that the predictions capture the waves, but have some over- or underestimations at the top or bottom of the waves.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/1D_CNN_sphere_pred_timesteps_sphere_sigma=2.pdf}
+    \caption{Predictions for the spherical shallow water equations in 1D using the CNN model for some given time steps.}\label{fig:1D_CNN_sphere_pred_timesteps_sphere_sigma=2}
+\end{figure}
+
+
 
 \subsubsection*{FNO model}
 The FNO model consists of an input channel, 64 hidden channels and an output channel. We use a Fourier basis with 16 modes and a batch size of 32.
@@ -224,6 +231,12 @@ The predictions for some given time steps are shown in \autoref{fig:1D_FNO_spher
     \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/1D_FNO_sphere_pred_timesteps_sigma=2.pdf}
     \caption{Predictions for the spherical shallow water equations in 1D.}\label{fig:1D_FNO_sphere_pred_timesteps_sigma=2}
 \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/1D_FNO_sphere_pred_timesteps_sphere_sigma=2.pdf}
+    \caption{Predictions for the spherical shallow water equations in 1D using the FNO model for some given time steps.}\label{fig:1D_FNO_sphere_pred_timesteps_sphere_sigma=2}
+\end{figure}
+
 The two first plots of \autoref{fig:1D_FNO_sphere_pred_timesteps_sigma=2} shows that the FNO model captures the waves really well, but in the last plot we see that the model has some challenges, and for instance is predicting a small wave that is not present in the true solution.
 
 \subsubsection*{Comparison}
