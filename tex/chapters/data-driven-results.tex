@@ -45,7 +45,7 @@ Meaning that the input and output data are the same, but shifted one time step. 
 The model takes input with multiple channels and applies a series of 1D convolutional layers to extract spatial features.
 The model uses three convolutional layers with ReLU activation functions.
 The final convolutional layer redusec the output to a single channel, and a fully connected layer maps the processed features to the output.
-The model has been trained using the Adam optimizer with a learning rate of $0.001$, a batch size of $32$ and a total of $500$ epochs.
+The model has been trained using the Adam optimizer with a learning rate of $0.001$ and a batch size of $32$.
 The criteria is to minimize the mean squared error (MSE).
 The model is trained on the first $60\%$ of the data, validated on the next $20\%$, and tested on the last $20\%$.
 The training and validation loss for the CNN model is shown in \autoref{fig:1D_CNN_loss}.
@@ -77,7 +77,7 @@ This is expecially illustrated in the prediction at $t = 0.9$ s, where we observ
 
 \subsection*{FNO Model}
 We define a FNO model, which consists of an input channel, 64 hidden channels and an output channel. We use a Fourier basis with 16 modes and a batch size of 32.
-The model is trained using the Adam optimizer with a learning rate of $0.001$, a total of $500$ epochs and the critera is to minimize the mean squared error (MSE).
+The model is trained using the Adam optimizer with a learning rate of $0.001$ and the critera is to minimize the mean squared error (MSE).
 We use the same train/validation/test split as for the CNN model.
 The training and validation loss for the FNO model is shown in \autoref{fig:1D_FNO_loss}.
 \begin{figure}[H]
@@ -100,7 +100,7 @@ To get an overview of the performance of the model, we consider the predictions 
     \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/1D_FNO_pred_timesteps.pdf}
     \caption{Predictions for the FNO model for some given time steps.}\label{fig:1D_FNO_pred_timesteps}
 \end{figure}
-From \autoref{fig:1D_FNO_pred_timesteps}, we see that the FNO model has difficulties capturing the sharp edges of the solution, but overall provides a smooth and accurate prediction.
+From \autoref{fig:1D_FNO_pred_timesteps}, we see that the FNO model overall provides a smooth and accurate prediction.
 
 \subsection*{New initial condition}
 To evaluate the models' ability to generalize to unseen initial conditions, we introduce a new initial condition for the water height $h$.
@@ -174,7 +174,7 @@ In \autoref{fig:Spherical_linear_1D_true_solution}, we see that the solution has
 
 \subsubsection*{CNN Model}
 Ww define and train a CNN model to solve the 1D linearized shallow water equations (LSWE) in spherical coordinates.
-The model is trained on $500$ epochs.
+%The model is trained on $500$ epochs.
 The CNN model is trained on the data from $t = 0$ to $t = 0.6$ s, validated on the data from $t = 0.6$ to $t = 0.8$, and tested on the data from $t = 0.8$ to $t = 1.0$ s.
 The training and validation loss is shown in \autoref{fig:1D_CNN_sphere_loss}.
 \begin{figure}[H]
@@ -206,16 +206,17 @@ From \autoref{fig:1D_CNN_sphere_pred_timesteps_sigma=2}, we see that the predict
 
 \subsubsection*{FNO model}
 The FNO model consists of an input channel, 64 hidden channels and an output channel. We use a Fourier basis with 16 modes and a batch size of 32.
-The model is trained using the Adam optimizer with a learning rate of $0.001$, a total of $100$ epochs and the critera is to minimize the mean squared error (MSE).
+The model is trained using the Adam optimizer with a learning rate of $0.001$ and the critera is to minimize the mean squared error (MSE).
 The model is trained on the data from $t = 0$ to $t = 0.6$, validated on the data from $t = 0.6$ to $t = 0.8$, and tested on the data from $t = 0.8$ to $t = 1.0$.
 The training and validation loss is shown in \autoref{fig:1D_FNO_sphere_loss}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/1D_FNO_loss.pdf}
+    \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/1D_FNO_sphere_loss.pdf}
     \caption{Training and validation loss for the FNO model for the spherical shallow water equations in 1D.}\label{fig:1D_FNO_sphere_loss}
 \end{figure}
 \autoref{fig:1D_FNO_sphere_loss} shows that the training and validation loss decrease over the epochs, indicating that the model is learning the dynamics of the solution.
-We note that the cross between the training and validation loss is later, compared to the CNN model, indicating that the FNO model needs more epochs to converge.
+We see that after some time the validation loss increases, indicating that the model is overfitting the training data.
+%We note that the cross between the training and validation loss is later, compared to the CNN model, indicating that the FNO model needs more epochs to converge.
 The error plots are shown in \autoref{fig:1D_FNO_sphere_error_sigma=2}.
 \begin{figure}[H]
     \centering

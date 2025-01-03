@@ -44,6 +44,7 @@ This may also lead to discontinuities in the solution, which can be difficult fo
 \subsubsection*{FNO Model}
 We train a FNO model with the same training/validation/testing split as for the CNN model.
 The FNO model uses 8 Fourier modes, the Adam optimizer with a learning rate of $0.001$, and a batch size of $10$.
+The model is trained for $500$ epochs.
 The training and validation loss for the 2D FNO model can be seen in \autoref{fig:2D_FNO_loss}.
 \begin{figure}[H]
     \centering
