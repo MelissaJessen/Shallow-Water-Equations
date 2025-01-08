@@ -80,9 +80,17 @@
 % Define the header style
 \pagestyle{fancy}
 \fancyhf{}
-\lhead{\leftmark}
+%\lhead{\leftmark}
 \rhead{\thesection\text{ } \currentname}
-\cfoot{Page \thepage}
+%\cfoot{Page \thepage}
+
+% Define the headers
+%\fancyhead[LE]{\leftmark} % Left header on even pages
+%\fancyhead[RO]{\thesection\text{ } \currentname} % Right header on odd pages
+
+% Define the footer
+\fancyfoot[C]{Page \thepage}
+
 
 
 \title{Fourier Neural Operator-Based Models for Solving the Shallow Water Equations in Spherical Coordinates}

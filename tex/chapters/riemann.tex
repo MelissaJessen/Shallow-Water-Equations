@@ -32,8 +32,8 @@ and the initial conditions $\mathbf{U_L}$ and $\mathbf{U_R}$ are
         h_R \\ h_R u_R \\ h_R v_R
     \end{bmatrix},
 \end{align*}
-which represents the conditions at time $t = 0$ in the left and right states of $x=0$, respectively.
-The function $\mathbf{U}$ is piecewise constant, with a discontinuity at $x=0$.
+which represents the conditions at time $t = 0$ s in the left and right states of $x = 0$ m.
+The function $\mathbf{U}$ is piecewise constant, with a discontinuity at $x = 0$ m.
 The Riemann problem can be solved either exactly or approximately.
 However, in this project we will focus on approximate Riemann solvers, which are able to solve the Riemann problem with high accuracy and efficiency.
 Various approximate Riemann solvers exist, based on finding an approximate solution to the Riemann problem.
@@ -46,17 +46,17 @@ This problem models the sudden release of water following the collapse of a dam,
 As a classic test case for numerical methods, the dam-break problem is commonly used to test the ability of a method to capture discontinuities in the solution.
 The dam-break problem is a special case of the Riemann problem~\eqref{eq:Riemann_problem}.
 The difference is that in the dam-break problem, the initial velocity components, $u_L, u_R, v_L$ and $v_R$, are zero, whereas in the Riemann problem they are allowed to be distinct from zero.
-The initial setup is visualized in Figure~\ref{fig:dam-break-problem}.
+The initial setup is visualized in \autoref{fig:dam-break-problem}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/dam-break-problem.png}
     \caption{Initial conditions for the dam-break problem. An infinitely thin wall at $x=x_0$ divides two sections of water with different water levels.}\label{fig:dam-break-problem}
 \end{figure}
-We can use the shallow water equations to model the flow of water in the dam-break problem, approximately, if we assume that the wall collapses instantaneously at $t=0$.
-In this project we solve both the dam-break problem and cases of the Rieman problem, where the inital fluid velocity is nonzero.
+We can use the shallow water equations to model the flow of water in the dam-break problem, approximately, if we assume that the wall collapses instantaneously at $t=0$ s.
+In this project we solve both the dam-break problem and cases of the Riemann problem, where the inital fluid velocity is nonzero.
 The results are presented in \autoref{ch:numerical_results}.
 
-\subsection{Waves in the Riemann problem}
+\subsection{Solving the Riemann problem exactly by wave decomposition}
 To get a better understanding of the flow in shallow water, we provide some very short background information about the wave structures in the solution of the Riemann problem.
 In general, the wave structure in the solution of the Riemann problem~\eqref{eq:Riemann_problem} consists of three wave families separating four regions.
 The wave families are denoted $W_1, W_2, W_3$ and the regions are the spaces between the wave families, denoted by $R_0, R_1, R_2$ and $R_3$.

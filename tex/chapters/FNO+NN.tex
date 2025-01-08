@@ -1,23 +1,38 @@
 \chapter{Neural Networks and Fourier Neural Operators}\label{ch:FNO+NN}
 So far, we have studied numerical methods for solving partial differential equations (PDEs).
-The Finite Volume Method (FVM), along with other numerical solvers such as the Finite Difference Method (FDM) and Finite Element Method (FEM), solves PDEs by discretizing the domain into a grid.
+The finite volume method (FVM), along with other numerical solvers such as the finite difference method (FDM) and finite element method (FEM), solves PDEs by discretizing the domain into a grid.
 A finer grid improves the accuracy of the solution but also increases the computational cost, creating a trade-off between accuracy and efficiency.
 Complex PDEs often require a fine grid to accurately capture the solution, which can be computationally expensive.
 
 In this chapter, we introduce the use of data-driven methods for solving PDEs.
 %The hope of these methods is that they are able to reduce computational costs while maintaining high accuracy by learning the underlying dynamics of the solution.
 The primary goal of these methods is to reduce computational costs while preserving high accuracy by learning the underlying dynamics of the solution.
-We will introduce the concepts of Convolutional Neural Networks (CNNs) and Fourier Neural Operators (FNOs) as part of this approach.
+We will introduce the concepts of convolutional neural networks (CNNs) and Fourier neural operators (FNOs) as part of this approach.
 
 \section{Convolutional Neural Networks}
-Convolutional Neural Networks (CNNs) are a specialized class of artificial neural networks designed to process and analyze data with a grid-like topology, such as images or time-series data represented af 2D grids.
+Convolutional neural networks (CNNs) are a specialized class of artificial neural networks designed to process and analyze data with a grid-like topology, such as images or time-series data represented af 2D grids.
 CNNs excel at extracting spatial featues from data through the use of convolutional layers, which apply learnable filters to detect patterns such as edges, shapes or textures.
 These layers are typically followed by pooling layers for dimensionality reduction and fully connected layers for classification or regression tasks.
 A key advantage of CNNs is their ability to reduce the number of parameters compared to fully connected networks by sharing weights across spatial regions, making them computationally efficient and less prone to overfitting when working with large inputs.
 Although CNNs are traditionally used for image recognition tasks, their architecture is adaptable for time-series analysis, especially when the data is structured spatially or sequentially.
 
 In this project, CNNs are used to predict the solutions of the shallow water equations. 
-The network is trained to construct a flowmap, which predicts the state of the system at the next time step based on sequences of input data.
+The network is trained to construct a flow map. % which predicts the state of the system at the next time step based on sequences of input data.
+The flow map $\Phi^t: \mathbb{R}^n \rightarrow \mathbb{R}^n$ is defined such that, for all $x \in X$ and 
+\begin{align*}
+    \Phi^t(x_0) =  x(t),
+\end{align*}
+where $x(t)$ is the solution of the PDEs with initial condition $x(0) = x_0$.
+The flow map satisfies
+\begin{align*}
+    \Phi(\Phi (x, t), s) = \Phi(x, s + t) 
+\end{align*}
+A CNN can approximate the flow map $\Phi$ by training on data that pairs an initial state $x_0$ with its state at later times $x(t)$.
+The goal is to learn the mapping:
+\begin{align*}
+    x(t) = \Phi_{CNN} (x_0), 
+\end{align*}
+where $\Phi_{CNN}$ is the CNNS' approximation of the flow map.
 Meaning the network takes sequences of input data, and predicts the corresponding output data.
 The output of the CNN is the solution at the next time step, effectively learning the dynamics of the SWE through the time-series data.
 This setup allows the model to capture both spatial and temporal dependencies in the data, leveraging the CNN's ability to learn localized featires while processing sequential information.
@@ -58,14 +73,14 @@ The first step is to create $v_0(x) = P(a(x))$ by the input layer $P$, which is 
 The neural operator is iterative, meaning we apply several iterations of updates to obtain $v_1, v_2, \ldots$ up to $v_T$.
 An update $v_t \mapsto v_{t+1}$ is defined as
 \begin{align}
-    v_{t+1}(x) := \sigma \left( W v_t(x) + \left( \mathcal{K}(a;\phi)v_t \right) (x) \right), \quad \forall x \in D
+    v_{t+1}(x) := \sigma \left( W v_t(x) + \left( \mathcal{K}(a;\phi)v_t \right) (x) \right), \quad \forall x \in D,
 \end{align}
 where $W: \mathbb{R}^{d_v} \to \mathbb{R}^{d_v}$ is a linear transformation, and $\sigma: \mathbb{R} \to \mathbb{R}$ is a non-linear activation function.
 The output $u(x) = Q(v_T(x))$ is the final update $v_T$ transformed by the output layer $Q$.
-There are various types of operators, but the core of the Fourier Neural Operator lies in its kernel function $\mathcal{K}$.
+There are various types of operators, but the core of the Fourier neural operator lies in its kernel function $\mathcal{K}$.
 We define the Fourier integral operator $\mathcal{K}$ as 
 \begin{align}
-    \left( \mathcal{K}(\phi)v_t \right) (x) := \mathcal{F}^{-1} \left( R_{\phi} \cdot (\mathcal{F}v_t ) \right)(x), \quad \forall x \in D
+    \left( \mathcal{K}(\phi)v_t \right) (x) := \mathcal{F}^{-1} \left( R_{\phi} \cdot (\mathcal{F}v_t ) \right)(x), \quad \forall x \in D,
 \end{align}
 where $\mathcal{F}$ is the Fourier transform, $\mathcal{F}^{-1}$ is the inverse Fourier transform, and $R$ is the linear transformation applied on the lower Fourier modes. 
 By transforming the data into the Fourier domain, FNOs can take advantage of the periodicity and smoothness properties of the Fourier basis, which simplifies the learning process for functions defined over continuous domains.

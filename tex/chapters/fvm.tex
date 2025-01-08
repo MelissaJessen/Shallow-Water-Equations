@@ -4,35 +4,35 @@ Nonlinear problems are more challenging than linear problems, as stability and c
 In particular, when dealing with hyperbolic systems such as the SWE, the presence of discontinuities such as shock waves, hydraulic jumps, and rarefaction waves requires special treatment.
 Our focus is on discontinuous solutions, which can accurately capture these shocks and other discontinuities.
 The FVM provides a framework for dealing with such solutions in a robust and efficient manner.
-Unlike traditional methods, which may struggle to capture sharp gradients or discontinuities, FVM inherently incorporates a mechanism to resolve such features by solving local Riemann problems at the interfaces between computational cells.
+Unlike traditional methods, which may struggle to capture sharp gradients or discontinuities, FVM inherently incorporates a mechanism to resolve such features by solving the local Riemann problem at the interfaces between computational cells.
 This characteristic makes it particularly well-suited for problems involving abrupt changes in the flow, such as those encountered in the modeling of floods, tsunamis, or dam breaks.
 
-The approach described here is based on the work of LeVeque~\cite{LeVeque2002}, who developed a framework for using FVM in the context of hyperbolic systems of partial differential equations.
+The approach described here is based on the work of LeVeque~\cite{LeVeque2002}, who developed a framework for using the FVM in the context of hyperbolic systems of partial differential equations.
 The key idea is to discretize the computational domain into small cells or control volumes and compute the fluxes across the boundaries of these cells.
 The solution within each cell is then updated using the information from neighboring cells, ensuring that conservation laws are satisfied.
 By solving the local Riemann problem at the cell interfaces, the FVM can accurately capture discontinuities and preserve the sharp transitions between different flow regimes.
 In addition to its ability to handle discontinuities, the FVM also has several other advantages, such as its ability to conserve mass, momentum, and energy in a discrete sense.
 This property is crucial when solving balance laws, as it ensures that the physical conservation laws are respected even at the discrete level.
 The method is also highly flexible, allowing for the use of unstructured grids, which can be beneficial for complex geometries and irregular domains.
-Despite its advantages, the finite volume method also has limitations. The accuracy of the method depends heavily on the choice of numerical flux function and the resolution of the computational grid.
+Despite its advantages, the FVM also has limitations. The accuracy of the method depends heavily on the choice of numerical flux function and the resolution of the computational grid.
 In the presence of strong discontinuities, additional techniques such as limiters or high-order schemes may be required to maintain stability and avoid spurious oscillations.
 Furthermore, while the FVM is well-suited for handling hyperbolic problems, it may not be as effective for problems with smooth solutions or for capturing fine-scale features in the solution without sufficient grid resolution.
 
 In this chapter, we derive the finite volume scheme for the 1D SWE and extend it to 2D in cartesian coordinates.
-We introduce the MUSCL scheme for higher-order accuracy and discuss the finite volume method for the 1D linearized SWE in spherical coordinates.
-Additionally, we examine the Riemann problem, including the dam break test case, and present numerical flux functions for solving local Riemann problems at cell interfaces.
+We introduce the MUSCL scheme for higher-order accuracy and discuss the FVM for the 1D linearized SWE in spherical coordinates.
+Additionally, we examine the Riemann problem, including the dam break problem, and present numerical flux functions for solving the local Riemann problem at cell interfaces.
 
-\section{Finite Volume Methods for the 1D SWE}\label{sec:FVM_1D_SWE}
+\section{The Finite Volume Method for the 1D Shallow Water Equations}\label{sec:FVM_1D_SWE}
 We begin by introducing finite volume methods for the SWE in one spatial dimension.
-Specifically, we work in the \(x,t\)-plane, discretizing the domain into finite control volumes, or cells.
+Specifically, we work in the \(x,t\)-plane, discretizing the domain into finite control volumes or cells.
 In \autoref{ch:theory}, we derived the integral form for a single control volume \(V = [x_L, x_R] \times [t_1, t_2]\).
 Here, we extend this approach to a global domain consisting of multiple cells.
 To accommodate this, we update the notation: \(x_{i-1/2}\) and \(x_{i+1/2}\) denote the cell interfaces, while \(t_n\) and \(t_{n+1}\) represent the time levels.
-The control volume for cell \(i\) at time level \(n\), \(V_i^n\), is defined as:
+The control volume for cell $i$ at time level $n$ is defined as:
 \begin{align*}
-    V_i = [x_{i-1/2}, x_{i+1/2}] \times [t_n, t_{n+1}],
+    V_i^n = [x_{i-1/2}, x_{i+1/2}] \times [t_n, t_{n+1}],
 \end{align*}
-where $\Delta x = x_{i+1/2} - x_{i-1/2}$ is the length of the cell and $\Delta t = t_{n+1} - t_n$ is the time step.
+where $\Delta x = x_{i+1/2} - x_{i-1/2}$ is the length of the cell and $\Delta t = t_{n+1} - t_n$ is the time step size.
 The cell $V_i^n$ is illustrated in Figure~\ref{fig:control_volume_V_i_n}.
 \begin{figure}[H]
     \centering
@@ -95,12 +95,12 @@ Consequently, the FVM does not provide pointwise values of the solution, i.e., $
 One of the main challenges in the FVM is to determine appropiate numerical flux functions that, based on the available cell averages, can reasonably approximate the fluxes at the cell interfaces. 
 Later in the thesis, we will consider several numerical flux functions that can be used to solve the local Riemann problem at the cell interfaces.
 
-Finite volume methods are closely related to Finite Difference Methods (FDM), but they differs as they are based on the integral form of the conservation laws.
+The finite volume method are closely related to the finite difference method (FDM), but they differs as they are based on the integral form of the conservation laws.
 Where finite difference methods tend to break down near discontinuities in the solution, finite volume methods are more suited, since they are based on the integral form of the conservation laws.
-The key distinction between the FVM and the FDM lies in their formulation: while the FVM is based on the integral conservation over finite volumes, the FDM is based on the differential conservation over finite differences.
+The key distinction between the FVM and the FDM lies in their formulation: while the FVM is based on the integral conservation over finite volumes, the FDM is based on satisfying the differential equations point-wise at mesh points.
 
-\section{Finite Volume Method for the 2D SWE}
-We now extend the FVM to two space dimensions.
+\section{The Finite Volume Method for the 2D Shallow Water Equations}
+We now extend the FVM to two spatial dimensions, meaning we consider both the $x-$ and $y-$direction.
 Consider the 2D SWE in vector form~\eqref{eq:vector_form_2D} with $\mathbf{S(U)} = 0$:
 \begin{align}\label{eq:2D_SWE}
     \mathbf{U}_t + \mathbf{F(U)}_x + \mathbf{G(U)}_y = 0.
@@ -114,19 +114,19 @@ This means, that in each time step, we need to solve the Riemann problem at all 
 The fluxes $\mathbf{F}_{i-1/2,j}$ and $\mathbf{F}_{i+1/2,j}$ are the average fluxes across the lines $x = x_{i-1/2}$ and $x = x_{i+1/2}$.
 Correspondingly, the fluxes $\mathbf{G}_{i,j-1/2}$ and $\mathbf{G}_{i,j+1/2}$ are the average fluxes across the lines $y = y_{j-1/2}$ and $y = y_{j+1/2}$.
 We work on a domain discretized into rectangular cells of size $\Delta x \times \Delta y$, where $\Delta x = x_{j + 1/2} - x_{j - 1/2} $ and $\Delta y = y_{j + 1/2} - y_{j - 1/2}$.
-The fluxes are illustrated in the figure below.
+The fluxes are illustrated in \autoref{fig:FVM_2D_fluxes}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/FVM_2D_fluxes.png}
     \caption{Illustration of the fluxes for the 2D SWE.}\label{fig:FVM_2D_fluxes}
 \end{figure}
 When using the simultaneous update scheme~\eqref{eq:fvm_scheme_2D_unsplit}, we must consider potential stability issues.
-Certain numerical fluxes, such as those from the Lax-Friedrichs, Lax-Wendroff, and FORCE schemes, are not stable in 2D applications.
+%Certain numerical fluxes, such as those from the Lax-Friedrichs, Lax-Wendroff, and FORCE schemes, are not stable in 2D applications.
 To address this, several methods can be employed.
 
-The first method we consider is the Weighted Average Flux (WAF) scheme.
+The first method we consider is the weighted average flux (WAF) scheme.
 The basic WAF scheme, without any nonlinear TVD modification, is prone to oscillations.
-To mitigate this, a Total Variation Diminishing (TVD) constraint can be enforced.
+To mitigate this, a total variation diminishing (TVD) constraint can be enforced.
 To achieve the TVD condition, additional constraints are imposed on the numerical flux or reconstruction process, often through the use of slope limiters.
 A limiter function is a technique used to reduce oscillations in the solution, especially near sharp edges or discontinuities, such as shock waves.
 For this project, we use the minmod limiter, defined as
@@ -137,7 +137,7 @@ For this project, we use the minmod limiter, defined as
         \min(0, \max(a,b)) & \text{if } a < 0. 
     \end{cases}
 \end{equation*}
-Another method we consider is the MUSCL (Monotone Upwind Scheme for Conservation Laws) scheme.
+Another method we consider is the MUSCL (monotone upwind scheme for conservation laws) scheme.
 This method is second-order accurate in both time and space, while the WAF scheme is second-order accurate in space but relies on the time-stepping scheme for temporal accuracy.
 The MUSCL scheme, combined with slope limiters, ensures the solution remains satisfies the TVD constraint, effectively preventing oscillations that could occur with high-order spatial discretization near shocks, discontinuities, or sharp changes in the solution.
 The key idea in MUSCL is that, instead of using cell averages as in the 1D finite volume method, we reconstruct the solution  in each cell using piecewise first-degree polynomials.
@@ -184,16 +184,18 @@ and correspondingly the flux $\mathbf{F}_{i+1/2}^n$ is the average flux across t
 %\end{align*}
 %where $\mathbf{W} = \begin{bmatrix} h \\ u \end{bmatrix}$, $\mathbf{A}_{i+1/2}^n$ is the numerical flux at the cell interface $\theta_{i+1/2}$, and $\mathbf{S} = \begin{bmatrix} 0 \\ fu \end{bmatrix}.$ 
 %En eller anden motivation for at bruge denne her metode?? 
-The Runge-Kutta 4th order method (RK4) is a numerical technique used to solve ordinary differential equations (ODEs).
+The explicit Runge-Kutta 4th order method (ERK4) is a numerical technique used to solve ordinary differential equations (ODEs).
 This method is particularly effective for time-stepping and is an alternative approach to traditional time integration schemes.
 RK4 provides higher accuracy in time while relying on the same spatial discretization, such as the finite volume method (FVM).
 In this context, the RK4 method is applied to numerically solve the linearized 1D shallow water equations in spherical coordinates:
-\begin{align}
-    \frac{\partial h'}{\partial t} &= -\frac{h_0}{r \cos\phi} \frac{\partial u}{\partial \theta}, \\
-    \frac{\partial u}{\partial t} &= -g \frac{\partial h'}{\partial \theta} - f u,
-\end{align}
+\begin{subequations}
+    \begin{align}
+        \frac{\partial h'}{\partial t} &= -\frac{h_0}{r \cos\phi} \frac{\partial u}{\partial \theta}, \\
+        \frac{\partial u}{\partial t} &= -g \frac{\partial h'}{\partial \theta} - f u,
+    \end{align}
+\end{subequations}
 where \(h'\) is the perturbation in water height, \(u\) is the velocity, \(h_0\) is the mean water depth, \(g\) is the gravitational acceleration, \(f\) is the Coriolis parameter, \(r\) is the Earth's radius, and \(\phi\) is the fixed latitude. 
-The RK4 method employs a four-stage time-stepping scheme to update the solution for $h'$ and $u$.
+The ERK4 method employs a four-stage time-stepping scheme to update the solution for $h'$ and $u$.
 The general update formula is:
 \begin{align*}
     \mathbf{W}_i^{n+1} = \mathbf{W}_i^n + \frac{\Delta t}{\Delta \theta} \frac{1}{6} \left(k_1 + 2 k_2 + 2 k_3 + k_4 \right),
@@ -211,7 +213,7 @@ At each time step, the fluxes $\mathbf{F}_i$ between neighboring cells are compu
 \end{align*}
 where $\mathbf{F}_{i-1/2}$ and $\mathbf{F}_{i+1/2}$ are the fluxes at the edges of the adjacent cells.
 These fluxes depend on $h'$ and $u$.
-At each RK4 stage, the fluxes and intermediate derivatives are calculated to ensure accurate time integration.
+At each ERK4 stage, the fluxes and intermediate derivatives are calculated to ensure accurate time integration.
 The final values of $h'$ and $u$ are obtained by combining the contributions from all four stages.
 This approach allows the method to achieve high temporal accuracy while maintaining the spatial resolution provided by the finite volume discretization.
 

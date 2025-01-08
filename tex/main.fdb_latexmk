@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1736278572.26929 "main.aux" "main.bbl" "main" 1736283152.82199 0
+["bibtex main"] 1736361642.58886 "main.aux" "main.bbl" "main" 1736363525.65286 0
   "./bibl.bib" 1735291110 13189 4b623b33323f4ccb07309817672e9fd2 ""
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291864736 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "main.aux" 1736283151 54852 c250575d3568a8e5bab47deba6c84c2a "pdflatex"
+  "main.aux" 1736363524 55068 8eb5cf7489f12c1766a4372e23795fdd "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1736283146.16123 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1736283152.82284 0
+["pdflatex"] 1736363518.71182 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1736363525.65375 0
   "C:/Users/Matteo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1735387418 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Matteo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1728897231 11548 420b7f80b41b233cad6f319547e72170 ""
   "C:/Users/Matteo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1726253485 24265805 34fa3860fca3f94c581d5d8735e54ea8 ""
@@ -459,7 +459,7 @@
   "C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FVM_N=64_time_5.txt" 1734600659 7 4b00ffd6e98c36cbcbb3570c93e5fbee ""
   "C:/Users/Matteo/Shallow-Water-Equations/tex/figs/control_volume_V_i_n.png" 1729155076 46860 72b2f0375aedf9ea558a9cbdd8ab186b ""
   "C:/Users/Matteo/Shallow-Water-Equations/tex/figs/fvm_grid_new.png" 1728986380 25570 90bdc099e68334d491fba6a00b4ac21c ""
-  "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" 1735933046 4528 f0f58fa0ba509112979e1c63b6808bd5 ""
+  "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" 1736357823 4744 6c72fd938c68a1f1faff67f92b0f5478 ""
   "chapters/00_introduction.tex" 1736271350 9268 ae8d6685c129626145dbc04c4137c6dc ""
   "chapters/01_notation.tex" 1736271781 3001 1765bfd7c1608fc62ca66fadb0090854 ""
   "chapters/02_theory.tex" 1736281275 24594 5f7fd13085a8c2afba5d0cf61654b797 ""
@@ -467,16 +467,16 @@
   "chapters/05_Results.tex" 1734872104 16585 f342d81c82101c8f47f2ab5d6e04d207 ""
   "chapters/06_discussion.tex" 1735929588 300 44f3ff7854353268908df025c556886d ""
   "chapters/07_FurtherWork.tex" 1735928521 148 2777ab9e61a0960116ab73b3899462b8 ""
-  "chapters/FNO+NN.tex" 1735806756 12646 be3346c4133e4282b8f40a7872b9d8eb ""
+  "chapters/FNO+NN.tex" 1736363517 13286 31a322332b9369ca3ed46bda7483a16e ""
   "chapters/appendix.tex" 1735889133 5252 5de5c7bf257e05e990fc048baa32118f ""
   "chapters/conclusion.tex" 1735929603 1165 1a05a4c15bbf6868baa473e79fcbc3e6 ""
   "chapters/data-driven-results-2D.tex" 1735931715 16671 e993e45acfa0a6ef673727eca8e046f5 ""
   "chapters/data-driven-results.tex" 1735933280 23195 675c0aa3d32e247b80d9621ac2999e7c ""
   "chapters/data-generation-sphere.tex" 1735820974 4963 d465cf148c4144a7f62d1fecd62d21d8 ""
   "chapters/data-generation.tex" 1735845419 11380 f7cefd9cfdd3097210aaaf2dd0c7bd02 ""
-  "chapters/fvm.tex" 1735559912 19450 f338a2de3f1913343792ab90ee2ebf4e ""
+  "chapters/fvm.tex" 1736358731 19614 533f098890df8b9768e9b10cf1b67f0c ""
   "chapters/numerical_fluxes.tex" 1735484294 8491 57b94a5cffd34dec7f378c0395463a64 ""
-  "chapters/riemann.tex" 1735482680 9755 db2de2d8c3f8ffee2bb6d6e2a7d2ff07 ""
+  "chapters/riemann.tex" 1736359175 9780 e98ede5f70908bbd85ae8d929700b060 ""
   "figs/DTU.png" 1726205009 71324 08d7a624ec2f9f1df696ed86b2d8893d ""
   "figs/water-column-bc.png" 1726205009 16217 eeb48ba7f34b5234290d5aacfecdeb71 ""
   "frontmatter/Frontpage.tex" 1736267838 1250 d2efd20c1fc737b121c4ca437b24e97d ""
@@ -485,11 +485,11 @@
   "frontmatter/acronyms.tex" 1735568965 764 7792ee174729fe426c7ccd0eeeefbaf7 ""
   "frontmatter/approval.tex" 1734605986 548 5869a939951f84dd4f4abd31dd64f8dd ""
   "frontmatter/statics.tex" 1734602593 546 c986b37bd9ebb7cc9113a04de8cd1e25 ""
-  "main.aux" 1736283151 54852 c250575d3568a8e5bab47deba6c84c2a "pdflatex"
-  "main.bbl" 1736278572 5457 fb06c80bbc1595497697daa01a5d768c "bibtex main"
-  "main.out" 1736283151 8212 46e8250f78db9c0dec1b4e5e77376b72 "pdflatex"
-  "main.tex" 1735933046 4528 f0f58fa0ba509112979e1c63b6808bd5 ""
-  "main.toc" 1736283151 3953 1510b87aaed973f208ddde3ffd3e1064 "pdflatex"
+  "main.aux" 1736363524 55068 8eb5cf7489f12c1766a4372e23795fdd "pdflatex"
+  "main.bbl" 1736361642 5457 fb06c80bbc1595497697daa01a5d768c "bibtex main"
+  "main.out" 1736363524 8619 bcd16a116b9b8115f2523d4915095a78 "pdflatex"
+  "main.tex" 1736357823 4744 6c72fd938c68a1f1faff67f92b0f5478 ""
+  "main.toc" 1736363524 4029 ebd529f2e7890c057b8d209e39f1bb14 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
