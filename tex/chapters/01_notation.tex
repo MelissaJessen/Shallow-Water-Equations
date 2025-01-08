@@ -3,7 +3,7 @@ Before deriving the shallow water equations (SWE), we will introduce the notatio
 In both the 1D case and the 2D case of the SWE, we use cartesian coordinates $(x, y, z)$ with time denoted by $t$.
 Given that linear algebra is a fundamental tool used in this report, we first establish the relevant notation.
 Lowercase bold letters represent vectors, while uppercase bold letters represent matrices.
-For instance, $\mathbf{a}$ is a vector of size $r \times 1, r \in \mathbb{R}$, and $\mathbf{A}$ is a matrix of size $m \times n, m,n \in \mathbb{R}$.
+For instance, $\mathbf{a}$ is a vector of size $r \times 1$, where $r \in \mathbb{R}$, and $\mathbf{A}$ is a matrix of size $m \times n$ with $m,n \in \mathbb{R}$.
 The identity matrix, denoted by $\mathbf{I}$, is a square matrix with ones along the diagonal and zeros elsewhere.
 For example, the $3 \times 3$ identity matrix is given by:
 \begin{align*}
@@ -43,7 +43,7 @@ The divergence operator, represented as $\nabla \cdot $, gives the divergence of
     \nabla \cdot \mathbf{a} = \frac{\partial a_1}{\partial x} + \frac{\partial a_2}{\partial y} + \frac{\partial a_3}{\partial z} = {a_1}_x + {a_2}_y + {a_3}_z,
 \end{align*}
 using the notation for partial derivatives introduced in~\eqref{eq:notation_partial_derivatives}.
-The tensor product of two vectors $\mathbf{a}$ and $\mathbf{b}$, denoted as $\mathbf{a} \otimes \mathbf{b}$, is a matrix where each element is the product of the elements of $\mathbf{a}$ and $\mathbf{b}$, i.e.,
+The tensor product of two vectors $\mathbf{a}$ and $\mathbf{b}$, denoted by $\mathbf{a} \otimes \mathbf{b}$, is a matrix where each element is the product of the elements of $\mathbf{a}$ and $\mathbf{b}$, i.e.,
 \begin{align*}
     \mathbf{a} \otimes \mathbf{b} = \begin{bmatrix}
         a_1 b_1 & a_1 b_2 & a_1 b_3 \\

@@ -63,6 +63,12 @@ Joseph Galewsky, Richard~K. Scott, and Lorenzo~M. Polvani.
   shallow-water equations.
 \newblock {\em Tellus A: Dynamic Meteorology and Oceanography}, Jan 2004.
 
+\bibitem{Hesthaven2008}
+Jan~S. Hesthaven and Tim Warburton.
+\newblock {\em Nodal Discontinuous Galerkin Methods: Algorithms, Analysis, and
+  Applications}.
+\newblock Springer, 2008.
+
 \bibitem{FNO_2021}
 Zongyi Li, Nikola Kovachki, Kamyar Azizzadenesheli, Burigede Liu, Kaushik
   Bhattacharya, Andrew Stuart, and Anima Anandkumar.
