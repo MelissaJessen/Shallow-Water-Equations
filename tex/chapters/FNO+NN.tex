@@ -18,15 +18,16 @@ Although CNNs are traditionally used for image recognition tasks, their architec
 
 In this project, CNNs are used to predict the solutions of the shallow water equations. 
 The network is trained to construct a flow map. % which predicts the state of the system at the next time step based on sequences of input data.
-The flow map $\Phi^t: \mathbb{R}^n \rightarrow \mathbb{R}^n$ is defined such that, for all $x \in X$ and 
+The flow map $\Phi^t: \mathbb{R}^n \rightarrow \mathbb{R}^n$ is defined such that, for all $x \in X$ and all $t \in \mathbb{R}$:
 \begin{align*}
     \Phi^t(x_0) =  x(t),
 \end{align*}
 where $x(t)$ is the solution of the PDEs with initial condition $x(0) = x_0$.
 The flow map satisfies
 \begin{align*}
-    \Phi(\Phi (x, t), s) = \Phi(x, s + t) 
+    \Phi(\Phi (x, t), s) = \Phi(x, s + t),
 \end{align*}
+
 A CNN can approximate the flow map $\Phi$ by training on data that pairs an initial state $x_0$ with its state at later times $x(t)$.
 The goal is to learn the mapping:
 \begin{align*}

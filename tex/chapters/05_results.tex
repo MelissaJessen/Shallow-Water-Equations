@@ -1,7 +1,7 @@
 \chapter{Numerical results}\label{ch:numerical_results}
 In this section we present the results of the numerical experiments, together with the results from the data-driven methods, including neural networks and Fourier neural operators.
 In \autoref{ch:numerical_results} we present the results from the finite volume method (FVM), where we have implemented the method for solving the shallow water equations in 1D  and 2D and tested it on several problems.
-We also address the scalability issues of the finite volume method.
+We also address the scalability issues of the FVM.
 In \autoref{ch:data-driven-results} we present the results from the data-driven methods, where we have implemented neural networks and Fourier neural operators to solve the shallow water equations in 1D.
 We compare the results from the data-driven methods with the results from the FVM, and discuss the advantages and disadvantages of the different methods.
 We expand and in \autoref{sec:data-driven-results-2D} we present the results from the data-driven methods for solving the shallow water equations in 2D.
@@ -9,10 +9,10 @@ We expand and in \autoref{sec:data-driven-results-2D} we present the results fro
 In this chapter we present the results of the numerical experiments, where we have implemented the finite volume method for solving the shallow water equations in 1D and tested it on several problems.
 \footnote{Code and small animations can be found at github, visit \url{https://github.com/MelissaJessen/Shallow-Water-Equations}.}
 A key focus is to validate the implementation, as it will generate data for the data-driven methods, including neural networks and Fourier neural operators.
-To test the implementation, we have solved the 1D dam break problem, and the five test cases from Toro's book~\cite{Toro2001-Shock}.
+To test the implementation, we have solved the 1D dam break problem, and the five test cases from Toro (2001)~\cite{Toro2001-Shock}.
 These problems are all discontinuous in either the water height $h$ or the fluid velocity $u$.
 The idea is, that if the numerical solution can capture the discontinuities, it should be well-suited to handle smoother solutions as well.
-Finally, we have tested the implementation on the 2D idealised circular dam break problem, which is also from Toro's book~\cite{Toro2024}.
+Finally, we have tested the implementation on the 2D idealised circular dam break problem, which is also from Toro (2024)~\cite{Toro2024}.
 The results from the 2D problem are compared to the results from the book to validate the implementation.
 Lastly, we have tested the scalability of the FVM to solve the 2D SWE, by running the 2D problem with a Gaussian initial condition for different values of $N$, i.e., the number of cells in each direction.
 
@@ -25,25 +25,25 @@ First we solve the 1D dam break problem, with the following initial conditions:
     \end{cases} 
 \end{align*}
 where $x \in [0, 50], h_L = 3.5$ m, $h_R = 1.25$ m and $x_0 = 20$ m.
-Since it is a dam break problem the initial fluid velocity is zero, i.e., $u(x,0) = 0$.
-We solve the problem starting at $t=0$ and ending at $t=2.5$ seconds.
+Since it is a dam break problem the initial fluid velocity is zero, i.e., $u(x,0) = 0$ m.
+We solve the problem starting at $t=0$ s and ending at $t=2.5$ s.
 The numerical solution to the 1D Dam Break Problem using the FVM, together with the true solution, provided from the course~\cite{phd_corse_2009}, can be seen in \autoref{fig:1D_dam_break}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.99\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/sol_1D_val.pdf}
-    \caption{The initial water height $h$ at $t=0$, together with the water height, the fluid velocity $u$ and the momentum $hu$ after $t=2.5$ seconds.}\label{fig:1D_dam_break}
+    \caption{The initial water height $h$ at $t=0$ s, together with the water height, the fluid velocity $u$ and the momentum $hu$ after $t=2.5$ seconds.}\label{fig:1D_dam_break}
 \end{figure}
 From Figure~\ref{fig:1D_dam_break} we see that the numerical solution aligns well with the true solution, and successfully captures the discontinuity.
 
 
 \section{Toro test cases}
-We have tested the method on the five test cases for Riemann problems from Toros book~\cite{Toro2001-Shock}.
+We have tested the method on the five test cases for Riemann problems from Toro (2001)~\cite{Toro2001-Shock}.
 The initial conditions for the five test cases are given in \autoref{tab:toro_test_cases}.
 \begin{table}[H]
     \centering
     \begin{tabular}{c|c|c|c|c|c|c}
         \hline
-        \textbf{Test case} & \textbf{$h_L$} & \textbf{$u_L$} & \textbf{$h_R$} & \textbf{$u_R$} & \textbf{$x_0$} & \textbf{$t_{end}$} \\
+        \textbf{Test case} & \textbf{$h_L$} [m] & \textbf{$u_L$} [m/s] & \textbf{$h_R$} [m] & \textbf{$u_R$} [m/s] & \textbf{$x_0$} [m] & \textbf{$t_{end}$} [s] \\
         \hline\hline
         1 & 1.0 & 2.5 & 0.1 & 0.0 & 10.0 & 7.0 \\
         2 & 1.0 & -5.0 & 1.0 & 5.0 & 25.0 & 2.5 \\
@@ -54,7 +54,7 @@ The initial conditions for the five test cases are given in \autoref{tab:toro_te
     \end{tabular}
     \caption{Initial conditions for the five test cases.}\label{tab:toro_test_cases}
 \end{table}
-The domain is $x \in [0, 50]$ for all test cases.
+The domain is $x \in [0, 50]$ m for all test cases.
 The Riemann problems are chosen to test the method on different types of waves, such as shock waves and rarefaction waves.
 To solve the test cases we have used the following fluxes:
 \begin{enumerate}
@@ -184,15 +184,15 @@ Note, that as we see in the results, there are still differences in the solution
 \section{2D idealised Circular Dam Break Problem}
 We now proceed to the 2D case, focusing on an idealised circular dam break problem over a horizontal bottom.
 This problem is also from Toro's book~\cite{Toro2024}.
-We assume there is an infinitely thin circular wall at radius $R = 2.5$ m is a square domain of size $40 \times 40 $ with centre at $(x_c,y_c) = (20, 20)$.
+We assume there is an infinitely thin circular wall at radius $R = 2.5$ m is a square domain of size $40 m \times 40 m$ with centre at $(x_c,y_c) = (20 m, 20 m)$.
 The initial conditions are
 \begin{align*}
     h(x,y,0) &= \begin{cases}
         2.5 \text{ }m, & \text{if } \sqrt{ {(x-x_c)}^2 + {(y-y_c)}^2 } \leq R, \\
         0.5 \text{ }m, & \text{otherwise},
     \end{cases} \\
-    u(x,y,0) &= 0, \\
-    v(x,y,0) &= 0.
+    u(x,y,0) &= 0 m, \\
+    v(x,y,0) &= 0 m.
 \end{align*}
 We use a mesh of size $200 \times 200$.
 The results after $t=0.0, 0.4, 0.7$ and $1.4$ seconds are given in \autoref{fig:2D_dam_break_grid}.

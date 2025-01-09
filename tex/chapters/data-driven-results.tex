@@ -1,12 +1,12 @@
 \chapter{Data-driven results}\label{ch:data-driven-results}
-In this section we present the results of the data-driven models, the Convolutional Neural Network (CNN) and the Fourier Neural Operator (FNO), for solving the shallow water equations.
+In this section we present the results of the data-driven models, namely the convolutional neural network (CNN) and the Fourier neural operator (FNO), for solving the shallow water equations.
 We analyse three main cases:
 \begin{enumerate}
     \item 1D SWE with Gaussian initial conditions. 
     \item 1D linearized SWE in spherical coordinates.
     \item 2D SWE with Gaussian initial conditions.
 \end{enumerate}
-In each case, we evaluate the performance of the CNN and FNO models in terms of Mean Squared Error (MSE), Mean Absolute Error (MAE), training time and prediction time.
+In each case, we evaluate the performance of the CNN and FNO models in terms of mean squared error (MSE), mean absolute error (MAE), training time and prediction time.
 In addition, we analyze the models' predictions for various initial conditions and their ability to generalize to unseen data.
 We also explore their capability to transfer solution aross different grid resolutions, such as transitioning from a coarse grid to a fine grid.
 Finally, we examine the models' long-term predictive performance, assessing how well they maintain accuracy over extended time steps.
@@ -30,12 +30,12 @@ To get an overview of how the solutions evolve, we have plotted the numerical so
     %\centering
     \hspace{3cm} % Adjust the spacing as needed
     \includegraphics[width=0.8\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/NN_initial.pdf}
-    \caption{Numerical solution of the 1D SWE from $t = 0$ to $t = 1$.}\label{fig:NN_initial}
+    \caption{Numerical solution of the 1D SWE from $t = 0$ s to $t = 1$ s.}\label{fig:NN_initial}
 \end{figure}
 In \autoref{fig:NN_initial}, we see how the solution evolves over time.
 The 3d plot provides an overview of the solution, whereas the contour plot offers a more detailed view of the water level.
 From the contour plot, we observe that even though the initial condition is smooth, the solution develops discontinuities over time, represented by the lines in the plot.
-This behavior is typical for the shallow water equations, where the solution can become discontinuous due to the formation of shock waves.
+This behavior is typical for the nonlinear shallow water equations, where the solution can become discontinuous due to the formation of shock waves.
 
 \subsection*{CNN Model}
 %\addcontentsline{toc}{subsection}{Test case 1}
@@ -44,7 +44,7 @@ The model uses the data from the numerical solution to predict the solution at t
 Meaning that the input and output data are the same, but shifted one time step. This way, the model is supposed to learn the flowmap.
 The model takes input with multiple channels and applies a series of 1D convolutional layers to extract spatial features.
 The model uses three convolutional layers with ReLU activation functions.
-The final convolutional layer redusec the output to a single channel, and a fully connected layer maps the processed features to the output.
+The final convolutional layer reduce the output to a single channel, and a fully connected layer maps the processed features to the output.
 The model has been trained using the Adam optimizer with a learning rate of $0.001$ and a batch size of $32$.
 The criteria is to minimize the mean squared error (MSE).
 The model is trained on the first $60\%$ of the data, validated on the next $20\%$, and tested on the last $20\%$.
@@ -105,7 +105,7 @@ From \autoref{fig:1D_FNO_pred_timesteps}, we see that the FNO model overall prov
 \subsection*{New initial condition}
 To evaluate the models' ability to generalize to unseen initial conditions, we introduce a new initial condition for the water height $h$.
 This new condition retains the Gaussian form described in~\eqref{eq:1D_swe_ic_gaussian}, but with a different mean parameter $\mu$.
-Specifically, $\mu$ is set to $\mu = 0.3$, shifting the initial condition to the left.
+Specifically, $\mu$ is set to $\mu = 0.3$ m, shifting the initial condition to the left.
 The new initial condition is illustrated in \autoref{fig:1D_new_ic}.
 \begin{figure}[H]
     \centering
@@ -113,6 +113,7 @@ The new initial condition is illustrated in \autoref{fig:1D_new_ic}.
     \caption{New initial condition for the 1D SWE with a Gaussian function.}\label{fig:1D_new_ic}
 \end{figure}
 The performance of the CNN and FNO models for this new initial condition is summarized in \autoref{tab:results_1D_comparison}.
+The predictions are for one time step.
 
 \subsection*{Comparison}
 To compare the performance of the CNN and FNO models, we consider the MSE and MAE for the predictions of the 1D SWE with Gaussian initial conditions.
@@ -195,7 +196,7 @@ The predictions for some given time steps are shown in \autoref{fig:1D_CNN_spher
     \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/1D_CNN_sphere_pred_timesteps_sigma=2.pdf}
     \caption{Predictions for the spherical shallow water equations in 1D using the CNN model for some given time steps.}\label{fig:1D_CNN_sphere_pred_timesteps_sigma=2}
 \end{figure}
-From \autoref{fig:1D_CNN_sphere_pred_timesteps_sigma=2}, we see that the predictions capture the waves, but have some over- or underestimations at the top or bottom of the waves.
+From \autoref{fig:1D_CNN_sphere_pred_timesteps_sigma=2}, we see that the predictions capture the waves, but have some over- or underestimations at the top or bottom of the waves, meaning that numerical dispersion effects are visible.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/1D_CNN_sphere_pred_timesteps_sphere_sigma=2.pdf}
@@ -203,11 +204,10 @@ From \autoref{fig:1D_CNN_sphere_pred_timesteps_sigma=2}, we see that the predict
 \end{figure}
 
 
-
 \subsubsection*{FNO model}
 The FNO model consists of an input channel, 64 hidden channels and an output channel. We use a Fourier basis with 16 modes and a batch size of 32.
 The model is trained using the Adam optimizer with a learning rate of $0.001$ and the critera is to minimize the mean squared error (MSE).
-The model is trained on the data from $t = 0$ to $t = 0.6$, validated on the data from $t = 0.6$ to $t = 0.8$, and tested on the data from $t = 0.8$ to $t = 1.0$.
+The model is trained on the data from $t = 0$ s to $t = 0.6$ s, validated on the data from $t = 0.6$ s to $t = 0.8$ s, and tested on the data from $t = 0.8$ s to $t = 1.0$ s.
 The training and validation loss is shown in \autoref{fig:1D_FNO_sphere_loss}.
 \begin{figure}[H]
     \centering
