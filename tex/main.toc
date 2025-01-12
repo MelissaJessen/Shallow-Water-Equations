@@ -14,36 +14,36 @@
 \contentsline {section}{\numberline {2.3}The SWE in vector form}{10}{section.2.3}%
 \contentsline {section}{\numberline {2.4}The 1D SWE in integral form}{10}{section.2.4}%
 \contentsline {section}{\numberline {2.5}SWE in Spherical Coordinates}{12}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Linearized SWE in Spherical Coordinates}{16}{section.2.6}%
-\contentsline {chapter}{\numberline {3}The Finite Volume Method}{19}{chapter.3}%
-\contentsline {section}{\numberline {3.1}The Finite Volume Method for the 1D Shallow Water Equations}{20}{section.3.1}%
-\contentsline {section}{\numberline {3.2}The Finite Volume Method for the 2D Shallow Water Equations}{22}{section.3.2}%
-\contentsline {section}{\numberline {3.3}FVM 1D Linearized SWE spherical}{23}{section.3.3}%
-\contentsline {section}{\numberline {3.4}The Riemann problem}{24}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}The Dam-Break problem}{24}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Solving the Riemann problem exactly by wave decomposition}{25}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}Numerical fluxes}{26}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Neural Networks and Fourier Neural Operators}{30}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Convolutional Neural Networks}{30}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Fourier Neural Operators}{31}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Data generation}{34}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Data generation using the FVM}{34}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Data Copernicus}{40}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Mesh generation for the sphere}{40}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Numerical results}{43}{chapter.6}%
-\contentsline {section}{\numberline {6.1}The 1D Dam Break Problem}{43}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Toro test cases}{44}{section.6.2}%
-\contentsline {section}{\numberline {6.3}2D idealised Circular Dam Break Problem}{50}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Scalability}{51}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Data-driven results}{53}{chapter.7}%
-\contentsline {section}{\numberline {7.1}1D SWE with Gaussian initial conditions}{53}{section.7.1}%
-\contentsline {section}{\numberline {7.2}1D linearized SWE in Spherical Coordinates}{59}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Data-driven results for the 2D SWE}{64}{section.7.3}%
-\contentsline {chapter}{\numberline {8}Discussion}{71}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Conclusion}{72}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Further work}{72}{section.9.1}%
-\contentsline {chapter}{Bibliography}{74}{chapter*.109}%
-\contentsline {chapter}{\numberline {A}Appendix}{75}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Additional figures from 1D SWE spherical CNN and FNO}{75}{section.A.1}%
-\contentsline {section}{\numberline {A.2}FNO Toro test 1}{78}{section.A.2}%
-\contentsline {section}{\numberline {A.3}2D SWE long term prediction}{79}{section.A.3}%
+\contentsline {section}{\numberline {2.6}Linearized SWE in Spherical Coordinates}{17}{section.2.6}%
+\contentsline {chapter}{\numberline {3}The Finite Volume Method}{20}{chapter.3}%
+\contentsline {section}{\numberline {3.1}The Finite Volume Method for the 1D Shallow Water Equations}{21}{section.3.1}%
+\contentsline {section}{\numberline {3.2}The Finite Volume Method for the 2D Shallow Water Equations}{23}{section.3.2}%
+\contentsline {section}{\numberline {3.3}FVM 1D Linearized SWE spherical}{24}{section.3.3}%
+\contentsline {section}{\numberline {3.4}The Riemann problem}{25}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}The Dam-Break problem}{25}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Solving the Riemann problem exactly by wave decomposition}{26}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}Numerical fluxes}{27}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Neural Networks and Fourier Neural Operators}{31}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Convolutional Neural Networks}{31}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Fourier Neural Operators}{32}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Data generation}{35}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Data generation using the FVM}{35}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Data Copernicus}{41}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Mesh generation for the sphere}{41}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Numerical results}{44}{chapter.6}%
+\contentsline {section}{\numberline {6.1}The 1D Dam Break Problem}{44}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Toro test cases}{45}{section.6.2}%
+\contentsline {section}{\numberline {6.3}2D idealised Circular Dam Break Problem}{51}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Scalability}{52}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Data-driven results}{54}{chapter.7}%
+\contentsline {section}{\numberline {7.1}1D SWE with Gaussian initial conditions}{54}{section.7.1}%
+\contentsline {section}{\numberline {7.2}1D linearized SWE in Spherical Coordinates}{60}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Data-driven results for the 2D SWE}{65}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Discussion}{72}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusion}{73}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Further work}{73}{section.9.1}%
+\contentsline {chapter}{Bibliography}{75}{chapter*.109}%
+\contentsline {chapter}{\numberline {A}Appendix}{76}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Additional figures from 1D SWE spherical CNN and FNO}{76}{section.A.1}%
+\contentsline {section}{\numberline {A.2}FNO Toro test 1}{79}{section.A.2}%
+\contentsline {section}{\numberline {A.3}2D SWE long term prediction}{80}{section.A.3}%

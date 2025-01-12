@@ -76,6 +76,14 @@ Zongyi Li, Nikola Kovachki, Kamyar Azizzadenesheli, Burigede Liu, Kaushik
   equations.
 \newblock \url{https://arxiv.org/pdf/2010.08895}, 2021.
 
+\bibitem{osti_1478744}
+Nathan Baker, Frank Alexander, Timo Bremer, Aric Hagberg, Yannis Kevrekidis,
+  Habib Najm, Manish Parashar, Abani Patra, James Sethian, Stefan Wild, et~al.
+\newblock Workshop report on basic research needs for scientific machine
+  learning: Core technologies for artificial intelligence.
+\newblock Technical report, USDOE Office of Science (SC), Washington, D.C.
+  (United States), 02 2019.
+
 \bibitem{Nvidia2023}
 Boris Bonev, Christian Hundt, Thorsten Kurth~Jaideep Pathak, et~al.
 \newblock Modeling earth's atmosphere with spherical fourier neural operators.

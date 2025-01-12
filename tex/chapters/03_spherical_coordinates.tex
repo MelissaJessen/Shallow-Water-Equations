@@ -66,35 +66,53 @@ In~\eqref{eq:sphere-volume-time-derivative} we have utilized that $r$ is constan
 We use $u_{\theta}$ and $u_{\phi}$ to denote the velocities in the $\theta-$ and $\phi-$directions.
 We are interested in the rate at which fluid volume enters the region from the sides.
 We can find this rate by considering the flux of fluid volume through the sides of the domain.
-That is, we consider how much fluid volume enters the domain from the $\theta$ direction, and how much fluid volume enters the domain from the $\phi$ direction.
-We calculate the influx at the $\theta$ line and the outflux at $\theta + \Delta \theta$ line, see \autoref{fig:sphere-small-domain}, to find the net flux.
+That is, we consider how much fluid volume enters the domain from the $\theta-$direction, and how much fluid volume enters the domain from the $\phi-$direction.
+We also consider how much fluid volume leaves the domain in the $\theta-$ and $\phi-$directions.
+The net flux of fluid volume into the domain is the difference between the influx and the outflux.
+The rate of change of the volume $V$ with respect to time is equal to the net flux of fluid volume into the domain.
+That is, we have that
+\begin{align}\label{eq:V_t-F_net}
+    V_t = F_{net, \theta} + F_{net, \phi},
+\end{align}
+which combined with~\eqref{eq:sphere-volume-time-derivative} gives us the equation
+\begin{align}\label{eq:sphere-volume-time-combined}
+    r^2 \cos(\phi) \Delta \phi \Delta \theta \frac{\partial h}{\partial t} = F_{net, \theta} + F_{net, \phi}.
+\end{align}
+To find the net flux in the $\theta$ and $\phi$ directions, we consider the influx and outflux in these directions.
+We calculate the influx at the $\theta-$line and the outflux at $(\theta + \Delta \theta)-$line, see \autoref{fig:sphere-small-domain}, to find the net flux.
 The influx is the area of the $\theta$ line times the velocity in the $\theta$ direction at the $\theta$ line.
-The influx is 
+The influx in the $\theta$-direction is given by
 \begin{align*}
-    F_{in} = u_\theta(\theta) h(\theta)  r \Delta \phi,
+    F_{in, \theta} = u_\theta(\theta) h(\theta)  r \Delta \phi,
 \end{align*}
-where $h(\theta)$ is the height of the water at the $\theta$ line, assumed to be constant along the line.
+where $h(\theta)$ is the height of the water at the $\theta-$line, assumed to be constant along the line, and $u_\theta(\theta)$ is the velocity in the $\theta-$direction at the $\theta-$line.
 This way we can compute how much the volume changes due to the influx.
-For the outflux we do the same just for the $\theta + \Delta \theta$ line, introducing the notation $\theta ' = \theta + \Delta \theta $ meaning the outflux is
+For the outflux we do the same just for the $\theta + \Delta \theta$ line, introducing the notation $\theta ' = \theta + \Delta \theta$.
+The outflux is
 \begin{align*}
-    F_{out}
+    F_{out, \theta}
     = u_\theta(\theta + \Delta \theta) h(\theta + \Delta \theta)  r \Delta \phi
     = u_\theta(\theta') h(\theta')  r \Delta \phi
     .
 \end{align*}
 The net flux in the $\theta$ direction is the difference between the influx and the outflux, and is given by
-\begin{align*}
-   F_{net} = F_{in} - F_{out} 
+\begin{align}\label{eq:sphere-net-flux-theta}
+   F_{net, \theta} = F_{in, \theta} - F_{out, \theta} 
     = \left(  u_\theta(\theta) h(\theta) - u_\theta(\theta ') h(\theta ') \right)  r \Delta \phi.
-\end{align*}
+\end{align}
 We can do the same for the $\phi$ direction, also using the notation $\phi ' = \phi + \Delta \phi$.
-Using~\eqref{eq:sphere-volume-time-derivative} and the net fluxes for both directions we can write:
+Hence, we obtain the net flux in the $\phi$ direction as
+\begin{align}\label{eq:sphere-net-flux-phi}
+    F_{net, \phi} &= F_{in, \phi} - F_{out, \phi} \\
+     &= \left( u_\phi(\phi) h(\phi)\cos (\phi) - u_\phi (\phi ')h(\phi ') \cos(\phi')  \right) r \Delta \theta.
+\end{align}
+By inserting~\eqref{eq:sphere-net-flux-theta} and~\eqref{eq:sphere-net-flux-phi} into~\eqref{eq:sphere-volume-time-combined} we can write:
 \begin{align}\label{eq:sphere-volume-time-derivative-flux}
-    r^2 h \cos(\phi) \Delta \phi \Delta \theta
+    h_t r^2 \cos(\phi) \Delta \phi \Delta \theta
     = \left( u_\theta(\theta) h(\theta) - u_\theta (\theta ')h(\theta ')  \right) r \Delta \phi
     + \left( u_\phi(\phi) h(\phi)\cos (\phi) - u_\phi (\phi ')h(\phi ') \cos(\phi')  \right) r \Delta \theta.
 \end{align}
-Since we are interested in the rate of change in the water height $h$ with respect to time, we divide~\eqref{eq:sphere-volume-time-derivative-flux} by the area of the element $r^2 \cos(\phi) \Delta \phi \Delta \theta$.
+Since we are interested in $\frac{\partial h}{\partial t} = h_t$, we divide~\eqref{eq:sphere-volume-time-derivative-flux} by the area of the element $r^2 \cos(\phi) \Delta \phi \Delta \theta$.
 Hence we get
 \begin{align}\label{eq:sphere-derivative-h}
     \frac{\partial h}{\partial t} = \frac{u_\theta(\theta) h(\theta) - u_\theta(\theta ')h(\theta ') }{r \cos(\phi) \Delta \theta} 
@@ -130,12 +148,12 @@ In this case, we focus on the horizontal velocity components, specifically the v
 The vertical velocity is neglected, as the key assumption in the shallow water equations is that the vertical component of the acceleration is negligible.
 Additionally, when considering Earth, the water layer is thin compared to the radius of the Earth, referred to as a thin-layer approximation.
 We need to express the horizontal velocity $u_h$, which is dependent on the variables $\theta, \phi$ and $t$.
-Since $\theta$ and $\phi$ are angles, we introduce the unit vectors $\mathbf{e}_\theta$ and $\mathbf{e}_\phi$ on the surface in the $\theta$ and $\phi$ directions, respectively.
+Since $\theta$ and $\phi$ are angles, we introduce the unit vectors $\mathbf{e}_\theta$ and $\mathbf{e}_\phi$ on the surface in the $\theta-$ and $\phi-$directions.
 The unit vectors are illustrated in~\autoref{fig:sphere-unit-vectors}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/sphere-unit-vectors.png}
-    \caption{Illustration of the unit vectors $\mathbf{e}_\theta$ and $\mathbf{e}_\phi$.}\label{fig:sphere-unit-vectors}
+    \caption{Illustration of the unit vectors $\mathbf{e}_\theta$ and $\mathbf{e}_\phi$, tangential to the surface.}\label{fig:sphere-unit-vectors}
 \end{figure}
 We can express the horizontal velocity $u_h$ in terms of the unit vectors as
 \begin{align}\label{eq:sphere-horizontal-velocity}
@@ -156,17 +174,19 @@ Similarly, if we differentiate the latitude angle $\phi$ with respect to time, w
     \frac{\text{d}\phi}{\text{d}t} = \omega_\phi,
 \end{align*}
 meaning that if $\omega_\phi > 0$, the point is moving northwards, and if $\omega_\phi < 0$, the point is moving southwards.
-By using the arc length formula, we get that 
+By using the  derivative of the arc length formula, we get that 
 \begin{align}\label{eq:sphere-arc-length}
     \frac{\text{d}\theta}{\text{d}t} =  \frac{u_\theta}{r \cos(\phi)},
     \quad \frac{\text{d}\phi}{\text{d}t} = \frac{u_\phi}{r}.
 \end{align}
 We can now insert~\eqref{eq:sphere-arc-length} into~\eqref{eq:sphere-total-derivative} to find the total derivative of the horizontal velocity split into the $\theta$ and $\phi$ directions:
 \begin{equation}\label{eq:sphere-total-derivative-split}
+    \left.
     \begin{aligned}
         \frac{\text{d}u_\theta}{\text{d}t} = \frac{\partial u_\theta}{\partial t} + \frac{u_\theta}{r \cos(\phi)} \frac{\partial u_\theta}{\partial \theta} + \frac{u_\phi}{r} \frac{\partial u_\theta}{\partial \phi}, \\
         \frac{\text{d}u_\phi}{\text{d}t} = \frac{\partial u_\phi}{\partial t} + \frac{u_\theta}{r \cos(\phi)} \frac{\partial u_\phi}{\partial \theta} + \frac{u_\phi}{r} \frac{\partial u_\phi}{\partial \phi}.
     \end{aligned}
+    \right\}
 \end{equation}
 We know that the right hand side of~\eqref{eq:sphere-total-derivative-split} are the given physical forces acting on the fluid.
 Earlier in this project, we focused on the shallow water equations in cartesian coordinates, accounting solely for gravitational forces.

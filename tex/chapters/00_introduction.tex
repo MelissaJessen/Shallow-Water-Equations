@@ -17,7 +17,7 @@ A wide range of problems can be modeled by the shallow water equations, such as 
 Recent catastrophic events, such as the floods in the Valencia region of Spain in late October 2024, highlight the urgent need for efficient tools to simulate and understand flood behavior.
 On October 29, 2024, Valencia received a years worth of rain in just eight hours, leading to flash floods that devastated the area, resulting in significant loss of life and property damage~\cite{valencia_flood_disaster_esa}.
 
-While it is impossible to prevent such disasters from occurring, a robust toolkit to solve the shallow water equations can help us simulate the spreading of floods quickly.
+While it is impossible to prevent such disasters from occurring, a robust toolkit to solve the shallow water equations can help to create a trustworthy forecast in a sufficiently short time.
 This can aid in emergency response and disaster management.
 The ability to rapidly simulate flood scenarios could significantly reduce the time needed for decision-making in critical situations.
 Traditional numerical methods already exist to solve the SWE, but their accuracy often comes at the cost of high computational demands.
@@ -37,7 +37,7 @@ We will analyze the advantages and disadvantages of these data-driven methods an
 This comparison will allow us to assess whether data-driven approaches offer a practical solution to efficiently solving the shallow water equations, ultimately improving disaster response and flood prediction, perhaps even under varying and unforeseen initial conditions.
 
 \section{Literature}
-When working in this area it inevitably to mention the work of E. F. Toro, who has written several books on the topic of Riemann solvers and the finite volume method, specifically for the shallow water equations.
+When working in this area it is inevitable to mention the work of E. F. Toro, who has written several books on the topic of Riemann solvers and the finite volume method, specifically for the shallow water equations.
 In this project, we will use the books \textit{Shock-Capturing Methods for Free-Surface Shallow Flows}~\cite{Toro2001-Shock}, \textit{Riemann Solvers and Numerical Methods for Fluid Dynamics}~\cite{Toro2009-Riemann} and the rather new book from 2024 \textit{Computational Algorithms for Shallow Water Equations}~\cite{Toro2024} as references.
 The books have been especially useful when deriving the shallow water equations as well as understanding and describing the finite volume method, inlcuding the Riemann solvers used in this project.
 The course \textit{Advanced Numerical Methods for Environmental Models} at the University of Trento, has provided a good foundation for the numerical methods used in this project, both in terms of lecture notes and exercises~\cite{trento_course}.
@@ -52,6 +52,7 @@ The field of Fourier neural operators (FNO) is relatively new, and as a result, 
 However, the paper \textit{Fourier Neural Operator for Parametric Partial Differential Equations}~\cite{FNO_2021}, written by several authors, is a key reference.
 The paper suggests that FNOs has shown great potential in being an efficient and resolution independent operator in the emerging field of scientific machine learning to solve partial differential equations.
 A key reason of their success is their ability to generalize to unseen data.
+For more on the topic of scientific machine learning, consider the tech report~\cite{osti_1478744}.
 In the last years the company Nvidia has done some very interesting work on the topic of FNO, and they have published several blog posts on the topic.
 One of the posts consider the use of spherical Fourier neural operators (SFNO) to generate weather forecasts around the globe\cite{Nvidia2023}.
 Another paper regarding SFNOs is~\cite{bonev2023-SFNO}, which generalizes FNOs on the sphere.
