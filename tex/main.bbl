@@ -49,6 +49,11 @@ David~J. Raymond.
   \url{http://kestrel.nmt.edu/~raymond/classes/ph332/notes/sphere/sphere.pdf},
   New Mexico Tech. Accessed 2024.
 
+\bibitem{shallow_water_gfdl}
+Geophysical Fluid Dynamics~Laboratory (GFDL).
+\newblock Shallow water equations, n.d.
+\newblock Accessed: 2025-01-12.
+
 \bibitem{Gavete_2009}
 L.~Gavete, B.~Alonso, M.L. Gavete, F.~Ureña, and J.J. Benito.
 \newblock An adaptive solver for the spherical shallow water equations.
@@ -152,6 +157,11 @@ Randall~J. LeVeque.
 \newblock {\em Finite Volume Methods for Hyperbolic Problems}.
 \newblock Cambridge Texts in Applied Mathematics. Cambridge University Press,
   2002.
+
+\bibitem{LeVeque_1992}
+Randall~J. LeVeque.
+\newblock {\em Numerical Methods for Conservation Laws}.
+\newblock Birkhäuser, Basel, 1992.
 
 \bibitem{phd_corse_2009}
 A.~P Engsig-Karup and J.~S. Hesthaven.

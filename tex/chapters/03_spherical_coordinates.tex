@@ -191,18 +191,23 @@ We can now insert~\eqref{eq:sphere-arc-length} into~\eqref{eq:sphere-total-deriv
 We know that the right hand side of~\eqref{eq:sphere-total-derivative-split} are the given physical forces acting on the fluid.
 Earlier in this project, we focused on the shallow water equations in cartesian coordinates, accounting solely for gravitational forces.
 However, in spherical coordinates, additional physical forces must be considered. These include the Coriolis force, centripetal acceleration, and the effects of Earth's curvature.
-First we consider the gravitational force acting on the fluid, descibed as $-g \Delta h$, where $g$ is the gravitational constant, and $\Delta h$ is the gradient of the height $h$.
-We consider the gradient of $h(\theta, \phi)$:
+First we consider the gravitational force acting on the fluid, descibed as $-g \nabla h$, where $g$ is the gravity acceleration, and $\nabla h$ is the gradient of the height $h$.
+We consider the gradient of $h$:
 \begin{align}
-    \Delta h  &= \frac{1}{r \cos(\phi)} h_{\theta} \mathbf{e}_{\theta} + \frac{1}{r } h_{\phi} \mathbf{e}_{\phi},
+    \nabla h &= \frac{\partial h}{\partial x_\theta} \mathbf{e}_{\theta} + \frac{\partial h}{\partial x_\phi} \mathbf{e}_{\phi} \\
+     &= \frac{1}{r \cos(\phi)} h_{\theta} \mathbf{e}_{\theta} + \frac{1}{r } h_{\phi} \mathbf{e}_{\phi},
 \end{align}
 meaning that the gravity force acting on the fluid in the $\theta$ and $\phi$ directions are given by:
-\begin{align*}
-    &\theta-\text{direction:} \quad -\frac{g}{r \cos(\phi)} h_{\theta},\\
-    &\phi-\text{direction:} \quad -\frac{g}{r} h_{\phi}.
-\end{align*}
+\begin{equation*}
+    \left.
+    \begin{aligned}
+        &\theta-\text{direction:} \quad -\frac{g}{r \cos(\phi)} h_{\theta},\\
+        &\phi-\text{direction:} \quad -\frac{g}{r} h_{\phi}.
+    \end{aligned}
+    \right\}
+\end{equation*}
 Hence, we obtain the two momentum equations in spherical coordinates as
-\begin{equation}
+\begin{equation} 
     \begin{aligned}
          {(u_\theta)}_t + \frac{u_\theta}{r \cos(\phi)} {(u_\theta)}_\theta + \frac{u_\phi}{r} {(u_\theta)}_\phi = -\frac{g}{r \cos(\phi)} h_{\theta} + \text{other forces}, \\
         {( u_\phi)}_t + \frac{u_\theta}{r \cos(\phi)} {(u_\phi)}_\theta   + \frac{u_\phi}{r} {(u_\phi)}_\phi = -\frac{g}{r} h_{\phi} + \text{other forces}.
@@ -211,20 +216,29 @@ Hence, we obtain the two momentum equations in spherical coordinates as
 The next force we consider is the Coriolis force, which is a force that acts on moving objects on the surface of the earth~\cite{Coriolis}.
 The Coriolis force is given by $f = 2 \Omega \sin(\phi)$, where $\Omega$ is the angular velocity of the earth.
 The Coriolis force in the $\theta$ and $\phi$ directions are then given by:
-\begin{align*}
-   &\theta-\text{direction:} \quad f u_\phi,\\
-    &\phi-\text{direction:} \quad -f u_\theta.
-\end{align*}
+\begin{equation*}
+    \left.
+    \begin{aligned}
+        &\theta-\text{direction:} \quad f u_\phi,\\
+        &\phi-\text{direction:} \quad -f u_\theta.
+    \end{aligned}
+    \right\}
+\end{equation*}
 The last thing we need to take into account when working in the spherical domain is the curvature of the earth.
 This adds the following terms:
-\begin{align*}
-    &\theta-\text{direction:} \quad \frac{u_\theta u_\phi}{r} \tan(\phi),\\
-    &\phi-\text{direction:} \quad -\frac{u_\theta^2}{r} \tan(\phi).
-\end{align*}
+\begin{equation*}
+    \left.
+    \begin{aligned}
+        &\theta-\text{direction:} \quad \frac{u_\theta u_\phi}{r} \tan(\phi),\\
+        &\phi-\text{direction:} \quad -\frac{u_\theta^2}{r} \tan(\phi).
+    \end{aligned}
+    \right\}
+\end{equation*}
+
 
 There are several formulations of the SWE in spherical coordinates.
 Inserting these forces into the momentum equations, we get the following formulation of the shallow water equations in spherical coordinates:
-\begin{equation}
+\begin{equation}\label{eq:spherical-swe}
     \left.
     \begin{aligned}
         h_t + \frac{1}{r \cos (\phi)} \left( {(h u_\theta)}_{\theta} + {(h u_{\phi} \cos(\phi))}_{\phi}  \right) &= 0, \\
@@ -235,7 +249,12 @@ Inserting these forces into the momentum equations, we get the following formula
     \end{aligned}
     \right\}
 \end{equation}
-where $r$ is the radius, $(\theta, \phi)$ are the longitude and latitude angles, $h$ is the height of the water, $u_\theta$ and $u_\phi$ are the velocities in the $\theta$ and $\phi$ directions, $g$ is the gravitational constant.
+where $r$ is the radius, $(\theta, \phi)$ are the longitude and latitude angles, $h$ is the height of the water, $u_\theta$ and $u_\phi$ are the velocities in the $\theta-$ and $\phi-$directions and $g$ is the gravitational constant.
+We can also write the spherical SWE~\eqref{eq:spherical-swe} in vector form as
+\begin{align}
+    \mathbf{U}_t + \frac{1}{r \cos(\phi)} \mathbf{F(U)}_\theta + \frac{1}{r} \mathbf{G(U)}_\phi = \mathbf{S},
+\end{align}
+where $\frac{1}{r \cos(\phi)} \mathbf{F(U)}_\theta$ and $\frac{1}{r} \mathbf{G(U)}_\phi$ are the flux terms in the $\theta-$ and $\phi-$directions and $\mathbf{S}$ is the source term.
 
 %Obtain in vector form:
 %Multiply with $\cos \phi$ and something else. Consider the paper.
@@ -253,23 +272,45 @@ where $r$ is the radius, $(\theta, \phi)$ are the longitude and latitude angles,
 
 
 
-\section{Linearized SWE in Spherical Coordinates}
-In this section, we derive the linearized shallow water equations (SWE) in spherical coordinates, focusing on one spatial dimension, the longitude ($\theta$), and time ($t$).
-This approach assumes a constant latitude ($\phi$), simplifying the equations to a one-dimensional framework.
-The linearized SWE are employed for their simplicity, providing a foundation for understanding wave dynamics in a spherical geometry.
+\section{Linearized Shallow Water Equations in Spherical Coordinates}
+In this section, we derive the linearized shallow water equations (LSWE) in spherical coordinates, focusing on one spatial dimension, namely the longitude $\theta$.
+This approach assumes a constant latitude $\phi$, simplifying the equations to a one-dimensional framework.
+The LSWE are employed for their simplicity, providing a foundation for understanding wave dynamics in a spherical geometry.
 Later in this project, we will apply the finite volume method to solve these equations numerically.
 The derivation and methodology presented here are based on the sources~\cite{BONEV_2018} and~\cite{Eskilsson_2005}.
 We neglect all body forces other than gravity.
 We linearize by assuming that the height of the water $h$ and the velocities $u$ are small perturbations from a state of rest.
-We set $h = h_0 + h'$, $u = u_0 + u'$, where $h_0$ and $u_0$ are the equilibrium height and velocity, respectively, and $h'$ and $u'$ are the perturbations.
-We also assume that the equilibrium height $h_0$ is constant.
-To linearize the equations, we assume small perturbations around a mean state. Let the perturbations in water height and velocity be represented by:
-
-\[
-h = h_0 + h', \quad u_\theta = u'_\theta, \quad u_\phi = u'_\phi,
-\]
-where \( h_0 \) is the mean water height, and \( h' \), \( u'_\theta \), and \( u'_\phi \) represent the perturbations in the water height and velocity components, respectively.
-Substituting these perturbed variables into the original equations and neglecting second-order terms (i.e., terms that involve products of perturbations), we obtain the following linearized shallow water equations:
+We set $h = h_0 + h'$ and $u = u_0 + u'$, where $h_0$ and $u_0$ are the equilibrium height and velocity, $h'$ and $u'$ are the perturbations.
+We also assume that the equilibrium height $h_0$ is constant and that the equilibrium velocity $u_0$ is zero.
+Let the perturbations in water height and velocity be represented by:
+\begin{align}\label{eq:perturbations}
+    h = h_0 + h', \quad u = u_0 + u',
+\end{align}
+where $h_0$ is the mean water height, and $h'$ and $u'$ represent the perturbations in the water height and velocity components, respectively.
+Since we consider the LSWE for one spatial dimension, we neglect the latitude component $\phi$ and the velocity component $u_\phi$.
+The third equation in~\eqref{eq:spherical-swe} is neglected, as we consider the LSWE for one spatial dimension.
+We also neglect all forces, except for the gravitational force.
+Thus we have the following SWE in spherical coordinates for one spatial dimension:
+\begin{equation}\label{eq:spherical-swe-1D}
+    \left.
+    \begin{aligned}
+        h_t + \frac{1}{r \cos (\phi)}  {(h u)}_{\theta}  &= 0, \\
+        {u}_t  + \frac{u}{r \cos (\phi)} {u}_\theta + \frac{g}{r \cos (\phi)} h_\theta  &= 0.
+    \end{aligned}
+    \right\}
+\end{equation}
+Where $u$ denotes the velocity in the $\theta$ direction.
+We substitute the perturbed variables~\eqref{eq:perturbations} into the 1D spherical SWE~\eqref{eq:spherical-swe-1D} and utilize that $u_0 = 0$ to obtain
+\begin{equation}\label{eq:linearized_swe_spherical-perturbations}
+    \left.
+    \begin{aligned}
+        {(h_0 + h')}_t + \frac{1}{r \cos (\phi)} \left( (h_0 + h'){(u')}_\theta  + {(h_0 + h')}_\theta(u') \right) = 0, \\
+        {(u')}_t + \frac{u'}{r \cos (\phi)} {(u')}_\theta + \frac{g}{r \cos (\phi)} h'_\theta = 0.
+    \end{aligned}
+    \right\}
+\end{equation}
+We neglect the terms involving products of pertubations arising in~\eqref{eq:linearized_swe_spherical-perturbations}, as they are second-order terms.
+Hence, we obtain the linearized shallow water equations in spherical coordinates with one spatial dimension $\theta$ and time $t$ as:
 \begin{equation}\label{eq:linearized_swe_spherical}
     \left.
     \begin{aligned}
@@ -279,7 +320,6 @@ Substituting these perturbed variables into the original equations and neglectin
     \right\}
 \end{equation}
 These equations describe the evolution of small perturbations in water height and velocity on a spherical surface.
-%Hence, we obtain the linearized shallow water equations in spherical coordinates with one spatial dimension ($\theta$) and time ($t$) as
 We can also write the linearized shallow water equations in spherical coordinates in vector form as
 \begin{align}\label{eq:linearized_swe_spherical_vector}
     \mathbf{W}_t + \mathbf{A} \mathbf{W}_\theta = 0,
@@ -290,7 +330,7 @@ $\mathbf{A} = \begin{bmatrix} 0 & \frac{h_0}{r \cos(\phi)} \\ \frac{g}{r \cos (\
 
 
 \subsubsection*{Integral form of the 1D spherical LSWE}
-As we consider the longitude $\theta$ as the spatial dimension, the domain is the circle $[0, 2\pi]$, which is divided into $N$ cells or control volumes, each of length $\Delta \theta = \frac{2\pi}{N}$.
+As we consider the longitude $\theta$ as the spatial dimension, the domain is the circle $[0, 2\pi]$, which is divided into $N$ cells or control volumes, each of length $\Delta \theta = \frac{2\pi}{N}$, expressend in terms of longitude angle.
 Each cell $i$ has a cell center at $\theta_i$ and cell boundaries/interfaces at $\theta_{i-1/2}$ and $\theta_{i+1/2}$.
 \begin{figure}[H]
     \centering
@@ -317,7 +357,7 @@ Since the matrix $\mathbf{A}$ is constant, we can take it out of the integral:
 \begin{align*}
     \int_{\theta_L}^{\theta_R} \mathbf{W}_t \text{ d}\theta + \mathbf{A} \int_{\theta_L}^{\theta_R} \mathbf{W}_\theta \text{ d}\theta = 0.
 \end{align*}
-We also use the fundamental theorem of calculus to rewrite the integral of the derivative as the difference of the function at the boundaries:
+We also use the fundamental theorem of calculus to rewrite the integral of the derivative as the difference of the function at the boundaries of the control volume:
 \begin{align}\label{eq:derive_integral_form_1D_spherical}
     \int_{\theta_L}^{\theta_R} \mathbf{W}_t \text{ d}\theta =  \mathbf{A} \left( \mathbf{W}(\theta_L, t) - \mathbf{W}(\theta_R, t) \right).
 \end{align}

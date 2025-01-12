@@ -40,6 +40,7 @@
 \citation{Castro2017}
 \citation{Bihlo2022}
 \citation{Raymond}
+\citation{shallow_water_gfdl}
 \citation{Gavete_2009}
 \citation{Galewsky_2004}
 \citation{Hesthaven2008}
@@ -133,21 +134,25 @@
 \newlabel{eq:sphere-total-derivative}{{2.5.11}{15}{SWE in Spherical Coordinates}{equation.2.5.11}{}}
 \newlabel{eq:sphere-arc-length}{{2.5.12}{15}{SWE in Spherical Coordinates}{equation.2.5.12}{}}
 \citation{Coriolis}
+\newlabel{eq:sphere-total-derivative-split}{{2.5.13}{16}{SWE in Spherical Coordinates}{equation.2.5.13}{}}
+\newlabel{eq:spherical-swe}{{2.5.17}{16}{SWE in Spherical Coordinates}{equation.2.5.17}{}}
 \citation{BONEV_2018}
 \citation{Eskilsson_2005}
-\newlabel{eq:sphere-total-derivative-split}{{2.5.13}{16}{SWE in Spherical Coordinates}{equation.2.5.13}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.6}Linearized SWE in Spherical Coordinates}{17}{section.2.6}\protected@file@percent }
-\newlabel{eq:linearized_swe_spherical}{{2.6.1}{17}{Linearized SWE in Spherical Coordinates}{equation.2.6.1}{}}
-\newlabel{eq:linearized_swe_spherical_vector}{{2.6.2}{17}{Linearized SWE in Spherical Coordinates}{equation.2.6.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.6}Linearized Shallow Water Equations in Spherical Coordinates}{17}{section.2.6}\protected@file@percent }
+\newlabel{eq:perturbations}{{2.6.1}{17}{Linearized Shallow Water Equations in Spherical Coordinates}{equation.2.6.1}{}}
+\newlabel{eq:spherical-swe-1D}{{2.6.2}{17}{Linearized Shallow Water Equations in Spherical Coordinates}{equation.2.6.2}{}}
+\newlabel{eq:linearized_swe_spherical-perturbations}{{2.6.3}{17}{Linearized Shallow Water Equations in Spherical Coordinates}{equation.2.6.3}{}}
+\newlabel{eq:linearized_swe_spherical}{{2.6.4}{17}{Linearized Shallow Water Equations in Spherical Coordinates}{equation.2.6.4}{}}
+\newlabel{eq:linearized_swe_spherical_vector}{{2.6.5}{17}{Linearized Shallow Water Equations in Spherical Coordinates}{equation.2.6.5}{}}
 \newlabel{fig:sphere1d_small_cell}{{\TR@TitleReference {2.7a}{Integral form of the 1D spherical LSWE}}{18}{Illustration of the grid for the 1D SWE with small cells}{figure.caption.18}{}}
 \newlabel{sub@fig:sphere1d_small_cell}{{\TR@TitleReference {a}{Integral form of the 1D spherical LSWE}}{18}{Illustration of the grid for the 1D SWE with small cells}{figure.caption.18}{}}
 \newlabel{fig:sphere1d_small_domain}{{\TR@TitleReference {2.7b}{Integral form of the 1D spherical LSWE}}{18}{Illustration of the grid for the 1D SWE with a small domain}{figure.caption.18}{}}
 \newlabel{sub@fig:sphere1d_small_domain}{{\TR@TitleReference {b}{Integral form of the 1D spherical LSWE}}{18}{Illustration of the grid for the 1D SWE with a small domain}{figure.caption.18}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Grid illustrations for the 1D SWE in spherical coordinates.}}{18}{figure.caption.18}\protected@file@percent }
 \newlabel{fig:sphere1d_combined}{{\TR@TitleReference {2.7}{Grid illustrations for the 1D SWE in spherical coordinates.}}{18}{Grid illustrations for the 1D SWE in spherical coordinates}{figure.caption.18}{}}
-\newlabel{eq:derive_integral_form_1D_spherical}{{2.6.3}{18}{Integral form of the 1D spherical LSWE}{equation.2.6.3}{}}
-\newlabel{eq:integral_form_spherical_1D}{{2.6.4}{18}{Integral form of the 1D spherical LSWE}{equation.2.6.4}{}}
-\newlabel{eq:integral_form_spherical_1D_final}{{2.6.5}{18}{Integral form of the 1D spherical LSWE}{equation.2.6.5}{}}
+\newlabel{eq:derive_integral_form_1D_spherical}{{2.6.6}{18}{Integral form of the 1D spherical LSWE}{equation.2.6.6}{}}
+\newlabel{eq:integral_form_spherical_1D}{{2.6.7}{19}{Integral form of the 1D spherical LSWE}{equation.2.6.7}{}}
+\newlabel{eq:integral_form_spherical_1D_final}{{2.6.8}{19}{Integral form of the 1D spherical LSWE}{equation.2.6.8}{}}
 \citation{LeVeque2002}
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}The Finite Volume Method}{20}{chapter.3}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
@@ -162,6 +167,7 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Illustration of the grid for the 1D SWE.}}{22}{figure.caption.20}\protected@file@percent }
 \newlabel{fig:10_3}{{\TR@TitleReference {3.2}{Illustration of the grid for the 1D SWE.}}{22}{Illustration of the grid for the 1D SWE}{figure.caption.20}{}}
 \citation{Toro2009-Riemann}
+\citation{LeVeque_1992}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}The Finite Volume Method for the 2D Shallow Water Equations}{23}{section.3.2}\protected@file@percent }
 \newlabel{eq:2D_SWE}{{3.2.1}{23}{The Finite Volume Method for the 2D Shallow Water Equations}{equation.3.2.1}{}}
 \newlabel{eq:fvm_scheme_2D_unsplit}{{3.2.2}{23}{The Finite Volume Method for the 2D Shallow Water Equations}{equation.3.2.2}{}}
@@ -172,19 +178,19 @@
 \citation{Toro2024}
 \@writefile{toc}{\contentsline {section}{\numberline {3.4}The Riemann problem}{25}{section.3.4}\protected@file@percent }
 \newlabel{eq:Riemann_problem}{{3.4.1}{25}{The Riemann problem}{equation.3.4.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}The Dam-Break problem}{25}{subsection.3.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}The Dam-Break problem}{26}{subsection.3.4.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Initial conditions for the dam-break problem. An infinitely thin wall at $x=x_0$ divides two sections of water with different water levels.}}{26}{figure.caption.22}\protected@file@percent }
 \newlabel{fig:dam-break-problem}{{\TR@TitleReference {3.4}{Initial conditions for the dam-break problem. An infinitely thin wall at $x=x_0$ divides two sections of water with different water levels.}}{26}{Initial conditions for the dam-break problem. An infinitely thin wall at $x=x_0$ divides two sections of water with different water levels}{figure.caption.22}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Solving the Riemann problem exactly by wave decomposition}{26}{subsection.3.4.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces General wave structure in the solution of the Riemann problem.}}{26}{figure.caption.23}\protected@file@percent }
-\newlabel{fig:riemann_sol_general}{{\TR@TitleReference {3.5}{General wave structure in the solution of the Riemann problem.}}{26}{General wave structure in the solution of the Riemann problem}{figure.caption.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces General wave structure in the solution of the Riemann problem.}}{27}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:riemann_sol_general}{{\TR@TitleReference {3.5}{General wave structure in the solution of the Riemann problem.}}{27}{General wave structure in the solution of the Riemann problem}{figure.caption.23}{}}
 \citation{Toro2024}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Numerical fluxes}{27}{section.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Numerical fluxes}{28}{section.3.5}\protected@file@percent }
 \newlabel{eq:HLL_flux}{{3.5.1}{28}{HLL}{equation.3.5.1}{}}
 \newlabel{eq:two_rarefaction_hstar}{{3.5.2}{28}{HLL}{equation.3.5.2}{}}
 \newlabel{eq:Rusanov_flux_part1}{{3.5.3}{29}{Rusanov}{equation.3.5.3}{}}
 \newlabel{eq:Rusanov_flux}{{3.5.4}{29}{Rusanov}{equation.3.5.4}{}}
-\newlabel{eq:Lax-Friedrichs_wave_speed}{{3.5.5}{29}{Lax-Friedrichs}{equation.3.5.5}{}}
+\newlabel{eq:Lax-Friedrichs_wave_speed}{{3.5.5}{30}{Lax-Friedrichs}{equation.3.5.5}{}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}Neural Networks and Fourier Neural Operators}{31}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -371,24 +377,26 @@
 \bibcite{Castro2017}{6}
 \bibcite{Bihlo2022}{7}
 \bibcite{Raymond}{8}
-\bibcite{Gavete_2009}{9}
-\bibcite{Galewsky_2004}{10}
-\bibcite{Hesthaven2008}{11}
-\bibcite{FNO_2021}{12}
-\bibcite{osti_1478744}{13}
-\bibcite{Nvidia2023}{14}
-\bibcite{bonev2023-SFNO}{15}
-\bibcite{oshea2015introductionconvolutionalneuralnetworks}{16}
-\bibcite{chollet2017comprehensive}{17}
-\bibcite{Vreugdenhil1994}{18}
-\bibcite{Leibniz}{19}
-\bibcite{Gill_1982}{20}
-\bibcite{lat-long-earth}{21}
-\bibcite{Coriolis}{22}
-\bibcite{BONEV_2018}{23}
-\bibcite{Eskilsson_2005}{24}
-\bibcite{LeVeque2002}{25}
-\bibcite{phd_corse_2009}{26}
+\bibcite{shallow_water_gfdl}{9}
+\bibcite{Gavete_2009}{10}
+\bibcite{Galewsky_2004}{11}
+\bibcite{Hesthaven2008}{12}
+\bibcite{FNO_2021}{13}
+\bibcite{osti_1478744}{14}
+\bibcite{Nvidia2023}{15}
+\bibcite{bonev2023-SFNO}{16}
+\bibcite{oshea2015introductionconvolutionalneuralnetworks}{17}
+\bibcite{chollet2017comprehensive}{18}
+\bibcite{Vreugdenhil1994}{19}
+\bibcite{Leibniz}{20}
+\bibcite{Gill_1982}{21}
+\bibcite{lat-long-earth}{22}
+\bibcite{Coriolis}{23}
+\bibcite{BONEV_2018}{24}
+\bibcite{Eskilsson_2005}{25}
+\bibcite{LeVeque2002}{26}
+\bibcite{LeVeque_1992}{27}
+\bibcite{phd_corse_2009}{28}
 \bibstyle{unsrt}
 \@writefile{toc}{\contentsline {chapter}{Bibliography}{75}{chapter*.109}\protected@file@percent }
 \@writefile{toc}{\contentsline {chapter}{\numberline {A}Appendix}{76}{appendix.A}\protected@file@percent }

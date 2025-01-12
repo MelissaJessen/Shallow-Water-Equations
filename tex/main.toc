@@ -14,15 +14,15 @@
 \contentsline {section}{\numberline {2.3}The SWE in vector form}{10}{section.2.3}%
 \contentsline {section}{\numberline {2.4}The 1D SWE in integral form}{10}{section.2.4}%
 \contentsline {section}{\numberline {2.5}SWE in Spherical Coordinates}{12}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Linearized SWE in Spherical Coordinates}{17}{section.2.6}%
+\contentsline {section}{\numberline {2.6}Linearized Shallow Water Equations in Spherical Coordinates}{17}{section.2.6}%
 \contentsline {chapter}{\numberline {3}The Finite Volume Method}{20}{chapter.3}%
 \contentsline {section}{\numberline {3.1}The Finite Volume Method for the 1D Shallow Water Equations}{21}{section.3.1}%
 \contentsline {section}{\numberline {3.2}The Finite Volume Method for the 2D Shallow Water Equations}{23}{section.3.2}%
 \contentsline {section}{\numberline {3.3}FVM 1D Linearized SWE spherical}{24}{section.3.3}%
 \contentsline {section}{\numberline {3.4}The Riemann problem}{25}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}The Dam-Break problem}{25}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.1}The Dam-Break problem}{26}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Solving the Riemann problem exactly by wave decomposition}{26}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}Numerical fluxes}{27}{section.3.5}%
+\contentsline {section}{\numberline {3.5}Numerical fluxes}{28}{section.3.5}%
 \contentsline {chapter}{\numberline {4}Neural Networks and Fourier Neural Operators}{31}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Convolutional Neural Networks}{31}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Fourier Neural Operators}{32}{section.4.2}%

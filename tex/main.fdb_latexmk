@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1736678481.19777 "main.aux" "main.bbl" "main" 1736678567.88018 0
-  "./bibl.bib" 1736671402 15188 378c6e4b9e5c5907efb47ccb385809a1 ""
+["bibtex main"] 1736696138.09891 "main.aux" "main.bbl" "main" 1736696146.74649 0
+  "./bibl.bib" 1736696036 15712 2050cf19528cabbc42257c8bca150229 ""
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291864736 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "main.aux" 1736678566 55609 991638dc75b77ceb33c8bab63854091a "pdflatex"
+  "main.aux" 1736696145 56262 ea7b5b6999feac0f9710f9791d96d6c1 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1736678560.8479 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1736678567.88135 0
+["pdflatex"] 1736696138.59583 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1736696146.74763 0
   "C:/Users/Matteo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1735387418 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Matteo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1728897231 11548 420b7f80b41b233cad6f319547e72170 ""
   "C:/Users/Matteo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1726253485 24265805 34fa3860fca3f94c581d5d8735e54ea8 ""
@@ -460,10 +460,10 @@
   "C:/Users/Matteo/Shallow-Water-Equations/tex/figs/control_volume_V_i_n.png" 1729155076 46860 72b2f0375aedf9ea558a9cbdd8ab186b ""
   "C:/Users/Matteo/Shallow-Water-Equations/tex/figs/fvm_grid_new.png" 1728986380 25570 90bdc099e68334d491fba6a00b4ac21c ""
   "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" 1736357823 4744 6c72fd938c68a1f1faff67f92b0f5478 ""
-  "chapters/00_introduction.tex" 1736671975 9390 71878e4a681e2a10ea4865422a0f0c50 ""
+  "chapters/00_introduction.tex" 1736696120 9473 5880a931d8b9906f62128ab9cb372199 ""
   "chapters/01_notation.tex" 1736672784 3008 36a729f2a9e51f66cb6dfd92255a819b ""
   "chapters/02_theory.tex" 1736673603 24609 f5c64f9b6ecbf73ab465200e7f3fafc1 ""
-  "chapters/03_spherical_coordinates.tex" 1736678559 25350 0fdac28419ad5cbb2b25af0fe3fe7bd9 ""
+  "chapters/03_spherical_coordinates.tex" 1736693693 27328 eebcda532a06707244028a5fa07c3701 ""
   "chapters/05_Results.tex" 1736447107 16610 0c058f5570e3c4081c411fc5f690b7f0 ""
   "chapters/06_discussion.tex" 1735929588 300 44f3ff7854353268908df025c556886d ""
   "chapters/07_FurtherWork.tex" 1735928521 148 2777ab9e61a0960116ab73b3899462b8 ""
@@ -474,7 +474,7 @@
   "chapters/data-driven-results.tex" 1736447648 23322 e231a2734ad6900baca004801148a5a2 ""
   "chapters/data-generation-sphere.tex" 1736446413 4964 62955035a9ab886a30d086d631182212 ""
   "chapters/data-generation.tex" 1736446345 11462 82ece55e7572fe085aca2144e3db411c ""
-  "chapters/fvm.tex" 1736358731 19614 533f098890df8b9768e9b10cf1b67f0c ""
+  "chapters/fvm.tex" 1736695746 20498 04ddebb6b6a22bd46e6bd7fbffaf711c ""
   "chapters/numerical_fluxes.tex" 1735484294 8491 57b94a5cffd34dec7f378c0395463a64 ""
   "chapters/riemann.tex" 1736359175 9780 e98ede5f70908bbd85ae8d929700b060 ""
   "figs/DTU.png" 1726205009 71324 08d7a624ec2f9f1df696ed86b2d8893d ""
@@ -485,11 +485,11 @@
   "frontmatter/acronyms.tex" 1735568965 764 7792ee174729fe426c7ccd0eeeefbaf7 ""
   "frontmatter/approval.tex" 1734605986 548 5869a939951f84dd4f4abd31dd64f8dd ""
   "frontmatter/statics.tex" 1734602593 546 c986b37bd9ebb7cc9113a04de8cd1e25 ""
-  "main.aux" 1736678566 55609 991638dc75b77ceb33c8bab63854091a "pdflatex"
-  "main.bbl" 1736678481 5880 5056fddb67d7c83faf66054de67eb4db "bibtex main"
-  "main.out" 1736678566 8619 bcd16a116b9b8115f2523d4915095a78 "pdflatex"
+  "main.aux" 1736696145 56262 ea7b5b6999feac0f9710f9791d96d6c1 "pdflatex"
+  "main.bbl" 1736696138 6175 d8364045bea9e9ce45a16c33fcc83462 "bibtex main"
+  "main.out" 1736696145 8725 173cd2988c14c417046e9a862ffb4bd6 "pdflatex"
   "main.tex" 1736357823 4744 6c72fd938c68a1f1faff67f92b0f5478 ""
-  "main.toc" 1736678566 4029 909ddb627e9e6c29b0e140482eec85a6 "pdflatex"
+  "main.toc" 1736696145 4049 2b55b39eef111cf6d2af773c7eb5e768 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
