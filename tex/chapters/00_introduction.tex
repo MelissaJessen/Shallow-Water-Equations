@@ -3,38 +3,62 @@ This chapter provides the motivation for the project and explains the background
 It also includes a literature review, where we outline the most important sources relevant to this work.
 Finally, this chapter offers an overview of the thesis and its structure.
 
-\begin{figure}[H]
+\section{Motivation}
+Natural distasters such as floods and tsunamis are becoming increasingly frequent, causing devastating impacts on human life and property.
+Populations in coastal areas, river basins and flood-prone regions are particularly at risk.
+A recent example is the catastrophic flooding in Valencia, Spain, in late October 2024.
+On October 29, 2024, Valencia received a year's worth of rain in just eight hours, leading to flash floods that devastated the area, resulting in significant loss of life and property damage~\cite{valencia_flood_disaster_esa}.
+Satellite images highlight the extent of the flooding, comparing the region before the event on October 8, 2024, and after on October 30, 2024.
+These images are presented in \autoref{fig:valencia_flood}.
+
+While it is impossible to prevent such disasters from occuring, trustworthy forecasts delivered in sufficiently short time can help in emergency response and disaster management.
+These events highlight the urgent need for efficient tools to simulate and understand flood behavior.
+The ability to rapidly simulate flood scenarios can significantly reduce the time needed for decision-making in critical situations, potentially saving lives and minimizing the impact of such disasters.
+During a catastrophe, fast simulatons are particularly valuable, even if some accuracy is sacrificed, as long as the results are accurate enough to make decisions.
+Moreover, running multiple simulations of different scenarios can provide a better understanding of water dynamics and a stronger data foundation.
+
+For instance, the flooding in Germany during July 2021 was unexpected in several ways.
+Meteorological forecasts has predicted heavy rain in the affected regions, and there were warnings of the potential for flooding~\cite{fathom_floods_2021}.
+Despite these forecasts, the intensity and scale of the floods surpassed expectations, and climate scientist expressed shock of the extent of the flooding~\cite{guardian_floods_2021}.
+This is a good example of how a deeper understanding of water dynamics, supported by simulations, could have helped to predict the water flow and its spread.
+
+\begin{figure}
     \centering
     \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/photo_valencia.pdf}
     \caption{Before and after the floods in Valencia, Spain, October 2024.\\
-            Source: \url{https://www.esa.int/ESA_Multimedia/Images/2024/10/Valencia_flood_disaster}.}
+            Source: \url{https://www.esa.int/ESA_Multimedia/Images/2024/10/Valencia_flood_disaster}.}\label{fig:valencia_flood}
 \end{figure}
 
-\section{Motivation}
-The shallow water equations (SWE) are a set of hyperbolic partial differential equations that describe the motion of a fluid in a shallow layer of water.
-These equations are crucial for understanding and simulating water dynamics in shallow water regions, such as coastal areas, rivers, and flood-prone regions.
+This motivates the study of the shallow water equations (SWE), a set of hyperbolic partial differential equations that describe the motion of a fluid in a shallow layer of water.
+These equations are essential for understanding and simulating water dynamics in shallow water regions, such as coastal areas, rivers, and flood-prone regions.
 A wide range of problems can be modeled by the shallow water equations, such as flooding, tsunamis and dam break scenarios.
-Recent catastrophic events, such as the floods in the Valencia region of Spain in late October 2024, highlight the urgent need for efficient tools to simulate and understand flood behavior.
-On October 29, 2024, Valencia received a years worth of rain in just eight hours, leading to flash floods that devastated the area, resulting in significant loss of life and property damage~\cite{valencia_flood_disaster_esa}.
+By solving the shallow water equations, we can simulate and predict the behavior of water in these regions, providing valuable insights for disaster management and emergency response.
+In this work, we will derive the SWE with one spatial dimension (1D), two spatial dimensions (2D), and in spherical coordinates, which are particularly useful for modeling water flow on the Earth's surface.
 
-While it is impossible to prevent such disasters from occurring, a robust toolkit to solve the shallow water equations can help to create a trustworthy forecast in a sufficiently short time.
-This can aid in emergency response and disaster management.
-The ability to rapidly simulate flood scenarios could significantly reduce the time needed for decision-making in critical situations.
-Traditional numerical methods already exist to solve the SWE, but their accuracy often comes at the cost of high computational demands.
-In many cases, the run time can be too long, meaning simulations may be too slow to provide real-time insight during a flood event.
-This motivates the investigation of data-driven approaches to solve the SWE fast while maintaining an acceptable level of accuracy.
-
-By investigating data-driven methods, this project aims to determine whether they can offer a faster and more efficient way to solve the shallow water equationa compared to numerical methods.
-In this work, we will derive the SWE in 1D, 2D, and spherical coordinates to model the flow of water on the Earth's surface.
-We will explore the finite volume method (FVM) in 1D and 2D, a numerical technique for solving partial differential equations by dividing the domain into small control volumes and integrating the equations over these volumes.
+The SWE can be solved using numerical methods, such as the finite volume method (FVM), which is a numerical technique for solving partial differential equations, by discretizing the domain into small control volumes and integrating the equations over these volumes.
 This method is widely used in computational fluid dynamics to model fluid behavior.
-We will implement the FVM and use it to solve the SWE in 1D for several problems, including the dam break problem. We will then extend this approach to 2D and solve the idealized circular dam break problem.
-The FVM solvers will be validated by comparing their solutions with known test cases, as this validation is critical for generating the data needed to train the data-driven approaches.
-The data-driven approaches include training a convolutional neural network (CNN) and a Fourier neural operator (FNO) to solve the shallow water equations.
-The data-driven models will be trained on the FVM data and evaluated on performance metrics such as run time, accuracy, long-term prediction capabilities, grid transferability and their response to new initial conditions.
+In this work, we will implement the FVM in 1D and use it to solve the SWE for several scenarios, including the dam break problem.
+We will extent the FVM to 2D and solve the idealized circular dam break problem.
+The FVM solvers will be validated against known test cases, as this validation is critical for future work.
+A finer grid resolution improves solution accuracy but comes at the cost of an increased computational run time, resulting in slower simulations.
+While high-resolution grids can provide more accurate results, they may not be practical for real-time simulations, such as during a flood event, where fast simulations are crucial for decision-making.
+This limitation motivates the investigation of data-driven approaches to solve the shallow water equations, which may offer a faster and more efficient way to simulate water dynamics while maintaining an acceptable level of accuracy.
+
+This project investigates whether data-driven methods can provide a faster and more efficient alternative to traditional numerical methods for solving the shallow water equations.
+Specifically, we will explore training a convolutional neural network (CNN) and a Fourier neural operator (FNO) to solve the SWE.
+The data-driven models will be trained on the data generated from the FVM solvers, and evaluated on performance metrics such as run time, accuracy, long-term prediction capabilities, grid transferability and their response to new initial conditions.
 These initial conditions could include varying water heights, velocities, and other environmental factors that may change in real-world flood scenarios.
-We will analyze the advantages and disadvantages of these data-driven methods and compare their run times with those of traditional numerical methods.
-This comparison will allow us to assess whether data-driven approaches offer a practical solution to efficiently solving the shallow water equations, ultimately improving disaster response and flood prediction, perhaps even under varying and unforeseen initial conditions.
+We will compare the advantages and limitations of the data-driven approaches against numerical methdos, focusing on their potential to improve disaster responser and flood prediction.%also under varying and unforeseen initial conditions.
+This comparison will allow us to assess whether data-driven approaches offer a practical solution to efficiently solve the shallow water equations.
+Data-driven models may be preferred for applications requiring fast simulations, while numerical methods may be more suitable for scenarios demanding high accuracy.
+An interesting aspect is to investigate how much more accurate and efficient the data-driven methods may be compared to the traditional numerical methods.
+
+Additionally, we will examine the different models abilities to make long-term predictions.
+Numerical methods, including the FVM, solve the SWE one time step at a time, which can be computationally expensive, particularly for long-term predictions.
+In constrast, data-driven models also predict one time step at a time, but they may not need to be retrained for each time step.
+Once trained, these models can make predictions for all time steps, potentially making them faster than numerical methods.
+
+By analyszing and comparing these approaches, this project aims to identify the contextx in which data-driven models can complement or even replace traditional numerical methods for solving the shallow water equations.
 
 \section{Literature}
 When working in this area it is inevitable to mention the work of E. F. Toro, who has written several books on the topic of Riemann solvers and the finite volume method, specifically for the shallow water equations.
