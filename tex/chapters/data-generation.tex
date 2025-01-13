@@ -48,14 +48,14 @@ In this study, we use the Gaussian function as the initial condition for the wat
     h(x,0) &= a \exp{\left(\frac{-{(x-\mu)}^2}{2\sigma^2}\right)},
 \end{align}
 where $a$ is the amplitude of the Gaussian, $\mu$ is the mean value, and $\sigma$ is the standard deviation.
-We are working on the domain $x \in [0,1] m$ and the parameters are set to $g = 9.81 m/s^2$ and $\sigma = 0.1$.
+We are working on the domain $x \in [0,1]$ m and the parameters are set to $g = 9.81 m/s^2$ and $\sigma = 0.1$ m.
 The value of $\mu$ is varied to generate different initial conditions, as seen in \autoref{fig:data_generation_initial}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/data_generation_initial.png}
     \caption{Initial conditions for the data generation.}\label{fig:data_generation_initial}
 \end{figure}
-For the initial velocity $u$, we set it to zero, i.e., $u(x,0) = 0 m$. This means that the water is initially at rest.
+For the initial velocity $u$, we set it to zero, i.e., $u(x,0) = 0$ m. This means that the water is initially at rest.
 The solver is validated by comparing the results with known test cases, such as the dam break problem.
 We use a CFL number of $0.9$ and variable time steps.
 We generate the data from $t = 0.0$ to $t_{\text{end}} = 1.0 s$.
@@ -72,7 +72,7 @@ To assess the truncation error, we generate a more accurate solution using a fin
 This high-resolution solution serves as a reference for evaluating the numerical approximation.
 By comparing the high-resolution solution with the numerical solution, we gain insights into the error introduces by the approximation.
 
-In this study, we generate a reference solution for $N = 1000$ and compare it with the solution for $N = 100$ at the final time step, $t = 1.0 s$.
+In this study, we generate a reference solution for $N = 1000$ and compare it with the solution for $N = 100$ at the final time step, $t = 1.0$ s.
 The results are shown in \autoref{fig:1D_SWE_truncation_error}.
 \begin{figure}[H]
     \centering
@@ -85,16 +85,18 @@ This suggests that the data generated using the numerical solver is of high qual
 
 \subsection*{1D SWE in spherical coordinates}
 We also consider the spherical shallow water equations in a 1D setting, focusing on the linearized SWE on a circular domain.
-The length of the domain corresponds to the circumreference of the circle, $L = 2\pi$, and is discretized into $N = 500$ points.
+The length of the domain corresponds to a full circle, $L = 2 \pi$ radians and is discretized into $N = 500$ points.
+%The length of the domain corresponds to the circumreference of the circle, $L = 2\pi$ m, and is discretized into $N = 500$ points.
 The initial condition for the water height $h$ is specified as a Gaussian function wrapped around the circle, expressed as:
 \begin{align}\label{eq:1D_swe_spherical_ic}
     h(\theta, 0) &= a \exp \left( \frac{-{(\theta-\mu)}^2}{2 \sigma^2} \right),
 \end{align}
-where the parameters are $a = 1$ and $\mu = \frac{\pi}{4}$.
+where $h$ is the water height in meters, $a$ is the amplitude of the Gaussian, $\mu$ is the mean value, and $\sigma$ is the standard deviation.
+The parameters are $a = 1$  and $\mu = \frac{\pi}{4}$.
 We generate data for varying values of $\sigma$ to investigate the effect of the standard deviation on the model performance.
 The data is generated for $\sigma = \frac{\pi}{8}, \sigma = \frac{\pi}{16}$ and $\sigma = \frac{\pi}{32}$.
-The initial velocity $u$ is set to zero, i.e., $u(\theta,0) = 0 m$.
-The time step size is fixed and set to $\Delta t = 0.0025 s$.
+The initial velocity $u$ is set to zero, i.e., $u(\theta,0) = 0$ m.
+The time step size is fixed and set to $\Delta t = 0.0025$ s.
 The initial conditions can be seen in \autoref{fig:swe_spherical_1d_initial_conditions_sigmas}.
 \begin{figure}[H]
     \centering
@@ -120,7 +122,7 @@ The initial conditions can be seen in \autoref{fig:swe_spherical_1d_initial_cond
 From \autoref{fig:swe_spherical_1d_initial_conditions_sigmas}, we observe that the standard deviation \(\sigma\) affects the width of the Gaussian function.
 The smaller the $\sigma$, the narrower the Gaussian function, meaning the curves are steeper.
 This is to test the different models abilities to handle steep gradients.
-The data is generated from $t = 0.0$ to $t_{\text{end}} = 1.0 s$.
+The data is generated from $t = 0.0$ to $t_{\text{end}} = 1.0$ s.
 
 \subsection*{2D SWE}
 %For the 2D SWE, we also use Gaussian functions with parametric extension~\cite{Gaussian} to generate the initial conditions.
@@ -130,7 +132,7 @@ For the 2D SWE, we also use the Gaussian function as initial condition for the w
 \end{align*}
 where $h_0$ is the initial water height outside of the Gaussian, $a$ is the amplitude of the Gaussian in meters, $(x_c, y_c)$ is the center of the Gaussian in meters, and $\sigma$ is the standard deviation.
 The domain is $x,y \in [0,40]$ m and is discretized into $N$ points in each direction.
-We use the parameters $h_0 = 1 m$, $a = 2$, $(x_c, y_c) = (20 m, 20 m)$, and $\sigma = 2$.
+We use the parameters $h_0 = 1$ m, $a = 2$ m, $(x_c, y_c) = (20 \text{m}, 20 \text{m})$, and $\sigma = 2$ m.
 The initial velocity $u$ is set to zero, i.e., $u(x,y,0) = 0$.
 The data is generated for different values of $N$ to investigate the effect of the grid resolution on the model performance.
 To generate data like this also makes it possible to test the models abilities to transfer solutions to different grid resolutions.

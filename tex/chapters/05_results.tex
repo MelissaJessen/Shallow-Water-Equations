@@ -24,14 +24,14 @@ First we solve the 1D dam break problem, with the following initial conditions:
         h_R, & \text{if } x > x_0,
     \end{cases} 
 \end{align*}
-where $x \in [0, 50], h_L = 3.5$ m, $h_R = 1.25$ m and $x_0 = 20$ m.
-Since it is a dam break problem the initial fluid velocity is zero, i.e., $u(x,0) = 0$ m.
+where $x \in [0 \text{ m}, 50 \text{ m}]$, $h_L = 3.5$ m, $h_R = 1.25$ m and $x_0 = 20$ m.
+Since it is a dam break problem the initial fluid velocity is zero, i.e., $u(x,0) = 0$ m/s.
 We solve the problem starting at $t=0$ s and ending at $t=2.5$ s.
 The numerical solution to the 1D Dam Break Problem using the FVM, together with the true solution, provided from the course~\cite{phd_corse_2009}, can be seen in \autoref{fig:1D_dam_break}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.99\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/sol_1D_val.pdf}
-    \caption{The initial water height $h$ at $t=0$ s, together with the water height, the fluid velocity $u$ and the momentum $hu$ after $t=2.5$ seconds.}\label{fig:1D_dam_break}
+    \caption{The initial water height $h$ at $t=0$ s, together with the water height, the fluid velocity $u$ and the momentum $hu$ at $t=2.5$ s.}\label{fig:1D_dam_break}
 \end{figure}
 From Figure~\ref{fig:1D_dam_break} we see that the numerical solution aligns well with the true solution, and successfully captures the discontinuity.
 
@@ -54,7 +54,7 @@ The initial conditions for the five test cases are given in \autoref{tab:toro_te
     \end{tabular}
     \caption{Initial conditions for the five test cases.}\label{tab:toro_test_cases}
 \end{table}
-The domain is $x \in [0, 50]$ m for all test cases.
+The domain is $x \in [0 \text{ m}, 50 \text{ m}]$ for all test cases.
 The Riemann problems are chosen to test the method on different types of waves, such as shock waves and rarefaction waves.
 To solve the test cases we have used the following fluxes:
 \begin{enumerate}
@@ -184,30 +184,30 @@ Note, that as we see in the results, there are still differences in the solution
 \section{2D idealised Circular Dam Break Problem}
 We now proceed to the 2D case, focusing on an idealised circular dam break problem over a horizontal bottom.
 This problem is also from Toro's book~\cite{Toro2024}.
-We assume there is an infinitely thin circular wall at radius $R = 2.5$ m is a square domain of size $40 m \times 40 m$ with centre at $(x_c,y_c) = (20 m, 20 m)$.
+We assume there is an infinitely thin circular wall at radius $R = 2.5$ m is a square domain of size $40 \text{ m} \times 40 \text{ m}$ with centre at $(x_c,y_c) = (20 \text{ m}, 20 \text{ m})$.
 The initial conditions are
 \begin{align*}
     h(x,y,0) &= \begin{cases}
-        2.5 \text{ }m, & \text{if } \sqrt{ {(x-x_c)}^2 + {(y-y_c)}^2 } \leq R, \\
-        0.5 \text{ }m, & \text{otherwise},
+        2.5 \text{ m}, & \text{if } \sqrt{ {(x-x_c)}^2 + {(y-y_c)}^2 } \leq R, \\
+        0.5 \text{ m}, & \text{otherwise},
     \end{cases} \\
-    u(x,y,0) &= 0 m, \\
-    v(x,y,0) &= 0 m.
+    u(x,y,0) &= 0 \text{ m/s}, \\
+    v(x,y,0) &= 0 \text{ m/s}.
 \end{align*}
 We use a mesh of size $200 \times 200$.
-The results after $t=0.0, 0.4, 0.7$ and $1.4$ seconds are given in \autoref{fig:2D_dam_break_grid}.
+The results after $t=0.0 \text{ s}, 0.4 \text{ s}, 0.7 \text{ s}$ and $1.4$ s are given in \autoref{fig:2D_dam_break_grid}.
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.pdf}
-        \caption{2D dam break problem after $t=0$.}\label{fig:2D_dam_break_t0}
+        \caption{2D dam break problem after $t=0$ s.}\label{fig:2D_dam_break_t0}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.4.pdf}
-        \caption{2D dam break problem after $t=0.4$.}\label{fig:2D_dam_break_t0.4}
+        \caption{2D dam break problem after $t=0.4$ s.}\label{fig:2D_dam_break_t0.4}
     \end{subfigure}
 
     \vspace{0.5cm} % Adjusts vertical space between rows
@@ -215,13 +215,13 @@ The results after $t=0.0, 0.4, 0.7$ and $1.4$ seconds are given in \autoref{fig:
     \begin{subfigure}{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=0.7.pdf}
-        \caption{2D dam break problem after $t=0.7$.}\label{fig:2D_dam_break_t0.7}
+        \caption{2D dam break problem after $t=0.7$ s.}\label{fig:2D_dam_break_t0.7}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro2D_t=1.4.pdf}
-        \caption{2D dam break problem after $t=1.4$.}\label{fig:2D_dam_break_t1.4}
+        \caption{2D dam break problem after $t=1.4$ s.}\label{fig:2D_dam_break_t1.4}
     \end{subfigure}
 
     \caption{Snapshots of the 2D dam break problem at different times.}\label{fig:2D_dam_break_grid}
