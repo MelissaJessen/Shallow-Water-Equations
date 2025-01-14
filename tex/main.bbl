@@ -174,11 +174,23 @@ Randall~J. LeVeque.
 \newblock {\em Numerical Methods for Conservation Laws}.
 \newblock Birkhäuser, Basel, 1992.
 
+\bibitem{Github_SWE}
+Melissa Jessen.
+\newblock Shallow-water-equations.
+\newblock \url{https://github.com/MelissaJessen/Shallow-Water-Equations},
+  2024-2025.
+
 \bibitem{phd_corse_2009}
 A.~P Engsig-Karup and J.~S. Hesthaven.
 \newblock An introduction to discontinuous galerkin methods for solving partial
   differential equations.
 \newblock \url{https://www2.compute.dtu.dk/~apek/DGFEMCourse2009/}, 2009.
 \newblock Lecture notes.
+
+\bibitem{neuraloperator}
+David Pitt.
+\newblock Neural operator: Learning operators for pdes.
+\newblock \url{https://github.com/neuraloperator/neuraloperator}, 2024.
+\newblock GitHub repository. Accessed: January 14, 2025.
 
 \end{thebibliography}

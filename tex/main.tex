@@ -1,4 +1,5 @@
-\documentclass{report}
+%\documentclass{report}
+\documentclass[twoside]{report}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -73,24 +74,14 @@
 
 % Initialize a command to store the current section title
 \makeatletter
-\newcommand*{\currentname}{\@currentlabelname}
+%\newcommand*{\currentname}{\@currentlabelname}
+\newcommand*{\currentname}{}
+\renewcommand{\sectionmark}[1]{\gdef\currentname{#1}}
 \makeatother
 
 
-% Define the header style
-\pagestyle{fancy}
-\fancyhf{}
-%\lhead{\leftmark}
-\rhead{\thesection\text{ } \currentname}
-%\cfoot{Page \thepage}
-
-% Define the headers
-%\fancyhead[LE]{\leftmark} % Left header on even pages
-%\fancyhead[RO]{\thesection\text{ } \currentname} % Right header on odd pages
-
 % Define the footer
 \fancyfoot[C]{Page \thepage}
-
 
 
 \title{Fourier Neural Operator-Based Models for Solving the Shallow Water Equations in Spherical Coordinates}
@@ -102,6 +93,12 @@
 \input{frontmatter/Frontpage.tex}
 \input{frontmatter/statics.tex}
 %\maketitle
+
+% Define the header style
+%\fancyhf{}
+%\lhead{\leftmark}
+%\rhead{\thesection\text{ } \currentname}
+%\cfoot{Page \thepage}
 
 %\newpage
 %\thispagestyle{empty}
@@ -125,7 +122,6 @@
 \setcounter{secnumdepth}{3} % Depth of section numbering: sub sub sections are not numbered
 
 
-
 \tableofcontents
 \addcontentsline{toc}{section}{\textbf{Contents}}
 
@@ -134,6 +130,14 @@
 \clearpage
 \pagenumbering{arabic}  % Start numbering in Arabic numerals
 \setcounter{page}{1}     % Optional: Set page number to 1
+
+
+% Define the headers
+\pagestyle{fancy}
+\fancyhead{} % Clear all header fields
+\fancyhead[LE]{\leftmark} % Left header on even pages
+\fancyhead[RO]{\thesection\text{ } \currentname} % Right header on odd pages
+
 
 \newpage
 \input{chapters/00_introduction.tex}

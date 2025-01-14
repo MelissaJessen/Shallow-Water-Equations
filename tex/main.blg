@@ -6,45 +6,45 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: unsrt.bst
 Database file #1: bibl.bib
 Warning--empty journal in guardian_floods_2021
-You've used 30 entries,
+You've used 32 entries,
             1791 wiz_defined-function locations,
-            616 strings with 8568 characters,
-and the built_in function-call counts, 4961 in all, are:
-= -- 394
-> -- 253
+            627 strings with 8863 characters,
+and the built_in function-call counts, 5228 in all, are:
+= -- 418
+> -- 261
 < -- 0
-+ -- 100
-- -- 70
-* -- 201
-:= -- 825
-add.period$ -- 94
-call.type$ -- 30
-change.case$ -- 23
++ -- 104
+- -- 72
+* -- 203
+:= -- 867
+add.period$ -- 101
+call.type$ -- 32
+change.case$ -- 25
 chr.to.int$ -- 0
-cite$ -- 31
-duplicate$ -- 216
-empty$ -- 553
-format.name$ -- 70
-if$ -- 1127
+cite$ -- 33
+duplicate$ -- 226
+empty$ -- 589
+format.name$ -- 72
+if$ -- 1191
 int.to.chr$ -- 0
-int.to.str$ -- 30
+int.to.str$ -- 32
 missing$ -- 23
-newline$ -- 156
-num.names$ -- 29
-pop$ -- 156
+newline$ -- 167
+num.names$ -- 31
+pop$ -- 168
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 84
+skip$ -- 89
 stack$ -- 0
 substring$ -- 87
-swap$ -- 28
+swap$ -- 30
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 33
-width$ -- 32
-write$ -- 314
+while$ -- 35
+width$ -- 34
+write$ -- 336
 (There was 1 warning)

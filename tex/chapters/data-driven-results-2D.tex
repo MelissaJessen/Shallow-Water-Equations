@@ -16,6 +16,19 @@ The initial condition is illustrated in \autoref{fig:2D_gauss_initial_condition}
 \end{figure}
 
 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|ccccc}
+        \textbf{Case} & \textbf{n\_train} & \textbf{n\_val} & \textbf{n\_test} & $\mathbf{\Delta x}$ & $\mathbf{\Delta t}$ \\
+        \hline
+        2D SWE, N = 64 & 48 & 16 & 17 & 0.625 m  & $[0.050 \text{ s}, 0.073 \text{ s}]$ \\
+        2D SWE, N = 128 & 99 & 33 & 33 & 0.3125 m  & $[0.025 \text{ s}, 0.035 \text{ s}]$ \\
+    \end{tabular}
+    \caption{Details of the used data for the case with the 2D SWE for both a number of grid points $N=64$ and $N=128$.}\label{tab:data_2D_SWE}
+\end{table}
+
+
+
 \subsubsection*{CNN Model}
 We train a CNN model with several convolutional layers and ReLU activation functions.
 We use the Adam optimizer with a learning rate of $0.001$ and a batch size of $32$.
@@ -161,8 +174,8 @@ The results for the CNN model are not as good as for the FNO model, but the CNN 
 
 \subsubsection*{Long-term predictions}
 We are particularly interested in evaluating the models' ability to generalize further in time.
-To do this we train the model on the generated 2D data with a fixed time step size of $\Delta t = 0.0025$.
-To test this, we will train the models on a time interval $[0, 5]$ and make predictions for up to $n = 200$ time steps in the future.
+To do this we train the model on the generated 2D data with a fixed time step size of $\Delta t = 0.025$.
+To test this, we will train the models on a time interval $[0, 5]$ and make predictions for up to $n = 200$ time steps in the future, equivalent predicting up to $t = 10$ s.
 
 Initially, we adopted an iterative approach, where the model made a prediction for the next time step and used that prediction as input for the next time step.
 While this approach produces acceptable results for the inital time steps, the error increases as we make predictions further in time, probably due to accumulating errors.

@@ -13,8 +13,8 @@
 \contentsline {section}{\numberline {2.2}Derivation of the SWE with conservative variables}{6}{section.2.2}%
 \contentsline {section}{\numberline {2.3}The SWE in vector form}{11}{section.2.3}%
 \contentsline {section}{\numberline {2.4}The 1D SWE in integral form}{11}{section.2.4}%
-\contentsline {section}{\numberline {2.5}SWE in Spherical Coordinates}{13}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Linearized Shallow Water Equations in Spherical Coordinates}{18}{section.2.6}%
+\contentsline {section}{\numberline {2.5}The Shallow Water Equations in Spherical Coordinates}{13}{section.2.5}%
+\contentsline {section}{\numberline {2.6}The Linearized Shallow Water Equations in Spherical Coordinates}{18}{section.2.6}%
 \contentsline {chapter}{\numberline {3}The Finite Volume Method}{21}{chapter.3}%
 \contentsline {section}{\numberline {3.1}The Finite Volume Method for the 1D Shallow Water Equations}{22}{section.3.1}%
 \contentsline {section}{\numberline {3.2}The Finite Volume Method for the 2D Shallow Water Equations}{24}{section.3.2}%
@@ -38,12 +38,12 @@
 \contentsline {chapter}{\numberline {7}Data-driven results}{56}{chapter.7}%
 \contentsline {section}{\numberline {7.1}1D SWE with Gaussian initial conditions}{56}{section.7.1}%
 \contentsline {section}{\numberline {7.2}1D linearized SWE in Spherical Coordinates}{62}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Data-driven results for the 2D SWE}{66}{section.7.3}%
-\contentsline {chapter}{\numberline {8}Discussion}{73}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Conclusion}{74}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Further work}{74}{section.9.1}%
-\contentsline {chapter}{Bibliography}{76}{chapter*.107}%
-\contentsline {chapter}{\numberline {A}Appendix}{77}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Additional figures from 1D SWE spherical CNN and FNO}{77}{section.A.1}%
-\contentsline {section}{\numberline {A.2}FNO Toro test 1}{80}{section.A.2}%
-\contentsline {section}{\numberline {A.3}2D SWE long term prediction}{81}{section.A.3}%
+\contentsline {section}{\numberline {7.3}Data-driven results for the 2D SWE}{67}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Discussion}{74}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusion}{75}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Further work}{75}{section.9.1}%
+\contentsline {chapter}{Bibliography}{77}{chapter*.110}%
+\contentsline {chapter}{\numberline {A}Appendix}{78}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Additional figures from 1D SWE spherical CNN and FNO}{78}{section.A.1}%
+\contentsline {section}{\numberline {A.2}FNO Toro test 1}{81}{section.A.2}%
+\contentsline {section}{\numberline {A.3}2D SWE long term prediction}{82}{section.A.3}%

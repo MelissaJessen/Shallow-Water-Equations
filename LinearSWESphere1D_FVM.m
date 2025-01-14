@@ -44,25 +44,29 @@ while time < T
     
     % Compute finite volume updates (flux differences)
     k_h1 = -h0 / (a * cos(phi)) * (v_flux - circshift(v_flux, 1)) / dtheta;
-    k_v1 = -g * (h_flux - circshift(h_flux, 1)) / dtheta - f * v;
+    %k_v1 = -g * (h_flux - circshift(h_flux, 1)) / dtheta - f * v;
+    k_v1 = -g / (a * cos(phi)) * (h_flux - circshift(h_flux, 1)) / dtheta;
 
     % Stage 2
     h_flux = compute_flux(h_prime + 0.5 * dt * k_h1, circshift(h_prime + 0.5 * dt * k_h1, -1));
     v_flux = compute_flux(v + 0.5 * dt * k_v1, circshift(v + 0.5 * dt * k_v1, -1));
     k_h2 = -h0 / (a * cos(phi)) * (v_flux - circshift(v_flux, 1)) / dtheta;
-    k_v2 = -g * (h_flux - circshift(h_flux, 1)) / dtheta - f * (v + 0.5 * dt * k_v1);
-
+    %k_v2 = -g * (h_flux - circshift(h_flux, 1)) / dtheta - f * (v + 0.5 * dt * k_v1);
+    k_v2 = -g / (a * cos(phi)) * (h_flux - circshift(h_flux, 1)) / dtheta;
+    
     % Stage 3
     h_flux = compute_flux(h_prime + 0.5 * dt * k_h2, circshift(h_prime + 0.5 * dt * k_h2, -1));
     v_flux = compute_flux(v + 0.5 * dt * k_v2, circshift(v + 0.5 * dt * k_v2, -1));
     k_h3 = -h0 / (a * cos(phi)) * (v_flux - circshift(v_flux, 1)) / dtheta;
-    k_v3 = -g * (h_flux - circshift(h_flux, 1)) / dtheta - f * (v + 0.5 * dt * k_v2);
-
+    %k_v3 = -g * (h_flux - circshift(h_flux, 1)) / dtheta - f * (v + 0.5 * dt * k_v2);
+    k_v3 = -g / (a * cos(phi))* (h_flux - circshift(h_flux, 1)) / dtheta;
+    
     % Stage 4
     h_flux = compute_flux(h_prime + dt * k_h3, circshift(h_prime + dt * k_h3, -1));
     v_flux = compute_flux(v + dt * k_v3, circshift(v + dt * k_v3, -1));
     k_h4 = -h0 / (a * cos(phi)) * (v_flux - circshift(v_flux, 1)) / dtheta;
-    k_v4 = -g * (h_flux - circshift(h_flux, 1)) / dtheta - f * (v + dt * k_v3);
+    %k_v4 = -g * (h_flux - circshift(h_flux, 1)) / dtheta - f * (v + dt * k_v3);
+    k_v4 = -g / (a*cos(phi)) * (h_flux - circshift(h_flux, 1)) / dtheta;
 
     % Update h' and v
     h_prime = h_prime + dt * (1/6 * k_h1 + 1/3 * k_h2 + 1/3 * k_h3 + 1/6 * k_h4);
