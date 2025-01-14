@@ -38,12 +38,12 @@
 \contentsline {chapter}{\numberline {7}Data-driven results}{56}{chapter.7}%
 \contentsline {section}{\numberline {7.1}1D SWE with Gaussian initial conditions}{56}{section.7.1}%
 \contentsline {section}{\numberline {7.2}1D linearized SWE in Spherical Coordinates}{62}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Data-driven results for the 2D SWE}{67}{section.7.3}%
-\contentsline {chapter}{\numberline {8}Discussion}{74}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Conclusion}{75}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Further work}{75}{section.9.1}%
-\contentsline {chapter}{Bibliography}{77}{chapter*.109}%
-\contentsline {chapter}{\numberline {A}Appendix}{78}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Additional figures from 1D SWE spherical CNN and FNO}{78}{section.A.1}%
-\contentsline {section}{\numberline {A.2}FNO Toro test 1}{81}{section.A.2}%
-\contentsline {section}{\numberline {A.3}2D SWE long term prediction}{82}{section.A.3}%
+\contentsline {section}{\numberline {7.3}Data-driven results for the 2D SWE}{66}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Discussion}{73}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusion}{74}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Further work}{74}{section.9.1}%
+\contentsline {chapter}{Bibliography}{76}{chapter*.107}%
+\contentsline {chapter}{\numberline {A}Appendix}{77}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Additional figures from 1D SWE spherical CNN and FNO}{77}{section.A.1}%
+\contentsline {section}{\numberline {A.2}FNO Toro test 1}{80}{section.A.2}%
+\contentsline {section}{\numberline {A.3}2D SWE long term prediction}{81}{section.A.3}%

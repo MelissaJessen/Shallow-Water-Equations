@@ -190,18 +190,14 @@ To see how the model performs, we consider the error plots in \autoref{fig:1D_CN
     \caption{Error plots for the predictions of the CNN model for solving the 1D linearized spherical SWE.}\label{fig:1D_CNN_sphere_error}
 \end{figure}
 In \autoref{fig:1D_CNN_sphere_error}, we see that errors are largest at the sharp edges of the solution, which is expected as the solution tends to be discontinuous.
-The predictions for some given time steps are shown in \autoref{fig:1D_CNN_sphere_pred_timesteps_sigma=2}.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/1D_CNN_sphere_pred_timesteps_sigma=2.pdf}
-    \caption{Predictions for the spherical shallow water equations in 1D using the CNN model for some given time steps.}\label{fig:1D_CNN_sphere_pred_timesteps_sigma=2}
-\end{figure}
-From \autoref{fig:1D_CNN_sphere_pred_timesteps_sigma=2}, we see that the predictions capture the waves, but have some over- or underestimations at the top or bottom of the waves, meaning that numerical dispersion effects are visible.
+The predictions for some given time steps are shown in \autoref{fig:1D_CNN_sphere_pred_timesteps_sphere_sigma=2}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/1D_CNN_sphere_pred_timesteps_sphere_sigma=2.pdf}
     \caption{Predictions for the spherical shallow water equations in 1D using the CNN model for some given time steps.}\label{fig:1D_CNN_sphere_pred_timesteps_sphere_sigma=2}
 \end{figure}
+From \autoref{fig:1D_CNN_sphere_pred_timesteps_sphere_sigma=2}, we see that the predictions capture the waves, but have some over- or underestimations at the top or bottom of the waves, meaning that numerical dispersion effects are visible.
+
 
 
 \subsubsection*{FNO model}
@@ -226,19 +222,13 @@ The error plots are shown in \autoref{fig:1D_FNO_sphere_error_sigma=2}.
 Similar to the CNN model, we observe from \autoref{fig:1D_FNO_sphere_error_sigma=2} that the error is largest at the sharp edges of the solution.
 Furthermore, the plots also indicate that the error increases over time.
 This is somehow expected, as the model is trained on a limited time interval and may struggle to generalize to unseen data.
-The predictions for some given time steps are shown in \autoref{fig:1D_FNO_sphere_pred_timesteps_sigma=2}.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/1D_FNO_sphere_pred_timesteps_sigma=2.pdf}
-    \caption{Predictions for the spherical shallow water equations in 1D.}\label{fig:1D_FNO_sphere_pred_timesteps_sigma=2}
-\end{figure}
+The predictions for some given time steps are shown in \autoref{fig:1D_FNO_sphere_pred_timesteps_sphere_sigma=2}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/1D_FNO_sphere_pred_timesteps_sphere_sigma=2.pdf}
     \caption{Predictions for the spherical shallow water equations in 1D using the FNO model for some given time steps.}\label{fig:1D_FNO_sphere_pred_timesteps_sphere_sigma=2}
 \end{figure}
-
-The two first plots of \autoref{fig:1D_FNO_sphere_pred_timesteps_sigma=2} shows that the FNO model captures the waves really well, but in the last plot we see that the model has some challenges, and for instance is predicting a small wave that is not present in the true solution.
+The two first plots of \autoref{fig:1D_FNO_sphere_pred_timesteps_sphere_sigma=2} shows that the FNO model captures the waves really well, but in the last plot we see that the model has some challenges, and for instance is predicting a small wave that is not present in the true solution.
 
 \subsubsection*{Comparison}
 We use the MSE and MAE to compare the performance of the CNN and FNO models for the 1D spherical LSWE.
