@@ -3,7 +3,7 @@ Before deriving the shallow water equations (SWE), we will introduce the notatio
 In both the 1D case and the 2D case of the SWE, we use cartesian coordinates $(x, y, z)$ with time denoted by $t$.
 Given that linear algebra is a fundamental tool used in this report, we first establish the relevant notation.
 Lowercase bold letters represent vectors, while uppercase bold letters represent matrices.
-For instance, $\mathbf{a}$ is a vector of size $r \times 1$, where $r \in \mathbb{N}^+$, and $\mathbf{A}$ is a matrix of size $m \times n$ with $m,n \in \mathbb{N}^+$.
+For instance, $\mathbf{a}$ is a vector of size $r \times 1$, where $r \in \mathbb{N}$, and $\mathbf{A}$ is a matrix of size $m \times n$ with $m,n \in \mathbb{N}$.
 The identity matrix, denoted by $\mathbf{I}$, is a square matrix with ones along the diagonal and zeros elsewhere.
 For example, the $3 \times 3$ identity matrix is given by:
 \begin{align*}
@@ -21,9 +21,9 @@ We denote partial derivatives using the following notation:
 The gradient operator, denoted by $\nabla$, gives the gradient of a scalar function $f(x,y,z)$ as a vector:
 \begin{align*}
     \nabla f = \begin{bmatrix}
-        \frac{\partial f}{\partial x} &
-        \frac{\partial f}{\partial y} &
-        \frac{\partial f}{\partial z}
+        f_x &
+        f_y &
+        f_z
     \end{bmatrix}.
 \end{align*}
 Given two vectors $\mathbf{a} = \begin{bmatrix}

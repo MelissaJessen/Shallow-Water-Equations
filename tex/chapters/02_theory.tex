@@ -138,10 +138,11 @@ Mathematically this is expressed as
 \begin{align*}
     \frac{\text{d} }{\text{d} t} \psi(x,y,z,t) = 0.
 \end{align*}
-Recall, that $\frac{\partial \psi}{\partial t}$ is the partial derivative of $\psi$ with respect to $t$, while the total derivate $\frac{\text{d} \psi}{\text{d} t}$ accounts for both the direct change of $\psi$ with respect to $t$ and the changes due to the movement of the fluid in the $x, y$ and $z$ directions.
-Hence, the total derivative of $\psi$ wrt. $t$ is given by
+Recall, that $\frac{\partial \psi}{\partial t}$ is the partial derivative of $\psi$ with respect to $t$, while the material derivate $\frac{\text{d} \psi}{\text{d} t}$ accounts for the rate of change of $\psi$ experienced by a fluid particle moving with the fluid.
+Hence, the material derivative of $\psi$ wrt. $t$ is given by
 \begin{align*}
-    \frac{\text{d} \psi}{\text{d} t} &= \frac{\partial \psi}{\partial t} + \frac{\text{d} x}{\text{d} t} \frac{\partial \psi}{\partial x} + \frac{\text{d} y}{\text{d} t}  \frac{\partial \psi}{\partial y} + \frac{\text{d} z}{\text{d} t}  \frac{\partial \psi}{\partial z}.
+    \frac{\text{d} \psi}{\text{d} t} &= \frac{\partial \psi}{\partial t}  + \mathbf{v} \cdot \nabla \psi \\
+     &= \frac{\partial \psi}{\partial t} + \frac{\text{d} x}{\text{d} t} \frac{\partial \psi}{\partial x} + \frac{\text{d} y}{\text{d} t}  \frac{\partial \psi}{\partial y} + \frac{\text{d} z}{\text{d} t}  \frac{\partial \psi}{\partial z}.
 \end{align*}
 We see that $\frac{\text{d}x}{\text{d}t}$ denotes the velocity in the $x-$direction, i.e., $u$, and correspondingly $\frac{\text{d}y}{\text{d}t}$ and $\frac{\text{d}x}{\text{d}t}$ denotes $v$ and $w$ respectively.
 Thus, the kinematic condition is given by

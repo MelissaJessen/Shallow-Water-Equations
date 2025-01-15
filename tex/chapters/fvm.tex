@@ -19,7 +19,7 @@ In the presence of strong discontinuities, additional techniques such as limiter
 Furthermore, while the FVM is well-suited for handling hyperbolic problems, it may not be as effective for problems with smooth solutions or for capturing fine-scale features in the solution without sufficient grid resolution.
 
 In this chapter, we derive the finite volume scheme for the 1D SWE and extend it to 2D in cartesian coordinates.
-We introduce the MUSCL scheme for higher-order accuracy and discuss the FVM for the 1D linearized SWE in spherical coordinates.
+We introduce the MUSCL (monotonic upstream-centered scheme for conservation laws) scheme for higher-order accuracy and discuss the FVM for the 1D linearized SWE in spherical coordinates.
 Additionally, we examine the Riemann problem, including the dam break problem, and present numerical flux functions for solving the local Riemann problem at cell interfaces.
 
 \section{The Finite Volume Method for the 1D Shallow Water Equations}\label{sec:FVM_1D_SWE}
@@ -137,7 +137,7 @@ For this project, we use the minmod limiter, defined as
         \min(0, \max(a,b)) & \text{if } a < 0. 
     \end{cases}
 \end{equation*}
-Another method we consider is the MUSCL (monotone upwind scheme for conservation laws) scheme.
+Another method we consider is the MUSCL scheme.
 This method is second-order accurate in both time and space, while the WAF scheme is second-order accurate in space but relies on the time-stepping scheme for temporal accuracy.
 The MUSCL scheme, combined with slope limiters, ensures the solution remains satisfies the TVD constraint, effectively preventing oscillations that could occur with high-order spatial discretization near shocks, discontinuities, or sharp changes in the solution.
 The key idea in MUSCL is that, instead of using cell averages as in the 1D finite volume method, we reconstruct the solution  in each cell using piecewise first-degree polynomials.
