@@ -156,13 +156,14 @@ The total variation measures the sum of the absolute differences between neighbo
 A TVD scheme ensures that the total variation of the solution does not increase in time, which is crucial for maintaining stability and preventing oscillations.
 The TVD property is used in shock-capturing schemes to prevent nonphysical oscillations near discontinuities, helping to accurately capture the shock location.
 
-\section{FVM 1D Linearized SWE spherical}
-In this section, we derive the finite volume method for the 1D shallow water equations in spherical coordinates, where we consider the linearized shallow water equations on a circle.
-Since we now work on a circle, we must impose periodic boundary conditions.
-We follow the same method as in \autoref{sec:FVM_1D_SWE}.
-We begin by stating the integral form of the 1D LSWE in spherical coordinates on a global domain.
-Each cell has length $\Delta \theta = \theta_{i+1/2} - \theta_{i-1/2}$.
-That is, we rewrite~\eqref{eq:integral_form_spherical_1D_final} to be in global variables:
+\section{The Finite Volume Method for the spherical 1D Linearized Shallow Water Equations}
+In this section, we derive the finite volume method for the 1D shallow water equations in spherical coordinates, by following the same method as in \autoref{sec:FVM_1D_SWE}.
+We begin by stating the integral form of the 1D LSWE in spherical coordinates on a global domain, meaning we now consider a control volume given by 
+\begin{align*}
+    V_i^n = [\theta_{i-1/2}, \theta_{i+1/2}] \times [t_n, t_{n+1}],
+\end{align*}
+where $\Delta \theta = \theta_{i+1/2} - \theta_{i-1/2}$ is the length of the cell and $\Delta t = t_{n+1} - t_n$ is the time step size.
+We rewrite the previous derived integral form~\eqref{eq:integral_form_spherical_1D_final} to be in global variables:
 \begin{align}\label{eq:integral_form_spherical_1D_final_global}
     \int_{\theta_{i-1/2}}^{\theta_{i+1/2}} \mathbf{W}(\theta, t_{n+1}) \text{ d}\theta = \int_{\theta_{i-1/2}}^{\theta_{i+1/2}} \mathbf{W}(\theta, t_n) \text{ d}\theta
     - \mathbf{A} \left( \int_{t_n}^{t_{n+1}} \mathbf{W}(\theta_{i+1/2}, t) \text{ d}t - \int_{t_n}^{t_{n+1}} \mathbf{W}(\theta_{i-1/2}, t) \text{ d}t \right).
@@ -195,6 +196,15 @@ and correspondingly the flux $\mathbf{F}_{i+1/2}^n$ is the average flux across t
 %\end{align*}
 %where $\mathbf{W} = \begin{bmatrix} h \\ u \end{bmatrix}$, $\mathbf{A}_{i+1/2}^n$ is the numerical flux at the cell interface $\theta_{i+1/2}$, and $\mathbf{S} = \begin{bmatrix} 0 \\ fu \end{bmatrix}.$ 
 %En eller anden motivation for at bruge denne her metode?? 
+Since we now work on a circle, we must impose periodic boundary conditions.
+
+The fourth order Runge-Kutta method solves the general initial value problem (IVP) for ordinary differential equations (ODEs):
+\begin{align*}
+    \frac{d u(t)}{dt} = f(u(t), t), \quad u(t_0) = u_0.
+\end{align*}
+
+
+
 The explicit Runge-Kutta 4th order method (ERK4) is a numerical technique used to solve ordinary differential equations (ODEs).
 This method is particularly effective for time-stepping and is an alternative approach to traditional time integration schemes.
 RK4 provides higher accuracy in time while relying on the same spatial discretization, such as the finite volume method (FVM).

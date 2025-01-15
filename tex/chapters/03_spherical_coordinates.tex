@@ -327,8 +327,10 @@ $\mathbf{A} = \begin{bmatrix} 0 & \frac{h_0}{r \cos(\phi)} \\ \frac{g}{r \cos (\
 
 
 \subsubsection*{Integral form of the 1D spherical LSWE}
-As we consider the longitude $\theta$ as the spatial dimension, the domain is the circle $[0, 2\pi]$, which is divided into $N$ cells or control volumes, each of length $\Delta \theta = \frac{2\pi}{N}$, expressend in terms of longitude angle.
-Each cell $i$ has a cell center at $\theta_i$ and cell boundaries/interfaces at $\theta_{i-1/2}$ and $\theta_{i+1/2}$.
+As in the previous sections it is beneficial to state the integral form of the 1D spherical LSWE, as it will be used when deriving the finite volume scheme.
+We consider the longitude $\theta$ as the spatial dimension on a full circle, meaning the domain is $[0, 2\pi]$ radians.
+The domain is divided into $N$ cells or control volumes, that each has a length of $\Delta \theta = \frac{2\pi}{N}$ radians.
+We consider a control volume $V$ with cell interfaces at $\theta_L$ and $\theta_R$, as illustrated in~\autoref{fig:sphere1d_small_domain}.
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.4\textwidth}
@@ -336,47 +338,40 @@ Each cell $i$ has a cell center at $\theta_i$ and cell boundaries/interfaces at 
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/sphere1d_small_cell.png}
         \caption{Illustration of the grid for the 1D SWE with small cells.}\label{fig:sphere1d_small_cell}
     \end{subfigure}%
-    \begin{subfigure}{0.35\textwidth}
+    \begin{subfigure}{0.3\textwidth}
         \centering
-        \raisebox{10mm}{
+        \raisebox{15mm}{
         \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/sphere-1d-small-domain.png}
         }
         \caption{Illustration of the grid for the 1D SWE with a small domain.}\label{fig:sphere1d_small_domain}
     \end{subfigure}
-    \caption{Grid illustrations for the 1D SWE in spherical coordinates.}\label{fig:sphere1d_combined}
+    \caption{Grid illustrations for the 1D LSWE in spherical coordinates.}\label{fig:sphere1d_combined}
 \end{figure}
-As when deriving the finite volume scheme for the 1D SWE in cartesian coordinates, we start by integrating the linearized shallow water equations over the control volume, and then divide by the cell length to obtain the finite volume scheme.
-We integrate the vector form of the 1D SWE in spherical coordinates without the coriolis force over $\theta$ from $\theta_L := \theta_i - \frac{1}{2} \Delta \theta $ to $\theta_R := \theta_i + \frac{1}{2}\Delta \theta $ to obtain
-\begin{align*}
+In \autoref{fig:sphere1d_small_cell}, we see the circle, which is the full domain, and in \autoref{fig:sphere1d_small_domain} we see a small subdomain of the circle.
+
+The integral form of the LSWE is obtained by integrating the control volume given by $V = [\theta_L, \theta_R] \times [t_1, t_2]$, where $t_2$ denotes the time step after $t_1$, over space and time. 
+We begin by integrating the vector form of the 1D spherical LSWE in~\eqref{eq:linearized_swe_spherical_vector} over the spatial dimension $\theta$ from $\theta_L$ to $\theta_R$ to obtain
+\begin{align}\label{eq:integral_form_spherical_1D_part0}
     \int_{\theta_L}^{\theta_R} \mathbf{W}_t \text{ d}\theta + \int_{\theta_L}^{\theta_R} \mathbf{A} \mathbf{W}_\theta \text{ d}\theta = 0.
-\end{align*}
-Since the matrix $\mathbf{A}$ is constant, we can take it out of the integral:
-\begin{align*}
+\end{align}
+Since the matrix $\mathbf{A}$ is constant, we can place it outside of the integral in~\eqref{eq:integral_form_spherical_1D_part0} to get
+\begin{align}\label{eq:integral_form_spherical_1D_part1}
     \int_{\theta_L}^{\theta_R} \mathbf{W}_t \text{ d}\theta + \mathbf{A} \int_{\theta_L}^{\theta_R} \mathbf{W}_\theta \text{ d}\theta = 0.
-\end{align*}
-We also use the fundamental theorem of calculus to rewrite the integral of the derivative as the difference of the function at the boundaries of the control volume:
+\end{align}
+We use the fundamental theorem of calculus to rewrite~\eqref{eq:integral_form_spherical_1D_part1} as
 \begin{align}\label{eq:derive_integral_form_1D_spherical}
     \int_{\theta_L}^{\theta_R} \mathbf{W}_t \text{ d}\theta =  \mathbf{A} \left( \mathbf{W}(\theta_L, t) - \mathbf{W}(\theta_R, t) \right).
 \end{align}
-We can also write the equations out to get a better understanding of the terms:
-\begin{equation}\label{eq:integral_form_spherical_1D}
-    \left.
-    \begin{aligned}
-        \frac{\partial}{\partial t} \int_{\theta_L}^{\theta_R} h \text{ d}\theta + \frac{h_0}{r \cos(\phi)} (u_R - u_L) &= 0, \\
-        \frac{\partial}{\partial t} \int_{\theta_L}^{\theta_R} u \text{ d}\theta + g(h_R - h_L) + fu_i &= 0.
-    \end{aligned}
-    \right\}
-\end{equation}
-Then we integrate~\eqref{eq:derive_integral_form_1D_spherical} over time from $t_1 := t_n$ to $t_2 := t_{n+1}$:
-\begin{align*}
+We then integrate~\eqref{eq:derive_integral_form_1D_spherical} over time from $t_1$ to $t_2$ to get
+\begin{align}\label{eq:integral_form_spherical_1D_part2}
     \int_{t_1}^{t_2} \int_{\theta_L}^{\theta_R} \mathbf{W}_t \text{ d}\theta \text{ d}t = \mathbf{A} \left( \int_{t_1}^{t_2} \mathbf{W}(\theta_L, t) \text{ d}t - \int_{t_1}^{t_2} \mathbf{W}(\theta_R, t) \text{ d}t \right).
-\end{align*}
-Rewriting, using the fundamental theorem of calculus, gives
+\end{align}
+Rewriting~\eqref{eq:integral_form_spherical_1D_part2} gives
 \begin{align}\label{eq:integral_form_spherical_1D_final}
     \int_{\theta_L}^{\theta_R} \mathbf{W}(\theta, t_2) \text{ d}\theta = \int_{\theta_L}^{\theta_R} \mathbf{W}(\theta, t_1) \text{ d}\theta
     - \mathbf{A} \left( \int_{t_1}^{t_2} \mathbf{W}(\theta_R, t) \text{ d}t - \int_{t_1}^{t_2} \mathbf{W}(\theta_L, t) \text{ d}t \right),
 \end{align}
-which we refer to as the integral form of the linearized shallow water equations in spherical coordinates with one spatial dimension and time.
+which we refer to as the integral form of the LSWE in spherical coordinates with one spatial dimension.
 The integral form~\eqref{eq:integral_form_spherical_1D_final} is the foundation for the finite volume method, which we will use to solve the linearized shallow water equations in spherical coordinates numerically.
 
 
