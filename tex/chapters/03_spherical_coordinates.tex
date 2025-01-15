@@ -271,24 +271,15 @@ where $\frac{1}{r \cos(\phi)} \mathbf{F(U)}_\theta$ and $\frac{1}{r} \mathbf{G(U
 %\end{align*}
 
 
-
 \section{The Linearized Shallow Water Equations in Spherical Coordinates}
-In this section, we derive the linearized shallow water equations (LSWE) in spherical coordinates, focusing on one spatial dimension, namely the longitude $\theta$.
-This approach assumes a constant latitude $\phi$, simplifying the equations to a one-dimensional framework.
+In this section, we derive the linearized shallow water equations (LSWE) in spherical coordinates, from the nonlinear SWE im spherical coordinates, given in~\eqref{eq:spherical-swe}.
+The derivation and methodology presented here are based on the sources~\cite{BONEV_2018} and~\cite{Eskilsson_2005}.
 The LSWE are employed for their simplicity, providing a foundation for understanding wave dynamics in a spherical geometry.
 Later in this project, we will apply the finite volume method to solve these equations numerically.
-The derivation and methodology presented here are based on the sources~\cite{BONEV_2018} and~\cite{Eskilsson_2005}.
-We neglect all body forces other than gravity.
-We linearize by assuming that the height of the water $h$ and the velocities $u$ are small perturbations from a state of rest.
-We set $h = h_0 + h'$ and $u = u_0 + u'$, where $h_0$ and $u_0$ are the equilibrium height and velocity, $h'$ and $u'$ are the perturbations.
-We also assume that the equilibrium height $h_0$ is constant and that the equilibrium velocity $u_0$ is zero.
-Let the perturbations in water height and velocity be represented by:
-\begin{align}\label{eq:perturbations}
-    h = h_0 + h', \quad u = u_0 + u',
-\end{align}
-where $h_0$ is the mean water height, and $h'$ and $u'$ represent the perturbations in the water height and velocity components, respectively.
-Since we consider the LSWE for one spatial dimension, we neglect the latitude component $\phi$ and the velocity component $u_\phi$.
-The third equation in~\eqref{eq:spherical-swe} is neglected, as we consider the LSWE for one spatial dimension.
+We focus on one spatial dimension, namely the longitude $\theta$. 
+This approach assumes a constant latitude $\phi$, which simplifies the equations to a one-dimensional framework.
+Hence we can neglect the third equation in~\eqref{eq:spherical-swe} and the velocity component $u_\phi$.
+Thus, we introduce $u = u_\theta$ to denote the fluid velocity in the $\theta$ direction.
 We also neglect all forces, except for the gravitational force.
 Thus we have the following SWE in spherical coordinates for one spatial dimension:
 \begin{equation}\label{eq:spherical-swe-1D}
@@ -299,8 +290,14 @@ Thus we have the following SWE in spherical coordinates for one spatial dimensio
     \end{aligned}
     \right\}
 \end{equation}
-Where $u$ denotes the velocity in the $\theta$ direction.
-We substitute the perturbed variables~\eqref{eq:perturbations} into the 1D spherical SWE~\eqref{eq:spherical-swe-1D} and utilize that $u_0 = 0$ to obtain
+To perfom the linearization, we use perturbation theory, meaning we assume that the water height $h$ and the velocity $u$ are small perturbations from a state of rest.
+Let the perturbations in water height and velocity be represented by:
+\begin{align}\label{eq:perturbations}
+    h = h_0 + h', \quad u = u_0 + u',
+\end{align}
+where $h_0$ and $u_0$ are the equilibrium height and velocity, and $h'$ and $u'$ are the perturbations.
+We assume that the equilibrium height $h_0$ is constant and that the equilibrium velocity $u_0$ is zero.
+By substituting the perturbed variables~\eqref{eq:perturbations} into the 1D spherical SWE~\eqref{eq:spherical-swe-1D} and utilizing that $u_0 = 0$, we obtain
 \begin{equation}\label{eq:linearized_swe_spherical-perturbations}
     \left.
     \begin{aligned}
@@ -320,7 +317,7 @@ Hence, we obtain the linearized shallow water equations in spherical coordinates
     \right\}
 \end{equation}
 These equations describe the evolution of small perturbations in water height and velocity on a spherical surface.
-We can also write the linearized shallow water equations in spherical coordinates in vector form as
+We can also write the spherical LSWE in vector form as
 \begin{align}\label{eq:linearized_swe_spherical_vector}
     \mathbf{W}_t + \mathbf{A} \mathbf{W}_\theta = 0,
 \end{align}
