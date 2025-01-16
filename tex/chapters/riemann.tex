@@ -51,7 +51,7 @@ The initial setup is visualized in \autoref{fig:dam-break-problem}.
     \centering
     \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/dam-break-problem.png}
     \caption{Initial conditions for the dam-break problem. An infinitely thin wall at $x=x_0$ divides two sections of water with different water levels. Illustration modified from~\cite{Toro2024}.}\label{fig:dam-break-problem}
-\end{figure}
+\end{figure} 
 We can use the shallow water equations to model the flow of water in the dam-break problem, approximately, if we assume that the wall collapses instantaneously at $t=0$ s.
 In this project we solve both the dam-break problem and cases of the Riemann problem, where the inital fluid velocity is nonzero.
 The results are presented in \autoref{ch:numerical_results}.
@@ -78,19 +78,19 @@ The states $U_{*L}$ and $U_{*R}$ are in the regions $R_1$ and $R_2$, i.e., the s
 In the star region, we use $h_*$ to denote the water depth and $u_*$ to denote the velocity.
 We can use $h_*$ to determine whether the left and right waves are shock waves or rarefaction waves.
 Since we are considering the wet bed case, we can use the following characteristic:
-\begin{equation*}
+\begin{equation}\label{eq:def_left_wave}
     \begin{cases}
         \text{The left wave is a shock wave} & \text{if } h_* > h_L, \\
         \text{The left wave is a rarefaction wave} & \text{if } h_* \leq h_L, \\        
     \end{cases} 
-\end{equation*}
+\end{equation}
 and similarly for the right wave:
-\begin{equation*}
+\begin{equation}\label{eq:def_right_wave}
     \begin{cases}
         \text{The right wave is a shock wave} & \text{if } h_* > h_R, \\
         \text{The right wave is a rarefaction wave} & \text{if } h_* \leq h_R. \\        
     \end{cases} 
-\end{equation*}
+\end{equation}
 A shock wave is characterized by a discontinuity in the solution.
 On each side of the shock wave, the water properties, such as height and velocity, differ significantly.
 In contrast, a rarefaction wave represents a smooth transition in the solution.
@@ -104,13 +104,20 @@ The four possible wave patterns are as follows:
     \item Both left and right rarefaction,
     \item Both left and right shock.
 \end{enumerate}
-In the example of the dam-break problem, with inital conditions as in Figure~\ref{fig:dam-break-problem}, the solution consists of a left rarefaction wave and a right shock wave.
-This means that the shock wave moves to the right and is characterized by a discontinuity in the solution and a high speed.
-Whereas, the rarefaction wave moves to the left and is characterized by a more smooth transition in the solution and a lower speed.
-The Riemann solver computes the flux across the interface between two cells, considering the left and right states.
-The numerical fluxes calculated by the Riemann solver allow for the determination of the state in the star region, which represents the solution at the interface between the two regions.
-This is essential for determining whether the wave is a shock or a rarefaction wave, ensuring both the stability and accuracy of the numerical scheme.
-In summary, Riemann solvers and numerical fluxes are crucial for solving for the states in the star region, which are then used to update the solution at each timestep.
+In the example of the dam-break problem, with inital conditions as in Figure~\ref{fig:dam-break-problem}, the solution for the water height $h$ at time $t = t_*$ is shown in Figure~\ref{fig:dam-break-problem-evolution}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/dam-break-problem-evolution.png}
+    \caption{Water depth at time $t = t_*$ in the dam-break problem. The solution consists of a left rarefaction wave and a right shock wave.}\label{fig:dam-break-problem-evolution}
+\end{figure}
+From \autoref{fig:dam-break-problem-evolution} we see that the solution consists of a left rarefaction wave and a right shock wave.
+We can see that after the wall collapses, the water flows to the right, meaning the water height in the star/middle region, $h_*$, will be between $h_L$ and $h_R$.
+Based on the definitions~\eqref{eq:def_left_wave} and~\eqref{eq:def_right_wave}, we can therefore conclude that the left wave is a rarefaction wave and the right wave is a shock wave.
+The right shock wave is characterized by a discontinuity in the solution and a high speed, whereas the left rarefaction wave is characterized by a more smooth transition in the solution and a lower speed.
+
+In the finite volume framework, the Riemann solver is used to compute the flux across the interface between two cells, considering the left and right states.
+This way, we ensure that the numerical method handles the discontinuities in the solution correctly, and that the solution is stable and accurate.
+
 
 %Hence the structure of the solution in general is shown in the figure below.
 %From the figure we see that the solution consists of three waves, a left wave, a middle wave and a right wave, which together seperate four regions, described by the vector

@@ -23,27 +23,27 @@
 \contentsline {subsection}{\numberline {3.4.1}The Dam-Break problem}{28}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Wave decomposition in the Riemann problem}{28}{subsection.3.4.2}%
 \contentsline {section}{\numberline {3.5}Numerical fluxes}{30}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Neural Networks and Fourier Neural Operators}{33}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Convolutional Neural Networks}{33}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Fourier Neural Operators}{34}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Data generation}{37}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Data generation using the FVM}{37}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Data Copernicus}{43}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Mesh generation for the sphere}{43}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Numerical results}{46}{chapter.6}%
-\contentsline {section}{\numberline {6.1}The 1D Dam Break Problem}{46}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Toro test cases}{47}{section.6.2}%
-\contentsline {section}{\numberline {6.3}2D idealised Circular Dam Break Problem}{54}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Scalability}{55}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Data-driven results}{57}{chapter.7}%
-\contentsline {section}{\numberline {7.1}1D SWE with Gaussian initial conditions}{57}{section.7.1}%
-\contentsline {section}{\numberline {7.2}1D linearized SWE in Spherical Coordinates}{63}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Data-driven results for the 2D SWE}{68}{section.7.3}%
-\contentsline {chapter}{\numberline {8}Discussion}{75}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Conclusion}{76}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Further work}{76}{section.9.1}%
-\contentsline {chapter}{Bibliography}{78}{chapter*.111}%
-\contentsline {chapter}{\numberline {A}Appendix}{79}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Additional figures from 1D SWE spherical CNN and FNO}{79}{section.A.1}%
-\contentsline {section}{\numberline {A.2}FNO Toro test 1}{82}{section.A.2}%
-\contentsline {section}{\numberline {A.3}2D SWE long term prediction}{83}{section.A.3}%
+\contentsline {chapter}{\numberline {4}Neural Networks and Fourier Neural Operators}{34}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Convolutional Neural Networks}{34}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Fourier Neural Operators}{35}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Data generation}{39}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Data generation using the FVM}{39}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Data Copernicus}{45}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Mesh generation for the sphere}{45}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Numerical results}{48}{chapter.6}%
+\contentsline {section}{\numberline {6.1}The 1D Dam Break Problem}{48}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Toro test cases}{49}{section.6.2}%
+\contentsline {section}{\numberline {6.3}2D idealised Circular Dam Break Problem}{56}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Scalability}{57}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Data-driven results}{59}{chapter.7}%
+\contentsline {section}{\numberline {7.1}1D SWE with Gaussian initial conditions}{59}{section.7.1}%
+\contentsline {section}{\numberline {7.2}1D linearized SWE in Spherical Coordinates}{65}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Data-driven results for the 2D SWE}{70}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Discussion}{77}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusion}{78}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Further work}{78}{section.9.1}%
+\contentsline {chapter}{Bibliography}{80}{chapter*.112}%
+\contentsline {chapter}{\numberline {A}Appendix}{81}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Additional figures from 1D SWE spherical CNN and FNO}{81}{section.A.1}%
+\contentsline {section}{\numberline {A.2}FNO Toro test 1}{84}{section.A.2}%
+\contentsline {section}{\numberline {A.3}2D SWE long term prediction}{85}{section.A.3}%
