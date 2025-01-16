@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1736972517.04113 "main.aux" "main.bbl" "main" 1736973820.63179 0
+["bibtex main"] 1737024738.75381 "main.aux" "main.bbl" "main" 1737024969.51738 0
   "./bibl.bib" 1736953204 17270 0269192b35764ad4ffaa1904b4b2cb3e ""
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291864736 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "main.aux" 1736973818 58572 73ac3a6c73480eff17e7506c253bffcd "pdflatex"
+  "main.aux" 1737024968 60030 06c2ad0ebbf3f371ba6dcad8b914f5a5 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1736973810.76993 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1736973820.63469 0
+["pdflatex"] 1737024961.86682 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1737024969.51848 0
   "C:/Users/Matteo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1735387418 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Matteo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1728897231 11548 420b7f80b41b233cad6f319547e72170 ""
   "C:/Users/Matteo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1726253485 24265805 34fa3860fca3f94c581d5d8735e54ea8 ""
@@ -460,7 +460,7 @@
   "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" 1736867974 4904 56f4715c6b8e1e9b769bc29d8491150b ""
   "chapters/00_introduction.tex" 1736936428 12814 665d868929b1641028b000c8886f2bc8 ""
   "chapters/01_notation.tex" 1736971472 2926 bccde057c2e7fae36e72fbe0349b4a0f ""
-  "chapters/02_theory.tex" 1736973809 24640 67085f379453cd72379277e4d428a39f ""
+  "chapters/02_theory.tex" 1736973873 24640 67085f379453cd72379277e4d428a39f ""
   "chapters/03_spherical_coordinates.tex" 1736949639 26977 05535b11dbd560569100a4d9568613a6 ""
   "chapters/05_Results.tex" 1736865006 16919 3073699bea5328a06f27ddf10c517d66 ""
   "chapters/06_discussion.tex" 1735929588 300 44f3ff7854353268908df025c556886d ""
@@ -472,22 +472,22 @@
   "chapters/data-driven-results.tex" 1736864877 24508 ff216024d5138108d78831006278af54 ""
   "chapters/data-generation-sphere.tex" 1736446413 4964 62955035a9ab886a30d086d631182212 ""
   "chapters/data-generation.tex" 1736773037 11743 855c6516ec39bda9ef4aeeef4dbf7629 ""
-  "chapters/fvm.tex" 1736972103 20954 b176515a65936f66b92f8a8d2f69208f ""
+  "chapters/fvm.tex" 1737022294 23639 c0991f1379ac0c44daaed0fb35b730a1 ""
   "chapters/numerical_fluxes.tex" 1735484294 8491 57b94a5cffd34dec7f378c0395463a64 ""
-  "chapters/riemann.tex" 1736852895 10208 bc12b713e7b584f22acfcbd9eb1358af ""
+  "chapters/riemann.tex" 1737024961 10741 5c9234dd6024fc305ee5c78c4934cd04 ""
   "figs/DTU.png" 1726205009 71324 08d7a624ec2f9f1df696ed86b2d8893d ""
   "figs/water-column-bc.png" 1726205009 16217 eeb48ba7f34b5234290d5aacfecdeb71 ""
   "frontmatter/Frontpage.tex" 1736267838 1250 d2efd20c1fc737b121c4ca437b24e97d ""
   "frontmatter/abstract.tex" 1736268274 2307 23b3ae2bc176ecd4e46409bb20069ada ""
   "frontmatter/acknowledgements.tex" 1735571554 268 b763201ef769078a13b6a8569b4b8efd ""
-  "frontmatter/acronyms.tex" 1736972520 1054 89e81b2d9bf1c4e8c5373021c6409f05 ""
+  "frontmatter/acronyms.tex" 1737012303 1087 250587333731f3612f2119cccaede85d ""
   "frontmatter/approval.tex" 1734605986 548 5869a939951f84dd4f4abd31dd64f8dd ""
   "frontmatter/statics.tex" 1734602593 546 c986b37bd9ebb7cc9113a04de8cd1e25 ""
-  "main.aux" 1736973818 58572 73ac3a6c73480eff17e7506c253bffcd "pdflatex"
-  "main.bbl" 1736972517 7072 0dbe39bd2f4973084f9775c619974e6b "bibtex main"
-  "main.out" 1736973818 9143 615273f69784c744d9b0eb7bdca1a072 "pdflatex"
+  "main.aux" 1737024968 60030 06c2ad0ebbf3f371ba6dcad8b914f5a5 "pdflatex"
+  "main.bbl" 1737024739 7212 f23d7c1a42aa285b431c6eb8ea9f9ce4 "bibtex main"
+  "main.out" 1737024968 9057 c13c29a1e0e7d596028fda16e29632f9 "pdflatex"
   "main.tex" 1736867974 4904 56f4715c6b8e1e9b769bc29d8491150b ""
-  "main.toc" 1736973818 4126 bf99d2cc1d35b95baad9bff2d6be3c15 "pdflatex"
+  "main.toc" 1737024968 4110 096e369174561f76a60e49543d81acd5 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

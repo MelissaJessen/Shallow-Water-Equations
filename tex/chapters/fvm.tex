@@ -196,28 +196,81 @@ and correspondingly the flux $\mathbf{F}_{i+1/2}^n$ is the average flux across t
 %\end{align*}
 %where $\mathbf{W} = \begin{bmatrix} h \\ u \end{bmatrix}$, $\mathbf{A}_{i+1/2}^n$ is the numerical flux at the cell interface $\theta_{i+1/2}$, and $\mathbf{S} = \begin{bmatrix} 0 \\ fu \end{bmatrix}.$ 
 %En eller anden motivation for at bruge denne her metode?? 
-Since we now work on a circle, we must impose periodic boundary conditions.
 
-The fourth order Runge-Kutta method solves the general initial value problem (IVP) for ordinary differential equations (ODEs):
-\begin{align*}
-    \frac{d u(t)}{dt} = f(u(t), t), \quad u(t_0) = u_0.
-\end{align*}
-
-
-
-The explicit Runge-Kutta 4th order method (ERK4) is a numerical technique used to solve ordinary differential equations (ODEs).
-This method is particularly effective for time-stepping and is an alternative approach to traditional time integration schemes.
-RK4 provides higher accuracy in time while relying on the same spatial discretization, such as the finite volume method (FVM).
-In this context, the RK4 method is applied to numerically solve the linearized 1D shallow water equations in spherical coordinates:
+\subsection*{The Explicit Runge-Kutta 4th Order Method}
+We will now introduce how we can use the explicit Runge-Kutta 4th order (ERK4) method to solve the 1D spherical LSWE.
+The ERK4 method solves the general initial value problem (IVP) for ordinary differential equations (ODEs):
+\begin{align}\label{eq:IVP}
+    \frac{d y(t)}{dt} = f(y(t), t), \quad y(t_0) = y_0.
+\end{align}
+To solve the IVP~\eqref{eq:IVP} using ERK4 we choose a step size $\Delta t > 0$ and define the update formula:
 \begin{subequations}
+    \begin{align*}
+        y_{n+1} &= y_n + \frac{\Delta t}{6} (k_1 + 2k_2 + 2k_3 + k_4), \\
+        t_{n+1} &= t_n + \Delta t,     \quad n = 0,1, \dots, N-1,
+    \end{align*}
+\end{subequations}
+where the stages $k_1, k_2, k_3$ and $k_4$ are given by~\cite{RK4}:
+\begin{subequations}
+    \begin{align*}
+        k_1 &= f(t_n, y_n), \\
+        k_2 &= f(t_n + \frac{\Delta t}{2}, y_n + \frac{\Delta t}{2} k_1), \\
+        k_3 &= f(t_n + \frac{\Delta t}{2}, y_n + \frac{\Delta t}{2} k_2), \\
+        k_4 &= f(t_n + \Delta t, y_n + \Delta t k_3).
+    \end{align*}
+\end{subequations}
+This means that to use ERK4 to solve the 1D spherical LSWE, we must bring the equations in the same form as the IVP~\eqref{eq:IVP}.
+Recall, that the linearized 1D LSWE in spherical coordinates are given by
+\begin{subequations}\label{eq:linearized_LSWE_spherical}
     \begin{align}
         \frac{\partial h'}{\partial t} &= -\frac{h_0}{r \cos\phi} \frac{\partial u}{\partial \theta}, \\
-        \frac{\partial u}{\partial t} &= -g \frac{\partial h'}{\partial \theta} - f u,
+        \frac{\partial u}{\partial t} &= -\frac{g}{r \cos\phi}  \frac{\partial h'}{\partial \theta},
     \end{align}
 \end{subequations}
-where \(h'\) is the perturbation in water height, \(u\) is the velocity, \(h_0\) is the mean water depth, \(g\) is the gravitational acceleration, \(f\) is the Coriolis parameter, \(r\) is the Earth's radius, and \(\phi\) is the fixed latitude. 
-The ERK4 method employs a four-stage time-stepping scheme to update the solution for $h'$ and $u$.
-The general update formula is:
+where $h'$ is the perturbation in water height, $u$ is the velocity in the $\theta-$direction, $h_0$ is the mean water depth, $g$ is the gravitational acceleration, $r$ is the Earth's radius, and $\phi$ is the fixed latitude.
+Since the ERK4 method solves ODEs, and the LSWE are PDEs, we must use the method of lines (MOL) to bring the LSWE in the form of the IVP~\eqref{eq:IVP}.
+The MOL is a technique for solving PDEs by discretizing all variables but one (usually time), transforming the PDE into a system of ODEs.
+The system of ODEs can then be solves using standard ODE solvers, such as the ERK4 method.
+We discretize the spatial dimension $\theta$ into $N$ cells, and approximate the spatial derivatives using central differences:
+\begin{subequations}\label{eq:discretized_LSWE_spherical}
+    \begin{align}
+    \frac{\partial u}{\partial \theta}|_{\theta = \theta_i} = \frac{u_{i+1} - u_{i-1}}{2 \Delta \theta}, \\
+    \frac{\partial h'}{\partial \theta}|_{\theta = \theta_i} = \frac{h'_{i+1} - h'_{i-1}}{2 \Delta \theta},
+    \end{align}
+\end{subequations}
+for $i = 0,1, \dots, N-1$.
+To perform the time integration, we use the ERK4 method.
+This method is particularly effective for time-stepping and is an alternative approach to traditional time integration schemes.
+RK4 provides higher accuracy in time while relying on the same spatial discretization, such as the finite volume method (FVM).
+Substituing the spatial derivatives~\eqref{eq:discretized_LSWE_spherical} into the LSWE~\eqref{eq:linearized_LSWE_spherical} gives the system of ODEs:
+\begin{subequations}\label{eq:ODE_LSWE_spherical}
+    \begin{align}
+        \frac{d h'}{dt} &= -\frac{h_0}{r \cos\phi} \frac{u_{i+1} - u_{i-1}}{2 \Delta \theta}, \\
+        \frac{d u}{dt} &= -\frac{g}{r \cos\phi} \frac{h'_{i+1} - h'_{i-1}}{2 \Delta \theta}.
+    \end{align}
+\end{subequations}
+Hence, we can write the 1D spherical LSWE in the form of the IVP~\eqref{eq:IVP} by defining 
+\begin{align}
+    y(t) = \begin{bmatrix}
+        h' \\ u
+    \end{bmatrix},
+    \quad 
+    f(y(t),t) = \begin{bmatrix}
+        -\frac{h_0}{r \cos\phi} \frac{u_{i+1} - u_{i-1}}{2 \Delta \theta} \\ -\frac{g}{r \cos\phi} \frac{h'_{i+1} - h'_{i-1}}{2 \Delta \theta}
+    \end{bmatrix}
+    \quad \text{for } i = 0,1, \dots, N-1. 
+\end{align}
+As we consider a circle as the domain, we must impose periodic boundary conditions.
+We do this by setting $h'_{-1} = h'_{N-1}$, $h'_{N} = h'_0$, $u_{-1} = u_{N-1}$, and $u_{N} = u_0$.
+The inital conditions for $y$ are a Gaussian perturbation in water height and zero velocity:
+\begin{align}
+    y_0 = \begin{bmatrix}
+        \exp(-\frac{{(\theta_{i} - \theta_0)}^2}{\sigma}) \\ 0
+    \end{bmatrix}, \quad i = 0,1, \dots, N-1.
+\end{align}
+where $\theta_0$ is the center of the Gaussian, and $\sigma$ is the width of the Gaussian.
+This means, that we can employ the four-stage time-stepping scheme in the ERK4 method to update the solution for $h'$ and $u$.
+The final values of $h'$ and $u$ are obtained by combining the contributions from all four stages, by using the general update formula:
 \begin{align*}
     \mathbf{W}_i^{n+1} = \mathbf{W}_i^n + \frac{\Delta t}{\Delta \theta} \frac{1}{6} \left(k_1 + 2 k_2 + 2 k_3 + k_4 \right),
 \end{align*}
@@ -225,25 +278,26 @@ where the state variable
 $\mathbf{W}_i = \begin{bmatrix}
     h_i' \\
     u_i
-\end{bmatrix}$ represents the pertubation height and velocity at the $i-$th cell.
+\end{bmatrix}$ represents the pertubation height and velocity at the $i'$th cell.
 The intermediate stages $k_1, k_2, k_3$ and $k_4$ are computed at each time step.
 The scheme integrates the equations in time while relying on flux differences to update the solution.
-At each time step, the fluxes $\mathbf{F}_i$ between neighboring cells are computed as
-\begin{align*}
-    \mathbf{F}_i = \frac{1}{2}(\mathbf{F}_{i-1/2} + \mathbf{F}_{i+1/2}),
-\end{align*}
-where $\mathbf{F}_{i-1/2}$ and $\mathbf{F}_{i+1/2}$ are the fluxes at the edges of the adjacent cells.
-These fluxes depend on $h'$ and $u$.
-At each ERK4 stage, the fluxes and intermediate derivatives are calculated to ensure accurate time integration.
-The final values of $h'$ and $u$ are obtained by combining the contributions from all four stages.
 This approach allows the method to achieve high temporal accuracy while maintaining the spatial resolution provided by the finite volume discretization.
 
-%The RK4 scheme approximates the time derivatives of \(h'\) and \(v\) using four intermediate stages:
-%\paragraph{Stage 1 (Initial Flux Evaluation):}
-%\begin{align}
-%    k_{h1} &= -\frac{h_0}{a \cos\phi} \frac{v_\text{flux} - \text{circshift}(v_\text{flux}, 1)}{\Delta \theta}, \\
-%    k_{v1} &= -g \frac{h'_\text{flux} - \text{circshift}(h'_\text{flux}, 1)}{\Delta \theta} - f v.
-%\end{align}
-%Each stage recalculates the fluxes and updates the intermediate derivatives:
-%We then update the state variables.The perturbation in water height (\(h'\)) is stored at each time step and visualized as a wave propagating around a great circle on a sphere.
 
+%The updates are:
+%\begin{align*}
+%    k_1 = \begin{bmatrix}
+%        kh_1 \\ ku_1
+%    \end{bmatrix}
+%\end{align*}
+%with
+%\begin{subequations}
+%    \begin{align}
+%    kh_{1,i} &= -\frac{h_0}{r \cos\phi} \frac{u_{i+1} - u_{i-1}}{2 \Delta \theta}, \\
+%    ku_{1,i} &= -\frac{g}{r \cos\phi} \frac{h'_{i+1} - h'_{i-1}}{2 \Delta \theta},
+%\end{align}
+%\end{subequations}
+%for $i = 0, 1, \dots, N-1$. 
+
+%The state $k_1$ is the derivative at the first stage of the ERK4 method.
+%The next state $k_2$ is the estimate of the slope at the midpoint of the time interval, i.e, $t = t_n + \Delta t/2$. 

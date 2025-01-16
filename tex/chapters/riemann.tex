@@ -1,16 +1,14 @@
 \section{The Riemann problem}
 We will now define the Riemann problem, since it plays a crucial role in the finite volume method.
-In the Riemann problem we distinguish between what we call a wet bed and a dry bed. 
-A wet bed is the case where the water depth is positive everywhere, whereas a dry bed is the case where the water depth is zero in some cells.
-The special Riemann problem where parts of the bed are dry is dealing with the so-called dry fronts or wet/dry fronts, which are challenging to handle numerically.
-We will leave these cases for now, and only consider wet bed problems.
-The Riemann problem for the shallow water equations in 1D with a zero source term is defined as the initial-value problem (IVP)~\cite{Toro2024}:
+%The special Riemann problem where parts of the bed are dry is dealing with the so-called dry fronts or wet/dry fronts, which are challenging to handle numerically.
+%We will leave these cases for now, and only consider wet bed problems.
+The Riemann problem for the SWE with a zero source term, i.e. $\mathbf{S(U)} = 0$, is defined as the initial-value problem (IVP)~\cite{Toro2024}:
 \begin{equation}\label{eq:Riemann_problem}
     \begin{aligned}
         \text{PDEs: } &\mathbf{U}_t + {\mathbf{F(U)}}_x = 0, \\
         \text{ICs: } &\mathbf{U}(x, 0) = \begin{cases}
-            \mathbf{U_L}, & \text{if  } x < 0, \\
-            \mathbf{U_R}, & \text{if  } x > 0.
+            \mathbf{U_L}, & \text{if  } x < x_0, \\
+            \mathbf{U_R}, & \text{if  } x > x_0.
         \end{cases}
     \end{aligned}
     \end{equation}
@@ -32,31 +30,33 @@ and the initial conditions $\mathbf{U_L}$ and $\mathbf{U_R}$ are
         h_R \\ h_R u_R \\ h_R v_R
     \end{bmatrix},
 \end{align*}
-which represents the conditions at time $t = 0$ s in the left and right states of $x = 0$ m.
-The function $\mathbf{U}$ is piecewise constant, with a discontinuity at $x = 0$ m.
+which represents the conditions at time $t = 0$ s in the left and right states of $x = x_0$ m.
+The function $\mathbf{U}$ is piecewise constant, with a discontinuity at $x = x_0$ m.
+The Riemann problem is solved at the interface between two cells, where the left and right states are known, and the solution is used to update the solution at each timestep in the finite volume method.
 The Riemann problem can be solved either exactly or approximately.
-However, in this project we will focus on approximate Riemann solvers, which are able to solve the Riemann problem with high accuracy and efficiency.
-Various approximate Riemann solvers exist, based on finding an approximate solution to the Riemann problem.
-Some of these solvers will be considered in the next section.
+When solving the Riemann problem exactly we distinguish between what we call a wet bed and a dry bed.
+A wet bed is the case where the water depth is positive everywhere, whereas a dry bed is the case where the water depth is zero in some cells.
+In this project, we focus on approximate Riemann solvers, which are able to solve the Riemann problem with high accuracy and efficiency.
+Various approximate Riemann solvers exist, based on finding an approximate solution to the Riemann problem, and some of these solvers will be considered in the next section.
 An interesting example of a Riemann problem is the so-called dam break problem, which is presented next.
 
 \subsection{The Dam-Break problem}
 We now introduce the dam-break problem, a scenario of significant physical interest.
 This problem models the sudden release of water following the collapse of a dam, making it highly relevant for studying natural disasters such as floods and tsunamis.
-As a classic test case for numerical methods, the dam-break problem is commonly used to test the ability of a method to capture discontinuities in the solution.
+The problem also serves as a classic test case for numerical methods, to test their ability to capture discontinuities in the solution.
 The dam-break problem is a special case of the Riemann problem~\eqref{eq:Riemann_problem}.
 The difference is that in the dam-break problem, the initial velocity components, $u_L, u_R, v_L$ and $v_R$, are zero, whereas in the Riemann problem they are allowed to be distinct from zero.
 The initial setup is visualized in \autoref{fig:dam-break-problem}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/dam-break-problem.png}
-    \caption{Initial conditions for the dam-break problem. An infinitely thin wall at $x=x_0$ divides two sections of water with different water levels.}\label{fig:dam-break-problem}
+    \caption{Initial conditions for the dam-break problem. An infinitely thin wall at $x=x_0$ divides two sections of water with different water levels. Illustration modified from~\cite{Toro2024}.}\label{fig:dam-break-problem}
 \end{figure}
 We can use the shallow water equations to model the flow of water in the dam-break problem, approximately, if we assume that the wall collapses instantaneously at $t=0$ s.
 In this project we solve both the dam-break problem and cases of the Riemann problem, where the inital fluid velocity is nonzero.
 The results are presented in \autoref{ch:numerical_results}.
 
-\subsection{Solving the Riemann problem exactly by wave decomposition}
+\subsection{Wave decomposition in the Riemann problem}
 To get a better understanding of the flow in shallow water, we provide some very short background information about the wave structures in the solution of the Riemann problem.
 In general, the wave structure in the solution of the Riemann problem~\eqref{eq:Riemann_problem} consists of three wave families separating four regions.
 The wave families are denoted $W_1, W_2, W_3$ and the regions are the spaces between the wave families, denoted by $R_0, R_1, R_2$ and $R_3$.
@@ -64,11 +64,13 @@ The wave structure is illustrated in \autoref{fig:riemann_sol_general}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/riemann_sol_general.png}
-    \caption{General wave structure in the solution of the Riemann problem.}\label{fig:riemann_sol_general}
+    \caption{General wave structure in the solution of the Riemann problem.
+            The wave families are denoted by $W_1, W_2$ and $W_3$, and the regions between the wave families are denoted by $R_1, R_2, R_3$ and $R_4$. 
+            The star region consists of the regions $R_1$ and $R_2$.}\label{fig:riemann_sol_general}
 \end{figure}
-From \autoref{fig:riemann_sol_general} we see how the solution consists of three waves.
+From \autoref{fig:riemann_sol_general} we see how the solution consists of three waves, $W_1, W_2$ and $W_3$, also referred to as the left wave, middle wave and right wave.
 The left and right waves are either shock waves or rarefaction waves, and correspond to the one-dimensional shallow water equations.
-The middle wave arises from the $y-$momentum equation in~\eqref{eq:Riemann_problem} and is always a shear wave.
+The middle wave arises from the $y-$momentum equation in~\eqref{eq:Riemann_problem}, and is always a shear wave.
 The region between the left and right wave is called the star region and is interesting, since we do not know the solution in this region.
 The star region is divided into two subregions $R_1$ and $R_2$.
 The states in the regions are (from left to right) $U_L, U_{*L}, U_{*R}$ and $U_R$, where $U_L$ and $U_R$ are known, as these are the initial conditions.

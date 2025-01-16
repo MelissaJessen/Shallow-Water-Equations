@@ -179,6 +179,11 @@ Randall~J. LeVeque.
 \newblock {\em Numerical Methods for Conservation Laws}.
 \newblock Birkhäuser, Basel, 1992.
 
+\bibitem{RK4}
+Fourth order runge-kutta.
+\newblock \url{https://lpsa.swarthmore.edu/NumInt/NumIntFourth.html}, Accessed:
+  15-01-2025.
+
 \bibitem{Github_SWE}
 Melissa Jessen.
 \newblock Shallow-water-equations.
