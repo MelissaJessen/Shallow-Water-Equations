@@ -261,17 +261,30 @@ The run time dependent of the number of cells $N$ is illustrated in \autoref{tab
     \includegraphics[width=0.8\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/scalability_FVM_2D.pdf}
     \caption{Scalability of the FVM to solve the 2D SWE.}\label{fig:scalability_FVM_2D}
 \end{figure}
-
-
 From \autoref{tab:scalability} and \autoref{fig:scalability_FVM_2D} we see that the run time increases drastically with the number of cells $N$.
 This is expected, as the number of cells increases, the number of computations increases as well.
 This also means that the computational cost increases with the number of cells, and the method is not scalable for large values of $N$.
 Ultimately, if we want to model floods or tsunamis for the real world, we need a scalable method.
 This is also some of the motivation for using data-driven methods, as we will investigate if they can be more scalable.
 
-
-
 \section{Animations}
-
+To visualise the results from the numerical experiments, we have created animations for the 2D idealised circular dam break problem and the SWE with a Gaussian initial condition on a sphere.
+The QR-code in \autoref{fig:2D_dam_break_qr} can be used to access the animation for the 2D idealised circular dam break problem for $t=0$ s to $t = 10$ s.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/QR/toro2D_dambreak_FVM_17012025_N=64_t=10_qr.png}
+    \caption{QR-code for the 2D idealised circular dam break problem.
+            All animations can be found at: \url{https://github.com/MelissaJessen/Shallow-Water-Equations-Animations/blob/main/README.md}.}\label{fig:2D_dam_break_qr}
+\end{figure}
+In the animation we observe what happens after the time steps in \autoref{fig:2D_dam_break_grid}.
+We note that when the waves hit the boundaries, they are reflected back into the domain, demonstrating the behaviour of the boundary conditions.
+We have also created an animation for the SWE with a Gaussian initial condition on a sphere, which can be accessed through the QR-code in \autoref{fig:2D_dam_break_qr_part2}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/QR/sphere_gaussian_FVM_17012025_qr.png}
+    \caption{QR-code for the SWE with initial Gaussian conditions, projected on a sphere.
+            All animations can be found at: \url{https://github.com/MelissaJessen/Shallow-Water-Equations-Animations/blob/main/README.md}.}\label{fig:2D_dam_break_qr_part2}
+\end{figure}
+Note, that since the SWE is solved in a 2D cartesian domain and wrapped to a sphere, we observe non-physical behaviour, especially close to the poles.
 
 
