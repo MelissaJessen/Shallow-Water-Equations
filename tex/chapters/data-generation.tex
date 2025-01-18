@@ -128,9 +128,9 @@ The data is generated from $t = 0.0$ to $t_{\text{end}} = 1.0$ s.
 \subsection*{2D SWE}
 %For the 2D SWE, we also use Gaussian functions with parametric extension~\cite{Gaussian} to generate the initial conditions.
 For the 2D SWE, we also use the Gaussian function as initial condition for the water height $h$, but now in two dimensions:
-\begin{align*}
+\begin{align}\label{eq:2D_swe_ic_gaussian}
     h(x,y,0) &= h_0 + a \cdot \exp \left( -\frac{{(x-x_c)}^2 + {(y-y_c)}^2}{2\sigma^2} \right), 
-\end{align*}
+\end{align}
 where $h_0$ is the initial water height outside of the Gaussian, $a$ is the amplitude of the Gaussian in meters, $(x_c, y_c)$ is the center of the Gaussian in meters, and $\sigma$ is the standard deviation.
 The domain is $x,y \in [0,40]$ m and is discretized into $N$ points in each direction.
 We use the parameters $h_0 = 1$ m, $a = 2$ m, $(x_c, y_c) = (20 \text{m}, 20 \text{m})$, and $\sigma = 2$ m.

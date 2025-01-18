@@ -40,12 +40,12 @@
 \contentsline {chapter}{\numberline {7}Data-driven results}{60}{chapter.7}%
 \contentsline {section}{\numberline {7.1}1D Shallow Water Equations with Gaussian initial conditions}{60}{section.7.1}%
 \contentsline {section}{\numberline {7.2}1D linearized Shallow Water Equations in Spherical Coordinates}{66}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Data-driven results for the 2D SWE}{71}{section.7.3}%
-\contentsline {chapter}{\numberline {8}Discussion}{78}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Conclusion}{79}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Further work}{79}{section.9.1}%
-\contentsline {chapter}{Bibliography}{81}{chapter*.114}%
-\contentsline {chapter}{\numberline {A}Appendix}{82}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Additional figures from 1D SWE spherical CNN and FNO}{82}{section.A.1}%
-\contentsline {section}{\numberline {A.2}FNO Toro test 1}{85}{section.A.2}%
-\contentsline {section}{\numberline {A.3}2D SWE long term prediction}{86}{section.A.3}%
+\contentsline {section}{\numberline {7.3}Data-driven results for the 2D SWE}{70}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Discussion}{77}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusion}{78}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Further work}{78}{section.9.1}%
+\contentsline {chapter}{Bibliography}{80}{chapter*.113}%
+\contentsline {chapter}{\numberline {A}Appendix}{81}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Additional figures from 1D SWE spherical CNN and FNO}{81}{section.A.1}%
+\contentsline {section}{\numberline {A.2}FNO Toro test 1}{84}{section.A.2}%
+\contentsline {section}{\numberline {A.3}2D SWE long term prediction}{85}{section.A.3}%
