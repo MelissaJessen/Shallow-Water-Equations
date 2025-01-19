@@ -90,6 +90,17 @@ Jan~S. Hesthaven and Tim Warburton.
   Applications}.
 \newblock Springer, 2008.
 
+\bibitem{oshea2015introductionconvolutionalneuralnetworks}
+Keiron O'Shea and Ryan Nash.
+\newblock An introduction to convolutional neural networks, 2015.
+
+\bibitem{chollet2017comprehensive}
+François Chollet.
+\newblock A comprehensive guide to convolutional neural networks — the eli5
+  way.
+\newblock {\em Towards Data Science}, 2017.
+\newblock Accessed: 2024-12-27.
+
 \bibitem{FNO_2021}
 Zongyi Li, Nikola Kovachki, Kamyar Azizzadenesheli, Burigede Liu, Kaushik
   Bhattacharya, Andrew Stuart, and Anima Anandkumar.
@@ -118,17 +129,6 @@ Boris Bonev, Thorsten Kurth, Christian Hundt, Jaideep Pathak, Maximilian Baust,
 \newblock Spherical fourier neural operators: Learning stable dynamics on the
   sphere.
 \newblock \url{https://arxiv.org/abs/2306.03838}, 2023.
-
-\bibitem{oshea2015introductionconvolutionalneuralnetworks}
-Keiron O'Shea and Ryan Nash.
-\newblock An introduction to convolutional neural networks, 2015.
-
-\bibitem{chollet2017comprehensive}
-François Chollet.
-\newblock A comprehensive guide to convolutional neural networks — the eli5
-  way.
-\newblock {\em Towards Data Science}, 2017.
-\newblock Accessed: 2024-12-27.
 
 \bibitem{Vreugdenhil1994}
 C.B. Vreugdenhil.

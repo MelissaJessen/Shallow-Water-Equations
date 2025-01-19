@@ -1,6 +1,6 @@
 \section{The Shallow Water Equations in Spherical Coordinates}
 Until now we have derived the shallow water equations in cartesian coordinates.
-In this section, we will derive the shallow water equations in spherical coordinate, which is necessay if we want to model water flow on Earth.
+In this section, we will derive the shallow water equations in spherical coordinate, which is necessary if we want to model water flow on Earth.
 We will follow the methods used in~\cite{Castro2017}~\cite{Bihlo2022},~\cite{Raymond} and~\cite{Gill_1982}.
 To illustrate the spherical coordinates, we will use the latitude and longitude system, visualized in~\autoref{fig:lat-long-earth}.
 \begin{figure}[H]
@@ -20,7 +20,7 @@ We consider a small domain of the sphere, as illustrated in \autoref{fig:sphere-
     \caption{Illustrations of a small domain of the surface of the sphere.}\label{fig:sphere-small-domain}
 \end{figure}
 The volume of the domain in~\autoref{fig:sphere-small-domain} is denoted by $V$.
-We want to find expressions for $\Delta x_{\phi}$ and $\Delta x_{\theta}$, the distances in the $\phi$ and $\theta$ directions, respectively, as illustrated in \autoref{fig:sphere-small-domain}.
+to find the volume, we need to find expressions for $\Delta x_{\phi}$ and $\Delta x_{\theta}$, the distances in the $\phi$ and $\theta$ directions, respectively, as illustrated in \autoref{fig:sphere-small-domain}.
 We can find these distances by using the arc length formula.
 Recall that the circumreference of a full circle is $2\pi r$, where $r$ is the radius of the circle.
 The arc length is a fraction of the full circumreference, and it is given by the formula $l = r v$, where $l$ is the arc length, $r$ is the radius, and $v$ is the angle in radians.
@@ -63,7 +63,7 @@ That is, we consider the partial derivative with respect to time of the volume $
     \frac{\partial V}{\partial t} &= r^2 \cos(\phi) \Delta \phi \Delta \theta \frac{\partial h}{\partial t}.
 \end{align}
 In~\eqref{eq:sphere-volume-time-derivative} we have utilized that $r$ is constant, and that $\cos(\phi), \Delta \phi$ and $\Delta \theta$ are independent of the time $t$.
-We use $u_{\theta}$ and $u_{\phi}$ to denote the velocities in the $\theta-$ and $\phi-$directions.
+We use $u_{\theta}$ and $u_{\phi}$ to denote the velocities in the $\theta-$ and $\phi-$directions, not to be confused with partial derivatives.
 We are interested in the rate at which fluid volume enters the region from the sides.
 We can find this rate by considering the flux of fluid volume through the sides of the domain.
 That is, we consider how much fluid volume enters the domain from the $\theta-$direction, and how much fluid volume enters the domain from the $\phi-$direction.
@@ -102,17 +102,19 @@ The net flux in the $\theta$ direction is the difference between the influx and 
 \end{align}
 We can do the same for the $\phi$ direction, also using the notation $\phi ' = \phi + \Delta \phi$.
 Hence, we obtain the net flux in the $\phi$ direction as
-\begin{align}\label{eq:sphere-net-flux-phi}
-    F_{net, \phi} &= F_{in, \phi} - F_{out, \phi} \\
-     &= \left( u_\phi(\phi) h(\phi)\cos (\phi) - u_\phi (\phi ')h(\phi ') \cos(\phi')  \right) r \Delta \theta.
-\end{align}
+\begin{equation}\label{eq:sphere-net-flux-phi}
+    \begin{aligned}
+        F_{net, \phi} &= F_{in, \phi} - F_{out, \phi} \\
+        &= \left( u_\phi(\phi) h(\phi)\cos (\phi) - u_\phi (\phi ')h(\phi ') \cos(\phi')  \right) r \Delta \theta.
+    \end{aligned}
+\end{equation}
 By inserting~\eqref{eq:sphere-net-flux-theta} and~\eqref{eq:sphere-net-flux-phi} into~\eqref{eq:sphere-volume-time-combined} we can write:
 \begin{align}\label{eq:sphere-volume-time-derivative-flux}
     h_t r^2 \cos(\phi) \Delta \phi \Delta \theta
     = \left( u_\theta(\theta) h(\theta) - u_\theta (\theta ')h(\theta ')  \right) r \Delta \phi
     + \left( u_\phi(\phi) h(\phi)\cos (\phi) - u_\phi (\phi ')h(\phi ') \cos(\phi')  \right) r \Delta \theta.
 \end{align}
-Since we are interested in $\frac{\partial h}{\partial t} = h_t$, we divide~\eqref{eq:sphere-volume-time-derivative-flux} by the area of the element $r^2 \cos(\phi) \Delta \phi \Delta \theta$.
+Since we are interested in $\frac{\partial h}{\partial t} = h_t$, we divide~\eqref{eq:sphere-volume-time-derivative-flux} by the area of the element, given by $r^2 \cos(\phi) \Delta \phi \Delta \theta$.
 Hence we get
 \begin{align}\label{eq:sphere-derivative-h}
     \frac{\partial h}{\partial t} = \frac{u_\theta(\theta) h(\theta) - u_\theta(\theta ')h(\theta ') }{r \cos(\phi) \Delta \theta} 
@@ -124,13 +126,13 @@ By collecting terms to the left hand side and changing the order of the numerato
     \frac{\partial h}{\partial t} + \frac{u_\theta(\theta') h(\theta') - u_\theta(\theta)h(\theta) }{r \cos(\phi) \Delta \theta} 
     + \frac{u_\phi(\phi ')h(\phi ') \cos(\phi') - u_\phi(\phi) h(\phi) \cos(\phi) }{r \cos (\phi) \Delta \phi} = 0.
 \end{align}
-Next step is to investigate the limit values, as $\Delta \theta$ and $\Delta \phi$ goes to zero.
+Next step is to investigate the limit values, as $\Delta \theta$ and $\Delta \phi$ approaches zero.
 We can find the limit values by using the definition of the derivative.
-The derivative of a function $f$ with respect to $x$ is defined as
+The derivative of a function $f(x)$ with respect to $x$ is defined as
 \begin{align*}
     f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}.
 \end{align*}
-We can use this definition to find the limit values in~\eqref{eq:sphere-derivative-h-collected}.
+We can use this definition to find the limit values in~\eqref{eq:sphere-derivative-h-collected} as
 \begin{align*}
     \lim_{\Delta \theta \to 0} \frac{ u_\theta(\theta ')h(\theta ') - u_\theta(\theta) h(\theta) }{\Delta \theta} = \frac{\partial}{\partial \theta} (h u_\theta ),
 \end{align*}
@@ -142,7 +144,7 @@ Inserting these results in~\eqref{eq:sphere-derivative-h-collected} yields
 \begin{align*}
     h_t + \frac{1}{r \cos (\phi)} \left( {(h u_\theta)}_{\theta} + {(h u_{\phi} \cos(\phi))}_{\phi}  \right) = 0,
 \end{align*}
-which is the mass conservation equation in spherical coordinates and is the first equation in the shallow water equations in spherical coordinates.
+which is the mass conservation equation in spherical coordinates and is the first equation in the SWE in spherical coordinates.
 The next step is to derive the momentum equations in spherical coordinates.
 In this case, we focus on the horizontal velocity components, specifically the velocity tangential to the surface of the sphere, i.e., the $\theta$ and $\phi$ velocities.
 The vertical velocity is neglected, as the key assumption in the shallow water equations is that the vertical component of the acceleration is negligible.
@@ -179,7 +181,7 @@ By using the  derivative of the arc length formula, we get that
     \frac{\text{d}\theta}{\text{d}t} =  \frac{u_\theta}{r \cos(\phi)},
     \quad \frac{\text{d}\phi}{\text{d}t} = \frac{u_\phi}{r}.
 \end{align}
-We can now insert~\eqref{eq:sphere-arc-length} into~\eqref{eq:sphere-total-derivative} to find the total derivative of the horizontal velocity split into the $\theta$ and $\phi$ directions:
+We can now insert~\eqref{eq:sphere-arc-length} into~\eqref{eq:sphere-total-derivative} to find the total derivative of the horizontal velocity split into the $\theta-$ and $\phi-$directions:
 \begin{equation}\label{eq:sphere-total-derivative-split}
     \left.
     \begin{aligned}
@@ -193,10 +195,12 @@ Earlier in this project, we focused on the shallow water equations in cartesian 
 However, in spherical coordinates, additional physical forces must be considered. These include the Coriolis force, centripetal acceleration, and the effects of Earth's curvature.
 First we consider the gravitational force acting on the fluid, descibed as $-g \nabla h$, where $g$ is the gravity acceleration, and $\nabla h$ is the gradient of the height $h$.
 We consider the gradient of $h$:
-\begin{align}
-    \nabla h &= \frac{\partial h}{\partial x_\theta} \mathbf{e}_{\theta} + \frac{\partial h}{\partial x_\phi} \mathbf{e}_{\phi} \\
-     &= \frac{1}{r \cos(\phi)} h_{\theta} \mathbf{e}_{\theta} + \frac{1}{r } h_{\phi} \mathbf{e}_{\phi},
-\end{align}
+\begin{equation*}
+    \begin{aligned}
+        \nabla h &= \frac{\partial h}{\partial x_\theta} \mathbf{e}_{\theta} + \frac{\partial h}{\partial x_\phi} \mathbf{e}_{\phi} \\
+        &= \frac{1}{r \cos(\phi)} h_{\theta} \mathbf{e}_{\theta} + \frac{1}{r } h_{\phi} \mathbf{e}_{\phi},
+    \end{aligned}
+\end{equation*}
 meaning that the gravity force acting on the fluid in the $\theta$ and $\phi$ directions are given by:
 \begin{equation*}
     \left.
@@ -207,11 +211,13 @@ meaning that the gravity force acting on the fluid in the $\theta$ and $\phi$ di
     \right\}
 \end{equation*}
 Hence, we obtain the two momentum equations in spherical coordinates as
-\begin{equation} 
+\begin{equation}\label{eq:spherical-swe_part0} 
+    \left.
     \begin{aligned}
          {(u_\theta)}_t + \frac{u_\theta}{r \cos(\phi)} {(u_\theta)}_\theta + \frac{u_\phi}{r} {(u_\theta)}_\phi = -\frac{g}{r \cos(\phi)} h_{\theta} + \text{other forces}, \\
         {( u_\phi)}_t + \frac{u_\theta}{r \cos(\phi)} {(u_\phi)}_\theta   + \frac{u_\phi}{r} {(u_\phi)}_\phi = -\frac{g}{r} h_{\phi} + \text{other forces}.
     \end{aligned}
+    \right\}
 \end{equation}
 The next force we consider is the Coriolis force, which is a force that acts on moving objects on the surface of the earth~\cite{Coriolis}.
 The Coriolis force is given by $f = 2 \Omega \sin(\phi)$, where $\Omega$ is the angular velocity of the earth.
@@ -234,10 +240,8 @@ This adds the following terms:
     \end{aligned}
     \right\}
 \end{equation*}
-
-
 There are several formulations of the SWE in spherical coordinates.
-Inserting these forces into the momentum equations, we get the following formulation of the shallow water equations in spherical coordinates:
+Inserting these forces into the momentum equations~\eqref{eq:spherical-swe_part0}, we get the following formulation of the shallow water equations in spherical coordinates:
 \begin{equation}\label{eq:spherical-swe}
     \left.
     \begin{aligned}
@@ -272,7 +276,7 @@ where $\frac{1}{r \cos(\phi)} \mathbf{F(U)}_\theta$ and $\frac{1}{r} \mathbf{G(U
 
 
 \section{The Linearized Shallow Water Equations in Spherical Coordinates}
-In this section, we derive the linearized shallow water equations (LSWE) in spherical coordinates, from the nonlinear SWE im spherical coordinates, given in~\eqref{eq:spherical-swe}.
+In this section, we derive the linearized shallow water equations (LSWE) in spherical coordinates, from the nonlinear SWE in spherical coordinates, given in~\eqref{eq:spherical-swe}.
 The derivation and methodology presented here are based on the sources~\cite{BONEV_2018} and~\cite{Eskilsson_2005}.
 The LSWE are employed for their simplicity, providing a foundation for understanding wave dynamics in a spherical geometry.
 Later in this project, we will apply the finite volume method to solve these equations numerically.
@@ -280,7 +284,7 @@ We focus on one spatial dimension, namely the longitude $\theta$.
 This approach assumes a constant latitude $\phi$, which simplifies the equations to a one-dimensional framework.
 Hence we can neglect the third equation in~\eqref{eq:spherical-swe} and the velocity component $u_\phi$.
 Thus, we introduce $u = u_\theta$ to denote the fluid velocity in the $\theta$ direction.
-We also neglect all forces, except for the gravitational force.
+We also neglect all external forces, except for the gravitational force.
 Thus we have the following SWE in spherical coordinates for one spatial dimension:
 \begin{equation}\label{eq:spherical-swe-1D}
     \left.
@@ -307,7 +311,7 @@ By substituting the perturbed variables~\eqref{eq:perturbations} into the 1D sph
     \right\}
 \end{equation}
 We neglect the terms involving products of pertubations arising in~\eqref{eq:linearized_swe_spherical-perturbations}, as they are second-order terms.
-Hence, we obtain the linearized shallow water equations in spherical coordinates with one spatial dimension $\theta$ and time $t$ as:
+Hence, we obtain the LSWE in spherical coordinates with one spatial dimension $\theta$ and time $t$ as:
 \begin{equation}\label{eq:linearized_swe_spherical}
     \left.
     \begin{aligned}
@@ -338,6 +342,7 @@ We consider a control volume $V$ with cell interfaces at $\theta_L$ and $\theta_
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/sphere1d_small_cell.png}
         \caption{Illustration of the grid for the 1D SWE with small cells.}\label{fig:sphere1d_small_cell}
     \end{subfigure}%
+    \hspace{1cm}
     \begin{subfigure}{0.3\textwidth}
         \centering
         \raisebox{15mm}{
@@ -372,7 +377,7 @@ Rewriting~\eqref{eq:integral_form_spherical_1D_part2} gives
     - \mathbf{A} \left( \int_{t_1}^{t_2} \mathbf{W}(\theta_R, t) \text{ d}t - \int_{t_1}^{t_2} \mathbf{W}(\theta_L, t) \text{ d}t \right),
 \end{align}
 which we refer to as the integral form of the LSWE in spherical coordinates with one spatial dimension.
-The integral form~\eqref{eq:integral_form_spherical_1D_final} is the foundation for the finite volume method, which we will use to solve the linearized shallow water equations in spherical coordinates numerically.
+The integral form~\eqref{eq:integral_form_spherical_1D_final} is the foundation for the FVM, which can be used to solve the LSWE in spherical coordinates numerically.
 
 
 

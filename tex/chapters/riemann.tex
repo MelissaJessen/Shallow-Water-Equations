@@ -30,9 +30,9 @@ and the initial conditions $\mathbf{U_L}$ and $\mathbf{U_R}$ are
         h_R \\ h_R u_R \\ h_R v_R
     \end{bmatrix},
 \end{align*}
-which represents the conditions at time $t = 0$ s in the left and right states of $x = x_0$ m.
-The function $\mathbf{U}$ is piecewise constant, with a discontinuity at $x = x_0$ m.
-The Riemann problem is solved at the interface between two cells, where the left and right states are known, and the solution is used to update the solution at each timestep in the finite volume method.
+which represents the conditions at time $t = 0$ s in the left and right states of $x = x_0$.
+The function $\mathbf{U}$ is piecewise constant, with a discontinuity at $x = x_0$.
+The Riemann problem is solved at the interface between two cells, where the left and right states are known, and the solution is used to update the solution at each timestep in the FVM.
 The Riemann problem can be solved either exactly or approximately.
 When solving the Riemann problem exactly we distinguish between what we call a wet bed and a dry bed.
 A wet bed is the case where the water depth is positive everywhere, whereas a dry bed is the case where the water depth is zero in some cells.
@@ -52,7 +52,7 @@ The initial setup is visualized in \autoref{fig:dam-break-problem}.
     \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/dam-break-problem.png}
     \caption{Initial conditions for the dam-break problem. An infinitely thin wall at $x=x_0$ divides two sections of water with different water levels. Illustration modified from~\cite{Toro2024}.}\label{fig:dam-break-problem}
 \end{figure} 
-We can use the shallow water equations to model the flow of water in the dam-break problem, approximately, if we assume that the wall collapses instantaneously at $t=0$ s.
+We can use the SWE to model the flow of water in the dam-break problem, approximately, if we assume that the wall collapses instantaneously at $t=0$ s.
 In this project we solve both the dam-break problem and cases of the Riemann problem, where the inital fluid velocity is nonzero.
 The results are presented in \autoref{ch:numerical_results}.
 
@@ -63,7 +63,7 @@ The wave families are denoted $W_1, W_2, W_3$ and the regions are the spaces bet
 The wave structure is illustrated in \autoref{fig:riemann_sol_general}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/riemann_sol_general.png}
+    \includegraphics[width=0.4\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/riemann_sol_general.png}
     \caption{General wave structure in the solution of the Riemann problem.
             The wave families are denoted by $W_1, W_2$ and $W_3$, and the regions between the wave families are denoted by $R_1, R_2, R_3$ and $R_4$. 
             The star region consists of the regions $R_1$ and $R_2$.}\label{fig:riemann_sol_general}
@@ -74,7 +74,7 @@ The middle wave arises from the $y-$momentum equation in~\eqref{eq:Riemann_probl
 The region between the left and right wave is called the star region and is interesting, since we do not know the solution in this region.
 The star region is divided into two subregions $R_1$ and $R_2$.
 The states in the regions are (from left to right) $U_L, U_{*L}, U_{*R}$ and $U_R$, where $U_L$ and $U_R$ are known, as these are the initial conditions.
-The states $U_{*L}$ and $U_{*R}$ are in the regions $R_1$ and $R_2$, i.e., the star region and are unknown.
+The states $U_{*L}$ and $U_{*R}$ are in the regions $R_1$ and $R_2$, i.e., the star region, and are unknown.
 In the star region, we use $h_*$ to denote the water depth and $u_*$ to denote the velocity.
 We can use $h_*$ to determine whether the left and right waves are shock waves or rarefaction waves.
 Since we are considering the wet bed case, we can use the following characteristic:
@@ -95,8 +95,7 @@ A shock wave is characterized by a discontinuity in the solution.
 On each side of the shock wave, the water properties, such as height and velocity, differ significantly.
 In contrast, a rarefaction wave represents a smooth transition in the solution.
 The water height and velocity change gradually across the wave, and the properties are more similar on each side of the wave, without the sharp edges seen in a shock wave.
-In the solution of the Riemann problem~\eqref{eq:Riemann_problem} there are four possible wave patterns outcomes, which are combinations of shock waves and rarefaction waves.
-The left and right waves are either shock waves or rarefaction waves.
+In general, the solution to the Riemann problem~\eqref{eq:Riemann_problem} can result in four possible wave patterns, which are combinations of shock waves and rarefaction waves.
 The four possible wave patterns are as follows:
 \begin{enumerate}[label= (\alph*)]
     \item Left rarefaction, right shock,

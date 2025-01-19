@@ -7,7 +7,7 @@ The FVM provides a framework for dealing with such solutions in a robust and eff
 Unlike traditional methods, which may struggle to capture sharp gradients or discontinuities, FVM inherently incorporates a mechanism to resolve such features by solving the local Riemann problem at the interfaces between computational cells.
 This characteristic makes it particularly well-suited for problems involving abrupt changes in the flow, such as those encountered in the modeling of floods, tsunamis, or dam breaks.
 
-The approach described here is based on the work of LeVeque~\cite{LeVeque2002}, who developed a framework for using the FVM in the context of hyperbolic systems of partial differential equations.
+The approach described here is based on the work of LeVeque~\cite{LeVeque2002}, who developed a framework for using the FVM in the context of hyperbolic systems of PDEs.
 The key idea is to discretize the computational domain into small cells or control volumes and compute the fluxes across the boundaries of these cells.
 The solution within each cell is then updated using the information from neighboring cells, ensuring that conservation laws are satisfied.
 By solving the local Riemann problem at the cell interfaces, the FVM can accurately capture discontinuities and preserve the sharp transitions between different flow regimes.
@@ -19,11 +19,11 @@ In the presence of strong discontinuities, additional techniques such as limiter
 Furthermore, while the FVM is well-suited for handling hyperbolic problems, it may not be as effective for problems with smooth solutions or for capturing fine-scale features in the solution without sufficient grid resolution.
 
 In this chapter, we derive the finite volume scheme for the 1D SWE and extend it to 2D in cartesian coordinates.
-We introduce the MUSCL (monotonic upstream-centered scheme for conservation laws) scheme for higher-order accuracy and discuss the FVM for the 1D linearized SWE in spherical coordinates.
+We introduce the MUSCL (monotonic upstream-centered scheme for conservation laws) scheme for higher-order accuracy and discuss the FVM for the 1D LSWE in spherical coordinates.
 Additionally, we examine the Riemann problem, including the dam break problem, and present numerical flux functions for solving the local Riemann problem at cell interfaces.
 
 \section{The Finite Volume Method for the 1D Shallow Water Equations}\label{sec:FVM_1D_SWE}
-We begin by introducing finite volume methods for the SWE in one spatial dimension.
+We begin by introducing the FVM for the SWE in one spatial dimension.
 Specifically, we work in the \(x,t\)-plane, discretizing the domain into finite control volumes or cells.
 In \autoref{ch:theory}, we derived the integral form for a single control volume \(V = [x_L, x_R] \times [t_1, t_2]\).
 Here, we extend this approach to a global domain consisting of multiple cells.
@@ -95,9 +95,13 @@ Consequently, the FVM does not provide pointwise values of the solution, i.e., $
 One of the main challenges in the FVM is to determine appropiate numerical flux functions that, based on the available cell averages, can reasonably approximate the fluxes at the cell interfaces. 
 Later in the thesis, we will consider several numerical flux functions that can be used to solve the local Riemann problem at the cell interfaces.
 
-The finite volume method are closely related to the finite difference method (FDM), but they differs as they are based on the integral form of the conservation laws.
+The FVM is closely related to the finite difference method (FDM), but they differs as the FVM is based on the integral form of the conservation laws.
 Where finite difference methods tend to break down near discontinuities in the solution, finite volume methods are more suited, since they are based on the integral form of the conservation laws.
 The key distinction between the FVM and the FDM lies in their formulation: while the FVM is based on the integral conservation over finite volumes, the FDM is based on satisfying the differential equations point-wise at mesh points.
+Similarly, the FVM and the finite element method (FEM) differ in some of their principles and applications.
+Like the FVM, the FEM divides the domain into smaller elements, but approximates the solution using interpolation functions.
+The FEM is especially effective for solving problems with complex geometries.
+
 
 \section{The Finite Volume Method for the 2D Shallow Water Equations}
 We now extend the FVM to two spatial dimensions, meaning we consider both the $x-$ and $y-$direction.
@@ -121,28 +125,11 @@ The fluxes are illustrated in \autoref{fig:FVM_2D_fluxes}.
     \caption{Illustration of the fluxes for the 2D SWE.}\label{fig:FVM_2D_fluxes}
 \end{figure}
 When using the simultaneous update scheme~\eqref{eq:fvm_scheme_2D_unsplit}, we must consider potential stability issues.
-%Certain numerical fluxes, such as those from the Lax-Friedrichs, Lax-Wendroff, and FORCE schemes, are not stable in 2D applications.
 To address this, several methods can be employed.
 
 The first method we consider is the weighted average flux (WAF) scheme.
-The basic WAF scheme, without any nonlinear TVD modification, is prone to oscillations.
-To mitigate this, a total variation diminishing (TVD) constraint can be enforced.
-To achieve the TVD condition, additional constraints are imposed on the numerical flux or reconstruction process, often through the use of slope limiters.
-A limiter function is a technique used to reduce oscillations in the solution, especially near sharp edges or discontinuities, such as shock waves.
-For this project, we use the minmod limiter, defined as
-\begin{equation*}
-    \text{minmod}(a,b) = 
-    \begin{cases}
-        \max(0, \min(a,b)) & \text{if } a > 0 \\
-        \min(0, \max(a,b)) & \text{if } a < 0. 
-    \end{cases}
-\end{equation*}
-Another method we consider is the MUSCL scheme.
-This method is second-order accurate in both time and space, while the WAF scheme is second-order accurate in space but relies on the time-stepping scheme for temporal accuracy.
-The MUSCL scheme, combined with slope limiters, ensures the solution remains satisfies the TVD constraint, effectively preventing oscillations that could occur with high-order spatial discretization near shocks, discontinuities, or sharp changes in the solution.
-The key idea in MUSCL is that, instead of using cell averages as in the 1D finite volume method, we reconstruct the solution  in each cell using piecewise first-degree polynomials.
-This reconstruction provides a higher-order representation of the solution within each cell.
-In this project, we use the MUSCL scheme with the TVD criteria to ensure smooth and stable solutions.
+The basic WAF scheme, without any nonlinear total variation diminishing (TVD) modification, is prone to oscillations.
+To mitigate this, a TVD constraint can be enforced.
 A numerical method $U_{i,j}^{n+1} $ is called TVD if it satisfies the following condition~\cite{LeVeque_1992}:
 \begin{align}
     TV(U^{n+1}) \leq TV(U^n),
@@ -155,9 +142,25 @@ For a discrete function $U_{i,j}$ defined on a grid $i = 0,1, \dots, N$ and $j=0
 The total variation measures the sum of the absolute differences between neighboring grid points.
 A TVD scheme ensures that the total variation of the solution does not increase in time, which is crucial for maintaining stability and preventing oscillations.
 The TVD property is used in shock-capturing schemes to prevent nonphysical oscillations near discontinuities, helping to accurately capture the shock location.
+To achieve the TVD condition, additional constraints are imposed on the numerical flux or reconstruction process, often through the use of slope limiters.
+A limiter function is a technique used to reduce oscillations in the solution, especially near sharp edges or discontinuities, such as shock waves.
+For this project, we use the minmod limiter, defined as
+\begin{equation*}
+    \text{minmod}(a,b) = 
+    \begin{cases}
+        \max(0, \min(a,b)) & \text{if } a > 0 \\
+        \min(0, \max(a,b)) & \text{if } a < 0. 
+    \end{cases}
+\end{equation*}
+Another method we consider is the MUSCL scheme.
+This method is second-order accurate in both time and space, while the WAF scheme is second-order accurate in space but relies on the time-stepping scheme for temporal accuracy.
+The MUSCL scheme, combined with slope limiters, ensures the solution satisfies the TVD constraint, effectively preventing oscillations that could occur with high-order spatial discretization near shocks, discontinuities, or sharp changes in the solution.
+The key idea in MUSCL is that, instead of using cell averages as in the 1D FVM, we reconstruct the solution in each cell using piecewise linear functions.
+This reconstruction provides a higher-order representation of the solution within each cell.
+In this project, we use the MUSCL scheme with the TVD criteria to ensure smooth and stable solutions.
 
 \section{The Finite Volume Method for the spherical 1D Linearized Shallow Water Equations}
-In this section, we derive the finite volume method for the 1D shallow water equations in spherical coordinates, by following the same method as in \autoref{sec:FVM_1D_SWE}.
+In this section, we derive the FVM for the 1D LSWE on a sphere, by following the same method as in \autoref{sec:FVM_1D_SWE}.
 We begin by stating the integral form of the 1D LSWE in spherical coordinates on a global domain, meaning we now consider a control volume given by 
 \begin{align*}
     V_i^n = [\theta_{i-1/2}, \theta_{i+1/2}] \times [t_n, t_{n+1}],
@@ -220,35 +223,40 @@ where the stages $k_1, k_2, k_3$ and $k_4$ are given by~\cite{RK4}:
     \end{align*}
 \end{subequations}
 This means that to use ERK4 to solve the 1D spherical LSWE, we must bring the equations in the same form as the IVP~\eqref{eq:IVP}.
-Recall, that the linearized 1D LSWE in spherical coordinates are given by
-\begin{subequations}\label{eq:linearized_LSWE_spherical}
-    \begin{align}
+Recall, that the 1D LSWE in spherical coordinates are given by
+\begin{equation}\label{eq:linearized_LSWE_spherical}
+    \left.
+    \begin{aligned}
         \frac{\partial h'}{\partial t} &= -\frac{h_0}{r \cos\phi} \frac{\partial u}{\partial \theta}, \\
-        \frac{\partial u}{\partial t} &= -\frac{g}{r \cos\phi}  \frac{\partial h'}{\partial \theta},
-    \end{align}
-\end{subequations}
+        \frac{\partial u}{\partial t} &= -\frac{g}{r \cos\phi}  \frac{\partial h'}{\partial \theta}, 
+    \end{aligned}
+    \right\}
+\end{equation}
 where $h'$ is the perturbation in water height, $u$ is the velocity in the $\theta-$direction, $h_0$ is the mean water depth, $g$ is the gravitational acceleration, $r$ is the Earth's radius, and $\phi$ is the fixed latitude.
 Since the ERK4 method solves ODEs, and the LSWE are PDEs, we must use the method of lines (MOL) to bring the LSWE in the form of the IVP~\eqref{eq:IVP}.
 The MOL is a technique for solving PDEs by discretizing all variables but one (usually time), transforming the PDE into a system of ODEs.
-The system of ODEs can then be solves using standard ODE solvers, such as the ERK4 method.
+The system of ODEs can then be solved using standard ODE solvers, such as the ERK4 method.
 We discretize the spatial dimension $\theta$ into $N$ cells, and approximate the spatial derivatives using central differences:
-\begin{subequations}\label{eq:discretized_LSWE_spherical}
-    \begin{align}
-    \frac{\partial u}{\partial \theta}|_{\theta = \theta_i} = \frac{u_{i+1} - u_{i-1}}{2 \Delta \theta}, \\
-    \frac{\partial h'}{\partial \theta}|_{\theta = \theta_i} = \frac{h'_{i+1} - h'_{i-1}}{2 \Delta \theta},
-    \end{align}
-\end{subequations}
+\begin{equation}\label{eq:discretized_LSWE_spherical}
+    \left.
+    \begin{aligned}
+        \frac{\partial u}{\partial \theta} &\approx \frac{u_{i+1} - u_{i-1}}{2 \Delta \theta}, \\
+        \frac{\partial h'}{\partial \theta} &\approx \frac{h'_{i+1} - h'_{i-1}}{2 \Delta \theta},
+    \end{aligned}
+    \right\}
+\end{equation}
 for $i = 0,1, \dots, N-1$.
 To perform the time integration, we use the ERK4 method.
 This method is particularly effective for time-stepping and is an alternative approach to traditional time integration schemes.
-RK4 provides higher accuracy in time while relying on the same spatial discretization, such as the finite volume method (FVM).
+The ERK4 method provides higher accuracy in time while relying on the same spatial discretization, such as the FVM.
 Substituing the spatial derivatives~\eqref{eq:discretized_LSWE_spherical} into the LSWE~\eqref{eq:linearized_LSWE_spherical} gives the system of ODEs:
-\begin{subequations}\label{eq:ODE_LSWE_spherical}
-    \begin{align}
+\begin{equation}\label{eq:ODE_LSWE_spherical}
+    \begin{aligned}
         \frac{d h'}{dt} &= -\frac{h_0}{r \cos\phi} \frac{u_{i+1} - u_{i-1}}{2 \Delta \theta}, \\
-        \frac{d u}{dt} &= -\frac{g}{r \cos\phi} \frac{h'_{i+1} - h'_{i-1}}{2 \Delta \theta}.
-    \end{align}
-\end{subequations}
+        \frac{d u}{dt} &= -\frac{g}{r \cos\phi} \frac{h'_{i+1} - h'_{i-1}}{2 \Delta \theta},
+    \end{aligned}
+\end{equation}
+for $i = 0,1, \dots, N-1$.
 Hence, we can write the 1D spherical LSWE in the form of the IVP~\eqref{eq:IVP} by defining 
 \begin{align}
     y(t) = \begin{bmatrix}
@@ -262,7 +270,7 @@ Hence, we can write the 1D spherical LSWE in the form of the IVP~\eqref{eq:IVP} 
 \end{align}
 As we consider a circle as the domain, we must impose periodic boundary conditions.
 We do this by setting $h'_{-1} = h'_{N-1}$, $h'_{N} = h'_0$, $u_{-1} = u_{N-1}$, and $u_{N} = u_0$.
-The inital conditions for $y$ are a Gaussian perturbation in water height and zero velocity:
+The inital conditions for $y$ are a Gaussian function in water height and zero velocity:
 \begin{align}
     y_0 = \begin{bmatrix}
         \exp(-\frac{{(\theta_{i} - \theta_0)}^2}{\sigma}) \\ 0

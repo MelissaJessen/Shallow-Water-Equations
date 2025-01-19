@@ -159,25 +159,45 @@ While the errors are a bit higher than for the predictions on a grid with $N = 1
 The results for the CNN model are not as good as for the FNO model, but the CNN model is still, to some extent, able to generalize to a finer grid.
 
 \subsection{Long-term predictions for the 2D Shallow Water Equations}
-We are particularly interested in evaluating the models' ability to generalize further in time.
-To do this we train the model on the generated 2D data with a fixed time step size of $\Delta t = 0.025$.
-To test this, we will train the models on a time interval $[0, 5]$ and make predictions for up to $n = 200$ time steps in the future, equivalent predicting up to $t = 10$ s.
-
+In this section, we evaluate the models' ability to generalize to longer time horizons.
+The previous models were trained on data generated using the FVM with vairable time step sizes.
+To control the specific time points for long-term predictions, a fixed time step size is required.
+Consequenlty, we generated data for the 2D SWE using $N = 64$ points in each spatial direction and a fixed time step size of $\Delta t = 0.025$.
+To facilitate testing og long-term predictions, the data set spans a longer time interval, covering $t = 0$ s to $t = 15$ s.
+The models are trained on the data from $t = 0$ s to $t = 8$ s, validated on the data from $t = 8$ s to $t = 10$ s, and tested for long-term prediction capability using data from $t = 10$ s to $t = 15$ s.
+Some information of the data used for the 2D SWE with a fixed time step size can be found in \autoref{tab:data_2D_SWE_fixed_time_step}.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|ccccc}
+        \textbf{Case} & \textbf{n\_train} & \textbf{n\_val} & \textbf{n\_predictions} & $\mathbf{\Delta x}$ & $\mathbf{\Delta t}$ \\
+        \hline
+        2D SWE & 480 & 120 & 200 & 0.625 m  & $0.025$ \\
+    \end{tabular}
+    \caption{Details of the used data for the case with the 2D SWE with a fixed time step size.}\label{tab:data_2D_SWE_fixed_time_step}
+\end{table}
+We generate predictions for up to $n = 200$ time steps into the future, corresponding to the interval from $t = 10$ s to $t = 15$ s.
+The validation data points are crucial for selecting the best model for long-term predictions and prevent overfitting.
 Initially, we adopted an iterative approach, where the model made a prediction for the next time step and used that prediction as input for the next time step.
 While this approach produces acceptable results for the inital time steps, the error increases as we make predictions further in time, probably due to accumulating errors.
 To address this issue, we implemented an alternative approach by creating sequences of data and training the model to predict the next time step based on the entire sequence.
 In this method, the most recent prediction becomes part of a sequence, distributing the influence across subsequent predictions, rather than heavily impacting the next prediction alone.
 This approach aims to stabilize long-term predictions.
-The error plot for the long-term predictions from the CNN model can be seen in \autoref{fig:2D_CNN_long_term_error}.
+
+\subsubsection*{CNN Model}
+We train the CNN model on the described data set for $100$ epochs.
+We make predictions for up to $n = 200$ time steps into the future, and the error plot for the prediction after $n = 20$ time steps, corresponding to $0.5$ s, can be seen in \autoref{fig:2D_CNN_long_term_error}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_long_term_predictions_error_Ntrain=64_Npred=64_idx=20.pdf}
     \caption{Error plot for the long-term prediction for the 2D CNN model.}\label{fig:2D_CNN_long_term_error}
 \end{figure}
-\autoref{fig:2D_CNN_long_term_error} shows that the error is larger for the short-term predictions in \autoref{fig:2D_CNN_error} compared to the long-term predictions.
-But it has not increased drastically.
-We run the same test for the FNO model.
-The error plots of the long-term predictions from the FNO model after 20 time steps, equivalent to $t = 0.5$ s, can be seen in \autoref{fig:2D_FNO_long_term_error}.
+In \autoref{fig:2D_CNN_long_term_error} we see that the error is more equally distributed over the domain compared to the short-term predictions in \autoref{fig:2D_CNN_error}.
+The prediction, together with the numerical solution can be seen in \autoref{fig:2D_CNN_long_term_predictions} in Appendix \autoref{app:2D_SWE_long_term_prediction}.
+
+
+\subsubsection*{FNO Model}
+We run the same test for the FNO model, training it on the same data set as the CNN model, and also for $100$ epochs.
+The error plots of the long-term predictions from the FNO model after 20 time steps, equivalent to $0.5$ s, can be seen in \autoref{fig:2D_FNO_long_term_error}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions_error_Ntrain=64_Npred=64_idx=20.pdf}
@@ -185,11 +205,11 @@ The error plots of the long-term predictions from the FNO model after 20 time st
 \end{figure}
 From the error plot in \autoref{fig:2D_FNO_long_term_error}, we see that the error is bigger than for the short-term predictions in \autoref{fig:2D_FNO_error}, but for many applications still acceptable.
 We also see that error for the FNO model is smaller than for the CNN model, indicating that the FNO model is able to generalize further in time and make long-term predictions.
-A plot of the predictions and the ground truth can be found in \autoref{fig:2D_FNO_long_term_predictions} in Appendix \autoref{app:2D_SWE_long_term_prediction}.
-The corresponding error plot for $n = 40$ time steps can be seen in \autoref{fig:2D_FNO_long_term_error_40} in Appendix \autoref{app:2D_SWE_long_term_prediction}, where we see that the error has increased.
+A plot of the predictions and the ground truth can be found in \autoref{fig:2D_FNO_long_term_predictions} in Appendix \autoref{app:2D_SWE_long_term_prediction}, where we see that the FNO model is able to capture the dynamics of the solution well.
 
-To get an overview of how the model performs over time, we plot the error in each time step for the long-term prediction for up to $n = 200$ time steps in the future.
-To compare the error we have plotted the MSE, MAE and the max error for the long-term predictions for the CNN and FNO models in \autoref{fig:2D_CNN_FNO_mse_mae_max_error}.
+\subsubsection*{Comparison}
+To assess the models performance over time, we plot the error at each time step for long-term predictions up to $n = 200$ time steps into the future.
+Then CNN and FNO models are compared in terms of MSE, MAE and the absolute max error for long-term predictions, as shown in \autoref{fig:2D_CNN_FNO_mse_mae_max_error}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.99\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_FNO_mse_mae_max_error.pdf}
@@ -202,13 +222,6 @@ This raises a key question: is it better to have one large error or many small e
 
 As shown in \autoref{fig:2D_CNN_FNO_mse_mae_max_error}, the error increases as we make predictions further in time.
 Overall, the FNO model demonstrates lower errors compared to the CNN model, indicating it may offer more accurate long-term predictions.
-
-
-
-
-
-
-
 
 
 

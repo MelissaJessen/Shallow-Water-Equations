@@ -1,5 +1,5 @@
 \section{Numerical fluxes}
-In this section we will study the numerical fluxes used to solve the SWE in 1D.
+In this section we will study the numerical fluxes used to solve the SWE.
 At each cell interface, we need to solve the Riemann problem~\eqref{eq:Riemann_problem} to find the numerical flux.
 There are several numerical fluxes that can be used to solve the local Riemann problem, and we will consider some of them in this section.
 The fluxes we will consider are the Godunov method with an exact Riemann solver, the HLL, HLLC, Rusanov, Lax-Friedrichs, Lax-Wendroff and FORCE fluxes.
@@ -8,7 +8,7 @@ All of them are later implemented and tested in the numerical experiments in \au
 
 \subsection*{Godunov method with exact Riemann solver}
 %\addcontentsline{toc}{subsection}{Godunov method with exact Riemann solver}
-We consider the Godunov Upwind method, which is a first-order accurate metod to solve non-linear systems of hyperbolic conservation laws~\cite{Toro2024}.
+We consider the Godunov upwind method, which is a first-order accurate metod to solve non-linear systems of hyperbolic conservation laws~\cite{Toro2024}.
 In the method we solve the non-linear Riemann problem at each cell interface.
 The Godunov flux is given by
 \begin{align*}
@@ -46,7 +46,7 @@ where $a_L = \sqrt{g h_L}, a_R = \sqrt{g h_R}$ and  $q_K (K=L, R)$ is given by
     \end{cases}
 \end{align*}
 Here $\hat{h}$ is an estimate for the water depth in the star region, $h_*$.
-In the two-rarefaction Riemann Solver, the water depth $h$ in the star region is given by
+In the two-rarefaction Riemann solver, the water depth $h$ in the star region is given by
 \begin{align}\label{eq:two_rarefaction_hstar}
     h_* = \frac{1}{g} {\left( \frac{1}{2} (a_L + a_R) + \frac{1}{4} (u_L - u_R)  \right)}^2,
 \end{align}

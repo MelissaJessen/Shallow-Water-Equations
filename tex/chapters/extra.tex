@@ -1,3 +1,35 @@
+\begin{equation}\label{eq:momentum_conservation_all}
+    \left.
+    \begin{aligned}
+        u_x + v_y + w_z &= 0, \\
+        u_t + u u_x + v u_y + w u_z &= - \frac{1}{\rho} p_x, \\
+        v_t + u v_x + v v_y + w v_z &= - \frac{1}{\rho} p_y, \\
+        w_t + u w_x + v w_y + w w_z &= - \frac{1}{\rho} p_z - g.
+    \end{aligned}
+    \right\}
+\end{equation}
+
+%% Fjernet 19.01.2025
+An alternative integral form of~\eqref{eq:vector_form_1D} is stated in~\cite{Toro2024}:
+\begin{align}\label{eq:integral_form_1D_alternative}
+    \frac{\text{d}}{\text{d}t} \int_{x_L}^{x_R} \mathbf{U}(x,t) \text{ d}x = \mathbf{F}(\mathbf{U}(x_L, t)) - \mathbf{F}(\mathbf{U}(x_R, t)) + \int_{x_L}^{x_R} \mathbf{S}(\mathbf{U}) \text{ d}x.
+\end{align}
+From~\eqref{eq:integral_form_1D_alternative} we get that the integral form of the homogeneous SWE in 1D is given by
+\begin{align}\label{eq:integral_form_1D_homogeneous}
+    \frac{\text{d}}{\text{d}t} \int_{x_L}^{x_R} \mathbf{U}(x,t) \text{ d}x = \mathbf{F}(\mathbf{U}(x_L, t)) - \mathbf{F}(\mathbf{U}(x_R, t)),
+\end{align}
+meaning that the rate of change of the integral over a spatial domain is equal to the net flux through the boundaries of the domain.
+
+
+
+
+
+
+
+
+
+
+
 \section{Metod of manufactured solutions}
 Method of manufactured solutions (MMS) was used to verify the implementation.
 We use a manufactured solution for $h(x,t)$ and $u(x,t)$.
