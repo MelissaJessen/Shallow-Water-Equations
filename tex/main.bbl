@@ -184,6 +184,11 @@ Fourth order runge-kutta.
 \newblock \url{https://lpsa.swarthmore.edu/NumInt/NumIntFourth.html}, Accessed:
   15-01-2025.
 
+\bibitem{Fourier_Transform}
+Fourier transform.
+\newblock \url{https://en.wikipedia.org/wiki/Fourier_transform}, Accessed:
+  15-01-2025.
+
 \bibitem{Github_SWE}
 Melissa Jessen.
 \newblock Shallow-water-equations.
