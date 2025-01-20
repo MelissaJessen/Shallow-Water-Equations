@@ -27,7 +27,7 @@
 \contentsline {section}{\numberline {4.1}Convolutional Neural Networks}{32}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Fourier Neural Operators}{33}{section.4.2}%
 \contentsline {chapter}{\numberline {5}Data generation}{37}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Data generation using the FVM}{37}{section.5.1}%
+\contentsline {section}{\numberline {5.1}Data generation using the Finite Volume Method}{37}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Data Copernicus}{43}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Mesh generation for the sphere}{43}{section.5.3}%
 \contentsline {chapter}{\numberline {6}Numerical results}{46}{chapter.6}%
