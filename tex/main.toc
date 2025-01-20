@@ -28,8 +28,7 @@
 \contentsline {section}{\numberline {4.2}Fourier Neural Operators}{33}{section.4.2}%
 \contentsline {chapter}{\numberline {5}Data generation}{37}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Data generation using the Finite Volume Method}{37}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Data Copernicus}{43}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Mesh generation for the sphere}{43}{section.5.3}%
+\contentsline {section}{\numberline {5.2}Data generation for the sphere}{42}{section.5.2}%
 \contentsline {chapter}{\numberline {6}Numerical results}{46}{chapter.6}%
 \contentsline {section}{\numberline {6.1}The 1D Dam Break Problem}{46}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Toro test cases}{47}{section.6.2}%
@@ -45,7 +44,7 @@
 \contentsline {chapter}{\numberline {8}Discussion}{76}{chapter.8}%
 \contentsline {chapter}{\numberline {9}Conclusion}{77}{chapter.9}%
 \contentsline {section}{\numberline {9.1}Further work}{77}{section.9.1}%
-\contentsline {chapter}{Bibliography}{79}{chapter*.115}%
+\contentsline {chapter}{Bibliography}{79}{chapter*.119}%
 \contentsline {chapter}{\numberline {A}Appendix}{80}{appendix.A}%
 \contentsline {section}{\numberline {A.1}Additional figures from 1D SWE spherical CNN and FNO}{80}{section.A.1}%
 \contentsline {section}{\numberline {A.2}2D SWE long term prediction}{83}{section.A.2}%
