@@ -722,6 +722,7 @@ INPUT C:\Users\Matteo\Shallow-Water-Equations\plots\icosahedral_mesh_refinement.
 INPUT C:\Users\Matteo\Shallow-Water-Equations\plots\icosahedral_mesh_refinement.pdf
 INPUT C:\Users\Matteo\Shallow-Water-Equations\plots\icosahedral_mesh_refinement.pdf
 INPUT C:\Users\Matteo\Shallow-Water-Equations\plots\icosahedral_mesh_refinement.pdf
+INPUT C:\Users\Matteo\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1000.tfm
 INPUT C:\Users\Matteo\Shallow-Water-Equations\plots\ssh_field.pdf
 INPUT C:\Users\Matteo\Shallow-Water-Equations\plots\ssh_field.pdf
 INPUT C:\Users\Matteo\Shallow-Water-Equations\plots\ssh_field.pdf
@@ -1200,7 +1201,6 @@ INPUT chapters\06_discussion.tex
 INPUT .\chapters\conclusion.tex
 INPUT .\chapters\conclusion.tex
 INPUT chapters\conclusion.tex
-INPUT C:\Users\Matteo\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1000.tfm
 INPUT .\chapters\07_FurtherWork.tex
 INPUT .\chapters\07_FurtherWork.tex
 INPUT chapters\07_FurtherWork.tex

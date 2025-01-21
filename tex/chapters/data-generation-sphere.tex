@@ -44,35 +44,36 @@ The first four levels of refinement are shown in~\autoref{fig:icosahedral_grid}.
 \end{figure}
 In~\autoref{fig:icosahedral_grid} we see how the grid is refined at each level, resulting in a progressively more accurate representation of the sphere.
 We will brieftly outline the process of solving the SWE on this grid structure, inspired by the finite element method (FEM).
-
-
-We will shortly outline the process of solving the SWE on this grid structure, inspired by the finite element method (FEM).
-The main idea is that for each triangle we keep track of which the neighboring triangles are. 
-We also keep track of which interfaces the neighboring triangles share. 
-This information is stored in various tables, known as the Element-to-Vertex, Element-to-Face, and Element-to-Element tables.
+The main idea is to keep track of which neighboring triangles each triangle has, as well as which interfaces they share.
 Each triangle is numbered, as well as each vertex.
-The Element-to-Vertex (EToV) table stores the vertices of each triangle, meaning that each row corresponds to a triangle and the three columns correspond to the three vertices of the triangle.
-The Element-to-Element (EToE) table can be made based on the EToV table.
-The EToE table stores the neighboring triangles of each triangle, meaning that each row corresponds to a triangle and the three columns correspond to the three neighboring triangles, using the given labeling.
-The Element-to-Face (EToF) table keeps track of which faces (edges) that are shared between two triangles, meaning for each triangle for each neighbor we must know which face the two triangles share.
-
-The idea is then that for each interface we compute the fluxes between the triangles.
-That is, we calcualte the fluxes the goes out of one triangle and into the neighbor.
-This is to make sure the total flux overall is zero, meaning that the total volume of water is conserved.
-However, we must be aware of the fact that the triangles are not on straigt lines, like the case in 2D. 
-Meaning for each flux on each interface we must compute the contribution in the $\theta-$ and the $\phi-$direction.
-Where previous we could more or less view the overall problem as two 1D problems, now they are interchanged.
-
-
-
+This information is organized into three key tables:
+\begin{itemize}
+    \item Element-to-Vertex (EToV) table. This table stores the vertices of each triangle.
+    Each row corresponds to a triangle, and the three columns correspond to the three vertices of the triangle.
+    \item Element-to-Element (EToE) table. Derived from the EToV table, this table stores the neighboring triangles of each triangle.
+    Each row corresponds to a triangle, and the three columns correspond to the three neighboring triangles. 
+    \item Element-to-Face (EToF) table. Keeps track of which faces (edges) are shared between two triangles.
+    Each row corresponds to a triangle, and the columns correspond to the neighboring triangles and the face they share.
+\end{itemize}
+The method involves computing fluxes across interfaces between triangles.
+For each interface, the flux leaving one triangle and entering its neighbor is calculated to ensure the total flux across the system is zero, conserving the total volume of water.
+However, since the triangles are not aligned in straight lines, as in the 2D case, we must consider the contributions in both the $\theta-$ and $\phi-$directions for each interface flux.
+Previously, we could view the problem as two 1D problems, but now they are intertwined, highlighting the complexity of the problem.
 
 \subsection*{External data sources}
-
-
+Another approach for obtaining data is to use external data sources.
+One possible source is the Copernicus climate data store, specifically the ORAS5 global ocean reanalysis dataset, which provides monthly data from 1958 to the present~\cite{Copernicus_data}.
+For this study, we focus on the sear surface height, defined as the vertical distance between the actual sea surface and a reference surface, representing a mean sea level if the ocean were at rest.
+The data is a 2D field, depending on the longitude and latitude.
+To get an overview of the data, we downloaded the data from January to December 2014 and plotted the sea surface height as the difference from the reference sea surface height.
+The plots for January to April are shown in~\autoref{fig:copernices-ssh}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/ssh_field.pdf}
     \caption{Sea surface height as the diffference from reference sea surface height for the months Jan-Apr 2014.}\label{fig:copernices-ssh}
 \end{figure}
-
+Note that the data was recently updated (2025-01-15).
+At the time of downloading, we obtained the newest data available.
+While training an SFNO on real-world data could be an exciting prospect, we have decided not to proceed with this data set due to several uncertainties.
+In particular, since we cannot fully account for the quality and reliability of the data, we have chosen not to pursue this approach.
 
