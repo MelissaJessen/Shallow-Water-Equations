@@ -189,6 +189,11 @@ Fourier transform.
 \newblock \url{https://en.wikipedia.org/wiki/Fourier_transform}, Accessed:
   15-01-2025.
 
+\bibitem{sphere_mesh_triangles}
+Siddarth Maddali.
+\newblock Spheremesh.
+\newblock \url{https://github.com/siddharth-maddali/SphereMesh/tree/master}.
+
 \bibitem{Github_SWE}
 Melissa Jessen.
 \newblock Shallow-water-equations.
