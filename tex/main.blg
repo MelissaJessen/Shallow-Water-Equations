@@ -8,43 +8,43 @@ Database file #1: bibl.bib
 Warning--empty journal in guardian_floods_2021
 You've used 37 entries,
             1791 wiz_defined-function locations,
-            654 strings with 9536 characters,
-and the built_in function-call counts, 5930 in all, are:
-= -- 481
+            655 strings with 9589 characters,
+and the built_in function-call counts, 5837 in all, are:
+= -- 469
 > -- 279
 < -- 0
 + -- 113
 - -- 76
-* -- 225
-:= -- 963
+* -- 209
+:= -- 949
 add.period$ -- 114
 call.type$ -- 37
 change.case$ -- 30
 chr.to.int$ -- 0
 cite$ -- 38
-duplicate$ -- 255
-empty$ -- 685
+duplicate$ -- 251
+empty$ -- 679
 format.name$ -- 76
-if$ -- 1360
+if$ -- 1343
 int.to.chr$ -- 0
 int.to.str$ -- 37
-missing$ -- 24
+missing$ -- 23
 newline$ -- 190
 num.names$ -- 34
-pop$ -- 194
+pop$ -- 199
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
 skip$ -- 109
 stack$ -- 0
-substring$ -- 112
+substring$ -- 87
 swap$ -- 35
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 40
+while$ -- 38
 width$ -- 39
-write$ -- 382
+write$ -- 381
 (There was 1 warning)
