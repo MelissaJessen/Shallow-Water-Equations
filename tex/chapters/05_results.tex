@@ -6,9 +6,10 @@ In \autoref{sec:toro_test_cases}, we present the results from the five test case
 These problems are all discontinuous in either the water height $h$ or the fluid velocity $u$.
 The idea is, that if the numerical solution can capture the discontinuities, it should be well-suited to handle smoother solutions as well.
 We also compare the results from the different fluxes used in the FVM.
+In \autoref{sec:1D_sphere} we present the results from the 1D LSWE on a sphere.
 
-We extent to consider 2D problems, and present the results from the 2D idealised circular dam break problem in \autoref{sec:2D_dam_break}.
-The results from the 2D problem are compared to the results from the book to validate the implementation of the 2D FVM.
+We extent to consider 2D problems in cartesian coordinates, and present the results from the 2D idealised circular dam break problem in \autoref{sec:2D_dam_break}.
+The results from the 2D problem are compared to the results from Toro (2024)~\cite{Toro2024} to validate the implementation of the 2D FVM.
 In \autoref{sec:scalability}, we test the scalability of the FVM to solve the 2D SWE, by running the 2D problem with a Gaussian initial condition for different values of $N$, i.e., the number of cells in each direction.
 Finally, in \autoref{sec:animations}, we present animations for the 2D idealised circular dam break problem and the solution of the SWE with a Gaussian initial condition projected on a sphere.
 
@@ -68,20 +69,20 @@ To solve the test cases we have used the following fluxes:
 
 \subsection*{Test case 1}
 %\addcontentsline{toc}{subsection}{Test case 1}
-The initial conditions for test case 1 are visualised in \autoref{fig:toro_test1_initial} and the solution after $t=7.0$ s are given in \autoref{fig:toro_test1_final}.
+The initial conditions for test case 1 are visualised in \autoref{fig:toro_test1_initial} and the solution after $t=7.0$ s is given in \autoref{fig:toro_test1_final}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_initial.pdf}
+    \includegraphics[width=0.8\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_initial.pdf}
     \caption{Initial conditions for the test case.}\label{fig:toro_test1_initial}
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final.pdf}
+    \includegraphics[width=0.65\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final.pdf}
     \caption{Final solution for the test case after $t=7.0$ s.}\label{fig:toro_test1_final}
 \end{figure}
 For this test case all the fluxes work well, but there are minor differences in the solution, which can be seen in \autoref{fig:toro_test1_final}.
 For instance, we see that the Lax-Wendroff (LW) flux has some oscillations in the solution at the discontinuity, which is not present in the other fluxes.
-As in the case of the 1D dam break problem in \autoref{sec:1D_dam_break}, the solution consists of a right shock wave and a left rarefaction wave.
+Similarly to the case of the 1D dam break problem in \autoref{sec:1D_dam_break}, we see that the solution consists of a right shock wave and a left rarefaction wave.
 
 
 \subsection*{Test case 2}
@@ -89,56 +90,56 @@ As in the case of the 1D dam break problem in \autoref{sec:1D_dam_break}, the so
 The initial conditions for test case 2 are illustrated in \autoref{fig:toro_test2_initial}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.pdf}
+    \includegraphics[width=0.8\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.pdf}
     \caption{Initial conditions for the test case.}\label{fig:toro_test2_initial}
 \end{figure}
-In test case 2 we have two rarefaction waves, one on the left side and one on the right side.
+In test case 2 we have two rarefaction waves, one on the left side and one on the right side of $x_0$.
 As they are travelling in opposite directions (away from each other), due to the initial velocity, there will be created a nearly dry bed in the middle of the domain.
 Many methods have difficulties with this test case as they may compute a negative water height.
 For these experiments we were able to get close to the true solution, using Lax-Friedrich flux, FORCE flux and HLL flux.
-The solution after $t=2.5$ s are illustrated in \autoref{fig:toro_test2_final}.
+The solution after $t=2.5$ s is illustrated in \autoref{fig:toro_test2_final}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.pdf}
+    \includegraphics[width=0.65\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.pdf}
     \caption{Final solution for the test case.}\label{fig:toro_test2_final}
 \end{figure}
 For the fluxes, Godunov method with exact Riemann solver, and Lax-Wendroff, it was not possible to get an acceptable solution.
+Among the LF, FORCE and HLL fluxes we also see differences in how close the numerical solution comes to $h = 0$ m at $x = 25$ m.
 
 \subsection*{Test case 3}
 %\addcontentsline{toc}{subsection}{Test case 3}
 The initial conditions for test case 3 are given in \autoref{fig:toro_test3_initial}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.pdf}
+    \includegraphics[width=0.8\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_initial.pdf}
     \caption{Initial conditions for the test case.}\label{fig:toro_test3_initial}
 \end{figure}
 In \autoref{fig:toro_test3_initial} we see that this is a dam break problem, as the initial velocity is zero everywhere.
-The solution after $t=4.0$ seconds are given in \autoref{fig:toro_test3_final}.
+The solution after $t=4.0$ seconds is given in \autoref{fig:toro_test3_final}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.pdf}
+    \includegraphics[width=0.65\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.pdf}
     \caption{Final solution for the test case.}\label{fig:toro_test3_final}
 \end{figure}
 In this case, we are challenged with a dry-bed region in the right part of the domain.
-To solve case 3, with the FVM we must add a small amount to $h_R$, since the code does not handle $h_R = 0$ well.
+To solve case 3, with the FVM we must add a small amount to $h_R$, since the methpd does not handle $h_R = 0$ well.
 We set $h_R = 0.00005$ to solve it numerically, but the true solution is for $h_R = 0$.
 By running experiments with different values of $h_R$, we see that the solution converges to the true solution as $h_R$ approaches 0.
-%The solution consists of a left rarefaction wave.
 From \autoref{fig:toro_test3_final} we see that when it comes to predicting the velocity, there are some differences in how the different fluxes perform.
 Overall, using the Lax-Wendroff (LW) flux gives the closest solution to the true solution for the velocity.
 
 \subsection*{Test case 4}
 %\addcontentsline{toc}{subsection}{Test case 4}
-The initial conditions for test case 4 are given in \autoref{fig:toro_test4_initial}, and the solution after $t=4.0$ s are given in \autoref{fig:toro_test4_final}.
+The initial conditions for test case 4 are given in \autoref{fig:toro_test4_initial}, and the solution after $t=4.0$ s is given in \autoref{fig:toro_test4_final}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.pdf}
+    \includegraphics[width=0.8\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_initial.pdf}
     \caption{Initial conditions for the test case.}\label{fig:toro_test4_initial}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.pdf}
+    \includegraphics[width=0.65\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final.pdf}
     \caption{Final solution for the test case.}\label{fig:toro_test4_final}
 \end{figure}
 This test problem is symmetric to test case 3, meaning we face the same challenges of a dry-bed region, now located in the left part of the domain.
@@ -148,25 +149,23 @@ As in test case 4, we observe differences in the fluxes performance, and again w
 
 \subsection*{Test case 5}
 %\addcontentsline{toc}{subsection}{Test case 5}
-The initial conditions for test case 5 are given in \autoref{fig:toro_test5_initial}, and the final solution after $t=5.0$ s are given in \autoref{fig:toro_test5_final}.
+The initial conditions for test case 5 are given in \autoref{fig:toro_test5_initial}, and the final solution after $t=5.0$ s is given in \autoref{fig:toro_test5_final}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_initial.pdf}
+    \includegraphics[width=0.8\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_initial.pdf}
     \caption{Initial conditions for the test case.}\label{fig:toro_test5_initial}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final.pdf}
+    \includegraphics[width=0.65\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final.pdf}
     \caption{Final solution for the test case.}\label{fig:toro_test5_final}
 \end{figure}
-From~\autoref{fig:toro_test5_final} we see that the numerical solutions for the velocity $v$ at $t=5.0$ are smooth, where the true solution is discontinuous. 
-In this test case there are also challenges with some of the fluxes due to the generation of a dry-bed region i the middle of the domain.
-The fluxes that are not able to solve this case are Godunov method with exact Riemann solver and Lax-Wendroff flux, the same as in test case 2.
+From~\autoref{fig:toro_test5_final} we see that the numerical solution for the velocity $v$ at $t=5.0$ is smooth, where the true solution is discontinuous. 
+In this test case there are also challenges with some of the fluxes due to the generation of a dry-bed region in the middle of the domain.
+The fluxes that are not able to solve this case are: the Godunov method with exact Riemann solver and the Lax-Wendroff flux, the same as in test case 2.
 The solution consists of two rarefaction waves, one on the left side and one on the right side, and a dry-bed region in the middle.
-
 To get an overview of which fluxes that were able to produce solutions for the test cases, consider~\autoref{tab:toro_fluxes}.
-The table shows which fluxes that were able to produce a solution for the test cases.
 \begin{table}[H]
     \centering
     \begin{tabular}{c|c|c|c|c|c}
@@ -194,7 +193,7 @@ The initial conditions, and the solution after $t = 0.25$ s and $t = 0.5$ s are 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/1D_LSWE_sphere_time_steps.pdf}
-    \caption{The water height, $h[m]$, at $t = 0$s, $t = 0.25$ and $t = 0.31$.}\label{fig:1D_LSWE_sphere}
+    \caption{The water height, $h[m]$, at $t = 0$ s, $t = 0.25$ s and $t = 0.31$ s.}\label{fig:1D_LSWE_sphere}
 \end{figure}
 From \autoref{fig:1D_LSWE_sphere} we see how the water height evolves over time.
 We observe that the initial wave split into two waves, travelling in opposite directions.
@@ -204,10 +203,9 @@ Since we do not account for friction and have neglecting external forces except 
 In this case we do not have a true solution to compare with, but the numerical solution seems reasonable.
 
 \section{2D idealised Circular Dam Break Problem}\label{sec:2D_dam_break}
-We now proceed to the 2D case, considering an idealised circular dam break problem over a horizontal bottom.
-This problem is also from Toro (2024)~\cite{Toro2024}.
+We now proceed to the 2D case, considering an idealised circular dam break problem over a horizontal bottom, a problem from Toro (2024)~\cite{Toro2024}.
 We assume there is an infinitely thin circular wall at radius $R = 2.5$ m in a square domain of size $40 \text{ m} \times 40 \text{ m}$ with centre at $(x_c,y_c) = (20 \text{ m}, 20 \text{ m})$.
-The initial conditions are
+The initial conditions are a Gaussian function for the water height $h$ and zero initial velocity for the fluid.
 \begin{align*}
     h(x,y,0) &= \begin{cases}
         2.5 \text{ m}, & \text{if } \sqrt{ {(x-x_c)}^2 + {(y-y_c)}^2 } \leq R, \\
@@ -216,7 +214,7 @@ The initial conditions are
     u(x,y,0) &= 0 \text{ m/s}, \\
     v(x,y,0) &= 0 \text{ m/s}.
 \end{align*}
-We use a mesh of size $128 \times 128$.
+We use a mesh of size $64 \times 64$.
 The problem is solved using the FVM with the Rusanov flux, and the results after $t=0.0 \text{ s}, 0.4 \text{ s}, 0.7 \text{ s}$ and $1.4$ s are visualised in \autoref{fig:2D_dam_break_grid}.
 \begin{figure}[H]
     \centering
@@ -252,7 +250,7 @@ By comparing \autoref{fig:2D_dam_break_grid} with the results from Toro (2024)~\
 
 
 \section{Scalability}\label{sec:scalability}
-Numerical methods are good as they can be more or less as accurate as we want them to be, but the computational cost increases with the number of cells.
+Numerical methods are good as they can be more or less as accurate as we want them to be, but the computational cost increases with the number of cells, i.e., the more high-resolution grid we use.
 Previoulsy in the thesis, we have indicated that a disadvantage of the FVM is that the computational cost increases with the number of cells.
 To test the scalability of the FVM to solve the 2D SWE, we have solved the 2D SWE with a Gaussian initial condition, as descibed in \autoref{ch:method}, for different values of $N$, i.e., the number of cells in each direction, and measured the run time.
 The results are presented in \autoref{tab:scalability}.
@@ -273,7 +271,7 @@ The results are presented in \autoref{tab:scalability}.
     \end{tabular}
     \caption{Running time for the FVM to solve 2D SWE for different values of $N$.}\label{tab:scalability}
 \end{table}
-The run time $[s]$ dependent on the number of cells $N$ is illustrated in \autoref{tab:scalability}.
+The run time $[s]$ dependent on the number of cells $N$ is illustrated in \autoref{fig:scalability_FVM_2D}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/scalability_FVM_2D.pdf}
@@ -281,36 +279,60 @@ The run time $[s]$ dependent on the number of cells $N$ is illustrated in \autor
             Note that the axis with time is in log-scale.}\label{fig:scalability_FVM_2D}
 \end{figure}
 From \autoref{tab:scalability} and \autoref{fig:scalability_FVM_2D} we see that the run time increases drastically with the number of cells $N$.
-This is expected, as when the number of cells increase, the number of computations increase as well.
-This also means that the computational cost increases with the number of cells, and the method is not scalable for large values of $N$.
-Ultimately, if we want to model floods or tsunamis for the real world, we need a scalable method.
-This is also some of the motivation for using data-driven methods, as we will investigate if they can be more scalable.
+This behavior is expected since an increase in the number of cells leads to a higher number of computations.
+Consequently, the computational time rises, making the method ledd scalable for real-life simulations.
+To effectively model phenomena such as floods or tsunamis, we need a scalable method.
+This challenge motivates the exploration of data-driven methods, as we aim to investigate whether they offer a more scalable solution.
 
 \section{Animations}\label{sec:animations}
-To visualise the results from the numerical experiments, we have created animations for the 2D idealised circular dam break problem and the SWE with a Gaussian initial condition on a sphere.
+To visualise the results of the numerical experiments, we have created some animations.
+These include an animation of the 1D LSWE on a sphere, demonstrating the periodic boundary conditions.
+There are also animations for the 2D idealised circular dam break problem and the SWE with a Gaussian initial condition projected on a sphere, as described in \autoref{sec:data_generation_sphere}.
+The following QR-codes provide access to the animations.
+
+The QR-code in \autoref{fig:2D_dam_break_qr} links to the animation of the 2D idealized circular dam break problem for 
+
+A link to the animations is also provided in the caption of the QR-codes, directing to a dedicated GitHub repository.
+
+We have created an animation for the 1D LSWE on a sphere, illustrating the periodic boundary conditions. 
+We have also created animations for the 2D idealised circular dam break problem and the SWE with a Gaussian initial condition projected on a sphere, as described in \autoref{sec:data_generation_sphere}.
 The following QR-codes can be used to access the animations.
-The QR-code in \autoref{fig:2D_dam_break_qr} leads to the animation for the 2D idealised circular dam break problem for $t=0$ s to $t = 10$ s, and the QR-code in \autoref{fig:2D_dam_break_qr_part2} leads to the animation for the SWE with initial Gaussian conditions, projected on a sphere, for $t=0$ s to $t = 0.5$ s.
+The QR-code in \autoref{fig:2D_dam_break_qr} leads to the animation for the 2D idealised circular dam break problem for $t=0$ s to $t = 10$ s,
+and the QR-code in \autoref{fig:2D_dam_break_qr_part2} leads to the animation for the SWE with initial Gaussian conditions, projected on a sphere, for $t=0$ s to $t = 0.5$ s, as described in~\autoref{sec:data_generation_sphere}.
 There is also a link to the animations in the caption of the QR-codes, pointing to a dedicated Github repository for the animations.
 \begin{figure}[H]
     \centering
-    \begin{subfigure}{0.35\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/QR/toro2D_dambreak_FVM_17012025_N=64_t=10_qr.png}
-        \caption{QR-code for the 2D idealised circular dam break problem.}\label{fig:2D_dam_break_qr}
+    \begin{subfigure}{0.25\textwidth}
+        \begin{minipage}[t]{\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/QR/toro2D_dambreak_FVM_17012025_N=64_t=10_qr.png}
+            \caption{QR-code for the 1D LSWE on a sphere.}\label{fig:1D_LSWE_sphere_qr}
+        \end{minipage}
     \end{subfigure}
     \hspace{1cm}
-    \begin{subfigure}{0.35\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/QR/sphere_gaussian_FVM_17012025_qr.png}
-        \caption{QR-code for the SWE with initial Gaussian conditions, projected on a sphere.}\label{fig:2D_dam_break_qr_part2}
+    \begin{subfigure}{0.25\textwidth}
+        \begin{minipage}[t]{\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/QR/toro2D_dambreak_FVM_17012025_N=64_t=10_qr.png}
+            \caption{QR-code for the 2D idealized circular dam break problem.}\label{fig:2D_dam_break_qr}
+        \end{minipage}
+    \end{subfigure}
+    \hspace{1cm}
+    \begin{subfigure}{0.25\textwidth}
+        \begin{minipage}[t]{\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/QR/sphere_gaussian_FVM_17012025_qr.png}
+            \caption{QR-code for the SWE with initial Gaussian conditions, projected on a sphere.}\label{fig:2D_dam_break_qr_part2}
+        \end{minipage}
     \end{subfigure}
     \caption{QR-codes for the animations.
             All animations can be found at: \url{https://github.com/MelissaJessen/Shallow-Water-Equations-Animations/blob/main/README.md}.}\label{fig:2D_dam_break_qr_all}
 \end{figure}
+
+
 In the animation for the 2D idealised circular dam break problem, we observe what happens after the time steps in \autoref{fig:2D_dam_break_grid}.
 We note that when the waves hit the boundaries, they are reflected back into the domain, demonstrating the behaviour of the boundary conditions.
 In the animation for the SWE with a Gaussian initial condition on a sphere, note that since the SWE is solved in a 2D cartesian domain and wrapped to a sphere, we observe non-physical behaviour, especially close to the poles.
-This motivates the use of an alternative method for solving the SWE on a sphere.
-
+%This motivates the use of an alternative method for solving the SWE on a sphere.
 
 

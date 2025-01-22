@@ -32,19 +32,19 @@
 \contentsline {chapter}{\numberline {6}Numerical results}{46}{chapter.6}%
 \contentsline {section}{\numberline {6.1}The 1D Dam Break Problem}{46}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Toro test cases}{47}{section.6.2}%
-\contentsline {section}{\numberline {6.3}1D linearized Shallow Water Equations on a sphere}{54}{section.6.3}%
-\contentsline {section}{\numberline {6.4}2D idealised Circular Dam Break Problem}{55}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Scalability}{55}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Animations}{56}{section.6.6}%
-\contentsline {chapter}{\numberline {7}Data-driven results}{58}{chapter.7}%
-\contentsline {section}{\numberline {7.1}1D Shallow Water Equations with Gaussian initial conditions}{58}{section.7.1}%
-\contentsline {section}{\numberline {7.2}1D linearized Shallow Water Equations in Spherical Coordinates}{64}{section.7.2}%
-\contentsline {section}{\numberline {7.3}2D Shallow Water Equations with Gaussian initial conditions}{68}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Long-term predictions for the 2D Shallow Water Equations}{72}{subsection.7.3.1}%
-\contentsline {chapter}{\numberline {8}Discussion}{76}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Conclusion}{77}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Further work}{77}{section.9.1}%
-\contentsline {chapter}{Bibliography}{79}{chapter*.119}%
-\contentsline {chapter}{\numberline {A}Appendix}{80}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Additional figures from 1D SWE spherical CNN and FNO}{80}{section.A.1}%
-\contentsline {section}{\numberline {A.2}2D SWE long term prediction}{83}{section.A.2}%
+\contentsline {section}{\numberline {6.3}1D linearized Shallow Water Equations on a sphere}{53}{section.6.3}%
+\contentsline {section}{\numberline {6.4}2D idealised Circular Dam Break Problem}{53}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Scalability}{54}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Animations}{55}{section.6.6}%
+\contentsline {chapter}{\numberline {7}Data-driven results}{57}{chapter.7}%
+\contentsline {section}{\numberline {7.1}1D Shallow Water Equations with Gaussian initial conditions}{57}{section.7.1}%
+\contentsline {section}{\numberline {7.2}1D linearized Shallow Water Equations in Spherical Coordinates}{63}{section.7.2}%
+\contentsline {section}{\numberline {7.3}2D Shallow Water Equations with Gaussian initial conditions}{67}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Long-term predictions for the 2D Shallow Water Equations}{71}{subsection.7.3.1}%
+\contentsline {chapter}{\numberline {8}Discussion}{75}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusion}{76}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Further work}{76}{section.9.1}%
+\contentsline {chapter}{Bibliography}{78}{chapter*.119}%
+\contentsline {chapter}{\numberline {A}Appendix}{79}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Additional figures from 1D SWE spherical CNN and FNO}{79}{section.A.1}%
+\contentsline {section}{\numberline {A.2}2D SWE long term prediction}{82}{section.A.2}%
