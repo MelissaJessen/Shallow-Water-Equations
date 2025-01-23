@@ -15,13 +15,18 @@ Niloofar Najibi and Naresh Devineni.
 
 \bibitem{fathom_floods_2021}
 {Fathom}.
-\newblock The german flash floods 2021, 2021.
+\newblock The german flash floods 2021.
+\newblock
+  \url{https://www.fathom.global/event-response/the-german-flash-floods-2021/},
+  2021.
 \newblock Accessed: 2025-01-13.
 
 \bibitem{guardian_floods_2021}
-{The Guardian}.
+The Guardian.
 \newblock Climate scientists shocked by scale of floods in germany.
-\newblock 2021.
+\newblock
+  \url{https://www.theguardian.com/environment/2021/jul/16/climate-scientists-shocked-by-scale-of-floods-in-germany},
+  2021.
 \newblock Accessed: 2025-01-13.
 
 \bibitem{Toro2001-Shock}
@@ -59,7 +64,9 @@ Manuel~J. Castro, Sergio Ortega, and Carlos Parés.
 Alex Bihlo and Roman~O. Popovych.
 \newblock Physics-informed neural networks for the shallow-water equations on
   the sphere.
-\newblock {\em Journal of Computational Physics}, 456:111024, 2022.
+\newblock
+  \url{https://www.sciencedirect.com/science/article/pii/S0021999122000869},
+  2022.
 
 \bibitem{Raymond}
 David~J. Raymond.
@@ -70,13 +77,17 @@ David~J. Raymond.
 
 \bibitem{shallow_water_gfdl}
 Geophysical Fluid Dynamics~Laboratory (GFDL).
-\newblock Shallow water equations, n.d.
+\newblock Shallow water equations.
+\newblock
+  \url{https://www.gfdl.noaa.gov/wp-content/uploads/files/user_files/pjp/shallow.pdf},
+  n.d.
 \newblock Accessed: 2025-01-12.
 
 \bibitem{Gavete_2009}
 L.~Gavete, B.~Alonso, M.L. Gavete, F.~Ureña, and J.J. Benito.
 \newblock An adaptive solver for the spherical shallow water equations.
-\newblock {\em Mathematics and Computers in Simulation}, 79(12):3466--3477,
+\newblock
+  \url{https://www.sciencedirect.com/science/article/pii/S0378475409001062},
   2009.
 \newblock The International Conference on Approximation Methods and numerical
   Modeling in Environment and Natural Resources.
@@ -85,7 +96,8 @@ L.~Gavete, B.~Alonso, M.L. Gavete, F.~Ureña, and J.J. Benito.
 Joseph Galewsky, Richard~K. Scott, and Lorenzo~M. Polvani.
 \newblock An initial-value problem for testing numerical models of the global
   shallow-water equations.
-\newblock {\em Tellus A: Dynamic Meteorology and Oceanography}, Jan 2004.
+\newblock
+  \url{https://www.columbia.edu/~lmp/paps/galewsky+etal-TELLUS-2004.pdf}, 2004.
 
 \bibitem{Hesthaven2008}
 Jan~S. Hesthaven and Tim Warburton.
@@ -95,13 +107,16 @@ Jan~S. Hesthaven and Tim Warburton.
 
 \bibitem{oshea2015introductionconvolutionalneuralnetworks}
 Keiron O'Shea and Ryan Nash.
-\newblock An introduction to convolutional neural networks, 2015.
+\newblock An introduction to convolutional neural networks.
+\newblock \url{https://arxiv.org/abs/1511.08458}, 2015.
 
 \bibitem{chollet2017comprehensive}
 François Chollet.
 \newblock A comprehensive guide to convolutional neural networks — the eli5
   way.
-\newblock {\em Towards Data Science}, 2017.
+\newblock
+  \url{https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53},
+  2017.
 \newblock Accessed: 2024-12-27.
 
 \bibitem{FNO_2021}
@@ -131,7 +146,7 @@ Boris Bonev, Thorsten Kurth, Christian Hundt, Jaideep Pathak, Maximilian Baust,
   Karthik Kashinath, and Anima Anandkumar.
 \newblock Spherical fourier neural operators: Learning stable dynamics on the
   sphere.
-\newblock \url{https://arxiv.org/abs/2306.03838}, 2023.
+\newblock \url{https://arxiv.org/pdf/2306.03838}, 2023.
 
 \bibitem{Vreugdenhil1994}
 C.B. Vreugdenhil.
@@ -163,13 +178,16 @@ Wikipedia.
 Boris Bonev, Jan~S. Hesthaven, Francis~X. Giraldo, and Michal~A. Kopera.
 \newblock Discontinuous galerkin scheme for the spherical shallow water
   equations with applications to tsunami modeling and prediction.
-\newblock {\em Journal of Computational Physics}, 362:425--448, 2018.
+\newblock
+  \url{https://www.sciencedirect.com/science/article/pii/S0021999118300846},
+  2018.
 
 \bibitem{Eskilsson_2005}
 Claes Eskilsson and Spencer~J. Sherwin.
 \newblock Discontinuous galerkin spectral/hp element modelling of dispersive
   shallow water systems.
-\newblock {\em Journal of Scientific Computing}, 22:269--288, 2005.
+\newblock \url{https://link.springer.com/article/10.1007/s10915-004-4140-x},
+  2005.
 
 \bibitem{LeVeque2002}
 Randall~J. LeVeque.
@@ -221,6 +239,6 @@ A.~P Engsig-Karup and J.~S. Hesthaven.
 David Pitt.
 \newblock Neural operator: Learning operators for pdes.
 \newblock \url{https://github.com/neuraloperator/neuraloperator}, 2024.
-\newblock GitHub repository. Accessed: January 14, 2025.
+\newblock GitHub repository.
 
 \end{thebibliography}

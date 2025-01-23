@@ -79,6 +79,7 @@ primaryClass={cs.LG},
 howpublished = {\url{https://arxiv.org/pdf/2010.08895}}
 }
 
+
 @misc{Nvidia2023,
   author = {Boris Bonev and Christian Hundt and Thorsten Kurth Jaideep Pathak and others},
   date = {},
@@ -96,8 +97,9 @@ howpublished = {\url{https://arxiv.org/pdf/2010.08895}}
       eprint={2306.03838},
       archivePrefix={arXiv},
       primaryClass={cs.LG},
-      howpublished = {\url{https://arxiv.org/abs/2306.03838}}
+      howpublished = {\url{https://arxiv.org/pdf/2306.03838}}
 }
+
 
 
 @misc{phd_corse_2009,
@@ -157,15 +159,11 @@ howpublished = {\url{https://www.sciencedirect.com/science/article/pii/S00457930
 
 
 
-@article{Bihlo2022,
+@misc{Bihlo2022,
 title = {Physics-informed neural networks for the shallow-water equations on the sphere},
 journal = {Journal of Computational Physics},
-volume = {456},
-pages = {111024},
 year = {2022},
-issn = {0021-9991},
-doi = {https://doi.org/10.1016/j.jcp.2022.111024},
-url = {https://www.sciencedirect.com/science/article/pii/S0021999122000869},
+howpublished = {\url{https://www.sciencedirect.com/science/article/pii/S0021999122000869}},
 author = {Alex Bihlo and Roman O. Popovych},
 keywords = {Physics-informed neural networks, Scientific machine learning, Geophysical fluid dynamics, Shallow-water equations on the sphere},
 }
@@ -202,7 +200,7 @@ publisher = {Academic Press},
 isbn = {978-0-12-283522-0}
 }
 
-@article{BONEV_2018,
+@misc{BONEV_2018,
 title = {Discontinuous Galerkin scheme for the spherical shallow water equations with applications to tsunami modeling and prediction},
 journal = {Journal of Computational Physics},
 volume = {362},
@@ -211,14 +209,14 @@ year = {2018},
 issn = {0021-9991},
 doi = {https://doi.org/10.1016/j.jcp.2018.02.008},
 url = {https://www.sciencedirect.com/science/article/pii/S0021999118300846},
+howpublished = {\url{https://www.sciencedirect.com/science/article/pii/S0021999118300846}},
 author = {Boris Bonev and Jan S. Hesthaven and Francis X. Giraldo and Michal A. Kopera},
 keywords = {Shallow water equations, Well-balanced scheme, Wetting and drying, Discontinuous Galerkin method, Curved mesh, Non-conforming mesh},
 abstract = {We present a novel high-order discontinuous Galerkin discretization for the spherical shallow water equations, able to handle wetting/drying and non-conforming, curved meshes in a well-balanced manner. This requires a well-balanced discretization, that cannot rely on exact quadrature, due to the curved mesh. Using the strong form of the discontinuous Galerkin discretization, we achieve a splitting of the well-balanced condition into individual problems for the flux and volume terms, which has significant advantages: It allows for the construction of non-conforming, well-balanced flux discretizations, i.e. we can perform non-conforming mesh refinement while preserving the well-balanced property of the scheme. More importantly, this approach enables the development of a new method for handling wet/dry transitions. In contrast to other wetting/drying methods, it is well-balanced and able to handle wetting/drying robustly at any polynomial order, without the introduction of physical model assumptions such as viscosity, artificial porosity or cancellation of gravity. We perform a series of one-dimensional tests and analyze the properties of our scheme. In order to validate our method for the simulation of large-scale tsunami events on the rotating sphere, we perform numerical simulations of the 2011 Tohoku tsunami and compare our results to real-world buoy data. The method is able to predict arrival times and wave amplitudes accurately even over long distances. This indicates that our method accurately captures all physical phenomena relevant to the long-term evolution of tsunami waves.}
 }
 
 
-
-@article{Eskilsson_2005,
+@misc{Eskilsson_2005,
   author = {Claes Eskilsson and Spencer J. Sherwin},
   date = {},
   volume = {22},
@@ -227,12 +225,13 @@ abstract = {We present a novel high-order discontinuous Galerkin discretization 
   doi = {https://doi.org/10.1007/s10915-004-4140-x},
   title = {Discontinuous Galerkin Spectral/hp Element Modelling of Dispersive Shallow Water Systems},
   url = {https://link.springer.com/article/10.1007/s10915-004-4140-x},
+  howpublished = {\url{https://link.springer.com/article/10.1007/s10915-004-4140-x}},
   year = {2005}
 }
 
 
 
-@article{Gavete_2009,
+@misc{Gavete_2009,
 title = {An adaptive solver for the spherical shallow water equations},
 journal = {Mathematics and Computers in Simulation},
 volume = {79},
@@ -242,21 +241,19 @@ year = {2009},
 note = {The International Conference on Approximation Methods and numerical Modeling in Environment and Natural Resources},
 issn = {0378-4754},
 doi = {https://doi.org/10.1016/j.matcom.2009.04.003},
-url = {https://www.sciencedirect.com/science/article/pii/S0378475409001062},
+howpublished = {\url{https://www.sciencedirect.com/science/article/pii/S0378475409001062}},
 author = {L. Gavete and B. Alonso and M.L. Gavete and F. Ureña and J.J. Benito},
 keywords = {Shallow water, p-Adaptive, Finite difference, Partial differential equations},
-abstract = {The shallow water equations (SWE), which describe the flow of a thin layer of fluid in two dimensions have been used by the atmospheric modelling community as a vehicle for testing promising numerical methods for solving atmospheric and oceanic problems. The SWE are important for the study of the dynamics of large-scale flows, as well for the development of new numerical schemes that are applied to more complex models. In this paper we present a finite difference p-adaptive method based on high order finite differences that is applied using an error indicator for solving the SWE on the sphere. A standard test set is used to evaluate the accuracy of the new method. The results obtained are compared with the pseudo-spectral method.}
 }
 
 
-@article{Galewsky_2004,
- abstract = {We present an initial-value problem for testing numerical models of the global shallow-water equations. This new test case is designed to address some of the difficulties that have recently been uncovered in the canonical test case suite of Williamson et al. The new test case is simple to set up, yet able to generate a complex and realistic flow. The initial condition consists of an analytically specified, balanced, barotropically unstable, mid-latitude jet, to which a simple perturbation is added to initiate the instability. The evolution is comprised of an early adjustment phase dominated by fast, gravity wave dynamics, and a later development characterized by the slow, nearly balanced roll-up of the vorticity field associated with the initial jet.We compute solutions to this problem with a spectral transform model to numerical convergence, in the sense that we refine the spatial and temporal resolution until no changes can be visually detected in global contour plots of the solution fields. We also quantify the convergence with standard norms. We validate these solutions by recomputing them with a different model, and show that the solutions thus obtained converge to those of the original model. This new test is intended to serve as a complement to the Williamson et al. suite, and should be of particular interest in that it involves the formation of complicated dynamical features similar to those that arise in numerical weather prediction and climate models.},
+@misc{Galewsky_2004,
  author = {Galewsky, Joseph and Scott, Richard K. and Polvani, Lorenzo M.},
  doi = {10.3402/tellusa.v56i5.14436},
  journal = {Tellus A: Dynamic Meteorology and Oceanography},
- month = {Jan},
  title = {An initial-value problem for testing numerical models of the global shallow-water equations},
- year = {2004}
+ year = {2004},
+ howpublished = {\url{https://www.columbia.edu/~lmp/paps/galewsky+etal-TELLUS-2004.pdf}},
 }
 
 
@@ -277,15 +274,16 @@ abstract = {The shallow water equations (SWE), which describe the flow of a thin
       archivePrefix={arXiv},
       primaryClass={cs.NE},
       url={https://arxiv.org/abs/1511.08458}, 
+      howpublished = {\url{https://arxiv.org/abs/1511.08458}}
 }
 
 
-@article{chollet2017comprehensive,
+@misc{chollet2017comprehensive,
   author    = {François Chollet},
   title     = {A Comprehensive Guide to Convolutional Neural Networks — The ELI5 Way},
   journal   = {Towards Data Science},
   year      = {2017},
-  url       = {https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53},
+  howpublished = {\url{https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53} },
   note      = {Accessed: 2024-12-27}
 }
 
@@ -297,6 +295,7 @@ abstract = {The shallow water equations (SWE), which describe the flow of a thin
   annote       = {Scientific Machine Learning (SciML) and Artificial Intelligence (AI) will have broad use and transformative effects across the Department of Energy. Accordingly, the January 2018 Basic Research Needs workshop identified six Priority Research Directions (PRDs). The first three PRDs describe foundational research themes that correspond to the need for domain-awareness (PRD #1), interpretability (PRD #2), and robustness (PRD #3). The other three PRDs describe capability research themes and correspond to the three major use cases for massive scientific data analysis (PRD #4), machine learning-enhanced modeling and simulation (PRD #5), and intelligent automation and decision-support for complex systems (PRD #6). The Priority Research Directions provide a sound basis for a coherent, long-term research and development strategy in SciML and AI. Over the last decade, DOE investments in applied mathematics have laid the groundwork for the type of basic research that will underpin key advances in the six PRDs. Such advances will build on the work from leading researchers in optimization, linear algebra, high-performance solvers and algorithms, multiscale modeling and simulation, complex systems research, uncertainty quantification, and the new basic research areas that will emerge from the pursuit of transformative technologies.},
   doi          = {10.2172/1478744},
   url          = {https://www.osti.gov/biblio/1478744},
+  howpublished = {\url{https://www.osti.gov/biblio/1478744}},
   place        = {United States},
   year         = {2019},
   month        = {02}}
@@ -316,15 +315,16 @@ abstract = {The shallow water equations (SWE), which describe the flow of a thin
   title        = {Shallow Water Equations},
   author       = {Geophysical Fluid Dynamics Laboratory (GFDL)},
   year         = {n.d.},
-  url          = {https://www.gfdl.noaa.gov/wp-content/uploads/files/user_files/pjp/shallow.pdf},
+  howpublished = {\url{https://www.gfdl.noaa.gov/wp-content/uploads/files/user_files/pjp/shallow.pdf}},
   note         = {Accessed: 2025-01-12}
 }
 
-@article{guardian_floods_2021,
-  title = {Climate Scientists Shocked by Scale of Floods in Germany},
-  author = {{The Guardian}},
+
+@misc{guardian_floods_2021,
+  title = {Climate scientists shocked by scale of floods in Germany},
+  author = {The Guardian},
   year = {2021},
-  url = {https://www.theguardian.com/environment/2021/jul/16/climate-scientists-shocked-by-scale-of-floods-in-germany},
+  howpublished = {\url{https://www.theguardian.com/environment/2021/jul/16/climate-scientists-shocked-by-scale-of-floods-in-germany}},
   note = {Accessed: 2025-01-13}
 }
 
@@ -332,7 +332,7 @@ abstract = {The shallow water equations (SWE), which describe the flow of a thin
   title = {The German Flash Floods 2021},
   author = {{Fathom}},
   year = {2021},
-  url = {https://www.fathom.global/event-response/the-german-flash-floods-2021/},
+  howpublished = {\url{https://www.fathom.global/event-response/the-german-flash-floods-2021/}},
   note = {Accessed: 2025-01-13}
 }
 
@@ -343,7 +343,7 @@ abstract = {The shallow water equations (SWE), which describe the flow of a thin
   title        = {Neural Operator: Learning operators for PDEs},
   year         = {2024},
   howpublished = {\url{https://github.com/neuraloperator/neuraloperator}},
-  note         = {GitHub repository. Accessed: January 14, 2025}
+  note         = {GitHub repository.}
 }
 
 
