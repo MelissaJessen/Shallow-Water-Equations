@@ -1209,9 +1209,6 @@ INPUT chapters\06_discussion.tex
 INPUT .\chapters\conclusion.tex
 INPUT .\chapters\conclusion.tex
 INPUT chapters\conclusion.tex
-INPUT .\chapters\07_FurtherWork.tex
-INPUT .\chapters\07_FurtherWork.tex
-INPUT chapters\07_FurtherWork.tex
 INPUT .\main.bbl
 INPUT .\main.bbl
 INPUT main.bbl
