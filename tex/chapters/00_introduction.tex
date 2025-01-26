@@ -19,8 +19,8 @@ This is one aspect where fast simulations could be useful.
 Another important aspect is that, in non-catastrophic situations, running multiple simulations of different scenarios can provide a better understanding of water dynamics and a stronger data foundation.
 In this case it may not be needed to use a fast simulaton, as we can prioritize accuracy to provide information of potential flood scenarios.
 For instance, the flooding in Germany during July 2021 was unexpected in several ways.
-Meteorological forecasts has predicted heavy rain in the affected regions, and there were warnings of the potential for flooding~\cite{fathom_floods_2021}.
-Despite these forecasts, the intensity and scale of the floods surpassed expectations, and climate scientist expressed shock of the extent of the flooding~\cite{guardian_floods_2021}.
+Meteorological forecasts had predicted heavy rain in the affected regions, and there were warnings of the potential for flooding~\cite{fathom_floods_2021}.
+Despite these forecasts, the intensity and scale of the floods surpassed expectations, and climate scientist expressed shock at the extent of the flooding~\cite{guardian_floods_2021}.
 This is a good example of how a deeper understanding of water dynamics, supported by simulations, could have helped to predict the water flow and its spread.
 
 \begin{figure}
@@ -39,7 +39,7 @@ We will also derive the linearized shallow water equations (LSWE) in spherical c
 The SWE can be solved using numerical methods, such as the finite volume method (FVM), which is a numerical technique for solving partial differential equations, by discretizing the domain into small control volumes and integrating the equations over these volumes.
 This method is widely used in computational fluid dynamics to model fluid behavior.
 In this work, we will implement the FVM in 1D and use it to solve the SWE for several scenarios, including the dam break problem.
-We will extent the implementation of the FVM to 2D and solve the idealized circular dam break problem.
+We will extend the implementation of the FVM to 2D and solve the idealized circular dam break problem.
 These FVM solvers will be validated against known test cases, as this validation is critical for future work.
 We will also implement the FVM to solve the LSWE on a sphere.
 For the FVM, it holds that a finer grid resolution improves solution accuracy but comes at the cost of an increased computational run time, resulting in slower simulations.
@@ -50,8 +50,8 @@ This project investigates whether data-driven methods can provide a faster and m
 Specifically, we will explore training a convolutional neural network (CNN) and a Fourier neural operator (FNO) to solve the SWE.
 The data-driven models will be trained on the data generated from the FVM solvers, and evaluated on performance metrics such as run time, accuracy, grid transferability and their response to new initial conditions.
 These initial conditions could include varying water heights, velocities, and other environmental factors that may change in real-world flood scenarios.
-We will compare the advantages and limitations of the data-driven approaches against numerical methdos, focusing on their potential to improve disaster responser and flood prediction.%also under varying and unforeseen initial conditions.
-This comparison will allow us to assess whether data-driven approaches offer a practical solution to efficiently solve the shallow water equations.
+We will compare the advantages and limitations of the data-driven approaches against numerical methods, focusing on their potential to improve disaster responses and flood prediction.
+This comparison will allow us to assess whether data-driven approaches offer a practical solution to efficiently solve the SWE.
 We expect, that data-driven models may be preferred for applications requiring fast simulations, while numerical methods may be more suitable for scenarios demanding high accuracy.
 An interesting aspect is to investigate how much more efficient the data-driven methods may be, compared to the traditional numerical methods, to determine to which applications they are best suited.
 
@@ -60,7 +60,7 @@ Numerical methods, including the FVM, solve the SWE one time step at a time, whi
 In constrast, data-driven models also predict one time step ahead at a time, but they may not need to be retrained for each time step.
 Once trained, these models can make predictions for all time steps, potentially making them faster than numerical methods.
 
-By analyszing and comparing these approaches, this project aims to identify the contextx in which data-driven models can complement or even replace traditional numerical methods for solving the shallow water equations.
+By analysing and comparing these approaches, this project aims to identify the contexts in which data-driven models can complement or even replace traditional numerical methods for solving the shallow water equations.
 
 \section{Literature}
 When working in this area it is inevitable to mention the work of E. F. Toro, who has written several books on the topic of Riemann solvers and the finite volume method, specifically for the shallow water equations.
@@ -75,16 +75,17 @@ Implementing the FVM to solve the shallow water equations in spherical coordinat
 However, some sources discussing the discontinuous Galerkin scheme~\cite{Hesthaven2008} for solving the spherical shallow water equations have been useful in this context.
 
 Convolutional neural networks (CNNs) are a well-researched area, with numerous sources available on the topic.
-For this project, the paper \textit{An Introduction to Convolutional Neural Networks}~\cite{oshea2015introductionconvolutionalneuralnetworks} an the blog post \textit{A Comprehensive Guide to Convolutional Neural Networks - the ELI5 way}~\cite{chollet2017comprehensive} have been particularly helpful in explaining the theoretical foundations of the methods.
+For this project, the paper \textit{An Introduction to Convolutional Neural Networks}~\cite{oshea2015introductionconvolutionalneuralnetworks} and the blog post \textit{A Comprehensive Guide to Convolutional Neural Networks - the ELI5 way}~\cite{chollet2017comprehensive} have been particularly helpful in explaining the theoretical foundations of the methods.
 The field of Fourier neural operators (FNO) is relatively new, and as a result, there is limited literature on the topic.
-However, the paper \textit{Fourier Neural Operator for Parametric Partial Differential Equations}~\cite{FNO_2021}, written by several authors, is a key reference.
-The paper suggests that FNOs has shown great potential in being an efficient and resolution independent operator in the emerging field of scientific machine learning to solve partial differential equations.
+However, the paper \textit{Fourier Neural Operator for Parametric Partial Differential Equations}~\cite{FNO_2021} is a key reference.
+It demonstrates that FNOs are effecient and resolution independent operators for solving PDEs in scientific machine learning.
 A key reason of their success is their ability to generalize to unseen data.
 For more on the topic of scientific machine learning, consider the tech report~\cite{osti_1478744}.
-In the last years the company Nvidia has done some very interesting work on the topic of FNO, and they have published several blog posts on the topic.
+In the last years the company Nvidia has done some very interesting work on the topic of FNOs, and they have published several blog posts on the topic.
 One of the posts consider the use of spherical Fourier neural operators (SFNO) to generate weather forecasts around the globe~\cite{Nvidia2023}.
 Another paper regarding SFNOs is~\cite{bonev2023-SFNO}, which generalizes FNOs on the sphere.
 
+\newpage
 \section{Thesis overview}
 The rest of the thesis is structured as follows.
 In \autoref{ch:theory}, we derive the shallow water equations (SWE) in 1D, 2D, and spherical coordinates.
@@ -94,7 +95,7 @@ These chapters form the theoretical and methodological foundation for the numeri
 In \autoref{ch:FNO+NN}, we introduce the concepts of convolutional neural networks (CNNs) and Fourier neural operators (FNOs), explaining how these methods can be applied to solve the shallow water equations.
 In \autoref{ch:method}, we describe the process of generating the data required for the data-driven methods, as we produce all the data used in this project ourselves.
 
-Chapter~\ref{ch:numerical_results} focus on the numerical results for the 1D and 2D SWE using the FVM.
+Chapter~\ref{ch:numerical_results} focuses on the numerical results for the 1D and 2D SWE using the FVM.
 To validate these results, we compare the FVM outputs with test cases from the literature. Validation is crucial since the data-driven models are trained on the FVM data.
 We also present the numerical results of solving the 1D LSWE on a sphere using the FVM.
 In \autoref{ch:data-driven-results}, we present the results for the shallow water equations using the data-driven models.

@@ -258,7 +258,7 @@ Substituing the spatial derivatives~\eqref{eq:discretized_LSWE_spherical} into t
 \end{equation}
 for $i = 0,1, \dots, N-1$.
 Hence, we can write the 1D spherical LSWE in the form of the IVP~\eqref{eq:IVP} by defining 
-\begin{align}
+\begin{align}\label{eq:IVP_LSWE_spherical}
     y(t) = \begin{bmatrix}
         h' \\ u
     \end{bmatrix},
@@ -270,9 +270,9 @@ Hence, we can write the 1D spherical LSWE in the form of the IVP~\eqref{eq:IVP} 
 \end{align}
 As we consider a circle as the domain, we must impose periodic boundary conditions.
 We do this by setting $h'_{-1} = h'_{N-1}$, $h'_{N} = h'_0$, $u_{-1} = u_{N-1}$, and $u_{N} = u_0$.
-The inital conditions for $y$ are a Gaussian function in water height and zero velocity:
+The inital conditions for $y(t)$ in~\eqref{eq:IVP_LSWE_spherical} are a Gaussian function in water height and zero velocity:
 \begin{align}
-    y_0 = \begin{bmatrix}
+    y(t_0) = y_0 = \begin{bmatrix}
         \exp(-\frac{{(\theta_{i} - \theta_0)}^2}{\sigma}) \\ 0
     \end{bmatrix}, \quad i = 0,1, \dots, N-1.
 \end{align}

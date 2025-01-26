@@ -15,7 +15,7 @@ This could also help making predictions for the solution of the shallow water eq
 
 \section{Convolutional Neural Networks}\label{sec:CNN}
 Convolutional neural networks (CNNs) are a specialized class of artificial neural networks (ANNs) designed to process and analyze data with a grid-like topology, such as images or time-series data represented by 2D grids.
-CNNs excel at extracting spatial featues from data through the use of convolutional layers, which apply learnable filters to detect patterns such as edges, shapes or textures.
+CNNs excel at extracting spatial features from data through the use of convolutional layers, which apply learnable filters to detect patterns such as edges, shapes or textures.
 These layers are typically followed by pooling layers for dimensionality reduction and fully connected layers for classification or regression tasks.
 A key advantage of CNNs is their ability to reduce the number of parameters compared to fully connected neural networks by sharing weights across spatial regions, making them computationally efficient and less prone to overfitting when working with large inputs.
 Although CNNs are traditionally used for image recognition tasks, their architecture is adaptable for time-series analysis, especially when the data is structured spatially or sequentially~\cite{chollet2017comprehensive}.
@@ -51,13 +51,13 @@ The goal is to learn the mapping:
 \begin{align*}
     x_{i+1} = \Phi_{CNN} (x_i), 
 \end{align*}
-where $\Phi_{CNN}$ is the CNNS' approximation of the flow map.
-The network process a sequence of input data to predict the corresponding output data.
+where $\Phi_{CNN}$ is the CNN's approximation of the flow map.
+The network processes a sequence of input data to predict the corresponding output data.
 The CNN's output is the solution at the next time step, effectively learning the dynamics of the SWE through the time-series data.
-This setup allows the model to capture both spatial and temporal dependencies in the data, leveraging the CNN's ability to learn localized featires while processing sequential information.
+This setup allows the model to capture both spatial and temporal dependencies in the data, leveraging the CNN's ability to learn localized features while processing sequential information.
 An advantage of CNNs is their efficiency.
 By processing data in parallel using convolutional layers, the CNN efficiently handles large datasets without requiring excessive computational resources.
-Another strengt is their adaptability. The model's ability to learn from sequential data makes it adaptable for time-series predictions in dynamic systems like the shallow water equations.
+Another strength is their adaptability. The model's ability to learn from sequential data makes it adaptable for time-series predictions in dynamic systems like the shallow water equations.
 However, a drawback is the challenge of data representation.
 Representing time-series data as sequences may require preprocessing, which can introduce complexity or a potential loss of information.
 %We will train, test and evaluate the performance of several CNN models in \autoref{ch:data-driven-results}.
@@ -110,15 +110,16 @@ The network architechture for the FNO model is illustrated in \autoref{fig:fouri
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/fourier_neural_network.png}
-    \caption{An overview of the network architecture with several Fourier layers. Illustration from~\cite{FNO_2021}.\\
-            Top: Overall structure with input function $a$, input layer $P$, several Fourier layers, output layer $Q$ and output function $u$.\\
-            Bottom: A Fourier layer consists of two parallel paths. Top is a Fourier transformation $\mathcal{F}$, a linear transformation $R$ and an inverse Fourier transformation $\mathcal{F}^{-1}$.
-            The bottom path consists of a linear transformation $W$. The parts meet and undertake an activation function $\sigma$.}\label{fig:fourier_neural_network}
+    \caption{An overview of the network architecture with several Fourier layers. Illustration from~\cite{FNO_2021}.
+            %Top: Overall structure with input function $a$, input layer $P$, several Fourier layers, output layer $Q$ and output function $u$.\\
+            %Bottom: A Fourier layer consists of two parallel paths. Top is a Fourier transformation $\mathcal{F}$, a linear transformation $R$ and an inverse Fourier transformation $\mathcal{F}^{-1}$.
+            %The bottom path consists of a linear transformation $W$. The parts meet and undertake an activation function $\sigma$.
+            }\label{fig:fourier_neural_network}
 \end{figure}
 From the top in \autoref{fig:fourier_neural_network} we see that the network consists of an input function $a(x)$, an input layer $P$, several Fourier layers, an output layer $Q$ and some output function $u(x)$.
 In the bottom of \autoref{fig:fourier_neural_network} we see the structure of a Fourier layer, which consists of two parallel paths.
 In the top path, the data undergoes a Fourier transform $\mathcal{F}$, decomposing it into a sum of Fourier basis functions (sines and cosines) with varying frequencies, amplitudes and phases.
-A linear transformation $R$ it then applied to filter out the higher Fourier modes, as illustrated in the figure, where high-frequency components are removed.
+A linear transformation $R$ is then applied to filter out the higher Fourier modes, as illustrated in the figure, where high-frequency components are removed.
 When implementing the model, we choose the number of Fourier modes to retain, depending on how much information we want to preserve.
 Retaining more modes keeps more information, but may also introduce more noise and oscillations.
 After filtering, the inverse Fourier transform $\mathcal{F}^{-1}$ is applied to reconstruct the data in its original form.
@@ -131,13 +132,13 @@ This feature significantly reduces the computational cost associated with fine-g
 In \autoref{ch:data-driven-results}, we will evaluate the performance of the implemented FNO model in this context, testing its ability to maintain high accuracy when making predictions on finer grids.
 
 \subsection*{Multistep prediction}
-Current literatur highlights the strong performance of FNOs in long-term predictions.
+Current literature highlights the strong performance of FNOs in long-term predictions.
 One potential application of the FNO model is predicting the solution of the SWE at multiple future time steps.
 We aim to develop a multi-step prediction model capable of forecasting a specified number of time steps ahead.
 In its original form, the FNO is designed to predict one time step ahead.
 However, for many practical applications, multi-step predictions are more useful.
 The first, naive approach to achieve this is to use the model iteratively: predicting the solution at the next time step, then using that prediction as input to predict the solution at the next time step, and so on.
-However, as one can imagine this approach quite fast lead to inaccurate predictions, as errors accumulate over time.
+However, as one can imagine this approach quickly leads to inaccurate predictions, as errors accumulate over time.
 
 To improve the accuracy of multi-step predictions, we train the model on sequences of input data, where the input data consists of several previous time steps.
 The sequential data is formatted similarly to that used in the CNN, with input sequences of length $n$.

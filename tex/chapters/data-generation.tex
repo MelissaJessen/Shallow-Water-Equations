@@ -1,6 +1,7 @@
 \chapter{Data generation}\label{ch:method}
 In this chapter, we outline the process of generating the data required for the data-driven methods, which is a crucial part of the project.
-We generate all the data ourselves using our numerical soler, and the quality and relevance of the data directly impact the training and performance of the models.
+We generate all the data ourselves using our numerical solver.
+The quality and relevance of the data directly impact the training and performance of the models.
 We begin by detailing the data generation process for the 1D SWE using the FVM with fluxes determined from an exact Riemann solver.
 Next, we describe the approach for generating data for the 1D LSWE in spherical coordinates.
 We also present the methodology for data generation in the context of the 2D SWE.
@@ -13,7 +14,7 @@ We specify the necessary information, such as the initial conditions, the domain
 
 \subsection*{1D SWE with exact Riemann solver}
 In this section, we present how the so-called true solution is found in the code by solving the Riemann problem exactly.
-The true solution is found by solving the Riemann problem exact using a high-resolution grid, and distinguishing between the wetbed or drybed case, and also identifying the shock and rarefaction waves.
+The true solution is found by solving the Riemann problem exact using a high-resolution grid, and distinguishing between the wet-bed or dry-bed case, and also identifying the shock and rarefaction waves.
 First we caculate the wave speeds for the left and right states, respectively, as
 \begin{align*}
     c_L = \sqrt{g h_L}, \quad c_R = \sqrt{g h_R},
@@ -22,9 +23,9 @@ which are used to determine the critical water height $h_{\text{crit}}$ as
 \begin{align*}
     h_{\text{crit}} = (u_R - u_L) - 2(c_L + c_R).
 \end{align*}
-If either $h_L \leq 0$ or $h_R \leq 0$, we are in a drybed case.
-If $h_{\text{crit}} \geq 0$, it indicates that the water depth is critical, and we are also in a drybed case.
-If none of the above conditions are met, we are in a wetbed case.
+If either $h_L \leq 0$ or $h_R \leq 0$, we are in a dry-bed case.
+If $h_{\text{crit}} \geq 0$, it indicates that the water depth is critical, and we are also in a dry-bed case.
+If none of the above conditions are met, we are in a wet-bed case.
 Summarized:
 \begin{align*}
     \begin{cases}
@@ -32,8 +33,8 @@ Summarized:
         \text{Wet-bed case} & \text{otherwise}.
     \end{cases}
 \end{align*}
-In a dry bed case, we first identify the location of the dry region, whether it is on the left, right, or in the middle, and then calculate the wave speeds accordingly.
-In a wet bed case, we compute the characteristics $h_*$ and $u_*$ for the star region.
+In a dry-bed case, we first identify the location of the dry region, whether it is on the left, right, or in the middle, and then calculate the wave speeds accordingly.
+In a wet-bed case, we compute the characteristics $h_*$ and $u_*$ for the star region.
 We then identify the shock and rarefaction waves, and calculate the wave speeds for the left and right states, respectively.
 The process is illustrated in \autoref{fig:flowchart_true_solution}.
 \begin{figure}[H]
