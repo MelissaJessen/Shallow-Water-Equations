@@ -74,15 +74,15 @@ To assess the truncation error, we generate a more accurate solution using a fin
 This high-resolution solution serves as a reference for evaluating the numerical approximation.
 By comparing the high-resolution solution with the numerical solution, we gain insights into the error introduced by the approximation.
 
-We generate a reference solution for solving the 1D SWE using $N = 1000$ grid points and compare it with the solution for $N = 100$ grid points at the final time step, $t = 1.0$ s.
+We generate a reference solution for solving the 1D SWE using $N = 1000$ grid points and compare it with the solution for $N = 200$ grid points at the final time step, $t = 1.0$ s.
 The results are shown in \autoref{fig:1D_SWE_truncation_error}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/truncation_error.pdf}
     \caption{Truncation error for the 1D SWE.}\label{fig:1D_SWE_truncation_error}
 \end{figure}
-The high-resolution solution (labelled as exact solution) and the low-resolution solution (labelled as numerical solution) are plotted in \autoref{fig:1D_SWE_truncation_error}.
-We observe that there is a small difference between the high-resolution solution and the numerical solution, as the high-resolution solution has a more discontinuous behavior.
+The high-resolution solution and the low-resolution solution are plotted in \autoref{fig:1D_SWE_truncation_error}.
+We observe that there is a small difference between the high-resolution solution and the low-resolution solution, as the high-resolution solution has a more discontinuous behavior.
 However, overall the two solutions are almost identical, indicating that the truncation error is negligible.
 This suggests that the data generated using the FVM is of high quality and can be used for training the data-driven models.
 

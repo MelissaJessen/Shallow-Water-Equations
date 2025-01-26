@@ -84,7 +84,7 @@ For this test case all the fluxes work well, but there are minor differences in 
 For instance, we see that the Lax-Wendroff (LW) flux has some oscillations in the solution at the discontinuity, which is not present in the other fluxes.
 Similarly to the case of the 1D dam break problem in \autoref{sec:1D_dam_break}, we see that the solution consists of a right shock wave and a left rarefaction wave.
 
-
+\newpage
 \subsection*{Test case 2}
 %\addcontentsline{toc}{subsection}{Test case 2}
 The initial conditions for test case 2 are illustrated in \autoref{fig:toro_test2_initial}.
@@ -106,6 +106,7 @@ The solution after $t=2.5$ s is illustrated in \autoref{fig:toro_test2_final}.
 For the fluxes, Godunov method with exact Riemann solver, and Lax-Wendroff, it was not possible to get an acceptable solution.
 Among the LF, FORCE and HLL fluxes we also see differences in how close the numerical solution comes to $h = 0$ m at $x = 25$ m.
 
+\newpage
 \subsection*{Test case 3}
 %\addcontentsline{toc}{subsection}{Test case 3}
 The initial conditions for test case 3 are given in \autoref{fig:toro_test3_initial}.
@@ -128,6 +129,7 @@ By running experiments with different values of $h_R$, we see that the solution 
 From \autoref{fig:toro_test3_final} we see that when it comes to predicting the velocity, there are some differences in how the different fluxes perform.
 Overall, using the Lax-Wendroff (LW) flux gives the closest solution to the true solution for the velocity.
 
+\newpage
 \subsection*{Test case 4}
 %\addcontentsline{toc}{subsection}{Test case 4}
 The initial conditions for test case 4 are given in \autoref{fig:toro_test4_initial}, and the solution after $t=4.0$ s is given in \autoref{fig:toro_test4_final}.
@@ -147,6 +149,7 @@ We set $h_L = 0.00005$, and the solution converges to the true solution as $h_L$
 This case is included to test if the results are as expected.
 As in test case 4, we observe differences in the fluxes performance, and again we observe that the Lax-Wendroff (LW) flux comes closest to the true solution for the velocity.
 
+\newpage
 \subsection*{Test case 5}
 %\addcontentsline{toc}{subsection}{Test case 5}
 The initial conditions for test case 5 are given in \autoref{fig:toro_test5_initial}, and the final solution after $t=5.0$ s is given in \autoref{fig:toro_test5_final}.
@@ -205,7 +208,7 @@ In this case we do not have a true solution to compare with, but the numerical s
 \section{2D idealised Circular Dam Break Problem}\label{sec:2D_dam_break}
 We now proceed to the 2D case, considering an idealised circular dam break problem over a horizontal bottom, a problem from Toro (2024)~\cite{Toro2024}.
 We assume there is an infinitely thin circular wall at radius $R = 2.5$ m in a square domain of size $40 \text{ m} \times 40 \text{ m}$ with centre at $(x_c,y_c) = (20 \text{ m}, 20 \text{ m})$.
-The initial conditions are a Gaussian function for the water height $h$ and zero initial velocity for the fluid.
+The initial velocity is zero, and the initial water height is $2.5$ m inside the circle and $0.5$ m outside the circle, as given by the following initial conditions:
 \begin{align*}
     h(x,y,0) &= \begin{cases}
         2.5 \text{ m}, & \text{if } \sqrt{ {(x-x_c)}^2 + {(y-y_c)}^2 } \leq R, \\
@@ -295,7 +298,7 @@ A link to the animations is also provided in the caption of the QR-codes, direct
     \begin{subfigure}{0.25\textwidth}
         \begin{minipage}[t]{\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/QR/toro2D_dambreak_FVM_17012025_N=64_t=10_qr.png}
+            \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/QR/1D_LSWE_sphere_17012025.gif_qr.png}
             \caption{QR-code for the 1D LSWE on a sphere.}\label{fig:1D_LSWE_sphere_qr}
         \end{minipage}
     \end{subfigure}
@@ -321,4 +324,3 @@ A link to the animations is also provided in the caption of the QR-codes, direct
 In the animation for the 2D idealised circular dam break problem, we observe what happens after the time steps in \autoref{fig:2D_dam_break_grid}.
 We note that when the waves hit the boundaries, they are reflected back into the domain, demonstrating the behaviour of the boundary conditions.
 In the animation for the SWE with a Gaussian initial condition on a sphere, we note that since the SWE are solved in a 2D cartesian domain and wrapped to a sphere, we observe non-physical behaviour, especially close to the poles.
-%This motivates the use of an alternative method for solving the SWE on a sphere.

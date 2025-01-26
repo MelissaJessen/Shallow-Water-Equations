@@ -28,25 +28,11 @@ This is especially valuable in emergency situations, where rapid predictions are
 This study highlights the potential of training and saving data-driven models.
 Once trained, these models can quickly generate predictions for new initial conditions and grid sizes, offering a flexible and efficient approach to simulation.
 Additionally, they can aid in generating more data to a better understanding of water dynamics, ultimately leading to new knowledge and insights.
-A natural extension of this work c be to explore hybrid methods that combine the strengths of both numerical and data-driven approaches, offering a more comprehensive and efficient solution to SWE.
+A natural extension of this work could be to explore hybrid methods that combine the strengths of both numerical and data-driven approaches, offering a more comprehensive and efficient solution to SWE.
 This approach could help overcome the limitations of each method, and provide more robust solutions for real-world applications.
 Another interesting extension is to implement the FVM to solve the SWE in spherical coordinates on a planetary scale.
-This could be used to generate data for trining data-driven models.
+This could be used to generate data for training data-driven models.
 The literature suggests promising results for the spherical Fourier neural operator (SFNO) in forecasting applications.
 
 In a world facing an increasing frequency of extreme weather events, the need for rapid and accurate simulations is more important than ever.
 The integration of data-driven methods with numerical techniques could play a vital role in addressing these challenges, ensuring better preparedness and response to natural disasters. 
-
-
-%\begin{itemize}
-%    \item By training the FNO on a coarse grid and evaluate on a fine grid, the run time is XX times faster, while maintaining the same accuracy.
-%    \item Long-term prediction: the FNO can predict the solution for a longer time than the training time.
-%    It was demonstrated that training on a coarse grid was not suitable to facilitate a long-term prediction for a fine grid.
-%    \item Long-term prediction: the FNO model outperforms the CNN model for long-term prediction.
-%    \item Grid independence: when training on a coarse grid and evaluating on a fine grid, the predictions by the FNO is much better than the predictions by the CNN. Aligning with the theory that FNOs are grid independent.
-%    \item Efficiency: CNN is faster than FNO, but FNO is more accurate. Which we prefer depends on the application.
-%    \item CNN has shown potential for many of the same abilities as the FNO - especially in the 1D case.
-%    \item Some of the theoretical advantages of the FNO are better realized in the 2D case than in the 1D case.
-%    \item Which model we choose is depending on the application.
-%\end{itemize}
-%FNO's ability to generalize to unseen data.

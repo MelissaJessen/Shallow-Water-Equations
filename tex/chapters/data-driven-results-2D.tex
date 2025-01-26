@@ -147,11 +147,10 @@ The table below presents the results when the models are trained on a grid with 
 \end{table}
 From the results in \autoref{tab:results_2D_train_64_test_128_256} we see that FNO model achieves small errors both for $N = 128$ and $N = 256$, indicating its ability to generalize to a finer grid.
 The CNN model shows higher errors, but might still be accurate enough depending on the application.
-%We note that both models obtain a lower error this way than when trained on the finer grid directly.
 This ability to train the FNO model (and partially, also the CNN model) on a coarse grid and make predictions on a finer grid is a significant advantage.
-In stis study, it is particularly useful for solving the SWE numerically, as solving the SWE on a fine grid using the FVM is computationally expensive.
-By comparing to the run time of the FVM, shown in \autoref{tab:scalability}, we see that the data-driven models are musch faster, and thus, might provide an alternative to the FVM, depending on the specific application.
-This approach could help the address te scalability challenges faced when solving the SWE numerically.
+In htis study, it is particularly useful for solving the SWE numerically, as solving the SWE on a fine grid using the FVM is computationally expensive.
+By comparing to the run time of the FVM, shown in \autoref{tab:scalability}, we see that the data-driven models are much faster, and thus, might provide an alternative to the FVM, depending on the specific application.
+This approach could help the address the scalability challenges faced when solving the SWE numerically.
 
 \subsection{Long-term predictions for the 2D Shallow Water Equations}
 In this section, we evaluate the models' ability to generalize to longer time horizons.
