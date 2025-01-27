@@ -149,8 +149,17 @@ From the results in \autoref{tab:results_2D_train_64_test_128_256} we see that F
 The CNN model shows higher errors, but might still be accurate enough depending on the application.
 This ability to train the FNO model (and partially, also the CNN model) on a coarse grid and make predictions on a finer grid is a significant advantage.
 In htis study, it is particularly useful for solving the SWE numerically, as solving the SWE on a fine grid using the FVM is computationally expensive.
-By comparing to the run time of the FVM, shown in \autoref{tab:scalability}, we see that the data-driven models are much faster, and thus, might provide an alternative to the FVM, depending on the specific application.
-This approach could help the address the scalability challenges faced when solving the SWE numerically.
+
+By comparing to the run time of the FVM, shown in \autoref{tab:scalability}, we observe that for $N = 64$, the FVM is faster than the data-driven models.
+For $N = 128$, the CNN is faster than the FVM, while the FNO is slower.
+This holds both when the models are trained on a grid with $N = 128$ and when they are trained on a grid with $N = 64$ and then used to make predictions on a grid with $N = 128$.
+For $N = 256$, both models are fasyer than the FVM when trained on a grid with $N = 64$ and then using grid transferability, maintaining the same accuracy as for $N = 64$.
+This way, the CNN model is over 60 times faster than the FVM, while the FNO model is over 7 times faster.
+This comparison includes the time for training the models.
+However, it is important to note that once trained, the models can generate predictions much faster than the FVM, even for new initial conditions.
+The results suggest that the potential for using data-driven methods to solve the SWE is particularly significant for larger grid sizes, where the FVM becomes computationally expensive.
+This represents a major advantage, as it significantly reduces computational time and energy consumption, addressing the scalability challenges faced when solving the SWE numerically.
+
 
 \subsection{Long-term predictions for the 2D Shallow Water Equations}
 In this section, we evaluate the models' ability to generalize to longer time horizons.

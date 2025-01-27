@@ -1,4 +1,5 @@
 \chapter{Conclusion}\label{ch:conclusion}
+%This concludes the study on exploring to which extent data-driven models can be a valuable addition to, or even replacement of, already existing numerical methods.
 In this thesis, we have derived the shallow water equations, and explored the underlying theory and assumptions behind the equations.
 We have researched and implemented the FVM for solving the SWE in 1D and 2D, and validated the implementation against known test cases.
 We extended the FVM approach to solve the 1D LSWE on a sphere, employing the ERK4 time-stepping method to obtain high-accuracy solutions.
@@ -11,10 +12,16 @@ When tested with new initial conditions, the FNO maintained accuracy compared to
 For the 1D LSWE on a sphere, both models again yielded good results, with the CNN outperforming the FNO in terms of accuracy and training time.
 However, for the steepest initial condition, the accuracy of the two models was nearly identical.
 
-For the 2D case, the FNO demonstrated a higher accuracy than the CNN, but the CNN was significantly faster.
+In the 2D case, the FNO demonstrated higher accuracy than the CNN, but the CNN was significantly faster.
 When evaluating grid transferability, both models maintained accuracy in transitioning solutions from a coarse grid to a fine grid.
 However, the FNO outperformed the CNN in terms of the MSE and the MAE.
-By training the FNO on a coarse grid and evaluating it on a fine grid, the prediction time was significantly faster than using the FVM on the fine grid. % over 100 times
+When analysing run times, we found that for smaller grid sizes, the FVM is the fastest method.
+Yet, for larger grids, where the FVM becomes computationally expensive, data-driven methods are more efficient.
+Leveraging grid transferability, these models are much faster than the FVM while maintaining accuracy.
+The CNN model is over 60 times faster, and the FNO model is over 7 times faster, including training time.
+Besides, the data-driven methods have the clear advantage that they only need to be trained once.
+Once trained, they can also predict efficiently for new initial conditions, addressing scalability issues in solving the SWE numerically.
+
 Regarding long-term predictions, both models produced good results within the first time steps, but as time progressed, the error increased for the CNN model.
 The FNO model maintained accuracy for longer time horizons, demonstrating its potential for long-term predictions, an outcome that aligns well with the literature.
 

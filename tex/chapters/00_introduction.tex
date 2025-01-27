@@ -1,6 +1,6 @@
 \chapter{Introduction}
 This chapter provides the motivation for the project and explains the background and key objectives of the thesis.
-It also includes a literature review, where we outline the most important sources relevant to this work.
+It also includes a literature review, where the important sources relevant to this work are outlined.
 Finally, this chapter offers an overview of the thesis and its structure.
 
 \section{Motivation}
@@ -13,7 +13,7 @@ These images are presented in \autoref{fig:valencia_flood}.
 
 While it is impossible to prevent such disasters from occuring, trustworthy forecasts delivered in sufficiently short time can help in emergency response and disaster management.
 By having efficient tools to simulate flood scenarios it would be possible to reduce the time needed for decision-making in critical situations, potentially saving lives and minimizing the impact of such disasters.
-During a catastrophe, fast simulations are particularly valuable, even if some accuracy is sacrificed, as long as the results are accurate enough to make decisions.
+During a catastrophe, fast simulations are particularly valuable, even if some accuracy is sacrificed, as long as the results are accurate enough to make sensible decisions.
 This is one aspect where fast simulations could be useful.
 
 Another important aspect is that, in non-catastrophic situations, running multiple simulations of different scenarios can provide a better understanding of water dynamics and a stronger data foundation.
@@ -50,17 +50,18 @@ This project investigates whether data-driven methods can provide a faster and m
 Specifically, we will explore training a convolutional neural network (CNN) and a Fourier neural operator (FNO) to solve the SWE.
 The data-driven models will be trained on the data generated from the FVM solvers, and evaluated on performance metrics such as run time, accuracy, grid transferability and their response to new initial conditions.
 These initial conditions could include varying water heights, velocities, and other environmental factors that may change in real-world flood scenarios.
-We will compare the advantages and limitations of the data-driven approaches against numerical methods, focusing on their potential to improve disaster responses and flood prediction.
+We will compare the advantages and limitations of the data-driven approaches against numerical methods, focusing on their potential to improve disaster responses and flood predictions.
 This comparison will allow us to assess whether data-driven approaches offer a practical solution to efficiently solve the SWE.
 We expect, that data-driven models may be preferred for applications requiring fast simulations, while numerical methods may be more suitable for scenarios demanding high accuracy.
 An interesting aspect is to investigate how much more efficient the data-driven methods may be, compared to the traditional numerical methods, to determine to which applications they are best suited.
 
-Additionally, we will examine the different models abilities to make long-term predictions, meaning predicting many time steps ahead.
+Additionally, we will examine the different models' abilities to make long-term predictions, meaning predicting many time steps ahead.
 Numerical methods, including the FVM, solve the SWE one time step at a time, which can be computationally expensive, particularly for long-term predictions.
 In constrast, data-driven models also predict one time step ahead at a time, but they may not need to be retrained for each time step.
 Once trained, these models can make predictions for all time steps, potentially making them faster than numerical methods.
 
-By analysing and comparing these approaches, this project aims to identify the contexts in which data-driven models can complement or even replace traditional numerical methods for solving the shallow water equations.
+By analysing and comparing these approaches, this project aims to identify the contexts in which data-driven models can be a good addition or alternative to traditional numerical methods for solving the shallow water equations.
+
 
 \section{Literature}
 When working in this area it is inevitable to mention the work of E. F. Toro, who has written several books on the topic of Riemann solvers and the finite volume method, specifically for the shallow water equations.
