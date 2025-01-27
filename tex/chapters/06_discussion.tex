@@ -22,8 +22,6 @@ In this thesis, the models were trained by minimizing the loss function for the 
 By computing the loss on test data, we gain insight into the accuracy of the models.
 However, this approach relies on the availability of data for evaluation.
 For applications like forecasting future events, where data is naturally unavailable at prediction time, evaluating model performance or estimating errors becomes significantly more challenging.
-%This highlights a fundamental limitation of data-driven methods, particularly for tasks requiring extrapolation into unknown scenarios.
-%It is not straightforward to estimate the error of the data-driven methods, which is a disadvantage when compared to numerical methods.
 This lack of transparency is a significant drawback, as it makes it difficult to assess the reliability of the data-driven methods and the accuracy of their predictions.
 One way to address this issue is to use Physics-Informed Neural Networks (PINNs), which incorporate the physics of the problem into the neural network, making the model more transparent and interpretable.
 
@@ -43,6 +41,9 @@ By training an FNO model on just 8 seconds of data, the model was able to predic
 This capability is particularly valuable for applications requiring long-term predictions, such as flood forecasting or climate modelling.
 The CNN model also achieved acceptable results for long-term predictions, but its accuracy decreased at longer time horizons.
 This increasing error highlights a limitation of the CNN model for long-time forecasts compared to the FNO model.
+The potential of the FNO model is definitely interesting to explore further, as it could be a valuable tool for long-term predictions in various applications.
+The FNO model could for instance be tested across diverse applications and problems, to determine whether it can offer advantages in scenarios beyond those explored in this study.
+Such further testing could reveal new insights into the model's robustness and effectiveness in different domains, such as weather forecasting or climate modelling.
 
 Once trained and saved, both models can generate predictions rapidly, offering practical alternatives to numerical methods when speed is a priority.
 Nevertheless, numerical methods retain the advantage of higher accuracy, particularly for applications requiring precise simulations.

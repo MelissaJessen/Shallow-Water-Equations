@@ -218,9 +218,14 @@ The choice of error metric should align with the goals of the predictions.
 For instance, it may be more important to minimize the MSE or the maximum absolute error, depending on the physical properties of the system.
 This raises a key question: is it better to have one large error or many small errors?
 
-As shown in \autoref{fig:2D_CNN_FNO_mse_mae_max_error}, the error increases as we make predictions further in time.
-Overall, the FNO model demonstrates lower errors compared to the CNN model, indicating it may offer more accurate long-term predictions.
+As shown in \autoref{fig:2D_CNN_FNO_mse_mae_max_error}, the error increases as predictions are made further in time.
+Overall, the FNO model exhibits lower errors compared to the CNN model, indicating it may offer more accurate long-term predictions.
+Notably, the FNO model demonstrates the ability to generalize further in time, maintaining relatively low errors even after $n = 200$ time steps, comparable to the errors observed during the initial time steps.
+This is particularly impressive, as small errors early in forecasting applications often lead to significant errors over time.
+The FNO model appears capable of stabilizing errors and providing accurate predictions over long time horizons, highlighting its potential for long-term predictions.
 
 
-
+This concludes the results for the data-driven methods.
+In the next section, we will discuss our findings, focusing on the advantages and limitations of the FVM and data-driven approaches, and their potential applications in solving the SWE.
+We will also explore potential directions for future research, building on the results presented in this thesis.
 

@@ -8,7 +8,7 @@ The idea is, that if the numerical solution can capture the discontinuities, it 
 We also compare the results from the different fluxes used in the FVM.
 In \autoref{sec:1D_sphere} we present the results from the 1D LSWE on a sphere.
 
-We extent to consider 2D problems in cartesian coordinates, and present the results from the 2D idealised circular dam break problem in \autoref{sec:2D_dam_break}.
+We extend to 2D problems in cartesian coordinates, and present the results from the 2D idealised circular dam break problem in \autoref{sec:2D_dam_break}.
 The results from the 2D problem are compared to the results from Toro (2024)~\cite{Toro2024} to validate the implementation of the 2D FVM.
 In \autoref{sec:scalability}, we test the scalability of the FVM to solve the 2D SWE, by running the 2D problem with a Gaussian initial condition for different values of $N$, i.e., the number of cells in each direction.
 Finally, in \autoref{sec:animations}, we present animations for the 2D idealised circular dam break problem and the solution of the SWE with a Gaussian initial condition projected on a sphere.
@@ -218,6 +218,7 @@ The initial velocity is zero, and the initial water height is $2.5$ m inside the
     v(x,y,0) &= 0 \text{ m/s}.
 \end{align*}
 We use a mesh of size $64 \times 64$.
+The boundary conditions simulate a wall, enforcing zero flux at the boundary and causing the flow to bounce back into the domain.
 The problem is solved using the FVM with the Rusanov flux, and the results after $t=0.0 \text{ s}, 0.4 \text{ s}, 0.7 \text{ s}$ and $1.4$ s are visualised in \autoref{fig:2D_dam_break_grid}.
 \begin{figure}[H]
     \centering
@@ -263,7 +264,7 @@ The results are presented in \autoref{tab:scalability}.
         \hline
         $N$ & 16 & 32 & 64 & 128 & 256 \\
         \hline 
-        Time ($s$) & 
+        Time [$s$] & 
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FVM_N=16_time_5.txt} &
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FVM_N=32_time_5.txt} &
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FVM_N=64_time_5.txt} &
@@ -281,9 +282,12 @@ The run time $[s]$ dependent on the number of cells $N$ is illustrated in \autor
     \caption{Run time $[s]$ of the 2D FVM to solve the SWE, depending on number of grid cells $N$.
             Note that the axis with time is in log-scale.}\label{fig:scalability_FVM_2D}
 \end{figure}
-From \autoref{tab:scalability} and \autoref{fig:scalability_FVM_2D} we see that the run time increases drastically with the number of cells $N$.
+From \autoref{tab:scalability} and \autoref{fig:scalability_FVM_2D} we see that the run time increases drastically as the number of cells, $N$, grows.
 This behavior is expected since an increase in the number of cells leads to a higher number of computations.
-Consequently, the computational time rises, making the method ledd scalable for real-life simulations.
+Additionally, the computational cost is further amplified by an increase in the number of time steps.
+This occurcs because the time step size decreases as the number of cells increases, due to the CFL condition, as seen in~\eqref{eq:CFL_number}.
+
+As a result, the computational time escalates rapidly, reducing the scalability of the FVM for real-world simulations.
 To effectively model phenomena such as floods or tsunamis, we need a scalable method.
 This challenge motivates the exploration of data-driven methods, as we aim to investigate whether they offer a more scalable solution.
 

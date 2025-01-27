@@ -11,8 +11,8 @@
 \contentsline {chapter}{\numberline {2}The Shallow Water Equations}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Notation}{5}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Derivation of the Shallow Water Equations}{6}{section.2.2}%
-\contentsline {section}{\numberline {2.3}The SWE in vector form}{11}{section.2.3}%
-\contentsline {section}{\numberline {2.4}The 1D SWE in integral form}{11}{section.2.4}%
+\contentsline {section}{\numberline {2.3}The Shallow Water Equations in vector form}{11}{section.2.3}%
+\contentsline {section}{\numberline {2.4}The 1D Shallow Water Equations in integral form}{11}{section.2.4}%
 \contentsline {section}{\numberline {2.5}The Shallow Water Equations in Spherical Coordinates}{12}{section.2.5}%
 \contentsline {section}{\numberline {2.6}The Linearized Shallow Water Equations in Spherical Coordinates}{18}{section.2.6}%
 \contentsline {chapter}{\numberline {3}The Finite Volume Method}{20}{chapter.3}%

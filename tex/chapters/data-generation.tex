@@ -59,7 +59,19 @@ The initial conditions for the water height can be seen in \autoref{fig:data_gen
 \end{figure}
 For the initial velocity $u$, we set it to zero, i.e., $u(x,0) = 0$ m/s, meaning that the water is initially at rest.
 The solver is validated by comparing the results with known test cases, such as the dam break problem. 
-We use a CFL number of $0.9$ and variable time steps.
+We use a variable time step size $\Delta t$ determined dynamically using the Courant-Friedrichs-Lewy (CFL) number. 
+The CFL is dimensionless and is defined as
+\begin{align}\label{eq:CFL_number}
+    \text{CFL} = s_{\max} \frac{\Delta t}{\Delta x},
+\end{align}
+where $s_{\max}$ is the maximum wave speed, $\Delta t$ is the time step size, and $\Delta x$ is the grid spacing.
+The value $s_{\max}$ is calculated as 
+\begin{align*}
+    s_{\max} = \max \left( |u_i| + \sqrt{g h_i}  \right),
+\end{align*}
+where $u_i$ and $h_i$ are the velocity and water height at grid point $i$, respectively, and $g$ is the gravitational acceleration.
+In general, the CFL number should be less than or equal to one for stability.
+In our case, we use a CFL number of $0.9$.
 The data is generate over the time interval $t = 0.0$ to $t_{\text{end}} = 1.0$ s.
 
 \subsection*{Truncation error}
@@ -89,7 +101,6 @@ This suggests that the data generated using the FVM is of high quality and can b
 \subsection*{1D LSWE on a sphere}
 We also consider the 1D linearized shallow water equations in spherical coordinates, focusing on a circular domain.
 The length of the domain corresponds to a full circle, $L = 2 \pi$ radians and is discretized into $N = 500$ points.
-%The length of the domain corresponds to the circumreference of the circle, $L = 2\pi$ m, and is discretized into $N = 500$ points.
 The initial condition for the water height $h$ is specified as a Gaussian function wrapped around the circle, expressed as:
 \begin{align}\label{eq:1D_swe_spherical_ic}
     h(\theta, 0) &= a \exp \left( \frac{-{(\theta-\mu)}^2}{2 \sigma^2} \right),
