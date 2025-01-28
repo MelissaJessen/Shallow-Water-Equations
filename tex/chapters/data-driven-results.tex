@@ -8,8 +8,9 @@ We analyse three main cases:
 \end{enumerate}
 In each case, we evaluate the performance of the CNN and the FNO in terms of mean squared error (MSE), mean absolute error (MAE), training time and prediction time.
 In addition, we analyze the models' predictions for various initial conditions and their ability to generalize to unseen data.
-We also explore their capability to transfer solutions aross different grid resolutions, such as transitioning from a coarse grid to a finer grid.
-Finally, we examine the models' long-term predictive performance, assessing how well they maintain accuracy over extended time steps.
+We also explore their capability to transfer solutions aross grid resolutions, such as transitioning from coarse to fine grids.
+Lastly, we evaluate the models' long-term predictive performance, assessing how well they maintain accuracy over extended time steps.
+In the end of the chapter, we provide a concise summary of the results.
 The convolutional neural networks are implemented in python version 3.12.6, using PyTorch version 2.4.1.
 The Fourier neural operators are implemented using the Github repository \textit{neuraloperator}, which is a library for learning neural operators in PyTorch~\cite{neuraloperator}.
 
