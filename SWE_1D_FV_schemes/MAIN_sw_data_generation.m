@@ -150,7 +150,7 @@ for t=1:ntmaxi %time marching precedure
 
 end
 
-% Save data for all timesteps
+%% Save data for all timesteps
 xexact = xexact+gate-dx/2;
 
 folder = 'C:\Users\Matteo\Shallow-Water-Equations\dataFNO';
@@ -161,7 +161,7 @@ save(fullpath,'time_all', 'xexact','hexact_all','uexact_all');
 
 disp('Done')
 
-%%
+
 
 
 

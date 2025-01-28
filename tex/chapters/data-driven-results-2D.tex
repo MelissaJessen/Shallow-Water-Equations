@@ -234,7 +234,30 @@ This is particularly impressive, as small errors early in forecasting applicatio
 The FNO model appears capable of stabilizing errors and providing accurate predictions over long time horizons, highlighting its potential for long-term predictions.
 
 
-This concludes the results for the data-driven methods.
+\section{Summary}
+In this section, we will shortly describe our key finding for the results for both numerical and data-driven methods.
+
+\begin{itemize}
+    \item \textbf{1D SWE}: CNN outperforms FNO in terms of accuracy and run time. 
+        When presented for a new initial condition, FNO maintained accuracy, while CNO showed a slight drop in precision.
+        The run time for the FVM is not analysed, as it is very fast (a few seconds).
+        No scalability issues were encountered in the 1D domain
+    \item \textbf{1D LSWE on a sphere}: CNN outperforms FNO in both accuracy and run time.
+    For the steepest initial condition, the MSE and MAE of CNN and FNO are almost identical.
+    The FVM run time is not analysed, as it is significantly faster than the data-driven models.
+    \item \textbf{2D SWE}: In general, the FNO demonstrated higher accuracy, while the CNN was faster when trained and making predictions on grids with $N = 64$ and $N = 128$.
+        \begin{itemize}
+            \item \textbf{Grid transferability}: Both models maintained accuracy when trained on coarse grids and used for predictions on finer grids.
+            However, FNO outperformed CNN in terms of MSE and MAE.
+            \item \textbf{Run time}: For $N \leq 64$, FVM is faster than both models.
+            At $N = 128$, CNN is faster than FVM, while FNO is slower.
+            At $N = 256$, using grid transferability, both CNN and FNO are faster than FVM.
+            The CNN model is over 60 times faster than the FVM, while the FNO model is over 7 times faster (including training time).
+            \item \textbf{Long-term predictions}: Both models exhibit low error in the initial time steps.
+            Over longer time horizons, CNN's error increases, whereas FNO maintains accuracy, highlighting its potential for long-term predictions.
+            \end{itemize}
+\end{itemize}
+This concludes the results for the numerical and data-driven methods.
 In the next section, we will discuss our findings, focusing on the advantages and limitations of the FVM and data-driven approaches, and their potential applications in solving the SWE.
 We will also explore potential directions for future research, building on the results presented in this thesis.
 

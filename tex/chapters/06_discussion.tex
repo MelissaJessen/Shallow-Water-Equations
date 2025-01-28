@@ -29,7 +29,7 @@ A significant advantage of the data-driven methods is their ability to generaliz
 This was demonstrated in the 1D SWE case, where both the CNN and FNO successfully predicted solutions for new initial conditions in less than one second.
 The FNO maintained high accuracy, while the CNN experienced a slight drop in precision.
 This capability makes data-driven methods particularly valuable for applications requiring rapid predictions.
-Another area where the data-driven methods excel is in transferring solutions across grids.
+Another area where the data-driven methods excel is in transferring solutions across grids, meaning the models can be trained on one grid size and used to predict solutions on another grid size.
 Both the CNN and FNO models maintained accuracy when transtioning solutions from a coarse grid to a fine grid, with the FNO outperforming the CNN in terms of MSE and MAE.
 This ability to transfer solutions across grids is a promising feature of data-driven methods, as it can help address scalability issues associated with numerical methods.
 By training and saving a model for use across various grid sizes, data-driven methods offer a practical alternative to numerical methods when speed is a priority.

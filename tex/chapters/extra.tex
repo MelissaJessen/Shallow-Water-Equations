@@ -1,3 +1,31 @@
+%% Tabellere summary results
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{2cm}|c|p{3.3cm}|p{6.2cm}|}
+        \hline
+        \textbf{Case}  & \textbf{Accuracy} & \textbf{Run time} & \textbf{Features}  \\ \hline
+        1D SWE & CNN outperforms FNO. & CNN is faster than FNO. The run time for the FVM is not analysed, as it is very fast (a few seconds). & When presented for a new initial condition, FNO maintained accuracy, where CNO experienced a slight drop in precision. \\ \hline
+        1D LSWE on a sphere & CNN outperforms FNO. & CNN is faster than FNO. The run time for the FVM is not analysed, as it is very fast (a few seconds). & For the steepest initial condition, the MSE and MAE for CNN and FNO are almost identical. \\ \hline
+    \end{tabular}
+    \caption{Summary of the results for the 1D SWE and 1D LSWE on a sphere.} \label{tab:summary_1D}
+\end{table}
+
+\begin{table}[H]. 
+    \centering
+    \begin{tabular}{|c|c|c|p{6.5cm}|}
+        \hline
+        \textbf{Case}  & \textbf{Accuracy} & \textbf{Run time} & \textbf{Features}  \\ \hline
+        2D SWE & FNO shows higher accuracy than the CNN. & CNN is faster than the FNO. 
+    \end{tabular}
+\end{table}
+
+
+
+
+
+
 %% Sphere triangular mesh - fjernet 21.01.2025
 
 
