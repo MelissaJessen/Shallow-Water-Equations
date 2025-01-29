@@ -229,6 +229,8 @@ This raises a key question: is it better to have one large error or many small e
 
 As shown in \autoref{fig:2D_CNN_FNO_mse_mae_max_error}, the error increases as predictions are made further in time.
 Overall, the FNO model exhibits lower errors compared to the CNN model, indicating it may offer more accurate long-term predictions.
+We have plotted the predictions made with the CNN and FNO models for $t = 12.5$ s in \autoref{fig:2D_CNN_long_term_predictions_2} and \autoref{fig:2D_FNO_long_term_predictions_2}.
+These figures can be found in Appendix \autoref{app:2D_SWE_long_term_prediction}.
 Notably, the FNO model demonstrates the ability to generalize further in time, maintaining relatively low errors even after $n = 200$ time steps, comparable to the errors observed during the initial time steps.
 This is particularly impressive, as small errors early in forecasting applications often lead to significant errors over time.
 The FNO model appears capable of stabilizing errors and providing accurate predictions over long time horizons, highlighting its potential for long-term predictions.

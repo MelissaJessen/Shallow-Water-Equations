@@ -3,7 +3,8 @@
 \bibitem{najibi2018global_floods}
 Niloofar Najibi and Naresh Devineni.
 \newblock Recent trends in the frequency and duration of global floods.
-\newblock \url{https://esd.copernicus.org/articles/9/757/2018/}, 2018.
+\newblock {\em Earth System Dynamics}, 9(2):757--783, 2018.
+\newblock \url{https://esd.copernicus.org/articles/9/757/2018/}.
 
 \bibitem{valencia_flood_disaster_esa}
 {European Space Agency (ESA)}.
@@ -48,8 +49,7 @@ E.F. Toro.
 Ilya Peshkov.
 \newblock Advanced numerical methods for environmental modeling.
 \newblock
-  \url{https://www.unitn.it/dricam/1116/advanced-numerical-methods-environmental-modeling},
-  2023.
+  \url{https://sites.google.com/unitn.it/environmental-modeling-course}, 2024.
 \newblock Lecture notes.
 
 \bibitem{Castro2017}
@@ -64,20 +64,20 @@ Manuel~J. Castro, Sergio Ortega, and Carlos Parés.
 Alex Bihlo and Roman~O. Popovych.
 \newblock Physics-informed neural networks for the shallow-water equations on
   the sphere.
+\newblock {\em Journal of Computational Physics}, 456:111024, 2022.
 \newblock
-  \url{https://www.sciencedirect.com/science/article/pii/S0021999122000869},
-  2022.
+  \url{https://www.sciencedirect.com/science/article/pii/S0021999122000869}.
 
 \bibitem{Raymond}
 David~J. Raymond.
 \newblock Shallow water on a sphere.
 \newblock
   \url{http://kestrel.nmt.edu/~raymond/classes/ph332/notes/sphere/sphere.pdf},
-  New Mexico Tech. Accessed 2024.
+  New Mexico Tech. Accessed 2024-11-01.
 
 \bibitem{shallow_water_gfdl}
 Geophysical Fluid Dynamics~Laboratory (GFDL).
-\newblock Shallow water equations.
+\newblock The shallow water equations.
 \newblock
   \url{https://www.gfdl.noaa.gov/wp-content/uploads/files/user_files/pjp/shallow.pdf},
   n.d.
@@ -86,18 +86,21 @@ Geophysical Fluid Dynamics~Laboratory (GFDL).
 \bibitem{Gavete_2009}
 L.~Gavete, B.~Alonso, M.L. Gavete, F.~Ureña, and J.J. Benito.
 \newblock An adaptive solver for the spherical shallow water equations.
-\newblock
-  \url{https://www.sciencedirect.com/science/article/pii/S0378475409001062},
+\newblock {\em Mathematics and Computers in Simulation}, 79(12):3466--3477,
   2009.
 \newblock The International Conference on Approximation Methods and numerical
   Modeling in Environment and Natural Resources.
+  \url{https://www.sciencedirect.com/science/article/pii/S0378475409001062}.
 
 \bibitem{Galewsky_2004}
-Joseph Galewsky, Richard~K. Scott, and Lorenzo~M. Polvani.
+J.~Galewsky, Richard Scott, and Lorenzo Polvani.
 \newblock An initial-value problem for testing numerical models of the global
-  shallow-water equations.
+  shallow-water equationserratum printed in: Tellus a 58:4 p. 520 -
+  522doi:10.1111/j.1600-0870.2006.00192.x.
+\newblock {\em Tellus Series A-dynamic Meteorology and Oceanography - TELLUS
+  A-DYN METEOROL OCEANOG}, 56, 01 2004.
 \newblock
-  \url{https://www.columbia.edu/~lmp/paps/galewsky+etal-TELLUS-2004.pdf}, 2004.
+  \url{https://www.columbia.edu/~lmp/paps/galewsky+etal-TELLUS-2004.pdf}.
 
 \bibitem{Hesthaven2008}
 Jan~S. Hesthaven and Tim Warburton.
@@ -124,7 +127,7 @@ Zongyi Li, Nikola Kovachki, Kamyar Azizzadenesheli, Burigede Liu, Kaushik
   Bhattacharya, Andrew Stuart, and Anima Anandkumar.
 \newblock Fourier neural operator for parametric partial differential
   equations.
-\newblock \url{https://arxiv.org/pdf/2010.08895}, 2021.
+\newblock \url{https://arxiv.org/abs/2010.08895}, 2021.
 
 \bibitem{osti_1478744}
 Nathan Baker, Frank Alexander, Timo Bremer, Aric Hagberg, Yannis Kevrekidis,
@@ -133,6 +136,7 @@ Nathan Baker, Frank Alexander, Timo Bremer, Aric Hagberg, Yannis Kevrekidis,
   learning: Core technologies for artificial intelligence.
 \newblock Technical report, USDOE Office of Science (SC), Washington, D.C.
   (United States), 02 2019.
+\newblock \url{https://www.osti.gov/biblio/1478744}.
 
 \bibitem{Nvidia2023}
 Boris Bonev, Christian Hundt, Thorsten Kurth~Jaideep Pathak, et~al.
@@ -146,7 +150,7 @@ Boris Bonev, Thorsten Kurth, Christian Hundt, Jaideep Pathak, Maximilian Baust,
   Karthik Kashinath, and Anima Anandkumar.
 \newblock Spherical fourier neural operators: Learning stable dynamics on the
   sphere.
-\newblock \url{https://arxiv.org/pdf/2306.03838}, 2023.
+\newblock \url{https://arxiv.org/abs/2306.03838}, 2023.
 
 \bibitem{Vreugdenhil1994}
 C.B. Vreugdenhil.
@@ -156,7 +160,8 @@ C.B. Vreugdenhil.
 \bibitem{Leibniz}
 Wikipedia.
 \newblock Leibniz integral rule.
-\newblock \url{https://en.wikipedia.org/wiki/Leibniz_integral_rule}, 7/10-2024.
+\newblock \url{https://en.wikipedia.org/wiki/Leibniz_integral_rule}.
+\newblock Accessed: 2024-10-07.
 
 \bibitem{Gill_1982}
 Adrian~E. Gill.
@@ -166,28 +171,29 @@ Adrian~E. Gill.
 \bibitem{lat-long-earth}
 Longitude and latitude map with degrees.
 \newblock
-  \url{https://animalia-life.club/qa/pictures/longitude-and-latitude-map-with-degrees},
-  Accessed: 2024.
+  \url{https://animalia-life.club/qa/pictures/longitude-and-latitude-map-with-degrees}.
+\newblock Accessed: 2024-11-01.
 
 \bibitem{Coriolis}
 Wikipedia.
 \newblock Coriolis force.
-\newblock \url{https://en.wikipedia.org/wiki/Coriolis_force}, 14/11-2024.
+\newblock \url{https://en.wikipedia.org/wiki/Coriolis_force}.
+\newblock Accessed: 2024-11-14.
 
 \bibitem{BONEV_2018}
 Boris Bonev, Jan~S. Hesthaven, Francis~X. Giraldo, and Michal~A. Kopera.
 \newblock Discontinuous galerkin scheme for the spherical shallow water
   equations with applications to tsunami modeling and prediction.
+\newblock {\em Journal of Computational Physics}, 362:425--448, 2018.
 \newblock
-  \url{https://www.sciencedirect.com/science/article/pii/S0021999118300846},
-  2018.
+  \url{https://www.sciencedirect.com/science/article/pii/S0021999118300846}.
 
 \bibitem{Eskilsson_2005}
 Claes Eskilsson and Spencer~J. Sherwin.
 \newblock Discontinuous galerkin spectral/hp element modelling of dispersive
   shallow water systems.
-\newblock \url{https://link.springer.com/article/10.1007/s10915-004-4140-x},
-  2005.
+\newblock {\em Journal of Scientific Computing}, 22:269--288, 2005.
+\newblock \url{https://link.springer.com/article/10.1007/s10915-004-4140-x}.
 
 \bibitem{LeVeque2002}
 Randall~J. LeVeque.
@@ -201,19 +207,22 @@ Randall~J. LeVeque.
 \newblock Birkhäuser, Basel, 1992.
 
 \bibitem{RK4}
-Fourth order runge-kutta.
-\newblock \url{https://lpsa.swarthmore.edu/NumInt/NumIntFourth.html}, Accessed:
-  15-01-2025.
+Swarthmore College.
+\newblock Fourth order runge-kutta.
+\newblock \url{https://lpsa.swarthmore.edu/NumInt/NumIntFourth.html}.
+\newblock Accessed: 2025-01-15.
 
 \bibitem{Fourier_Transform}
-Fourier transform.
-\newblock \url{https://en.wikipedia.org/wiki/Fourier_transform}, Accessed:
-  15-01-2025.
+Wikipedia.
+\newblock Fourier transform.
+\newblock \url{https://en.wikipedia.org/wiki/Fourier_transform}.
+\newblock Accessed: 2025-01-15.
 
 \bibitem{sphere_mesh_triangles}
 Siddarth Maddali.
-\newblock Spheremesh.
+\newblock {SphereMesh}.
 \newblock \url{https://github.com/siddharth-maddali/SphereMesh/tree/master}.
+\newblock Accessed: 2024-12-14.
 
 \bibitem{Copernicus_data}
 {Copernicus Climate Data Store}.
@@ -224,7 +233,7 @@ Siddarth Maddali.
 
 \bibitem{Github_SWE}
 Melissa~Ulsøe Jessen.
-\newblock Shallow-water-equations.
+\newblock {Shallow-Water-Equations}.
 \newblock \\\url{https://github.com/MelissaJessen/Shallow-Water-Equations},
   2024-2025.
 
@@ -237,8 +246,8 @@ A.~P Engsig-Karup and J.~S. Hesthaven.
 
 \bibitem{neuraloperator}
 David Pitt.
-\newblock Neural operator: Learning operators for pdes.
+\newblock {Neural Operator: Learning operators for PDEs}.
 \newblock \url{https://github.com/neuraloperator/neuraloperator}, 2024.
-\newblock GitHub repository.
+\newblock Accesed: 2024-11-04.
 
 \end{thebibliography}

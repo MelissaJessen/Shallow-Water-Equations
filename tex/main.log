@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.13)  29 JAN 2025 11:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.13)  29 JAN 2025 16:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -725,6 +725,94 @@ Package caption Info: New subtype `subfigure' on input line 238.
 \c@subfigure=\count386
 Package caption Info: New subtype `subtable' on input line 238.
 \c@subtable=\count387
+) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.sty
+Package: pdfpages 2024/05/29 v0.6a Insert pages of external PDF documents (AM)
+ (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
+Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
+\ESO@tempdima=\dimen350
+\ESO@tempdimb=\dimen351
+)
+\AM@pagewidth=\dimen352
+\AM@pageheight=\dimen353
+\AM@fboxrule=\dimen354
+ (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.def
+File: pppdftex.def 2024/05/29 v0.6a Pdfpages driver for pdfTeX (AM)
+)
+\pdfpages@includegraphics@status=\count388
+\AM@pagebox=\box120
+\AM@global@opts=\toks56
+\AM@pagecnt=\count389
+\AM@toc@title=\toks57
+\AM@lof@heading=\toks58
+\c@AM@survey=\count390
+\AM@templatesizebox=\box121
+) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/titleref\titleref.sty
+Package: titleref 2001/04/05 v3.1  Cross-references with titles.
+) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/tools\afterpage.sty
+Package: afterpage 2023/07/04 v1.08 After-Page Package (DPC)
+\AP@output=\toks59
+\AP@partial=\box122
+\AP@footins=\box123
+) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2024/07/23 v4.3.1 Extensive control of page headers and footers
+\f@nch@headwidth=\skip63
+\f@nch@O@elh=\skip64
+\f@nch@O@erh=\skip65
+\f@nch@O@olh=\skip66
+\f@nch@O@orh=\skip67
+\f@nch@O@elf=\skip68
+\f@nch@O@erf=\skip69
+\f@nch@O@olf=\skip70
+\f@nch@O@orf=\skip71
+) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\courier.sty
+Package: courier 2020/03/25 PSNFSS-v9.3 (WaS) 
+) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip72
+\enit@outerparindent=\dimen355
+\enit@toks=\toks60
+\enit@inbox=\box124
+\enit@count@id=\count391
+\enitdp@description=\count392
+) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/cite\cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/acronym\acronym.sty
+Package: acronym 2024/03/30 v1.49 Support for acronyms (Tobias Oetiker)
+ (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/bigfoot\suffix.sty
+Package: suffix 2006/07/15 1.5a Variant command support
+) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.sty (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.tex
+\xs_counta=\count393
+\xs_countb=\count394
+)
+Package: xstring 2023/08/22 v1.86 String manipulations (CT)
+)
+\AC@clearlist=\toks61
+) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks62
+\thm@bodyfont=\toks63
+\thm@headfont=\toks64
+\thm@notefont=\toks65
+\thm@headpunct=\toks66
+\thm@preskip=\skip73
+\thm@postskip=\skip74
+\thm@headsep=\skip75
+\dth@everypar=\toks67
+) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/breakurl\breakurl.sty
+Package: breakurl 2013/04/10 v1.40 Breakable hyperref URLs
+ (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+)
+
+Package breakurl Warning: You are using breakurl while processing via pdflatex.
+(breakurl)                \burl will be just a synonym of \url.
+(breakurl)                 on input line 48.
+
 ) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2024-07-10 v7.01j Hypertext links for LaTeX
  (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
@@ -754,13 +842,18 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
  (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count388
+
+Package nameref Warning: The definition of \label has changed! 
+(nameref)                Check your packages! 
+(nameref)                Replacing it with the kernel definition on input line 149.
+
+\c@section@level=\count395
 ) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
-\@linkdim=\dimen350
-\Hy@linkcounter=\count389
-\Hy@pagecounter=\count390
+\@linkdim=\dimen356
+\Hy@linkcounter=\count396
+\Hy@pagecounter=\count397
  (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2024-07-10 v7.01j Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -768,7 +861,7 @@ Now handling font encoding PD1 ...
 ) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count391
+\Hy@SavedSpaceFactor=\count398
  (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2024-07-10 v7.01j Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -781,21 +874,17 @@ Package hyperref Info: Plain pages OFF on input line 4172.
 Package hyperref Info: Backreferencing OFF on input line 4177.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4424.
-\c@Hy@tempcnt=\count392
- (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
-\Urlmuskip=\muskip18
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
+\c@Hy@tempcnt=\count399
 LaTeX Info: Redefining \url on input line 4763.
-\XeTeXLinkMargin=\dimen351
+\XeTeXLinkMargin=\dimen357
  (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count393
-\Field@Width=\dimen352
-\Fld@charsize=\dimen353
+\Fld@menulength=\count400
+\Field@Width=\dimen358
+\Fld@charsize=\dimen359
 Package hyperref Info: Hyper figures OFF on input line 6042.
 Package hyperref Info: Link nesting OFF on input line 6047.
 Package hyperref Info: Hyper index ON on input line 6050.
@@ -807,9 +896,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6072.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count394
-\c@Item=\count395
-\c@Hfootnote=\count396
+\Hy@abspage=\count401
+\c@Item=\count402
+\c@Hfootnote=\count403
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
@@ -818,8 +907,8 @@ File: hpdftex.def 2024-07-10 v7.01j Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\Fld@listcount=\count397
-\c@bookmark@seq@number=\count398
+\Fld@listcount=\count404
+\c@bookmark@seq@number=\count405
  (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
  (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
@@ -827,92 +916,9 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
-\Hy@SectionHShift=\skip63
-) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.sty
-Package: pdfpages 2024/05/29 v0.6a Insert pages of external PDF documents (AM)
- (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
-Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
-\ESO@tempdima=\dimen354
-\ESO@tempdimb=\dimen355
-)
-\AM@pagewidth=\dimen356
-\AM@pageheight=\dimen357
-\AM@fboxrule=\dimen358
- (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.def
-File: pppdftex.def 2024/05/29 v0.6a Pdfpages driver for pdfTeX (AM)
-)
-\pdfpages@includegraphics@status=\count399
-\AM@pagebox=\box120
-\AM@global@opts=\toks56
-\AM@pagecnt=\count400
-\AM@toc@title=\toks57
-\AM@lof@heading=\toks58
-\c@AM@survey=\count401
-\AM@templatesizebox=\box121
-) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/titleref\titleref.sty
-Package: titleref 2001/04/05 v3.1  Cross-references with titles.
-) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/tools\afterpage.sty
-Package: afterpage 2023/07/04 v1.08 After-Page Package (DPC)
-\AP@output=\toks59
-\AP@partial=\box122
-\AP@footins=\box123
-) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
-Package: fancyhdr 2024/07/23 v4.3.1 Extensive control of page headers and footers
-\f@nch@headwidth=\skip64
-\f@nch@O@elh=\skip65
-\f@nch@O@erh=\skip66
-\f@nch@O@olh=\skip67
-\f@nch@O@orh=\skip68
-\f@nch@O@elf=\skip69
-\f@nch@O@erf=\skip70
-\f@nch@O@olf=\skip71
-\f@nch@O@orf=\skip72
-) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\courier.sty
-Package: courier 2020/03/25 PSNFSS-v9.3 (WaS) 
-) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
-Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip73
-\enit@outerparindent=\dimen359
-\enit@toks=\toks60
-\enit@inbox=\box124
-\enit@count@id=\count402
-\enitdp@description=\count403
-) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/cite\cite.sty
-LaTeX Info: Redefining \cite on input line 302.
-LaTeX Info: Redefining \nocite on input line 332.
-Package: cite 2015/02/27  v 5.5
-) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/acronym\acronym.sty
-Package: acronym 2024/03/30 v1.49 Support for acronyms (Tobias Oetiker)
- (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/bigfoot\suffix.sty
-Package: suffix 2006/07/15 1.5a Variant command support
-) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.sty (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.tex
-\xs_counta=\count404
-\xs_countb=\count405
-)
-Package: xstring 2023/08/22 v1.86 String manipulations (CT)
-)
-\AC@clearlist=\toks61
-) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
-Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks62
-\thm@bodyfont=\toks63
-\thm@headfont=\toks64
-\thm@notefont=\toks65
-\thm@headpunct=\toks66
-\thm@preskip=\skip74
-\thm@postskip=\skip75
-\thm@headsep=\skip76
-\dth@everypar=\toks67
-) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/breakurl\breakurl.sty
-Package: breakurl 2013/04/10 v1.40 Breakable hyperref URLs
- (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifpdf.sty
-Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
-)
-
-Package breakurl Warning: You are using breakurl while processing via pdflatex.
-(breakurl)                \burl will be just a synonym of \url.
-(breakurl)                 on input line 48.
-
+\Hy@SectionHShift=\skip76
+) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/xurl\xurl.sty
+Package: xurl 2022/01/09 v 0.10 modify URL breaks
 ) (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
@@ -944,24 +950,24 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
  (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count410
@@ -988,12 +994,7 @@ Package pgfplots notification 'compat/show suggested version=true': you might be
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 94.
-(main.out) (main.out)
-\@outlinefile=\write6
-\openout6 = `main.out'.
-
- (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.sty
+(C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
  (C:\Users\Matteo\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape-nometadata.sty
 Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PDF (HO)
@@ -1002,6 +1003,12 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
+Package hyperref Info: Link coloring OFF on input line 97.
+ (main.out) (main.out)
+\@outlinefile=\write6
+\openout6 = `main.out'.
+
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1070,7 +1077,7 @@ Non-PDF special ignored!
 pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.111 \newpage
+l.114 \newpage
                [1
 
 ] (frontmatter/abstract.tex)
@@ -1877,87 +1884,45 @@ Chapter 9.
 ])
 
 [78] (main.bbl
-Underfull \hbox (badness 4048) in paragraph at lines 17--23
-[]\OT1/cmr/m/n/10 Fathom.  The ger-man flash floods 2021.  []$\OT1/pcr/m/n/10 https : / / www . fathom . global / event-[]response /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 25--31
-[]\OT1/cmr/m/n/10 The Guardian.  Cli-mate sci-en-tists shocked by scale of floods in ger-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 25--31
-\OT1/cmr/m/n/10 many.  []$\OT1/pcr/m/n/10 https : / / www . theguardian . com / environment / 2021 / jul / 16 /
- []
-
-
-Underfull \hbox (badness 1231) in paragraph at lines 25--31
-\OT1/pcr/m/n/10 climate-[]scientists-[]shocked-[]by-[]scale-[]of-[]floods-[]in-[]germany$[]\OT1/cmr/m/n/10 , 2021.  Ac-cessed: 2025-01-
- []
-
-
-Underfull \hbox (badness 1400) in paragraph at lines 56--62
-[]\OT1/cmr/m/n/10 Manuel J. Cas-tro, Ser-gio Or-tega, and Car-los Par^^Ses.  Well-balanced meth-ods for the shal-low wa-
- []
-
-
 
 [79
 
 ]
-Overfull \hbox (145.8494pt too wide) in paragraph at lines 114--121
-\OT1/pcr/m/n/10 towardsdatascience . com / a-[]comprehensive-[]guide-[]to-[]convolutional-[]neural-[]networks-[]the-[]eli5-[]way-[]3bd2b1164a53$[]\OT1/cmr/m/n/10 ,
- []
-
-
-Underfull \hbox (badness 3471) in paragraph at lines 138--143
-[]\OT1/cmr/m/n/10 Boris Bonev, Chris-tian Hundt, Thorsten Kurth Jaideep Pathak, et al.  Mod-el-ing earth's at-
- []
-
-
-Underfull \hbox (badness 7504) in paragraph at lines 138--143
-\OT1/cmr/m/n/10 mo-sphere with spher-i-cal fourier neu-ral op-er-a-tors.  []$\OT1/pcr/m/n/10 https : / / developer . nvidia . com / blog /
- []
-
-
-Underfull \hbox (badness 8038) in paragraph at lines 167--171
-[]\OT1/cmr/m/n/10 Longitude and lat-i-tude map with de-grees.  []$\OT1/pcr/m/n/10 https : / / animalia-[]life . club / qa / pictures /
- []
-
-
 
 [80])
 
 [81] (chapters/appendix.tex
 Appendix A.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_long_term_predictions_Ntrain=64_Npred=64_idx=20.pdf, id=3304, 1084.05pt x 361.35pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_long_term_predictions_Ntrain=64_Npred=64_idx=20.pdf, id=3315, 1084.05pt x 361.35pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_long_term_predictions_Ntrain=64_Npred=64_idx=20.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_long_term_predictions_Ntrain=64_Npred=64_idx=20.pdf>
-Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_long_term_predictions_Ntrain=64_Npred=64_idx=20.pdf  used on input line 10.
+Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_long_term_predictions_Ntrain=64_Npred=64_idx=20.pdf  used on input line 11.
 (pdftex.def)             Requested size: 500.484pt x 166.82953pt.
-<C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions_Ntrain=64_Npred=64_idx=20.pdf, id=3306, 1084.05pt x 361.35pt>
+<C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions_Ntrain=64_Npred=64_idx=20.pdf, id=3317, 1084.05pt x 361.35pt>
 File: C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions_Ntrain=64_Npred=64_idx=20.pdf Graphic file (type pdf)
 <use C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions_Ntrain=64_Npred=64_idx=20.pdf>
-Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions_Ntrain=64_Npred=64_idx=20.pdf  used on input line 17.
+Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions_Ntrain=64_Npred=64_idx=20.pdf  used on input line 18.
 (pdftex.def)             Requested size: 500.484pt x 166.82953pt.
 
 
 [82
 
  <C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_long_term_predictions_Ntrain=64_Npred=64_idx=20.pdf>]
-Overfull \hbox (40.2941pt too wide) in paragraph at lines 23--25
-\OT1/cmr/m/n/10 The code used for this project can be found at: []$\OT1/pcr/m/n/10 https : / / github . com / MelissaJessen / Shallow-[]Water-[]Equations$[]\OT1/cmr/m/n/10 .
- []
+<C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_long_term_predictions_Ntrain=64_Npred=64_idx=100.pdf, id=3364, 1084.05pt x 361.35pt>
+File: C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_long_term_predictions_Ntrain=64_Npred=64_idx=100.pdf Graphic file (type pdf)
+<use C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_long_term_predictions_Ntrain=64_Npred=64_idx=100.pdf>
+Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_long_term_predictions_Ntrain=64_Npred=64_idx=100.pdf  used on input line 25.
+(pdftex.def)             Requested size: 500.484pt x 166.82953pt.
+<C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions_Ntrain=64_Npred=64_idx=100.pdf, id=3366, 1084.05pt x 361.35pt>
+File: C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions_Ntrain=64_Npred=64_idx=100.pdf Graphic file (type pdf)
+<use C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions_Ntrain=64_Npred=64_idx=100.pdf>
+Package pdftex.def Info: C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions_Ntrain=64_Npred=64_idx=100.pdf  used on input line 32.
+(pdftex.def)             Requested size: 500.484pt x 166.82953pt.
 
 
-Overfull \hbox (47.5163pt too wide) in paragraph at lines 23--25
-\OT1/cmr/m/n/10 The an-i-ma-tions can be found at: []$\OT1/pcr/m/n/10 https : / / github . com / MelissaJessen / Shallow-[]Water-[]Equations-[]Animations$[]\OT1/cmr/m/n/10 . 
- []
+[83 <C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions_Ntrain=64_Npred=64_idx=20.pdf> <C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_long_term_predictions_Ntrain=64_Npred=64_idx=100.pdf>])
 
-)
-
-[83 <C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions_Ntrain=64_Npred=64_idx=20.pdf>] (main.aux)
+[84 <C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions_Ntrain=64_Npred=64_idx=100.pdf>] (main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-16>
@@ -1970,17 +1935,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 1A38AC02A14D08F6A5CBCDFCC31AC1A0;9884.
  ) 
 Here is how much of TeX's memory you used:
- 42354 strings out of 473899
- 984551 string characters out of 5726028
- 1955960 words of memory out of 5000000
- 63817 multiletter control sequences out of 15000+600000
+ 42396 strings out of 473899
+ 986881 string characters out of 5726028
+ 1960960 words of memory out of 5000000
+ 63852 multiletter control sequences out of 15000+600000
  571091 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,23n,131p,775b,723s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 83i,23n,131p,775b,735s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Matteo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Matteo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on main.pdf (91 pages, 13568086 bytes).
+Output written on main.pdf (92 pages, 13888046 bytes).
 PDF statistics:
- 3588 PDF objects out of 4296 (max. 8388607)
- 429 named destinations out of 1000 (max. 500000)
- 770 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3694 PDF objects out of 4296 (max. 8388607)
+ 432 named destinations out of 1000 (max. 500000)
+ 780 words of extra memory for PDF output out of 10000 (max. 10000000)
 
