@@ -17,7 +17,7 @@ The Fourier neural operators are implemented using the Github repository \textit
 In \autoref{ch:numerical_results}, we presented the results of discontinuous test cases, operating under the premise that a solver capable of handling discontinuous solutions should also perform well with smooth solutions.
 In this chapter, we focus on evaluating the performance of data-driven models under smooth initial conditions, as they provide a more suitable starting point.
 
-\section{1D Shallow Water Equations with Gaussian initial conditions}
+\section{The 1D Shallow Water Equations with Gaussian initial conditions}
 In this section, we consider the 1D SWE with Gaussian initial conditions, where the data is generated as described in \autoref{sec:data_generation_fvm}.
 The initial condition for the water height $h$ is given in~\eqref{eq:1D_swe_ic_gaussian} and illustrated in \autoref{fig:NN_initial_1D}.
 \begin{figure}[H]
@@ -170,7 +170,7 @@ From \autoref{tab:results_1D_comparison}, we observe that both models achieve a 
 However, the training time for the FNO model is significantly higher than that of the CNN model.
 For the new initial condition, the errors are nearly identical, suggesting that the FNO model has caught up.
 
-\section{1D linearized Shallow Water Equations in Spherical Coordinates}
+\section{The 1D linearized Shallow Water Equations in Spherical Coordinates}
 In this section, we consider the 1D LSWE in spherical coordinates on a circular domain.
 The length of the domain corresponds to the circumreference of the circle, $L = 2\pi$ m, and is discretized into $N = 500$ points.
 The initial conditions is specified as a Gaussian function wrapped around the circle as given in~\eqref{eq:1D_swe_spherical_ic}.
