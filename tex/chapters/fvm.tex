@@ -96,7 +96,7 @@ One of the main challenges in the FVM is to determine appropiate numerical flux 
 Later in the thesis, we will consider several numerical flux functions that can be used to solve the local Riemann problem at the cell interfaces.
 
 The FVM is closely related to the finite difference method (FDM), but they differs as the FVM is based on the integral form of the conservation laws.
-Where finite difference methods tend to break down near discontinuities in the solution, finite volume methods are more suited, since they are based on the integral form of the conservation laws.
+Where the FDM tends to break down near discontinuities in the solution, the FVM is more suited, since it is based on the integral form of the conservation laws.
 The key distinction between the FVM and the FDM lies in their formulation: while the FVM is based on the integral conservation over finite volumes, the FDM is based on satisfying the differential equations point-wise at mesh points.
 Similarly, the FVM and the finite element method (FEM) differ in some of their principles and applications.
 Like the FVM, the FEM divides the domain into smaller elements, but approximates the solution using interpolation functions.
@@ -234,7 +234,7 @@ Recall, that the 1D LSWE in spherical coordinates are given by
 \end{equation}
 where $h'$ is the perturbation in water height, $u$ is the velocity in the $\theta-$direction, $h_0$ is the mean water depth, $g$ is the gravitational acceleration, $r$ is the Earth's radius, and $\phi$ is the fixed latitude.
 Since the ERK4 method solves ODEs, and the LSWE are PDEs, we must use the method of lines (MOL) to bring the LSWE in the form of the IVP~\eqref{eq:IVP}.
-The MOL is a technique for solving PDEs by discretizing all variables but one (usually time), transforming the PDE into a system of ODEs.
+The MOL is a technique for solving PDEs by discretizing all variables but one (usually time), transforming the PDE into a system of ODEs~\cite{mol}.
 The system of ODEs can then be solved using standard ODE solvers, such as the ERK4 method.
 We discretize the spatial dimension $\theta$ into $N$ cells, and approximate the spatial derivatives using central differences:
 \begin{equation}\label{eq:discretized_LSWE_spherical}
@@ -248,13 +248,15 @@ We discretize the spatial dimension $\theta$ into $N$ cells, and approximate the
 for $i = 0,1, \dots, N-1$.
 To perform the time integration, we use the ERK4 method.
 This method is particularly effective for time-stepping and is an alternative approach to traditional time integration schemes.
-The ERK4 method provides higher accuracy in time while relying on the same spatial discretization, such as the FVM.
+The ERK4 method provides higher accuracy in time while relying on the same spatial discretization as the FVM.
 Substituing the spatial derivatives~\eqref{eq:discretized_LSWE_spherical} into the LSWE~\eqref{eq:linearized_LSWE_spherical} gives the system of ODEs:
 \begin{equation}\label{eq:ODE_LSWE_spherical}
+    \left.
     \begin{aligned}
         \frac{d h'}{dt} &= -\frac{h_0}{r \cos\phi} \frac{u_{i+1} - u_{i-1}}{2 \Delta \theta}, \\
         \frac{d u}{dt} &= -\frac{g}{r \cos\phi} \frac{h'_{i+1} - h'_{i-1}}{2 \Delta \theta},
     \end{aligned}
+    \right\}
 \end{equation}
 for $i = 0,1, \dots, N-1$.
 Hence, we can write the 1D spherical LSWE in the form of the IVP~\eqref{eq:IVP} by defining 

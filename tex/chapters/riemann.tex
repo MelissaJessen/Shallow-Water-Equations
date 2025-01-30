@@ -1,7 +1,5 @@
 \section{The Riemann problem}
 We will now define the Riemann problem, since it plays a crucial role in the finite volume method.
-%The special Riemann problem where parts of the bed are dry is dealing with the so-called dry fronts or wet/dry fronts, which are challenging to handle numerically.
-%We will leave these cases for now, and only consider wet bed problems.
 The Riemann problem for the SWE with a zero source term, i.e. $\mathbf{S(U)} = 0$, is defined as the initial-value problem (IVP)~\cite{Toro2024}:
 \begin{equation}\label{eq:Riemann_problem}
     \begin{aligned}
@@ -32,7 +30,7 @@ and the initial conditions $\mathbf{U_L}$ and $\mathbf{U_R}$ are
 \end{align*}
 which represents the conditions at time $t = 0$ s in the left and right states of $x = x_0$.
 The function $\mathbf{U}$ is piecewise constant, with a discontinuity at $x = x_0$.
-The Riemann problem is solved at the interface between two cells, where the left and right states are known, and the solution is used to update the solution at each timestep in the FVM.
+The Riemann problem is solved at the interface between two cells, where the left and right states are known, and the solution is used to update the solution at each time step in the FVM.
 The Riemann problem can be solved either exactly or approximately.
 When solving the Riemann problem exactly we distinguish between what we call a wet bed and a dry bed.
 A wet bed is the case where the water depth is positive everywhere, whereas a dry bed is the case where the water depth is zero in some cells.
@@ -63,7 +61,7 @@ The wave families are denoted $W_1, W_2, W_3$ and the regions are the spaces bet
 The wave structure is illustrated in \autoref{fig:riemann_sol_general}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.4\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/riemann_sol_general.png}
+    \includegraphics[width=0.35\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/figs/riemann_sol_general.png}
     \caption{General wave structure in the solution of the Riemann problem.
             The wave families are denoted by $W_1, W_2$ and $W_3$, and the regions between the wave families are denoted by $R_1, R_2, R_3$ and $R_4$. 
             The star region consists of the regions $R_1$ and $R_2$.}\label{fig:riemann_sol_general}
@@ -94,7 +92,7 @@ and similarly for the right wave:
 A shock wave is characterized by a discontinuity in the solution.
 On each side of the shock wave, the water properties, such as height and velocity, differ significantly.
 In contrast, a rarefaction wave represents a smooth transition in the solution.
-The water height and velocity change gradually across the wave, and the properties are more similar on each side of the wave, without the sharp edges seen in a shock wave.
+For a rarefaction wave, the water height and velocity change gradually across the wave, and the properties are more similar on each side of the wave, without the sharp edges seen in a shock wave.
 In general, the solution to the Riemann problem~\eqref{eq:Riemann_problem} can result in four possible wave patterns, which are combinations of shock waves and rarefaction waves.
 The four possible wave patterns are as follows:
 \begin{enumerate}[label= (\alph*)]

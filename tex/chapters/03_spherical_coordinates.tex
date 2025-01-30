@@ -354,8 +354,6 @@ We consider a control volume $V$ with cell interfaces at $\theta_L$ and $\theta_
     \caption{Grid illustrations for the 1D LSWE in spherical coordinates.}\label{fig:sphere1d_combined}
 \end{figure}
 In \autoref{fig:sphere1d_small_cell}, we see the circle, which is the full domain, and in \autoref{fig:sphere1d_small_domain} we see a small subdomain of the circle.
-
-The integral form of the LSWE is obtained by integrating the control volume given by $V = [\theta_L, \theta_R] \times [t_1, t_2]$, where $t_2$ denotes the time step after $t_1$, over space and time. 
 We begin by integrating the vector form of the 1D spherical LSWE in~\eqref{eq:linearized_swe_spherical_vector} over the spatial dimension $\theta$ from $\theta_L$ to $\theta_R$ to obtain
 \begin{align}\label{eq:integral_form_spherical_1D_part0}
     \int_{\theta_L}^{\theta_R} \mathbf{W}_t \text{ d}\theta + \int_{\theta_L}^{\theta_R} \mathbf{A} \mathbf{W}_\theta \text{ d}\theta = 0.

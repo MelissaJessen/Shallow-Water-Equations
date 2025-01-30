@@ -72,8 +72,8 @@ Alex Bihlo and Roman~O. Popovych.
 David~J. Raymond.
 \newblock Shallow water on a sphere.
 \newblock
-  \url{http://kestrel.nmt.edu/~raymond/classes/ph332/notes/sphere/sphere.pdf},
-  New Mexico Tech. Accessed 2024-11-01.
+  \url{http://kestrel.nmt.edu/~raymond/classes/ph332/notes/sphere/sphere.pdf}.
+\newblock New Mexico Tech. Accessed 2024-11-01.
 
 \bibitem{shallow_water_gfdl}
 Geophysical Fluid Dynamics~Laboratory (GFDL).
@@ -212,6 +212,14 @@ Swarthmore College.
 \newblock \url{https://lpsa.swarthmore.edu/NumInt/NumIntFourth.html}.
 \newblock Accessed: 2025-01-15.
 
+\bibitem{mol}
+Jesse Goodman.
+\newblock Lecture notes: Numerical methods ii.
+\newblock
+  \url{https://math.nyu.edu/~goodman/teaching/NumericalMethodsII2016/notes/lecture3.pdf},
+  2016.
+\newblock New York University. Accessed: 2025-01-15.
+
 \bibitem{Fourier_Transform}
 Wikipedia.
 \newblock Fourier transform.
@@ -232,7 +240,7 @@ Siddarth Maddali.
   Accessed: 2024-11-18.
 
 \bibitem{Github_SWE}
-Melissa~Ulsøe Jessen.
+M.~U. Jessen.
 \newblock {Shallow-Water-Equations}.
 \newblock \\\url{https://github.com/MelissaJessen/Shallow-Water-Equations},
   2024-2025.
