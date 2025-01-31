@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1738344610.35068 "main.aux" "main.bbl" "main" 1738344619.26129 0
-  "./bibl.bib" 1738344358 15864 3cb2f6fd5af5d11e0040f246d8e6bfc9 ""
+["bibtex main"] 1738344653.12894 "main.aux" "main.bbl" "main" 1738344662.48043 0
+  "./bibl.bib" 1738344651 15866 f0fa66467c5a5d49718a9b4b17bd3b52 ""
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291864736 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "main.aux" 1738344616 51968 72983681e035abe710fc1379170606b7 "pdflatex"
+  "main.aux" 1738344660 51968 72983681e035abe710fc1379170606b7 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1738344610.78245 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1738344619.26325 0
+["pdflatex"] 1738344653.8434 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1738344662.48143 0
   "C:/Users/Matteo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1738156817 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Matteo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1728897231 11548 420b7f80b41b233cad6f319547e72170 ""
   "C:/Users/Matteo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1726253485 24265805 34fa3860fca3f94c581d5d8735e54ea8 ""
@@ -466,11 +466,11 @@
   "frontmatter/acronyms.tex" 1738243069 1224 60abbfdc8a83870b8777072f1bb67f25 ""
   "frontmatter/approval.tex" 1738331296 595 8c082b8b25a3defebc616ab630a78bb9 ""
   "frontmatter/statics.tex" 1734602593 546 c986b37bd9ebb7cc9113a04de8cd1e25 ""
-  "main.aux" 1738344616 51968 72983681e035abe710fc1379170606b7 "pdflatex"
-  "main.bbl" 1738344610 9527 194568fe14cab984296c9751a2a25309 "bibtex main"
-  "main.out" 1738344616 9999 7795fb0a15acaed2593cc720e0fff6cb "pdflatex"
+  "main.aux" 1738344660 51968 72983681e035abe710fc1379170606b7 "pdflatex"
+  "main.bbl" 1738344653 9529 b9fd18c755f34787fa2bc17bd13eebfd "bibtex main"
+  "main.out" 1738344660 9999 7795fb0a15acaed2593cc720e0fff6cb "pdflatex"
   "main.tex" 1738332899 5925 040e132d7a935730b8f21f13e49bde57 ""
-  "main.toc" 1738344616 4345 94454c3a84e5706f353ea366a41c741d "pdflatex"
+  "main.toc" 1738344660 4345 94454c3a84e5706f353ea366a41c741d "pdflatex"
   (generated)
   "main.aux"
   "main.log"

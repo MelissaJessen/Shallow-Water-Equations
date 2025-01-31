@@ -1,0 +1,50 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\textbf {Preface}}{i}{chapter*.1}%
+\contentsline {section}{\textbf {Abstract}}{ii}{chapter*.2}%
+\contentsline {section}{\textbf {Acknowledgements}}{iii}{chapter*.3}%
+\contentsline {section}{\textbf {Acronyms}}{iv}{chapter*.4}%
+\contentsline {section}{\textbf {Contents}}{v}{section*.5}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Literature}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Thesis overview}{4}{section.1.3}%
+\contentsline {chapter}{\numberline {2}The Shallow Water Equations}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Notation}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Derivation of the Shallow Water Equations}{6}{section.2.2}%
+\contentsline {section}{\numberline {2.3}The Shallow Water Equations in vector form}{11}{section.2.3}%
+\contentsline {section}{\numberline {2.4}The 1D Shallow Water Equations in integral form}{11}{section.2.4}%
+\contentsline {section}{\numberline {2.5}The Shallow Water Equations in Spherical Coordinates}{12}{section.2.5}%
+\contentsline {section}{\numberline {2.6}The Linearized Shallow Water Equations in Spherical Coordinates}{18}{section.2.6}%
+\contentsline {chapter}{\numberline {3}The Finite Volume Method}{20}{chapter.3}%
+\contentsline {section}{\numberline {3.1}The Finite Volume Method for the 1D Shallow Water Equations}{21}{section.3.1}%
+\contentsline {section}{\numberline {3.2}The Finite Volume Method for the 2D Shallow Water Equations}{23}{section.3.2}%
+\contentsline {section}{\numberline {3.3}The Finite Volume Method for the spherical 1D Linearized Shallow Water Equations}{24}{section.3.3}%
+\contentsline {section}{\numberline {3.4}The Riemann problem}{26}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}The Dam-Break problem}{27}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Wave decomposition in the Riemann problem}{27}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}Numerical fluxes}{29}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Neural Networks and Fourier Neural Operators}{32}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Convolutional Neural Networks}{32}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Fourier Neural Operators}{33}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Data generation}{37}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Data generation using the Finite Volume Method}{37}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Data generation for the sphere}{42}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Numerical results}{46}{chapter.6}%
+\contentsline {section}{\numberline {6.1}The 1D Dam Break Problem}{46}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Toro test cases}{47}{section.6.2}%
+\contentsline {section}{\numberline {6.3}The 1D linearized Shallow Water Equations on a sphere}{53}{section.6.3}%
+\contentsline {section}{\numberline {6.4}The 2D idealised Circular Dam Break Problem}{53}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Scalability}{54}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Animations}{55}{section.6.6}%
+\contentsline {chapter}{\numberline {7}Data-driven results}{57}{chapter.7}%
+\contentsline {section}{\numberline {7.1}The 1D Shallow Water Equations with Gaussian initial conditions}{57}{section.7.1}%
+\contentsline {section}{\numberline {7.2}The 1D linearized Shallow Water Equations in Spherical Coordinates}{63}{section.7.2}%
+\contentsline {section}{\numberline {7.3}The 2D Shallow Water Equations with Gaussian initial conditions}{67}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Long-term predictions for the 2D Shallow Water Equations}{72}{subsection.7.3.1}%
+\contentsline {section}{\numberline {7.4}Summary}{75}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Discussion}{76}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusion}{78}{chapter.9}%
+\contentsline {chapter}{Bibliography}{82}{chapter*.120}%
+\contentsline {chapter}{\numberline {A}Appendix}{83}{appendix.A}%
+\contentsline {section}{\numberline {A.1}2D SWE long term prediction}{83}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Code}{85}{section.A.2}%
