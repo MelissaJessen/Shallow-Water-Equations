@@ -8,6 +8,7 @@ Unlike traditional methods, which may struggle to capture sharp gradients or dis
 This characteristic makes it particularly well-suited for problems involving abrupt changes in the flow, such as those encountered in the modeling of floods, tsunamis, or dam breaks.
 
 The approach described here is based on the work of LeVeque~\cite{LeVeque2002}, who developed a framework for using the FVM in the context of hyperbolic systems of PDEs.
+Additionally, this work is informed by a special course on the FVM~\cite{special_course}, which covered its application to the 1D shallow water equations.
 The key idea is to discretize the computational domain into small cells or control volumes and compute the fluxes across the boundaries of these cells.
 The solution within each cell is then updated using the information from neighboring cells, ensuring that conservation laws are satisfied.
 By solving the local Riemann problem at the cell interfaces, the FVM can accurately capture discontinuities and preserve the sharp transitions between different flow regimes.

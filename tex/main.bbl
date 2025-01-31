@@ -201,6 +201,12 @@ Randall~J. LeVeque.
 \newblock Cambridge Texts in Applied Mathematics. Cambridge University Press,
   2002.
 
+\bibitem{special_course}
+M.~U. Jessen.
+\newblock {Finite Volume Method for Solving 1D and 2D Shallow Water Equations},
+  June 2024.
+\newblock Special course, Technical University of Denmark.
+
 \bibitem{LeVeque_1992}
 Randall~J. LeVeque.
 \newblock {\em Numerical Methods for Conservation Laws}.
