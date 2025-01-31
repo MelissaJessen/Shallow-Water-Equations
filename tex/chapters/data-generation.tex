@@ -5,7 +5,7 @@ The quality and relevance of the data directly impact the training and performan
 We begin by detailing the data generation process for the 1D SWE using the FVM with fluxes determined from an exact Riemann solver.
 Next, we describe the approach for generating data for the 1D LSWE in spherical coordinates.
 We also present the methodology for data generation in the context of the 2D SWE.
-Finally, we provide a brief introduction of how we plan to generate data for training a spherical Fourier neural operator (SFNO) for applications on a planetary scale.
+Finally, we provide a brief introduction of a plan to generate data for training a spherical Fourier neural operator (SFNO) for applications on a planetary scale.
 
 \section{Data generation using the Finite Volume Method}\label{sec:data_generation_fvm}
 In this section we clarify the process of generating data using our numerical solver, that is, the FVM.
@@ -72,7 +72,7 @@ The value $s_{\max}$ is calculated as
 where $u_i$ and $h_i$ are the velocity and water height at grid point $i$, respectively, and $g$ is the gravitational acceleration.
 In general, the CFL number should be less than or equal to one for stability.
 In our case, we use a CFL number of $0.9$.
-The data is generate over the time interval $t = 0.0$ to $t_{\text{end}} = 1.0$ s.
+The data is generated over the time interval $t = 0.0$ s to $t_{\text{end}} = 1.0$ s.
 
 \subsection*{Truncation error}
 When generating data, it is essential to be aware of the truncation error.
@@ -81,7 +81,7 @@ It specifically refers to the difference between the exact solution and the nume
 The critical question is: after a certain number of time steps, how significant is this error?
 If the error becomes too large, it raises concerms about the reliability of the generated data.
 Excessive truncation error could compromise the accuracy of the model trained on this data.
-Therefore, we must carefully evaluate and mitigate these risks to ensure the data's quality.
+Therefore, we must carefully evaluate and mitigate these risks to ensure the quality of the data.
 To assess the truncation error, we generate a more accurate solution using a finer grid.
 This high-resolution solution serves as a reference for evaluating the numerical approximation.
 By comparing the high-resolution solution with the numerical solution, we gain insights into the error introduced by the approximation.
@@ -94,7 +94,7 @@ The results are shown in \autoref{fig:1D_SWE_truncation_error}.
     \caption{Truncation error for the 1D SWE.}\label{fig:1D_SWE_truncation_error}
 \end{figure}
 The high-resolution solution and the low-resolution solution are plotted in \autoref{fig:1D_SWE_truncation_error}.
-We observe that there is a small difference between the high-resolution solution and the low-resolution solution, as the high-resolution solution has a more discontinuous behavior.
+We observe that there is a small difference between the high-resolution solution and the low-resolution solution, as the high-resolution solution has a steeper edge, tending to be more discontinuous.
 However, overall the two solutions are almost identical, indicating that the truncation error is negligible.
 This suggests that the data generated using the FVM is of high quality and can be used for training the data-driven models.
 
@@ -103,9 +103,9 @@ We also consider the 1D linearized shallow water equations in spherical coordina
 The length of the domain corresponds to a full circle, $L = 2 \pi$ radians and is discretized into $N = 500$ points.
 The initial condition for the water height $h$ is specified as a Gaussian function wrapped around the circle, expressed as:
 \begin{align}\label{eq:1D_swe_spherical_ic}
-    h(\theta, 0) &= a \exp \left( \frac{-{(\theta-\mu)}^2}{2 \sigma^2} \right),
+    h(\theta, 0) &= h_0 + a \exp \left( \frac{-{(\theta-\mu)}^2}{2 \sigma^2} \right),
 \end{align}
-where $h$ is the water height in meters, $a$ is the amplitude of the Gaussian, $\mu$ is the mean value, and $\sigma$ is the standard deviation.
+where $h_0$ is the mean water height in meters, $a$ is the amplitude of the Gaussian, $\mu$ is the mean value, and $\sigma$ is the standard deviation.
 The parameters are $a = 1$  and $\mu = \frac{\pi}{4}$ radians.
 We generate data for varying values of $\sigma$ to investigate the effect of the standard deviation on the model performance.
 The data is generated for $\sigma = \frac{\pi}{8}, \sigma = \frac{\pi}{16}$ and $\sigma = \frac{\pi}{32}$.
@@ -134,10 +134,9 @@ The initial conditions for the three different $\sigma$ values can be seen in \a
 From \autoref{fig:swe_spherical_1d_initial_conditions_sigmas}, we observe that the standard deviation \(\sigma\) affects the width of the Gaussian function.
 The smaller the $\sigma$, the narrower the Gaussian function, meaning the curves are steeper.
 This is to test the different models abilities to handle steep gradients.
-The data is generated from $t = 0.0$ to $t_{\text{end}} = 1.0$ s.
+The data is generated from $t = 0.0$ s to $t_{\text{end}} = 1.0$ s.
 
 \subsection*{2D SWE}
-%For the 2D SWE, we also use Gaussian functions with parametric extension~\cite{Gaussian} to generate the initial conditions.
 For the 2D SWE, we also use the Gaussian function as initial condition for the water height $h$, but now in two dimensions:
 \begin{align}\label{eq:2D_swe_ic_gaussian}
     h(x,y,0) &= h_0 + a \cdot \exp \left( -\frac{{(x-x_c)}^2 + {(y-y_c)}^2}{2\sigma^2} \right), 
@@ -156,8 +155,8 @@ To generate the data, we use our FVM solver to solve the 2D SWE with the initial
 The solver is validated by comparing its results with known test cases.
 We generate two distinct data sets containing solutions of the 2D SWE.
 The first data set is created with a variable time step size $\Delta t$, determined dynamically using the CFL condition, where the CFL number is set to $0.9$.
-Data is generated from $t = 0.0$ to $t_{\text{end}} = 5.0$ s.
-To investigate the impact of grid resolution on the model performance, we generate data for different grid resolutions, with values of $N = 64, N = 128$, and $N = 256$.
+Data is generated from $t = 0.0$ s to $t_{\text{end}} = 5.0$ s.
+To investigate the impact of the grid resolution on the model performance, we generate data for different grid resolutions, with values of $N = 64, N = 128$, and $N = 256$.
 This approach also allow us to test the models ability to transfer solutions to different grid resolutions, a critical capability for generalization.
 
 The second data set is designed for long-term predictions, where the time step size is fixed.

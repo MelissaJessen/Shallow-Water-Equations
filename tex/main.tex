@@ -85,6 +85,26 @@
 \makeatother
 
 
+% Signature field
+\newlength{\myl}
+\newcommand{\namesigdatehrule}[1]{\par\tikz \draw [black, densely dotted, very thick] (0.04,0) -- (#1,0);\par}
+\newcommand{\namesigdate}[2][]{%
+\settowidth{\myl}{#2}
+\setlength{\myl}{\myl+10pt}
+\begin{minipage}{\myl}%
+\begin{center}
+    #2  % Insert name from the command eg. \namesigdate{\authorname}
+    \vspace{1.5cm} % Spacing between name and signature line 
+    \namesigdatehrule{\myl}\smallskip % Signature line and a small skip
+    \small \textit{Signature} % Text under the signature line "Signature"
+    \vspace{1.0cm} % Spacing between "Signature" and the date line
+    \namesigdatehrule{\myl}\smallskip % Date line and a small skip
+    \small \textit{Date} % Text under date line "Date" 
+\end{center}
+\end{minipage}
+}
+
+
 % Define the footer
 \fancyfoot[C]{Page \thepage}
 
@@ -126,6 +146,8 @@
 \setcounter{tocdepth}{2}    % Depth of table of content: sub sections will not be included in table of contents
 \setcounter{secnumdepth}{3} % Depth of section numbering: sub sub sections are not numbered
 
+\cleardoublepage  % or \clearpage if using one-sided layout
+\phantomsection   % Ensures hyperlink points correctly
 \addcontentsline{toc}{section}{\textbf{Contents}}
 \tableofcontents
 
