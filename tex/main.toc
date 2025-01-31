@@ -40,11 +40,11 @@
 \contentsline {section}{\numberline {7.1}The 1D Shallow Water Equations with Gaussian initial conditions}{57}{section.7.1}%
 \contentsline {section}{\numberline {7.2}The 1D linearized Shallow Water Equations in Spherical Coordinates}{63}{section.7.2}%
 \contentsline {section}{\numberline {7.3}The 2D Shallow Water Equations with Gaussian initial conditions}{67}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Long-term predictions for the 2D Shallow Water Equations}{71}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.1}Long-term predictions for the 2D Shallow Water Equations}{72}{subsection.7.3.1}%
 \contentsline {section}{\numberline {7.4}Summary}{74}{section.7.4}%
-\contentsline {chapter}{\numberline {8}Discussion}{75}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Conclusion}{77}{chapter.9}%
-\contentsline {chapter}{Bibliography}{81}{chapter*.120}%
-\contentsline {chapter}{\numberline {A}Appendix}{82}{appendix.A}%
-\contentsline {section}{\numberline {A.1}2D SWE long term prediction}{82}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Code}{84}{section.A.2}%
+\contentsline {chapter}{\numberline {8}Discussion}{76}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusion}{78}{chapter.9}%
+\contentsline {chapter}{Bibliography}{82}{chapter*.120}%
+\contentsline {chapter}{\numberline {A}Appendix}{83}{appendix.A}%
+\contentsline {section}{\numberline {A.1}2D SWE long term prediction}{83}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Code}{85}{section.A.2}%
