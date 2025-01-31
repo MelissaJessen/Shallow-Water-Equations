@@ -37,7 +37,7 @@ Consequenlty, this also results in a higher number of data points for $N = 128$ 
 We train a CNN model with several convolutional layers and ReLU activation functions.
 We use the Adam optimizer with a learning rate of $0.001$ and a batch size of $32$.
 We make predictions from $t = 0$ s to $t = 5$ s.
-The model is trained for $500$ epochs.
+The model is trained for $500$ epochs, where the best model is continuously saved based on the validation loss.
 The training and validation loss for the 2D CNN model can be seen in \autoref{fig:2D_CNN_loss}.
 \begin{figure}[H]
     \centering
@@ -55,19 +55,19 @@ From \autoref{fig:2D_CNN_error}, we see that overall the absolute error is small
 The error is largest at the boundaries of the domain. 
 This may be due to the fact that in this case we are working with boundary conditions simulating a wall.
 Hence, when the wave hits the wall, the wave is reflected, and the model has to learn the reflection of the wave.
-This may also lead to discontinuities in the solution, which can be difficult for the model to handle.
+This may also lead to steep edges in the solution, which can be difficult for the model to handle.
 
 \subsubsection*{FNO Model}
 We train a FNO model with the same training/validation/testing split as for the CNN model.
 The FNO model uses 8 Fourier modes, the Adam optimizer with a learning rate of $0.001$, and a batch size of $10$.
-The model is trained for $500$ epochs.
+The model is trained for $500$ epochs, saving the best model continuously.
 The training and validation loss for the 2D FNO model can be seen in \autoref{fig:2D_FNO_loss}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_loss.pdf}
     \caption{Training and validation loss for the 2D FNO model.}\label{fig:2D_FNO_loss}
 \end{figure}
-From \autoref{fig:2D_FNO_loss} we see that the training and validation loss are decreasing, and more or less stable with some fluctations. 
+From \autoref{fig:2D_FNO_loss} we see that the training and validation lossses first decrease quickly and then stabilize.
 The plot suggests that the model has converged.
 The error plot for the last prediction for the 2D FNO can be seen in \autoref{fig:2D_FNO_error}.
 \begin{figure}[H]
@@ -79,7 +79,7 @@ As for the CNN model, the error is largest at the boundaries.
 However, we notice that the absolute error is smaller for the FNO model compared to the CNN model.
 
 \subsubsection*{Comparison}
-We compare the performance of the CNN and FNO models in terms of the MSE and MAE for the predictions.
+We compare the performance of the CNN and the FNO model in terms of the MSE and the MAE for the predictions.
 We test for both $N = 64$ and $N = 128$ grid points in each direction.
 The errors are calculated for the test data, i.e., the last $20\%$ of the time steps.
 The results are summarized in \autoref{tab:results_2D_comparison}, together with the time for training the models.
@@ -116,10 +116,9 @@ The results are summarized in \autoref{tab:results_2D_comparison}, together with
     \end{tabular}
     \caption{Test loss in terms of MSE and MAE, and time for training the models for the 2D SWE.}\label{tab:results_2D_comparison}
 \end{table}
-The errors are low and similar for both models.
-However, we also observe that the FNO model generally requires more time to train.
-Based on theory, FNOs have demonstrated potential in transferring solutions across grids.
-To test this, we train the models on a coarse grid and then make predictions on a finer grid.
+From \autoref{tab:results_2D_comparison} we see that overall the FNO obtains lower errors compared to the CNN model, but the training time is significantly higher.
+From the literature, we know that FNOs have demonstrated potential in transferring solutions across grids.
+To test this, we train the models on a coarse grid and then make predictions on a finer grid without retraining.
 The table below presents the results when the models are trained on a grid with $N = 64$ and subsequently used to make predictions on finer grids with $N = 128$ and $N = 256$.
 \begin{table}[H]
     \centering
@@ -143,17 +142,20 @@ The table below presents the results when the models are trained on a grid with 
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=256_MAE_test.txt} &
         \input{C:/Users/Matteo/Shallow-Water-Equations/saved_results/2D_FNO_train_Nx=64_test_N=256_time.txt} \\
     \end{tabular}
-    \caption{Test loss in terms of MSE and MAE, and time for training the FNO model on a grid with $N = 64$ and then making predictions on a grid with $N = 128$ and $N=256$.}\label{tab:results_2D_train_64_test_128_256}
+    \caption{Test loss in terms of MSE and MAE, and the time for making predictions on a grid with $N = 128$ and $N=256$.}\label{tab:results_2D_train_64_test_128_256}
 \end{table}
-From the results in \autoref{tab:results_2D_train_64_test_128_256} we see that FNO model achieves small errors both for $N = 128$ and $N = 256$, indicating its ability to generalize to a finer grid.
-The CNN model shows higher errors, but might still be accurate enough depending on the application.
+From the results in \autoref{tab:results_2D_train_64_test_128_256} we see that the FNO model achieves small errors both for $N = 128$ and $N = 256$, indicating its ability to generalize to a finer grid.
+However, the prediction time is also higher.
+The CNN model is faster, but shows higher errors.
+It might still be accurate enough depending on the application.
 This ability to train the FNO model (and partially, also the CNN model) on a coarse grid and make predictions on a finer grid is a significant advantage.
-In htis study, it is particularly useful for solving the SWE numerically, as solving the SWE on a fine grid using the FVM is computationally expensive.
+In this study, it is particularly useful for solving the SWE numerically, as solving the SWE on a fine grid using the FVM is computationally expensive.
 
 By comparing to the run time of the FVM, shown in \autoref{tab:scalability}, we observe that for $N = 64$, the FVM is faster than the data-driven models.
 For $N = 128$, the CNN is faster than the FVM, while the FNO is slower.
 This holds both when the models are trained on a grid with $N = 128$ and when they are trained on a grid with $N = 64$ and then used to make predictions on a grid with $N = 128$.
-For $N = 256$, both models are fasyer than the FVM when trained on a grid with $N = 64$ and then using grid transferability, maintaining the same accuracy as for $N = 64$.
+For $N = 256$, both models are faster than the FVM when trained on a grid with $N = 64$ and then making predictions for $N = 256$.
+When using grid transferability, the models are maintaining the same accuracy as for $N = 64$.
 This way, the CNN model is over 60 times faster than the FVM, while the FNO model is over 7 times faster.
 This comparison includes the time for training the models.
 However, it is important to note that once trained, the models can generate predictions much faster than the FVM, even for new initial conditions.
@@ -162,7 +164,7 @@ This represents a major advantage, as it significantly reduces computational tim
 
 
 \subsection{Long-term predictions for the 2D Shallow Water Equations}
-In this section, we evaluate the models' ability to generalize to longer time horizons.
+In this section, we evaluate the ability of the models' ability to generalize to longer time horizons.
 The previous models were trained on data generated using the FVM with vairable time step sizes.
 To control the specific time points for long-term predictions, a fixed time step size is required.
 Consequenlty, we have generated data for the 2D SWE using $N = 64$ points in each spatial direction and a fixed time step size of $\Delta t = 0.025$ s.
@@ -210,13 +212,13 @@ The error plots of the long-term predictions from the FNO model after 20 time st
     \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/2D_FNO_long_term_predictions_error_Ntrain=64_Npred=64_idx=20.pdf}
     \caption{Error plot for the long-term prediction for the 2D FNO model.}\label{fig:2D_FNO_long_term_error}
 \end{figure}
-From the error plot in \autoref{fig:2D_FNO_long_term_error}, we see that the error is bigger than for the short-term predictions in \autoref{fig:2D_FNO_error}, but for many applications still acceptable.
-We also see that error for the FNO model is smaller than for the CNN model, indicating that the FNO model is better able to generalize further in time and make long-term predictions.
+From the error plot in \autoref{fig:2D_FNO_long_term_error}, we see that the absolute error is bigger than for the short-term predictions in \autoref{fig:2D_FNO_error}, but for many applications still acceptable.
+We also see that the error for the FNO model is smaller than for the CNN model, indicating that the FNO model is better able to generalize further in time and make long-term predictions.
 A plot of the predictions and the ground truth can be found in \autoref{fig:2D_FNO_long_term_predictions} in Appendix \autoref{app:2D_SWE_long_term_prediction}, where we see that the FNO model is able to capture the dynamics of the solution well.
 
 \subsubsection*{Comparison}
-To assess the models performance over time, we plot the error at each time step for long-term predictions up to $n = 200$ time steps into the future.
-Then CNN and FNO models are compared in terms of MSE, MAE and the absolute max error for long-term predictions, as shown in \autoref{fig:2D_CNN_FNO_mse_mae_max_error}.
+To assess the models' performance over time, we plot the error at each time step for long-term predictions up to $n = 200$ time steps into the future.
+The CNN and FNO models are compared in terms of MSE, MAE and the absolute max error for long-term predictions, as shown in \autoref{fig:2D_CNN_FNO_mse_mae_max_error}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.99\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/2D_CNN_FNO_mse_mae_max_error.pdf}
@@ -229,13 +231,13 @@ This raises a key question: is it better to have one large error or many small e
 
 As shown in \autoref{fig:2D_CNN_FNO_mse_mae_max_error}, the error increases as predictions are made further in time.
 Overall, the FNO model exhibits lower errors compared to the CNN model, indicating it may offer more accurate long-term predictions.
-We have plotted the predictions made with the CNN and FNO models for $t = 12.5$ s in \autoref{fig:2D_CNN_long_term_predictions_2} and \autoref{fig:2D_FNO_long_term_predictions_2}.
-These figures can be found in Appendix \autoref{app:2D_SWE_long_term_prediction}.
+We have plotted the predictions made with the CNN and FNO models for $t = 12.5$ s in \autoref{fig:2D_CNN_long_term_predictions_2} and \autoref{fig:2D_FNO_long_term_predictions_2} in Appendix \autoref{app:2D_SWE_long_term_prediction}.
 Notably, the FNO model demonstrates the ability to generalize further in time, maintaining relatively low errors even after $n = 200$ time steps, comparable to the errors observed during the initial time steps.
 This is particularly impressive, as small errors early in forecasting applications often lead to significant errors over time.
 The FNO model appears capable of stabilizing errors and providing accurate predictions over long time horizons, highlighting its potential for long-term predictions.
+In the next section, we will summarize the results.
 
-
+\newpage
 \section{Summary}
 In this section, we will shortly describe our key finding for the results for both numerical and data-driven methods.
 

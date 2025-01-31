@@ -4,7 +4,7 @@ The discussion is structured around key aspects of the FVM, data-driven approach
 
 Based on the test cases in \autoref{ch:numerical_results}, the FVM implemented in this thesis has proven to be a reliable method for solving the SWE.
 When solving PDEs, numerical methods in general have the advantage of being able to control errors.
-By refining the grid size or time step, it is possible to estimate and reduce errors, ensuring high accuracy in the solution.
+By refining the grid size or time step size, it is possible to estimate and reduce errors, ensuring high accuracy in the solution.
 This capability is crucial for applications requiring precise simulations.
 For some cases of modelling flood dynamics or tsunamis, where the accuracy of the simulation is crucial, the FVM is a suitable method.
 However, the reliance on fine grid resolutions for higher accuracy comes at the cost of increased computational time.
@@ -12,7 +12,7 @@ This limitation makes numerical methods, and in this case the FVM, less suitable
 
 The data-driven methods investigated in this thesis, namely the CNN and the FNO, demonstrated in \autoref{ch:data-driven-results} their ability to solve the SWE.
 While the accuracy of these models was lower compared to the FVM, this can be attributed to the small training data set and the limited number of epochs used in training.
-Training on a larger data set and for more epochs would likely improve the performance of the data-driven methods, but at the cost of additional computational time during training.
+Training on a larger data set and for more epochs would most likely improve the performance of the data-driven methods, but at the cost of additional computational time during training.
 A limitation of the data-driven methods is that we do not have the same control over errors as with numerical methods.
 It is difficult to estimate errors for data-driven methods, as they do not have the same transparency as numerical methods.
 For some applications, this also makes it difficult to let the data-driven methods stand alone.
@@ -29,23 +29,23 @@ A significant advantage of the data-driven methods is their ability to generaliz
 This was demonstrated in the 1D SWE case, where both the CNN and FNO successfully predicted solutions for new initial conditions in less than one second.
 The FNO maintained high accuracy, while the CNN experienced a slight drop in precision.
 This capability makes data-driven methods particularly valuable for applications requiring rapid predictions.
-Another area where the data-driven methods excel is in transferring solutions across grids, meaning the models can be trained on one grid size and used to predict solutions on another grid size.
+Another area where the data-driven methods excel is in transferring solutions across grids, meaning the models can be trained on one grid size and then used to predict solutions on another grid size.
 Both the CNN and FNO models maintained accuracy when transtioning solutions from a coarse grid to a fine grid, with the FNO outperforming the CNN in terms of MSE and MAE.
 This ability to transfer solutions across grids is a promising feature of data-driven methods, as it can help address scalability issues associated with numerical methods.
 By training and saving a model for use across various grid sizes, data-driven methods offer a practical alternative to numerical methods when speed is a priority.
-Additionally, their shorter computation time is a sustainability aspect, as it reduces the energy consumption of the computations.
+Additionally, their shorter computation time is important considering a sustainability aspect, as it reduces the energy consumption of the computations.
 From the literature, it is also suggested that grid transferability is one of the most notable strengts of FNOs.
 
 The literature highlights the strong potential of FNOs for long-term predictions, and this study demonstrated promising results in this area.
-By training an FNO model on just 8 seconds of data, the model was able to predict solutions up to 5 seconds into the future while maintaining accuracy.
+By training a FNO model on just 8 seconds of data, the model was able to predict solutions up to 5 seconds into the future while maintaining accuracy.
 This capability is particularly valuable for applications requiring long-term predictions, such as flood forecasting or climate modelling.
-The CNN model also achieved acceptable results for long-term predictions, but its accuracy decreased at longer time horizons.
+The CNN model also achieved acceptable results for the initial time steps, but its accuracy decreased at longer time horizons.
 This increasing error highlights a limitation of the CNN model for long-time forecasts compared to the FNO model.
 The potential of the FNO model is definitely interesting to explore further, as it could be a valuable tool for long-term predictions in various applications.
 The FNO model could for instance be tested across diverse applications and problems, to determine whether it can offer advantages in scenarios beyond those explored in this study.
 Such further testing could reveal new insights into the model's robustness and effectiveness in different domains, such as weather forecasting or climate modelling.
 
-Once trained and saved, both models can generate predictions rapidly, offering practical alternatives to numerical methods when speed is a priority.
+Summarized, we can highlight that once trained and saved, both data-driven models can generate predictions rapidly, offering practical alternatives to numerical methods when speed is a priority.
 Nevertheless, numerical methods retain the advantage of higher accuracy, particularly for applications requiring precise simulations.
 
 Another crucial aspect to consider is the quality of the data used to train the models.
