@@ -1,65 +1,72 @@
 \appendix
-%\chapter{Appendix}
-\section{Toro test cases}\label{app:toro_test_cases}
 
-\subsection*{Toro test case 1}
+\titleformat{\chapter}[block] % Format for the chapter title
+  {\normalfont\huge\bfseries}  % Title font
+  {\thechapter}{1em}{}         % Chapter numbering formatting
+\titlespacing*{\chapter}{0pt}{-1cm}{1em}  % Adjust the spacing: 0pt for left, -2cm to move up, 1em for after title
+
+\chapter*{Appendix}  % This adds "Appendix" to the ToC but avoids double title
+\addcontentsline{toc}{chapter}{Appendix}  % Adds "Appendix" to the ToC manually
+\setcounter{section}{0}  % Reset section counter
+\renewcommand{\thesection}{\Alph{section}}  % Change section numbering to letters (A, B, C...)
+%\vspace{-1.5cm}
+\section{Toro test cases}\label{app:toro_test_cases}
+\vspace{-0.5cm}
+\subsection{Toro test case 1}\label{app:toro_test_case_1}
 
 \begin{figure}[H]
     \centering
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final_GOD.pdf}
-        \caption{Godunov}
+        \subcaption{Godunov flux.}
     \end{minipage}%
     \hfill
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final_LF.pdf}
-        \caption{LF}
+        \subcaption{LF flux.}
     \end{minipage}
-    
+
     \vspace{0.5cm} % Vertical space between rows
     
     \begin{minipage}{0.45\textwidth}
         \centering
-        % Replace with your other figure for LW
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final_LW.pdf}
-        \caption{LW}
+        \subcaption{LW flux.}
     \end{minipage}%
     \hfill
     \begin{minipage}{0.45\textwidth}
         \centering
-        % Replace with your other figure for FORCE
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final_FORCE.pdf}
-        \caption{FORCE}
+        \subcaption{FORCE flux.}
     \end{minipage}
 
     \vspace{0.5cm} % Vertical space between rows
     
     \begin{minipage}{0.45\textwidth}
         \centering
-        % Replace with your other figure for HLL
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final_HLL.pdf}
-        \caption{HLL}
+        \subcaption{HLL flux.}
     \end{minipage}
-    \caption{Comparison of different methods}
+    \caption{Comparison of the different fluxes for Toro test case 1.}\label{fig:toro_test1_fluxes}
 \end{figure}
 
 
-\subsection{Toro test case 2}
+\subsection{Toro test case 2}\label{app:toro_test_case_2}
 
 \begin{figure}[H]
     \centering
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final_LF.pdf}
-        \caption{Godunov}
+        \subcaption{LF flux.}
     \end{minipage}%
     \hfill
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final_FORCE.pdf}
-        \caption{LF}
+        \subcaption{FORCE flux.}
     \end{minipage}
     
     \vspace{0.5cm} % Vertical space between rows    
@@ -67,26 +74,26 @@
         \centering
         % Replace with your other figure for HLL
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_final_HLL.pdf}
-        \caption{HLL}
+        \subcaption{HLL flux.}
     \end{minipage}
-    \caption{Comparison of different methods}
+    \caption{Comparison of the different fluxes for Toro test case 2.}\label{fig:toro_test2_fluxes}
 \end{figure}
 
 
 
-\subsection{Toro test case 3}
+\subsection{Toro test case 3}\label{app:toro_test_case_3}
 \begin{figure}[H]
     \centering
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final_GOD.pdf}
-        \caption{Godunov}
+        \subcaption{Godunov flux.}
     \end{minipage}%
     \hfill
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final_LF.pdf}
-        \caption{LF}
+        \subcaption{LF flux.}
     \end{minipage}
     
     \vspace{0.5cm} % Vertical space between rows
@@ -95,14 +102,14 @@
         \centering
         % Replace with your other figure for LW
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final_LW.pdf}
-        \caption{LW}
+        \subcaption{LW flux.}
     \end{minipage}%
     \hfill
     \begin{minipage}{0.45\textwidth}
         \centering
         % Replace with your other figure for FORCE
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final_FORCE.pdf}
-        \caption{FORCE}
+        \subcaption{FORCE flux.}
     \end{minipage}
 
     \vspace{0.5cm} % Vertical space between rows
@@ -111,28 +118,27 @@
         \centering
         % Replace with your other figure for HLL
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final_HLL.pdf}
-        \caption{HLL}
+        \subcaption{HLL flux.}
     \end{minipage}
-    \caption{Comparison of different methods}
+    \caption{Comparison of the different fluxes for Toro test case 3.}\label{fig:toro_test3_fluxes}
 \end{figure}
 
 
 
 
-
-\subsection{Toro test case 4}
+\subsection{Toro test case 4}\label{app:toro_test_case_4}
 \begin{figure}[H]
     \centering
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final_GOD.pdf}
-        \caption{Godunov}
+        \subcaption{Godunov flux.}
     \end{minipage}%
     \hfill
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final_LF.pdf}
-        \caption{LF}
+        \subcaption{LF flux.}
     \end{minipage}
     
     \vspace{0.5cm} % Vertical space between rows
@@ -141,14 +147,14 @@
         \centering
         % Replace with your other figure for LW
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final_LW.pdf}
-        \caption{LW}
+        \subcaption{LW flux.}
     \end{minipage}%
     \hfill
     \begin{minipage}{0.45\textwidth}
         \centering
         % Replace with your other figure for FORCE
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final_FORCE.pdf}
-        \caption{FORCE}
+        \subcaption{FORCE flux.}
     \end{minipage}
 
     \vspace{0.5cm} % Vertical space between rows
@@ -157,27 +163,27 @@
         \centering
         % Replace with your other figure for HLL
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test4_final_HLL.pdf}
-        \caption{HLL}
+        \subcaption{HLL flux.}
     \end{minipage}
-    \caption{Comparison of different methods}
+    \caption{Comparison of the different fluxes for Toro test case 4.}\label{fig:toro_test4_fluxes}
 \end{figure}
 
 
 
-\subsection{Toro test case 5}
+\subsection{Toro test case 5}\label{app:toro_test_case_5}
 
 \begin{figure}[H]
     \centering
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final_LF.pdf}
-        \caption{Godunov}
+        \subcaption{LF flux.}
     \end{minipage}%
     \hfill
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final_FORCE.pdf}
-        \caption{LF}
+        \subcaption{FORCE flux.}
     \end{minipage}
     
     \vspace{0.5cm} % Vertical space between rows    
@@ -185,9 +191,9 @@
         \centering
         % Replace with your other figure for HLL
         \includegraphics[width=\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final_HLL.pdf}
-        \caption{HLL}
+        \subcaption{HLL flux.}
     \end{minipage}
-    \caption{Comparison of different methods}
+    \caption{Comparison of the different fluxes for Toro test case 5.}\label{fig:toro_test5_fluxes}
 \end{figure}
 
 

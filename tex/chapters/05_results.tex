@@ -81,6 +81,7 @@ The initial conditions for test case 1 are visualised in \autoref{fig:toro_test1
 \end{figure}
 For this test case all the fluxes work well, but there are minor differences in the solution, which can be seen in \autoref{fig:toro_test1_final}.
 For instance, we see that the Lax-Wendroff (LW) flux has some oscillations in the solution at the discontinuity, which is not present in the other fluxes.
+Individual plots for the different fluxes can be found in \autoref{fig:toro_test1_fluxes} in Appendix~\ref{app:toro_test_case_1}.
 Similarly to the case of the 1D dam break problem in \autoref{sec:1D_dam_break}, we see that the solution consists of a right shock wave and a left rarefaction wave.
 
 \newpage
@@ -101,6 +102,7 @@ In test case 2 we have two rarefaction waves, one on the left side and one on th
 As they are travelling in opposite directions (away from each other), due to the initial velocity, there will be created a nearly dry bed in the middle of the domain.
 Many methods have difficulties with this test case as they may compute a negative water height.
 For these experiments we were able to get close to the true solution, using Lax-Friedrich flux, FORCE flux and HLL flux.
+The results for the different fluxes can be found in \autoref{fig:toro_test2_fluxes} in Appendix~\ref{app:toro_test_case_2}.
 For the fluxes, Godunov method with exact Riemann solver, and Lax-Wendroff, it was not possible to get an acceptable solution.
 Among the LF, FORCE and HLL fluxes we also see differences in how close the numerical solution comes to $h = 0$ m at $x = 25$ m.
 
@@ -113,18 +115,18 @@ The initial conditions for test case 3 are given in \autoref{fig:toro_test3_init
     \caption{Initial conditions for the test case.}\label{fig:toro_test3_initial}
 \end{figure}
 In \autoref{fig:toro_test3_initial} we see that this is a dam break problem, as the initial velocity is zero everywhere.
-The solution after $t=4.0$ seconds is given in \autoref{fig:toro_test3_final}.
+The solution after $t=4.0$ s is given in \autoref{fig:toro_test3_final}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.65\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.pdf}
     \caption{Final solution for the test case after $t = 4.0$ s.}\label{fig:toro_test3_final}
 \end{figure}
-In this case, we are challenged with a dry-bed region in the right part of the domain.
-To solve case 3, with the FVM we must add a small amount to $h_R$, since the method does not handle $h_R = 0$ m well.
-We set $h_R = 0.00005$ m to solve it numerically, but the true solution is for $h_R = 0$ m.
-By running experiments with different values of $h_R$, we see that the solution converges to the true solution as $h_R$ approaches 0.
-From \autoref{fig:toro_test3_final} we see that when it comes to predicting the velocity, there are some differences in how the different fluxes perform.
-Overall, using the Lax-Wendroff (LW) flux gives the closest solution to the true solution for the velocity.
+In case 3, we face a dry-bed region on the right side of the domain.
+To handle this with the FVM, a small value is added to $h_R$, as the method struugles with $h_R = 0$ m.
+We set $h_R = 0.00005$ m for numerical stability, but the true solution is for $h_R = 0$ m.
+Experiments show the solution converges to the true solution as $h_R$ approaches 0.
+As shown in \autoref{fig:toro_test3_final}, there are differences in velocity prediction performance across the fluxes.
+All fluxes are visualised in \autoref{fig:toro_test3_fluxes} in Appendix~\ref{app:toro_test_case_3}, with the Lax-Wendroff (LW) flux providing the closest velocity solution.
 
 \newpage
 \subsection*{Test case 4}
@@ -144,6 +146,7 @@ This test problem is symmetric to test case 3, meaning we face the same challeng
 We set $h_L = 0.00005$ m, and the solution converges to the true solution as $h_L$ approaches 0.
 This case is included to test if the results are as expected.
 As in test case 4, we observe differences in the fluxes performance, and again we observe that the Lax-Wendroff (LW) flux comes closest to the true solution for the velocity.
+The results for the different fluxes can be found in \autoref{fig:toro_test4_fluxes} in Appendix~\ref{app:toro_test_case_4}.
 
 \newpage
 \subsection*{Test case 5}
@@ -162,6 +165,7 @@ The initial conditions for test case 5 are given in \autoref{fig:toro_test5_init
 From~\autoref{fig:toro_test5_final} we see that the numerical solution for the velocity $v$ at $t=5.0$ is smooth, where the true solution is discontinuous. 
 In this test case there are also challenges with some of the fluxes due to the generation of a dry-bed region in the middle of the domain.
 The fluxes that are not able to solve this case are: the Godunov method with exact Riemann solver and the Lax-Wendroff flux, the same as in test case 2.
+Individual plots for the different fluxes can be found in \autoref{fig:toro_test5_fluxes} in Appendix~\ref{app:toro_test_case_5}.
 The solution consists of two rarefaction waves, one on the left side and one on the right side, and a dry-bed region in the middle.
 To get an overview of which fluxes that were able to produce solutions for the test cases, consider~\autoref{tab:toro_fluxes}.
 \begin{table}[H]
