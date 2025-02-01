@@ -120,8 +120,8 @@ The solution after $t=4.0$ seconds is given in \autoref{fig:toro_test3_final}.
     \caption{Final solution for the test case after $t = 4.0$ s.}\label{fig:toro_test3_final}
 \end{figure}
 In this case, we are challenged with a dry-bed region in the right part of the domain.
-To solve case 3, with the FVM we must add a small amount to $h_R$, since the method does not handle $h_R = 0$ well.
-We set $h_R = 0.00005$ to solve it numerically, but the true solution is for $h_R = 0$.
+To solve case 3, with the FVM we must add a small amount to $h_R$, since the method does not handle $h_R = 0$ m well.
+We set $h_R = 0.00005$ m to solve it numerically, but the true solution is for $h_R = 0$ m.
 By running experiments with different values of $h_R$, we see that the solution converges to the true solution as $h_R$ approaches 0.
 From \autoref{fig:toro_test3_final} we see that when it comes to predicting the velocity, there are some differences in how the different fluxes perform.
 Overall, using the Lax-Wendroff (LW) flux gives the closest solution to the true solution for the velocity.
@@ -141,7 +141,7 @@ The initial conditions for test case 4 are given in \autoref{fig:toro_test4_init
     \caption{Final solution for the test case after $t = 4.0$ s.}\label{fig:toro_test4_final}
 \end{figure}
 This test problem is symmetric to test case 3, meaning we face the same challenges of a dry-bed region, now located in the left part of the domain.
-We set $h_L = 0.00005$, and the solution converges to the true solution as $h_L$ approaches 0.
+We set $h_L = 0.00005$ m, and the solution converges to the true solution as $h_L$ approaches 0.
 This case is included to test if the results are as expected.
 As in test case 4, we observe differences in the fluxes performance, and again we observe that the Lax-Wendroff (LW) flux comes closest to the true solution for the velocity.
 

@@ -79,7 +79,7 @@ The observations are time shifted, meaning $u_j = G(a_j)$, where $G$ is the true
 Thus, the goal is to approximate the mapping $a_j \mapsto u_j$ for all $j = 0, 1, \ldots, N-1$.
 
 The process begins with the input layer $P$, typically a shallow fully connected neural network, which generates $v_0(x) = P(a(x))$.
-The FNO is an iteraive neural operator, applying several updates to compute intermediate representations $v_1, v_2, \ldots, v_T$.
+The FNO is an iterative neural operator, applying several updates to compute intermediate representations $v_1, v_2, \ldots, v_T$.
 In the context of this project, we have that $a(x) = v_t(x)$ and $u(x) = v_{t+1}(x)$.
 An update $v_t \mapsto v_{t+1}$ is defined as
 \begin{align}

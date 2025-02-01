@@ -100,13 +100,15 @@ The FVM is closely related to the finite difference method (FDM), but they diffe
 Where the FDM tends to break down near discontinuities in the solution, the FVM is more suited, since it is based on the integral form of the conservation laws.
 The key distinction between the FVM and the FDM lies in their formulation: while the FVM is based on the integral conservation over finite volumes, the FDM is based on satisfying the differential equations point-wise at mesh points.
 Similarly, the FVM and the finite element method (FEM) differ in some of their principles and applications.
-Like the FVM, the FEM divides the domain into smaller elements, but approximates the solution using interpolation functions.
-The FEM is especially effective for solving problems with complex geometries.
-
+In the FVM, the solution is represented by cell averages, and the integral formulation defines how the differential equations are satisfied at the local level.
+In contrast, the FEM approximates the solution using globally defined piece-wise continuous basis functions.
+Derived from the weak (integral) from of a PDE, it is particularly effective for solving problems with complex geometries.
+%Like the FVM, the FEM divides the domain into smaller elements, but approximates the solution using interpolation functions.
+%The FEM scheme is derived from a weak form (integral form).
 
 \section{The Finite Volume Method for the 2D Shallow Water Equations}
 We now extend the FVM to two spatial dimensions, meaning we consider both the $x-$ and $y-$direction.
-Consider the 2D SWE in vector form~\eqref{eq:vector_form_2D} with $\mathbf{S(U)} = 0$:
+Consider the 2D SWE in vector form~\eqref{eq:vector_form_2D} with the source term defined such that $\mathbf{S(U)} = 0$:
 \begin{align}\label{eq:2D_SWE}
     \mathbf{U}_t + \mathbf{F(U)}_x + \mathbf{G(U)}_y = 0.
 \end{align}
