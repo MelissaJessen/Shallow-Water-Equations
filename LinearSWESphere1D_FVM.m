@@ -96,7 +96,7 @@ end
 %% Save data to mat.file
 % Define folder
 
-folder = 'C:\Users\Matteo\Shallow-Water-Equations\dataFNO';
+folder = 'Shallow-Water-Equations\dataFNO';
 filename = ['linear-SWE-sphere-1d_sigma=',num2str(sigma_no),',T=',num2str(T)];
 fullpath = fullfile(folder, filename);
 save(fullpath,'h_storage', 't_storage', 'theta');
