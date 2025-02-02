@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1738420584.89188 "main.aux" "main.bbl" "main" 1738441613.31026 0
+["bibtex main"] 1738498676.76653 "main.aux" "main.bbl" "main" 1738498977.51733 0
   "./bibl.bib" 1738344651 15866 f0fa66467c5a5d49718a9b4b17bd3b52 ""
   "C:/Users/Matteo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291864736 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "main.aux" 1738441611 53705 b70f4492d581427b36f6c6e029a7798e "pdflatex"
+  "main.aux" 1738498974 53834 cf4ee341a3cb82d5027b6e505d98d1d8 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1738441606.41038 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1738441613.31107 0
+["pdflatex"] 1738498967.09419 "c:/Users/Matteo/Shallow-Water-Equations/tex/main.tex" "main.pdf" "main" 1738498977.51928 0
   "C:/Users/Matteo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1738156817 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Matteo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1728897231 11548 420b7f80b41b233cad6f319547e72170 ""
   "C:/Users/Matteo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1726253485 24265805 34fa3860fca3f94c581d5d8735e54ea8 ""
@@ -373,6 +373,7 @@
   "C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test1_initial.pdf" 1738411438 13389 6e199880fed51bdd6b17edfc1dab332a ""
   "C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final.pdf" 1738411655 23748 e82f0ddb4d9879440e754b21b1772e5f ""
   "C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final_FORCE.pdf" 1738411666 19025 a94526fbf4b4c43ac1878381d5bd4150 ""
+  "C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final_HLL.pdf" 1738411667 17990 057fcbdae7ae87cafb497517495edfd6 ""
   "C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_final_LF.pdf" 1738411666 17188 525d9017eaac1449d1d92d80a55c09a2 ""
   "C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test2_initial.pdf" 1738411654 13973 5ec8409079d66d6986b6310eb1448bd0 ""
   "C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test3_final.pdf" 1738411678 32193 b3216da3d337a0a7761fad0ea949ecba ""
@@ -467,16 +468,16 @@
   "chapters/01_notation.tex" 1737299489 2900 a541c18b4001f6e86a734380e5ae82a0 ""
   "chapters/02_theory.tex" 1738441417 23944 235bdb4430c62d00e5bf9bb2719ec4a9 ""
   "chapters/03_spherical_coordinates.tex" 1738246089 26982 174bf8ac54fe5800e554473d4b6f7448 ""
-  "chapters/05_Results.tex" 1738415120 23100 c807b4f5257aa4a9fc2e3da4262495b9 ""
-  "chapters/06_discussion.tex" 1738422551 8524 1b877d25131576c680aaa1a2fd618255 ""
+  "chapters/05_Results.tex" 1738498254 23182 dfb289b57fa73b16a3f23a8301fc19b3 ""
+  "chapters/06_discussion.tex" 1738498715 8624 603da67c0e7b4079f5bb5732ef496a3d ""
   "chapters/FNO+NN.tex" 1738397864 15770 f339863ffbe04832e8847c1f38d76ccd ""
-  "chapters/appendix.tex" 1738414687 9714 06330fb6df219a5e72dae96d81985b29 ""
-  "chapters/conclusion.tex" 1738422353 5343 7a3b0a9022e4f05098c46514660d3a9c ""
+  "chapters/appendix.tex" 1738495662 9714 a256dab3817d2b8b2d484c9790cefdc4 ""
+  "chapters/conclusion.tex" 1738498966 5298 b7bd08f02efc97ba4ee87ab7127f9bd8 ""
   "chapters/data-driven-results-2D.tex" 1738420574 22499 17330386a95b9bd9fb9c051af3d86c71 ""
-  "chapters/data-driven-results.tex" 1738398850 25753 b72c1fb004a4abf192c3e42319806945 ""
+  "chapters/data-driven-results.tex" 1738498668 25787 a3226bdbb86a7180e48288f890af4e30 ""
   "chapters/data-generation-sphere.tex" 1738335758 7149 2a348252c1ac4433827c0854d80b38ac ""
   "chapters/data-generation.tex" 1738398137 12891 8ae7ad9c2d24306ecf63ddcf9d06e2b5 ""
-  "chapters/fvm.tex" 1738441605 24341 f28c76b331a69bdf74feb70195ca05d3 ""
+  "chapters/fvm.tex" 1738441815 24341 f28c76b331a69bdf74feb70195ca05d3 ""
   "chapters/numerical_fluxes.tex" 1738247632 8471 438f8035f6f70677444da5d0d0afae73 ""
   "chapters/riemann.tex" 1738247464 10977 e7fcea318a7915155cfa4787048f254f ""
   "figs/DTU.png" 1726205009 71324 08d7a624ec2f9f1df696ed86b2d8893d ""
@@ -487,11 +488,11 @@
   "frontmatter/acronyms.tex" 1738243069 1224 60abbfdc8a83870b8777072f1bb67f25 ""
   "frontmatter/approval.tex" 1738331296 595 8c082b8b25a3defebc616ab630a78bb9 ""
   "frontmatter/statics.tex" 1734602593 546 c986b37bd9ebb7cc9113a04de8cd1e25 ""
-  "main.aux" 1738441611 53705 b70f4492d581427b36f6c6e029a7798e "pdflatex"
-  "main.bbl" 1738420585 9529 b9fd18c755f34787fa2bc17bd13eebfd "bibtex main"
-  "main.out" 1738441611 10950 0fcb39f813a6512ce2725034977fd4bc "pdflatex"
+  "main.aux" 1738498974 53834 cf4ee341a3cb82d5027b6e505d98d1d8 "pdflatex"
+  "main.bbl" 1738498677 9529 b9fd18c755f34787fa2bc17bd13eebfd "bibtex main"
+  "main.out" 1738498974 10950 0fcb39f813a6512ce2725034977fd4bc "pdflatex"
   "main.tex" 1738441015 5948 e462782ec1b037f884df54126d16e4f3 ""
-  "main.toc" 1738441611 4858 236501663c15130edd830177659666f9 "pdflatex"
+  "main.toc" 1738498974 4858 236501663c15130edd830177659666f9 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

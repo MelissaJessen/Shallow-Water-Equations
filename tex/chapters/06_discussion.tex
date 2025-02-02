@@ -13,7 +13,7 @@ This limitation makes numerical methods, and in this case the FVM, less suitable
 The data-driven methods investigated in this thesis, namely the CNN and the FNO, demonstrated in \autoref{ch:data-driven-results} their ability to solve the SWE.
 While the accuracy of these models was lower compared to the FVM, this can be attributed to the small training data set and the limited number of epochs used in training.
 Training on a larger data set and for more epochs would most likely improve the performance of the data-driven methods, but at the cost of additional computational time during training.
-The models could also likely achieve better performance with more thorough hyperparameter tuning.
+The models could also likely achieve better performance with more extensive hyperparameter tuning.
 A limitation of the data-driven methods is that we do not have the same control over errors as with numerical methods.
 It is difficult to estimate errors for data-driven methods, as they do not have the same transparency as numerical methods.
 For some applications, this also makes it difficult to let the data-driven methods stand alone.
@@ -28,7 +28,7 @@ This lack of transparency is a significant drawback, as it makes it difficult to
 One way to address this issue is to use Physics-Informed Neural Networks (PINNs), which conceptually incorporate the physics of the problem into training of a neural network, making the model more explainable and interpretable.
 
 A significant advantage of the data-driven methods is their ability to generalize to unseen data.
-This was demonstrated in the 1D SWE case, where both the CNN and FNO successfully predicted solutions for new initial conditions in less than one second.
+This was demonstrated in the 1D SWE case, where both the CNN and FNO successfully predicted solutions for new initial conditions in less than one second, as seen in \autoref{sec:data-driven-results-1D}, specifically \autoref{tab:results_1D_comparison}.
 The FNO maintained high accuracy, while the CNN experienced a slight drop in precision.
 This capability makes data-driven methods particularly valuable for applications requiring rapid predictions.
 Another area where the data-driven methods excel is in transferring solutions across grids, meaning the models can be trained on one grid size and then used to predict solutions on another grid size.

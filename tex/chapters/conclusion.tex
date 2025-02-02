@@ -13,7 +13,7 @@ For the 1D case, both models performed well, with the CNN achieving a lower over
 When tested with new initial conditions, the FNO maintained accuracy compared to the original training data, while the CNN experienced a slight drop in precision.
 For the 1D LSWE on a sphere, both models again yielded good results, with the CNN outperforming the FNO in terms of accuracy and training time.
 However, for the steepest initial condition, the accuracy of the two models was nearly identical.
-In terms of run time for the 1D cases, the FVM was the fastest method, completing simularions significantly faster than both the data-driven models.
+In terms of run time for the 1D cases, the FVM was the fastest method, completing simulations significantly faster than both the data-driven models.
 
 In the 2D case, the FNO demonstrated higher accuracy than the CNN, but the CNN was significantly faster.
 When evaluating grid transferability, both models maintained accuracy in transitioning solutions from a coarse grid to a fine grid.
@@ -26,7 +26,7 @@ Besides, the data-driven methods have the clear advantage that they only need to
 Once trained, they can also predict efficiently for new initial conditions, addressing scalability issues in solving the SWE numerically.
 
 Regarding long-term predictions, both models produced good results within the first time steps, but as time progressed, the error increased for the CNN model.
-The FNO model maintained accuracy for longer time horizons, demonstrating its potential for long-term predictions, an outcome that aligns well with the literature.
+The FNO model maintained accuracy for longer time horizons, demonstrating its potential for long-term predictions.
 
 The choice of method ultimately depends on the application.
 For scenarios requiring precise simulations and where time is not a critical factor, numerical methods remain the most accurate and reliable option.
@@ -38,7 +38,7 @@ This is especially valuable in emergency situations, where rapid predictions are
 This study highlights the potential of training and saving data-driven models.
 Once trained, these models can quickly generate predictions for new initial conditions and grid sizes, offering a flexible and efficient approach to simulation.
 Additionally, they can aid in generating more data to a better understanding of water dynamics, ultimately leading to new knowledge and insights.
-A natural extension of this work could be to explore hybrid methods that combine the strengths of both numerical and data-driven approaches, offering a more comprehensive and efficient solution to SWE.
+A natural extension of this work could be to explore hybrid methods that combine the strengths of both numerical and data-driven approaches, offering a more comprehensive and efficient solution to the SWE.
 This approach could help overcome the limitations of each method, and provide more robust solutions for real-world applications.
 Another interesting extension is to implement the FVM to solve the SWE in spherical coordinates on a planetary scale.
 This could be used to generate data for training data-driven models.

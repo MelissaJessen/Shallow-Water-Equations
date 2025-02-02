@@ -162,10 +162,10 @@ The initial conditions for test case 5 are given in \autoref{fig:toro_test5_init
     \includegraphics[width=0.65\textwidth]{C:/Users/Matteo/Shallow-Water-Equations/plots/toro_test5_final.pdf}
     \caption{Final solution for the test case after $t = 5.0$ s.}\label{fig:toro_test5_final}
 \end{figure}
-From~\autoref{fig:toro_test5_final} we see that the numerical solution for the velocity $v$ at $t=5.0$ is smooth, where the true solution is discontinuous. 
+From~\autoref{fig:toro_test5_final} we see that the numerical solution for the velocity $v$ at $t=5.0$ s is smooth, where the true solution is discontinuous. 
 In this test case there are also challenges with some of the fluxes due to the generation of a dry-bed region in the middle of the domain.
 The fluxes that are not able to solve this case are: the Godunov method with exact Riemann solver and the Lax-Wendroff flux, the same as in test case 2.
-Individual plots for the different fluxes can be found in \autoref{fig:toro_test5_fluxes} in Appendix~\ref{app:toro_test_case_5}.
+Individual plots for the different fluxes can be found in \autoref{fig:toro_test5_fluxes} in Appendix~\ref{app:toro_test_case_5}, where we see that the HLL flux provides the best solution for the water height.
 The solution consists of two rarefaction waves, one on the left side and one on the right side, and a dry-bed region in the middle.
 To get an overview of which fluxes that were able to produce solutions for the test cases, consider~\autoref{tab:toro_fluxes}.
 \begin{table}[H]
